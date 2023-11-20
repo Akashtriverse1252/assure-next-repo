@@ -3,11 +3,7 @@ import React from "react";
 const CustomSvg = (props) => {
   return (
     <svg
-      xmlnsCc="http://creativecommons.org/ns#"
-      xmlnsDc="http://purl.org/dc/elements/1.1/"
-      xmlnsRdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
       xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
       version="1.1"
       id="svg2"
       x="0px"

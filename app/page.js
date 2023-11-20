@@ -1,15 +1,5 @@
-import React from "react";
 import { HForm } from "@/components/HForm";
 import Image from "next/image";
-import { Cancer } from "@/components/svg-components/Cancer";
-import { ConditionGround } from "@/components/svg-components/ConditionGround";
-import { Viral } from "@/components/svg-components/Viral";
-import { Fever } from "@/components/svg-components/Fever";
-import { Heart } from "@/components/svg-components/Heart";
-import { Diabetes } from "@/components/svg-components/Diabetes";
-import { Hypertenstion } from "@/components/Hypertenstion";
-import { Infertility } from "@/components/svg-components/Infertility";
-import { Allergy } from "@/components/svg-components/Allergy";
 import { Alltime } from "@/components/svg-components/Alltime";
 import { Samedaydelivery } from "@/components/svg-components/Samedaydelivery";
 import { FoundedDoctor } from "@/components/FoundedDoctor";

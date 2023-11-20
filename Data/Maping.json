@@ -1,0 +1,196 @@
+{
+  "mappingdata": [
+    {
+      "Cardiovascular_Health_Checkup": {
+        "id": [1,5,8],
+        "slug": "cardiovascular-health-checkup"
+      }
+    },
+    {
+      "heart-health-screening": {
+        "id": 2,
+        "slug": "heart-health-screening"
+      }
+    },
+    {
+      "Cardiac_Wellness_Evaluation": {
+        "id": 4,
+        "slug": "cardiac-wellness-evaluation"
+      }
+    },
+    {
+      "Vascular_Health_Assessment": {
+        "id": 1245,
+        "slug": "vascular-health-assessment"
+      }
+    },
+    {
+      "Healthy_Heart_Panel": {
+        "id": 1246,
+        "slug": "healthy-heart-panel"
+      }
+    },
+    {
+      "Cardio_Risk_Analysis": {
+        "id": 1247,
+        "slug": "cardio-risk-analysis"
+      }
+    },
+    {
+      "Coronary_Artery_Health_Check": {
+        "id": 1248,
+        "slug": "coronary-artery-health-check"
+      }
+    },
+    {
+      "Blood_Pressure_Monitoring": {
+        "id": 1249,
+        "slug": "blood-pressure-monitoring"
+      }
+    },
+    {
+      "Cholesterol_Levels_Assessment": {
+        "id": 1250,
+        "slug": "cholesterol-levels-assessment"
+      }
+    },
+    {
+      "Atherosclerosis_Screening": {
+        "id": 1251,
+        "slug": "atherosclerosis-screening"
+      }
+    },
+    {
+      "Heart_Disease_Prevention": {
+        "id": 1252,
+        "slug": "heart-disease-prevention"
+      }
+    },
+    {
+      "Cardiometabolic_Health_Check": {
+        "id": 1253,
+        "slug": "cardiometabolic-health-check"
+      }
+    },
+    {
+      "Holter_Monitoring": {
+        "id": 1254,
+        "slug": "holter-monitoring"
+      }
+    },
+    {
+      "Exercise_Stress_Test": {
+        "id": 1255,
+        "slug": "exercise-stress-test"
+      }
+    },
+    {
+      "Nutrition_for_Heart_Health": {
+        "id": 1256,
+        "slug": "nutrition-for-heart-health"
+      }
+    },
+    {
+      "Heart_Rate_Variability_Analysis": {
+        "id": 1257,
+        "slug": "heart-rate-variability-analysis"
+      }
+    },
+    {
+      "Healthy_Lifestyle_Consultation": {
+        "id": 1258,
+        "slug": "healthy-lifestyle-consultation"
+      }
+    },
+    {
+      "Peripheral_Artery_Disease_Screening": {
+        "id": 1259,
+        "slug": "peripheral-artery-disease-screening"
+      }
+    },
+    {
+      "Diabetes_and_Heart_Health": {
+        "id": 1260,
+        "slug": "diabetes-and-heart-health"
+      }
+    },
+    {
+      "Stroke_Risk_Assessment": {
+        "id": 1261,
+        "slug": "stroke-risk-assessment"
+      }
+    },
+    {
+      "Echocardiogram": {
+        "id": 1262,
+        "slug": "echocardiogram"
+      }
+    },
+    {
+      "Heart-Healthy_Diet_Plan": {
+        "id": 1263,
+        "slug": "heart-healthy-diet-plan"
+      }
+    },
+    {
+      "Smoking_Cessation_Program": {
+        "id": 1264,
+        "slug": "smoking-cessation-program"
+      }
+    },
+    {
+      "Cardiac_Rehabilitation": {
+        "id": 1265,
+        "slug": "cardiac-rehabilitation"
+      }
+    },
+    {
+      "Mindfulness_for_Heart_Health": {
+        "id": 1266,
+        "slug": "mindfulness-for-heart-health"
+      }
+    },
+    {
+      "Genetic_Predisposition_to_Heart_Disease": {
+        "id": 1267,
+        "slug": "genetic-predisposition-to-heart-disease"
+      }
+    },
+    {
+      "Heart_Health_Education": {
+        "id": 1268,
+        "slug": "heart-health-education"
+      }
+    },
+    {
+      "Heart_Rate_Monitoring": {
+        "id": 1269,
+        "slug": "heart-rate-monitoring"
+      }
+    },
+    {
+      "Cardiovascular_Fitness_Assessment": {
+        "id": 1270,
+        "slug": "cardiovascular-fitness-assessment"
+      }
+    },
+    {
+      "Blood_Sugar_Control_for_Heart_Health": {
+        "id": 1271,
+        "slug": "blood-sugar-control-for-heart-health"
+      }
+    },
+    {
+      "Heart-Healthy_Recipes": {
+        "id": 1272,
+        "slug": "heart-healthy-recipes"
+      }
+    },
+    {
+      "Family_History_of_Heart_Disease": {
+        "id": 1273,
+        "slug": "family-history-of-heart-disease"
+      }
+    }
+  ]
+}

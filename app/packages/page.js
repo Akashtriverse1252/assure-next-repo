@@ -18,7 +18,7 @@ export const page = () => {
                 <h3>HEALTH CHECK-UP PACKAGES</h3>
               </div>
               <div className="col-12 float-start all-test">
-                <div className="row">
+                <div className="row justify-content-center">
                   {data.map((test, index) => (
                       <PackagCard
                         key={index}

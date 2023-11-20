@@ -30,7 +30,7 @@ export const page = () => {
                 <h3>{slug} Test</h3>
               </div>
               <div className="col-12 float-start all-test">
-                <div className="row">
+                <div className="row justify-content-center ">
                   {filtered_slug_data.map((test, index) => (
                     <TestCard
                       key={index} // Don't forget to set a unique key when using .map()

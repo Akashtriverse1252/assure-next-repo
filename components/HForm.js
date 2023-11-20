@@ -28,7 +28,7 @@ export const HForm = () => {
             variant="outlined"
             className="MuiInputBase-root formbtn d-flex justify-content-between"
             fullWidth
-            onClick={() => setShowDialog(true)} // Pass a function to onClick
+            onClick={() => setShowDialog(false)} // Pass a function to onClick
           >
             <label>Upload Prescription</label>
             <span>

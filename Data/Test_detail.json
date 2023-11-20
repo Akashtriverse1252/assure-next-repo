@@ -2,7 +2,7 @@
   "test_data": [
     {
       "id": "1",
-      "Test_Name": "BLOOD UREA",
+      "Test_Name": "Blood Urea",
       "Slug": "blood-urea",
       "Test_ID": "random_id",
       "Test_Amount": "400",
@@ -16,7 +16,7 @@
     },
     {
       "id": "2",
-      "Test_Name": "LIVER FUNCTION TEST (LFT)",
+      "Test_Name": "Liver Function Test (Lft)",
       "Slug": "liver-function-test",
       "Test_ID": "random_id",
       "Test_Amount": "350",
@@ -29,7 +29,7 @@
     },
     {
       "id": "3",
-      "Test_Name": "CHOLESTEROL LEVELS",
+      "Test_Name": "Cholesterol Levels",
       "Slug": "cholesterol-levels",
       "Test_ID": "random_id",
       "Test_Amount": "180",
@@ -42,7 +42,7 @@
     },
     {
       "id": "4",
-      "Test_Name": "GLUCOSE LEVELS",
+      "Test_Name": "Glucose Levels",
       "Slug": "glucose-levels",
       "Test_ID": "random_id",
       "Test_Amount": "160",
@@ -55,7 +55,7 @@
     },
     {
       "id": "5",
-      "Test_Name": "THYROID FUNCTION TEST",
+      "Test_Name": "Thyroid Function Test",
       "Slug": "thyroid-function-test",
       "Test_ID": "random_id",
       "Test_Amount": "220",
@@ -68,7 +68,7 @@
     },
     {
       "id": "6",
-      "Test_Name": "COMPLETE BLOOD COUNT (CBC)",
+      "Test_Name": "Complete Blood Count (Cbc)",
       "Slug": "complete-blood-count",
       "Test_ID": "random_id",
       "Test_Amount": "240",
@@ -81,7 +81,7 @@
     },
     {
       "id": "7",
-      "Test_Name": "URIC ACID LEVELS",
+      "Test_Name": "Uric Acid Levels",
       "Slug": "uric-acid-levels",
       "Test_ID": "random_id",
       "Test_Amount": "190",
@@ -94,7 +94,7 @@
     },
     {
       "id": "8",
-      "Test_Name": "HDL CHOLESTEROL",
+      "Test_Name": "Hdl Cholesterol",
       "Slug": "hdl-cholesterol",
       "Test_ID": "random_id",
       "Test_Amount": "180",
@@ -107,7 +107,7 @@
     },
     {
       "id": "9",
-      "Test_Name": "LDL CHOLESTEROL",
+      "Test_Name": "Ldl Cholesterol",
       "Slug": "ldl-cholesterol",
       "Test_ID": "random_id",
       "Test_Amount": "180",
@@ -120,7 +120,7 @@
     },
     {
       "id": "10",
-      "Test_Name": "BILIRUBIN LEVELS",
+      "Test_Name": "Bilirubin Levels",
       "Slug": "bilirubin-levels",
       "Test_ID": "random_id",
       "Test_Amount": "210",
@@ -133,7 +133,7 @@
     },
     {
       "id": "11",
-      "Test_Name": "HbA1c (HEMOGLOBIN A1C)",
+      "Test_Name": "Hba1c (Hemoglobin A1c)",
       "Slug": "hba1c-hemoglobin-a1c",
       "Test_ID": "random_id",
       "Test_Amount": "200",
@@ -146,7 +146,7 @@
     },
     {
       "id": "12",
-      "Test_Name": "HEMOGLOBIN LEVELS",
+      "Test_Name": "Hemoglobin Levels",
       "Slug": "hemoglobin-levels",
       "Test_ID": "random_id",
       "Test_Amount": "160",
@@ -159,7 +159,7 @@
     },
     {
       "id": "13",
-      "Test_Name": "PSA (PROSTATE-SPECIFIC ANTIGEN)",
+      "Test_Name": "Psa (Prostate-Specific Antigen)",
       "Slug": "psa-prostate-specific-antigen",
       "Test_ID": "random_id",
       "Test_Amount": "250",
@@ -172,7 +172,7 @@
     },
     {
       "id": "14",
-      "Test_Name": "THYROID ANTIBODIES",
+      "Test_Name": "Thyroid Antibodies",
       "Slug": "thyroid-antibodies",
       "Test_ID": "random_id",
       "Test_Amount": "220",
@@ -185,7 +185,7 @@
     },
     {
       "id": "15",
-      "Test_Name": "ALBUMIN LEVELS",
+      "Test_Name": "Albumin Levels",
       "Slug": "albumin-levels",
       "Test_ID": "random_id",
       "Test_Amount": "180",
@@ -198,7 +198,7 @@
     },
     {
       "id": "16",
-      "Test_Name": "LIPASE LEVELS",
+      "Test_Name": "Lipase Levels",
       "Slug": "lipase-levels",
       "Test_ID": "random_id",
       "Test_Amount": "240",
@@ -211,7 +211,7 @@
     },
     {
       "id": "17",
-      "Test_Name": "TSH (THYROID-STIMULATING HORMONE)",
+      "Test_Name": "Tsh (Thyroid-Stimulating Hormone)",
       "Slug": "tsh-thyroid-stimulating-hormone",
       "Test_ID": "random_id",
       "Test_Amount": "220",
@@ -224,7 +224,7 @@
     },
     {
       "id": "18",
-      "Test_Name": "AMMONIA LEVELS",
+      "Test_Name": "Ammonia Levels",
       "Slug": "ammonia-levels",
       "Test_ID": "random_id",
       "Test_Amount": "210",
@@ -237,7 +237,7 @@
     },
     {
       "id": "19",
-      "Test_Name": "CALCIUM LEVELS",
+      "Test_Name": "Calcium Levels",
       "Slug": "calcium-levels",
       "Test_ID": "random_id",
       "Test_Amount": "190",
@@ -250,7 +250,7 @@
     },
     {
       "id": "20",
-      "Test_Name": "MAGNESIUM LEVELS",
+      "Test_Name": "Magnesium Levels",
       "Slug": "magnesium-levels",
       "Test_ID": "random_id",
       "Test_Amount": "170",
@@ -263,7 +263,7 @@
     },
     {
       "id": "21",
-      "Test_Name": "H. PYLORI ANTIBODY TEST",
+      "Test_Name": "H. Pylori Antibody Test",
       "Slug": "h-pylori-antibody-test",
       "Test_ID": "random_id",
       "Test_Amount": "280",
@@ -276,7 +276,7 @@
     },
     {
       "id": "22",
-      "Test_Name": "HEMOGLOBIN ELECTROPHORESIS",
+      "Test_Name": "Hemoglobin Electrophoresis",
       "Slug": "hemoglobin-electrophoresis",
       "Test_ID": "random_id",
       "Test_Amount": "360",
@@ -289,7 +289,7 @@
     },
     {
       "id": "23",
-      "Test_Name": "TSH (THYROID-STIMULATING HORMONE)",
+      "Test_Name": "Tsh (Thyroid-Stimulating Hormone)",
       "Slug": "tsh-thyroid-stimulating-hormone",
       "Test_ID": "random_id",
       "Test_Amount": "260",
@@ -302,7 +302,7 @@
     },
     {
       "id": "24",
-      "Test_Name": "VITAMIN B12 LEVELS",
+      "Test_Name": "Vitamin B12 Levels",
       "Slug": "vitamin-b12-levels",
       "Test_ID": "random_id",
       "Test_Amount": "240",
@@ -315,7 +315,7 @@
     },
     {
       "id": "25",
-      "Test_Name": "FERRITIN LEVELS",
+      "Test_Name": "Ferritin Levels",
       "Slug": "ferritin-levels",
       "Test_ID": "random_id",
       "Test_Amount": "180",
@@ -328,7 +328,7 @@
     },
     {
       "id": "26",
-      "Test_Name": "LUNG FUNCTION TEST",
+      "Test_Name": "Lung Function Test",
       "Slug": "lung-function-test",
       "Test_ID": "random_id",
       "Test_Amount": "320",
@@ -341,7 +341,7 @@
     },
     {
       "id": "27",
-      "Test_Name": "CA 125 (OVARIAN CANCER MARKER)",
+      "Test_Name": "Ca 125 (Ovarian Cancer Marker)",
       "Slug": "ca-125-ovarian-cancer-marker",
       "Test_ID": "random_id",
       "Test_Amount": "380",
@@ -354,7 +354,7 @@
     },
     {
       "id": "28",
-      "Test_Name": "AMYLASE LEVELS",
+      "Test_Name": "Amylase Levels",
       "Slug": "amylase-levels",
       "Test_ID": "random_id",
       "Test_Amount": "220",
@@ -367,7 +367,7 @@
     },
     {
       "id": "29",
-      "Test_Name": "PROTHROMBIN TIME (PT)",
+      "Test_Name": "Prothrombin Time (Pt)",
       "Slug": "prothrombin-time",
       "Test_ID": "random_id",
       "Test_Amount": "260",
@@ -380,7 +380,7 @@
     },
     {
       "id": "30",
-      "Test_Name": "HCG (HUMAN CHORIONIC GONADOTROPIN)",
+      "Test_Name": "Hcg (Human Chorionic Gonadotropin)",
       "Slug": "hcg-human-chorionic-gonadotropin",
       "Test_ID": "random_id",
       "Test_Amount": "280",
@@ -393,7 +393,7 @@
     },
     {
       "id": "31",
-      "Test_Name": "MAGNETIC RESONANCE IMAGING (MRI)",
+      "Test_Name": "Magnetic Resonance Imaging (Mri)",
       "Slug": "magnetic-resonance-imaging",
       "Test_ID": "random_id",
       "Test_Amount": "800",
@@ -406,7 +406,7 @@
     },
     {
       "id": "32",
-      "Test_Name": "ELECTROCARDIOGRAM (ECG OR EKG)",
+      "Test_Name": "Electrocardiogram (Ecg Or Ekg)",
       "Slug": "electrocardiogram-ecg-ekg",
       "Test_ID": "random_id",
       "Test_Amount": "150",
@@ -419,7 +419,7 @@
     },
     {
       "id": "33",
-      "Test_Name": "BONE DENSITY SCAN",
+      "Test_Name": "Bone Density Scan",
       "Slug": "bone-density-scan",
       "Test_ID": "random_id",
       "Test_Amount": "350",
@@ -432,7 +432,7 @@
     },
     {
       "id": "34",
-      "Test_Name": "C-REACTIVE PROTEIN (CRP)",
+      "Test_Name": "C-Reactive Protein (Crp)",
       "Slug": "c-reactive-protein-crp",
       "Test_ID": "random_id",
       "Test_Amount": "180",
@@ -445,7 +445,7 @@
     },
     {
       "id": "35",
-      "Test_Name": "VITAMIN D LEVELS",
+      "Test_Name": "Vitamin D Levels",
       "Slug": "vitamin-d-levels",
       "Test_ID": "random_id",
       "Test_Amount": "190",
@@ -458,7 +458,7 @@
     },
     {
       "id": "36",
-      "Test_Name": "HIV SCREENING",
+      "Test_Name": "Hiv Screening",
       "Slug": "hiv-screening",
       "Test_ID": "random_id",
       "Test_Amount": "120",
@@ -471,7 +471,7 @@
     },
     {
       "id": "37",
-      "Test_Name": "CT SCAN (COMPUTED TOMOGRAPHY)",
+      "Test_Name": "Ct Scan (Computed Tomography)",
       "Slug": "ct-scan-computed-tomography",
       "Test_ID": "random_id",
       "Test_Amount": "500",
@@ -482,22 +482,10 @@
       "Who_is_it_for": "Recommended for individuals needing detailed imaging for medical diagnosis.",
       "Pre_test_information": "Appointment required. Follow specific pre-CT scan instructions provided by the healthcare facility."
     },
-    {
-      "id": "38",
-      "Test_Name": "MAMMOGRAM",
-      "Slug": "mammogram",
-      "Test_ID": "random_id",
-      "Test_Amount": "280",
-      "Discount_Amount": "140",
-      "Test_Category": "Breast",
-      "Department_Name": "Radiology",
-      "Test_Description": "A mammogram is an X-ray of the breast tissue and is used for breast cancer screening and diagnosis.",
-      "Who_is_it_for": "Recommended for women as part of routine breast cancer screening or for diagnostic purposes.",
-      "Pre_test_information": "Appointment required. Follow specific pre-mammogram instructions provided by the healthcare facility."
-    },
+    
     {
       "id": "39",
-      "Test_Name": "DEXA SCAN (DUAL-ENERGY X-RAY ABSORPTIOMETRY)",
+      "Test_Name": "Dexa Scan",
       "Slug": "dexa-scan-dual-energy-x-ray-absorptiometry",
       "Test_ID": "random_id",
       "Test_Amount": "300",
@@ -510,7 +498,7 @@
     },
     {
       "id": "40",
-      "Test_Name": "COLONOSCOPY",
+      "Test_Name": "Colonoscopy",
       "Slug": "colonoscopy",
       "Test_ID": "random_id",
       "Test_Amount": "600",
@@ -523,7 +511,7 @@
     },
     {
       "id": "41",
-      "Test_Name": "CT SCAN (COMPUTED TOMOGRAPHY)",
+      "Test_Name": "Ct Scan ",
       "Slug": "ct-scan-computed-tomography",
       "Test_ID": "random_id",
       "Test_Amount": "500",
@@ -536,7 +524,7 @@
     },
     {
       "id": "42",
-      "Test_Name": "MAMMOGRAM",
+      "Test_Name": "Mammogram",
       "Slug": "mammogram",
       "Test_ID": "random_id",
       "Test_Amount": "280",
@@ -547,22 +535,10 @@
       "Who_is_it_for": "Recommended for women as part of routine breast cancer screening or for diagnostic purposes.",
       "Pre_test_information": "Appointment required. Follow specific pre-mammogram instructions provided by the healthcare facility."
     },
+    
     {
       "id": "43",
-      "Test_Name": "DEXA SCAN (DUAL-ENERGY X-RAY ABSORPTIOMETRY)",
-      "Slug": "dexa-scan-dual-energy-x-ray-absorptiometry",
-      "Test_ID": "random_id",
-      "Test_Amount": "300",
-      "Discount_Amount": "150",
-      "Test_Category": "Bone",
-      "Department_Name": "Radiology",
-      "Test_Description": "A DEXA scan measures bone mineral density and is used to assess bone health and the risk of osteoporosis.",
-      "Who_is_it_for": "Recommended for individuals at risk of osteoporosis or bone-related concerns.",
-      "Pre_test_information": "Appointment required. Follow specific pre-DEXA scan instructions provided by the healthcare facility."
-    },
-    {
-      "id": "44",
-      "Test_Name": "COLONOSCOPY",
+      "Test_Name": "Colonoscopy",
       "Slug": "colonoscopy",
       "Test_ID": "random_id",
       "Test_Amount": "600",

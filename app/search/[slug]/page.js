@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useEffect, useDeferredValue } from "react";
 import mappingdata from "../../../Data/Maping.json";
 import testData from "../../../Data/Test_detail.json";
@@ -80,11 +80,11 @@ const SearchBar = () => {
                     <div className="loader"></div>
                   </div>
                 ) : deferredPackageData ? (
-                  <div className="row">
+                  <div className="row justify-content-center">
                     {deferredPackageData.map((test, index) => (
                       <TestCard
                         key={index}
-                        Slug={test.Slug}
+                        Slug={test.Slug}  
                         Test_Name={test.Test_Name}
                         Test_Amount={test.Test_Amount}
                         Discount_Amount={test.Discount_Amount}

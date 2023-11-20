@@ -15,7 +15,7 @@ const SearchBar = () => {
 
   useEffect(() => {
     if (query.trim() !== "") {
-      fetch(`http://127.0.0.1/NS-arcus/keywords_api12.php?searchWord=${query}`)
+      fetch(`http://centragroup.triverseadvertising.com/api/keywords_api12.php?searchWord=${query}`)
         .then((response) => response.json())
         .then((data) => {
           if (data.message === "No keywords found for the given search word") {

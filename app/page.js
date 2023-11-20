@@ -243,7 +243,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="vedio_review" className="vedio_review">
+      {/* <section id="vedio_review" className="vedio_review">
         <div className="container position-relative z-index-2">
           <div className="web-container">
             <div className="row">
@@ -256,7 +256,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }

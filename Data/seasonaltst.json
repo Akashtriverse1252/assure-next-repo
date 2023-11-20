@@ -1,0 +1,32 @@
+{
+  "test_data": [
+    {
+      "id": "1",
+      "Test_Name": "Winter Fever Screening",
+      "Slug": "winter-fever-screening",
+      "Test_ID": "random_id",
+      "Test_Amount": "450",
+      "Discount_Amount": "225",
+      "Test_Category": "Winter Fever",
+      "Department_Name": "Infectious Diseases",
+      "Test_Description": "As winter approaches, it's essential to screen for common winter-related fevers. This test helps detect various fevers prevalent during the colder months. It includes a comprehensive analysis to identify potential infectious diseases associated with winter, providing valuable insights for timely intervention.",
+      "Who_is_it_for": "Recommended for individuals experiencing fever-like symptoms or those looking to proactively assess their health during the winter season.",
+      "Pre_test_information": "No specific requirements. Can be done at any time of the day.",
+      "Turn_around_time": "Test results are processed promptly, and the report is available the same day."
+    },
+    {
+      "id": "2",
+      "Test_Name": "Hypothermia Screening",
+      "Slug": "hypothermia-screening",
+      "Test_ID": "random_id",
+      "Test_Amount": "320",
+      "Discount_Amount": "160",
+      "Test_Category": "Hypothermia",
+      "Department_Name": "Internal Medicine",
+      "Test_Description": "Hypothermia screening is essential during the winter season to assess the body's response to cold temperatures. This test helps identify potential hypothermia risks and provides insights into maintaining optimal body temperature.",
+      "Who_is_it_for": "Recommended for individuals at risk of exposure to extreme cold or those exhibiting symptoms of hypothermia.",
+      "Pre_test_information": "No specific requirements. Can be done at any time of the day.",
+      "Turn_around_time": "Test results are processed promptly, and the report is available the same day."
+    }
+  ]
+}

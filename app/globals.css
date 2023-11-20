@@ -1646,7 +1646,7 @@ header {
 }
 
 .packagename_test h5 {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 20px;
   text-transform: capitalize;
   text-align: center;
@@ -1654,7 +1654,7 @@ header {
   max-width: 95%;
   margin: 0 auto;
   text-wrap: balance;
-  letter-spacing: 2.4px;
+  letter-spacing: 1.6px;
 }
 
 
@@ -1971,4 +1971,8 @@ div#bookAppointmentForm .width50:first-chlid {
 /* Handle on hover */
 #searchTypeahead::-webkit-scrollbar-thumb:hover {
   background: #7e7d7d;
+}
+.button{
+  user-select: none;
+  cursor: pointer;
 }

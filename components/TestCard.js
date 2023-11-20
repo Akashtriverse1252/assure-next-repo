@@ -12,10 +12,11 @@ export const TestCard = ({
   Test_Description,
   Who_is_it_for,
   Pre_test_information,
+  widthFull
 }) => {
   return (
     <>
-      <div className="col-lg-3 col-12">
+      <div className={widthFull ? "col-lg-12 col-12" : "col-lg-3"}>
         <div className="sliderbox">
           <div className="packagename_test">
             <h5>{Test_Name}</h5>

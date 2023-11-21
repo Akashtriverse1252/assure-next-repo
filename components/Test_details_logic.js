@@ -1,0 +1,179 @@
+"use client";
+
+import React from "react";
+import { Rupees } from "./svg-components/Rupees";
+import { Cart } from "./svg-components/Cart";
+import { useCart } from "@/context/context";
+
+export const Test_details_logic = ({ Slug, data }) => {
+  const { cartState, cartDispatch } = useCart();
+  // const params = useParams();
+
+  const project = data.test_data.find((p) => p.Slug === Slug);
+
+  // console.log(project);
+  const _discount =
+    ((project.Test_Amount - project.Discount_Amount) / project.Test_Amount) *
+    100;
+
+  const handleAddToCart = () => {
+    const product = {
+      id: project.id,
+      name: project.Test_Name,
+      price: project.Test_Amount,
+      dis_price: project.Discount_Amount,
+      quantity: 1,
+      discount: _discount,
+    };
+    const existingProduct = cartState.products.find(
+      (p) => p.Slug === product.Slug
+    );
+
+    if (existingProduct) {
+      // If the product exists, update its quantity
+      cartDispatch({
+        type: "INCREMENT",
+        productId: product.id,
+      });
+    } else {
+      // If the product doesn't exist, add it to the cart
+      cartDispatch({
+        type: "ADD_TO_CART",
+        product,
+      });
+    }
+  };
+  return (
+    <>
+      <div className="row">
+        <div className="title col-12 float-start text-center">
+          <h3>{project.Test_Category}-test</h3>
+        </div>
+        <div className="col-lg-11 m-auto col-12 float-start grey-background pt-4 px-0">
+          <div className="detailrow">
+            <div className="row">
+              <div className="detailtitle col-lg-3 col-12">
+                <p>
+                  <strong>Package Name</strong>
+                </p>
+              </div>
+              <div className="detaildescrp col-lg-9 col-12">
+                <p>
+                  <strong>{project.Test_Name}</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="detailrow">
+            <div className="row">
+              <div className="detailtitle col-lg-3 col-12">
+                <p>
+                  <strong>About Package</strong>
+                </p>
+              </div>
+              <div className="detaildescrp col-lg-9 col-12">
+                <p>{project.Test_Description}</p>
+              </div>
+            </div>
+          </div>
+          {/* <div className="detailrow">
+                    <div className="row">
+                      <div className="detailtitle col-lg-3 col-12">
+                        <p>
+                          <strong>Parameters Included</strong>
+                        </p>
+                      </div>
+                      <div className="detaildescrp col-lg-9 col-12">
+                        <p>26</p>
+                      </div>
+                    </div>
+                  </div> */}
+          <div className="detailrow">
+            <div className="row">
+              <div className="detailtitle col-lg-3 col-12">
+                <p>
+                  <strong>Exclusive Offer</strong>
+                </p>
+              </div>
+              <div className="detaildescrp col-lg-9 col-12 ">
+                <div className="packageprice d-flex align-items-center gap-5">
+                  <div className="actualprice">
+                    <Rupees /> <span>{project.Test_Amount}</span>
+                  </div>
+                  <div className="discountprice gradient  text-white m-0">
+                    <Rupees /> <span>{project.Discount_Amount}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="detailrow">
+            <div className="row">
+              <div className="detailtitle col-lg-3 col-12">
+                <p>
+                  <strong>Discount</strong>
+                </p>
+              </div>
+              <div className="detaildescrp col-lg-9 col-12 ">
+                <p>
+                  UPTO <strong>{_discount}%</strong>{" "}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="detailrow">
+            <div className="row">
+              <div className="detailtitle col-lg-3 col-12">
+                <p>
+                  <strong>Who is it for</strong>
+                </p>
+              </div>
+              <div className="detaildescrp col-lg-9 col-12 ">
+                <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
+                  <p>{project.Who_is_it_for}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="detailrow">
+            <div className="row">
+              <div className="detailtitle col-lg-3 col-12">
+                <p>
+                  <strong>Pre test information</strong>
+                </p>
+              </div>
+              <div className="detaildescrp col-lg-9 col-12 ">
+                <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
+                  <p>{project.Pre_test_information}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="detailrow">
+            <div className="row">
+              <div className="detailtitle col-lg-3 col-12">
+                <p>
+                  <strong>Book Now</strong>
+                </p>
+              </div>
+              <div className="detaildescrp col-lg-9 col-12">
+                {/* <Accordian />  */}
+                <div className="col-12 flex-center mt-1 mb-2 justify-content-start gap-3">
+                  <a
+                    className="button button--aylen button--round-l button--text-thick  gradient col-lg-3 col-12 d-flex justify-content-center gap-2"
+                    onClick={handleAddToCart}
+                  >
+                    <Cart /> Add to Cart
+                  </a>
+                  <a className="button button--aylen button--round-l button--text-thick  gradient col-lg-3 col-12">
+                    Book Home Collection
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};

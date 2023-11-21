@@ -15,7 +15,9 @@ const SearchBar = () => {
 
   useEffect(() => {
     if (query.trim() !== "") {
-      fetch(`http://centragroup.triverseadvertising.com/api/keywords_api12.php?searchWord=${query}`)
+      fetch(
+        `https://www.assurepathlabs.com/api/new-api/keywords_api12.php?searchWord=${query}`
+      )
         .then((response) => response.json())
         .then((data) => {
           if (data.message === "No keywords found for the given search word") {

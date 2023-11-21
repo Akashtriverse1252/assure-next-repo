@@ -1,3 +1,5 @@
+"use client"
+
 import { useState, useEffect } from "react";
 import mappingdata from "../Data/Maping.json";
 import testData from "../Data/Test_detail.json";

@@ -1,11 +1,10 @@
 import React from "react";
-import { useParams } from "next/navigation";
-import Searchhpage from "@/components/Searchhpage";
+// import { useRouter } from "next/navigation";
+import Searchhpage from "@/components/SearchhPage";
 
-const SearchBar = () => {
-  const params = useParams();
-
-  const slug = params.slug;
+const SearchBar = ({ params: { slug } }) => {
+  // const router = useRouter();
+  // const { slug } = router.query;
 
   return (
     <div>
@@ -18,6 +17,7 @@ const SearchBar = () => {
               </div>
               <div className="col-12 float-start all-test">
                 <Searchhpage slug={slug} />
+                {/* {slug} */}
               </div>
             </div>
           </div>

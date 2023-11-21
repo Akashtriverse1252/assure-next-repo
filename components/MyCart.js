@@ -11,7 +11,7 @@ export const MyCart = () => {
   for (const product of cartState.products) { 
     totalQuantity += product.quantity;
   }
-  console.log(cartState.products);
+  // console.log(cartState.products);
 
   return (
     <>

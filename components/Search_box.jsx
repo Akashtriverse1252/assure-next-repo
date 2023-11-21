@@ -8,7 +8,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import { TextField, InputAdornment, IconButton } from "@mui/material";
 const SearchBar = () => {
   const [query, setQuery] = useState("");
-  const [suggestions, setSuggestions] = useState([2]);
+  const [suggestions, setSuggestions] = useState("");
   const [selected, setSelected] = useState([]);
 
   const router = useRouter();

@@ -1,7 +1,6 @@
+import React from "react";
 import { Dots } from "@/components/svg-components/Dots";
 import { Line } from "@/components/svg-components/Line";
-import { Rupees } from "@/components/svg-components/Rupees";
-import React from "react";
 import data from "@/Data/Test_detail.json";
 import { TestCard } from "@/components/TestCard";
 
@@ -18,20 +17,22 @@ export const page = () => {
               </div>
               <div className="col-12 float-start all-test">
                 <div className="row justify-content-center">
-                  {data.test_data.map((test, index) => (
-                    <TestCard
-                      key={index} // Don't forget to set a unique key when using .map()
-                      Slug={test.Slug}
-                      Test_Name={test.Test_Name}
-                      Test_Amount={test.Test_Amount}
-                      Discount_Amount={test.Discount_Amount}
-                      Test_Category={test.Test_Category}
-                      Test_ID={test.Test_ID}
-                      Test_Description={test.Test_Description}
-                      Who_is_it_for={test.Who_is_it_for}
-                      Pre_test_information={test.Pre_test_information}
-                    />
-                  ))}
+                  {data.test_data ||
+                    data.test_data.map((test, index) => (
+                      <TestCard
+                        key={index}
+                        Slug={test.Slug}
+                        Test_Name={test.Test_Name}
+                        Test_Amount={test.Test_Amount}
+                        Discount_Amount={test.Discount_Amount}
+                        Test_Category={test.Test_Category}
+                        Test_ID={test.Test_ID}
+                        Test_Description={test.Test_Description}
+                        Who_is_it_for={test.Who_is_it_for}
+                        Pre_test_information={test.Pre_test_information}
+                        BaseDirectory={"individual-test"}
+                      />
+                    ))}
                 </div>
               </div>
             </div>

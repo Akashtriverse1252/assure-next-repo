@@ -1,24 +1,14 @@
-"use client";
+// "use client";
 import { Dots } from "@/components/svg-components/Dots";
 import { Line } from "@/components/svg-components/Line";
-import { Rupees } from "@/components/svg-components/Rupees";
 import React from "react";
 import test_info from "@/Data/Test_detail.json";
 import { TestCard } from "@/components/TestCard";
-import { useParams } from "next/navigation";
 
-export const page = () => {
-  // console.log("this is the data", data.test_data);
-  const params = useParams();
-
-  const slug = params.slug;
+export const page = ({ params: { slug } }) => {
   const filtered_slug_data = test_info.test_data.filter(
     (p) => p.Department_Name.toLowerCase() === slug
   );
-
-  //   const filtered_slug_data = project;
-
-  //   console.log("filtered_slug_data", filtered_slug_data);
 
   return (
     <>
@@ -44,6 +34,7 @@ export const page = () => {
                       Test_Description={test.Test_Description}
                       Who_is_it_for={test.Who_is_it_for}
                       Pre_test_information={test.Pre_test_information}
+                      BaseDirectory={`condition/${slug}/test`}
                     />
                   ))}
                 </div>

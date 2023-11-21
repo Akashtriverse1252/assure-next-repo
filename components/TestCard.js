@@ -12,7 +12,8 @@ export const TestCard = ({
   Test_Description,
   Who_is_it_for,
   Pre_test_information,
-  widthFull
+  widthFull,
+  BaseDirectory,
 }) => {
   return (
     <>
@@ -43,7 +44,9 @@ export const TestCard = ({
           </div>
           <div className="packageprice">
             <div className="textbtn">
-              <Link href={`/test-detail/${Slug}`}>KNOW MORE +</Link>
+              <Link href={`/${BaseDirectory || "test-detail"}/${Slug}`}>
+                KNOW MORE +
+              </Link>
             </div>
           </div>
         </div>

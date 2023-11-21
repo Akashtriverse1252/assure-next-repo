@@ -29,6 +29,7 @@ export const page = () => {
                         Test_info={test.TestInfo || []}
                         Number_test={test.TestInfo ? test.TestInfo.length : 0}
                         Test_Slug={test.Slug}
+                        BaseDirectory={"package"}
                       />
                   ))}
                 </div>

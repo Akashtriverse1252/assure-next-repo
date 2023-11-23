@@ -4,7 +4,7 @@ import { Accordian } from "@/components/Accordian";
 import { ChooseAssure } from "@/components/ChooseAssure";
 import { Cart } from "@/components/svg-components/Cart";
 import { Rupees } from "@/components/svg-components/Rupees";
-import { useCart } from "@/context/context";
+import { useData } from "@/context/context";
 import {
   AddCard,
   Addchart,
@@ -16,7 +16,7 @@ import { useParams } from "next/navigation";
 import data from "@/Data/Test_detail.json";
 
 export const page = () => {
-  const { cartState, cartDispatch } = useCart();
+  const { cartState, cartDispatch } = useData();
   const params = useParams();
 
   const Slug = params.slug;

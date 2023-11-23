@@ -1,14 +1,15 @@
 import React from "react";
 import Cart from "./Cart";
-import { useCart } from "@/context/context";
+import { useData } from "@/context/context";
+import { LuShoppingCart } from "react-icons/lu";
 
 export const MyCart = () => {
   const [isCartOpen, setIsCartOpen] = React.useState(false);
-  const { cartState, cartDispatch } = useCart();
+  const { cartState, cartDispatch } = useData();
 
   // Calculate the total quantity using cartState
   let totalQuantity = 0;
-  for (const product of cartState.products) { 
+  for (const product of cartState.products) {
     totalQuantity += product.quantity;
   }
   // console.log(cartState.products);
@@ -22,8 +23,9 @@ export const MyCart = () => {
           onClick={() => {
             setIsCartOpen(!isCartOpen);
           }}
-        >   
-          My Cart
+        >
+          <LuShoppingCart className=" "/>
+          Cart
         </span>
         {!totalQuantity == 0 ? (
           <i className="my-cart_cnt">{totalQuantity}</i>

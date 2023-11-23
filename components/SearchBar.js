@@ -6,7 +6,7 @@ import Tab from "@mui/material/Tab";
 import SearchIcon from "@mui/icons-material/Search";
 import data from "../Data/Keywords.json";
 import Search_box from "../components/Search_box";
-
+import { LuSearch } from "react-icons/lu";
 
 const SearchBar = () => {
   const [value, setValue] = useState(0);
@@ -84,8 +84,16 @@ const SearchBar = () => {
 
   return (
     <div className="col-12 pull-left position-relative">
-      <div className="header_search" onClick={(()=>{setDropdownVisible(true)})} >
-      <Search_box/>
+      <div
+        className="header_search position-relative"
+        onClick={() => {
+          setDropdownVisible(true);
+        }}
+      >
+        <Search_box />
+        <div className="_icon">
+          <SearchIcon />
+        </div>
       </div>
       {/* <TextField
         label="Find your package/test/scan"

@@ -243,20 +243,20 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* <section id="vedio_review" className="vedio_review">
+      <section id="vedio_review" className="vedio_review">
         <div className="container position-relative z-index-2">
-          <div className="web-container">
+          <div className="web-containers">
             <div className="row">
               <div className="title col-12 float-start text-center">
                 <h3 className="">OUR VIDEOS</h3>
               </div>
-              <div className="col-lg-11 col-12 m-auto float-start">
-                <Videos className="" />
+              <div className="col-lg-10 col-12 m-auto float-start">
+                <Videos />
               </div>
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
     </main>
   );
 }

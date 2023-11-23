@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useEffect, useReducer } from "react";
-
+// import useApi from "./apiData";
 // Create a context for the cart
 const CartContext = createContext();
 
@@ -85,9 +85,15 @@ const cartReducer = (state, action) => {
   }
 };
 
-// Create the CartProvider component
-const CartProvider = ({ children }) => {
+// Create the GlobalDataProvider component
+const GlobalDataProvider = ({ children }) => {
   const [cartState, cartDispatch] = useReducer(cartReducer, initialState);
+  // const apiUrl = "http://127.0.0.1/NS-arcus/json_api.php"; // Replace with your API URL
+  // const {
+  //   data: apiData,
+  //   error: apiError,
+  //   loading: apiLoading,
+  // } = useApi(apiUrl);
 
   // Load cart data from local storage when the component mounts
   useEffect(() => {
@@ -110,12 +116,12 @@ const CartProvider = ({ children }) => {
 };
 
 // Create a custom hook for using the cart context
-const useCart = () => {
+const useData = () => {
   const context = useContext(CartContext);
   if (!context) {
-    throw new Error("useCart must be used within a CartProvider");
+    throw new Error("useData must be used within a GlobalDataProvider");
   }
   return context;
 };
 
-export { CartProvider, useCart };
+export { GlobalDataProvider, useData };

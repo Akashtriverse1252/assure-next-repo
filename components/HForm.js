@@ -20,7 +20,7 @@ export const HForm = () => {
     <>
       {showDialog ? <UploadForm /> : null}
 
-      <div className="col-12 float-start d-grid gap-5">
+      <div className="col-12 float-start d-grid gap-5 h_form">
         <div className="enquireform col-12 float-start">
           <SearchBar />
 

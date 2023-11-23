@@ -1,14 +1,14 @@
 "use client";
 
-import { useCart } from "@/context/context";
+import { useData } from "@/context/context";
 import React, { Fragment, useState } from "react";
 import { IoIosArrowRoundBack } from "react-icons/io";
-import { MdOutlineRemoveShoppingCart } from "react-icons/md";
+import { LuX } from "react-icons/lu";
 
 export default function page() {
   const [open, setOpen] = useState(true);
-  const { cartState, cartDispatch } = useCart(); // Access cart state and dispatch from CartContext
-  const { cart, incrementQuantity } = useCart();
+  const { cartState, cartDispatch } = useData(); // Access cart state and dispatch from CartContext
+
   // Function to convert string numbers to actual numbers
   const convertToNumber = (value) => {
     return parseFloat(value);
@@ -46,12 +46,20 @@ export default function page() {
   const handleRemove = (product) => {
     cartDispatch({ type: "REMOVE", productId: product.id });
   };
-
+  const slideStyle = {
+    transform: open ? "translateX(0)" : "translateX(100%)",
+    transition: "transform 1.3s ease-in-out", // Adjust the duration as needed
+  };
   return (
     <Fragment>
       {open && (
-        <div>
-          <div className="_cart fixed-top inset-0 overflow-hidden">
+        <>
+          <div
+            className={`_cart fixed-top inset-0 overflow-hidden${
+              open ? " slide-in" : "slide-out"
+            }`}
+            style={slideStyle}
+          >
             <div className="h-100 absolute-top inset-0 overflow-hidden _shadow">
               <div className="h-100 ">
                 <div className="d-flex flex-column h-100 bg-white shadow-xl">
@@ -87,7 +95,7 @@ export default function page() {
                                       className="btn"
                                       onClick={() => handleRemove(product)}
                                     >
-                                      <MdOutlineRemoveShoppingCart />
+                                      <LuX />
                                     </button>
                                   </div>
                                   <p className="cart_itam_qnt">
@@ -165,7 +173,7 @@ export default function page() {
               </div>
             </div>
           </div>
-        </div>
+        </>
       )}
     </Fragment>
   );

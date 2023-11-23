@@ -3,10 +3,10 @@
 import React from "react";
 import { Rupees } from "./svg-components/Rupees";
 import { Cart } from "./svg-components/Cart";
-import { useCart } from "@/context/context";
+import { useData } from "@/context/context";
 
 export const Test_details_logic = ({ Slug, data }) => {
-  const { cartState, cartDispatch } = useCart();
+  const { cartState, cartDispatch } = useData();
   // const params = useParams();
 
   const project = data.test_data.find((p) => p.Slug === Slug);

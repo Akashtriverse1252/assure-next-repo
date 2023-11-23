@@ -11,14 +11,22 @@ import SearchBar from "./SearchBar";
 import { IndividualTest } from "./svg-components/IndividualTest";
 import { MyCart } from "./MyCart";
 import { UploadPrescription } from "./UploadPrescription";
+import Nabh from "./svg-components/Nabh";
+import { usePathname } from "next/navigation";
+import { LuUser, LuSearch } from "react-icons/lu";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const pathname = usePathname();
+  const showSearchBar = pathname == "/";
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
   const menuClasses = `menslide${isMenuOpen ? " active" : ""}`;
   const hamburgerClasses = `hemburgur${isMenuOpen ? " active" : ""}`;
+
   useEffect(() => {
     Aos.init({ duration: 1000 });
     window.addEventListener("scroll", changeBackground);
@@ -40,42 +48,57 @@ export const Header = () => {
       <div className={header ? "header fixed" : "header"}>
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-3">
-              <div className="logo col-md-6 col-12">
+            <div className="col-lg-2">
+              <div className="logo">
                 <Link href="/">
                   <Logo />
                 </Link>
               </div>
             </div>
-            <div className="col-lg-9">
-              <div className="d-flex align-items-end justify-content-end">
-                <div className="navbar p-0 align-items-end gap-2">
-                  <div className="headersearchbox mx-2 enquireform ">
-                    <SearchBar />
-                  </div>
-                  <div className="d-flex justify-content-end align-items-end gap-4">
+            <div className="col-lg-10">
+              <div className="d-flex align-items-center justify-content-end gap-4">
+                <div
+                  className={
+                    showSearchBar
+                      ? "hidden_header headersearchbox mx-2 enquireform"
+                      : "headersearchbox mx-2 enquireform"
+                  }
+                >
+                  {/* {!showSearchBar ? <SearchBar /> : null} */}
+                  <SearchBar />
+                  
+                </div>
+                <div className="navbar p-0 align-items-end gap-4">
+                  <div className="d-flex justify-content-center align-items-center gap-4">
                     <div className="leftmenu float-start gap-3 d-flex">
-                      <span className="button button--aylen button--round-l button--text-thick ">
+                      {/* <span className="button button--aylen button--round-l button--text-thick ">
                         <Link href="/individual-test">
                           <span>
                             <IndividualTest />
                           </span>
                           Individual Test
                         </Link>
-                      </span>
+                      </span> */}
                       {/* <span className="button button--aylen button--round-l button--text-thick my-cart">
                         My Cart
                       </span> */}
                       <MyCart />
-                      <span className="button button--aylen button--round-l button--text-thick">
+                      <span className="button button--aylen button--round-l button--text-thick _user d-flex align-items-center">
+                        <LuUser />
                         Login
                       </span>
                     </div>
-                    <div className="homecollection float-start d-grid">
-                      <h4 className="text-black">Home Collection</h4>
-                      <h3>
-                        <a href="tel:0181-4667555">0181-4667555</a>
-                      </h3>
+                    <div className=" d-flex align-items-center flex-row justify-content-center ">
+                      <div className="nah_logo">
+                        <Nabh />
+                      </div>
+
+                      <div className="homecollection float-start d-grid">
+                        <h4 className="text-black">Home Collection</h4>
+                        <h3>
+                          <a href="tel:0181-4667555">0181-4667555</a>
+                        </h3>
+                      </div>
                     </div>
                   </div>
                   <div className="menustn">

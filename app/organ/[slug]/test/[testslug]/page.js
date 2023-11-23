@@ -3,6 +3,7 @@ import { ChooseAssure } from "@/components/ChooseAssure";
 import data from "@/Data/Test_detail.json";
 import { Test_details_logic } from "@/components/Test_details_logic";
 
+
 export const page = ({ params: { testslug } }) => {
   return (
     <>

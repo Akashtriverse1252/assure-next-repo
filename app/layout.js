@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import localFont from "next/font/local";
 import { Footer } from "@/components/Footer";
-import { CartProvider } from "@/context/context";
+import { GlobalDataProvider } from "@/context/context";
 const AvertaStd = localFont({
   src: "./font/AvertaStd-Regular.woff2",
   display: "swap",
@@ -21,14 +21,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <CartProvider>
+      <GlobalDataProvider>
         <body className={AvertaStd.className}>
           <Header />
           {children}
 
           <Footer />
         </body>
-      </CartProvider>
+      </GlobalDataProvider>
     </html>
   );
 }

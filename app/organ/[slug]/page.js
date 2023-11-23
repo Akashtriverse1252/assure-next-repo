@@ -1,13 +1,58 @@
-// "use client";
+"use client";
+// import React, { useState } from "react";
 import { Dots } from "@/components/svg-components/Dots";
 import { Line } from "@/components/svg-components/Line";
-import React from "react";
 import test_info from "@/Data/Test_detail.json";
 import { TestCard } from "@/components/TestCard";
+import { useEffect, useState } from "react";
+import axios from "axios";
+// import { useData } from "@/context/context";
+// import UseApi from "../../../context/UseApi.js";
+
 export const page = ({ params: { slug } }) => {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "http://127.0.0.1/NS-arcus/xml_api.php",
+          {
+            headers: {
+              "Content-Type": "application/xml",
+              // Add any other headers if needed
+            },
+            // You may need to adjust the responseType based on your API response
+            responseType: "text",
+          }
+        );
+
+        // Parse the XML response
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(response.data, "application/xml");
+        setData(xmlDoc);
+        console.log("the api data ", xmlDoc);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  console.log(data);
+  console.log(error);
+  console.log(loading);
+
   const filtered_slug_data = test_info.test_data.filter(
     (p) => p.Department_Name.toLowerCase() === slug
   );
+  // const { apiData } = useData();
+
   return (
     <>
       <section className="position-relative">

@@ -1,100 +1,105 @@
 "use client";
 
+import { useState } from "react";
+import Image from "next/image";
 import React from "react";
 import Slider from "react-slick";
+import { BsYoutube } from "react-icons/bs";
 
 export const Videos = (props) => {
+  const [selectedVideoIndex, setSelectedVideoIndex] = useState(null);
+  const [videoLoading, setVideoLoading] = useState(false);
+
+  const handleVideoClick = (index) => {
+    setSelectedVideoIndex(index);
+    setVideoLoading(true);
+  };
   var settings = {
     dots: false,
     infinite: false,
     speed: 1000,
-    slidesToShow: 1,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplaySpeed: 5000,
-    autoplay: true,
+    autoplay: false,
   };
+
+  const data = [
+    {
+      thumbnail: "/video_tumbnail_01.jpg",
+      videoUrl:
+        "https://www.youtube.com/embed/1w815ClswG4?si=vTlsyfxCm9_lAIg7&amp;start=100&autoplay=1&controls=0&rel=1",
+      description: "We are Indians, not Chinese! | Assurepath Labs",
+    },
+    {
+      thumbnail: "/video_tumbnail_02.jpg",
+      videoUrl: "https://youtu.be/8jqzp-F4SNc?si=KCR8E98TnXeWWPcQ",
+      description: "Another dynamic description | Another Source",
+    },
+    {
+      thumbnail: "/video_tumbnail_03.jpg",
+      videoUrl:
+        "https://www.youtube.com/embed/1w815ClswG4?si=vTlsyfxCm9_lAIg7&amp;start=100&autoplay=1",
+      description: "Dynamic description for video 3 | Some Source",
+    },
+    {
+      thumbnail: "/video_tumbnail_04.jpg",
+      videoUrl:
+        "https://youtu.be/8jqzp-F4SNc?si=KCR8E98TnXeWWPcQ&autoplay=1&controls=0&rel=1",
+      description: "Description for video 4 | Another Source",
+    },
+  ];
+
   return (
     <>
-      <Slider {...settings} {...props}>
-        {/* <div>
-          <div className="vedio_cont">
-            <iframe
-              width="1200px"
-              height="100%"
-              src="https://www.youtube.com/embed/1w815ClswG4?si=vTlsyfxCm9_lAIg7&amp;start=100"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </div>
-        <div>
-          <div className="vedio_cont">
-            <iframe
-              width="100%"
-              height="600px"
-              src="https://www.youtube.com/embed/1w815ClswG4?si=vTlsyfxCm9_lAIg7&amp;start=100"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </div>
-        <div>
-          <div className="vedio_cont">
-            <iframe
-              width="100%"
-              height="600px"
-              src="https://www.youtube.com/embed/1w815ClswG4?si=vTlsyfxCm9_lAIg7&amp;start=100"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </div>
-        <div>
-          <div className="vedio_cont">
-            <iframe
-              width="100%"
-              height="600px"
-              src="https://www.youtube.com/embed/1w815ClswG4?si=vTlsyfxCm9_lAIg7&amp;start=100"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </div>
-        <div>
-          <div className="vedio_cont">
-            <iframe
-              width="100%"
-              height="600px"
-              src="https://www.youtube.com/embed/1w815ClswG4?si=vTlsyfxCm9_lAIg7&amp;start=100"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </div>
-        <div>
-          <div className="vedio_cont">
-            <iframe
-              width="100%"
-              height="600px"
-              src="https://www.youtube.com/embed/1w815ClswG4?si=vTlsyfxCm9_lAIg7&amp;start=100"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </div> */}
-      </Slider>
+      <div className="vedio_review_scn pt-3">
+        <Slider {...settings} {...props}>
+          {data.map((video, index) => (
+            <div key={index}>
+              <div className="vedio_cont">
+                {selectedVideoIndex === index ? (
+                  <div className=" iframe_scn">
+                    <div
+                      className={`search_loader vedio_revieew_loader ${
+                        videoLoading ? "open" : "close"
+                      }`}
+                    >
+                      <div className="loader"></div>
+                    </div>
+                    <iframe
+                      width="400"
+                      height="215"
+                      src={video.videoUrl}
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      onLoad={() => setVideoLoading(!videoLoading)}
+                    ></iframe>
+                  </div>
+                ) : (
+                  <div
+                    className="vedio_thumbnail"
+                    onClick={() => handleVideoClick(index)}
+                  >
+                    <Image
+                      src={video.thumbnail}
+                      alt="gradient file"
+                      width={400}
+                      objectFit="cover"
+                      height={215}
+                    />
+                    <i>
+                      <BsYoutube />
+                    </i>
+                  </div>
+                )}
+                <p>{video.description}</p>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
     </>
   );
 };

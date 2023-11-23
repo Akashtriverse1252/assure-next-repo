@@ -4,14 +4,14 @@ import { AccordionComponent } from "@/components/Accordian";
 import { ChooseAssure } from "@/components/ChooseAssure";
 import { Cart } from "@/components/svg-components/Cart";
 import { Rupees } from "@/components/svg-components/Rupees";
-import { useCart } from "@/context/context";
+import { useData } from "@/context/context";
 import { AddCard, Addchart, CardGiftcardOutlined } from "@mui/icons-material";
 import React from "react";
 import package_info from "@/Data/All_packages.json";
 import { useParams } from "next/navigation";
 
 export const page = () => {
-  const { cartState, cartDispatch } = useCart();
+  const { cartState, cartDispatch } = useData();
   const params = useParams();
 
   const slug = params.slug;

@@ -17,39 +17,45 @@ export const TestCard = ({
 }) => {
   return (
     <>
-      <div className={widthFull ? "col-lg-12 col-12" : "col-lg-3"}>
-        <div className="sliderbox">
-          <div className="packagename_test">
-            <h5>{Test_Name}</h5>
-          </div>
-          <div className="packageprice">
-            <div className="actualprice">
-              <Rupees /> <span>{Test_Amount}</span>
+      <div
+        className={
+          widthFull ? "col-lg-12 col-12 test_card" : "col-lg-3 test_card"
+        }
+      >
+        <Link href={`/${BaseDirectory || "test-detail"}/${Slug}`}>
+          <div className="sliderbox">
+            <div className="packagename_test">
+              <h5>{Test_Name}</h5>
             </div>
-            <div className="discountprice gradient text-white">
-              <Rupees /> <span>{Discount_Amount}</span>
+            <div className="packageprice">
+              <div className="actualprice">
+                <Rupees /> <span>{Test_Amount}</span>
+              </div>
+              <div className="discountprice gradient text-white">
+                <Rupees /> <span>{Discount_Amount}</span>
+              </div>
+            </div>
+            <div className="packagename">
+              <p className="m-0">
+                Included <strong className="text-black"></strong> Parameters
+              </p>
+            </div>
+            <div className="packagedetail">
+              <ul>
+                <li>{Test_Category} Related Test</li>
+                <li>Who is it for</li>
+                <li>Pre Test Requirement</li>
+              </ul>
+            </div>
+            <div className="packageprice">
+              <div className="textbtn">
+                <span href={`/${BaseDirectory || "test-detail"}/${Slug}`}>
+                  KNOW MORE +
+                </span>
+              </div>
             </div>
           </div>
-          <div className="packagename">
-            <p className="m-0">
-              Included <strong className="text-black"></strong> Parameters
-            </p>
-          </div>
-          <div className="packagedetail">
-            <ul>
-              <li>{Test_Category} Related Test</li>
-              <li>Who is it for</li>
-              <li>Pre Test Requirement</li>
-            </ul>
-          </div>
-          <div className="packageprice">
-            <div className="textbtn">
-              <Link href={`/${BaseDirectory || "test-detail"}/${Slug}`}>
-                KNOW MORE +
-              </Link>
-            </div>
-          </div>
-        </div>
+        </Link>
       </div>
     </>
   );

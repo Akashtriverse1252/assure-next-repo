@@ -15,47 +15,49 @@ export const PackagCard = ({
   Test_Description,
 }) => {
   return (
-    <div className="sliderbox">
-      <div className="packagename">
-        <span>
-          <Image
-            src="/svg/healthcompletewellness.svg"
-            alt="Health Check-up packages"
-            width={80}
-            height={80}
-          />
-        </span>
-      </div>
-      <div className="packagename">
-        <h4>
-          <strong className="text-black">{Test_Name}</strong>
-          {Test_for}
-        </h4>
-        <p className="m-0">
-          Includes <strong className="text-black">{Number_test}</strong>{" "}
-          Parameters
-        </p>
-      </div>
-      <div className="packagedetail">
-        <ul>
-          {Test_info.slice(0, 3).map((test, testIndex) => (
-            <li key={testIndex}>{test.testName}</li>
-          ))}
-        </ul>
-      </div>
-      <div className="packageprice">
-        <div className="actualprice">
-          <Rupees />
-          <span>{Test_Amount}</span>
+    <div className="sliderbox package_card">
+      <Link href={`/packages/${Test_Slug}`}>
+        <div className="packagename">
+          <span>
+            <Image
+              src="/svg/healthcompletewellness.svg"
+              alt="Health Check-up packages"
+              width={80}
+              height={80}
+            />
+          </span>
         </div>
-        <div className="discountprice gradient  text-white">
-          <Rupees />
-          <span>{Discount_Amount}</span>
+        <div className="packagename">
+          <h4>
+            <strong className="text-black">{Test_Name}</strong>
+            {Test_for}
+          </h4>
+          <p className="m-0">
+            Includes <strong className="text-black">{Number_test}</strong>{" "}
+            Parameters
+          </p>
         </div>
-        <div className="textbtn">
-          <Link href={`/packages/${Test_Slug}`}>KNOW MORE +</Link>
+        <div className="packagedetail">
+          <ul>
+            {Test_info.slice(0, 3).map((test, testIndex) => (
+              <li key={testIndex}>{test.testName}</li>
+            ))}
+          </ul>
         </div>
-      </div>
+        <div className="packageprice">
+          <div className="actualprice">
+            <Rupees />
+            <span>{Test_Amount}</span>
+          </div>
+          <div className="discountprice gradient  text-white">
+            <Rupees />
+            <span>{Discount_Amount}</span>
+          </div>
+          <div className="textbtn">
+            <span  href={`/packages/${Test_Slug}`}>KNOW MORE +</span >
+          </div>
+        </div>
+      </Link>
     </div>
   );
 };

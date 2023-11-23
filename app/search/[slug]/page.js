@@ -17,7 +17,6 @@ const SearchBar = ({ params: { slug } }) => {
               </div>
               <div className="col-12 float-start all-test">
                 <Searchhpage slug={slug} />
-                {/* {slug} */}
               </div>
             </div>
           </div>

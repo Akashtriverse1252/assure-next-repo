@@ -145,7 +145,7 @@ ul {
 }
 
 .grey-background {
-  background-color: #fbfcfe;
+  background-color: rgb(245, 254, 255);
 }
 
 .homecollection h4 {
@@ -493,6 +493,7 @@ section,
   background: #ff0505;
   left: 0;
   top: 50%;
+  transform: translateY(-50%);
 
 }
 
@@ -2195,6 +2196,7 @@ div#bookAppointmentForm .width50:first-chlid {
   border-radius: 20px;
   overflow: hidden;
 }
+
 .footer_tabs ul {
   margin: 0;
   padding: 0;

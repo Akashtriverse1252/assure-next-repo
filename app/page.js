@@ -144,7 +144,7 @@ export default function Home() {
               </div>
               <div className="col-lg-10 m-auto col-12 float-start">
                 <div className="row justify-content-center">
-                  <div className="col-lg-3 col-xs-6 col-12">
+                  <div className="col-lg-3 col-md-6 col-6">
                     <div className="circleicons float-start col-12 text-center grid-center">
                       <span className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick">
                         {" "}
@@ -153,7 +153,7 @@ export default function Home() {
                       <p>24x7</p>
                     </div>
                   </div>
-                  <div className="col-lg-3 col-xs-6 col-12">
+                  <div className="col-lg-3 col-xs-6 col-6">
                     <div className="circleicons float-start col-12 text-center grid-center">
                       <span className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick">
                         {" "}
@@ -162,7 +162,7 @@ export default function Home() {
                       <p>Same Day Report</p>
                     </div>
                   </div>
-                  <div className="col-lg-3 col-xs-6 col-12">
+                  <div className="col-lg-3 col-xs-6 col-6">
                     <div className="circleicons float-start col-12 text-center grid-center">
                       <span className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick">
                         {" "}
@@ -171,7 +171,7 @@ export default function Home() {
                       <p>Founded by Doctors</p>
                     </div>
                   </div>
-                  <div className="col-lg-3 col-xs-6 col-12">
+                  <div className="col-lg-3 col-xs-6 col-6">
                     <div className="circleicons float-start col-12 text-center grid-center">
                       <span className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick">
                         {" "}
@@ -180,7 +180,7 @@ export default function Home() {
                       <p>Advanced Technology</p>
                     </div>
                   </div>
-                  <div className="col-lg-3 col-xs-6 col-12">
+                  <div className="col-lg-3 col-xs-6 col-6">
                     <div className="circleicons float-start col-12 text-center grid-center">
                       <span className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick">
                         {" "}
@@ -189,7 +189,7 @@ export default function Home() {
                       <p>High on Safety and Hygeine</p>
                     </div>
                   </div>
-                  <div className="col-lg-3 col-xs-6 col-12">
+                  <div className="col-lg-3 col-xs-6 col-6">
                     <div className="circleicons float-start col-12 text-center grid-center">
                       <span className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick">
                         {" "}
@@ -198,7 +198,7 @@ export default function Home() {
                       <p>500+ Test</p>
                     </div>
                   </div>
-                  <div className="col-lg-3 col-xs-6 col-12">
+                  <div className="col-lg-3 col-xs-6 col-6">
                     <div className="circleicons float-start col-12 text-center grid-center">
                       <span className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick">
                         {" "}

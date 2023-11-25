@@ -138,11 +138,11 @@ export const Footer = () => {
                     {selectedTab === 1 ? (
                       <div className="footer_tabs">
                         <ul className="flex-center">
-                          <li >
-                          {data.test_data.map((test, index) => (
+                          <li>
+                            {data.test_data.map((test, index) => (
                               <a href=""> {test.Test_Name}</a>
-                              ))}
-                              </li>
+                            ))}
+                          </li>
                         </ul>
                       </div>
                     ) : null}
@@ -150,11 +150,11 @@ export const Footer = () => {
                       <div className="footer_tabs">
                         <div className="footer_tabs">
                           <ul className="flex-center">
-                            <li >
-                            {data.test_data.map((test, index) => (
+                            <li>
+                              {data.test_data.map((test, index) => (
                                 <a href=""> {test.Test_Description}</a>
-                                ))}
-                                </li>
+                              ))}
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -162,11 +162,11 @@ export const Footer = () => {
                   </div>
                 </div>
               </div>
-              <div className="row">
+              <div className="row  gap-4 sm-gap-1">
                 <div className="col-lg-4 col-xs-6 col-sm-6 col-12">
                   <div className="contact">
                     <a href="tel:0181-4667555">
-                      <span className="flex-center align-items-start gap-4">
+                      <span className="flex-center align-items-start gap-2 sm-gap-4">
                         <strong>T</strong>0181-4667555
                       </span>
                     </a>
@@ -175,7 +175,7 @@ export const Footer = () => {
                 <div className="col-lg-4 col-xs-6 col-sm-6 col-12">
                   <div className="contact">
                     <a href="mailto:assurepathlabs@gmail.com">
-                      <span className="flex-center align-items-start gap-4">
+                      <span className="flex-center align-items-start gap-2 sm-gap-4">
                         <strong>E</strong>assurepathlabs@gmail.com
                       </span>
                     </a>
@@ -183,14 +183,14 @@ export const Footer = () => {
                 </div>
                 <div className="col-lg-4 col-xs-6 col-sm-6 col-12">
                   <div className="contact">
-                    <span className="flex-center align-items-start gap-4">
+                    <span className="flex-center align-items-start gap-2 sm-gap-4">
                       <strong>A</strong>3, Waryam Nagar, <br />
                       Vasant Vihar Road, <br />
                       Jalandhar
                     </span>
                   </div>
                 </div>
-                <div className="col-12 flex-center mt-5 mb-5">
+                <div className="col-12 flex-center mt-4 mb-3 mt-sm-5">
                   <a className="button button--aylen button--round-l button--text-thick text-uppercase gradient col-lg-3 col-12">
                     BOOK HOME COLLECTION
                   </a>
@@ -203,12 +203,12 @@ export const Footer = () => {
           <div className="container">
             <div className="web-container">
               <div className="row">
-                <div className="col-lg-6 col-sm-6 col-xs-6 col-12">
+                <div className="col-lg-6 col-sm-6  col-8">
                   <p className="m-0">
                     &copy; {currentYear} All Rights Reserved.{" "}
                   </p>
                 </div>
-                <div className="col-lg-6 col-sm-6 col-xs-6 col-12 text-end">
+                <div className="col-lg-6 col-sm-6  col-4 text-end">
                   <p className="m-0">
                     <a href="https://triverseadvertising.com/" target="_blank">
                       site : triverse

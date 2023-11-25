@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import mappingdata from "../Data/Maping.json";
-import testData from "../Data/Test_detail.json";
+import testData from "../Data/test_data.json";
 import { TestCard } from "@/components/TestCard";
 
 const SearchhPage = ({ slug }) => {
@@ -13,6 +13,7 @@ const SearchhPage = ({ slug }) => {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
+      
 
       try {
         const matchedItem = mappingdata.mappingdata.find(

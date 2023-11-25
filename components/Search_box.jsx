@@ -16,13 +16,14 @@ const SearchBar = () => {
   useEffect(() => {
     if (query.trim() !== "") {
       fetch(
-        `https://www.assurepathlabs.com/api/new-api/keywords_api12.php?searchWord=${query}`
+        `https://www.assurepathlabs.com/api/new-api/keyword_json_api.php?searchWord=${query}`
       )
         .then((response) => response.json())
         .then((data) => {
           if (data.message === "No keywords found for the given search word") {
             // Handle the case where no keywords are found
             setSuggestions([]);
+            console.log(suggestions);
           } else {
             // Update suggestions if keywords are found
             setSuggestions(data.keywords);
@@ -39,6 +40,12 @@ const SearchBar = () => {
   const handleInputChange = (query) => {
     setQuery(query);
   };
+  const nameToSlug = (name) => {
+    return name
+      .toLowerCase()
+      .replace(/ /g, "-")
+      .replace(/[^\w-]+/g, "");
+  };
 
   const handleSuggestionSelect = (selected) => {
     if (selected === undefined || selected === null) {
@@ -47,7 +54,8 @@ const SearchBar = () => {
       setSelected(selected);
       console.log("this is the selected data", selected);
       if (selected.length !== 0) {
-        router.push(`/search/${encodeURIComponent(selected[0])}`);
+        const slug = nameToSlug(selected[0]);
+        router.push(`/search/${encodeURIComponent(slug)}`);
       }
     }
   };
@@ -65,6 +73,7 @@ const SearchBar = () => {
         clearButton={true}
         maxResults={10}
         highlightOnlyResult={true}
+        autoFocus
       />
     </>
   );

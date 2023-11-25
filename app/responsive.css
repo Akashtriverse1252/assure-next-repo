@@ -1,0 +1,232 @@
+@media (max-width:760px) {
+    .menslide {
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        top: -100%;
+        background-color: #dae8ec;
+    }
+
+    .fixed .menslide.active,
+    .menslide.active {
+        top: 0px;
+        padding-top: 10vh;
+    }
+
+    .logo {
+        position: relative;
+        z-index: 10;
+    }
+
+    .hemburgur {
+        z-index: 10;
+    }
+
+    .footerrow {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .headerstrip {
+        display: none;
+    }
+}
+
+@media (max-width:580px) {
+
+    .navbar_item {
+        display: none !important;
+    }
+
+    .title h3 {
+        font-size: 25px;
+        line-height: 1.7;
+        text-wrap: balance;
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .vedio_review .slick-prev:before,
+    .vedio_review .slick-next:before,
+    .googlereviewslider .slick-prev:before,
+    .googlereviewslider .slick-next:before {
+        height: 30px;
+    }
+
+    .vedio_review .slick-next,
+    .vedio_review .slick-prev {
+        top: -35px;
+    }
+
+    .gradient-layer {
+        display: none;
+    }
+
+    ._acc_header h5 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .contact span {
+        display: grid;
+        justify-content: start;
+    }
+
+    ._icon svg {
+        height: 30px;
+    }
+
+    .enquireform .MuiInputBase-root,
+    .h_form ._icon,
+    .h_form .MuiInputBase-root.formbtn,
+    .enquireform .form-control {
+        max-height: 50px;
+    }
+
+    .footergray {
+        padding: 50px 0 30px 0;
+    }
+
+    .condition {
+        scale: 0.9;
+    }
+
+    .vedio_review .slick-prev {
+        right: 21%;
+        left: inherit;
+    }
+
+    header {
+        margin-bottom: 0px;
+    }
+
+    .logo {
+        width: 125px;
+    }
+
+    .fixed .logo {
+        width: 105px;
+    }
+
+    .hemburgur span:nth-child(3) {
+        top: 24px;
+    }
+
+    .hemburgur span:nth-child(2) {
+        top: 12px;
+    }
+
+    .swiperslider img {
+        height: auto;
+        width: 100%;
+        object-fit: contain;
+    }
+
+
+    .web-container {
+        width: 98%;
+    }
+
+    .mobile_nav_search svg {
+        font-size: 28px;
+        color: #7e7e7e;
+    }
+
+    .mobile_nav_search .cross,
+    .mobile_search_cnt ._icon svg,
+    .hemburgur {
+        width: 25px;
+        height: 30px;
+    }
+
+    .conditionshape span {
+        TOP: -30PX;
+        left: 0;
+    }
+
+    .sliderbox {
+        width: 95%;
+        padding: 20px 10px;
+    }
+
+    .googlereviewslider {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .arrows .slick-next,
+    .arrows .slick-prev {
+        width: 50px;
+        height: 50px;
+        z-index: 1;
+    }
+
+
+    .mobile_search_cnt {
+        height: 100vh;
+        width: 100vw;
+        z-index: 11;
+        padding: 10px 10px;
+        top: -100vh;
+        transition: 0.4s all;
+    }
+
+    .mobile_search_cnt .form-control {
+        border: none;
+        border-bottom: 1px solid #e5e5e5;
+        border-radius: 0;
+        padding-left: 35px;
+        padding-right: 10px;
+        height: 50px;
+    }
+
+    .mobile_nav_search .cross {
+        margin-top: 5px;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        z-index: 10;
+    }
+
+    .mobile_searchbar,
+    .mobile_search_cnt .header_search {
+        width: 100%;
+        margin-left: auto;
+    }
+
+    .mobile_search_cnt .header_search ._icon {
+        color: black;
+        background: none;
+        width: max-content;
+    }
+
+    .mobile_nav_search ._icon {
+        border-radius: 0 8px 8px 0;
+    }
+
+    .mobile_searchbar .dropdowntab {
+        display: none;
+    }
+
+    .mobile_searchbar .dropdowntab.dropdowntab_for_header {
+        box-shadow: none;
+        display: block;
+        position: relative;
+    }
+
+    .mobile_searchbar .dropdowntab .listdata {
+        max-height: 100%;
+    }
+
+    #organs .slick-prev {
+        left: 0px !important;
+    }
+
+    #organs .slick-next {
+        right: 0px !important;
+    }
+
+    .slick-slider .slick-dots li button:before {
+        color: #fff;
+    }
+}

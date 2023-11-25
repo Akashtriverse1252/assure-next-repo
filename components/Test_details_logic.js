@@ -4,14 +4,15 @@ import React from "react";
 import { Rupees } from "./svg-components/Rupees";
 import { Cart } from "./svg-components/Cart";
 import { useData } from "@/context/context";
+import data from "../Data/test_data.json";
 
-export const Test_details_logic = ({ Slug, data }) => {
+export const Test_details_logic = ({ Slug }) => {
   const { cartState, cartDispatch } = useData();
   // const params = useParams();
-
   const project = data.test_data.find((p) => p.Slug === Slug);
 
-  // console.log(project);
+  console.log(project);
+
   const _discount =
     ((project.Test_Amount - project.Discount_Amount) / project.Test_Amount) *
     100;
@@ -131,6 +132,20 @@ export const Test_details_logic = ({ Slug, data }) => {
               <div className="detaildescrp col-lg-9 col-12 ">
                 <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
                   <p>{project.Who_is_it_for}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="detailrow">
+            <div className="row">
+              <div className="detailtitle col-lg-3 col-12">
+                <p>
+                  <strong>Turn around time</strong>
+                </p>
+              </div>
+              <div className="detaildescrp col-lg-9 col-12 ">
+                <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
+                  <p>{project.Turn_around_time}</p>
                 </div>
               </div>
             </div>

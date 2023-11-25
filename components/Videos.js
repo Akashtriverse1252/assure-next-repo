@@ -14,14 +14,33 @@ export const Videos = (props) => {
     setSelectedVideoIndex(index);
     setVideoLoading(true);
   };
-  var settings = {
+  const settings = {
     dots: false,
     infinite: false,
-    speed: 1000,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    speed: 900,
+    pauseOnHover: true,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplaySpeed: 5000,
-    autoplay: false,
+    arrows: true,
+    pauseOnHover: true, // Enable pause on hover
+    responsive: [
+      {
+        breakpoint: 1200, // Small devices
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 800, // Extra small devices
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   const data = [
@@ -53,7 +72,7 @@ export const Videos = (props) => {
   return (
     <>
       <div className="vedio_review_scn pt-3">
-        <Slider {...settings} {...props}>
+        <Slider {...settings} {...props} adaptiveHeight={true}>
           {data.map((video, index) => (
             <div key={index}>
               <div className="vedio_cont">

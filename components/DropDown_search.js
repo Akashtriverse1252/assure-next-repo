@@ -8,21 +8,14 @@ import data from "../Data/Keywords.json";
 import Search_box from "../components/Search_box";
 import { LuSearch } from "react-icons/lu";
 import { PiMagnifyingGlassLight } from "react-icons/pi";
-
-const SearchBar = () => {
+export const DropDown_search = () => {
   const [value, setValue] = useState(0);
   const [searchText, setSearchText] = useState(""); // State to store the text entered in the TextField
   const [filteredOptions, setFilteredOptions] = useState([]); // State to store the filtered options
-  const [isDropdownVisible, setDropdownVisible] = useState(false); // State to control dropdown visibility
-  const textFieldRef = useRef(null);
   const dropdownRef = useRef(null);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
-  };
-
-  const handleInputChange = (event) => {
-    setSearchText(event.target.value);
   };
 
   const filterOptions = () => {
@@ -41,14 +34,9 @@ const SearchBar = () => {
     }
   };
 
-  const handleTextFieldClick = () => {
-    setDropdownVisible(true); // Show the dropdown when the TextField is clicked
-  };
-
   const handleBodyClick = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
       // If the click is outside of the dropdown, hide it
-      setDropdownVisible(false);
     }
   };
 
@@ -82,64 +70,29 @@ const SearchBar = () => {
     { label: "Senior Citizen Package" },
     { label: "Basic Allergy Package" },
   ];
-
   return (
-    <div className="col-12 pull-left position-relative">
-      <div
-        className="header_search position-relative"
-        onClick={() => {
-          setDropdownVisible(true);
-        }}
-      >
-        <Search_box />
-        <div className="_icon">
-          <SearchIcon className="d-none d-sm-block" />
-          <PiMagnifyingGlassLight className="d-block d-sm-none" />
-        </div>
+    <div className="dropdowntab dropdowntab_for_header  pb-2 col-12" ref={dropdownRef}>
+      <Box className="mb-3 grey-background border-bottom col-12">
+        <Tabs value={value} onChange={handleChange} centered>
+          <Tab label="Test" />
+          <Tab label="Packages" />
+        </Tabs>
+      </Box>
+      <div className="listdata col-12 float-start">
+        {filteredOptions.length > 0 ? (
+          <ul>
+            {filteredOptions.map((option, index) => (
+              <li key={index}>{option.label}</li>
+            ))}
+          </ul>
+        ) : (
+          <ul>
+            <li className="border-0 text-center opacity-50 text-uppercase">
+              No matching results found.
+            </li>
+          </ul>
+        )}
       </div>
-      {/* <TextField
-        label="Find your package/test/scan"
-        variant="outlined"
-        className={styles.inputmodified}
-        fullWidth
-        onChange={handleInputChange}
-        ref={textFieldRef}
-        onClick={handleTextFieldClick}
-        InputProps={{
-          endAdornment: (
-            <div className="searchbutton">
-              <SearchIcon color="action" />
-            </div>
-          ),
-        }}
-      /> */}
-      {isDropdownVisible && (
-        <div className="dropdowntab pb-2 col-12" ref={dropdownRef}>
-          <Box className="mb-3 grey-background border-bottom col-12">
-            <Tabs value={value} onChange={handleChange} centered>
-              <Tab label="Test" />
-              <Tab label="Packages" />
-            </Tabs>
-          </Box>
-          <div className="listdata col-12 float-start">
-            {filteredOptions.length > 0 ? (
-              <ul>
-                {filteredOptions.map((option, index) => (
-                  <li key={index}>{option.label}</li>
-                ))}
-              </ul>
-            ) : (
-              <ul>
-                <li className="border-0 text-center opacity-50 text-uppercase">
-                  No matching results found.
-                </li>
-              </ul>
-            )}
-          </div>
-        </div>
-      )}
     </div>
   );
 };
-
-export default SearchBar;

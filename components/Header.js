@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Aos from "aos";
+import SearchIcon from "@mui/icons-material/Search";
 import "aos/dist/aos.css";
 import { Logo } from "./svg-components/Logo";
 import Link from "next/link";
@@ -8,15 +9,20 @@ import { Attachement } from "./svg-components/Attachement";
 import { Booktest } from "./svg-components/Booktest";
 import { Report } from "./svg-components/Report";
 import SearchBar from "./SearchBar";
+import MobileSearchBar from "./MobileSearchBar";
 import { IndividualTest } from "./svg-components/IndividualTest";
 import { MyCart } from "./MyCart";
 import { UploadPrescription } from "./UploadPrescription";
 import Nabh from "./svg-components/Nabh";
 import { usePathname } from "next/navigation";
-import { LuUser, LuSearch } from "react-icons/lu";
+import { LuUser, LuSearch, LuX } from "react-icons/lu";
+import { PiMagnifyingGlassLight } from "react-icons/pi";
+import { PiArrowLeftThin } from "react-icons/pi";
+import { DropDown_search } from "./DropDown_search";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setSearchOpen] = useState(false);
 
   const pathname = usePathname();
   const showSearchBar = pathname == "/";
@@ -48,28 +54,32 @@ export const Header = () => {
       <div className={header ? "header fixed" : "header"}>
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-2">
+            <div className="col-lg-2 col-4">
               <div className="logo">
                 <Link href="/">
                   <Logo />
                 </Link>
               </div>
             </div>
-            <div className="col-lg-10">
-              <div className="d-flex align-items-center justify-content-end gap-4">
+            <div className="col-lg-10 col-8">
+              <div className="d-flex align-items-center justify-content-end gap-md-4 gap-0">
                 <div
                   className={
                     showSearchBar
-                      ? "hidden_header headersearchbox mx-2 enquireform"
+                      ? "hidden_header headersearchbox mx-md-2 enquireform"
                       : "headersearchbox mx-2 enquireform"
                   }
                 >
                   {/* {!showSearchBar ? <SearchBar /> : null} */}
-                  <SearchBar />
-                  
+                  <div className="desktop_nav_search d-none d-sm-block">
+                    <SearchBar />
+                  </div>
+                </div>
+                <div className="mobile_nav_search position-relative d-block d-sm-none">
+                  <MobileSearchBar />
                 </div>
                 <div className="navbar p-0 align-items-end gap-4">
-                  <div className="d-flex justify-content-center align-items-center gap-4">
+                  <div className="d-none d-sm-flex justify-content-center align-items-center gap-4  navbar_item">
                     <div className="leftmenu float-start gap-3 d-flex">
                       {/* <span className="button button--aylen button--round-l button--text-thick ">
                         <Link href="/individual-test">

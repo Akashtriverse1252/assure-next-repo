@@ -1,7 +1,7 @@
 import React from "react";
 import { Dots } from "@/components/svg-components/Dots";
 import { Line } from "@/components/svg-components/Line";
-import data from "@/Data/Test_detail.json";
+import data from "@/Data/test_data.json";
 import { TestCard } from "@/components/TestCard";
 
 export const page = () => {
@@ -29,6 +29,7 @@ export const page = () => {
                       Test_Description={test.Test_Description}
                       Who_is_it_for={test.Who_is_it_for}
                       Pre_test_information={test.Pre_test_information}
+                      Turn_around_time={test.Turn_around_time}
                       BaseDirectory={"individual-test"}
                     />
                   ))}

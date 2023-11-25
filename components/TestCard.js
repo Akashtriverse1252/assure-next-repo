@@ -12,6 +12,7 @@ export const TestCard = ({
   Test_Description,
   Who_is_it_for,
   Pre_test_information,
+  Turn_around_time,
   widthFull,
   BaseDirectory,
 }) => {
@@ -42,9 +43,9 @@ export const TestCard = ({
             </div>
             <div className="packagedetail">
               <ul>
-                <li>{Test_Category} Related Test</li>
-                <li>Who is it for</li>
-                <li>Pre Test Requirement</li>
+                {Test_Category && <li>{Test_Category} Related Test</li>}
+                {Turn_around_time && <li>{Turn_around_time}</li>}
+                {Pre_test_information && <li>{Pre_test_information}</li>}
               </ul>
             </div>
             <div className="packageprice">

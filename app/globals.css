@@ -618,8 +618,10 @@ section,
 }
 
 .packagedetail {
-  height: 125px;
+  height: 150px;
   display: inline-block;
+  overflow-y: scroll;
+  width: 100%;
 }
 
 .textbtn {
@@ -823,6 +825,7 @@ footer {
 .arrows .slick-prev {
   width: 80px;
   height: 80px;
+  z-index: 1;
 }
 
 .arrows .slick-next:before {
@@ -1271,11 +1274,17 @@ header {
   background-color: #F5F5F5;
 }
 
+.packagedetail::-webkit-scrollbar {
+  background-color: #FFF;
+  width: 5px;
+}
+
 .listdata::-webkit-scrollbar {
   width: 7px;
   background-color: #F5F5F5;
 }
 
+.packagedetail::-webkit-scrollbar-thumb,
 .listdata::-webkit-scrollbar-thumb {
   background-color: #0d0d0d;
   border: 1px solid #555555;
@@ -2185,4 +2194,10 @@ div#bookAppointmentForm .width50:first-chlid {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
+}
+.footer_tabs ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
 }

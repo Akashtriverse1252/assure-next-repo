@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import localFont from "next/font/local";
 import { Footer } from "@/components/Footer";
 import { GlobalDataProvider } from "@/context/context";
+import  Cart  from "../components/Cart.js";
 const AvertaStd = localFont({
   src: "./font/AvertaStd-Regular.woff2",
   display: "swap",
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
       <GlobalDataProvider>
         <body className={AvertaStd.className}>
           <Header />
+          <Cart />
           {children}
 
           <Footer />

@@ -371,4 +371,17 @@
     .packagename_test h5 {
         height: auto;
     }
+
+    ._cart {
+        width: 100%;
+        right: 0 !important;
+        top: -110% !important;
+    }
+
+    .__visible._cart {
+        top: -0% !important;
+
+    }
+
+
 }

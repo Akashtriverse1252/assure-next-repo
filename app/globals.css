@@ -1537,7 +1537,7 @@ header {
 
 }
 
-.__visible ._cart {
+.__visible._cart {
   right: 0 !important;
   transition: 0.8s all;
   animation-delay: 0.8s;

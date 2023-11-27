@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Cart from "./Cart";
 import { useData } from "@/context/context";
@@ -19,13 +21,6 @@ export const MyCart = () => {
 
   return (
     <>
-      <div
-        id="cart_opener"
-        className={cartState.cartVisible ? "__visible" : null}
-      >
-        <Cart />
-      </div>
-
       <div className="position-relative">
         <span
           className="button button--aylen button--round-l button--text-thick my-cart"

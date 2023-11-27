@@ -19,14 +19,15 @@ import { LuUser, LuSearch, LuX } from "react-icons/lu";
 import { PiMagnifyingGlassLight } from "react-icons/pi";
 import { PiArrowLeftThin } from "react-icons/pi";
 import { DropDown_search } from "./DropDown_search";
+import { PiShoppingCartSimple } from "react-icons/pi";
+import { useData } from "@/context/context";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSearchOpen, setSearchOpen] = useState(false);
+  const { cartState, cartDispatch } = useData();
 
   const pathname = usePathname();
   const showSearchBar = pathname == "/";
-
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -50,6 +51,7 @@ export const Header = () => {
       setNavbar(false);
     }
   };
+  console.log("ekjh ietgjh", cartState.products);
   return (
     <header>
       <div className={header ? "header fixed" : "header"}>
@@ -76,8 +78,11 @@ export const Header = () => {
                     <SearchBar />
                   </div>
                 </div>
-                <div className="mobile_nav_search position-relative d-block d-sm-none">
+                <div className="mobile_nav_search position-relative d-flex gap-3 d-sm-none ">
                   <MobileSearchBar />
+                  {cartState.products.lenght == null && (
+                    <PiShoppingCartSimple onClick={(()=>(cartDispatch({ type: "TOGGLE_CART" })))} />
+                  )}
                 </div>
                 <div className="navbar p-0 align-items-end gap-4">
                   <div className="d-none d-sm-flex justify-content-center align-items-center gap-4  navbar_item">

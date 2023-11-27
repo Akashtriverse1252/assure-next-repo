@@ -5,7 +5,7 @@ import React, { Fragment, useState } from "react";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { LuX } from "react-icons/lu";
 
-export default function page() {
+export default function Cart() {
   const { cartState, cartDispatch } = useData(); // Access cart state and dispatch from CartContext
 
   // Function to convert string numbers to actual numbers
@@ -46,16 +46,17 @@ export default function page() {
     cartDispatch({ type: "REMOVE", productId: product.id });
   };
   const isOpen = () => {
-    const element = document.getElementById("cart_opener");
-    if (element) {
-      element.classList.toggle("__visible");
-    }
+    cartDispatch({ type: "TOGGLE_CART" });
   };
 
   return (
     <Fragment>
       <>
-        <div className="_cart fixed-top inset-0 overflow-hidden">
+        <div
+          className={`_cart fixed-top inset-0 overflow-hidden ${
+            cartState.cartVisible ? "__visible " : null
+          }`}
+        >
           <div className="h-100 absolute-top inset-0 overflow-hidden _shadow">
             <div className="h-100 ">
               <div className="d-flex flex-column h-100 bg-white shadow-xl">

@@ -1,11 +1,9 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-// import { TextField } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { Typeahead } from "react-bootstrap-typeahead";
-// import "react-bootstrap-typeahead/css/Typeahead.css";
-import SearchIcon from "@mui/icons-material/Search";
-import { TextField, InputAdornment, IconButton } from "@mui/material";
+import keywordData from "../Data/test_data.json";
+
 const SearchBar = () => {
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState("");
@@ -66,7 +64,7 @@ const SearchBar = () => {
         options={suggestions}
         onInputChange={handleInputChange}
         onChange={handleSuggestionSelect}
-        placeholder="Find Your Package/Test/Scan"
+        placeholder="Search Your Package/Test/Scan"
         selected={selected}
         minLength={2}
         clearButton={true}

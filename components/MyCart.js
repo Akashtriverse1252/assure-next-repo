@@ -13,18 +13,25 @@ export const MyCart = () => {
     totalQuantity += product.quantity;
   }
   // console.log(cartState.products);
+  const handleToggleCart = () => {
+    cartDispatch({ type: "TOGGLE_CART" });
+  };
 
   return (
     <>
-      {isCartOpen ? <Cart /> : null}
+      <div
+        id="cart_opener"
+        className={cartState.cartVisible ? "__visible" : null}
+      >
+        <Cart />
+      </div>
+
       <div className="position-relative">
         <span
           className="button button--aylen button--round-l button--text-thick my-cart"
-          onClick={() => {
-            setIsCartOpen(!isCartOpen);
-          }}
+          onClick={handleToggleCart}
         >
-          <LuShoppingCart className=" "/>
+          <LuShoppingCart className=" " />
           Cart
         </span>
         {!totalQuantity == 0 ? (

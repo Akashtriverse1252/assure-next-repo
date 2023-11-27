@@ -15,16 +15,16 @@ export const page = () => {
   const params = useParams();
 
   const slug = params.slug;
-  const project = package_info.find((p) => p.Slug === slug);
-  // console.log("this is the slug", slug);
-
-  // console.log(project);
-  const _discount = (
-    ((project.ActualPrice - project.DiscountPrice) / project.ActualPrice) *
-    100
-  ).toFixed();
+  const project = package_info.find((p) => p.Slug === slug) || null;
+  const _discount = project?.Test_Amount
+    ? (
+        ((project.ActualPrice - project.DiscountPrice) / project.ActualPrice) *
+        100
+      ).toFixed()
+    : 0;
 
   const handleAddToCart = () => {
+    cartDispatch({ type: "TOGGLE_CART" });
     const product = {
       id: project.id,
       name: project.PackageName,
@@ -39,7 +39,7 @@ export const page = () => {
       // If the product exists, update its quantity
       cartDispatch({
         type: "INCREMENT",
-        productId: product.Slug,
+        productId: product.id,
       });
     } else {
       // If the product doesn't exist, add it to the cart
@@ -49,8 +49,7 @@ export const page = () => {
       });
     }
   };
-  const discount =
-    (project.DiscountPrice - project.ActualPrice) / project.ActualPrice / 100;
+
   return (
     <>
       <main className="d-flex flex-wrap float-start col-12">

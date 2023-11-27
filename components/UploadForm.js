@@ -21,7 +21,6 @@ const UploadForm = () => {
   const [fileSize, setFileSize] = useState("");
   const [fileFlag, setFileFlag] = useState(0);
   const [showCannotUploadMessage, setShowCannotUploadMessage] = useState(false);
-  console.log(showCannotUploadMessage);
 
   const handleFileInputChange = () => {
     setFileInputValue("");
@@ -39,7 +38,6 @@ const UploadForm = () => {
       setFileSize((selectedFile.size / 1024).toFixed(1) + " KB");
       setFileFlag(0);
       setIsFileUploaded(true);
-      console.log("now file is uploaded", isFileUploaded);
     } else {
       setFileName("");
       setFileSize("");

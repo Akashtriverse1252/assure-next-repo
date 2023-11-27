@@ -27,6 +27,7 @@ export const Header = () => {
   const pathname = usePathname();
   const showSearchBar = pathname == "/";
 
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };

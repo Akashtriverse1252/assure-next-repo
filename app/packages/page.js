@@ -30,6 +30,7 @@ export const page = () => {
                         Number_test={test.TestInfo ? test.TestInfo.length : 0}
                         Test_Slug={test.Slug}
                         BaseDirectory={"package"}
+                        
                       />
                   ))}
                 </div>

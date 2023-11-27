@@ -5,7 +5,7 @@
     "PackageName": "Assure Complete Wellness Package for Man",
     "ActualPrice": "7410",
     "DiscountPrice": "2500",
-    "id":1245,
+    "id": 1245,
     "TestInfo": [
       { "testName": "URIC ACID", "slug": "uric-acid", "count": 1 },
       { "testName": "BLOOD UREA", "slug": "blood-urea", "count": 1 },
@@ -38,8 +38,8 @@
       { "testName": "VITAMIN B12", "slug": "vitamin-b12", "count": 1 },
       { "testName": "VITAMIN D, 25 HYDROXY", "slug": "vitamin-d", "count": 1 },
       {
-        "testName": "COMPLETE BLOOD COUNT (CBC)",
-        "slug": "complete-blood-count",
+        "testName": "COMPLETE BLOOD COUNT ",
+        "slug": "complete-blood-count-cbc",
         "count": 1
       },
       { "testName": "URINE TEST ROUTINE", "slug": "urine-test", "count": 1 },
@@ -57,13 +57,17 @@
   },
   {
     "Slug": "assure-complete-wellness-package-for-woman",
-    "id":1246,
+    "id": 1246,
     "title": "Complete Wellness Package",
     "PackageName": "Assure Complete Wellness Package for Woman",
     "ActualPrice": "6670",
     "DiscountPrice": "2500",
     "TestInfo": [
-      { "testName": "COMPLETE BLOOD COUNT (CBC)", "slug": "cbc", "count": 1 },
+      {
+        "testName": "COMPLETE BLOOD COUNT ",
+        "slug": "complete-blood-count-cbc-cbc",
+        "count": 1
+      },
       {
         "testName": "GLUCOSE (FASTING)",
         "slug": "glucose-fasting",
@@ -106,8 +110,8 @@
     "DiscountPrice": "750",
     "TestInfo": [
       {
-        "testName": "COMPLETE BLOOD COUNT (CBC)",
-        "slug": "complete-blood-count",
+        "testName": "COMPLETE BLOOD COUNT ",
+        "slug": "complete-blood-count-cbc",
         "count": 1
       },
       {
@@ -152,8 +156,8 @@
     "DiscountPrice": "750",
     "TestInfo": [
       {
-        "testName": "COMPLETE BLOOD COUNT (CBC)",
-        "slug": "complete-blood-count",
+        "testName": "COMPLETE BLOOD COUNT ",
+        "slug": "complete-blood-count-cbc",
         "count": 1
       },
       {
@@ -214,8 +218,8 @@
       { "testName": "VITAMIN B12", "slug": "vitamin-b12", "count": 1 },
       { "testName": "VITAMIN D, 25 HYDROXY", "slug": "vitamin-d", "count": 1 },
       {
-        "testName": "COMPLETE BLOOD COUNT (CBC)",
-        "slug": "complete-blood-count",
+        "testName": "COMPLETE BLOOD COUNT ",
+        "slug": "complete-blood-count-cbc",
         "count": 1
       },
       { "testName": "URINE TEST ROUTINE", "slug": "urine-test", "count": 1 },
@@ -250,8 +254,8 @@
       { "testName": "VITAMIN B12", "slug": "vitamin-b12", "count": 1 },
       { "testName": "VITAMIN D, 25 HYDROXY", "slug": "vitamin-d", "count": 1 },
       {
-        "testName": "COMPLETE BLOOD COUNT (CBC)",
-        "slug": "complete-blood-count",
+        "testName": "COMPLETE BLOOD COUNT ",
+        "slug": "complete-blood-count-cbc",
         "count": 1
       },
       { "testName": "URINE TEST ROUTINE", "slug": "urine-test", "count": 1 },
@@ -275,8 +279,8 @@
     "DiscountPrice": "750",
     "TestInfo": [
       {
-        "testName": "COMPLETE BLOOD COUNT (CBC)",
-        "slug": "complete-blood-count",
+        "testName": "COMPLETE BLOOD COUNT ",
+        "slug": "complete-blood-count-cbc",
         "count": 1
       },
       {
@@ -337,8 +341,8 @@
       { "testName": "VITAMIN B12", "slug": "vitamin-b12", "count": 1 },
       { "testName": "VITAMIN D, 25 HYDROXY", "slug": "vitamin-d", "count": 1 },
       {
-        "testName": "COMPLETE BLOOD COUNT (CBC)",
-        "slug": "complete-blood-count",
+        "testName": "COMPLETE BLOOD COUNT ",
+        "slug": "complete-blood-count-cbc",
         "count": 1
       },
       { "testName": "URINE TEST ROUTINE", "slug": "urine-test", "count": 1 },
@@ -361,7 +365,11 @@
     "ActualPrice": "2400",
     "DiscountPrice": "950",
     "TestInfo": [
-      { "testName": "COMPLETE BLOOD COUNT (CBC)", "slug": "cbc", "count": 1 },
+      {
+        "testName": "COMPLETE BLOOD COUNT ",
+        "slug": "complete-blood-count-cbc-cbc",
+        "count": 1
+      },
       {
         "testName": "GLUCOSE (FASTING)",
         "slug": "glucose-fasting",
@@ -403,8 +411,8 @@
     "DiscountPrice": "1200",
     "TestInfo": [
       {
-        "testName": "COMPLETE BLOOD COUNT (complete-blood-count)",
-        "slug": "complete-blood-count",
+        "testName": "COMPLETE BLOOD COUNT",
+        "slug": "complete-blood-count-cbc",
         "count": 1
       },
       {
@@ -475,8 +483,8 @@
       { "testName": "VITAMIN B12", "slug": "vitamin-b12", "count": 1 },
       { "testName": "VITAMIN D, 25 HYDROXY", "slug": "vitamin-d", "count": 1 },
       {
-        "testName": "COMPLETE BLOOD COUNT (CBC)",
-        "slug": "complete-blood-count",
+        "testName": "COMPLETE BLOOD COUNT ",
+        "slug": "complete-blood-count-cbc",
         "count": 1
       },
       { "testName": "URINE TEST ROUTINE", "slug": "urine-test", "count": 1 },
@@ -500,8 +508,8 @@
     "DiscountPrice": "1950",
     "TestInfo": [
       {
-        "testName": "COMPLETE BLOOD COUNT (CBC)",
-        "slug": "complete-blood-count",
+        "testName": "COMPLETE BLOOD COUNT ",
+        "slug": "complete-blood-count-cbc",
         "count": 1
       },
       { "testName": "LIPID PROFILE", "slug": "lipid-profile", "count": 1 },
@@ -547,8 +555,8 @@
     "DiscountPrice": "1950",
     "TestInfo": [
       {
-        "testName": "COMPLETE BLOOD COUNT (CBC)",
-        "slug": "complete-blood-count",
+        "testName": "COMPLETE BLOOD COUNT ",
+        "slug": "complete-blood-count-cbc",
         "count": 1
       },
       { "testName": "LIPID PROFILE", "slug": "lipid-profile", "count": 1 },
@@ -595,8 +603,8 @@
     "DiscountPrice": "750",
     "TestInfo": [
       {
-        "testName": "COMPLETE BLOOD COUNT (CBC)",
-        "slug": "complete-blood-count",
+        "testName": "COMPLETE BLOOD COUNT ",
+        "slug": "complete-blood-count-cbc",
         "count": 1
       },
       {
@@ -670,8 +678,8 @@
     "DiscountPrice": "1500",
     "TestInfo": [
       {
-        "testName": "COMPLETE BLOOD COUNT (CBC)",
-        "slug": "complete-blood-count",
+        "testName": "COMPLETE BLOOD COUNT ",
+        "slug": "complete-blood-count-cbc",
         "count": 1
       },
       {
@@ -719,8 +727,8 @@
     "DiscountPrice": "450",
     "TestInfo": [
       {
-        "testName": "COMPLETE BLOOD COUNT (CBC)",
-        "slug": "complete-blood-count",
+        "testName": "COMPLETE BLOOD COUNT ",
+        "slug": "complete-blood-count-cbc",
         "count": 1
       },
       {
@@ -779,7 +787,7 @@
     "WhoIsItFor": "Recommended for individuals with known or suspected thyroid issues."
   },
   {
-    "id":1242,
+    "id": 1242,
     "Slug": "healthy-heart-panel",
     "title": "Healthy Heart Panel",
     "PackageName": "Healthy Heart Panel",
@@ -787,8 +795,8 @@
     "DiscountPrice": "650",
     "TestInfo": [
       {
-        "testName": "COMPLETE BLOOD COUNT (CBC)",
-        "slug": "complete-blood-count",
+        "testName": "COMPLETE BLOOD COUNT ",
+        "slug": "complete-blood-count-cbc",
         "count": 1
       },
       { "testName": "LIPID PROFILE", "slug": "lipid-profile", "count": 1 },
@@ -833,8 +841,8 @@
         "count": 1
       },
       {
-        "testName": "COMPLETE BLOOD COUNT (CBC)",
-        "slug": "complete-blood-count",
+        "testName": "COMPLETE BLOOD COUNT ",
+        "slug": "complete-blood-count-cbc",
         "count": 1
       },
       { "testName": "URINE TEST ROUTINE", "slug": "urine-test", "count": 1 },
@@ -1037,8 +1045,8 @@
         "count": 1
       },
       {
-        "testName": "COMPLETE BLOOD COUNT (CBC)",
-        "slug": "complete-blood-count",
+        "testName": "COMPLETE BLOOD COUNT ",
+        "slug": "complete-blood-count-cbc",
         "count": 1
       }
     ],

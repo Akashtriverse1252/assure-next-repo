@@ -19,8 +19,6 @@ const SearchhPage = ({ slug }) => {
           (item) => item.slug === slug
         );
 
-        console.log("this s the matched item", matchedItem);
-
         // if (matchedItem) {
         //   const ids = matchedItem[Object.keys(matchedItem)[0]].id;
         //   setSelectedIds(Array.isArray(ids) ? ids.map(String) : [String(ids)]);

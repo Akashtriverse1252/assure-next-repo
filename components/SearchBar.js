@@ -18,6 +18,7 @@ const SearchBar = () => {
   const textFieldRef = useRef(null);
   const dropdownRef = useRef(null);
 
+
   const pathname = usePathname();
   useEffect(() => {
     setDropdownVisible(false);

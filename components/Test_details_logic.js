@@ -8,16 +8,18 @@ import data from "../Data/test_data.json";
 
 export const Test_details_logic = ({ Slug }) => {
   const { cartState, cartDispatch } = useData();
-  // const params = useParams();
-  const project = data.test_data.find((p) => p.Slug === Slug);
+  const project = data.test_data.find((p) => p.Slug === Slug) || null;
 
-  console.log(project);
-
-  const _discount =
-    ((project.Test_Amount - project.Discount_Amount) / project.Test_Amount) *
-    100;
+  const _discount = project?.Test_Amount
+    ? (
+        ((project.Test_Amount - project.Discount_Amount) /
+          project.Test_Amount) *
+        100
+      ).toFixed()
+    : 0;
 
   const handleAddToCart = () => {
+    cartDispatch({ type: "TOGGLE_CART" });
     const product = {
       id: project.id,
       name: project.Test_Name,
@@ -26,9 +28,7 @@ export const Test_details_logic = ({ Slug }) => {
       quantity: 1,
       discount: _discount,
     };
-    const existingProduct = cartState.products.find(
-      (p) => p.Slug === product.Slug
-    );
+    const existingProduct = cartState.products.find((p) => p.id === product.id);
 
     if (existingProduct) {
       // If the product exists, update its quantity
@@ -46,44 +46,45 @@ export const Test_details_logic = ({ Slug }) => {
   };
   return (
     <>
-      <div className="row">
-        <div className="title col-12 float-start text-center">
-          {!project.Test_Category ? (
-            <>
-              <h2>{project.Test_Name}-test</h2>
-            </>
-          ) : (
-            <h2>{project.Test_Category}-test</h2>
-          )}
-        </div>
-        <div className="col-lg-11 m-auto col-12 float-start grey-background pt-4 px-0">
-          <div className="detailrow">
-            <div className="row">
-              <div className="detailtitle col-lg-3 col-12">
-                <p>
-                  <strong>Package Name</strong>
-                </p>
-              </div>
-              <div className="detaildescrp col-lg-9 col-12">
-                <p>
-                  <strong>{project.Test_Name}</strong>
-                </p>
+      {project && (
+        <div className="row">
+          <div className="title col-12 float-start text-center">
+            {!project.Test_Category ? (
+              <>
+                <h2>{project.Test_Name}-test</h2>
+              </>
+            ) : (
+              <h2>{project.Test_Category}-test</h2>
+            )}
+          </div>
+          <div className="col-lg-11 m-auto col-12 float-start grey-background pt-4 px-0">
+            <div className="detailrow">
+              <div className="row">
+                <div className="detailtitle col-lg-3 col-12">
+                  <p>
+                    <strong>Package Name</strong>
+                  </p>
+                </div>
+                <div className="detaildescrp col-lg-9 col-12">
+                  <p>
+                    <strong>{project.Test_Name}</strong>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="detailrow">
-            <div className="row">
-              <div className="detailtitle col-lg-3 col-12">
-                <p>
-                  <strong>About Package</strong>
-                </p>
-              </div>
-              <div className="detaildescrp col-lg-9 col-12">
-                <p>{project.Test_Description}</p>
+            <div className="detailrow">
+              <div className="row">
+                <div className="detailtitle col-lg-3 col-12">
+                  <p>
+                    <strong>About Package</strong>
+                  </p>
+                </div>
+                <div className="detaildescrp col-lg-9 col-12">
+                  <p>{project.Test_Description}</p>
+                </div>
               </div>
             </div>
-          </div>
-          {/* <div className="detailrow">
+            {/* <div className="detailrow">
                     <div className="row">
                       <div className="detailtitle col-lg-3 col-12">
                         <p>
@@ -95,111 +96,112 @@ export const Test_details_logic = ({ Slug }) => {
                       </div>
                     </div>
                   </div> */}
-          <div className="detailrow">
-            <div className="row">
-              <div className="detailtitle col-lg-3 col-12">
-                <p>
-                  <strong>Exclusive Offer</strong>
-                </p>
-              </div>
-              <div className="detaildescrp col-lg-9 col-12 ">
-                <div className="packageprice d-flex align-items-center gap-5">
-                  <div className="actualprice">
-                    <Rupees /> <span>{project.Test_Amount}</span>
-                  </div>
-                  <div className="discountprice gradient  text-white m-0">
-                    <Rupees /> <span>{project.Discount_Amount}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="detailrow">
-            <div className="row">
-              <div className="detailtitle col-lg-3 col-12">
-                <p>
-                  <strong>Discount</strong>
-                </p>
-              </div>
-              <div className="detaildescrp col-lg-9 col-12 ">
-                <p>
-                  UPTO <strong>{Math.round(_discount)}%</strong>{" "}
-                </p>
-              </div>
-            </div>
-          </div>
-          {project.Who_is_it_for && (
             <div className="detailrow">
               <div className="row">
                 <div className="detailtitle col-lg-3 col-12">
                   <p>
-                    <strong>Who is it for</strong>
+                    <strong>Exclusive Offer</strong>
                   </p>
                 </div>
                 <div className="detaildescrp col-lg-9 col-12 ">
-                  <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
-                    <p>{project.Who_is_it_for}</p>
+                  <div className="packageprice d-flex align-items-center gap-5">
+                    <div className="actualprice">
+                      <Rupees /> <span>{project.Test_Amount}</span>
+                    </div>
+                    <div className="discountprice gradient  text-white m-0">
+                      <Rupees /> <span>{project.Discount_Amount}</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          )}
-          {project.Turn_around_time && (
             <div className="detailrow">
               <div className="row">
                 <div className="detailtitle col-lg-3 col-12">
                   <p>
-                    <strong>Turn around time</strong>
+                    <strong>Discount</strong>
                   </p>
                 </div>
                 <div className="detaildescrp col-lg-9 col-12 ">
-                  <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
-                    <p>{project.Turn_around_time}</p>
-                  </div>
+                  <p>
+                    UPTO <strong>{Math.round(_discount)}%</strong>{" "}
+                  </p>
                 </div>
               </div>
             </div>
-          )}
-          {project.Pre_test_information && (
+            {project.Who_is_it_for && (
+              <div className="detailrow">
+                <div className="row">
+                  <div className="detailtitle col-lg-3 col-12">
+                    <p>
+                      <strong>Who is it for</strong>
+                    </p>
+                  </div>
+                  <div className="detaildescrp col-lg-9 col-12 ">
+                    <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
+                      <p>{project.Who_is_it_for}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+            {project.Turn_around_time && (
+              <div className="detailrow">
+                <div className="row">
+                  <div className="detailtitle col-lg-3 col-12">
+                    <p>
+                      <strong>Turn around time</strong>
+                    </p>
+                  </div>
+                  <div className="detaildescrp col-lg-9 col-12 ">
+                    <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
+                      <p>{project.Turn_around_time}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+            {project.Pre_test_information && (
+              <div className="detailrow">
+                <div className="row">
+                  <div className="detailtitle col-lg-3 col-12">
+                    <p>
+                      <strong>Pre test information</strong>
+                    </p>
+                  </div>
+                  <div className="detaildescrp col-lg-9 col-12 ">
+                    <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
+                      <p>{project.Pre_test_information}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
             <div className="detailrow">
               <div className="row">
                 <div className="detailtitle col-lg-3 col-12">
                   <p>
-                    <strong>Pre test information</strong>
+                    <strong>Book Now</strong>
                   </p>
                 </div>
-                <div className="detaildescrp col-lg-9 col-12 ">
-                  <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
-                    <p>{project.Pre_test_information}</p>
+                <div className="detaildescrp col-lg-9 col-12">
+                  <div className="col-12 flex-center mt-5 mb-2 mb-sm-5 justify-content-center justify-content-sm-start flex-wrap gap-3 m-auto">
+                    <a
+                      className="button button--aylen button--round-l button--text-thick  gradient col-lg-3 col-11   d-flex justify-content-center gap-2"
+                      onClick={handleAddToCart}
+                    >
+                      <Cart /> Add to Cart
+                    </a>
+                    <a className="button button--aylen button--round-l button--text-thick  gradient col-lg-3 col-11 ">
+                      Book Home Collection
+                    </a>
                   </div>
-                </div>
-              </div>
-            </div>
-          )}
-          <div className="detailrow">
-            <div className="row">
-              <div className="detailtitle col-lg-3 col-12">
-                <p>
-                  <strong>Book Now</strong>
-                </p>
-              </div>
-              <div className="detaildescrp col-lg-9 col-12">
-                <div className="col-12 flex-center mt-5 mb-2 mb-sm-5 justify-content-center justify-content-sm-start flex-wrap gap-3 m-auto">
-                  <a
-                    className="button button--aylen button--round-l button--text-thick  gradient col-lg-3 col-11   d-flex justify-content-center gap-2"
-                    onClick={handleAddToCart}
-                  >
-                    <Cart /> Add to Cart
-                  </a>
-                  <a className="button button--aylen button--round-l button--text-thick  gradient col-lg-3 col-11 ">
-                    Book Home Collection
-                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </>
   );
 };

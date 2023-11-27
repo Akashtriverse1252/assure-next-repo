@@ -1523,11 +1523,10 @@ header {
   width: 30%;
   left: inherit !important;
   height: 100vh;
-  /* right: -30% !important; */
+  right: -30% !important;
   font-family: inherit;
   box-shadow: 0 0 15px rgb(0 0 0 / 34%);
-
-
+  transition: ease 1s all;
 }
 
 .__cart_cnt {
@@ -1535,12 +1534,12 @@ header {
   right: 100%;
   transition: ease 1s all;
   animation-delay: 0.8s;
+
 }
 
-
-.__cart_cnt.open {
-  right: 0;
-  transition: ease 1s all;
+.__visible ._cart {
+  right: 0 !important;
+  transition: 0.8s all;
   animation-delay: 0.8s;
 }
 
@@ -1685,6 +1684,7 @@ header {
 .packagename_test {
   height: 55px;
 }
+
 
 .packagename_test h5 {
   font-weight: 700;

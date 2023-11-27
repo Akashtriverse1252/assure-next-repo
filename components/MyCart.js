@@ -6,7 +6,6 @@ import { useData } from "@/context/context";
 import { LuShoppingCart } from "react-icons/lu";
 
 export const MyCart = () => {
-  const [isCartOpen, setIsCartOpen] = React.useState(false);
   const { cartState, cartDispatch } = useData();
 
   // Calculate the total quantity using cartState

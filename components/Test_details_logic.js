@@ -123,53 +123,59 @@ export const Test_details_logic = ({ Slug }) => {
               </div>
               <div className="detaildescrp col-lg-9 col-12 ">
                 <p>
-                  UPTO <strong>{_discount}%</strong>{" "}
+                  UPTO <strong>{Math.round(_discount)}%</strong>{" "}
                 </p>
               </div>
             </div>
           </div>
-          <div className="detailrow">
-            <div className="row">
-              <div className="detailtitle col-lg-3 col-12">
-                <p>
-                  <strong>Who is it for</strong>
-                </p>
-              </div>
-              <div className="detaildescrp col-lg-9 col-12 ">
-                <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
-                  <p>{project.Who_is_it_for}</p>
+          {project.Who_is_it_for && (
+            <div className="detailrow">
+              <div className="row">
+                <div className="detailtitle col-lg-3 col-12">
+                  <p>
+                    <strong>Who is it for</strong>
+                  </p>
+                </div>
+                <div className="detaildescrp col-lg-9 col-12 ">
+                  <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
+                    <p>{project.Who_is_it_for}</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="detailrow">
-            <div className="row">
-              <div className="detailtitle col-lg-3 col-12">
-                <p>
-                  <strong>Turn around time</strong>
-                </p>
-              </div>
-              <div className="detaildescrp col-lg-9 col-12 ">
-                <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
-                  <p>{project.Turn_around_time}</p>
+          )}
+          {project.Turn_around_time && (
+            <div className="detailrow">
+              <div className="row">
+                <div className="detailtitle col-lg-3 col-12">
+                  <p>
+                    <strong>Turn around time</strong>
+                  </p>
+                </div>
+                <div className="detaildescrp col-lg-9 col-12 ">
+                  <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
+                    <p>{project.Turn_around_time}</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="detailrow">
-            <div className="row">
-              <div className="detailtitle col-lg-3 col-12">
-                <p>
-                  <strong>Pre test information</strong>
-                </p>
-              </div>
-              <div className="detaildescrp col-lg-9 col-12 ">
-                <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
-                  <p>{project.Pre_test_information}</p>
+          )}
+          {project.Pre_test_information && (
+            <div className="detailrow">
+              <div className="row">
+                <div className="detailtitle col-lg-3 col-12">
+                  <p>
+                    <strong>Pre test information</strong>
+                  </p>
+                </div>
+                <div className="detaildescrp col-lg-9 col-12 ">
+                  <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
+                    <p>{project.Pre_test_information}</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          )}
           <div className="detailrow">
             <div className="row">
               <div className="detailtitle col-lg-3 col-12">

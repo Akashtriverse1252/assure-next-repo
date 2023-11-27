@@ -16,11 +16,20 @@ const SearchhPage = ({ slug }) => {
 
       try {
         const matchedItem = mappingdata.mappingdata.find(
-          (item) => item[Object.keys(item)[0]].slug === slug
+          (item) => item.slug === slug
         );
 
+        console.log("this s the matched item", matchedItem);
+
+        // if (matchedItem) {
+        //   const ids = matchedItem[Object.keys(matchedItem)[0]].id;
+        //   setSelectedIds(Array.isArray(ids) ? ids.map(String) : [String(ids)]);
+        // } else {
+        //   setSelectedIds([]);
+        // }
+
         if (matchedItem) {
-          const ids = matchedItem[Object.keys(matchedItem)[0]].id;
+          const ids = matchedItem.id;
           setSelectedIds(Array.isArray(ids) ? ids.map(String) : [String(ids)]);
         } else {
           setSelectedIds([]);

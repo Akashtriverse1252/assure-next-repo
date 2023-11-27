@@ -23,7 +23,6 @@ const SearchBar = () => {
           if (data.message === "No keywords found for the given search word") {
             // Handle the case where no keywords are found
             setSuggestions([]);
-            console.log(suggestions);
           } else {
             // Update suggestions if keywords are found
             setSuggestions(data.keywords);

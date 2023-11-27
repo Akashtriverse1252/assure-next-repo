@@ -8,6 +8,7 @@ import data from "../Data/Keywords.json";
 import Search_box from "../components/Search_box";
 import { LuSearch } from "react-icons/lu";
 import { PiMagnifyingGlassLight } from "react-icons/pi";
+import { usePathname } from "next/navigation";
 
 const SearchBar = () => {
   const [value, setValue] = useState(0);
@@ -16,6 +17,11 @@ const SearchBar = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false); // State to control dropdown visibility
   const textFieldRef = useRef(null);
   const dropdownRef = useRef(null);
+
+  const pathname = usePathname();
+  useEffect(() => {
+    setDropdownVisible(false);
+  }, [pathname]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);

@@ -22,10 +22,6 @@ export const Footer = () => {
     const width1ref = buttonRef1.current.getBoundingClientRect();
     setButtonWidth2(width1ref.width);
 
-    console.log(buttonWidth);
-    console.log(selectedTab);
-
-    console.log("Width of active tab button:", buttonWidth);
   };
 
   useEffect(() => {

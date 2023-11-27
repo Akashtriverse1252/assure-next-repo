@@ -52,7 +52,7 @@ export const Testimonials = (props) => {
                   <p> Based on 405+ reviews</p>
                 </div>
 
-                <Slider {...settings} {...props}>
+                <Slider {...settings} {...props} >
                   {/* Mapping over the reviews data to generate slider items */}
                   {TestimonialData.reviews.map((review, index) => (
                     <div key={index}>
@@ -62,9 +62,9 @@ export const Testimonials = (props) => {
                   ))}
                 </Slider>
               </div>
-              <div className="col-12 flex-center mt-4 __trestmonail">
+              <div className="col-12 flex-center mt-0 mt-sm-4 __trestmonail">
                 <a
-                  className="button button--aylen button--round-l button--text-thick text-uppercase bg-white    col-lg-3 col-12 mt-3"
+                  className="button button--aylen button--round-l button--text-thick text-uppercase bg-white    col-lg-3 col-10 mt-2 mt-sm-3"
                   href="https://www.google.com/maps/place/Assure+Pathlabs+%7C+Best+Pathology+Labs+%26+Blood+Test+Lab+in+Jalandhar+Punjab/@31.3042172,75.5861548,15z/data=!4m8!3m7!1s0x391a5bb201b0f3d1:0x7856b16cd286d465!8m2!3d31.3042172!4d75.5861548!9m1!1b1!16s%2Fg%2F11f__bnrjm?entry=ttu"
                   target="_blank"
                 >

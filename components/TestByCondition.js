@@ -59,13 +59,13 @@ export const TestByCondition = () => {
       <div className="web-container">
         <div className="row">
           <div className="col-lg-10 m-auto col-12">
-            <div className="title col-12 float-start text-center mb-0 mt-5">
-              <h3>TEST BY CONDITION</h3>
+            <div className="title col-12 float-start text-center mb-0 mt-3 mt-sm-5">
+              <h2>TEST BY CONDITION</h2>
             </div>
             <div className="row">
               {conditionData.map((condition, index) => (
                 <div
-                  className="condition col-lg-3 col-sm-6 col-12 position-relative"
+                  className="condition col-lg-3 col-sm-6 col-6 position-relative"
                   key={index}
                 >
                   <Link href={`/condition/${condition.slug}`}>

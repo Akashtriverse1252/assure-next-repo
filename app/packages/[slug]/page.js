@@ -59,7 +59,7 @@ export const page = () => {
             <div className="web-container">
               <div className="row">
                 <div className="title col-12 float-start text-center">
-                  <h3>{project.title}</h3>
+                  <h2>{project.title}</h2>
                 </div>
                 <div className="col-lg-11 m-auto col-12 float-start grey-background pt-4 px-0">
                   <div className="detailrow">
@@ -176,14 +176,14 @@ export const page = () => {
                       </div>
                       <div className="detaildescrp col-lg-9 col-12">
                         <AccordionComponent ParameterData={project.TestInfo} />
-                        <div className="col-12 flex-center mt-5 mb-5 justify-content-start gap-3">
+                        <div className="col-12 flex-center mt-5 mb-2 mb-sm-5 justify-content-center justify-content-sm-start flex-wrap gap-3 m-auto">
                           <a
-                            className="button button--aylen button--round-l button--text-thick  gradient col-lg-3 col-12 d-flex justify-content-center gap-2"
+                            className="button button--aylen button--round-l button--text-thick  gradient col-lg-3 col-11   d-flex justify-content-center gap-2"
                             onClick={handleAddToCart}
                           >
                             <Cart /> Add to Cart
                           </a>
-                          <a className="button button--aylen button--round-l button--text-thick  gradient col-lg-3 col-12">
+                          <a className="button button--aylen button--round-l button--text-thick  gradient col-lg-3 col-11 ">
                             Book Home Collection
                           </a>
                         </div>

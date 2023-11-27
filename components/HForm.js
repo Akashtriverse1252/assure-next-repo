@@ -21,7 +21,7 @@ export const HForm = () => {
       {showDialog ? <UploadForm /> : null}
 
       <div className="col-12 float-start d-grid gap-3 sm-gap-5 h_form">
-        <div className="enquireform col-12 float-start">
+        <div className="enquireform col-12 float-start d-none d-sm-block">
           <SearchBar />
 
           <Button

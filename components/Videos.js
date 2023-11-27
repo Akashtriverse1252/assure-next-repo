@@ -71,7 +71,7 @@ export const Videos = (props) => {
 
   return (
     <>
-      <div className="vedio_review_scn pt-3">
+      <div className="vedio_review_scn pt-0 pt-sm-3">
         <Slider {...settings} {...props} adaptiveHeight={true}>
           {data.map((video, index) => (
             <div key={index}>

@@ -342,6 +342,7 @@ section,
   position: relative;
 }
 
+.title h2,
 .title h3 {
   margin: 0;
   font-size: 30px;
@@ -356,6 +357,7 @@ section,
   background-position: 0;
 }
 
+.title h2:after,
 .title h3:after {
   content: '';
   width: 50px;
@@ -497,12 +499,14 @@ section,
 
 }
 
+.title h2 span,
 .title h3 span {
   font-size: 22px;
   line-height: 30px;
   margin-bottom: 20px;
 }
 
+.title h2.text-white,
 .title h3.text-white {
   -webkit-text-fill-color: var(--white-color);
   background-image: inherit;
@@ -892,6 +896,7 @@ footer {
   margin: 0 auto;
 }
 
+.title h2.text-white:after,
 .title h3.text-white:after {
   background-color: var(--bg-color);
 }
@@ -1691,6 +1696,8 @@ header {
   margin: 0 auto;
   text-wrap: balance;
   letter-spacing: 1.6px;
+  overflow: hidden;
+  height: 100%;
 }
 
 .my-cart_cnt {
@@ -2149,22 +2156,25 @@ div#bookAppointmentForm .width50:first-chlid {
 .footer_tabs ul li {
   margin-bottom: 5px;
   position: relative;
+  max-height: 350px;
+  overflow-y: scroll;
 }
 
-.footer_tabs ul li a:before {
+/* .footer_tabs ul li a:before {
   content: "";
   position: absolute;
   top: 0;
   height: 19px;
   width: 1px;
   right: 0;
-  background-color: rgb(102 98 98 / 23%);
   border-radius: 2px;
-}
+  background-color: rgb(102 98 98 / 23%);
+} */
 
 .footer_tabs ul li a:hover {
   font-weight: 600;
 }
+
 
 
 .footer_tabs ul li a {
@@ -2174,6 +2184,9 @@ div#bookAppointmentForm .width50:first-chlid {
   padding: 0 8px;
   transition: all 0.2s ease;
   font-size: 13px;
+  border-right: 1px solid rgb(102 98 98 / 23%);
+  text-transform: lowercase;
+
 }
 
 .footer_tabs ul li a:first-child {

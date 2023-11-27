@@ -20,14 +20,14 @@ export const AssureSlide = (props) => {
         <div>
           <div className="swiperslider">
             <Image
-              className="d-xs-block d-none"
+              className="d-sm-block d-none"
               src="/banner03.webp"
               alt="Comprehensive Health Checkup"
               width={1220}
               height={730}
             />
             <Image
-              className="d-xs-none d-block"
+              className="d-sm-none d-block"
               src="/banner_m.webp"
               alt="Comprehensive Health Checkup"
               width={1220}
@@ -35,16 +35,42 @@ export const AssureSlide = (props) => {
             />
           </div>
         </div>
-        {/* <div>
-                    <div className="swiperslider">
-                        <Image src="/banner01.webp" alt="Early Detection is the Key of Cure" width={1220} height={730} />
-                    </div>
-                </div>
-                <div>
-                    <div className="swiperslider">
-                        <Image src="/banner02.webp" alt="Full Body Health Checkup" width={1220} height={730} />
-                    </div>
-                </div> */}
+        <div>
+          <div className="swiperslider">
+            <Image
+              className="d-sm-block d-none"
+              src="/banner01.webp"
+              alt="Early Detection is the Key of Cure"
+              width={1220}
+              height={730}
+            />
+            <Image
+              className="d-sm-none d-block"
+              src="/banner_m.webp"
+              alt="Comprehensive Health Checkup"
+              width={1220}
+              height={300}
+            />
+          </div>
+        </div>
+        <div>
+          <div className="swiperslider">
+            <Image
+              className="d-sm-block d-none"
+              src="/banner02.webp"
+              alt="Full Body Health Checkup"
+              width={1220}
+              height={730}
+            />
+            <Image
+              className="d-sm-none d-block"
+              src="/banner_m.webp"
+              alt="Comprehensive Health Checkup"
+              width={1220}
+              height={300}
+            />
+          </div>
+        </div>
       </Slider>
     </>
   );

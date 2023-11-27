@@ -15,7 +15,7 @@ export const page = () => {
           <div className="gradient-layer"></div>
           <div className="container">
             <div className="row">
-              <div className="col-lg-9 col-md-8 col-xs-12 col-12">
+              <div className="col-lg-9 col-md-8 col-xs-12 col-12 abt_banner">
                 <Image
                   src={Aboutbanner}
                   alt="Comprehensive Health Checkup"
@@ -35,7 +35,7 @@ export const page = () => {
           <div className="container">
             <div className="row">
               <div className="title col-12 float-start text-center">
-                <h3>About us</h3>
+                <h2>About us</h2>
               </div>
               <div className="col-lg-7 m-auto col-xs-12 col-12 text-center">
                 <p>
@@ -82,7 +82,7 @@ export const page = () => {
             <div className="web-container">
               <div className="row">
                 <div className="title col-12 float-start text-center mt-5 mb-4">
-                  <h3>QUALITY POLICY STATEMENT</h3>
+                  <h2>QUALITY POLICY STATEMENT</h2>
                 </div>
                 <div className="col-lg-6 col-12 text-center m-auto">
                   <p>

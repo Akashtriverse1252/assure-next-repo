@@ -13,7 +13,7 @@ export const page = () => {
           <div className="web-container">
             <div className="row">
               <div className="title col-12 float-start text-center">
-                <h3>Individual Test</h3>
+                <h2>Individual Test</h2>
               </div>
               <div className="col-12 float-start all-test">
                 <div className="row justify-content-center">

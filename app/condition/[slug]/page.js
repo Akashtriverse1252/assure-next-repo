@@ -8,7 +8,7 @@ import { TestCard } from "@/components/TestCard";
 export const page = ({ params: { slug } }) => {
   const filtered_slug_data = test_info.test_data.filter(
     (p) => p.Test_Category.toLowerCase() === slug
-    );
+  );
 
   return (
     <>
@@ -17,7 +17,7 @@ export const page = ({ params: { slug } }) => {
           <div className="web-container">
             <div className="row">
               <div className="title col-12 float-start text-center">
-                <h3>{slug} Test</h3>
+                <h2>{slug} Test</h2>
               </div>
               <div className="col-12 float-start all-test">
                 <div className="row justify-content-center">

@@ -12,7 +12,7 @@ const page = () => {
               <div className="row">
                 <div className="col-md-12 col-12">
                   <div className="title col-12 float-start text-center">
-                    <h3>Refund and Cancellation Policy</h3>
+                    <h2>Refund and Cancellation Policy</h2>
                   </div>
                   <div className="privacy_pol_cnt">
                     <div class="contentbox">

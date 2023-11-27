@@ -13,7 +13,7 @@ const SearchBar = ({ params: { slug } }) => {
           <div className="web-container">
             <div className="row">
               <div className="title col-12 float-start text-center">
-                <h3>Search Test</h3>
+                <h2>Search Test</h2>
               </div>
               <div className="col-12 float-start all-test">
                 <Searchhpage slug={slug} />

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState, useEffect } from "react";
 import mappingdata from "../Data/Maping.json";
@@ -13,7 +13,6 @@ const SearchhPage = ({ slug }) => {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      
 
       try {
         const matchedItem = mappingdata.mappingdata.find(

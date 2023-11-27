@@ -33,25 +33,61 @@
 }
 
 @media (max-width:580px) {
+    main {
+        gap: 45px;
+    }
+
+    .circleicons span,
+    .packagename span {
+        width: 120px !important;
+        height: 120px;
+    }
+
+    .packagename h4 {
+        font-size: 16px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        text-wrap: balance;
+    }
+
     .navbar_item {
         display: none !important;
     }
 
-    .title h3 {
-        font-size: 20px;
-        line-height: 1.5;
-        padding-bottom: 8px;
-        text-wrap: balance;
+    .title {
+        margin-bottom: 25px;
+    }
+
+    .title h2 {
+        font-size: 19px;
         width: 90%;
         margin: 0 auto;
+        line-height: 1.3;
+        padding-bottom: 8px;
+        text-wrap: balance;
     }
-    .detaildescrp p strong{
-       font-weight: 400;
-    } 
-    .actualprice{
+
+    .title h2 span {
+        line-height: 1.3;
+        text-wrap: balance;
+        font-size: 17px;
+        margin-bottom: 5px;
+    }
+
+    .seasonalpack .sliderbox {
+        margin-top: 10px;
+    }
+
+
+    .detaildescrp p strong {
+        font-weight: 400;
+    }
+
+    .actualprice {
         font-size: 24px;
         margin-left: 15px;
     }
+
     .discountprice {
         font-size: 24px;
         height: 45px;
@@ -75,7 +111,7 @@
     }
 
     ._acc_header h5 {
-        font-size: 18px;
+        font-size: 15px;
         text-align: center;
     }
 
@@ -97,10 +133,6 @@
 
     .footergray {
         padding: 50px 0 30px 0;
-    }
-
-    .condition {
-        scale: 0.9;
     }
 
     .vedio_review .slick-prev {
@@ -130,6 +162,8 @@
 
     .swiperslider img {
         height: auto;
+        margin-left: auto;
+        float: right;
         width: 100%;
         object-fit: contain;
     }
@@ -141,6 +175,11 @@
     .mobile_nav_search svg {
         font-size: 28px;
         color: #7e7e7e;
+    }
+
+    .btn_main {
+        max-width: 130px;
+        margin: auto;
     }
 
     .mobile_nav_search .cross,
@@ -157,7 +196,18 @@
 
     .sliderbox {
         width: 95%;
-        padding: 20px 10px;
+        padding: 10px;
+    }
+
+    #organs .sliderbox {
+        margin-top: 0;
+        padding-top: 0;
+        margin-bottom: 40px;
+    }
+
+    #organs .packagename span {
+        height: 120px;
+        width: 120px;
     }
 
     .googlereviewslider {
@@ -238,5 +288,71 @@
 
     .slick-slider .slick-dots li button:before {
         color: #fff;
+    }
+
+    .accordion {
+        width: 92%;
+        margin: 0 auto;
+    }
+
+    .detaildescrp .accordion__button {
+        padding: 8px 18px;
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    .title h2:after,
+    .title h3:after {
+        width: 30px;
+        height: 2px;
+    }
+
+    .abt_banner img {
+        height: auto;
+        width: auto;
+    }
+
+    .highlights {
+        margin-left: 7%;
+    }
+
+    .detailrow .highlights p {
+        padding: 10px 20px;
+        border: solid 1px #d8dee7;
+        border-radius: 35px;
+    }
+
+    .contentbox h4 {
+        font-weight: 600;
+    }
+
+    .contentbox {
+        width: 95%;
+        margin: 0 AUTO;
+    }
+
+    .conditionshape {
+        height: 75px;
+        overflow: hidden;
+    }
+
+    .condtionicon {
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        top: 0px;
+        z-index: 1;
+    }
+    .conditionshape h3{
+        top: 70%;
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+    .accordion__button{
+        padding: 10px 22px;
+        border-radius: 30px;
+    }
+    .p-80{
+        padding: 30px 0;
     }
 }

@@ -43,9 +43,9 @@ export default function Home() {
             <div className="row">
               <div className="col-md-12 col-12">
                 <div className="title col-12 float-start text-center">
-                  <h3 className="grid-center lh-1">
+                  <h2 className="grid-center lh-1">
                     SEASONAL packages <span>DENGUE, CHIKUNGUNYA, MALARIA</span>
-                  </h3>
+                  </h2>
                 </div>
                 <Seasonalpack className="arrows productslider minusbottom seasonalpack" />
               </div>
@@ -61,7 +61,7 @@ export default function Home() {
             <div className="row">
               <div className="col-md-12 col-12">
                 <div className="title col-12 float-start text-center">
-                  <h3>Health Check-up packages</h3>
+                  <h2>Health Check-up packages</h2>
                 </div>
                 <ProductSlider className="colornavigations col-12 float-start arrows productslider minusbottom" />
               </div>
@@ -77,7 +77,7 @@ export default function Home() {
             <div className="row">
               <div className="col-md-12 col-12">
                 <div className="title col-12 float-start text-center mb-3">
-                  <h3 className="grid-center text-white">TEST BY ORGAN</h3>
+                  <h2 className="grid-center text-white">TEST BY ORGAN</h2>
                 </div>
                 <Organslider className="navigationwhite hovershadow" />
               </div>
@@ -100,14 +100,14 @@ export default function Home() {
         </div>
         <Line className="svgwidthline position-absolute opacity-10 bottom-0 start-0" />
       </section>
-      <section className="position-relative p-80 grey-background">
+      <section className="position-relative p-80  grey-background">
         <div className="container">
           <div className="web-container">
             <div className="row">
               <div className="title col-12 float-start text-center">
-                <h3>ABOUT ASSURE PATHLAB</h3>
+                <h2>ABOUT ASSURE PATHLAB</h2>
               </div>
-              <div className="col-lg-7 m-auto col-xs-12 col-12 text-center">
+              <div className="col-lg-7 m-auto col-xs-12 col-11 text-center">
                 <p>
                   Assure Pathlabs was established by Dr. Sanjay Wadhwa and Dr.
                   Lovely Razdan in 2015. Our high ethical values necessitate
@@ -121,7 +121,7 @@ export default function Home() {
                   health, treatment of diseases, eliminating disease burden, and
                   further improving health.
                 </p>
-                <div className="col-12 flex-center mt-4">
+                <div className=" flex-center mt-4 btn_main">
                   <Link
                     href="/about-us"
                     className="button button--aylen button--round-l button--text-thick text-uppercase gradient col-lg-3 col-12 mt-3"
@@ -140,7 +140,7 @@ export default function Home() {
           <div className="web-container">
             <div className="row">
               <div className="title col-12 float-start text-center">
-                <h3>WHY ASSURE PATHLABS?</h3>
+                <h2>WHY ASSURE PATHLABS?</h2>
               </div>
               <div className="col-lg-10 m-auto col-12 float-start">
                 <div className="row justify-content-center">
@@ -220,7 +220,7 @@ export default function Home() {
           <div className="web-container">
             <div className="row">
               <div className="title col-12 float-start text-center">
-                <h3 className="text-white">TESTIMONIALS</h3>
+                <h2 className="text-white">TESTIMONIALS</h2>
               </div>
               <div className="col-lg-11 col-12 m-auto float-start">
                 <Testimonials className="minusbottom navigationwhite" />
@@ -234,7 +234,7 @@ export default function Home() {
           <div className="web-container">
             <div className="row">
               <div className="title col-12 float-start text-center">
-                <h3 className="">Frequently Asked Questions.</h3>
+                <h2 className="">Frequently Asked Questions.</h2>
               </div>
               <div className="col-lg-11 col-12 m-auto float-start">
                 <Faq className="minusbottom " />
@@ -248,7 +248,7 @@ export default function Home() {
           <div className="web-containers">
             <div className="row">
               <div className="title col-12 float-start text-center">
-                <h3 className="">OUR VIDEOS</h3>
+                <h2 className="">OUR VIDEOS</h2>
               </div>
               <div className="col-lg-10 col-12 m-auto float-start">
                 <Videos />

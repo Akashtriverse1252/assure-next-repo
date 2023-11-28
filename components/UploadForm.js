@@ -267,12 +267,7 @@ const UploadForm = () => {
       </Modal>
 
       <Stack spacing={2} sx={{ width: "100%" }}>
-        <Snackbar
-          open={isOpen}
-          autoHideDuration={4000}
-          onClose={handleClose}
-          TransitionProps={{ onExited: handleExited }}
-        >
+        <Snackbar open={isOpen} autoHideDuration={4000} onClose={handleClose}>
           <Alert
             onClose={handleClose}
             severity="success"

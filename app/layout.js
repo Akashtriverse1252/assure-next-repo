@@ -10,6 +10,7 @@ import { GlobalDataProvider } from "@/context/context";
 import Cart from "../components/Cart.js";
 
 import { BreadCrums } from "@/components/BreadCrums";
+import UploadForm from "@/components/UploadForm";
 const AvertaStd = localFont({
   src: "./font/AvertaStd-Regular.woff2",
   display: "swap",
@@ -30,9 +31,11 @@ export default function RootLayout({ children }) {
           <Header />
           <BreadCrums />
           <Cart />
+
           {children}
 
           <Footer />
+          <UploadForm />
         </body>
       </GlobalDataProvider>
     </html>

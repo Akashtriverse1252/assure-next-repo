@@ -16,6 +16,7 @@ import { LuUser, LuSearch, LuX } from "react-icons/lu";
 import { PiShoppingCartSimple } from "react-icons/pi";
 import { useData } from "@/context/context";
 import { Badge } from "@mui/material";
+import { Attachement } from "./svg-components/Attachement";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -101,10 +102,15 @@ export const Header = () => {
                         My Cart
                       </span> */}
                       <MyCart />
-                      <span className="button button--aylen button--round-l button--text-thick _user d-flex align-items-center">
-                        <LuUser />
-                        Login
-                      </span>
+                      <Link
+                        href="/https://patient-in.creliohealth.com/patient/login"
+                        target="_blank"
+                      >
+                        <span className="button button--aylen button--round-l button--text-thick _user d-flex align-items-center">
+                          <LuUser />
+                          Login
+                        </span>
+                      </Link>
                     </div>
                     <div className=" d-flex align-items-center flex-row justify-content-center ">
                       <div className="nah_logo">
@@ -269,7 +275,18 @@ export const Header = () => {
                             <Attachement />
                           </span>
                           Upload Prescription */}
-                          <UploadPrescription />
+                          {/* <UploadPrescription /> */}
+                          <a
+                            className=""
+                            onClick={() =>
+                              cartDispatch({ type: "TOGGLE_UPLOD_FORM" })
+                            }
+                          >
+                            <span>
+                              <Attachement />
+                            </span>
+                            Upload Prescription
+                          </a>
                         </li>
                         <li>
                           <Link href="/individual-test">

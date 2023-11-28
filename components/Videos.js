@@ -9,16 +9,22 @@ import { BsYoutube } from "react-icons/bs";
 export const Videos = (props) => {
   const [selectedVideoIndex, setSelectedVideoIndex] = useState(null);
   const [videoLoading, setVideoLoading] = useState(false);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(true);
 
   const handleVideoClick = (index) => {
     setSelectedVideoIndex(index);
     setVideoLoading(true);
   };
+  const handleVideoloaded = () => {
+    setVideoLoading(false);
+    setIsVideoPlaying(false);
+  };
+  console.log(isVideoPlaying);
   const settings = {
     dots: false,
-    infinite: false,
-    autoplay: true,
-    autoplaySpeed: 5000,
+    infinite: true,
+    autoplay: isVideoPlaying,
+    autoplaySpeed: 6000,
     speed: 900,
     pauseOnHover: true,
     slidesToShow: 3,
@@ -93,7 +99,7 @@ export const Videos = (props) => {
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
-                      onLoad={() => setVideoLoading(!videoLoading)}
+                      onLoad={handleVideoloaded}
                     ></iframe>
                   </div>
                 ) : (

@@ -5,6 +5,7 @@ import SearchBar from "@/components/SearchBar";
 import { Attachement } from "./svg-components/Attachement";
 import { Homecollection } from "@/components/Homecollection";
 import UploadForm from "./UploadForm";
+import { useData } from "@/context/context";
 
 export const HForm = () => {
   const [showDialog, setShowDialog] = useState(false);
@@ -15,10 +16,11 @@ export const HForm = () => {
   const handleFileSelect = (e) => {
     const selectedFile = e.target.files[0];
   };
+  const { cartState, cartDispatch } = useData();
 
   return (
     <>
-      {showDialog ? <UploadForm /> : null}
+      {/* {showDialog ? <UploadForm /> : null} */}
 
       <div className="col-12 float-start d-grid gap-3 sm-gap-5 h_form">
         <div className="enquireform col-12 float-start d-none d-sm-block">
@@ -28,7 +30,7 @@ export const HForm = () => {
             variant="outlined"
             className="MuiInputBase-root formbtn d-flex justify-content-between"
             fullWidth
-            onClick={() => setShowDialog(false)} // Pass a function to onClick
+            onClick={() => cartDispatch({ type: "TOGGLE_UPLOD_FORM" })} // Pass a function to onClick
           >
             <label>Upload Prescription</label>
             <span>

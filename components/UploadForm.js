@@ -1,48 +1,114 @@
 "use client";
 
+import * as React from "react";
 import { useState } from "react";
-import { UploadIcon } from "../components/svg-components/UploadIcon";
-import { UploadComplete } from "../components/svg-components/UploadComplete";
-import { FaCheck } from "react-icons/fa";
-import { MdOutlineCancel } from "react-icons/md";
-import { RxCross1 } from "react-icons/rx";
 import {
-  AiFillExclamationCircle,
-  AiOutlineDelete,
   AiOutlineFileText,
+  AiOutlineFileImage,
+  AiOutlineFilePdf,
+  AiOutlineFileWord,
 } from "react-icons/ai";
+import { MdOutlineCancel } from "react-icons/md";
+import { IoCloudUploadOutline } from "react-icons/io5";
+import { useData } from "@/context/context";
+import Modal from "@mui/material/Modal";
+import { RxCross2 } from "react-icons/rx";
 
 const UploadForm = () => {
+  const { cartState, cartDispatch } = useData();
   const [isOpen, setIsOpen] = useState(true);
-
   const [fileInputValue, setFileInputValue] = useState("");
   const [isFileUploaded, setIsFileUploaded] = useState(false);
   const [fileName, setFileName] = useState("");
   const [fileSize, setFileSize] = useState("");
   const [fileFlag, setFileFlag] = useState(0);
   const [showCannotUploadMessage, setShowCannotUploadMessage] = useState(false);
+  const [filePreview, setFilePreview] = useState(null);
 
-  const handleFileInputChange = () => {
+  const handleFileChange = (e) => {
+    const selectedFile = e.target.files[0];
+
+    // Check if a file is selected
+    if (selectedFile) {
+      // Check if the file type is allowed
+      const allowedTypes = [
+        "image/jpeg",
+        "image/jpg",
+        "image/webp",
+        "image/png",
+        "application/pdf",
+        "application/msword",
+      ];
+      if (allowedTypes.includes(selectedFile.type)) {
+        // Check if the file size is less than or equal to 2MB
+        if (selectedFile.size <= 2 * 1024 * 1024) {
+          setFileName(selectedFile.name);
+          setFileSize((selectedFile.size / 1024).toFixed(1) + " KB");
+          setFileFlag(0);
+          setIsFileUploaded(true);
+          setShowCannotUploadMessage(false);
+
+          // Display preview for images
+          if (selectedFile.type.startsWith("image/")) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+              setFilePreview(e.target.result);
+            };
+            reader.readAsDataURL(selectedFile);
+          }
+        } else {
+          // File size exceeds the limit
+          setFileName("");
+          setFileSize("");
+          setFileFlag(0);
+          setShowCannotUploadMessage(true);
+          setFilePreview(null);
+        }
+      } else {
+        // File type not allowed
+        setFileName("");
+        setFileSize("");
+        setFileFlag(0);
+        setShowCannotUploadMessage(true);
+        setFilePreview(null);
+      }
+    } else {
+      // No file selected
+      setFileName("");
+      setFileSize("");
+      setFileFlag(0);
+      setFilePreview(null);
+    }
+  };
+
+  const renderFileTypeIcon = () => {
+    switch (fileName.split(".").pop().toLowerCase()) {
+      case "jpg":
+      case "jpeg":
+      case "png":
+        return <AiOutlineFileImage />;
+      case "pdf":
+        return <AiOutlineFilePdf />;
+      case "doc":
+      case "docx":
+        return <AiOutlineFileWord />;
+      default:
+        return <IoCloudUploadOutline />;
+    }
+  };
+
+  const handleCancelAlertClick = () => {
+    setShowCannotUploadMessage(false);
+  };
+
+  const handleRemoveFileClick = () => {
     setFileInputValue("");
     setIsFileUploaded(false);
     setFileName("");
     setFileSize("");
     setFileFlag(0);
     setShowCannotUploadMessage(false);
-  };
-
-  const handleFileChange = (e) => {
-    const selectedFile = e.target.files[0];
-    if (selectedFile) {
-      setFileName(selectedFile.name);
-      setFileSize((selectedFile.size / 1024).toFixed(1) + " KB");
-      setFileFlag(0);
-      setIsFileUploaded(true);
-    } else {
-      setFileName("");
-      setFileSize("");
-      setFileFlag(0);
-    }
+    setFilePreview(null);
   };
 
   const handleUploadClick = () => {
@@ -64,40 +130,42 @@ const UploadForm = () => {
       console.log("file is not uploaded", showCannotUploadMessage);
     }
   };
-
-  const handleCancelAlertClick = () => {
-    setShowCannotUploadMessage(false);
+  const handleSubmit = () => {
+    cartDispatch({ type: "TOGGLE_UPLOD_FORM" });
+    handleRemoveFileClick();
   };
 
-  const handleRemoveFileClick = () => {
-    setFileInputValue("");
-    setIsFileUploaded(false);
-    setFileName("");
-    setFileSize("");
-    setFileFlag(0);
-    setShowCannotUploadMessage(false);
-  };
   return (
     <>
-      {isOpen ? (
+      <Modal
+        open={cartState.uploadFormVisible}
+        onClose={cartState.uploadFormVisible}
+      >
         <form className="form-container" encType="multipart/form-data">
-          <div
-            className="_cross"
-            onClick={() => {
-              setIsOpen(false);
-            }}
-          >
-            <RxCross1 />
-          </div>
-          <div className="upload-files-container">
+          <div className="upload-files-container position-relative">
+            <div
+              className="_cross"
+              onClick={() => cartDispatch({ type: "TOGGLE_UPLOD_FORM" })}
+            >
+              <RxCross2 />
+            </div>
             <div className="drag-file-area">
               <span className=" upload-icon">
                 {isFileUploaded ? (
-                  <UploadComplete />
-                ) : (
                   <>
-                    <UploadIcon />
+                    {filePreview && (
+                      <div className="file-preview  d-flex justify-content-center align-item-center">
+                        <img
+                          src={filePreview}
+                          alt="File Preview"
+                          className="col-7"
+                        />
+                      </div>
+                    )}
                   </>
+                ) : (
+                  // renderFileTypeIcon()
+                  <IoCloudUploadOutline />
                 )}
               </span>
               <h3 className="dynamic-message">
@@ -108,7 +176,7 @@ const UploadForm = () => {
               <label className="label">
                 {isFileUploaded ? (
                   <>
-                    <span>drag & drop or</span>
+                    <span>check your file</span>
                     <span className="browse-files alpha">
                       <input
                         type="file"
@@ -116,12 +184,11 @@ const UploadForm = () => {
                         style={{ top: 0 }}
                         onChange={handleFileChange}
                       />
-                      <span className="browse-files-text"> Browse File</span>
+                      <span className="browse-files-text"> Browse again</span>
                     </span>
                   </>
                 ) : (
                   <>
-                    {/* <span>or</span> */}
                     <span className="browse-files alpha">
                       <input
                         type="file"
@@ -138,8 +205,8 @@ const UploadForm = () => {
 
             {showCannotUploadMessage ? (
               <div className="cannot-upload-message">
-                <AiFillExclamationCircle />
-                Please select a file first
+                <AiOutlineFileText />
+                Please select a valid file (Image, PDF, or Word) less than 2MB
                 <span
                   className="material-icons-outlined cancel-alert-button"
                   onClick={handleCancelAlertClick}
@@ -148,12 +215,15 @@ const UploadForm = () => {
                 </span>
               </div>
             ) : null}
+
             {isFileUploaded && (
               <div className="file-block">
+                {/* {filePreview && (
+                  <div className="file-preview">
+                    <img src={filePreview} alt="File Preview" />
+                    </div>
+                  )} */}
                 <div className="file-info">
-                  <span className="material-icons-outlined file-icon">
-                    <AiOutlineFileText />
-                  </span>
                   <span className="file-name">{fileName}</span> |{" "}
                   <span className="file-size">{fileSize}</span>
                 </div>
@@ -161,31 +231,33 @@ const UploadForm = () => {
                   className="material-icons remove-file-icon"
                   onClick={handleRemoveFileClick}
                 >
-                  <AiOutlineDelete />
+                  <MdOutlineCancel />
                 </span>
-                <div
-                  className="progress_bar"
-                  style={{ width: isFileUploaded ? "96%" : "0" }}
-                />
               </div>
             )}
-            <button
-              type="button"
-              className="button button--aylen button--round-l button--text-thick mt-3"
-              onClick={handleUploadClick}
-              disabled={isFileUploaded}
-            >
-              {isFileUploaded ? (
-                <span className="check_icon">
-                  <FaCheck />
+
+            {!isFileUploaded ? (
+              <button
+                type="button"
+                className="button button--aylen button--round-l button--text-thick mt-3"
+                onClick={handleUploadClick}
+              >
+                <span className="check_icon" onClick={handleSubmit}>
+                  upload
                 </span>
-              ) : (
-                "Upload"
-              )}
-            </button>
+              </button>
+            ) : (
+              <button
+                type="button"
+                className="button button--aylen button--round-l button--text-thick mt-3"
+                onClick={handleSubmit}
+              >
+                <span className="check_icon">Submit</span>
+              </button>
+            )}
           </div>
         </form>
-      ) : null}
+      </Modal>
     </>
   );
 };

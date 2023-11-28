@@ -1351,18 +1351,18 @@ header {
 
 .upload-files-container {
   background-color: #fbfbfb;
-  width: 50%;
-  padding: 30px 60px;
-  border-radius: 40px;
+  width: 56%;
+  padding: 40px 50px;
+  border-radius: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 10px 20px, rgba(0, 0, 0, 0.28) 0px 6px 6px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 10px 20px, rgba(0, 0, 0, 0.28) 0px 6px 9px;
 }
 
 .drag-file-area {
-  border: 2px dashed var(--secondary-color);
+  border: 2px dashed #dde9f3;
   border-radius: 40px;
   margin: 10px 0 15px;
   padding: 30px 50px;
@@ -1372,15 +1372,16 @@ header {
 
 .drag-file-area .upload-icon {
   font-size: 50px;
+  color: #66a2d1;
 }
 
 .drag-file-area h3 {
-  font-size: 26px;
-  margin: 15px 0;
+  font-size: 22px;
+  margin: 15px 0 0 0;
 }
 
 .drag-file-area label {
-  font-size: 19px;
+  font-size: 17px;
 }
 
 .drag-file-area label .browse-files-text {
@@ -1437,7 +1438,7 @@ header {
 
 .file-block {
   color: #f7fff7;
-  background-color: rgb(97, 215, 176);
+  background-color: rgb(73 156 205);
   transition: all 1s;
   width: 70%;
   position: relative;
@@ -1511,9 +1512,9 @@ header {
 ._cross {
   position: absolute;
   content: "\292B";
-  top: 10%;
-  right: 5%;
-  color: #000;
+  top: 15px;
+  right: 15px;
+  color: #ee3147;
   height: 25px;
   width: 25px;
 }
@@ -2215,6 +2216,10 @@ div#bookAppointmentForm .width50:first-chlid {
   padding: 0;
   display: flex;
   justify-content: center;
+}
+
+.bread_crums .MuiBreadcrumbs-li {
+  cursor: pointer;
 }
 
 .bread_crums span.MuiChip-label {

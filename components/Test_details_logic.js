@@ -106,30 +106,42 @@ export const Test_details_logic = ({ Slug }) => {
                 </div>
                 <div className="detaildescrp col-lg-9 col-12 ">
                   <div className="packageprice d-flex align-items-center gap-5">
-                    <div className="actualprice">
-                      <Rupees /> <span>{project.Test_Amount}</span>
-                    </div>
-                    <div className="discountprice gradient  text-white m-0">
-                      <Rupees /> <span>{project.Discount_Amount}</span>
-                    </div>
+                    {project.Discount_Amount != 0 ? (
+                      <>
+                        <div className="actualprice">
+                          <Rupees /> <span>{project.Test_Amount}</span>
+                        </div>
+                        <div className="discountprice gradient  text-white m-0">
+                          <Rupees /> <span>{project.Discount_Amount}</span>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="discountprice gradient  text-white m-0">
+                          <Rupees /> <span>{project.Test_Amount}</span>
+                        </div>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
             </div>
-            <div className="detailrow">
-              <div className="row">
-                <div className="detailtitle col-lg-3 col-12">
-                  <p>
-                    <strong>Discount</strong>
-                  </p>
-                </div>
-                <div className="detaildescrp col-lg-9 col-12 ">
-                  <p>
-                    UPTO <strong>{Math.round(_discount)}%</strong>{" "}
-                  </p>
+            {_discount !== "100" && (
+              <div className="detailrow">
+                <div className="row">
+                  <div className="detailtitle col-lg-3 col-12">
+                    <p>
+                      <strong>Discount</strong>
+                    </p>
+                  </div>
+                  <div className="detaildescrp col-lg-9 col-12 ">
+                    <p>
+                      UPTO <strong>{Math.round(_discount)}%</strong>{" "}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
             {project.Who_is_it_for && (
               <div className="detailrow">
                 <div className="row">

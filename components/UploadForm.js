@@ -170,8 +170,8 @@ const UploadForm = () => {
               </span>
               <h3 className="dynamic-message">
                 {isFileUploaded
-                  ? "File Dropped Successfully!"
-                  : "Drag & drop any file here"}
+                  ? "File Successfully Selected!"
+                  : "Select file here"}
               </h3>
               <label className="label">
                 {isFileUploaded ? (

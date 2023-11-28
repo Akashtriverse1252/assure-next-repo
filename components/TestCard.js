@@ -44,7 +44,9 @@ export const TestCard = ({
             <div className="packagedetail">
               <ul>
                 {Test_Category && <li>{Test_Category} Related Test</li>}
-                {Turn_around_time && <li>{Turn_around_time}</li>}
+                {Turn_around_time && (
+                  <li>Turn Around Time: {Turn_around_time}</li>
+                )}
                 {Pre_test_information && <li>{Pre_test_information}</li>}
               </ul>
             </div>

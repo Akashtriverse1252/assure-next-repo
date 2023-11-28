@@ -5,6 +5,7 @@ import { Rupees } from "./svg-components/Rupees";
 import { Cart } from "./svg-components/Cart";
 import { useData } from "@/context/context";
 import data from "../Data/test_data.json";
+import { Faq } from "./Faq";
 
 export const Test_details_logic = ({ Slug }) => {
   const { cartState, cartDispatch } = useData();
@@ -49,13 +50,13 @@ export const Test_details_logic = ({ Slug }) => {
       {project && (
         <div className="row">
           <div className="title col-12 float-start text-center">
-            {!project.Test_Category ? (
+            <h2>{project.Test_Name}</h2>
+            {/* {!project.Test_Category ? (
               <>
-                <h2>{project.Test_Name}-test</h2>
               </>
             ) : (
               <h2>{project.Test_Category}-test</h2>
-            )}
+            )} */}
           </div>
           <div className="col-lg-11 m-auto col-12 float-start grey-background pt-4 px-0">
             <div className="detailrow">
@@ -202,6 +203,16 @@ export const Test_details_logic = ({ Slug }) => {
           </div>
         </div>
       )}
+      <section id="faq" className="faq pt-5 ">
+        <div className="row">
+          <div className="title col-12 float-start text-center">
+            <h2 className="">Frequently Asked Questions.</h2>
+          </div>
+          <div className="col-lg-11 col-12 m-auto float-start">
+            <Faq className="minusbottom  " />
+          </div>
+        </div>
+      </section>
     </>
   );
 };

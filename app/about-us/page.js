@@ -11,7 +11,7 @@ export const page = () => {
   return (
     <>
       <main className="d-flex flex-wrap float-start col-12">
-        <section className="position-relative">
+        <section className="position-relative" >
           <div className="gradient-layer"></div>
           <div className="container">
             <div className="row">
@@ -77,7 +77,7 @@ export const page = () => {
           <Line className="svgwidthline position-absolute opacity-10 bottom-0 end-0" />
         </section>
         <ChooseAssure />
-        <section className="position-relative pb-5 grey-background border-bottom">
+        <section className="position-relative pb-5 grey-background border-bottom" id="quality">
           <div className="container">
             <div className="web-container">
               <div className="row">

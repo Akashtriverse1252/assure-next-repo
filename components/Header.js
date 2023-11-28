@@ -1,26 +1,21 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Aos from "aos";
-import SearchIcon from "@mui/icons-material/Search";
 import "aos/dist/aos.css";
 import { Logo } from "./svg-components/Logo";
 import Link from "next/link";
-import { Attachement } from "./svg-components/Attachement";
 import { Booktest } from "./svg-components/Booktest";
 import { Report } from "./svg-components/Report";
 import SearchBar from "./SearchBar";
 import MobileSearchBar from "./MobileSearchBar";
-import { IndividualTest } from "./svg-components/IndividualTest";
 import { MyCart } from "./MyCart";
 import { UploadPrescription } from "./UploadPrescription";
 import Nabh from "./svg-components/Nabh";
 import { usePathname } from "next/navigation";
 import { LuUser, LuSearch, LuX } from "react-icons/lu";
-import { PiMagnifyingGlassLight } from "react-icons/pi";
-import { PiArrowLeftThin } from "react-icons/pi";
-import { DropDown_search } from "./DropDown_search";
 import { PiShoppingCartSimple } from "react-icons/pi";
 import { useData } from "@/context/context";
+import { Badge } from "@mui/material";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -51,7 +46,10 @@ export const Header = () => {
       setNavbar(false);
     }
   };
-  console.log("ekjh ietgjh", cartState.products);
+  let totalQuantity = 0;
+  for (const product of cartState.products) {
+    totalQuantity += product.quantity;
+  }
   return (
     <header>
       <div className={header ? "header fixed" : "header"}>
@@ -80,8 +78,12 @@ export const Header = () => {
                 </div>
                 <div className="mobile_nav_search position-relative d-flex gap-3 d-sm-none ">
                   <MobileSearchBar />
-                  {cartState.products.lenght == null && (
-                    <PiShoppingCartSimple onClick={(()=>(cartDispatch({ type: "TOGGLE_CART" })))} />
+                  {cartState.products.length !== 0 && (
+                    <Badge badgeContent={totalQuantity} color="error">
+                      <PiShoppingCartSimple
+                        onClick={() => cartDispatch({ type: "TOGGLE_CART" })}
+                      />
+                    </Badge>
                   )}
                 </div>
                 <div className="navbar p-0 align-items-end gap-4">
@@ -149,7 +151,14 @@ export const Header = () => {
                                 </div>
                                 <div className="fmenu">
                                   <ul className="p-0 m-0">
-                                    <li>OUR QUALITY</li>
+                                    <li Link="">
+                                      <Link
+                                        href="/about-us/#quality"
+                                        className="text-black"
+                                      >
+                                        OUR QUALITY
+                                      </Link>
+                                    </li>
                                   </ul>
                                 </div>
                               </div>
@@ -181,20 +190,60 @@ export const Header = () => {
                               <div className="footercolumn">
                                 <div className="fheading">
                                   <h5 className="text-uppercase">
-                                    HEALTH PACKAGES
+                                    <Link href="/packages">
+                                      HEALTH PACKAGES
+                                    </Link>
                                   </h5>
                                 </div>
                               </div>
                               <div className="footercolumn">
                                 <div className="fheading">
-                                  <h5 className="text-uppercase">LOCATE US</h5>
+                                  <h5 className="text-uppercase">MY ACCOUNT</h5>
                                 </div>
                                 <div className="fmenu">
                                   <ul className="p-0 m-0">
-                                    <li>MY CART</li>
+                                    <li
+                                      onClick={() =>
+                                        cartDispatch({ type: "TOGGLE_CART" })
+                                      }
+                                    >
+                                      MY CART
+                                    </li>
                                     <li>BLOG</li>
-                                    <li>LOGIN</li>
-                                    <li>REGISTER</li>
+                                    <li>
+                                      <Link
+                                        href="https://patient-in.creliohealth.com/patient/login"
+                                        target="_blank"
+                                        rel="none"
+                                        className="text-black"
+                                      >
+                                        LOGIN
+                                      </Link>
+                                    </li>
+                                    <li>
+                                      <Link
+                                        className="text-black"
+                                        href="/terms-conditions"
+                                      >
+                                        TERMS & CONDITIONS
+                                      </Link>
+                                    </li>
+                                    <li>
+                                      <Link
+                                        className="text-black"
+                                        href="/privacy-policy"
+                                      >
+                                        PRIVACY POLICY
+                                      </Link>
+                                    </li>
+                                    <li>
+                                      <Link
+                                        className="text-black"
+                                        href="/refund-cancellation"
+                                      >
+                                        REFUND & CANCELLATION
+                                      </Link>
+                                    </li>
                                   </ul>
                                 </div>
                               </div>

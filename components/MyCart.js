@@ -9,10 +9,10 @@ export const MyCart = () => {
   const { cartState, cartDispatch } = useData();
 
   // Calculate the total quantity using cartState
-  let totalQuantity = 0;
-  for (const product of cartState.products) {
-    totalQuantity += product.quantity;
-  }
+    let totalQuantity = 0;
+    for (const product of cartState.products) {
+      totalQuantity += product.quantity;
+    }
   // console.log(cartState.products);
   const handleToggleCart = () => {
     cartDispatch({ type: "TOGGLE_CART" });

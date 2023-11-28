@@ -64,7 +64,7 @@ const SearchBar = () => {
         options={suggestions}
         onInputChange={handleInputChange}
         onChange={handleSuggestionSelect}
-        placeholder="Search Your Package/Test/Scan"
+        placeholder="Search Your Package/Test"
         selected={selected}
         minLength={2}
         clearButton={true}

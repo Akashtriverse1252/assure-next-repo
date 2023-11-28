@@ -1641,7 +1641,7 @@ header {
 }
 
 .sub_total {
-  margin-top: 20px;
+  margin-top: 12px;
 }
 
 .cart_btn {
@@ -2156,7 +2156,7 @@ div#bookAppointmentForm .width50:first-chlid {
 .footer_tabs ul li {
   margin-bottom: 5px;
   position: relative;
-  max-height: 350px;
+  max-height: 500px;
   overflow-y: scroll;
 }
 
@@ -2215,4 +2215,11 @@ div#bookAppointmentForm .width50:first-chlid {
   padding: 0;
   display: flex;
   justify-content: center;
+}
+
+.bread_crums span.MuiChip-label {
+  letter-spacing: 0.8px;
+  margin: 2px 5px;
+  text-transform: capitalize;
+
 }

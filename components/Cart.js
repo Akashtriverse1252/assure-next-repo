@@ -60,7 +60,7 @@ export default function Cart() {
           <div className="h-100 absolute-top inset-0 overflow-hidden _shadow">
             <div className="h-100 ">
               <div className="d-flex flex-column h-100 bg-white shadow-xl">
-                <div className="flex-grow-1 overflow-auto px-4 py-6 sm:px-6">
+                <div className="flex-grow-1 overflow-auto px-sm-4 py-6 sm:px-6">
                   <div className="_cart_header d-flex justify-content-between align-items-center">
                     <div className="ml-3 d-flex h-7 align-items-center">
                       <button
@@ -76,7 +76,7 @@ export default function Cart() {
 
                   <div className="mt-8">
                     <div className="flow-root">
-                      <ul className="list-unstyled _cart_test">
+                      <ul className="list-unstyled _cart_test mx-3">
                         {cartState.products.map((product) => (
                           <li
                             key={product.id}
@@ -89,7 +89,7 @@ export default function Cart() {
 
                                   <button
                                     type="button"
-                                    className="btn"
+                                    className="btn _cart_cross"
                                     onClick={() => handleRemove(product)}
                                   >
                                     <LuX />
@@ -99,21 +99,23 @@ export default function Cart() {
                                   Quantity:{" "}
                                   <button
                                     type="button"
-                                    className="btn"
+                                    className="btn px-2 py-0"
                                     onClick={() => handleDecrement(product)}
                                   >
                                     -
                                   </button>
-                                  <span>{product.quantity}</span>
+                                  <span className="px-1 px-sm-0">
+                                    {product.quantity}
+                                  </span>
                                   <button
                                     type="button"
-                                    className="btn"
+                                    className="btn px-2 py-0"
                                     onClick={() => handleIncrement(product)}
                                   >
                                     +
                                   </button>
                                 </p>
-                                <p className="my-1 text-sm text-gray-500">
+                                <p className="my-sm-1 text-sm text-gray-500">
                                   Discount: {product.discount}%
                                 </p>
                               </div>
@@ -147,15 +149,15 @@ export default function Cart() {
                     <p className="mb-0">Discounted Price</p>
                     <p className="mb-0 rupee">{discountedPrice.toFixed(2)}</p>
                   </div>
-                  <div className="mt-6 cart_btn">
+                  <div className="mt-sm-6 mt-2  cart_btn">
                     <a
                       href="#"
-                      className="button button--aylen button--round-l button--text-thick mt-3"
+                      className="button button--aylen button--round-l button--text-thick mt-sm-3"
                     >
                       Checkout
                     </a>
                   </div>
-                  <div className="mt-6 mb-2 d-flex justify-content-center text-center text-sm text-gray-500">
+                  <div className="mt-sm-6 mt-2 mb-2 d-flex justify-content-center text-center text-sm text-gray-500">
                     <button
                       type="button"
                       className="cnt_shp_btn textbtn"

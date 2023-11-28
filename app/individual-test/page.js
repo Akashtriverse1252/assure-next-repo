@@ -3,11 +3,13 @@ import { Dots } from "@/components/svg-components/Dots";
 import { Line } from "@/components/svg-components/Line";
 import data from "@/Data/test_data.json";
 import { TestCard } from "@/components/TestCard";
+import { BreadCrums } from "@/components/BreadCrums";
+import { usePathname } from "next/navigation";
 
 export const page = () => {
-  // console.log("this is the data", data.test_data);
   return (
     <>
+      {/* <BreadCrums PathName={pathname} /> */}
       <section className="position-relative">
         <div className="container">
           <div className="web-container">

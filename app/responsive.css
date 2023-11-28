@@ -43,6 +43,15 @@
         height: 120px;
     }
 
+    ._cart_cross svg {
+        width: 20px;
+    }
+
+    .cnt_shp_btn {
+        margin-top: 10px ;
+    }
+
+
     .packagename h4 {
         font-size: 16px;
         margin-top: 5px;
@@ -381,6 +390,13 @@
     .__visible._cart {
         top: -0% !important;
 
+    }
+    ._cart_test_detail h5{
+        font-size: 17px;
+    }
+    .pad-0,
+    ._cart_cross{
+        padding: 0 ;
     }
 
 

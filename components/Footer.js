@@ -5,6 +5,8 @@ import { Tab } from "@mui/material/Tab";
 import { TabContext, TabList, TabPanel } from "@mui/material";
 import data from "@/Data/test_data.json";
 import PackageData from "@/Data/Package_Data.json";
+import Link from "next/link";
+import { useData } from "@/context/context";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -13,6 +15,7 @@ export const Footer = () => {
   const [buttonWidth2, setButtonWidth2] = useState(0);
   const buttonRef1 = useRef(null);
   const buttonRef2 = useRef(null);
+  const { cartState, cartDispatch } = useData();
 
   const getWidth = () => {
     const activeButtonRef = selectedTab === 1 ? buttonRef1 : buttonRef2;
@@ -21,7 +24,6 @@ export const Footer = () => {
     setButtonWidth(buttonRect.width);
     const width1ref = buttonRef1.current.getBoundingClientRect();
     setButtonWidth2(width1ref.width);
-
   };
 
   useEffect(() => {
@@ -77,10 +79,10 @@ export const Footer = () => {
                         <ul className="flex-center">
                           <li>
                             {data.test_data.map((test, index) => (
-                              <a href={`/test-detail/${test.Slug}`}>
+                              <Link href={`/test-detail/${test.Slug}`}>
                                 {" "}
                                 {test.Test_Name}
-                              </a>
+                              </Link>
                             ))}
                           </li>
                         </ul>
@@ -92,10 +94,10 @@ export const Footer = () => {
                           <ul className="flex-center">
                             <li>
                               {PackageData.map((test, index) => (
-                                <a href={`/packages/${test.Slug}`}>
+                                <Link href={`/packages/${test.Slug}`}>
                                   {" "}
                                   {test.PackageName}
-                                </a>
+                                </Link>
                               ))}
                             </li>
                           </ul>
@@ -113,11 +115,17 @@ export const Footer = () => {
                 </div>
                 <div className="footercolumn">
                   <div className="fheading">
-                    <h5 className="text-uppercase">ABOUT US</h5>
+                    <h5 className="text-uppercase">
+                      <Link href="/about-us">ABOUT US</Link>
+                    </h5>
                   </div>
                   <div className="fmenu">
                     <ul className="p-0 m-0">
-                      <li>OUR QUALITY</li>
+                      <li>
+                        <Link href="/about-us/#quality" className="text-black">
+                          OUR QUALITY
+                        </Link>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -146,7 +154,9 @@ export const Footer = () => {
                 </div>
                 <div className="footercolumn">
                   <div className="fheading">
-                    <h5 className="text-uppercase">HEALTH PACKAGES</h5>
+                    <h5 className="text-uppercase">
+                      <Link href="/packages">HEALTH PACKAGES</Link>
+                    </h5>
                   </div>
                 </div>
                 <div className="footercolumn">
@@ -155,10 +165,38 @@ export const Footer = () => {
                   </div>
                   <div className="fmenu">
                     <ul className="p-0 m-0">
-                      <li>MY CART</li>
+                      <li onClick={() => cartDispatch({ type: "TOGGLE_CART" })}>
+                        MY CART
+                      </li>
                       <li>BLOG</li>
-                      <li>LOGIN</li>
-                      <li>REGISTER</li>
+                      <li>
+                        <Link
+                          href="https://patient-in.creliohealth.com/patient/login"
+                          target="_blank"
+                          rel="none"
+                          className="text-black"
+                        >
+                          LOGIN
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="text-black" href="/terms-conditions">
+                          TERMS & CONDITIONS
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="text-black" href="/privacy-policy">
+                          PRIVACY POLICY
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          className="text-black"
+                          href="/refund-cancellation"
+                        >
+                          REFUND & CANCELLATION
+                        </Link>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -185,7 +223,7 @@ export const Footer = () => {
                 <div className="col-lg-4 col-xs-6 col-sm-6 col-12">
                   <div className="contact">
                     <span className="flex-center align-items-start gap-2 gap-sm-0">
-                      <strong>A</strong>3, Waryam Nagar, <br />
+                      <strong>A </strong>&nbsp; 3, Waryam Nagar, <br />
                       Vasant Vihar Road, <br />
                       Jalandhar
                     </span>

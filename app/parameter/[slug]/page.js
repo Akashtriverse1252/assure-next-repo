@@ -103,12 +103,23 @@ export const page = ({ params: { slug } }) => {
                         </div>
                         <div className="detaildescrp col-lg-9 col-12 ">
                           <div className="packageprice d-flex align-items-center gap-5">
-                            <div className="actualprice">
-                              <Rupees /> <span>{project.Test_Amount}</span>
-                            </div>
-                            <div className="discountprice gradient  text-white m-0">
-                              <Rupees /> <span>{project.Discount_Amount}</span>
-                            </div>
+                            {project.Discount_Amount != 0 ? (
+                              <>
+                                <div className="actualprice">
+                                  <Rupees /> <span>{project.Test_Amount}</span>
+                                </div>
+                                <div className="discountprice gradient  text-white m-0">
+                                  <Rupees />{" "}
+                                  <span>{project.Discount_Amount}</span>
+                                </div>
+                              </>
+                            ) : (
+                              <>
+                                <div className="discountprice gradient  text-white m-0">
+                                  <Rupees /> <span>{project.Test_Amount}</span>
+                                </div>
+                              </>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -185,7 +196,7 @@ export const page = ({ params: { slug } }) => {
           <ChooseAssure />
         </main>
       ) : (
-        <p className=" flex-center">No data found</p>
+        <p className=" col-12 flex-center">No data found</p>
       )}
     </>
   );

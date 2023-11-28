@@ -13,6 +13,7 @@ import { IoCloudUploadOutline } from "react-icons/io5";
 import { useData } from "@/context/context";
 import Modal from "@mui/material/Modal";
 import { RxCross2 } from "react-icons/rx";
+import { Alert, Snackbar, Stack } from "@mui/material";
 
 const UploadForm = () => {
   const { cartState, cartDispatch } = useData();
@@ -24,6 +25,13 @@ const UploadForm = () => {
   const [fileFlag, setFileFlag] = useState(0);
   const [showCannotUploadMessage, setShowCannotUploadMessage] = useState(false);
   const [filePreview, setFilePreview] = useState(null);
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setIsOpen(false);
+  };
 
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
@@ -131,6 +139,7 @@ const UploadForm = () => {
     }
   };
   const handleSubmit = () => {
+    setIsOpen(true);
     cartDispatch({ type: "TOGGLE_UPLOD_FORM" });
     handleRemoveFileClick();
   };
@@ -240,11 +249,9 @@ const UploadForm = () => {
               <button
                 type="button"
                 className="button button--aylen button--round-l button--text-thick mt-3"
-                onClick={handleUploadClick}
+                onSubmit={handleUploadClick}
               >
-                <span className="check_icon" onClick={handleSubmit}>
-                  upload
-                </span>
+                <span className="check_icon">upload</span>
               </button>
             ) : (
               <button
@@ -258,6 +265,23 @@ const UploadForm = () => {
           </div>
         </form>
       </Modal>
+
+      <Stack spacing={2} sx={{ width: "100%" }}>
+        <Snackbar
+          open={isOpen}
+          autoHideDuration={4000}
+          onClose={handleClose}
+          TransitionProps={{ onExited: handleExited }}
+        >
+          <Alert
+            onClose={handleClose}
+            severity="success"
+            sx={{ width: "100%" }}
+          >
+            Prescription Uploaded Successfully!
+          </Alert>
+        </Snackbar>
+      </Stack>
     </>
   );
 };

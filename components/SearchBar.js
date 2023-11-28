@@ -1,60 +1,38 @@
 import React, { useState, useRef, useEffect } from "react";
-import { TextField, Box } from "@mui/material";
-import styles from "../app/page.module.css";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
+import { Box, Tabs, Tab } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import data from "../Data/Keywords.json";
-import Search_box from "../components/Search_box";
-import { LuSearch } from "react-icons/lu";
-import { PiMagnifyingGlassLight } from "react-icons/pi";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
+
+import SearchBox from "../components/Search_box";
 
 const SearchBar = () => {
   const [value, setValue] = useState(0);
-  const [searchText, setSearchText] = useState(""); // State to store the text entered in the TextField
-  const [filteredOptions, setFilteredOptions] = useState([]); // State to store the filtered options
-  const [isDropdownVisible, setDropdownVisible] = useState(false); // State to control dropdown visibility
-  const textFieldRef = useRef(null);
+  const [searchText, setSearchText] = useState("");
+  const [filteredOptions, setFilteredOptions] = useState([]);
+  const [isDropdownVisible, setDropdownVisible] = useState(false);
   const dropdownRef = useRef(null);
-
-
   const pathname = usePathname();
+
   useEffect(() => {
     setDropdownVisible(false);
   }, [pathname]);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  const handleInputChange = (event) => {
-    setSearchText(event.target.value);
-  };
+  const handleChange = (_, newValue) => setValue(newValue);
 
   const filterOptions = () => {
-    if (value === 0) {
-      // Filter options for "Test" tab
-      const filteredTestOptions = options.filter((option) =>
-        option.label.toLowerCase().includes(searchText.toLowerCase())
+    const options = value === 0 ? testOptions : packageOptions;
+    const filterFunction = (opt) =>
+      opt.filter((o) =>
+        o.label.toLowerCase().includes(searchText.toLowerCase())
       );
-      setFilteredOptions(filteredTestOptions);
-    } else if (value === 1) {
-      // Filter options for "Packages" tab
-      const filteredPackageOptions = poptions.filter((poption) =>
-        poption.label.toLowerCase().includes(searchText.toLowerCase())
-      );
-      setFilteredOptions(filteredPackageOptions);
-    }
+    setFilteredOptions(filterFunction(options));
   };
 
-  const handleTextFieldClick = () => {
-    setDropdownVisible(true); // Show the dropdown when the TextField is clicked
-  };
+  const handleTextFieldClick = () => setDropdownVisible(true);
 
   const handleBodyClick = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      // If the click is outside of the dropdown, hide it
       setDropdownVisible(false);
     }
   };
@@ -64,62 +42,87 @@ const SearchBar = () => {
   }, [searchText, value]);
 
   useEffect(() => {
-    // Add a click event listener to the body
     document.body.addEventListener("click", handleBodyClick);
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      document.body.removeEventListener("click", handleBodyClick);
-    };
+    return () => document.body.removeEventListener("click", handleBodyClick);
   }, []);
 
-  const options = [
-    { label: "H PYLORI IgM ANTIBODIES" },
-    { label: "QUARDUAPLE MATERNAL SECREEN (QUADRUPLE TEST)" },
-    { label: "17-ALPHA-HYDROXY PROGESTERONE" },
-    { label: "24 HOURS URINE PROTEIN ELECTROPHORESIS" },
-    { label: "ADENOSINE DEAMINASE" },
-    { label: "ALANINE AMINOTRANSFERASE ( ALT ), SGPT (LIVER)" },
-    { label: "ALBUMIN (KIDNEY, LIVER)" },
-    { label: "ALBUMIN GLOBULIN A/G RATIO" },
+  const renderOptions = () =>
+    filteredOptions.length > 0 ? (
+      <ul>
+        {filteredOptions.map((option, index) => (
+          <Link
+            href={`/${value === 0 ? "test-detail" : "packages"}/${option.slug}`}
+            key={index}
+          >
+            <li>{option.label}</li>
+          </Link>
+        ))}
+      </ul>
+    ) : (
+      <ul>
+        <li className="border-0 text-center opacity-50 text-uppercase">
+          No matching results found.
+        </li>
+      </ul>
+    );
+
+  const testOptions = [
+    { label: "Adenosine Deaminase", slug: "adenosine-deaminase" },
+    {
+      label: "17-Alpha-Hydroxy Progesterone",
+      slug: "17-alpha-hydroxy-progesterone",
+    },
+    {
+      label: "24 Hours Urine Protein Electrophoresis",
+      slug: "24-hours-urine-protein-electrophoresis",
+    },
+    { label: "Body Fluid Analysis", slug: "body-fluid-analysis" },
+    { label: "H Pylori IgM Antibodies", slug: "h-pylori-igm-antibodies" },
+    { slug: "h-pylori-igm-antibodies", label: "H Pylori IgM Antibodies" },
+    {
+      label: "Quarduaple Maternal Secreen (Quadruple Test)",
+      slug: "quarduaple-maternal-secreen-quadruple-test",
+    },
+    {
+      slug: "quarduaple-maternal-secreen-quadruple-test",
+      label: "Quarduaple Maternal Secreen (Quadruple Test)",
+    },
+    {
+      label: "Alanine Aminotransferase ( ALT ), Sgpt",
+      slug: "alanine-aminotransferase--alt--sgpt",
+    },
+    { slug: "adenosine-deaminase", label: "Adenosine Deaminase" },
   ];
 
-  const poptions = [
-    { label: "Assure Complete Wellness" },
-    { label: "Senior Citizen Package" },
-    { label: "Basic Allergy Package" },
+  const packageOptions = [
+    {
+      slug: "assure-complete-wellness-package-for-man",
+      label: "Complete Wellness Package",
+    },
+    {
+      slug: "assure-fit-couple-essential-man",
+      label: "Assure Fit Couple Essential - Man",
+    },
+    {
+      slug: "assure-complete-wellness-package-for-woman",
+      label: "Complete Wellness Packag",
+    },
+    {
+      slug: "assure-fit-couple-essential-woman",
+      label: "Assure Fit Couple Essential - Woman",
+    },
   ];
-
   return (
     <div className="col-12 pull-left position-relative">
       <div
         className="header_search position-relative"
-        onClick={() => {
-          setDropdownVisible(true);
-        }}
+        onClick={handleTextFieldClick}
       >
-        <Search_box />
+        <SearchBox />
         <div className="_icon">
           <SearchIcon className="d-none d-sm-block" />
-          <PiMagnifyingGlassLight className="d-block d-sm-none" />
         </div>
       </div>
-      {/* <TextField
-        label="Find your package/test/scan"
-        variant="outlined"
-        className={styles.inputmodified}
-        fullWidth
-        onChange={handleInputChange}
-        ref={textFieldRef}
-        onClick={handleTextFieldClick}
-        InputProps={{
-          endAdornment: (
-            <div className="searchbutton">
-              <SearchIcon color="action" />
-            </div>
-          ),
-        }}
-      /> */}
       {isDropdownVisible && (
         <div className="dropdowntab pb-2 col-12" ref={dropdownRef}>
           <Box className="mb-3 grey-background border-bottom col-12">
@@ -128,21 +131,7 @@ const SearchBar = () => {
               <Tab label="Packages" />
             </Tabs>
           </Box>
-          <div className="listdata col-12 float-start">
-            {filteredOptions.length > 0 ? (
-              <ul>
-                {filteredOptions.map((option, index) => (
-                  <li key={index}>{option.label}</li>
-                ))}
-              </ul>
-            ) : (
-              <ul>
-                <li className="border-0 text-center opacity-50 text-uppercase">
-                  No matching results found.
-                </li>
-              </ul>
-            )}
-          </div>
+          <div className="listdata col-12 float-start">{renderOptions()}</div>
         </div>
       )}
     </div>

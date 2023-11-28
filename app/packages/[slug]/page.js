@@ -139,7 +139,10 @@ export const page = () => {
                       </div>
                       <div className="detaildescrp col-lg-9 col-12 ">
                         <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
-                          <p>{project.TestInfo.length}</p>
+                          <p>
+                            <strong>{project.TestInfo.length} </strong>
+                            Parameters
+                          </p>
 
                           <p>
                             <strong>FREE</strong> Sample Collection

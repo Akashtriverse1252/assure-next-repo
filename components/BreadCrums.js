@@ -43,11 +43,9 @@ export const BreadCrums = () => {
   return (
     <>
       {pathname !== "/" ? (
-        <section className="position-relative">
+        <section className="position-relative d-contents">
           <div className="container">
-            <div role="presentation" className="bread_crums hidden-xs">
-              {" "}
-              {/* Apply the hidden-xs class */}
+            <div role="presentation" className="bread_crums ">
               <Breadcrumbs className="mb-3 " aria-label="breadcrumb">
                 <StyledBreadcrumb
                   component="a"

@@ -18,7 +18,7 @@ export const PackagCard = ({
   return (
     <div
       className={
-        widthFull ? "col-lg-12 col-12 test_card" : "col-lg-3 test_card"
+        widthFull ? "col-lg-12 col-12 test_card package_card" : "col-lg-3 test_card"
       }
     >
       <Link href={`/packages/${Test_Slug}`}>

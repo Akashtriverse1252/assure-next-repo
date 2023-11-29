@@ -622,6 +622,13 @@ section,
   z-index: -1;
 }
 
+.package_card .packagename h4 {
+  height: 45px;
+
+}
+.package_card .packagedetail {
+  height: 120px;
+}
 .packagedetail {
   display: inline-block;
   width: 100%;
@@ -2318,6 +2325,7 @@ div#bookAppointmentForm .width50:first-chlid {
   opacity: 0.5;
   font-size: 9px;
 }
-.detaildescrp .accordion__button:after{
+
+.detaildescrp .accordion__button:after {
   content: none;
 }

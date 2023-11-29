@@ -4,7 +4,6 @@ import { Line } from "@/components/svg-components/Line";
 import { Tab } from "@mui/material/Tab";
 import { TabContext, TabList, TabPanel } from "@mui/material";
 import data from "@/Data/test_data.json";
-import PackageData from "@/Data/Package_Data.json";
 import Link from "next/link";
 import { useData } from "@/context/context";
 
@@ -29,6 +28,9 @@ export const Footer = () => {
   useEffect(() => {
     getWidth();
   }, [selectedTab]);
+  const packageData = data.test_data.filter(
+    (item) => item.category === "package"
+  );
 
   return (
     <>
@@ -93,10 +95,10 @@ export const Footer = () => {
                         <div className="footer_tabs">
                           <ul className="flex-center">
                             <li>
-                              {PackageData.map((test, index) => (
+                              {packageData.map((test, index) => (
                                 <Link href={`/packages/${test.Slug}`}>
                                   {" "}
-                                  {test.PackageName}
+                                  {test.Test_Name}
                                 </Link>
                               ))}
                             </li>

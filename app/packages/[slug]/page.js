@@ -7,7 +7,7 @@ import { Rupees } from "@/components/svg-components/Rupees";
 import { useData } from "@/context/context";
 import { AddCard, Addchart, CardGiftcardOutlined } from "@mui/icons-material";
 import React from "react";
-import package_info from "@/Data/All_packages.json";
+import package_info from "@/Data/test_data.json";
 import { useParams } from "next/navigation";
 import { Faq } from "@/components/Faq";
 
@@ -16,10 +16,11 @@ export const page = () => {
   const params = useParams();
 
   const slug = params.slug;
-  const project = package_info.find((p) => p.Slug === slug) || null;
+  const project = package_info.test_data.find((p) => p.Slug === slug) || null;
   const _discount = project?.Test_Amount
     ? (
-        ((project.ActualPrice - project.DiscountPrice) / project.ActualPrice) *
+        ((project.Test_Amount - project.Discount_Amount) /
+          project.Test_Amount) *
         100
       ).toFixed()
     : 0;
@@ -28,9 +29,9 @@ export const page = () => {
     cartDispatch({ type: "TOGGLE_CART" });
     const product = {
       id: project.id,
-      name: project.PackageName,
-      price: project.ActualPrice,
-      dis_price: project.DiscountPrice,
+      name: project.Test_Name,
+      price: project.Test_Amount,
+      dis_price: project.Discount_Amount,
       quantity: 1,
       discount: _discount,
     };
@@ -72,7 +73,7 @@ export const page = () => {
                         </div>
                         <div className="detaildescrp col-lg-9 col-12">
                           <p>
-                            <strong>{project.PackageName}</strong>
+                            <strong>{project.Test_Name}</strong>
                           </p>
                         </div>
                       </div>
@@ -86,12 +87,12 @@ export const page = () => {
                             </p>
                           </div>
                           <div className="detaildescrp col-lg-9 col-12">
-                            <p>{project.TestDetails}</p>
+                            <p>{project.Test_Description}</p>
                           </div>
                         </div>
                       </div>
                     )}
-                    {project.TestInfo.length && (
+                    {project.TestInfo.length ? (
                       <div className="detailrow">
                         <div className="row">
                           <div className="detailtitle col-lg-3 col-12">
@@ -104,7 +105,7 @@ export const page = () => {
                           </div>
                         </div>
                       </div>
-                    )}
+                    ) : null}
 
                     <div className="detailrow">
                       <div className="row">
@@ -113,12 +114,12 @@ export const page = () => {
                             <strong>Exclusive Offer</strong>
                           </p>
                         </div>
-                        {project.DiscountPrice == 0 ? (
+                        {project.Discount_Amount == 0 ? (
                           <>
                             <div className="detaildescrp col-lg-9 col-12 ">
                               <div className="packageprice d-flex align-items-center gap-5">
                                 <div className="discountprice gradient  text-white m-0">
-                                  <Rupees /> <span>{project.ActualPrice}</span>
+                                  <Rupees /> <span>{project.Test_Amount}</span>
                                 </div>
                               </div>
                             </div>
@@ -127,10 +128,11 @@ export const page = () => {
                           <div className="detaildescrp col-lg-9 col-12 ">
                             <div className="packageprice d-flex align-items-center gap-5">
                               <div className="actualprice">
-                                <Rupees /> <span>{project.ActualPrice}</span>
+                                <Rupees /> <span>{project.Test_Amount}</span>
                               </div>
                               <div className="discountprice gradient  text-white m-0">
-                                <Rupees /> <span>{project.DiscountPrice}</span>
+                                <Rupees />{" "}
+                                <span>{project.Discount_Amount}</span>
                               </div>
                             </div>
                           </div>

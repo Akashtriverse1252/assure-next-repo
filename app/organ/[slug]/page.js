@@ -6,10 +6,12 @@ import test_info from "@/Data/test_data.json";
 import { TestCard } from "@/components/TestCard";
 
 export const page = ({ params: { slug } }) => {
-  const filtered_slug_data = test_info.test_data.filter(
-    (p) => p.Test_Category.toLowerCase() === slug
+  const packageData = test_info.test_data.filter(
+    (item) => item.category === "test"
   );
-
+  const filtered_slug_data = packageData.filter(
+    (p) => p.Test_Category === slug
+  );
   return (
     <>
       <section className="position-relative">

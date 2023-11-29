@@ -626,9 +626,16 @@ section,
   height: 45px;
 
 }
+
+.package_card .packagedetail ul {
+  height: auto;
+}
+
 .package_card .packagedetail {
   height: 120px;
+  overflow: hidden;
 }
+
 .packagedetail {
   display: inline-block;
   width: 100%;
@@ -1997,6 +2004,7 @@ div#bookAppointmentForm .width50:first-chlid {
 }
 
 
+.packagedetail ul::-webkit-scrollbar,
 .packagedetail::-webkit-scrollbar,
 ._acc_cnt ul li::-webkit-scrollbar,
 #searchTypeahead::-webkit-scrollbar {
@@ -2011,14 +2019,17 @@ div#bookAppointmentForm .width50:first-chlid {
 }
 
 /* Handle */
+.packagedetail ul::-webkit-scrollbar-thumb,
 .packagedetail::-webkit-scrollbar-thumb,
 ._acc_cnt ul li::-webkit-scrollbar-thumb,
 #searchTypeahead::-webkit-scrollbar-thumb {
   background: #acaaaa7e;
   border-radius: 3px;
+  height: 30px;
 }
 
 /* Handle on hover */
+.packagedetail ul::-webkit-scrollbar-thumb:hover,
 .packagedetail::-webkit-scrollbar-thumb:hover,
 ._acc_cnt ul li::-webkit-scrollbar-thumb:hover,
 #searchTypeahead::-webkit-scrollbar-thumb:hover {
@@ -2275,7 +2286,7 @@ div#bookAppointmentForm .width50:first-chlid {
 ._tooltip ._tooltip-text h5 {
   font-size: 17px;
   color: #000;
-  line-height: 0.8;
+  line-height: 1;
 }
 
 ._tooltip ._tooltip-text p {
@@ -2328,4 +2339,13 @@ div#bookAppointmentForm .width50:first-chlid {
 
 .detaildescrp .accordion__button:after {
   content: none;
+}
+
+.package_card .packageprice {
+  height: 175px;
+  margin-bottom: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
 }

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Rupees } from "./svg-components/Rupees";
 import Link from "next/link";
 import { PackagCard } from "./PackagCard";
-import data from "@/Data/All_packages.json";
+import data from "@/Data/test_data.json";
 
 export const ProductSlider = (props) => {
   var settings = {
@@ -42,17 +42,20 @@ export const ProductSlider = (props) => {
       },
     ],
   };
+  const packageData = data.test_data.filter(
+    (item) => item.category === "package"
+  );
   return (
     <>
       <Slider {...settings} {...props}>
-        {data.map((test, index) => (
+        {packageData.map((test, index) => (
           <div className="  m-auto">
             <PackagCard
               key={index}
-              Test_Name={test.PackageName}
+              Test_Name={test.Test_Name}
               Test_for={test.Test_Name}
-              Test_Amount={parseInt(test.ActualPrice)}
-              Discount_Amount={parseInt(test.DiscountPrice)}
+              Test_Amount={parseInt(test.Test_Amount)}
+              Discount_Amount={parseInt(test.Discount_Amount)}
               Test_info={test.TestInfo || []}
               Number_test={test.TestInfo ? test.TestInfo.length : 0}
               Test_Slug={test.Slug}

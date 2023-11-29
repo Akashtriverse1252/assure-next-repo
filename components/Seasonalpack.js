@@ -56,6 +56,7 @@ export const Seasonalpack = (props) => {
               Test_Description={test.Test_Description}
               Who_is_it_for={test.Who_is_it_for}
               Pre_test_information={test.Pre_test_information}
+              Turn_around_time={test.Turn_around_time}
               widthFull={true}
             />
           </div>

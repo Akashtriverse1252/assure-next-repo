@@ -17,7 +17,7 @@ import { Alert, Snackbar, Stack } from "@mui/material";
 
 const UploadForm = () => {
   const { cartState, cartDispatch } = useData();
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [fileInputValue, setFileInputValue] = useState("");
   const [isFileUploaded, setIsFileUploaded] = useState(false);
   const [fileName, setFileName] = useState("");
@@ -185,7 +185,7 @@ const UploadForm = () => {
               <label className="label">
                 {isFileUploaded ? (
                   <>
-                    <span>check your file</span>
+                    <span>Change your file</span>
                     <span className="browse-files alpha">
                       <input
                         type="file"

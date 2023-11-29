@@ -137,7 +137,7 @@ export const page = () => {
                         )}
                       </div>
                     </div>
-                    {_discount && (
+                    {_discount ? (
                       <div className="detailrow">
                         <div className="row">
                           <div className="detailtitle col-lg-3 col-12">
@@ -150,7 +150,7 @@ export const page = () => {
                           </div>
                         </div>
                       </div>
-                    )}
+                    ) : null}
                     <div className="detailrow">
                       <div className="row">
                         <div className="detailtitle col-lg-3 col-12">
@@ -202,12 +202,19 @@ export const page = () => {
                             ParameterData={project.TestInfo}
                           />
                           <div className="col-12 flex-center mt-5 mb-2 mb-sm-5 justify-content-center justify-content-sm-start flex-wrap gap-3 m-auto">
-                            <a
+                            {/* <a
                               className="button button--aylen button--round-l button--text-thick  gradient col-lg-3 col-11   d-flex justify-content-center gap-2"
                               onClick={handleAddToCart}
                             >
                               <Cart /> Add to Cart
-                            </a>
+                            </a> */}
+                            <button
+                              className="button button--aylen button--round-l button--text-thick  gradient col-lg-3 col-11   flex-center gap-2"
+                              onClick={handleAddToCart}
+                              disabled={cartState.cartVisible}
+                            >
+                              <Cart /> Add to Cart
+                            </button>
                             <a className="button button--aylen button--round-l button--text-thick  gradient col-lg-3 col-11 ">
                               Book Home Collection
                             </a>

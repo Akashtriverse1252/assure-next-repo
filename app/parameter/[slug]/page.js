@@ -175,12 +175,13 @@ export const page = ({ params: { slug } }) => {
                         </div>
                         <div className="detaildescrp col-lg-9 col-12">
                           <div className="col-12 flex-center mt-5 mb-2 mb-sm-5 justify-content-center justify-content-sm-start flex-wrap gap-3 m-auto">
-                            <a
-                              className="button button--aylen button--round-l button--text-thick  gradient col-lg-3 col-11   d-flex justify-content-center gap-2"
+                          <button
+                              className="button button--aylen button--round-l button--text-thick  gradient col-lg-3 col-11   flex-center gap-2"
                               onClick={handleAddToCart}
+                              disabled={cartState.cartVisible}
                             >
                               <Cart /> Add to Cart
-                            </a>
+                            </button>
                             <a className="button button--aylen button--round-l button--text-thick  gradient col-lg-3 col-11 ">
                               Book Home Collection
                             </a>

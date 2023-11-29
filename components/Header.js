@@ -103,7 +103,7 @@ export const Header = () => {
                       </span> */}
                       <MyCart />
                       <Link
-                        href="/https://patient-in.creliohealth.com/patient/login"
+                        href="https://patient-in.creliohealth.com/patient/login"
                         target="_blank"
                       >
                         <span className="button button--aylen button--round-l button--text-thick _user d-flex align-items-center">
@@ -297,10 +297,12 @@ export const Header = () => {
                           </Link>
                         </li>
                         <li>
-                          <span>
-                            <Report />
-                          </span>
-                          Booking & Reports
+                          <Link href="https://patient-in.creliohealth.com/patient/login">
+                            <span>
+                              <Report />
+                            </span>
+                            Booking & Reports
+                          </Link>
                         </li>
                       </ul>
                     </div>

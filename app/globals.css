@@ -623,10 +623,9 @@ section,
 }
 
 .packagedetail {
-  height: 150px;
   display: inline-block;
-  overflow-y: scroll;
   width: 100%;
+  z-index: 10;
 }
 
 .textbtn {
@@ -1280,17 +1279,13 @@ header {
   background-color: #F5F5F5;
 }
 
-.packagedetail::-webkit-scrollbar {
-  background-color: #FFF;
-  width: 5px;
-}
 
 .listdata::-webkit-scrollbar {
   width: 7px;
   background-color: #F5F5F5;
 }
 
-.packagedetail::-webkit-scrollbar-thumb,
+
 .listdata::-webkit-scrollbar-thumb {
   background-color: #0d0d0d;
   border: 1px solid #555555;
@@ -1517,6 +1512,7 @@ header {
   color: #ee3147;
   height: 25px;
   width: 25px;
+  cursor: pointer;
 }
 
 /* cart css */
@@ -1684,6 +1680,8 @@ header {
 
 .packagename_test {
   height: 55px;
+
+  overflow: hidden;
 }
 
 
@@ -1697,8 +1695,7 @@ header {
   margin: 0 auto;
   text-wrap: balance;
   letter-spacing: 1.6px;
-  overflow: hidden;
-  height: 100%;
+
 }
 
 .my-cart_cnt {
@@ -1993,18 +1990,31 @@ div#bookAppointmentForm .width50:first-chlid {
   display: none;
 }
 
+
+.packagedetail::-webkit-scrollbar,
+._acc_cnt ul li::-webkit-scrollbar,
 #searchTypeahead::-webkit-scrollbar {
-  width: 6px;
+  width: 7px;
   background-color: #ebeaea;
+  opacity: 0.5;
+}
+
+.packagedetail::-webkit-scrollbar {
+  width: 5px;
+
 }
 
 /* Handle */
+.packagedetail::-webkit-scrollbar-thumb,
+._acc_cnt ul li::-webkit-scrollbar-thumb,
 #searchTypeahead::-webkit-scrollbar-thumb {
-  background: #acaaaa;
+  background: #acaaaa7e;
   border-radius: 3px;
 }
 
 /* Handle on hover */
+.packagedetail::-webkit-scrollbar-thumb:hover,
+._acc_cnt ul li::-webkit-scrollbar-thumb:hover,
 #searchTypeahead::-webkit-scrollbar-thumb:hover {
   background: #7e7d7d;
 }
@@ -2227,4 +2237,88 @@ div#bookAppointmentForm .width50:first-chlid {
   margin: 2px 5px;
   text-transform: capitalize;
 
+}
+
+.css-cpgvjg-MuiSnackbar-root {
+  top: 10vh;
+  right: 24px;
+  left: auto;
+  bottom: auto;
+  box-shadow: 8px 14px 17px -13px rgb(1 1 1 / 25%);
+}
+
+._tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+._tooltip ._tooltip-text {
+  visibility: hidden;
+  background-color: #ecf8ff;
+  color: #747373;
+  border-radius: 10px;
+  padding: 10px 5px;
+  position: absolute;
+  width: 250px;
+  transform: translate(-50%, 22%);
+  z-index: 1;
+  font-size: 14px;
+  box-shadow: 0 4px 4px rgba(161, 160, 160, 0.25);
+}
+
+._tooltip ._tooltip-text h5 {
+  font-size: 17px;
+  color: #000;
+  line-height: 0.8;
+}
+
+._tooltip ._tooltip-text p {
+  line-height: 1.3;
+  margin: 0;
+}
+
+._tooltip ._tooltip-text::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  right: 50%;
+  border-width: 8.66px;
+  border-style: solid;
+  border-color: transparent transparent #ecf8ff;
+}
+
+._tooltip:hover ._tooltip-text,
+._tooltip:focus ._tooltip-text {
+  visibility: visible;
+}
+
+._tooltip svg,
+._tooltip ._info.svg {
+  color: #000;
+  margin-left: 5px;
+}
+
+.packagedetail._test ul {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.packagedetail._test ul li {
+  width: 50%;
+  text-wrap: balance;
+  font-size: 13px;
+
+}
+
+.packagedetail._test ul li::before {
+  content: none;
+}
+
+.packagedetail._test ul li svg {
+  opacity: 0.5;
+  font-size: 9px;
+}
+.detaildescrp .accordion__button:after{
+  content: none;
 }

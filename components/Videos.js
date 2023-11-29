@@ -58,19 +58,20 @@ export const Videos = (props) => {
     },
     {
       thumbnail: "/video_tumbnail_02.jpg",
-      videoUrl: "https://youtu.be/8jqzp-F4SNc?si=KCR8E98TnXeWWPcQ",
+      videoUrl:
+        "https://www.youtube.com/embed/1w815ClswG4?si=vTlsyfxCm9_lAIg7&amp;start=100&autoplay=1&controls=0&rel=1",
       description: "Another dynamic description | Another Source",
     },
     {
       thumbnail: "/video_tumbnail_03.jpg",
       videoUrl:
-        "https://www.youtube.com/embed/1w815ClswG4?si=vTlsyfxCm9_lAIg7&amp;start=100&autoplay=1",
+        "https://www.youtube.com/embed/1w815ClswG4?si=vTlsyfxCm9_lAIg7&amp;start=100&autoplay=1&controls=0&rel=1",
       description: "Dynamic description for video 3 | Some Source",
     },
     {
       thumbnail: "/video_tumbnail_04.jpg",
       videoUrl:
-        "https://youtu.be/8jqzp-F4SNc?si=KCR8E98TnXeWWPcQ&autoplay=1&controls=0&rel=1",
+        "https://www.youtube.com/embed/1w815ClswG4?si=vTlsyfxCm9_lAIg7&amp;start=100&autoplay=1&controls=0&rel=1",
       description: "Description for video 4 | Another Source",
     },
   ];

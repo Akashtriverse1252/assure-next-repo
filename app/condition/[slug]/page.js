@@ -9,7 +9,6 @@ export const page = ({ params: { slug } }) => {
   const packageData = test_info.test_data.filter(
     (item) => item.category === "test"
   );
-  console.log("packasfagijgiqjf", packageData);
   const filtered_slug_data = packageData.filter(
     (p) => p.Test_Category === slug
   );

@@ -297,7 +297,7 @@ export const Header = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link href="https://patient-in.creliohealth.com/patient/login">
+                          <Link href="https://patient-in.creliohealth.com/patient/login" target="_blank">
                             <span>
                               <Report />
                             </span>

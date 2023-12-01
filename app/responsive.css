@@ -77,6 +77,17 @@
     header {
         margin-bottom: 0px;
     }
+       .abt_bg_img{
+        bottom: -32%;
+    }
+    .arrows .slick-next, .arrows .slick-prev{
+        width: 70px;
+        height: 70px;
+    }
+    .abt_banner img {
+        object-fit: contain;
+    }
+
 
     .textbtn {
         font-size: 13px;

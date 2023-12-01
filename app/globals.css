@@ -628,6 +628,12 @@ section,
 
 }
 
+.detailtitle {
+  display: flex;
+  align-items: center;
+
+}
+
 .package_card .packagedetail ul {
   height: auto;
 }

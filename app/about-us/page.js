@@ -70,7 +70,7 @@ export const page = () => {
               </div>
             </div>
           </div>
-          <div className="bg-gradient-image position-absolute col-12">
+          <div className="bg-gradient-image abt_bg_img position-absolute col-12">
             <AboutGradient />
           </div>
           <Dots className="hsection position-absolute svgwidth opacity-10" />

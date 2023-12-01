@@ -169,12 +169,22 @@
         line-height: 31px;
         padding: 10px 0;
     }
+    .abt_banner img {
+        object-fit: contain;
+    }
 
     .sliderbox {
         padding: 25px 10px 15px;
         margin: 20px auto;
         max-width: 285px;
         gap: 10px;
+    }
+    .abt_bg_img{
+        bottom: -32%;
+    }
+    .arrows .slick-next, .arrows .slick-prev{
+        width: 70px;
+        height: 70px;
     }
 
     .packagename p {

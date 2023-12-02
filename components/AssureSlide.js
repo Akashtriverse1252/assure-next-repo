@@ -77,7 +77,7 @@ export const AssureSlide = (props) => {
                   width={630}
                   height={500}
                 />
-                <Link href="/Individual-test">
+                <Link href="/individual-test">
                   <button className="button button--aylen button--round-l button--text-thick  gradient   flex-center gap-2">
                     Know more
                   </button>

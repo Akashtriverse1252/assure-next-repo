@@ -12,7 +12,7 @@ import { MyCart } from "./MyCart";
 import { UploadPrescription } from "./UploadPrescription";
 import Nabh from "./svg-components/Nabh";
 import { usePathname } from "next/navigation";
-import { LuUser, LuSearch, LuX } from "react-icons/lu";
+import { LuUser, LuSearch, LuX, LuShoppingCart } from "react-icons/lu";
 import { PiShoppingCartSimple } from "react-icons/pi";
 import { useData } from "@/context/context";
 import { Badge } from "@mui/material";
@@ -64,7 +64,7 @@ export const Header = () => {
               </div>
             </div>
             <div className="col-lg-10 col-8">
-              <div className="d-flex align-items-center justify-content-end gap-md-4 gap-0">
+              <div className="d-flex align-items-center justify-content-end gap-xxl-4 gap-xl-2 gap-0">
                 <div
                   className={
                     showSearchBar
@@ -77,7 +77,7 @@ export const Header = () => {
                     <SearchBar />
                   </div>
                 </div>
-                <div className="mobile_nav_search position-relative d-flex gap-3 d-sm-none ">
+                <div className="mobile_nav_search position-relative d-flex gap-xxl-3 gap-xl-1 d-sm-none ">
                   <MobileSearchBar />
                   {cartState.products.length !== 0 && (
                     <Badge badgeContent={totalQuantity} color="error">
@@ -87,9 +87,9 @@ export const Header = () => {
                     </Badge>
                   )}
                 </div>
-                <div className="navbar p-0 align-items-end gap-4">
-                  <div className="d-none d-sm-flex justify-content-center align-items-center gap-4  navbar_item">
-                    <div className="leftmenu float-start gap-3 d-flex">
+                <div className="navbar p-0 align-items-end gap-xxl-4 gap-xl-2">
+                  <div className="d-none d-sm-flex justify-content-center align-items-center gap-xxl-4 gap-xl-2  navbar_item">
+                    <div className="leftmenu float-start gap-xxl-3 gap-xl-1 ">
                       {/* <span className="button button--aylen button--round-l button--text-thick ">
                         <Link href="/individual-test">
                           <span>
@@ -269,7 +269,7 @@ export const Header = () => {
                 <div className="container">
                   <div className="row">
                     <div className="slimenu d-flex justify-content-end">
-                      <ul className="d-flex gap-5 m-0">
+                      <ul className="d-flex gap-xxl-5 gap-xl-4 gap-lg-3 gap-md-2 m-0">
                         <li>
                           {/* <span>
                             <Attachement />
@@ -297,12 +297,24 @@ export const Header = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link href="https://patient-in.creliohealth.com/patient/login" target="_blank">
+                          <Link
+                            href="https://patient-in.creliohealth.com/patient/login"
+                            target="_blank"
+                          >
                             <span>
                               <Report />
                             </span>
                             Booking & Reports
                           </Link>
+                        </li>
+                        <li
+                          className="cart_in_slimenu "
+                          onClick={() => cartDispatch({ type: "TOGGLE_CART" })}
+                        >
+                          <span>
+                            <LuShoppingCart />
+                          </span>
+                          Cart
                         </li>
                       </ul>
                     </div>

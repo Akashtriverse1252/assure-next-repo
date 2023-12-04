@@ -52,6 +52,8 @@ export const page = () => {
     }
   };
 
+  const lengthOfTestInfo = project.TestInfo.length;
+
   return (
     <>
       <main className="d-flex flex-wrap float-start col-12">
@@ -195,7 +197,7 @@ export const page = () => {
                           <p>
                             <strong>
                               Test Details <br />
-                              (Parameters included : {project.TestInfo.lenght})
+                              {/* (Parameters included : {lengthOfTestInfo}) */}
                             </strong>
                           </p>
                         </div>
@@ -217,7 +219,7 @@ export const page = () => {
                             >
                               <Cart /> Add to Cart
                             </button>
-                            <a className="button button--aylen button--round-l button--text-thick  gradient col-lg-3 col-11 ">
+                            <a className="button button--aylen button--round-l button--text-thick  gradient col-xxl-3 col-lg-4 col-11 ">
                               Book Home Collection
                             </a>
                           </div>

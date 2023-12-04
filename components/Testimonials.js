@@ -11,11 +11,12 @@ export const Testimonials = (props) => {
   var settings = {
     dots: false,
     infinite: false,
-    speed: 1000,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 6000,
     autoplay: true,
+    
   };
 
   return (

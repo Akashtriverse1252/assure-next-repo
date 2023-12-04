@@ -26,10 +26,10 @@ export default function Home() {
         <div className="gradient-layer"></div>
         <div className="container">
           <div className="row">
-            <div className="col-lg-9 col-md-8 col-xs-12 col-12">
+            <div className="col-xl-9 col-lg-8 col-xs-12 col-12">
               <AssureSlide className="no-buttons colornavigations col-12 float-start" />
             </div>
-            <div className="col-lg-3 col-md-4 col-xs-12 col-12 d-flex align-items-center">
+            <div className="col-xl-3 col-lg-4 col-xs-12 col-12 d-flex align-items-center">
               <HForm />
             </div>
           </div>
@@ -107,7 +107,7 @@ export default function Home() {
               <div className="title col-12 float-start text-center">
                 <h2>ABOUT ASSURE PATHLAB</h2>
               </div>
-              <div className="col-lg-7 m-auto col-xs-12 col-11 text-center">
+              <div className="col-xxl-7 col-xl-10 m-auto col-xs-12 col-11 text-center">
                 <p>
                   Assure Pathlabs was established by Dr. Sanjay Wadhwa and Dr.
                   Lovely Razdan in 2015. Our high ethical values necessitate

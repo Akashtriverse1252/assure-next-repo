@@ -2011,7 +2011,12 @@ div#bookAppointmentForm .width50:first-chlid {
   display: none;
 }
 
+.hsection {
+  z-index: -1;
+}
 
+
+html::-webkit-scrollbar,
 .packagedetail ul::-webkit-scrollbar,
 .packagedetail::-webkit-scrollbar,
 ._acc_cnt ul li::-webkit-scrollbar,
@@ -2026,7 +2031,9 @@ div#bookAppointmentForm .width50:first-chlid {
 
 }
 
+
 /* Handle */
+html::-webkit-scrollbar-thumb,
 .packagedetail ul::-webkit-scrollbar-thumb,
 .packagedetail::-webkit-scrollbar-thumb,
 ._acc_cnt ul li::-webkit-scrollbar-thumb,
@@ -2036,7 +2043,12 @@ div#bookAppointmentForm .width50:first-chlid {
   height: 30px;
 }
 
+html::-webkit-scrollbar-thumb {
+  background-color: #53aef8;
+}
+
 /* Handle on hover */
+html::-webkit-scrollbar-thumb:hover,
 .packagedetail ul::-webkit-scrollbar-thumb:hover,
 .packagedetail::-webkit-scrollbar-thumb:hover,
 ._acc_cnt ul li::-webkit-scrollbar-thumb:hover,
@@ -2180,6 +2192,10 @@ div#bookAppointmentForm .width50:first-chlid {
 
 }
 
+._acc_header h5 {
+  margin-bottom: 10px;
+}
+
 ._acc_header {
   gap: 60px;
 }
@@ -2265,8 +2281,8 @@ div#bookAppointmentForm .width50:first-chlid {
 }
 
 .css-cpgvjg-MuiSnackbar-root {
-  top: 10vh;
-  right: 24px;
+  top: 10vh !important;
+  right: 24px !important;
   left: auto;
   bottom: auto;
   box-shadow: 8px 14px 17px -13px rgb(1 1 1 / 25%);
@@ -2395,6 +2411,16 @@ div#bookAppointmentForm .width50:first-chlid {
   gap: 40px;
   padding-bottom: 50px;
 }
-button:disabled{
+
+button:disabled {
   opacity: 0.8;
+}
+
+.cart_in_slimenu {
+  display: none;
+}
+
+.leftmenu {
+  display: flex;
+
 }

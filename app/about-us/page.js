@@ -11,7 +11,7 @@ export const page = () => {
   return (
     <>
       <main className="d-flex flex-wrap float-start col-12">
-        <section className="position-relative" >
+        <section className="position-relative">
           <div className="gradient-layer"></div>
           <div className="container">
             <div className="row">
@@ -37,7 +37,7 @@ export const page = () => {
               <div className="title col-12 float-start text-center">
                 <h2>About us</h2>
               </div>
-              <div className="col-lg-7 m-auto col-xs-12 col-12 text-center">
+              <div className="col-xxl-7 col-xl-9 col-md-9 m-auto  col-11 text-center">
                 <p>
                   Assure Pathlabs was founded by Dr. Sanjay Wadhwa and Dr.
                   Lovely Razdan in 2015. At Assure the belief is that every man,
@@ -77,14 +77,17 @@ export const page = () => {
           <Line className="svgwidthline position-absolute opacity-10 bottom-0 end-0" />
         </section>
         <ChooseAssure />
-        <section className="position-relative pb-5 grey-background border-bottom" id="quality">
+        <section
+          className="position-relative pb-5 grey-background border-bottom"
+          id="quality"
+        >
           <div className="container">
             <div className="web-container">
               <div className="row">
                 <div className="title col-12 float-start text-center mt-5 mb-4">
                   <h2>QUALITY POLICY STATEMENT</h2>
                 </div>
-                <div className="col-lg-6 col-12 text-center m-auto">
+                <div className="col-xxl-6 col-xl-9 col-12 text-center m-auto">
                   <p>
                     Laboratory is committed to provide the best possible support
                     for the clinical management of patient using contemporary

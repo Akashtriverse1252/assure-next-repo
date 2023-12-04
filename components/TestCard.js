@@ -28,7 +28,9 @@ export const TestCard = ({
     <>
       <div
         className={
-          widthFull ? "col-lg-12 col-12 test_card" : "col-lg-3 test_card"
+          widthFull
+            ? "col-lg-12 col-12 test_card"
+            : "col-xxl-3  col-xl-4 col-md-4 col-sm-6 col-12 test_card"
         }
       >
         <Link href={`/${BaseDirectory || "test-detail"}/${Slug}`}>

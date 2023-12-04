@@ -279,6 +279,434 @@
     }
 }
 
+@media (max-width:1390px) {
+    .homecollection h3 a {
+        font-size: 30px;
+    }
+
+    .homecollection h4 {
+        font-size: 19px;
+        line-height: 0;
+    }
+
+    .nah_logo svg {
+        width: 65px;
+    }
+
+    .leftmenu .button {
+        min-width: auto;
+    }
+
+    .gradient-layer {
+        width: 15px;
+    }
+
+    .package_card .sliderbox {
+        max-width: 280px;
+    }
+
+    .packagedetail ul::-webkit-scrollbar,
+    .packagedetail::-webkit-scrollbar,
+    ._acc_cnt ul li::-webkit-scrollbar,
+    #searchTypeahead::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .vedio_review .slick-prev:before,
+    .vedio_review .slick-next:before,
+    .googlereviewslider .slick-prev:before,
+    .googlereviewslider .slick-next:before {
+        height: 35px;
+    }
+
+    .page_equireheading__sSxvP h2:after,
+    .page_equireheading__sSxvP h2:after,
+    .page_equireheading__sSxvP h2:before {
+        content: none !important;
+    }
+
+    .page_equireheading__sSxvP h2 {
+        margin: 20px 0 10px !important;
+    }
+
+    .discountprice,
+    .actualprice {
+        font-size: 23px;
+    }
+
+    .testimonialbox,
+    .web-container,
+    .quality {
+        width: 90%;
+    }
+
+    .vedio_review .slick-next,
+    .vedio_review .slick-prev {
+        top: -20;
+    }
+
+    .title h2,
+    .title h3 {
+        font-size: 25px;
+        line-height: 2;
+    }
+
+    .detailrow p {
+        padding: 0 20px;
+        font-size: 15px;
+    }
+
+    .detailrow.accordiancont ul li a,
+    .detailrow .accordion__button a {
+        font-size: 14px;
+    }
+
+    .footerrow {
+        gap: 65px;
+    }
+
+    ._cart_test_detail h5 {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    ._cart_cross {
+        padding: 0 !important;
+        margin: 0;
+        font-size: 30px !important;
+    }
+
+    .packagename_test h5 {
+        font-size: 17px;
+    }
+
+    .page_equireheading__sSxvP span {
+        font-size: 18px !important;
+    }
+
+    html,
+    body {
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .header,
+    .actualprice {
+        padding: 10px 0;
+    }
+
+
+
+    .fixed .menslide.active {
+        top: 90px;
+    }
+
+    .banner_slide {
+        height: 80vh;
+        padding: 0;
+        padding-bottom: 40px;
+    }
+
+    .home_banner .banner_slider:after {
+        height: 80vh;
+    }
+}
+
+@media (max-width:1300px) {
+
+    .banner_slide,
+    .home_banner .banner_slider:after {
+        height: 525px;
+    }
+
+
+    .slimenu ul li {
+        font-size: 12px;
+        padding: 8px 5px;
+    }
+
+    .drag-file-area h3 {
+        font-size: 18px;
+        margin: 15px 0 0 0;
+    }
+
+    .drag-file-area label {
+        font-size: 15px;
+    }
+
+    .upload-icon svg {
+        height: 120px;
+    }
+
+    html,
+    body {
+        font-size: 15px !important;
+        line-height: 24px;
+    }
+
+    .leftmenu .button {
+        font-size: 14px;
+        height: 35px;
+        line-height: 35px;
+    }
+
+    .my-cart_cnt {
+        font-size: 10px;
+        width: 15px;
+        height: 15px;
+    }
+
+    .menslide {
+        height: 300px;
+    }
+
+    ._acc_header h5 {
+        font-size: 17px;
+    }
+
+    .sliderbox {
+        max-width: 270px;
+    }
+
+    ._tooltip ._tooltip-text h5 {
+        font-size: 15px;
+        color: #000;
+        line-height: 1;
+    }
+
+    ._tooltip ._tooltip-text p {
+        font-size: 13px;
+    }
+
+    .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input,
+    .enquireform .rbt-input-hint,
+    .enquireform .form-control,
+    .enquireform .MuiInputBase-root label {
+        font-size: 13px !important;
+    }
+
+    .title h2,
+    .title h3 {
+        font-size: 22px;
+        line-height: 2;
+    }
+
+    .conditionshape h3,
+    .title h2 span,
+    .title h3 span {
+        font-size: 18px;
+        line-height: 1.2;
+    }
+
+    .packagename h4,
+    .packagename_test h5 {
+        font-size: 16px;
+        line-height: 1.3;
+    }
+
+    .discountprice,
+    .actualprice {
+        font-size: 20px;
+    }
+
+    .conditionshape {
+        height: 120px;
+        overflow: hidden;
+    }
+
+    .condtionicon {
+        width: 60px;
+    }
+
+    .discountprice,
+    .button {
+        line-height: 36px;
+    }
+
+    .actualprice svg,
+    .discountprice svg {
+        width: 21px;
+        height: auto;
+        left: 0;
+    }
+
+}
+
+@media (max-width:1200px) {
+    .web-container {
+        width: 98%;
+    }
+
+    .container {
+        min-width: 94%;
+        margin: auto;
+    }
+
+    .nah_logo svg {
+        width: 60px;
+    }
+
+    .banner_slide,
+    .home_banner .banner_slider:after {
+        height: 65vh;
+    }
+
+    .homecollection h3 a {
+        font-size: 27px;
+    }
+
+    .homecollection h4 {
+        font-size: 17px;
+        line-height: 0;
+    }
+
+    ._icon svg {
+        width: 100%;
+        font-size: 25px;
+        font-weight: 100;
+    }
+
+    .packagename span {
+        width: 100px;
+        height: 100px;
+    }
+
+    .h_form ._icon,
+    .css-md26zr-MuiInputBase-root-MuiOutlinedInput-root,
+    .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input,
+    .enquireform .rbt-input-hint,
+    .enquireform .form-control,
+    .MuiInputBase-root.formbtn {
+        max-height: 42px !important;
+        height: 42px !important;
+        line-height: 42px !important;
+        font-size: 13px !important;
+    }
+
+    ._icon {
+        width: 20%;
+    }
+
+    .arrows .slick-next,
+    .arrows .slick-prev {
+        width: 60px;
+        height: 70px;
+    }
+
+    .abt_banner img {
+        height: auto;
+    }
+
+    body {
+        font-size: 14px !important;
+        line-height: 21px !important;
+    }
+
+    .arrows .slick-prev:before,
+    .arrows .slick-next:before {
+        background-size: contain;
+    }
+
+    .page_equireheading__sSxvP span {
+        font-size: 16px !important;
+    }
+
+    .page_equireheading__sSxvP h2 {
+        margin: 0 !important;
+    }
+
+    .packagename h4,
+    .packagename_test h5 {
+        font-size: 15px;
+        line-height: 1.3;
+    }
+
+    ._cart_cross {
+        padding: 0 !important;
+        margin: 0;
+        font-size: 20px !important;
+    }
+
+    ._cart {
+        width: 35%;
+        right: -40% !important;
+    }
+
+    .slimenu ul li span,
+    .leftmenu span span svg {
+        width: 22px;
+    }
+
+    .footercolumn,
+    .fheading h5,
+    .slimenu ul li {
+        font-size: 12px;
+        line-height: 24px;
+    }
+
+    .cart_in_slimenu {
+        display: block;
+        cursor: pointer;
+    }
+
+    .leftmenu {
+        display: none;
+
+    }
+
+    .headersearchbox {
+        width: 60%;
+    }
+
+    .desktop_nav_search {
+        width: 92%;
+    }
+
+}
+
+@media (max-width:1100px) {
+    .packagename span {
+        width: 80px;
+        height: 80px;
+    }
+
+    .sliderbox {
+        padding: 20 15px 10px;
+    }
+
+    .condtionicon {
+        width: 55px;
+        top: 30px;
+    }
+
+    .conditionshape {
+        height: 110px;
+        overflow: hidden;
+    }
+
+    footer {
+        margin-top: 35px;
+    }
+
+    main {
+        gap: 45px;
+    }
+
+    .packagename img {
+        width: 50px;
+    }
+
+    .home_banner .banner_slider:after {
+        background-position: left;
+        background-size: cover;
+    }
+
+    .banner_slide,
+    .home_banner .banner_slider:after {
+        height: 52vh;
+    }
+}
+
 @media (max-width:760px) {
     .menslide {
         position: fixed;

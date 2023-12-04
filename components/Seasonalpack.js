@@ -16,12 +16,10 @@ export const Seasonalpack = (props) => {
     autoplay: false,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint:1100,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 1,
-          infinite: true,
-          dots: true,
         },
       },
       {

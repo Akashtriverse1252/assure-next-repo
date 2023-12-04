@@ -38,7 +38,13 @@ export const BreadCrums = () => {
   const pathname = usePathname();
   const pathSegments = pathname.split("/").filter((segment) => segment !== "");
   const excludedWords = ["test"];
-  const disabledLinks = ["organ", "conditions", "parameter", "test-detail"]; // Keywords to disable links
+  const disabledLinks = [
+    "organ",
+    "conditions",
+    "condition",
+    "parameter",
+    "test-detail",
+  ]; // Keywords to disable links
 
   return (
     <>

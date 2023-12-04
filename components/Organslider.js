@@ -85,26 +85,26 @@ export const Organslider = (props) => {
       <Slider {...settings}>
         {organData.map((organ, index) => (
           <div key={index}>
-            <div className="organcolumnrow flex-center navigationwhite hovershadow">
-              <div className="organcolumn">
-                <div className="sliderbox border-0 bg-transparent">
-                  <div className="packagename">
-                    <span className="bg-transparent">{organ.icon}</span>
-                  </div>
-                  <div className="packagename text-white">
-                    <h4>
-                      <strong>{organ.name}</strong>
-                    </h4>
-                    <p className="m-0 minheight-120">{organ.description}</p>
-                    <div className="packageprice">
-                      <div className="textbtn">
-                        <Link href={`/organ/${organ.slug}`}>KNOW MORE +</Link>
+            <Link href={`/organ/${organ.slug}`}>
+              <div className="organcolumnrow flex-center navigationwhite hovershadow">
+                <div className="organcolumn">
+                  <div className="sliderbox border-0 bg-transparent">
+                    <div className="packagename">
+                      <span className="bg-transparent">{organ.icon}</span>
+                    </div>
+                    <div className="packagename text-white">
+                      <h4>
+                        <strong>{organ.name}</strong>
+                      </h4>
+                      <p className="m-0 minheight-120">{organ.description}</p>
+                      <div className="packageprice">
+                        <div className="textbtn">KNOW MORE +</div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
         ))}
       </Slider>

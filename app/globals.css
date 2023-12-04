@@ -2395,3 +2395,6 @@ div#bookAppointmentForm .width50:first-chlid {
   gap: 40px;
   padding-bottom: 50px;
 }
+button:disabled{
+  opacity: 0.8;
+}

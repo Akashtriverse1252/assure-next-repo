@@ -49,35 +49,35 @@ export const Organslider = (props) => {
       slug: "thyroid",
       description:
         "Are you losing or gaining weight? These changes may be related to thyroid",
-      icon: <Thyroid />, // Replace with your actual icon component
+      icon: <Thyroid />,
     },
     {
       name: "Kidney",
       slug: "kidney",
       description:
         "The signs of kidney diseases are easy to miss, knowing it early can help prevent",
-      icon: <Kidney />, // Replace with your actual icon component
+      icon: <Kidney />,
     },
     {
       name: "Lungs",
       slug: "lungs",
       description:
         "If you're having trouble catching breath, you might need to find out why",
-      icon: <Lungs />, // Replace with your actual icon component
+      icon: <Lungs />,
     },
     {
       name: "Heart",
       slug: "heart",
       description:
         "Check the health of your heart with a specially designed heart check test panel",
-      icon: <HeartOrgan />, // Replace with your actual icon component
+      icon: <HeartOrgan />,
     },
     {
       name: "Liver",
       slug: "liver",
       description:
         "Do you drink a lot of alcohol? Know your liver's health with us",
-      icon: <Liver />, // Replace with your actual icon component
+      icon: <Liver />,
     },
   ];
   return (

@@ -25,7 +25,7 @@ export default function Home() {
       <section className="position-relative">
         <div className="gradient-layer"></div>
         <div className="container">
-          <div className="row gap-sm-3 ">
+          <div className="row gap-sm-3 gap-md-0  ">
             <div className="col-xl-9 col-lg-8 col-md-10 pull-md-right mr-md-auto col-sm-12  col-12">
               <AssureSlide className="no-buttons colornavigations col-12 float-start" />
             </div>

@@ -231,8 +231,8 @@ export const Footer = () => {
                     </span>
                   </div>
                 </div>
-                <div className="col-12 col-md-5 mx-auto  flex-center mt-4 mb-3 mt-sm-5">
-                  <a className="button button--aylen button--round-l button--text-thick text-uppercase gradient col-lg-3 col-12">
+                <div className="col-12  mx-auto  flex-center mt-4 mb-3 mt-sm-5">
+                  <a className="button button--aylen button--round-l button--text-thick text-uppercase gradient col-lg-3 col-md-5 col-12">
                     BOOK HOME COLLECTION
                   </a>
                 </div>

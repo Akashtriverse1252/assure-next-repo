@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useEffect, useReducer } from "react";
+import Cookies from "js-cookie";
 
 const CartContext = createContext();
 
@@ -74,6 +75,11 @@ const cartReducer = (state, action) => {
         ...state,
         uploadFormVisible: !state.uploadFormVisible,
       };
+    case "INIT":
+      return {
+        ...state,
+        products: action.products,
+      };
     default:
       return state;
   }
@@ -83,14 +89,19 @@ const GlobalDataProvider = ({ children }) => {
   const [cartState, cartDispatch] = useReducer(cartReducer, initialState);
 
   useEffect(() => {
-    const savedCart = JSON.parse(localStorage.getItem("cart"));
+    const savedCart = JSON.parse(Cookies.get("cart") || "[]");
     if (savedCart) {
       cartDispatch({ type: "INIT", products: savedCart });
+      console.log("Data loaded from cookies:", savedCart);
+    } else {
+      console.log("No saved data found in cookies.");
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cartState.products));
+    // Store the cart in cookies with an expiration of 365 days
+    Cookies.set("cart", JSON.stringify(cartState.products), { expires: 365 });
+    console.log("Data saved to cookies:", cartState.products);
   }, [cartState.products]);
 
   return (

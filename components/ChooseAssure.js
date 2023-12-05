@@ -19,7 +19,7 @@ export const ChooseAssure = () => {
               </div>
               <div className="col-lg-8 m-auto col-12 float-start chooseassure">
                 <div className="row justify-content-center">
-                  <div className="col-lg-3 col-sm-6 col-6">
+                  <div className="col-lg-3 col-sm-4  col-6">
                     <div className="circleicons float-start col-12 text-center grid-center">
                       <span className=" flex-center mb-2 button button--aylen button--round-l button--text-thick">
                         <AssureSafety />
@@ -30,7 +30,7 @@ export const ChooseAssure = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="col-lg-3 col-sm-6 col-6">
+                  <div className="col-lg-3 col-sm-4  col-6">
                     <div className="circleicons float-start col-12 text-center grid-center">
                       <span className=" flex-center mb-2 button button--aylen button--round-l button--text-thick">
                         <FreeHomeCollection />
@@ -41,7 +41,7 @@ export const ChooseAssure = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="col-lg-3 col-sm-6 col-6">
+                  <div className="col-lg-3 col-sm-4  col-6">
                     <div className="circleicons float-start col-12 text-center grid-center">
                       <span className=" flex-center mb-2 button button--aylen button--round-l button--text-thick">
                         <SameDayreport />
@@ -52,7 +52,7 @@ export const ChooseAssure = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="col-lg-3 col-sm-6 col-6">
+                  <div className="col-lg-3 col-sm-4  col-6">
                     <div className="circleicons float-start col-12 text-center grid-center">
                       <span className=" flex-center mb-2 button button--aylen button--round-l button--text-thick">
                         <Consultant />

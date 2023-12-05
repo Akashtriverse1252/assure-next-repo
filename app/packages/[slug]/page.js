@@ -68,12 +68,12 @@ export const page = () => {
                   <div className="col-lg-11 m-auto col-12 float-start grey-background pt-4 px-0">
                     <div className="detailrow">
                       <div className="row">
-                        <div className="detailtitle col-lg-3 col-12">
+                        <div className="detailtitle col-lg-3 col-md-4 col-12">
                           <p>
                             <strong>Package Name</strong>
                           </p>
                         </div>
-                        <div className="detaildescrp col-lg-9 col-12">
+                        <div className="detaildescrp col-lg-9 col-md-8   col-12">
                           <p>
                             <strong>{project.Test_Name}</strong>
                           </p>
@@ -83,12 +83,12 @@ export const page = () => {
                     {project.TestDetails && (
                       <div className="detailrow">
                         <div className="row">
-                          <div className="detailtitle col-lg-3 col-12">
+                          <div className="detailtitle col-lg-3 col-md-4 col-12">
                             <p>
                               <strong>About Package</strong>
                             </p>
                           </div>
-                          <div className="detaildescrp col-lg-9 col-12">
+                          <div className="detaildescrp col-lg-9 col-md-8   col-12">
                             <p>{project.Test_Description}</p>
                           </div>
                         </div>
@@ -97,12 +97,12 @@ export const page = () => {
                     {project.TestInfo.length ? (
                       <div className="detailrow">
                         <div className="row">
-                          <div className="detailtitle col-lg-3 col-12">
+                          <div className="detailtitle col-lg-3 col-md-4 col-12">
                             <p>
                               <strong>Parameters Included</strong>
                             </p>
                           </div>
-                          <div className="detaildescrp col-lg-9 col-12">
+                          <div className="detaildescrp col-lg-9 col-md-8   col-12">
                             <p>{project.TestInfo.length}</p>
                           </div>
                         </div>
@@ -111,14 +111,14 @@ export const page = () => {
 
                     <div className="detailrow">
                       <div className="row">
-                        <div className="detailtitle col-lg-3 col-12">
+                        <div className="detailtitle col-lg-3 col-md-4 col-12">
                           <p>
                             <strong>Exclusive Offer</strong>
                           </p>
                         </div>
                         {project.Discount_Amount == 0 ? (
                           <>
-                            <div className="detaildescrp col-lg-9 col-12 ">
+                            <div className="detaildescrp col-lg-9 col-md-8   col-12 ">
                               <div className="packageprice d-flex align-items-center gap-5">
                                 <div className="discountprice gradient  text-white m-0">
                                   <Rupees /> <span>{project.Test_Amount}</span>
@@ -127,7 +127,7 @@ export const page = () => {
                             </div>
                           </>
                         ) : (
-                          <div className="detaildescrp col-lg-9 col-12 ">
+                          <div className="detaildescrp col-lg-9 col-md-8   col-12 ">
                             <div className="packageprice d-flex align-items-center gap-5">
                               <div className="actualprice">
                                 <Rupees /> <span>{project.Test_Amount}</span>
@@ -144,26 +144,26 @@ export const page = () => {
                     {_discount ? (
                       <div className="detailrow">
                         <div className="row">
-                          <div className="detailtitle col-lg-3 col-12">
+                          <div className="detailtitle col-lg-3 col-md-4 col-12">
                             <p>
                               <strong>Discount</strong>
                             </p>
                           </div>
-                          <div className="detaildescrp col-lg-9 col-12 ">
+                          <div className="detaildescrp col-lg-9 col-md-8   col-12 ">
                             <p>UPTO {_discount}%</p>
                           </div>
                         </div>
                       </div>
                     ) : null}
                     <div className="detailrow">
-                      <div className="row">
+                      <div className="row gap-md-2">
                         <div className="detailtitle col-lg-3 col-12">
                           <p>
                             <strong>Highlights</strong>
                           </p>
                         </div>
-                        <div className="detaildescrp col-lg-9 col-12 ">
-                          <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
+                        <div className="detaildescrp col-lg-9 col-md-11 col-12 ">
+                          <div className="highlights flex-center px-md-3 flex-wrap gap-3 justify-content-start">
                             <p>
                               <strong>{project.TestInfo.length} </strong>
                               Parameters
@@ -201,7 +201,7 @@ export const page = () => {
                             </strong>
                           </p>
                         </div>
-                        <div className="detaildescrp col-lg-9 col-12">
+                        <div className="detaildescrp col-lg-9 col-md-11 px-md-3 col-12">
                           <AccordionComponent
                             ParameterData={project.TestInfo}
                           />
@@ -213,13 +213,13 @@ export const page = () => {
                               <Cart /> Add to Cart
                             </a> */}
                             <button
-                              className="button button--aylen button--round-l button--text-thick  gradient col-lg-3 col-11   flex-center gap-2"
+                              className="button button--aylen button--round-l button--text-thick  gradient col-lg-3 col-md-4 col-11   flex-center gap-2"
                               onClick={handleAddToCart}
                               disabled={cartState.cartVisible}
                             >
                               <Cart /> Add to Cart
                             </button>
-                            <a className="button button--aylen button--round-l button--text-thick  gradient col-xxl-3 col-lg-4 col-11 ">
+                            <a className="button button--aylen button--round-l button--text-thick  gradient col-xxl-3 col-lg-4 col-md-5 col-11 ">
                               Book Home Collection
                             </a>
                           </div>

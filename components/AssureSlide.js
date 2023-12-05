@@ -23,7 +23,7 @@ export const AssureSlide = (props) => {
             <div>
               <div className="banner_slide">
                 <Image
-                  className="d-sm-block d-none"
+                  className=""
                   src="/banner1.png"
                   alt="Early Detection is the Key of Cure"
                   width={630}
@@ -39,7 +39,7 @@ export const AssureSlide = (props) => {
             <div>
               <div className="banner_slide">
                 <Image
-                  className="d-sm-block d-none"
+                  className=""
                   src="/banner2.png"
                   alt="Early Detection is the Key of Cure"
                   width={630}
@@ -55,7 +55,7 @@ export const AssureSlide = (props) => {
             <div>
               <div className="banner_slide">
                 <Image
-                  className="d-sm-block d-none"
+                  className=""
                   src="/banner3.png"
                   alt="Early Detection is the Key of Cure"
                   width={630}
@@ -71,7 +71,7 @@ export const AssureSlide = (props) => {
             <div>
               <div className="banner_slide">
                 <Image
-                  className="d-sm-block d-none"
+                  className=""
                   src="/banner4.png"
                   alt="Early Detection is the Key of Cure"
                   width={630}

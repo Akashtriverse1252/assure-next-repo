@@ -342,7 +342,7 @@
 
     .vedio_review .slick-next,
     .vedio_review .slick-prev {
-        top: -20;
+        top: -20%;
     }
 
     .title h2,
@@ -662,12 +662,23 @@
         width: 92%;
     }
 
+    .vedio_review .slick-prev:before,
+    .vedio_review .slick-next:before,
+    .googlereviewslider .slick-prev:before,
+    .googlereviewslider .slick-next:before {
+        height: 30px;
+    }
+
 }
 
 @media (max-width:1100px) {
     .packagename span {
         width: 80px;
         height: 80px;
+    }
+
+    .footerrow {
+        gap: 40px;
     }
 
     .sliderbox {
@@ -707,13 +718,88 @@
     }
 }
 
-@media (max-width:760px) {
+@media (max-width:1000px) {
+    .logo {
+        width: 90%;
+    }
+
+    .fixed .logo {
+        width: 100%;
+    }
+
+    .headersearchbox {
+        width: 55%;
+    }
+
+    .homecollection h3 a {
+        line-height: 0;
+        font-size: 25px;
+    }
+
+    .homecollection h4 {
+        font-size: 16px;
+        line-height: 0;
+    }
+
+    .nah_logo svg {
+        width: 51px;
+    }
+
+    .conditionshape span {
+        top: -40px;
+    }
+
+    .p-80 {
+        padding: 50px 0;
+    }
+
+    .enquireform .css-wb57ya-MuiFormControl-root-MuiTextField-root {
+        margin: 0 1.5%;
+        width: 30% !important;
+    }
+
+    .banner_slide,
+    .home_banner .banner_slider:after {
+        height: 62vh;
+    }
+}
+
+@media (max-width:780px) {
     .menslide {
         position: fixed;
         height: 100vh;
         width: 100vw;
         top: -100%;
         background-color: #dae8ec;
+    }
+
+    .banner_slide,
+    .home_banner .banner_slider:after {
+        height: 40vh;
+    }
+
+    .slick-slider .slick-dots li button:before {
+        font-size: 8px;
+    }
+
+    .slick-slider .slick-dots li.slick-active button:before {
+        font-size: 10px;
+    }
+
+    .slick-dots li {
+        width: 16px !important;
+    }
+
+
+
+    .headersearchbox {
+        width: 85%;
+    }
+
+    .homecollection h4,
+    .homecollection h3,
+    .nah_logo {
+        display: none;
     }
 
     .fixed .menslide.active,
@@ -738,6 +824,14 @@
 
     .headerstrip {
         display: none;
+    }
+}
+
+@media (max-width:680px) {
+
+    .banner_slide,
+    .home_banner .banner_slider:after {
+        height: 45vh;
     }
 }
 
@@ -937,7 +1031,7 @@
     }
 
     .conditionshape span {
-        TOP: -30PX;
+        TOP: -60PX;
         left: 0;
     }
 
@@ -985,6 +1079,15 @@
         padding-left: 35px;
         padding-right: 10px;
         height: 50px;
+    }
+
+    .enquireform .css-wb57ya-MuiFormControl-root-MuiTextField-root {
+        width: 100% !important;
+    }
+
+    .home_banner img {
+        height: auto;
+        width: 62%;
     }
 
     .mobile_nav_search .cross {
@@ -1079,16 +1182,21 @@
     }
 
     .conditionshape {
-        height: 75px;
+        height: 90px;
         overflow: hidden;
     }
 
     .condtionicon {
-        width: 45px;
-        height: 45px;
+        width: 50px;
+        height: 50px;
         position: absolute;
         top: 0px;
         z-index: 1;
+    }
+
+    .banner_slide,
+    .home_banner .banner_slider:after {
+        height: 380px;
     }
 
     .conditionshape h3 {
@@ -1145,4 +1253,11 @@
     }
 
 
+}
+
+@media (max-width:480px) {
+    .conditionshape span {
+        TOP: -40PX;
+        left: 0;
+    }
 }

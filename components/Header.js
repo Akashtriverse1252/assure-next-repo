@@ -56,14 +56,14 @@ export const Header = () => {
       <div className={header ? "header fixed" : "header"}>
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-2 col-4">
+            <div className="col-lg-2 col-md-2 col-3">
               <div className="logo">
                 <Link href="/">
                   <Logo />
                 </Link>
               </div>
             </div>
-            <div className="col-lg-10 col-8">
+            <div className="col-lg-10 col-md-10 col-9">
               <div className="d-flex align-items-center justify-content-end gap-xxl-4 gap-xl-2 gap-0">
                 <div
                   className={

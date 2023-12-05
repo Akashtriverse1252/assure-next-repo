@@ -113,7 +113,7 @@ const SearchBar = () => {
     },
   ];
   return (
-    <div className="col-12 pull-left position-relative">
+    <div className="col-12  pull-left position-relative">
       <div className="header_search position-relative">
         <SearchBox />
         <div className="_icon">

@@ -22,29 +22,25 @@ export const HForm = () => {
     <>
       {/* {showDialog ? <UploadForm /> : null} */}
 
-      <div className="col-12 float-start d-grid gap-3 sm-gap-5 h_form">
-        <div className="enquireform col-12 float-start d-none d-sm-block">
+      <div className="col-12 float-start d-grid gap-3 gap-sm-1  h_form">
+        <div className="enquireform col-12 col-md-12 mx-md-auto   float-start d-none d-sm-block">
           <SearchBar />
 
-          <Button
-            variant="outlined"
-            className="MuiInputBase-root formbtn d-flex justify-content-between"
-            fullWidth
-            onClick={() => cartDispatch({ type: "TOGGLE_UPLOD_FORM" })} // Pass a function to onClick
-          >
-            <label>Upload Prescription</label>
-            <span>
-              <Attachement />
-            </span>
-          </Button>
-          {/* <UploadForm /> */}
-          {/* <input
-            type="file"
-            ref={fileInputRef}
-            style={{ display: "none" }}
-            onChange={handleFileSelect}
-          /> */}
-          <div className="col-12 position-relative">
+          <div className="col-12 col-md-5 col-lg-12  d-sm-none d-lg-block position-relative">
+            <Button
+              variant="outlined"
+              className="MuiInputBase-root formbtn d-flex justify-content-between"
+              fullWidth
+              onClick={() => cartDispatch({ type: "TOGGLE_UPLOD_FORM" })} // Pass a function to onClick
+            >
+              <label>Upload Prescription</label>
+              <span>
+                <Attachement />
+              </span>
+            </Button>
+          </div>
+
+          <div className="col-12 col-md-5 col-lg-12 d-sm-none d-lg-block position-relative">
             <Button
               variant="outlined"
               className="MuiInputBase-root formbtn d-flex justify-content-between"

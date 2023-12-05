@@ -204,7 +204,7 @@ export const Footer = () => {
                 </div>
               </div>
               <div className="row  gap-4 gap-sm-0 mt-3">
-                <div className="col-lg-4 col-xs-6 col-sm-6 col-12">
+                <div className="col-lg-4 col-xs-6 col-sm-4 col-12">
                   <div className="contact">
                     <a href="tel:0181-4667555">
                       <span className="flex-center align-items-start gap-2 sm-gap-4">
@@ -213,7 +213,7 @@ export const Footer = () => {
                     </a>
                   </div>
                 </div>
-                <div className="col-lg-4 col-xs-6 col-sm-6 col-12">
+                <div className="col-lg-4 col-xs-6 col-sm-4 col-12">
                   <div className="contact">
                     <a href="mailto:assurepathlabs@gmail.com">
                       <span className="flex-center align-items-start gap-2 sm-gap-4">
@@ -222,7 +222,7 @@ export const Footer = () => {
                     </a>
                   </div>
                 </div>
-                <div className="col-lg-4 col-xs-6 col-sm-6 col-12">
+                <div className="col-lg-4 col-xs-6 col-sm-4 col-12">
                   <div className="contact">
                     <span className="flex-center align-items-start gap-2 gap-sm-0">
                       <strong>A </strong>&nbsp; 3, Waryam Nagar, <br />
@@ -231,7 +231,7 @@ export const Footer = () => {
                     </span>
                   </div>
                 </div>
-                <div className="col-12 flex-center mt-4 mb-3 mt-sm-5">
+                <div className="col-12 col-md-5 mx-auto  flex-center mt-4 mb-3 mt-sm-5">
                   <a className="button button--aylen button--round-l button--text-thick text-uppercase gradient col-lg-3 col-12">
                     BOOK HOME COLLECTION
                   </a>

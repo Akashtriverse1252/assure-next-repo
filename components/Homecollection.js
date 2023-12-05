@@ -10,7 +10,7 @@ export const Homecollection = () => {
       <div className="enquireform col-12 float-start">
         <div className={styles.equireheading}>
           <h2>
-            <span>BOOK HOME COLLECTION</span>
+            <span className="pb-md-2">BOOK HOME COLLECTION</span>
           </h2>
         </div>
         <form>
@@ -34,7 +34,7 @@ export const Homecollection = () => {
           />
           <button
             type="submit"
-            className="col-12 button button--aylen button--round-l button--text-thick"
+            className="col-12 col-md-12 mx-md-auto button button--aylen button--round-l button--text-thick"
           >
             Submit
           </button>

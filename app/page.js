@@ -25,11 +25,11 @@ export default function Home() {
       <section className="position-relative">
         <div className="gradient-layer"></div>
         <div className="container">
-          <div className="row">
-            <div className="col-xl-9 col-lg-8 col-xs-12 col-12">
+          <div className="row gap-sm-3 ">
+            <div className="col-xl-9 col-lg-8 col-md-10 pull-md-right mr-md-auto col-sm-12  col-12">
               <AssureSlide className="no-buttons colornavigations col-12 float-start" />
             </div>
-            <div className="col-xl-3 col-lg-4 col-xs-12 col-12 d-flex align-items-center">
+            <div className="col-xl-3 col-lg-4 col-sm-11 mx-sm-auto col-12 d-flex align-items-center">
               <HForm />
             </div>
           </div>
@@ -124,7 +124,7 @@ export default function Home() {
                 <div className=" flex-center mt-4 btn_main">
                   <Link
                     href="/about-us"
-                    className="button button--aylen button--round-l button--text-thick text-uppercase gradient col-lg-3 col-12 mt-3"
+                    className="button button--aylen button--round-l button--text-thick text-uppercase gradient col-lg-3 col-md-4 col-12 mt-3"
                   >
                     know more{" "}
                   </Link>
@@ -144,7 +144,7 @@ export default function Home() {
               </div>
               <div className="col-lg-10 m-auto col-12 float-start">
                 <div className="row justify-content-center">
-                  <div className="col-lg-3 col-md-6 col-6">
+                  <div className="col-lg-3 col-md-4 col-6">
                     <div className="circleicons float-start col-12 text-center grid-center">
                       <span className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick">
                         {" "}
@@ -153,7 +153,7 @@ export default function Home() {
                       <p>24x7</p>
                     </div>
                   </div>
-                  <div className="col-lg-3 col-xs-6 col-6">
+                  <div className="col-lg-3 col-md-4 col-6">
                     <div className="circleicons float-start col-12 text-center grid-center">
                       <span className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick">
                         {" "}
@@ -162,7 +162,7 @@ export default function Home() {
                       <p>Same Day Report</p>
                     </div>
                   </div>
-                  <div className="col-lg-3 col-xs-6 col-6">
+                  <div className="col-lg-3 col-md-4 col-6">
                     <div className="circleicons float-start col-12 text-center grid-center">
                       <span className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick">
                         {" "}
@@ -171,7 +171,7 @@ export default function Home() {
                       <p>Founded by Doctors</p>
                     </div>
                   </div>
-                  <div className="col-lg-3 col-xs-6 col-6">
+                  <div className="col-lg-3 col-md-4 col-6">
                     <div className="circleicons float-start col-12 text-center grid-center">
                       <span className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick">
                         {" "}
@@ -180,7 +180,7 @@ export default function Home() {
                       <p>Advanced Technology</p>
                     </div>
                   </div>
-                  <div className="col-lg-3 col-xs-6 col-6">
+                  <div className="col-lg-3 col-md-4 col-6">
                     <div className="circleicons float-start col-12 text-center grid-center">
                       <span className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick">
                         {" "}
@@ -189,7 +189,7 @@ export default function Home() {
                       <p>High on Safety and Hygeine</p>
                     </div>
                   </div>
-                  <div className="col-lg-3 col-xs-6 col-6">
+                  <div className="col-lg-3 col-md-4 col-6">
                     <div className="circleicons float-start col-12 text-center grid-center">
                       <span className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick">
                         {" "}
@@ -198,7 +198,7 @@ export default function Home() {
                       <p>500+ Test</p>
                     </div>
                   </div>
-                  <div className="col-lg-3 col-xs-6 col-6">
+                  <div className="col-lg-3 col-md-4 col-6">
                     <div className="circleicons float-start col-12 text-center grid-center">
                       <span className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick">
                         {" "}
@@ -236,7 +236,7 @@ export default function Home() {
               <div className="title col-12 float-start text-center">
                 <h2 className="">Frequently Asked Questions.</h2>
               </div>
-              <div className="col-lg-11 col-12 m-auto float-start">
+              <div className="col-lg-11 col-md-11 col-12 m-auto float-start">
                 <Faq className="minusbottom " />
               </div>
             </div>

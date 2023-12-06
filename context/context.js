@@ -109,18 +109,26 @@ const GlobalDataProvider = ({ children }) => {
 
         console.log("found products", foundProducts);
 
-        const saveCartProducts = foundProducts.map((product) => ({
-          id: product.id,
-          name: product.Test_Name,
-          price: product.Test_Amount,
-          dis_price: product.Discount_Amount,
-          quantity: 1, // You may want to set the quantity based on the savedProducts data
-          discount: (
-            ((product.Test_Amount - product.Discount_Amount) /
-              product.Test_Amount) *
-              100 || 0
-          ).toFixed(),
-        }));
+        const saveCartProducts = foundProducts.map((product) => {
+          // Find the corresponding saved product
+          const savedProduct = savedProducts.find((sp) => sp.id === product.id);
+
+          // Use the quantity from the saved product, default to 1 if not found
+          const quantity = savedProduct ? savedProduct.quantity : 1;
+
+          return {
+            id: product.id,
+            name: product.Test_Name,
+            price: product.Test_Amount,
+            dis_price: product.Discount_Amount,
+            quantity: quantity,
+            discount: (
+              ((product.Test_Amount - product.Discount_Amount) /
+                product.Test_Amount) *
+                100 || 0
+            ).toFixed(),
+          };
+        });
 
         cartDispatch({ type: "INIT", products: saveCartProducts });
 

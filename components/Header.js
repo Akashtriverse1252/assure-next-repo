@@ -56,7 +56,7 @@ export const Header = () => {
       <div className={header ? "header fixed" : "header"}>
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-2 col-md-2 col-3">
+            <div className="col-lg-2 col-md-2 col-3"> 
               <div className="logo">
                 <Link href="/">
                   <Logo />

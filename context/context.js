@@ -90,67 +90,64 @@ const GlobalDataProvider = ({ children }) => {
   const [cartState, cartDispatch] = useReducer(cartReducer, initialState);
 
   useEffect(() => {
-    const savedProductIds = Cookies.get("cart");
-    // console.log(savedProductIds);
-    if (savedProductIds) {
-      // Fetch real-time data from the API using the stored product IDs
-      fetchDataFromApi(savedProductIds);
-    }
-  }, []);
+    const savedProducts = Cookies.get("cart");
+    console.log("this is the data from the cookies", savedProducts);
 
-  const fetchDataFromApi = async (productIds) => {
-
+    const fetchDataFromApi = async (savedProducts) => {
       try {
         // Replace this with your actual API endpoint
         // const response = await fetch(`your-api-endpoint`);
         // const testData = await response.json();
-  
-        // Filter the test_data array based on the stored product IDs
-        const filteredProducts = testData.test_data.filter(
-          (product) => product.id && productIds.includes(product.id.toString())
-        );
-        const saveCartProduct = filteredProducts.map((product) => {
-          const _discount = product?.Test_Amount
-            ? (
-                ((product.Test_Amount - product.Discount_Amount) /
-                  product.Test_Amount) *
-                100
-              ).toFixed()
-            : 0;
-  
-          return {
-            id: product.id,
-            name: product.Test_Name,
-            price: product.Test_Amount,
-            dis_price: product.Discount_Amount,
-            quantity: 1,
-            discount: _discount,
-          };
+
+        // Assuming testData is available globally or imported
+        const foundProducts = testData.test_data.filter((product) => {
+          // Check if the product ID is included in the savedProducts array
+          return savedProducts.some(
+            (savedProduct) => savedProduct.id === product.id
+          );
         });
 
-      cartDispatch({ type: "INIT", products: saveCartProduct });
+        console.log("found products", foundProducts);
 
-      console.log("Real-time data fetched from API:", filteredProducts);
-    } catch (error) {
-      console.error("Error fetching real-time data:", error);
+        const saveCartProducts = foundProducts.map((product) => ({
+          id: product.id,
+          name: product.Test_Name,
+          price: product.Test_Amount,
+          dis_price: product.Discount_Amount,
+          quantity: 1, // You may want to set the quantity based on the savedProducts data
+          discount: (
+            ((product.Test_Amount - product.Discount_Amount) /
+              product.Test_Amount) *
+              100 || 0
+          ).toFixed(),
+        }));
+
+        cartDispatch({ type: "INIT", products: saveCartProducts });
+
+        console.log("Real-time data fetched from API:", saveCartProducts);
+      } catch (error) {
+        console.error("Error fetching real-time data:", error);
+      }
+    };
+
+    if (savedProducts) {
+      fetchDataFromApi(JSON.parse(savedProducts));
     }
-  };
+  }, []);
 
   const updateCookies = (products) => {
-    // Log both the ID and Quantity of each product
-    const cookiesProducts = products.map((product) => ({
-      id: product.id,
-      quantity: product.quantity,
+    const cookiesProducts = products.map(({ id, quantity }) => ({
+      id,
+      quantity,
     }));
-    console.log("this si the cookies producr", cookiesProducts)
 
     Cookies.set("cart", JSON.stringify(cookiesProducts), {
       expires: 365,
     });
+    console.log("This is the cookies product", cookiesProducts);
   };
 
   useEffect(() => {
-    // Update cookies whenever the cart products change
     updateCookies(cartState.products);
   }, [cartState.products]);
 

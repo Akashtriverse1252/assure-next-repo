@@ -4,6 +4,7 @@ import { useData } from "@/context/context";
 import React, { Fragment, useState } from "react";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { LuX } from "react-icons/lu";
+import EmptyCart from "./EmptyCart";
 
 export default function Cart() {
   const { cartState, cartDispatch } = useData(); // Access cart state and dispatch from CartContext
@@ -65,7 +66,7 @@ export default function Cart() {
                     <div className="ml-3 d-flex h-7 align-items-center">
                       <button
                         type="button"
-                        className="btn _cart_back_icon"
+                        className=" _cart_back_icon"
                         onClick={isOpen}
                       >
                         <IoIosArrowRoundBack className="" />
@@ -76,6 +77,12 @@ export default function Cart() {
 
                   <div className="mt-8">
                     <div className="flow-root">
+                      {cartState.products.length === 0 ? (
+                        <div className="empty_cart col-12 d-flex justify-content-center flex-column align-items-center">
+                          <EmptyCart />
+                        </div>
+                      ) : null}
+
                       <ul className="list-unstyled _cart_test mx-3">
                         {cartState.products.map((product) => (
                           <li

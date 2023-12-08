@@ -5,14 +5,15 @@ import { ChooseAssure } from "@/components/ChooseAssure";
 import { Cart } from "@/components/svg-components/Cart";
 import { Rupees } from "@/components/svg-components/Rupees";
 import { useData } from "@/context/context";
-import { AddCard, Addchart, CardGiftcardOutlined } from "@mui/icons-material";
-import React from "react";
+import React, { useState } from "react";
+import Bin from "@/components/svg-components/Bin";
 import package_info from "@/Data/test_data.json";
 import { useParams } from "next/navigation";
 import { Faq } from "@/components/Faq";
 
 export const page = () => {
   const { cartState, cartDispatch } = useData();
+  const [isInCart, setIsInCart] = useState(false);
   const params = useParams();
 
   const slug = params.slug;
@@ -25,34 +26,45 @@ export const page = () => {
       ).toFixed()
     : 0;
 
-  const handleAddToCart = () => {
-    cartDispatch({ type: "TOGGLE_CART" });
-    const product = {
-      id: project.id,
-      name: project.Test_Name,
-      price: project.Test_Amount,
-      dis_price: project.Discount_Amount,
-      quantity: 1,
-      discount: _discount,
-    };
-    const existingProduct = cartState.products.find((p) => p.id === product.id);
+  const cartIds = cartState.products.map((cartproduct) => cartproduct.id);
 
-    if (existingProduct) {
-      // If the product exists, update its quantity
-      cartDispatch({
-        type: "INCREMENT",
-        productId: product.id,
-      });
+  const handleToggleCart = () => {
+    if (cartIds.includes(project.id)) {
+      // Remove product from cart logic here
+      cartDispatch({ type: "REMOVE", productId: project.id });
     } else {
-      // If the product doesn't exist, add it to the cart
-      cartDispatch({
-        type: "ADD_TO_CART",
-        product,
-      });
-    }
-  };
+      // Add product to cart logic here
+      cartDispatch({ type: "TOGGLE_CART" });
+      const product = {
+        id: project.id,
+        name: project.Test_Name,
+        price: project.Test_Amount,
+        dis_price: project.Discount_Amount,
+        quantity: 1,
+        discount: _discount,
+      };
+      const existingProduct = cartState.products.find(
+        (p) => p.id === product.id
+      );
 
-  const lengthOfTestInfo = project.TestInfo.length;
+      if (existingProduct) {
+        // If the product exists, update its quantity
+        cartDispatch({
+          type: "INCREMENT",
+          productId: product.id,
+        });
+      } else {
+        // If the product doesn't exist, add it to the cart
+        cartDispatch({
+          type: "ADD_TO_CART",
+          product,
+        });
+      }
+    }
+
+    // Toggle the state to update the button text and functionality
+    setIsInCart(!isInCart);
+  };
 
   return (
     <>
@@ -213,11 +225,21 @@ export const page = () => {
                               <Cart /> Add to Cart
                             </a> */}
                             <button
-                              className="button button--aylen button--round-l button--text-thick  gradient col-lg-3 col-md-4 col-11   flex-center gap-2"
-                              onClick={handleAddToCart}
-                              disabled={cartState.cartVisible}
+                              className={`button button--aylen button--round-l button--text-thick gradient col-lg-3 col-md-4 col-11 flex-center gap-2 ${
+                                isInCart ? "button--remove" : ""
+                              }`}
+                              onClick={handleToggleCart}
                             >
-                              <Cart /> Add to Cart
+                              {cartIds.includes(project.id) ? (
+                                <>
+                                  <Bin />
+                                  Remove from Cart
+                                </>
+                              ) : (
+                                <>
+                                  <Cart /> Add to Cart
+                                </>
+                              )}
                             </button>
                             <a className="button button--aylen button--round-l button--text-thick  gradient col-xxl-3 col-lg-4 col-md-5 col-11 ">
                               Book Home Collection

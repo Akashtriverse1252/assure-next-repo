@@ -11,7 +11,7 @@ export const page = () => {
   return (
     <>
       <main className="d-flex flex-wrap float-start col-12">
-        <section className="position-relative">
+        {/* <section className="position-relative">
           <div className="gradient-layer"></div>
           <div className="container">
             <div className="row">
@@ -30,43 +30,29 @@ export const page = () => {
           </div>
           <Dots className="hsection position-absolute svgwidth opacity-10" />
           <Line className="svgwidthline position-absolute opacity-10" />
-        </section>
+        </section> */}
         <section className="position-relative">
           <div className="container">
             <div className="row">
               <div className="title col-12 float-start text-center">
                 <h2>About us</h2>
               </div>
-              <div className="col-xxl-7 col-xl-9 col-md-9 m-auto  col-11 text-center">
-                <p>
-                  Assure Pathlabs was founded by Dr. Sanjay Wadhwa and Dr.
-                  Lovely Razdan in 2015. At Assure the belief is that every man,
-                  woman, and child should benefit from advances in healthcare –
-                  regardless of where they live. It is this belief that drives
-                  our commitment to develop and deliver unique health
-                  innovations that respond to the specific and tangible needs of
-                  vulnerable communities.
-                </p>
-                <p>
-                  Early and accurate diagnosis plays a crucial role in reducing
-                  the disease burden, improving treatment outcomes and
-                  optimizing health access. Since all clinical decisions and
-                  treatment initiations depend on accurate diagnosis, it is a
-                  critical success factor for reaching the next level of quality
-                  healthcare.
-                </p>
-                <p>
-                  Our team of highly qualified, and hard working professionals
-                  anticipate the future with a renewed sense of enthusiasm to go
-                  beyond the ordinary to become an exceptional provider of
-                  diagnostic services and to grow beyond the region into the
-                  global market.
-                </p>
-                <p>
-                  At Assure Pathlabs you can rely on customers receiving
-                  efficient service, helpful advice, respect, support and care,
-                  as well as the highest standards of medical expertise.{" "}
-                </p>
+              <div className=" m-auto col-9 d-flex justify-content-center flex-direction-row  text-center">
+                <div className="col-xl-6 pull-right ml-auto d-flex justify-content-center text-left ">
+                  <p className="col-10 text-start">
+                    Assure Pathlabs is the best blood test pathalogy laboratory
+                    in Jalandhar, established in 2015 by Dr. Sanjay Wadhwa and
+                    Dr. Lovely Razdan with a commitment to excellence. Backed by
+                    NABH certification, Assure Pathlabs upholds international
+                    standards having adequate lab tests cost. Our commitment
+                    guarantees not just efficient service but also valuable
+                    advice, timely reports, unwavering support, and
+                    compassionate care because your well-being is our priority.
+                  </p>
+                </div>
+                <div className="col-xl-6">
+                  <div className="abt_img"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -75,6 +61,42 @@ export const page = () => {
           </div>
           <Dots className="hsection position-absolute svgwidth opacity-10" />
           <Line className="svgwidthline position-absolute opacity-10 bottom-0 end-0" />
+        </section>
+        <section className="position-relative">
+          <div className="container">
+            <div className="web-container">
+              <div className="row">
+                <div className="our-ethos col-10 mx-auto pt-4  mt-3 d-flex flex-column gap-5">
+                  <div className="our-ethos-item col-10 mx-auto d-flex justify-content-center align-item-center flex-row">
+                    <div className="our-ethos-title col-5 mx-auto d-flex align-items-center ">
+                      <h3 className="col-12 mx-auto text-center fw-bolder">
+                        OUR VISION
+                      </h3>
+                    </div>
+                    <div className="our-ethos-content col-7">
+                      <p>
+                        Become the most trusted and best pathology laboratory
+                        that ensures international standards in diagnostics.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="our-ethos-item col-10 mx-auto d-flex justify-content-center align-item-center flex-row-reverse">
+                    <div className="our-ethos-title col-5 mx-auto d-flex align-items-center ">
+                      <h3 className="col-12 mx-auto text-center fw-bolder">
+                        OUR MISSION
+                      </h3>
+                    </div>
+                    <div className="our-ethos-content col-7">
+                      <p>
+                        Our mission is to redefine healthcare accessibility and
+                        elevate diagnostic standards.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
         <ChooseAssure />
         <section

@@ -6,6 +6,9 @@ import Chip from "@mui/material/Chip";
 import HomeIcon from "@mui/icons-material/Home";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
+import { HiOutlineHome } from "react-icons/hi2";
+import { RiHome2Line } from "react-icons/ri";
 
 // Function to convert slug to normal text
 const convertSlugToText = (slug) => {
@@ -14,25 +17,7 @@ const convertSlugToText = (slug) => {
   return slug.replace(/-/g, " ");
 };
 
-const StyledBreadcrumb = styled(Chip)(({ theme }) => {
-  const backgroundColor =
-    theme.palette.mode === "light"
-      ? theme.palette.grey[100]
-      : theme.palette.grey[800];
-  return {
-    backgroundColor,
-    height: theme.spacing(3),
-    color: theme.palette.text.primary,
-    fontWeight: theme.typography.fontWeightRegular,
-    "&:hover, &:focus": {
-      backgroundColor: emphasize(backgroundColor, 0.06),
-    },
-    "&:active": {
-      boxShadow: theme.shadows[1],
-      backgroundColor: emphasize(backgroundColor, 0.12),
-    },
-  };
-});
+const StyledBreadcrumb = styled(Chip)(({ theme }) => {});
 
 export const BreadCrums = () => {
   const pathname = usePathname();
@@ -53,12 +38,10 @@ export const BreadCrums = () => {
           <div className="container">
             <div role="presentation" className="bread_crums ">
               <Breadcrumbs className="mb-3 " aria-label="breadcrumb">
-                <StyledBreadcrumb
-                  component="a"
-                  href="/"
-                  label="Home"
-                  icon={<HomeIcon fontSize="small" />}
-                />
+                <Link href="/">
+                <RiHome2Line />
+                  Home
+                </Link>
                 {pathSegments.map((segment, index) => {
                   const path = `/${pathSegments.slice(0, index + 1).join("/")}`;
 
@@ -70,12 +53,13 @@ export const BreadCrums = () => {
 
                   if (!excludedWords.includes(segment)) {
                     return (
-                      <StyledBreadcrumb
+                      <Link
                         key={segment}
                         component={isDisabled ? "span" : "a"}
                         href={isDisabled ? undefined : path}
-                        label={labelText}
-                      />
+                      >
+                        {labelText}
+                      </Link>
                     );
                   }
 

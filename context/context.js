@@ -13,6 +13,18 @@ const initialState = {
   removedProducts: [],
 };
 
+const updateCookies = (products) => {
+  const cookiesProducts = products.map(({ id, quantity }) => ({
+    id,
+    quantity,
+  }));
+
+  Cookies.set("cart", JSON.stringify(cookiesProducts), {
+    expires: 365,
+  });
+  console.log("This is the cookies product", cookiesProducts);
+};
+
 const cartReducer = (state, action) => {
   switch (action.type) {
     case "INCREMENT":
@@ -38,13 +50,17 @@ const cartReducer = (state, action) => {
         (product) => product.id === action.productId
       );
       if (removedProduct) {
-        return {
+        const updatedState = {
           ...state,
           products: state.products.filter(
             (product) => product.id !== action.productId
           ),
           removedProducts: [...state.removedProducts, removedProduct],
         };
+
+        updateCookies(updatedState.products); // Update cookies immediately
+
+        return updatedState;
       }
       return state;
     case "UNDO_REMOVE":
@@ -95,13 +111,7 @@ const GlobalDataProvider = ({ children }) => {
 
     const fetchDataFromApi = async (savedProducts) => {
       try {
-        // Replace this with your actual API endpoint
-        // const response = await fetch(`your-api-endpoint`);
-        // const testData = await response.json();
-
-        // Assuming testData is available globally or imported
         const foundProducts = testData.test_data.filter((product) => {
-          // Check if the product ID is included in the savedProducts array
           return savedProducts.some(
             (savedProduct) => savedProduct.id === product.id
           );
@@ -110,10 +120,7 @@ const GlobalDataProvider = ({ children }) => {
         console.log("found products", foundProducts);
 
         const saveCartProducts = foundProducts.map((product) => {
-          // Find the corresponding saved product
           const savedProduct = savedProducts.find((sp) => sp.id === product.id);
-
-          // Use the quantity from the saved product, default to 1 if not found
           const quantity = savedProduct ? savedProduct.quantity : 1;
 
           return {
@@ -143,18 +150,6 @@ const GlobalDataProvider = ({ children }) => {
     }
   }, []);
 
-  const updateCookies = (products) => {
-    const cookiesProducts = products.map(({ id, quantity }) => ({
-      id,
-      quantity,
-    }));
-
-    Cookies.set("cart", JSON.stringify(cookiesProducts), {
-      expires: 365,
-    });
-    console.log("This is the cookies product", cookiesProducts);
-  };
-
   useEffect(() => {
     updateCookies(cartState.products);
   }, [cartState.products]);
@@ -174,4 +169,4 @@ const useData = () => {
   return context;
 };
 
-export { GlobalDataProvider, useData };
+export { GlobalDataProvider, useData, updateCookies };

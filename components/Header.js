@@ -56,8 +56,13 @@ export const Header = () => {
       <div className={header ? "header fixed" : "header"}>
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-2 col-md-2 col-3"> 
-              <div className="logo">
+            <div className="col-lg-2 col-md-2 col-3">
+              <div
+                className="logo"
+                data-aos="fade"
+                data-aos-once="true"
+                data-aos-duration="500"
+              >
                 <Link href="/">
                   <Logo />
                 </Link>
@@ -89,7 +94,12 @@ export const Header = () => {
                 </div>
                 <div className="navbar p-0 align-items-end gap-xxl-4 gap-xl-2">
                   <div className="d-none d-sm-flex justify-content-center align-items-center gap-xxl-4 gap-xl-2  navbar_item">
-                    <div className="leftmenu float-start gap-xxl-3 gap-xl-1 ">
+                    <div
+                      className="leftmenu float-start gap-xxl-3 gap-xl-1 "
+                      data-aos="fade"
+                      data-aos-once="true"
+                      data-aos-duration="600"
+                    >
                       {/* <span className="button button--aylen button--round-l button--text-thick ">
                         <Link href="/individual-test">
                           <span>
@@ -112,7 +122,12 @@ export const Header = () => {
                         </span>
                       </Link>
                     </div>
-                    <div className=" d-flex align-items-center flex-row justify-content-center ">
+                    <div
+                      className=" d-flex align-items-center flex-row justify-content-center "
+                      data-aos="fade"
+                      data-aos-once="true"
+                      data-aos-duration="600"
+                    >
                       <div className="nah_logo">
                         <Nabh />
                       </div>

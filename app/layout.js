@@ -8,6 +8,7 @@ import localFont from "next/font/local";
 import { Footer } from "@/components/Footer";
 import { GlobalDataProvider } from "@/context/context";
 import Cart from "../components/Cart.js";
+import smoothScroll from "../components/SmoothScroll";
 
 import { BreadCrums } from "@/components/BreadCrums";
 import UploadForm from "@/components/UploadForm";
@@ -31,8 +32,7 @@ export default function RootLayout({ children }) {
           <Header />
           <BreadCrums />
           <Cart />
-
-          {children}
+          <smoothScroll>{children}</smoothScroll>
 
           <Footer />
           <UploadForm />

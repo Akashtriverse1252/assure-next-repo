@@ -1996,11 +1996,29 @@ div#bookAppointmentForm .width50:first-chlid {
   background-color: transparent !important;
 }
 
+.dropdown-menu.show {
+  border-top: 0;
+  border-radius: 0 0 35px 35px;
+  z-index: 1;
+}
+
+.headersearchbox .dropdown-menu.show {
+  z-index: 4;
+}
+
+.dropdown-item {
+  padding: 15px 25px !important;
+  color: #272727 !important;
+}
+
+
+.dropdown-item:hover,
 .dropdown-item.active,
 .dropdown-item:active {
-  background-color: rgb(227, 242, 255) !important;
-  color: #000 !important;
+  background-color: d6e3f1 !important;
+  color: #000000 !important;
 }
+
 
 .rbt-highlight-text {
   padding: 0 !important;
@@ -2541,4 +2559,42 @@ button:disabled {
 
 .add_item h4 {
   text-transform: capitalize;
+}
+
+/* 
+.headersearchbox .header_search .isInput .form-control {
+  border-radius: 35px 35px 0 0 !important;
+  border-bottom: none;
+  border-color: #c4c4c4 !important;
+} */
+
+/* .headersearchbox .header_search .rbt-input-main.form-control.rbt-input[data-has-input="true"] { */
+/* .headersearchbox .header_search .rbt-input-main:not(:placeholder-shown), */
+/* .headersearchbox .header_search .rbt-input-main:focus { */
+
+.headersearchbox .header_search .rbt-input-main:focus:not(:placeholder-shown),
+.rbt-input-main:focus:not(:placeholder-shown) {
+  border-radius: 35px 35px 0 0 !important;
+  border-bottom: none;
+  border-color: #c4c4c4 !important;
+}
+
+.h_form .isInput .dropdown-menu.show {
+  background-color: #deebf4 !important;
+}
+
+.h_form .isInputIcon._icon {
+  background-color: transparent !important;
+}
+
+.h_form .isInputIcon._icon  svg{
+  color: #5f5f5f;
+}
+
+.headersearchbox .header_search ._icon {
+  background-color: transparent !important;
+}
+
+.headersearchbox .header_search ._icon svg {
+  color: #b5b5b5;
 }

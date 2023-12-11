@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Box, Tabs, Tab } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
+
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
@@ -116,9 +116,7 @@ const SearchBar = () => {
     <div className="col-12  pull-left position-relative">
       <div className="header_search position-relative">
         <SearchBox />
-        <div className="_icon">
-          <SearchIcon className="d-none d-sm-block" />
-        </div>
+       
       </div>
       {isDropdownVisible && (
         <div className="dropdowntab pb-2 col-12" ref={dropdownRef}>

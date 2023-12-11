@@ -7,6 +7,7 @@ import testData from "../Data/test_data.json";
 const CartContext = createContext();
 
 const initialState = {
+  isInputNotEmpty: false,
   uploadFormVisible: false,
   cartVisible: false,
   products: [],
@@ -22,7 +23,7 @@ const updateCookies = (products) => {
   Cookies.set("cart", JSON.stringify(cookiesProducts), {
     expires: 365,
   });
-  console.log("This is the cookies product", cookiesProducts);
+  // console.log("This is the cookies product", cookiesProducts);
 };
 
 const cartReducer = (state, action) => {
@@ -91,6 +92,11 @@ const cartReducer = (state, action) => {
       return {
         ...state,
         uploadFormVisible: !state.uploadFormVisible,
+      };
+    case "TOOGLE_INPUT_DATA":
+      return {
+        ...state,
+        isInputNotEmpty: action.payload,
       };
     case "INIT":
       return {

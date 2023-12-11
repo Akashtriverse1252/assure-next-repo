@@ -33,7 +33,6 @@ export default function RootLayout({ children }) {
           <BreadCrums />
           <Cart />
           <smoothScroll>{children}</smoothScroll>
-
           <Footer />
           <UploadForm />
         </body>

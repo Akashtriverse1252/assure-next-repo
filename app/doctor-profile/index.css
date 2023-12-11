@@ -1,13 +1,15 @@
 .leaderships {
-    flex-wrap: wrap;
     float: left;
     width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
 }
 
 .leadership2,
 .leaderships {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 .leadership2 {
@@ -15,7 +17,8 @@
     -webkit-filter: grayscale(1);
     filter: grayscale(1);
     margin: 30px 0 0;
-    width: 48%;
+    flex-direction: column;
+    width: 300px;
 }
 
 .leadershipcont {
@@ -24,7 +27,6 @@
 }
 
 .leadershipcont h2 {
-    font-family: Franklin Gothic Medium Cond;
     font-size: 24px;
     letter-spacing: 1px;
     margin: 0;
@@ -41,7 +43,7 @@
 
 .leadershipcont ul li {
     font-size: 13px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     line-height: 20px;
     margin: 2px 0;
     width: 100%;
@@ -65,17 +67,7 @@
     float: left;
     overflow: hidden;
     position: relative;
-    width: 40%;
-}
-
-.leadership2:first-child,
-.leadership2:nth-child(2) {
-    flex-wrap: wrap;
-}
-
-.leadership2:first-child .leadershipimg,
-.leadership2:nth-child(2) .leadershipimg {
-    width: 100%;
+    width: auto;
 }
 
 .leadership2:first-child .leadershipcont,

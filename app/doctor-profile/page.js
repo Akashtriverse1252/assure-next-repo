@@ -9,13 +9,13 @@ const Page = () => {
         <div className="container">
           <div className="row">
             <div className="title col-12 float-start text-center">
-              <h2>About us</h2>
+              <h2>Our Doctors</h2>
             </div>
             <div className="leaderships">
               <div className="leadership2">
                 <div className="leadershipimg">
                   <Image
-                    src="https://www.jujhargroup.com/static/media/S-Gurdeep-Singh.212ca47829a394b00f93.webp"
+                    src="/dp-01.webp"
                     alt="S GURDEEP SINGH"
                     title="S GURDEEP SINGH"
                     width="250"
@@ -28,15 +28,15 @@ const Page = () => {
                     <li>FOUNDER AND CHAIRMAN</li>
                     <li>JUJHAR GROUP</li>
                   </ul>
-                  <a className="btn-3" href="/leadership/s-gurdeep-singh">
-                    <span> Read Bio</span>
-                  </a>
+                  <button type="button" className="cnt_shp_btn textbtn">
+                    Read More
+                  </button>
                 </div>
               </div>
               <div className="leadership2">
                 <div className="leadershipimg">
                   <Image
-                    src="https://www.jujhargroup.com/static/media/S-Gurdeep-Singh.212ca47829a394b00f93.webp"
+                    src="/dp-03.webp"
                     alt="S GURDEEP SINGH"
                     title="S GURDEEP SINGH"
                     width="250"
@@ -49,15 +49,15 @@ const Page = () => {
                     <li>FOUNDER AND CHAIRMAN</li>
                     <li>JUJHAR GROUP</li>
                   </ul>
-                  <a className="btn-3" href="/leadership/s-gurdeep-singh">
-                    <span> Read Bio</span>
-                  </a>
+                  <button type="button" className="cnt_shp_btn textbtn">
+                    Read More
+                  </button>
                 </div>
               </div>
               <div className="leadership2">
                 <div className="leadershipimg">
                   <Image
-                    src="https://www.jujhargroup.com/static/media/S-Gurdeep-Singh.212ca47829a394b00f93.webp"
+                    src="/dp-02.webp"
                     alt="S GURDEEP SINGH"
                     title="S GURDEEP SINGH"
                     width="250"
@@ -70,9 +70,9 @@ const Page = () => {
                     <li>FOUNDER AND CHAIRMAN</li>
                     <li>JUJHAR GROUP</li>
                   </ul>
-                  <a className="btn-3" href="/leadership/s-gurdeep-singh">
-                    <span> Read Bio</span>
-                  </a>
+                  <button type="button" className="cnt_shp_btn textbtn">
+                    Read More
+                  </button>
                 </div>
               </div>
             </div>

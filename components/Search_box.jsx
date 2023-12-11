@@ -3,12 +3,28 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Typeahead } from "react-bootstrap-typeahead";
 import axios from "axios";
+import SearchIcon from "@mui/icons-material/Search";
+import { useData } from "@/context/context";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [selected, setSelected] = useState([]);
+  const { cartState, cartDispatch } = useData();
   const router = useRouter();
+
+  // const isInputNotEmpty = query.trim() !== "";
+  // useEffect(() => {
+  //   // Check if the query data has some input
+  //   const hasInput = query.trim() !== "";
+  //   console.log("this is the hasInput", hasInput);
+  //   // Dispatch the TOGGLE_INPUT_DATA action based on the input condition
+  //   cartDispatch({ type: "TOGGLE_INPUT_DATA", payload: hasInput });
+  // }, [query, cartDispatch]);
+  // console.log("this is the state", cartState.isInputNotEmpty);
+
+  const isInputNotEmpty = query.trim() !== "";
+  console.log("this is the input", isInputNotEmpty);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -65,6 +81,7 @@ const SearchBar = () => {
     <>
       <Typeahead
         id="searchTypeahead"
+        className={isInputNotEmpty ? "isInput" : ""}
         options={suggestions}
         onInputChange={handleInputChange}
         onChange={handleSuggestionSelect}
@@ -79,6 +96,9 @@ const SearchBar = () => {
         additionalResultsText="Show more"
         paginationText="Load more..."
       />
+      <div className={`_icon ${isInputNotEmpty ? "isInputIcon" : ""}`}>
+        <SearchIcon className="d-none d-sm-block" />
+      </div>
     </>
   );
 };

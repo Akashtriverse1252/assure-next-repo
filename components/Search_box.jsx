@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Typeahead } from "react-bootstrap-typeahead";
 import axios from "axios";
 import SearchIcon from "@mui/icons-material/Search";
@@ -12,6 +12,7 @@ const SearchBar = () => {
   const [selected, setSelected] = useState([]);
   const { cartState, cartDispatch } = useData();
   const router = useRouter();
+  const pathname = usePathname();
 
   // const isInputNotEmpty = query.trim() !== "";
   // useEffect(() => {
@@ -24,15 +25,15 @@ const SearchBar = () => {
   // console.log("this is the state", cartState.isInputNotEmpty);
 
   const isInputNotEmpty = query.trim() !== "";
-  console.log("this is the input", isInputNotEmpty);
+  // console.log("this is the input", isInputNotEmpty);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         if (query.trim() !== "") {
           const response = await axios.get(
-            // `http://127.0.0.1/assure_api/keyword_json_api.php?searchWord=${query}`
-            `https://www.assurepathlabs.com/api/new-api/keyword_json_api.php?searchWord=${query}`
+            `http://127.0.0.1/assure_api/keyword_json_api.php?searchWord=${query}`
+            // `https://www.assurepathlabs.com/api/new-api/keyword_json_api.php?searchWord=${query}`
           );
           console.log("this is the api data", response.data.keywords);
 
@@ -52,6 +53,14 @@ const SearchBar = () => {
 
     fetchData();
   }, [query]);
+
+  useEffect(() => {
+    const searchTypeahead = document.querySelector(".rbt-input-main");
+    if (searchTypeahead) {
+      searchTypeahead.blur();
+      // console.log("done");
+    }
+  }, [pathname]);
 
   const handleInputChange = (query) => {
     setQuery(query);

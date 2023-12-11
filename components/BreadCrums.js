@@ -39,7 +39,7 @@ export const BreadCrums = () => {
             <div role="presentation" className="bread_crums ">
               <Breadcrumbs className="mb-3 " aria-label="breadcrumb">
                 <Link href="/">
-                <RiHome2Line />
+                  <RiHome2Line />
                   Home
                 </Link>
                 {pathSegments.map((segment, index) => {
@@ -56,7 +56,7 @@ export const BreadCrums = () => {
                       <Link
                         key={segment}
                         component={isDisabled ? "span" : "a"}
-                        href={isDisabled ? undefined : path}
+                        href={isDisabled ? "" : path}
                       >
                         {labelText}
                       </Link>

@@ -7,6 +7,7 @@ import Bin from "./svg-components/Bin";
 import { useData } from "@/context/context";
 import data from "../Data/test_data.json";
 import { Faq } from "./Faq";
+import Link from "next/link";
 
 export const Test_details_logic = ({ Slug }) => {
   const { cartState, cartDispatch } = useData();
@@ -23,7 +24,7 @@ export const Test_details_logic = ({ Slug }) => {
   // Assuming cartState.products is your array of products
   const cartIds = cartState.products.map((cartproduct) => cartproduct.id);
 
-  console.log("These are the cart ids:", cartIds.includes(project.id));
+  // console.log("These are the cart ids:", cartIds.includes(project.id));
 
   const handleToggleCart = () => {
     if (cartIds.includes(project.id)) {
@@ -241,9 +242,12 @@ export const Test_details_logic = ({ Slug }) => {
                     >
                       <Cart /> Add to Cart
                     </button> */}
-                    <a className="button button--aylen button--round-l button--text-thick  gradient col-xxl-3 col-lg-4 col-md-5 col-11 ">
+                    <Link
+                      href="#"
+                      className="button button--aylen button--round-l button--text-thick  gradient col-xxl-3 col-lg-4 col-md-5 col-11 "
+                    >
                       Book Home Collection
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -19,7 +19,7 @@ const SearchBar = ({ params: { slug } }) => {
                 <Searchhpage slug={slug} />
               </div>
             </div>
-          </div>
+          </div> 
         </div>
       </section>
     </div>

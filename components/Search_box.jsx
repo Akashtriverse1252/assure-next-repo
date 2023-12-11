@@ -10,7 +10,6 @@ const SearchBar = () => {
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [selected, setSelected] = useState([]);
-  const { cartState, cartDispatch } = useData();
   const router = useRouter();
   const pathname = usePathname();
 
@@ -32,10 +31,10 @@ const SearchBar = () => {
       try {
         if (query.trim() !== "") {
           const response = await axios.get(
-            `http://127.0.0.1/assure_api/keyword_json_api.php?searchWord=${query}`
-            // `https://www.assurepathlabs.com/api/new-api/keyword_json_api.php?searchWord=${query}`
+            // `http://127.0.0.1/assure_api/keyword_json_api.php?searchWord=${query}`
+            `https://www.assurepathlabs.com/api/new-api/keyword_json_api.php?searchWord=${query}`
           );
-          console.log("this is the api data", response.data.keywords);
+          // console.log("this is the api data", response.data.keywords);
 
           if (response.data.keywords.length === 0) {
             setSuggestions([]);
@@ -78,7 +77,7 @@ const SearchBar = () => {
       return null;
     } else {
       setSelected(selected);
-      console.log("this is the selected data", selected);
+      // console.log("this is the selected data", selected);
       if (selected.length !== 0) {
         const slug = nameToSlug(selected[0]);
         router.push(`/search/${encodeURIComponent(slug)}`);

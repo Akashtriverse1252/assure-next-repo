@@ -229,7 +229,6 @@ ul {
   padding: 15px 0;
 }
 
-header,
 .title,
 .all-test .sliderbox {
   margin-bottom: 50px;
@@ -2606,4 +2605,8 @@ button:disabled {
   width: 100%;
   overflow: hidden;
   will-change: transform;
+}
+
+.bread_crums {
+  margin: 15px 0 30px;
 }

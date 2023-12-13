@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import "./index.css";
 
+
 const Page = () => {
   return (
     <>
@@ -15,18 +16,19 @@ const Page = () => {
               <div className="leadership2">
                 <div className="leadershipimg">
                   <Image
-                    src="/dp-01.webp"
-                    alt="S GURDEEP SINGH"
-                    title="S GURDEEP SINGH"
-                    width="250"
-                    height="250"
+                    src="/doctor-01.webp"
+                    alt="Dr. Sanjay Wadhwa"
+                    f
+                    title="Dr. Sanjay Wadhwa"
+                    width="350"
+                    height="350"
                   />
                 </div>
                 <div className="leadershipcont">
-                  <h2>S GURDEEP SINGH</h2>
+                  <h2>Dr. Sanjay Wadhwa</h2>
                   <ul>
                     <li>FOUNDER AND CHAIRMAN</li>
-                    <li>JUJHAR GROUP</li>
+                    <li>ASSURE PATHLABS</li>
                   </ul>
                   <button type="button" className="cnt_shp_btn textbtn">
                     Read More
@@ -36,18 +38,18 @@ const Page = () => {
               <div className="leadership2">
                 <div className="leadershipimg">
                   <Image
-                    src="/dp-03.webp"
-                    alt="S GURDEEP SINGH"
-                    title="S GURDEEP SINGH"
-                    width="250"
-                    height="250"
+                    src="/doctor-01.webp"
+                    alt="Dr. Sanjay Wadhwa"
+                    title="Dr. Sanjay Wadhwa"
+                    width="350"
+                    height="350"
                   />
                 </div>
                 <div className="leadershipcont">
-                  <h2>S GURDEEP SINGH</h2>
+                  <h2>Dr. Sanjay Wadhwa</h2>
                   <ul>
                     <li>FOUNDER AND CHAIRMAN</li>
-                    <li>JUJHAR GROUP</li>
+                    <li>ASSURE PATHLABS</li>
                   </ul>
                   <button type="button" className="cnt_shp_btn textbtn">
                     Read More
@@ -57,18 +59,18 @@ const Page = () => {
               <div className="leadership2">
                 <div className="leadershipimg">
                   <Image
-                    src="/dp-02.webp"
-                    alt="S GURDEEP SINGH"
-                    title="S GURDEEP SINGH"
-                    width="250"
-                    height="250"
+                    src="/doctor-01.webp"
+                    alt="Dr. Sanjay Wadhwa"
+                    title="Dr. Sanjay Wadhwa"
+                    width="350"
+                    height="350"
                   />
                 </div>
                 <div className="leadershipcont">
-                  <h2>S GURDEEP SINGH</h2>
+                  <h2>Dr. Sanjay Wadhwa</h2>
                   <ul>
                     <li>FOUNDER AND CHAIRMAN</li>
-                    <li>JUJHAR GROUP</li>
+                    <li>ASSURE PATHLABS</li>
                   </ul>
                   <button type="button" className="cnt_shp_btn textbtn">
                     Read More

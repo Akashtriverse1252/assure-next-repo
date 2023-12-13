@@ -537,6 +537,15 @@
         width: 98%;
     }
 
+    .doctor_name .procont {
+        flex-direction: column !important;
+    }
+
+    .doctor_name_img {
+        max-width: 300px;
+    }
+   
+
     .container {
         min-width: 94%;
         margin: auto;

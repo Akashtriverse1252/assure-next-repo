@@ -12,7 +12,7 @@ import { MyCart } from "./MyCart";
 import { UploadPrescription } from "./UploadPrescription";
 import Nabh from "./svg-components/Nabh";
 import { usePathname } from "next/navigation";
-import { LuUser, LuSearch, LuX, LuShoppingCart } from "react-icons/lu";
+import { LuUser, LuShoppingCart } from "react-icons/lu";
 import { PiShoppingCartSimple } from "react-icons/pi";
 import { useData } from "@/context/context";
 import { Badge } from "@mui/material";
@@ -39,6 +39,10 @@ export const Header = () => {
       window.removeEventListener("scroll", changeBackground);
     };
   }, []);
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
+
   const [header, setNavbar] = useState(false);
   const changeBackground = () => {
     if (window.scrollY >= 80) {
@@ -191,9 +195,21 @@ export const Header = () => {
                                 </div>
                                 <div className="fmenu">
                                   <ul className="p-0 m-0">
-                                    <li>DR SANJAY WADHWA</li>
-                                    <li>DR LOVELY RAZDAN</li>
-                                    <li>DR GURPAL KAUR</li>
+                                    <li>
+                                      <Link href="/doctor-profile/details/dr-sanjay-wadhwa">
+                                        DR SANJAY WADHWA
+                                      </Link>
+                                    </li>
+                                    <li>
+                                      <Link href="/doctor-profile/details/dr-lovely-razdan">
+                                        DR LOVELY RAZDAN
+                                      </Link>
+                                    </li>
+                                    <li>
+                                      <Link href="/doctor-profile/details/dr-gurpal-kaur">
+                                        DR GURPAL KAUR
+                                      </Link>
+                                    </li>
                                   </ul>
                                 </div>
                               </div>

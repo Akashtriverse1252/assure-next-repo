@@ -22,13 +22,14 @@ const StyledBreadcrumb = styled(Chip)(({ theme }) => {});
 export const BreadCrums = () => {
   const pathname = usePathname();
   const pathSegments = pathname.split("/").filter((segment) => segment !== "");
-  const excludedWords = ["test"];
+  const excludedWords = ["test", "details"];
   const disabledLinks = [
     "organ",
     "conditions",
     "condition",
     "parameter",
     "test-detail",
+    "details",
   ]; // Keywords to disable links
 
   return (
@@ -39,7 +40,7 @@ export const BreadCrums = () => {
             <div role="presentation" className="bread_crums ">
               <Breadcrumbs className="mb-3 " aria-label="breadcrumb">
                 <Link href="/">
-                  <RiHome2Line />
+                  {/* <RiHome2Line /> */}
                   Home
                 </Link>
                 {pathSegments.map((segment, index) => {

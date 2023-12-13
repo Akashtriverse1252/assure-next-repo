@@ -3,7 +3,7 @@
     width: 100%;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    gap: 80px;
 }
 
 .leadership2,
@@ -23,7 +23,7 @@
 
 .leadershipcont {
     float: left;
-    width: 55%;
+    width: 100%;
 }
 
 .leadershipcont h2 {
@@ -39,6 +39,7 @@
     margin-top: 10px;
     text-transform: uppercase;
     width: 100%;
+    padding-left: 0;
 }
 
 .leadershipcont ul li {
@@ -59,9 +60,9 @@
     padding: 0 15px;
 }
 
-.leadershipcont ul li:last-child {
+/* .leadershipcont ul li:last-child {
     border: none;
-}
+} */
 
 .leadershipimg {
     float: left;
@@ -70,8 +71,7 @@
     width: auto;
 }
 
-.leadership2:first-child .leadershipcont,
-.leadership2:nth-child(2) .leadershipcont {
+.leadership2 .leadershipcont {
     margin: 25px 0;
     width: 100%;
 }
@@ -90,8 +90,135 @@
     -webkit-transform: scale(1);
     transform: scale(1);
     transition: all .5s ease;
-    width: 100%;
+    width: 350px;
+    height: auto;
 }
+
+.abt_cont ul li {
+    padding: 2px 0;
+    letter-spacing: 0.4px;
+}
+
+.heading h4 strong {
+    font-size: 22px;
+    z-index: 1;
+    width: max-content;
+    position: relative;
+    display: block;
+}
+
+.abt_doc_profile {
+    background: #f7f7f7;
+    padding: 50px 40px;
+}
+
+.doctor_name {
+    padding: 60px 40px;
+    background: linear-gradient(80deg, #8827ca, #178fee);
+}
+
+.doctor_name .procont {
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+}
+
+.doctor_name .procont_name {
+    padding: 0 30px;
+}
+
+.heading h4 strong {
+    position: relative;
+    font-size: 18px;
+    z-index: 1;
+    width: max-content;
+    position: relative;
+    display: block;
+    padding: 8px 30px;
+    color: #fff;
+    border-radius: 35px;
+    BACKGROUND: linear-gradient(80deg, #8827ca, #178fee);
+
+}
+
+.abt_cont h5 {
+    padding-left: 15px;
+}
+
+.abt_doc_profile ul li {
+    list-style: disc;
+}
+
+.abt_doc_profile ul li::marker {
+    color: #8635cf;
+}
+
+/* .heading h4:after {
+    content: "";
+    top: 50%;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    display: block;
+    background: #000;
+}
+
+.heading h4 strong:before {
+    content: "";
+    top: 0;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #f7f7f7;
+    z-index: -1;
+} */
+
+.procont_name h2 {
+    font-size: 38px;
+
+}
+
+.procont_name {
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.abt_cont h5 {
+    font-size: 17px;
+}
+
+.procont .doctor_name_img {
+    width: auto;
+    /* display: contents; */
+    position: relative;
+    z-index: 1;
+    min-width: 250PX;
+}
+
+.procont .doctor_name_img img {
+    width: 100%;
+    z-index: 1;
+    position: relative;
+}
+
+.procont .doctor_name_img:before {
+    height: 100%;
+    width: 100%;
+    content: "";
+    position: absolute;
+    top: -7%;
+    left: -7%;
+    background: #fff8f81a;
+    z-index: 0;
+}
+
+.procont_name strong {
+    padding-bottom: 5px;
+}
+
 
 @media (max-width:1680px) {
     body {
@@ -140,6 +267,26 @@
     .btn-3 span {
         font-size: 12px;
     }
+
+    .doctor_name .procont_name {
+        padding: 0;
+    }
+
+    .abt_doc_profile,
+    .doctor_name {
+        padding: 40px 15px;
+    }
+
+    .doctor_name .procont {
+        gap: 25px;
+    }
+
+    .abt_cont h5 {
+        font-size: 15px;
+        line-height: 1.3;
+    }
+
+
 }
 
 @media (max-width:768px) {

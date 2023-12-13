@@ -2610,3 +2610,7 @@ button:disabled {
 .bread_crums {
   margin: 15px 0 30px;
 }
+
+.fmenu ul li a {
+  color: #000;
+}

@@ -20,8 +20,8 @@ const Page = ({ params: { doctorslug } }) => {
         <div className="heading">
           <h4
             data-aos="fade"
-            data-aos-delay={500}
-            data-aos-duration={500}
+            data-aos-delay={200}
+            data-aos-duration={200}
             data-aos-once="true"
           >
             <strong>{title}</strong>
@@ -73,7 +73,7 @@ const Page = ({ params: { doctorslug } }) => {
         <div className="container">
           <div className="web-container">
             <div className="row doctor_name ">
-              <div className="procont flex-md-column">
+              <div className="procont ">
                 <div className="doctor_name_img">
                   <Image
                     src={doctorData?.image?.src}

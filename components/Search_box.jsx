@@ -31,8 +31,8 @@ const SearchBar = () => {
       try {
         if (query.trim() !== "") {
           const response = await axios.get(
-            // `http://127.0.0.1/assure_api/keyword_json_api.php?searchWord=${query}`
-            `https://www.assurepathlabs.com/api/new-api/keyword_json_api.php?searchWord=${query}`
+            `http://127.0.0.1/assure_api/keyword_json_api.php?searchWord=${query}`
+            // `https://www.assurepathlabs.com/api/new-api/keyword_json_api.php?searchWord=${query}`
           );
           // console.log("this is the api data", response.data.keywords);
 

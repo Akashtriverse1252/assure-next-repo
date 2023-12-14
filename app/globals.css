@@ -1152,7 +1152,19 @@ header {
   background: #fef7a6;
 }
 
-.chooseassure .circleicons svg path {
+.chooseassure .col-lg-3:nth-child(4) .circleicons span {
+  background: #d98594;
+}
+
+.chooseassure .col-lg-3:nth-child(5) .circleicons span {
+  background: #fcd29f;
+}
+
+.chooseassure .col-lg-3:nth-child(6) .circleicons span {
+  background: #c7efcf;
+}
+
+.chooseassure .chooseUsIcon:not(:first-child) .circleicons svg path {
   fill: #000
 }
 
@@ -2613,4 +2625,56 @@ button:disabled {
 
 .fmenu ul li a {
   color: #000;
+}
+
+.chooseassure .circleicons:first-child svg path.s4 {
+  fill: none !important;
+  stroke: #ffffff;
+  stroke-miterlimit: 10;
+  stroke-width: 0.5;
+}
+
+.chooseassure .circleicons:first-child svg path.s6 {
+  fill: none !important;
+  stroke: #0000ff !important;
+  stroke-miterlimit: 10;
+  stroke-width: 1;
+}
+
+.chooseUsIcon:first-child .circleicons svg path.s5 {
+  fill: #4672b7 !important;
+}
+
+.chooseUsIcon:first-child .circleicons svg path.s7 {
+  fill: #ffffff !important;
+}
+
+.chooseUsIcon:first-child .circleicons svg path.s2 {
+  fill: #a0ebfb !important;
+}
+
+.chooseUsIcon:first-child .circleicons svg path.s1 {
+  fill: #ef0e5b !important;
+}
+
+.chooseUsIcon:first-child .circleicons svg path.s0 {
+  fill: #fefefe !important;
+}
+
+.chooseUsIcon:first-child .circleicons svg path.s3 {
+  fill: #13befc !important;
+}
+
+.chooseUsIcon:first-child .circleicons svg {
+  width: 80% !important;
+}
+
+.stepConnectorLine {
+  position: absolute;
+  height: 2px;
+  background-color: #007bff;
+  /* Adjust the color as needed */
+  transition: width 0.3s ease;
+  bottom: 12px;
+  /* Adjust the bottom position based on your layout */
 }

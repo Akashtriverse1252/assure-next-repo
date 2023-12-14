@@ -82,8 +82,8 @@ const Page = ({ params: { doctorslug } }) => {
                     width="250"
                     height="250"
                     data-aos="fade"
-                    data-aos-delay={400}
-                    data-aos-duration={500}
+                    data-aos-delay={300}
+                    data-aos-duration={400}
                     data-aos-once="true"
                   />
                 </div>

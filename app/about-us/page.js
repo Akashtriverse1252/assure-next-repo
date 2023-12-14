@@ -1,6 +1,9 @@
 import React from "react";
 import { Dots } from "@/components/svg-components/Dots";
 import { Line } from "@/components/svg-components/Line";
+import { AdvancedTechnology } from "@/components/svg-components/AdvancedTechnology";
+import { Doctor } from "@/components/svg-components/Doctor";
+import { InternationalStandard } from "@/components/svg-components/InternationalStandard";
 import Aboutbanner from "../../public/about-us-banner.webp";
 import Image from "next/image";
 import { AboutGradient } from "@/components/AboutGradient";
@@ -98,6 +101,49 @@ export const page = () => {
             </div>
           </div>
         </section>
+
+        <section className="position-relative">
+          <div className="container">
+            <div className="web-container">
+              <div className="row">
+                <div className="title col-12 float-start text-center mt-5 mb-4">
+                  <h2>OUR DIFFERENTIATORS</h2>
+                </div>
+                <div className="our_diffrenc">
+                  <div className="col-lg-8 mx-auto col-12  ">
+                    <div className="row justify-content-center">
+                      <div className="col-lg-3 col-sm-4 col-6 ">
+                        <div className="circleicons float-start  text-center grid-center">
+                          <span className="flex-center mb-2 button button--aylen button--round-l button--text-thick">
+                            <AdvancedTechnology />
+                          </span>
+                          <p>New age Technology</p>
+                        </div>
+                      </div>
+                      <div className="col-lg-3 col-sm-4 col-6 ">
+                        <div className="circleicons float-start  text-center grid-center">
+                          <span className="flex-center mb-2 button button--aylen button--round-l button--text-thick">
+                            <InternationalStandard />
+                          </span>
+                          <p>International Standards </p>
+                        </div>
+                      </div>
+                      <div className="col-lg-3 col-sm-4 col-6 ">
+                        <div className="circleicons float-start  text-center grid-center">
+                          <span className="flex-center mb-2 button button--aylen button--round-l button--text-thick">
+                            <Doctor />
+                          </span>
+                          <p>Founded by doctors</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <ChooseAssure />
         <section
           className="position-relative pb-5 grey-background border-bottom"

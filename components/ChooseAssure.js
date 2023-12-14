@@ -1,75 +1,55 @@
 import React from "react";
 import { AssureSafety } from "@/components/svg-components/AssureSafety";
-import { Doctor } from "@/components/svg-components/Doctor";
 import { FreeHomeCollection } from "@/components/svg-components/FreeHomeCollection";
+import { SameDayreport } from "@/components/svg-components/SameDayreport";
+import AffordablePricing from "@/components/svg-components/AffordablePricing";
+import PlayStore from "@/components/svg-components/PlayStore";
+import Nabh from "@/components/svg-components/Nabh";
+import { Consultant } from "./svg-components/Consultant";
 import { Dots } from "@/components/svg-components/Dots";
 import { Line } from "@/components/svg-components/Line";
-import { Consultant } from "./svg-components/Consultant";
-import { SameDayreport } from "./svg-components/SameDayreport";
+import data from "@/Data/Choose_us.json";
+
+const iconComponents = {
+  Nabh,
+  AssureSafety,
+  SameDayreport,
+  FreeHomeCollection,
+  AffordablePricing,
+  Consultant,
+  PlayStore,
+};
 
 export const ChooseAssure = () => {
+  const { title, icons } = data;
+
   return (
-    <>
-      <section className="position-relative">
-        <div className="container">
-          <div className="web-container">
-            <div className="row">
-              <div className="title col-12 float-start text-center mt-0 mt-sm-5">
-                <h2>why choose assure pathlab</h2>
-              </div>
-              <div className="col-lg-8 m-auto col-12 float-start chooseassure">
-                <div className="row justify-content-center">
-                  <div className="col-lg-3 col-sm-4  col-6">
+    <section className="position-relative">
+      <div className="container">
+        <div className="web-container">
+          <div className="row">
+            <div className="title col-12 float-start text-center mt-0 mt-sm-5">
+              <h2>{title}</h2>
+            </div>
+            <div className="col-lg-8 m-auto col-12 float-start chooseassure">
+              <div className="row justify-content-center">
+                {icons.map(({ id, icon, text }) => (
+                  <div key={id} className="col-lg-3 col-sm-4 col-6 chooseUsIcon">
                     <div className="circleicons float-start col-12 text-center grid-center">
-                      <span className=" flex-center mb-2 button button--aylen button--round-l button--text-thick">
-                        <AssureSafety />
+                      <span className="flex-center mb-2 button button--aylen button--round-l button--text-thick">
+                        {React.createElement(iconComponents[icon])}
                       </span>
-                      <p>
-                        Assured <br />
-                        Safety
-                      </p>
+                      <p>{text}</p>
                     </div>
                   </div>
-                  <div className="col-lg-3 col-sm-4  col-6">
-                    <div className="circleicons float-start col-12 text-center grid-center">
-                      <span className=" flex-center mb-2 button button--aylen button--round-l button--text-thick">
-                        <FreeHomeCollection />
-                      </span>
-                      <p>
-                        Free Home <br />
-                        Sample Collection
-                      </p>
-                    </div>
-                  </div>
-                  <div className="col-lg-3 col-sm-4  col-6">
-                    <div className="circleicons float-start col-12 text-center grid-center">
-                      <span className=" flex-center mb-2 button button--aylen button--round-l button--text-thick">
-                        <SameDayreport />
-                      </span>
-                      <p>
-                        Same Day <br />
-                        Report
-                      </p>
-                    </div>
-                  </div>
-                  <div className="col-lg-3 col-sm-4  col-6">
-                    <div className="circleicons float-start col-12 text-center grid-center">
-                      <span className=" flex-center mb-2 button button--aylen button--round-l button--text-thick">
-                        <Consultant />
-                      </span>
-                      <p>
-                        Free Doctor <br /> Consultation
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
-        <Dots className="hsection position-absolute svgwidth opacity-10 start-0 bottom-0 top-inherit" />
-        <Line className="svgwidthline position-absolute opacity-10 bottom-0 end-0" />
-      </section>
-    </>
+      </div>
+      <Dots className="hsection position-absolute svgwidth opacity-10 start-0 bottom-0 top-inherit" />
+      <Line className="svgwidthline position-absolute opacity-10 bottom-0 end-0" />
+    </section>
   );
 };

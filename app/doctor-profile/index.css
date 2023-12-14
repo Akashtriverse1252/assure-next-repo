@@ -264,6 +264,19 @@
 }
 
 @media (max-width:1040px) {
+
+    .procont_name h2 {
+        font-size: 30px;
+    }
+
+    .procont_name strong {
+        padding-bottom: 12  px;
+    }
+
+    .heading h4 strong {
+        font-size: 16px;
+    }
+
     .btn-3 span {
         font-size: 12px;
     }

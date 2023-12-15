@@ -1,16 +1,14 @@
 "use client";
+
 import { useState } from "react";
 import { Box, Stepper, Step, StepLabel } from "@mui/material";
 import ProductDetail from "@/components/ProductDetail ";
 import UserDataForm from "@/components/UserDataForm";
-import SuccessMessage from "@/components/SuccessMessage";
 
-// import styles from "./Page.module.css"; // Import your CSS module
-
-const steps = ["Product Detail", "User Data", "Success"];
+const steps = ["Cart Detail", "User Detail", "Success"];
 
 const Page = () => {
-  const [activeStep, setActiveStep] = useState(0);
+  const [activeStep, setActiveStep] = useState(1);
   const [formData, setFormData] = useState({
     productDetail: {},
     userData: {},
@@ -31,42 +29,35 @@ const Page = () => {
     });
   };
 
-  const getStepContent = (step) => {
-    switch (step) {
-      case 0:
-        return (
-          <ProductDetail
-            onNextStep={handleNextStep}
-            onFormData={handleFormData}
-          />
-        );
-      case 1:
-        return (
-          <UserDataForm
-            onPrevStep={handlePrevStep}
-            onNextStep={handleNextStep}
-            onFormData={handleFormData}
-          />
-        );
-      case 2:
-        return <SuccessMessage data={formData} />;
-      default:
-        return "Unknown step";
-    }
-  };
-
   return (
     <>
-      <Box position="relative">
-        <Stepper activeStep={activeStep} alternativeLabel>
-          {steps.map((label, index) => (
-            <Step key={label}>
-              <StepLabel>{label}</StepLabel>
-            </Step>
-          ))}
-        </Stepper>
-      </Box>
-      {getStepContent(activeStep)}
+      <div className="check_out">
+        <Box sx={{ marginTop: 2, marginBottom: 2 }}>
+          <Stepper activeStep={activeStep} alternativeLabel>
+            {steps.map((label, index) => (
+              <Step key={label}>
+                <StepLabel>{label}</StepLabel>
+              </Step>
+            ))}
+          </Stepper>
+        </Box>
+        <div className="check_out_cnt">
+          {activeStep === 0 && (
+            <ProductDetail
+              onNextStep={handleNextStep}
+              onFormData={handleFormData}
+            />
+          )}
+          {activeStep === 1 && (
+            <UserDataForm
+              onPrevStep={handlePrevStep}
+              onNextStep={handleNextStep}
+              onFormData={handleFormData}
+            />
+          )}
+          {activeStep === 2 && <SuccessMessage data={formData} />}
+        </div>
+      </div>
     </>
   );
 };

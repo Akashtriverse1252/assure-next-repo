@@ -5,6 +5,7 @@ import React, { Fragment, useState } from "react";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { LuX } from "react-icons/lu";
 import EmptyCart from "./EmptyCart";
+import Link from "next/link";
 
 export default function Cart() {
   const { cartState, cartDispatch } = useData(); // Access cart state and dispatch from CartContext
@@ -157,12 +158,13 @@ export default function Cart() {
                     <p className="mb-0 rupee">{discountedPrice.toFixed(2)}</p>
                   </div>
                   <div className="mt-sm-6 mt-2  cart_btn">
-                    <a
-                      href="#"
+                    <Link
+                      href="/check-out"
+                      onClick={() => cartDispatch({ type: "TOGGLE_CART" })}
                       className="button button--aylen button--round-l button--text-thick mt-sm-3"
                     >
                       Checkout
-                    </a>
+                    </Link>
                   </div>
                   <div className="mt-sm-6 mt-2 mb-2 d-flex justify-content-center text-center text-sm text-gray-500">
                     <button

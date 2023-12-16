@@ -12,6 +12,20 @@ const initialState = {
   cartVisible: false,
   products: [],
   removedProducts: [],
+  userData: {
+    mobile: "",
+    email: "",
+    designation: "",
+    fullName: "",
+    age: 0,
+    gender: "",
+    area: "",
+    city: "",
+    patientType: "",
+    pincode: "",
+    dob: "",
+    address: "",
+  },
 };
 
 const updateCookies = (products) => {
@@ -103,6 +117,14 @@ const cartReducer = (state, action) => {
         ...state,
         products: action.products,
       };
+    case "UPDATE_USER_DATA":
+      return {
+        ...state,
+        userData: {
+          ...state.userData,
+          ...action.userData,
+        },
+      };
     default:
       return state;
   }
@@ -113,7 +135,8 @@ const GlobalDataProvider = ({ children }) => {
 
   useEffect(() => {
     const savedProducts = Cookies.get("cart");
-    console.log("this is the data from the cookies", savedProducts);
+    const savedUserData = Cookies.get("userData");
+    console.log("this is the data from the cookies", savedUserData);
 
     const fetchDataFromApi = async (savedProducts) => {
       try {
@@ -123,7 +146,7 @@ const GlobalDataProvider = ({ children }) => {
           );
         });
 
-        console.log("found products", foundProducts);
+        // console.log("found products", foundProducts);
 
         const saveCartProducts = foundProducts.map((product) => {
           const savedProduct = savedProducts.find((sp) => sp.id === product.id);
@@ -154,11 +177,24 @@ const GlobalDataProvider = ({ children }) => {
     if (savedProducts) {
       fetchDataFromApi(JSON.parse(savedProducts));
     }
+    if (savedUserData) {
+      cartDispatch({
+        type: "UPDATE_USER_DATA",
+        userData: JSON.parse(savedUserData),
+      });
+    }
   }, []);
 
   useEffect(() => {
     updateCookies(cartState.products);
   }, [cartState.products]);
+
+  useEffect(() => {
+    updateCookies(cartState.products);
+    Cookies.set("userData", JSON.stringify(cartState.userData), {
+      expires: 365,
+    });
+  }, [cartState.products, cartState.userData]);
 
   return (
     <CartContext.Provider value={{ cartState, cartDispatch }}>

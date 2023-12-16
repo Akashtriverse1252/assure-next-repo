@@ -3057,3 +3057,41 @@ button:disabled {
 
 
 }
+
+.hcd_date_seection .custom-radio svg {
+  width: 15px;
+}
+
+.time_slots {
+  display: flex;
+  margin-top: 30px;
+}
+
+.slot-wrapper {
+  padding: 10px 25px;
+  gap: 5px;
+  display: flex;
+  border: 1.5px solid #ccc;
+  border-radius: 35px;
+  margin: 0px 10px;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.slot-wrapper svg {
+  margin: 0 10px 0 0;
+  width: 23px;
+}
+
+.time_slots label input:checked+.slot-wrapper {
+  border: 2px solid #5a98f5;
+  background: #eaf1fe59;
+
+}
+
+.hcd_select_date .radio-buttons {
+  margin: 0;
+  width: auto;
+}

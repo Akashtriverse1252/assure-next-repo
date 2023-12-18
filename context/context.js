@@ -3,6 +3,7 @@
 import React, { createContext, useContext, useEffect, useReducer } from "react";
 import Cookies from "js-cookie";
 import testData from "../Data/test_data.json";
+import { validateUserData, validateUserAddress } from "./validation";
 
 const CartContext = createContext();
 
@@ -13,18 +14,20 @@ const initialState = {
   products: [],
   removedProducts: [],
   userData: {
-    mobile: "",
-    email: "",
     designation: "",
-    fullName: "",
+    name: "",
+    phoneNumber: "",
+    email: "",
+    dob: "",
     age: 0,
     gender: "",
-    area: "",
-    city: "",
-    patientType: "",
-    pincode: "",
-    dob: "",
+  },
+  userAddres: {
     address: "",
+    pincode: "",
+    city: "",
+    state: "",
+    homeCollectionDateTime: "",
   },
 };
 
@@ -125,8 +128,119 @@ const cartReducer = (state, action) => {
           ...action.userData,
         },
       };
+    case "UPDATE_USER_ADDRESS":
+      return {
+        ...state,
+        userAddres: {
+          ...state.userAddres,
+          ...action.userAddres,
+        },
+      };
     default:
       return state;
+  }
+};
+const submitBookingData = async (userData, userAddress, userProduct) => {
+  console.log(userData);
+  // Validate user data
+  const userDataValidationResult = validateUserData(userData);
+
+  console.log("this is the validation ", userDataValidationResult);
+  if (userDataValidationResult == null) {
+    console.error("User data validation error:", userDataValidationResult);
+    console.log("user data is validated");
+    // You might want to notify the user about the validation error
+  } else {
+    console.log("user data is invalidated");
+  }
+
+  // Validate user address
+  console.log(userAddress);
+  const userAddressValidationResult = validateUserAddress(userAddress);
+  console.error("adress data validation error:", userAddressValidationResult);
+  if (userAddressValidationResult) {
+    console.error(
+      "User address validation error:",
+      userAddressValidationResult
+    );
+    console.log("address data is validated");
+    // You might want to notify the user about the validation error
+  } else {
+    console.log("address data is invalidated");
+  }
+
+  try {
+    const apiUrl =
+      "https://www.assurepathlabs.com/api/algos/booking_submit_api.php";
+    console.log("API URL:", apiUrl);
+    console.log(userData.name);
+
+    const response = await axios.post(apiUrl, {
+      fullName: "Kjsasaf",
+      age: 24,
+      gender: "male",
+      address: "skhefgjegnnkajshkabg",
+      pincode: 2820101,
+      city: "noida",
+      state: "up",
+      homeCollectionDateTime: "2023-12-18T08:00:00",
+      isHomecollection: true,
+      totalAmount: 500,
+      advance: 0,
+      organizationIdLH: 324559,
+      testID: 3992066,
+      testCode: 3992066,
+      integrationCode: "-",
+      dictionaryId: "-",
+      // fullName: userData.name,
+      // age: userData.age,
+      // gender: userData.gender,
+      // address: userAddress.address,
+      // pincode: userAddress.pincode,
+      // city: userAddress.city,
+      // state: userAddress.state,
+      // homeCollectionDateTime: userAddress.homeCollectionDateTime,
+      // isHomecollection: userAddress.isHomecollection,
+      // totalAmount: product.Test_Amount,
+      // advance: 0,
+      // organizationIdLH: 324559,
+      // testID: 3992066,
+      // testCode: 3992066,
+      // integrationCode: "-",
+      // dictionaryId: "-",
+    });
+
+    console.log("Response Status:", response.status);
+
+    if (response.status >= 200 && response.status < 300) {
+      const responseData = response.data;
+      console.log("Response from the server:", responseData);
+
+      // Handle the response as needed
+    } else {
+      console.error("API request failed with status:", response.status);
+      // Handle non-successful response (4xx, 5xx, etc.) here
+    }
+  } catch (error) {
+    console.error("Error submitting booking data:", error);
+
+    if (error.response) {
+      // The request was made, but the server responded with a status code
+      // that falls out of the range of 2xx
+      console.error(
+        "Server responded with error status:",
+        error.response.status
+      );
+      console.log("Response data:", error.response.data);
+      console.log("Response headers:", error.response.headers);
+    } else if (error.request) {
+      // The request was made, but no response was received
+      console.error("No response received from the server");
+    } else {
+      // Something happened in setting up the request that triggered an Error
+      console.error("Error in setting up the request:", error.message);
+    }
+    // Handle errors gracefully
   }
 };
 
@@ -136,7 +250,9 @@ const GlobalDataProvider = ({ children }) => {
   useEffect(() => {
     const savedProducts = Cookies.get("cart");
     const savedUserData = Cookies.get("userData");
+    const savedUserAddress = Cookies.get("userData");
     console.log("this is the data from the cookies", savedUserData);
+    console.log("this is the address od the user", savedUserAddress);
 
     const fetchDataFromApi = async (savedProducts) => {
       try {
@@ -168,7 +284,7 @@ const GlobalDataProvider = ({ children }) => {
 
         cartDispatch({ type: "INIT", products: saveCartProducts });
 
-        console.log("Real-time data fetched from API:", saveCartProducts);
+        // console.log("Real-time data fetched from API:", saveCartProducts);
       } catch (error) {
         console.error("Error fetching real-time data:", error);
       }
@@ -181,6 +297,12 @@ const GlobalDataProvider = ({ children }) => {
       cartDispatch({
         type: "UPDATE_USER_DATA",
         userData: JSON.parse(savedUserData),
+      });
+    }
+    if (savedUserAddress) {
+      cartDispatch({
+        type: "UPDATE_USER_DATA",
+        userData: JSON.parse(savedUserAddress),
       });
     }
   }, []);
@@ -211,4 +333,4 @@ const useData = () => {
   return context;
 };
 
-export { GlobalDataProvider, useData, updateCookies };
+export { GlobalDataProvider, useData, updateCookies, submitBookingData };

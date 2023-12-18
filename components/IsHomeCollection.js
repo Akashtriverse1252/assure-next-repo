@@ -9,6 +9,7 @@ import Clock from "./svg-components/Clock";
 import Address from "./svg-components/Address";
 import { TextField } from "@mui/material";
 import { IoCheckmarkCircleSharp } from "react-icons/io5";
+import { useData } from "@/context/context";
 
 const radioData = [
   { value: "2023-12-15", label: "15", body: "Today" },
@@ -18,41 +19,38 @@ const radioData = [
 ];
 
 const IsHomeCollection = () => {
-  const [selectedValue, setSelectedValue] = useState(radioData[0]?.value);
-
+  const { cartState, cartDispatch } = useData();
+  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedTime, setSelectedTime] = useState("");
   useEffect(() => {
-    // Add your client-side logic here
-    // For example, handling changes in selected radio button
-  }, [selectedValue]);
+    // console.log("Selected Date:", selectedDate);
+    // console.log("Selected Time:", selectedTime);
 
-  const [date, setData] = useState({
-    selectedDate: "", // Store the selected date here
-    timeSlot: "", // Store the selected time slot here
-  });
+    // Create a new Date object using the selected date and time
+    const selectedDateTime = new Date(`${selectedDate}T${selectedTime}`);
+
+    // // Log the selectedDateTime for debugging
+    // console.log("Selected DateTime:", selectedDateTime);
+
+    // // Format the date and time in the desired format (2020-05-05T11:30:00Z)
+    // // const formattedDateTime = selectedDateTime.toISOString();
+
+    // // Log the formattedDateTime for debugging
+    // console.log("Formatted DateTime:", selectedDateTime);
+  }, [setSelectedDate, setSelectedTime]);
+
   const [formData, setFormData] = useState({
-    mobile: "",
-    email: "",
-    designation: "",
-    fullName: "",
-    age: 0,
-    gender: "",
-    area: "",
     city: "",
-    patientType: "",
-    labPatientId: "",
     pincode: "",
-    dob: "",
-    nationality: "",
-    ethnicity: "",
-    location: "",
+    state: "",
     address: "",
-    // Add more fields as needed
+    isHomecollection: 1,
   });
+  // console.log("this si the form data ", formData);
 
   const [validationErrors, setValidationErrors] = useState({});
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
+  const handleInputChange = (name, value) => {
     setFormData({
       ...formData,
       [name]: value,
@@ -63,6 +61,12 @@ const IsHomeCollection = () => {
       ...validationErrors,
       [name]: "",
     });
+    if (name === "dateSelection") {
+      setSelectedDate(value);
+    } else if (name === "timeSlot") {
+      // Set time based on the selected slot
+      setSelectedTime(value === "morning" ? "10:00" : "16:00");
+    }
   };
 
   const validateForm = () => {
@@ -80,37 +84,51 @@ const IsHomeCollection = () => {
   };
 
   const handleFormSubmit = () => {
-    if (validateForm()) {
-      // Dispatch the action to update the context state with the form data
-      cartDispatch({
-        type: "UPDATE_USER_DATA",
-        userData: formData,
-      });
+    // Extract only the desired fields from formData
+    const { address, pincode, city, state } = formData;
 
-      // Additional logic as needed
-    }
-  };
+    // Create a new Date object using the selected date and time
+    const selectedDateTime = new Date(`${selectedDate}T${selectedTime}`);
 
-  const handleDateChange = (e) => {
-    setFormData({
-      ...formData,
-      selectedDate: e.target.value,
+    // Format the date and time in the desired format (2020-05-05T11:30:00Z)
+    const formattedDateTime = `${selectedDateTime.getFullYear()}-${(
+      selectedDateTime.getMonth() + 1
+    )
+      .toString()
+      .padStart(2, "0")}-${selectedDateTime
+      .getDate()
+      .toString()
+      .padStart(2, "0")}T${selectedDateTime
+      .getHours()
+      .toString()
+      .padStart(2, "0")}:${selectedDateTime
+      .getMinutes()
+      .toString()
+      .padStart(2, "0")}:00Z`;
+    // console.log(formattedDateTime);
+
+    // Create a new object with the extracted fields and formatted date/time
+    const updatedData = {
+      address,
+      pincode,
+      city,
+      state,
+      homeCollectionDateTime: formattedDateTime,
+      isHomecollection: 1,
+      // add more fields as needed
+    };
+
+    // Dispatch the action with the updated data
+    // Replace 'cartDispatch' with your actual dispatch function and action type
+    cartDispatch({
+      type: "UPDATE_USER_ADDRESS",
+      userAddres: updatedData,
     });
-  };
 
-  const handleTimeSlotChange = (e) => {
-    setFormData({
-      ...date,
-      timeSlot: e.target.id,
-    });
+    // console.log("data is submitted");
   };
+  // console.log("this is the data from th context", cartState.userData);
 
-  const handleSubmit = () => {
-    // Concatenate the selected date and time slot
-    const selectedOutput = `${date.selectedDate} - ${date.timeSlot}`;
-    console.log(selectedOutput);
-    // Perform any other actions with the concatenated output
-  };
   return (
     <>
       <div className="home_collection_data">
@@ -129,10 +147,10 @@ const IsHomeCollection = () => {
                     </div>
                   </section>
                   <div
+                    className="hcd_date_seection"
                     role="radiogroup"
                     aria-required="false"
                     dir="ltr"
-                    className="hcd_date_seection"
                     tabIndex="0"
                   >
                     {radioData.map((item, index) => (
@@ -143,17 +161,21 @@ const IsHomeCollection = () => {
                         >
                           <input
                             type="radio"
-                            name=""
+                            name="dateSelection"
                             id={`radio${index}`}
+                            onChange={() =>
+                              handleInputChange("dateSelection", item.value)
+                            }
+                            checked={selectedDate === item.value}
                           />
-                          <span className="radio-btn" >
+                          <span className="radio-btn">
                             <i className="las la-check">
-                              <IoCheckmarkCircleSharp />
+                              <FaCheck />
                             </i>
                             <div className="hobbies-icon">
                               <div className="slot-option">
-                                <span className="day-picker-month ">Dec</span>
-                                <span className="day-picker-day ">
+                                <span className="day-picker-month">Dec</span>
+                                <span className="day-picker-day">
                                   <strong>{item.label}</strong>
                                 </span>
                                 <h3 className="">{item.body}</h3>
@@ -184,6 +206,10 @@ const IsHomeCollection = () => {
                         name="timeSlot"
                         id="morning"
                         className="d-none"
+                        onChange={() =>
+                          handleInputChange("timeSlot", "morning")
+                        }
+                        checked={selectedTime === "10:00"}
                       />
                       <div className="slot-wrapper">
                         <Morning />
@@ -196,6 +222,10 @@ const IsHomeCollection = () => {
                         name="timeSlot"
                         id="evening"
                         className="d-none"
+                        onChange={() =>
+                          handleInputChange("timeSlot", "evening")
+                        }
+                        checked={selectedTime === "16:00"}
                       />
                       <div className="slot-wrapper">
                         <Evening />
@@ -210,60 +240,57 @@ const IsHomeCollection = () => {
                   <Address className="mx-2" />
                   Fill your address
                 </div>
-                <div className="col-12 d-flex justify-content-between">
+                <div className="col-11 d-flex justify-content-between">
                   <TextField
-                    className=" mx-3"
+                    className=" mx-3 col-6"
                     required
                     id="standard-required"
                     variant="standard"
                     label="Address line 1"
-                    name="name"
-                    fullWidth="true"
-                  />
-                  <TextField
-                    className=" mx-3"
-                    fullWidth="true"
-                    required
-                    id="standard-required"
-                    variant="standard"
-                    label="Address line 2"
-                    name="phoneNumber"
-                  />
-                  <TextField
-                    fullWidth="true"
-                    className=" mx-3"
-                    required
-                    label="Land Mark"
-                    name="dob"
-                    variant="standard"
+                    name="Address line 1"
+                    value={formData.address}
+                    onChange={(e) =>
+                      handleInputChange("address", e.target.value)
+                    }
                   />
                 </div>
-                <div className="col-8 mt-5 d-flex justify-content-between">
+                <div className="col-7 mt-5 d-flex ">
                   <TextField
-                    className=" mx-3 col-3"
+                    className=" mx-3 col-2"
                     required
                     id="standard-required"
                     variant="standard"
                     label="pincode"
-                    name="name"
+                    name="pincode"
+                    value={formData.pincode}
+                    onChange={(e) =>
+                      handleInputChange("pincode", e.target.value)
+                    }
                   />
                   <TextField
                     className=" mx-3 col-3"
                     required
-                    id="standard-required"
                     variant="standard"
+                    id="standard-required"
                     label="city"
                     name="city"
+                    value={formData.city}
+                    onChange={(e) => handleInputChange("city", e.target.value)}
                   />
+                  {/* ... (your existing JSX code) */}
                   <TextField
-                    fullWidth="true"
                     required
                     label="state"
-                    name="dob"
+                    name="state"
                     variant="standard"
+                    value={formData.state}
+                    onChange={(e) => handleInputChange("state", e.target.value)}
                   />
                 </div>
               </article>
+              <button type="button" className="btn" onClick={handleFormSubmit}>
+                Submit
+              </button>
             </div>
           </div>
         </div>

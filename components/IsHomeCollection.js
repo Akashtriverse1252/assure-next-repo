@@ -40,10 +40,10 @@ const IsHomeCollection = () => {
   }, [setSelectedDate, setSelectedTime]);
 
   const [formData, setFormData] = useState({
-    city: "",
-    pincode: "",
-    state: "",
-    address: "",
+    city: "gyrygra,",
+    pincode: "282010",
+    state: "up",
+    address: "jasfhifiqbjgagb",
     isHomecollection: 1,
   });
   // console.log("this si the form data ", formData);

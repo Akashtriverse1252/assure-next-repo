@@ -16,6 +16,9 @@ import { validateUserData, validateUserAddress } from "@/context/Validation";
 const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
   const { cartState, cartDispatch } = useData();
   const [loading, setLoading] = useState(false);
+  // console.log(cartState.userData);
+  // console.log(cartState.userAddres);
+  // console.log(cartState.products);
 
   const submitBookingData = async (userData, userAddress, userProduct) => {
     setLoading(true);
@@ -47,46 +50,34 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
     //   console.log("address data is invalidated");
     // }
 
+    // console.log(userData);
+    // console.log(userAddress);
+    console.log(userProduct);
     try {
       const apiUrl =
         "https://www.assurepathlabs.com/api/algos/booking_submit_api.php";
       console.log("API URL:", apiUrl);
-      console.log(userData.name);
-
-      const response = await axios.post(apiUrl, {
-        fullName: "Kjsasaf",
-        age: 24,
-        gender: "male",
-        address: "skhefgjegnnkajshkabg",
-        pincode: 2820101,
-        city: "noida",
-        state: "up",
-        homeCollectionDateTime: "2023-12-18T08:00:00",
-        isHomecollection: true,
-        totalAmount: 500,
+      const apiData = {
+        fullName: userData.name,
+        age: userData.age,
+        gender: userData.gender,
+        address: userAddress.address,
+        pincode: userAddress.pincode,
+        city: userAddress.city,
+        state: userAddress.state,
+        homeCollectionDateTime: userAddress.homeCollectionDateTime,
+        isHomecollection: userAddress.isHomecollection,
+        totalAmount: userProduct.Test_Amount, // <-- Reference to 'product' is not defined
         advance: 0,
         organizationIdLH: 324559,
         testID: 3992066,
         testCode: 3992066,
         integrationCode: "-",
         dictionaryId: "-",
-        // fullName: userData.name,
-        // age: userData.age,
-        // gender: userData.gender,
-        // address: userAddress.address,
-        // pincode: userAddress.pincode,
-        // city: userAddress.city,
-        // state: userAddress.state,
-        // homeCollectionDateTime: userAddress.homeCollectionDateTime,
-        // isHomecollection: userAddress.isHomecollection,
-        // totalAmount: product.Test_Amount,
-        // advance: 0,
-        // organizationIdLH: 324559,
-        // testID: 3992066,
-        // testCode: 3992066,
-        // integrationCode: "-",
-        // dictionaryId: "-",
-      });
+      };
+      console.log("this is the api datas",apiData);
+
+      const response = await axios.post(apiUrl, apiData);
 
       console.log("Response Status:", response.status);
 
@@ -123,9 +114,22 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
       setLoading(false);
     }
   };
-  const handleButtonClick = () => {
-    submitBookingData();
+
+  // Example calling function
+  const handleSubmit = async (e) => {
+    try {
+      await submitBookingData(
+        cartState.userData,
+        cartState.userAddres,
+        cartState.products
+      );
+      // Additional logic after successful form submission
+    } catch (error) {
+      // Handle the error, e.g., show an error message to the user
+      console.error("Error in form submission:", error);
+    }
   };
+
   const handlePrev = () => {
     // Handle any other actions if needed
     onPrevStep();
@@ -155,17 +159,18 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                   <h3>
                     <strong>User Details</strong>
                   </h3>
-                  <form onSubmit={handleButtonClick}>
+                  <form>
                     <UserDetail />
                     <HomeCollectionData />
                     <button
                       type="submit"
                       className="btn"
-                      onClick={handleButtonClick}
+                      onClick={handleSubmit}
                     >
                       Submit the data
                     </button>
                   </form>
+                  
                   <div className="nav_button mt-5 col-12 d-flex justify-content-between">
                     <div className=" mt-3  row text-right">
                       <button

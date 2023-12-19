@@ -2982,10 +2982,9 @@ button:disabled {
 }
 
 .home_collection_data {
-  margin: 30px 20px 20px;
-  background: #fdfdfd;
+  background: #fbfbfb;
   border-radius: 15px;
-  padding: 20px 10px;
+  padding: 40px 50px;
 }
 
 .home_collection_data svg {
@@ -3025,6 +3024,7 @@ button:disabled {
 }
 
 .hcd_date_seection {
+  margin-left: 15px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -3094,4 +3094,12 @@ button:disabled {
 .hcd_select_date .radio-buttons {
   margin: 0;
   width: auto;
+}
+
+.isHomeCollection .css-1elwnq4-MuiPaper-root-MuiAccordion-root:before {
+  content: none !important;
+}
+
+.isHomeCollection .css-15v22id-MuiAccordionDetails-root {
+  padding: 0 !important;
 }

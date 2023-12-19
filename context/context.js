@@ -229,4 +229,4 @@ const useData = () => {
   return context;
 };
 
-export { GlobalDataProvider, useData, updateCookies, submitBookingData };
+export { GlobalDataProvider, useData, updateCookies };

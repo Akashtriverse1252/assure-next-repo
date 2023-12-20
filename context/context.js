@@ -31,6 +31,8 @@ const initialState = {
   },
 };
 
+const updateCookiesAllowed = (isCookiesAllowed) => {};
+
 const updateCookies = (products) => {
   const cookiesProducts = products.map(({ id, quantity }) => ({
     id,
@@ -41,9 +43,6 @@ const updateCookies = (products) => {
     expires: 365,
   });
   // console.log("This is the cookies product", cookiesProducts);
-};
-const updateCookiesAllowed = (isCookiesAllowed) => {
-  localStorage.setItem("isCookiesAllowed", JSON.stringify(isCookiesAllowed));
 };
 
 const cartReducer = (state, action) => {
@@ -116,7 +115,7 @@ const cartReducer = (state, action) => {
     case "COOKIES_ALLOWING":
       return {
         ...state,
-        isCookiesAllowed: !state.isCookiesAllowed,
+        isCookiesAllowed: action.payload,
       };
     case "TOOGLE_INPUT_DATA":
       return {
@@ -153,91 +152,96 @@ const GlobalDataProvider = ({ children }) => {
   const [cartState, cartDispatch] = useReducer(cartReducer, initialState);
 
   useEffect(() => {
-    const { isCookiesAllowed } = cartState;
-    if (isCookiesAllowed) {
-      const savedProducts = Cookies.get("cart");
-      const savedUserData = Cookies.get("userData");
-      const savedUserAddress = Cookies.get("userData");
-      console.log("this is the data from the cookies", savedUserData);
-      console.log("this is the address od the user", savedUserAddress);
-
-      const fetchDataFromApi = async (savedProducts) => {
-        try {
-          const foundProducts = testData.test_data.filter((product) => {
-            return savedProducts.some(
-              (savedProduct) => savedProduct.id === product.id
-            );
-          });
-
-          // console.log("found products", foundProducts);
-
-          const saveCartProducts = foundProducts.map((product) => {
-            const savedProduct = savedProducts.find(
-              (sp) => sp.id === product.id
-            );
-            const quantity = savedProduct ? savedProduct.quantity : 1;
-
-            return {
-              id: product.id,
-              name: product.Test_Name,
-              price: product.Test_Amount,
-              dis_price: product.Discount_Amount,
-              quantity: quantity,
-              discount: (
-                ((product.Test_Amount - product.Discount_Amount) /
-                  product.Test_Amount) *
-                  100 || 0
-              ).toFixed(),
-            };
-          });
-
-          cartDispatch({ type: "INIT", products: saveCartProducts });
-
-          // console.log("Real-time data fetched from API:", saveCartProducts);
-        } catch (error) {
-          console.error("Error fetching real-time data:", error);
-        }
-      };
-
-      if (savedProducts) {
-        fetchDataFromApi(JSON.parse(savedProducts));
-      }
-      if (savedUserData) {
-        cartDispatch({
-          type: "UPDATE_USER_DATA",
-          userData: JSON.parse(savedUserData),
-        });
-      }
-      if (savedUserAddress) {
-        cartDispatch({
-          type: "UPDATE_USER_DATA",
-          userData: JSON.parse(savedUserAddress),
-        });
-      }
-    }
+    const savedProducts = Cookies.get("cart");
+    const savedUserData = Cookies.get("userData");
+    const savedUserAddress = Cookies.get("userData");
     const savedCookiesAllowed = localStorage.getItem("isCookiesAllowed");
+
     if (savedCookiesAllowed !== null) {
       cartDispatch({
         type: "COOKIES_ALLOWING",
         payload: JSON.parse(savedCookiesAllowed),
       });
     }
+
+    const fetchDataFromApi = async (savedProducts) => {
+      try {
+        const foundProducts = testData.test_data.filter((product) => {
+          return savedProducts.some(
+            (savedProduct) => savedProduct.id === product.id
+          );
+        });
+
+        // console.log("found products", foundProducts);
+
+        const saveCartProducts = foundProducts.map((product) => {
+          const savedProduct = savedProducts.find((sp) => sp.id === product.id);
+          const quantity = savedProduct ? savedProduct.quantity : 1;
+
+          return {
+            id: product.id,
+            name: product.Test_Name,
+            price: product.Test_Amount,
+            dis_price: product.Discount_Amount,
+            quantity: quantity,
+            discount: (
+              ((product.Test_Amount - product.Discount_Amount) /
+                product.Test_Amount) *
+                100 || 0
+            ).toFixed(),
+          };
+        });
+
+        cartDispatch({ type: "INIT", products: saveCartProducts });
+
+        // console.log("Real-time data fetched from API:", saveCartProducts);
+      } catch (error) {
+        console.error("Error fetching real-time data:", error);
+      }
+    };
+
+    if (savedProducts) {
+      fetchDataFromApi(JSON.parse(savedProducts));
+    }
+    if (savedUserData) {
+      cartDispatch({
+        type: "UPDATE_USER_DATA",
+        userData: JSON.parse(savedUserData),
+      });
+    }
+    if (savedUserAddress) {
+      cartDispatch({
+        type: "UPDATE_USER_DATA",
+        userData: JSON.parse(savedUserAddress),
+      });
+    }
   }, []);
   useEffect(() => {
     // Save cookie consent preference to local storage
-    updateCookiesAllowed(cartState.isCookiesAllowed);
+    localStorage.setItem(
+      "isCookiesAllowed",
+      JSON.stringify(cartState.isCookiesAllowed)
+    );
+    console.log("this is the cart state", cartState.isCookiesAllowed);
+    // updateCookiesAllowed(cartState.isCookiesAllowed);
   }, [cartState.isCookiesAllowed]);
 
   useEffect(() => {
+    // const { isCookiesAllowed } = cartState;
     updateCookies(cartState.products);
+    // if (isCookiesAllowed) {
+    // }
   }, [cartState.products]);
 
   useEffect(() => {
-    updateCookies(cartState.products);
-    Cookies.set("userData", JSON.stringify(cartState.userData), {
-      expires: 365,
-    });
-  }, [cartState.products, cartState.userData]);
+    const { isCookiesAllowed } = cartState;
+    if (isCookiesAllowed) {
+      // updateCookies(cartState.products);
+      Cookies.set("userData", JSON.stringify(cartState.userData), {
+        expires: 365,
+      });
+    }
+  }, [cartState.userData]);
 
   return (
     <CartContext.Provider value={{ cartState, cartDispatch }}>

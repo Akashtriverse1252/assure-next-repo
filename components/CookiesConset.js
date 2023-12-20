@@ -12,61 +12,52 @@ const CookiesConset = () => {
   const { cartState, cartDispatch } = useData();
 
   useEffect(() => {
-    // Check local storage for user's cookie consent preference
-    const isCookiesAllowed = localStorage.getItem("isCookiesAllowed");
+    const timerId = setTimeout(() => {
+      // Check local storage for user's cookie consent preference
+      const isCookiesAllowedFromLocal =
+        localStorage.getItem("isCookiesAllowed");
 
-    // If user hasn't made a choice yet, show the consent popup
-    if (isCookiesAllowed === false) {
-      setOpen(true);
-    } else {
-      setOpen(false);
-    }
-  }, []);
+      // Set open based on user's cookie consent preference or default to true
+      setOpen(
+        isCookiesAllowedFromLocal ? isCookiesAllowedFromLocal === "false" : true
+      );
+    }, 4000);
 
-  const handleDecline = () => {
+    // Clear the timer to avoid memory leaks
+    return () => clearTimeout(timerId);
+  }, [cartState.isCookiesAllowed]);
+
+  const handleCloseModal = (allowCookies) => {
     setOpen(false);
-    // Additional logic for handling decline action
-
-    // Update local storage with user's choice
-    localStorage.setItem("isCookiesAllowed", JSON.stringify(false));
-
-    // Dispatch the action to your context
     cartDispatch({
       type: "COOKIES_ALLOWING",
-      payload: false,
+      payload: allowCookies,
     });
   };
 
+  const handleDecline = () => {
+    handleCloseModal(false);
+  };
+
   const handleAllowCookies = () => {
-    setOpen(false);
-    // Additional logic for handling allow cookies action
-
-    // Update local storage with user's choice
-    localStorage.setItem("isCookiesAllowed", JSON.stringify(true));
-
-    // Dispatch the action to your context
-    cartDispatch({
-      type: "COOKIES_ALLOWING",
-      payload: true,
-    });
+    handleCloseModal(true);
   };
 
   return (
     <>
-      <Modal
-        open={open}
-        onClose={handleDecline}
-        className="cookies_consent_backdrop"
-        slots={{ backdrop: Backdrop }}
-        slotProps={{
-          backdrop: {
-            // TransitionComponent: Fade,
-          },
-        }}
+      {/* <Modal open={open} className="cookies_consent_backdrop"> */}
+      <div
+        className={`cookies_consent position-fixed d-flex flex-wrap justify-content-start align-items-start ${
+          open ? " IsCookies" : ""
+        }`}
       >
-        <div className="cookies_consent  position-fixed  d-flex flex-wrap justify-content-start align-items-start ">
-          <div className=" mb-3">
+        {/* <div className="cookies_consent  position-fixed  d-flex flex-wrap justify-content-start align-items-start "> */}
+        <div className="container">
+          <div className="title">
             <Cookies />
+            <strong>Cookies</strong>
+          </div>
+          <div className=" mb-3">
             This website uses cookies to ensure you get the best experience on
             our website.
             <Link href="/privacy-policy" className="">
@@ -74,15 +65,16 @@ const CookiesConset = () => {
             </Link>
           </div>
           <div className="d-flex gap-4 items-center">
-            <div onClick={handleDecline} className="textbtn">
-              Decline
-            </div>
             <div onClick={handleAllowCookies} className="textbtn">
               Allow Cookies
             </div>
+            <div onClick={handleDecline} className="textbtn decline">
+              Decline
+            </div>
           </div>
         </div>
-      </Modal>
+      </div>
+      {/* </Modal> */}
     </>
   );
 };

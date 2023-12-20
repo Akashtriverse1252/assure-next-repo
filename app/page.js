@@ -109,17 +109,14 @@ export default function Home() {
               </div>
               <div className="col-xxl-7 col-xl-10 m-auto col-xs-12 col-11 text-center">
                 <p>
-                  Assure Pathlabs was established by Dr. Sanjay Wadhwa and Dr.
-                  Lovely Razdan in 2015. Our high ethical values necessitate
-                  every man, woman, and child to benefit from advancements in
-                  healthcare – despite living in their living location. It is
-                  this idea of serving humanity that grows our commitment to
-                  improve and deliver useful health innovations that respond to
-                  the general, specific, and real needs of vulnerable
-                  populations. Assure labs in Jalandhar ensures on-time and
-                  specific diagnosis plays a significant role to optimize
-                  health, treatment of diseases, eliminating disease burden, and
-                  further improving health.
+                  Assure Pathlabs is the best blood test pathalogy laboratory in
+                  Jalandhar, established in 2015 by Dr. Sanjay Wadhwa and Dr.
+                  Lovely Razdan with a commitment to excellence. Backed by NABH
+                  certification, Assure Pathlabs upholds international standards
+                  having adequate lab tests cost. Our commitment guarantees not
+                  just efficient service but also valuable advice, timely
+                  reports, unwavering support, and compassionate care because
+                  your well-being is our priority.
                 </p>
                 <div className=" flex-center mt-4 btn_main">
                   <Link

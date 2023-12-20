@@ -12,6 +12,7 @@ import smoothScroll from "../components/SmoothScroll";
 
 import { BreadCrums } from "@/components/BreadCrums";
 import UploadForm from "@/components/UploadForm";
+import CookiesConset from "@/components/CookiesConset";
 const AvertaStd = localFont({
   src: "./font/AvertaStd-Regular.woff2",
   display: "swap",
@@ -37,6 +38,7 @@ export default function RootLayout({ children }) {
           <Footer />
           <UploadForm />
         </body>
+        <CookiesConset/>
       </GlobalDataProvider>
     </html>
   );

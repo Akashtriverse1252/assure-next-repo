@@ -7,6 +7,7 @@ import testData from "../Data/test_data.json";
 const CartContext = createContext();
 
 const initialState = {
+  isCookiesAllowed: false,
   isInputNotEmpty: false,
   uploadFormVisible: false,
   cartVisible: false,
@@ -21,8 +22,8 @@ const initialState = {
     age: 0,
     gender: "",
   },
-  userAddres: {
-    address: "",
+  userAddress: {
+    Address: "",
     pincode: "",
     city: "",
     state: "",
@@ -40,6 +41,9 @@ const updateCookies = (products) => {
     expires: 365,
   });
   // console.log("This is the cookies product", cookiesProducts);
+};
+const updateCookiesAllowed = (isCookiesAllowed) => {
+  localStorage.setItem("isCookiesAllowed", JSON.stringify(isCookiesAllowed));
 };
 
 const cartReducer = (state, action) => {
@@ -109,6 +113,11 @@ const cartReducer = (state, action) => {
         ...state,
         uploadFormVisible: !state.uploadFormVisible,
       };
+    case "COOKIES_ALLOWING":
+      return {
+        ...state,
+        isCookiesAllowed: !state.isCookiesAllowed,
+      };
     case "TOOGLE_INPUT_DATA":
       return {
         ...state,
@@ -130,9 +139,9 @@ const cartReducer = (state, action) => {
     case "UPDATE_USER_ADDRESS":
       return {
         ...state,
-        userAddres: {
-          ...state.userAddres,
-          ...action.userAddres,
+        userAddress: {
+          ...state.userAddress,
+          ...action.userAddress,
         },
       };
     default:
@@ -144,64 +153,80 @@ const GlobalDataProvider = ({ children }) => {
   const [cartState, cartDispatch] = useReducer(cartReducer, initialState);
 
   useEffect(() => {
-    const savedProducts = Cookies.get("cart");
-    const savedUserData = Cookies.get("userData");
-    const savedUserAddress = Cookies.get("userData");
-    console.log("this is the data from the cookies", savedUserData);
-    console.log("this is the address od the user", savedUserAddress);
+    const { isCookiesAllowed } = cartState;
+    if (isCookiesAllowed) {
+      const savedProducts = Cookies.get("cart");
+      const savedUserData = Cookies.get("userData");
+      const savedUserAddress = Cookies.get("userData");
+      console.log("this is the data from the cookies", savedUserData);
+      console.log("this is the address od the user", savedUserAddress);
 
-    const fetchDataFromApi = async (savedProducts) => {
-      try {
-        const foundProducts = testData.test_data.filter((product) => {
-          return savedProducts.some(
-            (savedProduct) => savedProduct.id === product.id
-          );
-        });
+      const fetchDataFromApi = async (savedProducts) => {
+        try {
+          const foundProducts = testData.test_data.filter((product) => {
+            return savedProducts.some(
+              (savedProduct) => savedProduct.id === product.id
+            );
+          });
 
-        // console.log("found products", foundProducts);
+          // console.log("found products", foundProducts);
 
-        const saveCartProducts = foundProducts.map((product) => {
-          const savedProduct = savedProducts.find((sp) => sp.id === product.id);
-          const quantity = savedProduct ? savedProduct.quantity : 1;
+          const saveCartProducts = foundProducts.map((product) => {
+            const savedProduct = savedProducts.find(
+              (sp) => sp.id === product.id
+            );
+            const quantity = savedProduct ? savedProduct.quantity : 1;
 
-          return {
-            id: product.id,
-            name: product.Test_Name,
-            price: product.Test_Amount,
-            dis_price: product.Discount_Amount,
-            quantity: quantity,
-            discount: (
-              ((product.Test_Amount - product.Discount_Amount) /
-                product.Test_Amount) *
-                100 || 0
-            ).toFixed(),
-          };
-        });
+            return {
+              id: product.id,
+              name: product.Test_Name,
+              price: product.Test_Amount,
+              dis_price: product.Discount_Amount,
+              quantity: quantity,
+              discount: (
+                ((product.Test_Amount - product.Discount_Amount) /
+                  product.Test_Amount) *
+                  100 || 0
+              ).toFixed(),
+            };
+          });
 
-        cartDispatch({ type: "INIT", products: saveCartProducts });
+          cartDispatch({ type: "INIT", products: saveCartProducts });
 
-        // console.log("Real-time data fetched from API:", saveCartProducts);
-      } catch (error) {
-        console.error("Error fetching real-time data:", error);
+          // console.log("Real-time data fetched from API:", saveCartProducts);
+        } catch (error) {
+          console.error("Error fetching real-time data:", error);
+        }
+      };
+
+      if (savedProducts) {
+        fetchDataFromApi(JSON.parse(savedProducts));
       }
-    };
-
-    if (savedProducts) {
-      fetchDataFromApi(JSON.parse(savedProducts));
+      if (savedUserData) {
+        cartDispatch({
+          type: "UPDATE_USER_DATA",
+          userData: JSON.parse(savedUserData),
+        });
+      }
+      if (savedUserAddress) {
+        cartDispatch({
+          type: "UPDATE_USER_DATA",
+          userData: JSON.parse(savedUserAddress),
+        });
+      }
     }
-    if (savedUserData) {
+    const savedCookiesAllowed = localStorage.getItem("isCookiesAllowed");
+    if (savedCookiesAllowed !== null) {
       cartDispatch({
-        type: "UPDATE_USER_DATA",
-        userData: JSON.parse(savedUserData),
-      });
-    }
-    if (savedUserAddress) {
-      cartDispatch({
-        type: "UPDATE_USER_DATA",
-        userData: JSON.parse(savedUserAddress),
+        type: "COOKIES_ALLOWING",
+        payload: JSON.parse(savedCookiesAllowed),
       });
     }
   }, []);
+  useEffect(() => {
+    // Save cookie consent preference to local storage
+    updateCookiesAllowed(cartState.isCookiesAllowed);
+  }, [cartState.isCookiesAllowed]);
 
   useEffect(() => {
     updateCookies(cartState.products);

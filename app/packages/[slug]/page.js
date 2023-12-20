@@ -168,7 +168,7 @@ export const page = () => {
                       </div>
                     ) : null}
                     <div className="detailrow">
-                      <div className="row gap-md-2">
+                      <div className="row gap-md-2 gap-lg-0">
                         <div className="detailtitle col-lg-3 col-12">
                           <p>
                             <strong>Highlights</strong>

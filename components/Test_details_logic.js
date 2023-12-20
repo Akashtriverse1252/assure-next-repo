@@ -8,8 +8,10 @@ import { useData } from "@/context/context";
 import data from "../Data/test_data.json";
 import { Faq } from "./Faq";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export const Test_details_logic = ({ Slug }) => {
+  const router = useRouter();
   const { cartState, cartDispatch } = useData();
   const [isInCart, setIsInCart] = useState(false);
   const project = data.test_data.find((p) => p.Slug === Slug) || null;
@@ -29,7 +31,7 @@ export const Test_details_logic = ({ Slug }) => {
   const handleToggleCart = () => {
     if (cartIds.includes(project.id)) {
       // Remove product from cart logic here
-      cartDispatch({ type: "REMOVE", productId: project.id });
+      // cartDispatch({ type: "REMOVE", productId: project.id });
     } else {
       // Add product to cart logic here
       cartDispatch({ type: "TOGGLE_CART" });
@@ -37,7 +39,7 @@ export const Test_details_logic = ({ Slug }) => {
         id: project.id,
         name: project.Test_Name,
         price: project.Test_Amount,
-        dis_price: project.Discount_Amount,
+        dis_price: project.Discount_Amount,   
         quantity: 1,
         discount: _discount,
       };
@@ -47,10 +49,10 @@ export const Test_details_logic = ({ Slug }) => {
 
       if (existingProduct) {
         // If the product exists, update its quantity
-        cartDispatch({
-          type: "INCREMENT",
-          productId: product.id,
-        });
+        // cartDispatch({
+        //   type: "INCREMENT",
+        //   productId: product.id,
+        // });
       } else {
         // If the product doesn't exist, add it to the cart
         cartDispatch({
@@ -62,6 +64,11 @@ export const Test_details_logic = ({ Slug }) => {
 
     // Toggle the state to update the button text and functionality
     setIsInCart(!isInCart);
+  };
+  const handleBookHomeCollectionClick = () => {
+    handleToggleCart();
+    // Redirect to the desired page
+    router.push("/check-out");
   };
 
   return (
@@ -242,12 +249,12 @@ export const Test_details_logic = ({ Slug }) => {
                     >
                       <Cart /> Add to Cart
                     </button> */}
-                    <Link
-                      href="#"
+                    <button
                       className="button button--aylen button--round-l button--text-thick  gradient col-xxl-3 col-lg-4 col-md-5 col-11 "
+                      onClick={handleBookHomeCollectionClick}
                     >
                       Book Home Collection
-                    </Link>
+                    </button>
                   </div>
                 </div>
               </div>

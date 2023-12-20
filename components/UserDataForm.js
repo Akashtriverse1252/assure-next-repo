@@ -20,6 +20,56 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
   // console.log(cartState.userAddres);
   // console.log(cartState.products);
 
+  // const submitBookingData = async (userData, userAddress, userProduct) => {
+  //   e.preventDefault();
+  //   try {
+  //     const apiUrl =
+  //       "http://assure.triverseadvertising.com/api/booking_submit_api.php";
+
+  //     const jsonData = {
+  //       fullName: userData.name,
+  //       age: userData.age,
+  //       gender: userData.gender,
+  //       address: userAddress.address,
+  //       pincode: userAddress.pincode,
+  //       city: userAddress.city,
+  //       state: userAddress.state,
+  //       homeCollectionDateTime: userAddress.homeCollectionDateTime,
+  //       isHomecollection: userAddress.isHomecollection,
+  //       totalAmount: userProduct.Test_Amount, // <-- Reference to 'product' is not defined
+  //       advance: 0,
+  //       organizationIdLH: 324559,
+  //       testID: 3992066,
+  //       testCode: 3992066,
+  //       integrationCode: "-",
+  //       dictionaryId: "-",
+  //     };
+
+  //     const response = await axios.post(apiUrl, jsonData);
+
+  //     if (response.data && response.data.code === 200) {
+  //       // Handle success
+  //       console.log("Booking submitted successfully!");
+  //     } else {
+  //       // Handle API request failure
+  //       console.error(
+  //         "API request failed. Error message:",
+  //         response.data.Message
+  //       );
+  //     }
+  //   } catch (error) {
+  //     // Handle other errors
+  //     console.error("Error submitting booking data:", error.message);
+
+  //     // Log the detailed error information if available
+  //     if (error.response) {
+  //       console.error("Response data:", error.response.data);
+  //       console.error("Response status:", error.response.status);
+  //       console.error("Response headers:", error.response.headers);
+  //     }
+  //   }
+  // };
+
   const submitBookingData = async (userData, userAddress, userProduct) => {
     setLoading(true);
     // console.log(userData);
@@ -52,7 +102,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
 
     // console.log(userData);
     // console.log(userAddress);
-    console.log(userProduct);
+    // console.log(userProduct);
     try {
       const apiUrl =
         "https://www.assurepathlabs.com/api/algos/booking_submit_api.php";
@@ -75,7 +125,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
         integrationCode: "-",
         dictionaryId: "-",
       };
-      console.log("this is the api datas",apiData);
+      console.log("this is the api datas", apiData);
 
       const response = await axios.post(apiUrl, apiData);
 
@@ -162,15 +212,11 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                   <form>
                     <UserDetail />
                     <HomeCollectionData />
-                    <button
-                      type="submit"
-                      className="btn"
-                      onClick={handleSubmit}
-                    >
-                      Submit the data
-                    </button>
                   </form>
-                  
+                  <button type="submit" className="btn" onClick={handleSubmit}>
+                    Submit the data
+                  </button>
+
                   <div className="nav_button mt-5 col-12 d-flex justify-content-between">
                     <div className=" mt-3  row text-right">
                       <button

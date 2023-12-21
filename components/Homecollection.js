@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import styles from "../app/page.module.css";
 import { TextField } from "@mui/material";
@@ -111,6 +112,7 @@ export const Homecollection = () => {
         <form onSubmit={handleSubmit}>
           <TextField
             label="Name"
+            defaultValue=""
             variant="outlined"
             className={`styles.inputmodified input-field ${
               errors.name ? "error-input" : formData.name ? "input-filled" : ""
@@ -123,6 +125,7 @@ export const Homecollection = () => {
           />
           <TextField
             label="Mobile Number"
+            defaultValue=""
             variant="outlined"
             className={`styles.inputmodified input-field ${
               errors.mobile
@@ -138,6 +141,7 @@ export const Homecollection = () => {
             error={errors.mobile}
           />
           <TextField
+            defaultValue=""
             label="Email"
             variant="outlined"
             className={`styles.inputmodified input-field ${

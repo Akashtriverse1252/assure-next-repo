@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import { TextField } from "@mui/material";
 import { FaCheck } from "react-icons/fa6";
@@ -9,13 +11,13 @@ import { useData } from "@/context/context";
 export const UserDetail = () => {
   const { cartState, cartDispatch } = useData();
   const [userData, setUserData] = useState({
-    designation: "mr",
+    designation: "",
     name: "",
     phoneNumber: "",
-    email: " singhakash2083@gmail.com",
-    dob: "1999-10-28",
-    age: 24,
-    gender: "male",
+    email: " ",
+    dob: "",
+    age: "",
+    gender: "",
   });
 
   // Function to calculate age based on date of birth

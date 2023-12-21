@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useRef, useEffect } from "react";
 import { TextField, Box } from "@mui/material";
 import styles from "../app/page.module.css";

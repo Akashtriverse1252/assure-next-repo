@@ -81,7 +81,7 @@ export const Footer = () => {
                         <ul className="flex-center">
                           <li>
                             {data.test_data.map((test, index) => (
-                              <Link href={`/test-detail/${test.Slug}`}>
+                              <Link key={test.id}  href={`/test-detail/${test.Slug}`}>
                                 {" "}
                                 {test.Test_Name}
                               </Link>
@@ -96,7 +96,7 @@ export const Footer = () => {
                           <ul className="flex-center">
                             <li>
                               {packageData.map((test, index) => (
-                                <Link href={`/packages/${test.Slug}`}>
+                                <Link key={test.id}  href={`/packages/${test.Slug}`}>
                                   {" "}
                                   {test.Test_Name}
                                 </Link>

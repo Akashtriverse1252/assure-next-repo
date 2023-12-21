@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import { Dots } from "./svg-components/Dots";
 import { Line } from "./svg-components/Line";

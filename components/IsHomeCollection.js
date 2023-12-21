@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import { FaCheck } from "react-icons/fa6";
 import { IoIosCheckmarkCircle } from "react-icons/io";
@@ -40,10 +42,10 @@ const IsHomeCollection = () => {
   }, [setSelectedDate, setSelectedTime]);
 
   const [formData, setFormData] = useState({
-    city: "gyrygra,",
-    pincode: "282010",
-    state: "up",
-    address: "jasfhifiqbjgagb",
+    city: "",
+    pincode: "",
+    state: "",
+    address: "",
     isHomecollection: 1,
   });
   // console.log("this si the form data ", formData);
@@ -246,6 +248,7 @@ const IsHomeCollection = () => {
                     required
                     id="standard-required"
                     variant="standard"
+                    defaultValue="Address"
                     label="Address line 1"
                     name="Address line 1"
                     value={formData.address}
@@ -263,6 +266,7 @@ const IsHomeCollection = () => {
                     label="pincode"
                     name="pincode"
                     value={formData.pincode}
+                    defaultValue="pincode"
                     onChange={(e) =>
                       handleInputChange("pincode", e.target.value)
                     }
@@ -272,6 +276,7 @@ const IsHomeCollection = () => {
                     required
                     variant="standard"
                     id="standard-required"
+                    defaultValue="city"
                     label="city"
                     name="city"
                     value={formData.city}
@@ -282,6 +287,7 @@ const IsHomeCollection = () => {
                     required
                     label="state"
                     name="state"
+                    defaultValue="state"
                     variant="standard"
                     value={formData.state}
                     onChange={(e) => handleInputChange("state", e.target.value)}

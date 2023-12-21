@@ -155,9 +155,9 @@ const GlobalDataProvider = ({ children }) => {
     const savedProducts = Cookies.get("cart");
     const savedUserData = Cookies.get("userData");
     const savedUserAddress = Cookies.get("userData");
-    const savedCookiesAllowed = localStorage.getItem("isCookiesAllowed");
+    const savedCookiesAllowed = Cookies.get("isCookiesAllowed");
 
-    if (savedCookiesAllowed !== null) {
+    if (savedCookiesAllowed !== undefined) {
       cartDispatch({
         type: "COOKIES_ALLOWING",
         payload: JSON.parse(savedCookiesAllowed),
@@ -217,14 +217,19 @@ const GlobalDataProvider = ({ children }) => {
     }
   }, []);
   useEffect(() => {
-    // Save cookie consent preference to local storage
-    localStorage.setItem(
+    Cookies.set(
       "isCookiesAllowed",
-      JSON.stringify(cartState.isCookiesAllowed)
+      JSON.stringify(cartState.isCookiesAllowed),
+      {
+        expires: 365,
+      }
     );
+
     console.log("this is the cart state", cartState.isCookiesAllowed);
     // updateCookiesAllowed(cartState.isCookiesAllowed);
   }, [cartState.isCookiesAllowed]);
+
+  // rest of your component code
 
   useEffect(() => {
     // const { isCookiesAllowed } = cartState;

@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import { Attachement } from "./svg-components/Attachement";
 import UploadForm from "./UploadForm";

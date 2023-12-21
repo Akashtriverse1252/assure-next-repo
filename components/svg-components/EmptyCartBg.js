@@ -8,7 +8,7 @@ const EmptyCartBg = () => {
         width="206"
         height="206"
         fill="none"
-        class="empty-cart-mask"
+        className="empty-cart-mask"
       >
         <mask
           id="empty-cart-mask_svg__a"
@@ -40,8 +40,8 @@ const EmptyCartBg = () => {
             y2="268.813"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#fff"></stop>
-            <stop offset="1" stop-color="#EBEBEB"></stop>
+            <stop stopColor="#fff"></stop>
+            <stop offset="1" stopColor="#EBEBEB"></stop>
           </linearGradient>
           <linearGradient
             id="empty-cart-mask_svg__c"
@@ -51,8 +51,8 @@ const EmptyCartBg = () => {
             y2="35.999"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#fff"></stop>
-            <stop offset="1" stop-color="#E6E7E8"></stop>
+            <stop stopColor="#fff"></stop>
+            <stop offset="1" stopColor="#E6E7E8"></stop>
           </linearGradient>
           <linearGradient
             id="empty-cart-mask_svg__d"
@@ -62,8 +62,8 @@ const EmptyCartBg = () => {
             y2="82.5"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#E6E7E8"></stop>
-            <stop offset="1" stop-color="#fff"></stop>
+            <stop stopColor="#E6E7E8"></stop>
+            <stop offset="1" stopColor="#fff"></stop>
           </linearGradient>
         </defs>
       </svg>

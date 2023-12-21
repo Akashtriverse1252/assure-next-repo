@@ -30,8 +30,8 @@ const EmptyCartIcon = () => {
             y2="78.829"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#B1B1B1"></stop>
-            <stop offset="1" stop-color="#c4c4c4"></stop>
+            <stop stopColor="#B1B1B1"></stop>
+            <stop offset="1" stopColor="#c4c4c4"></stop>
           </linearGradient>
           <linearGradient
             id="empty-cart_svg__b"
@@ -41,8 +41,8 @@ const EmptyCartIcon = () => {
             y2="100.033"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#B1B1B1"></stop>
-            <stop offset="1" stop-color="#c4c4c4"></stop>
+            <stop stopColor="#B1B1B1"></stop>
+            <stop offset="1" stopColor="#c4c4c4"></stop>
           </linearGradient>
           <linearGradient
             id="empty-cart_svg__c"
@@ -52,8 +52,8 @@ const EmptyCartIcon = () => {
             y2="100.033"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#B1B1B1"></stop>
-            <stop offset="1" stop-color="#c4c4c4"></stop>
+            <stop stopColor="#B1B1B1"></stop>
+            <stop offset="1" stopColor="#c4c4c4"></stop>
           </linearGradient>
         </defs>
       </svg>

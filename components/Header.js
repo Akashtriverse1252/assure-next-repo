@@ -139,7 +139,7 @@ export const Header = () => {
                       <div className="homecollection float-start d-grid">
                         <h4 className="text-black">Home Collection</h4>
                         <h3>
-                          <a href="tel:0181-4667555">0181-4667555</a>
+                          <Link href="tel:0181-4667555">0181-4667555</Link>
                         </h3>
                       </div>
                     </div>
@@ -176,7 +176,7 @@ export const Header = () => {
                                 </div>
                                 <div className="fmenu">
                                   <ul className="p-0 m-0">
-                                    <li Link="">
+                                    <li>
                                       <Link
                                         href="/about-us/#quality"
                                         className="text-black"
@@ -307,7 +307,8 @@ export const Header = () => {
                           </span>
                           Upload Prescription */}
                           {/* <UploadPrescription /> */}
-                          <a
+                          <Link
+                            href="#"
                             className=""
                             onClick={() =>
                               cartDispatch({ type: "TOGGLE_UPLOD_FORM" })
@@ -317,7 +318,7 @@ export const Header = () => {
                               <Attachement />
                             </span>
                             Upload Prescription
-                          </a>
+                          </Link>
                         </li>
                         <li>
                           <Link href="/individual-test">

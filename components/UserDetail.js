@@ -10,8 +10,8 @@ export const UserDetail = () => {
   const { cartState, cartDispatch } = useData();
   const [userData, setUserData] = useState({
     designation: "mr",
-    name: "Aksaj singh",
-    phoneNumber: "7906626073",
+    name: "",
+    phoneNumber: "",
     email: " singhakash2083@gmail.com",
     dob: "1999-10-28",
     age: 24,

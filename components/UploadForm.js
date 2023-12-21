@@ -1,7 +1,5 @@
 "use client";
-
-import * as React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   AiOutlineFileText,
   AiOutlineFileImage,
@@ -13,7 +11,10 @@ import { IoCloudUploadOutline } from "react-icons/io5";
 import { useData } from "@/context/context";
 import Modal from "@mui/material/Modal";
 import { RxCross2 } from "react-icons/rx";
-import { Alert, Snackbar, Stack } from "@mui/material";
+import { Alert, Snackbar, Stack, TextField } from "@mui/material";
+import { HForm } from "./HForm";
+import { Homecollection } from "./Homecollection";
+import axios from "axios";
 
 const UploadForm = () => {
   const { cartState, cartDispatch } = useData();
@@ -22,23 +23,23 @@ const UploadForm = () => {
   const [isFileUploaded, setIsFileUploaded] = useState(false);
   const [fileName, setFileName] = useState("");
   const [fileSize, setFileSize] = useState("");
-  const [fileFlag, setFileFlag] = useState(0);
+  const [uploadProgress, setUploadProgress] = useState(0);
   const [showCannotUploadMessage, setShowCannotUploadMessage] = useState(false);
   const [filePreview, setFilePreview] = useState(null);
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
+  const [formData, setFormData] = useState({
+    name: "akasj  ",
+    mobileNumber: "fsakjb",
+    email: "ahfiugbknvi",
+  });
 
+  const handleClose = () => {
     setIsOpen(false);
   };
 
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
 
-    // Check if a file is selected
     if (selectedFile) {
-      // Check if the file type is allowed
       const allowedTypes = [
         "image/jpeg",
         "image/jpg",
@@ -47,61 +48,42 @@ const UploadForm = () => {
         "application/pdf",
         "application/msword",
       ];
-      if (allowedTypes.includes(selectedFile.type)) {
-        // Check if the file size is less than or equal to 2MB
-        if (selectedFile.size <= 2 * 1024 * 1024) {
-          setFileName(selectedFile.name);
-          setFileSize((selectedFile.size / 1024).toFixed(1) + " KB");
-          setFileFlag(0);
-          setIsFileUploaded(true);
-          setShowCannotUploadMessage(false);
 
-          // Display preview for images
-          if (selectedFile.type.startsWith("image/")) {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-              setFilePreview(e.target.result);
-            };
-            reader.readAsDataURL(selectedFile);
-          }
-        } else {
-          // File size exceeds the limit
-          setFileName("");
-          setFileSize("");
-          setFileFlag(0);
-          setShowCannotUploadMessage(true);
-          setFilePreview(null);
+      if (
+        allowedTypes.includes(selectedFile.type) &&
+        selectedFile.size <= 2 * 1024 * 1024
+      ) {
+        setFileName(selectedFile.name);
+        setFileSize((selectedFile.size / 1024).toFixed(1) + " KB");
+        setUploadProgress(0);
+        setIsFileUploaded(true);
+        setShowCannotUploadMessage(false);
+
+        if (selectedFile.type.startsWith("image/")) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            setFilePreview(e.target.result);
+          };
+          reader.readAsDataURL(selectedFile);
         }
       } else {
-        // File type not allowed
         setFileName("");
         setFileSize("");
-        setFileFlag(0);
+        setUploadProgress(0);
         setShowCannotUploadMessage(true);
         setFilePreview(null);
       }
+
+      // Update form data
+      setFormData({
+        ...formData,
+        file: selectedFile, // Add this line to include the file in form data
+      });
     } else {
-      // No file selected
       setFileName("");
       setFileSize("");
-      setFileFlag(0);
+      setUploadProgress(0);
       setFilePreview(null);
-    }
-  };
-
-  const renderFileTypeIcon = () => {
-    switch (fileName.split(".").pop().toLowerCase()) {
-      case "jpg":
-      case "jpeg":
-      case "png":
-        return <AiOutlineFileImage />;
-      case "pdf":
-        return <AiOutlineFilePdf />;
-      case "doc":
-      case "docx":
-        return <AiOutlineFileWord />;
-      default:
-        return <IoCloudUploadOutline />;
     }
   };
 
@@ -110,45 +92,54 @@ const UploadForm = () => {
   };
 
   const handleRemoveFileClick = () => {
-    setFileInputValue("");
-    setIsFileUploaded(false);
-    setFileName("");
-    setFileSize("");
-    setFileFlag(0);
-    setShowCannotUploadMessage(false);
-    setFilePreview(null);
+    // ... (previous code)
+
+    // Reset form data
+    setFormData({
+      name: "",
+      mobileNumber: "",
+      email: "",
+    });
   };
 
-  const handleUploadClick = () => {
-    if (fileInputValue !== "") {
-      if (fileFlag === 0) {
-        setFileFlag(1);
-        setShowCannotUploadMessage(false);
-        let width = 0;
-        const id = setInterval(() => {
-          if (width >= 390) {
-            clearInterval(id);
-          } else {
-            width += 5;
-          }
-        }, 50);
+
+  const handleSubmit = async () => {
+    try {
+      // Validate form fields
+      if (!formData.name || !formData.mobileNumber || !formData.email) {
+        console.error("Please fill in all required fields.");
+        return;
       }
-    } else {
-      setShowCannotUploadMessage(true);
-      console.log("file is not uploaded", showCannotUploadMessage);
+
+      // Log formData for debugging
+      console.log("Form Data:", formData);
+      const response = await axios.post(
+        "https://www.assurepathlabs.com/api/algos/upload_prescription.php",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      // Handle successful response
+      console.log("Upload successful", response.data);
+
+      // Close the modal or perform other actions
+      handleClose();
+    } catch (error) {
+      // Handle API request error
+      console.error("Error uploading file:", error.message);
+      // Optionally display an error message to the user
     }
-  };
-  const handleSubmit = () => {
-    setIsOpen(true);
-    cartDispatch({ type: "TOGGLE_UPLOD_FORM" });
-    handleRemoveFileClick();
   };
 
   return (
     <>
       <Modal
         open={cartState.uploadFormVisible}
-        onClose={cartState.uploadFormVisible}
+        onClose={() => cartDispatch({ type: "TOGGLE_UPLOD_FORM" })}
       >
         <form className="form-container" encType="multipart/form-data">
           <div className="upload-files-container position-relative">
@@ -158,58 +149,107 @@ const UploadForm = () => {
             >
               <RxCross2 />
             </div>
-            <div className="drag-file-area">
-              <span className=" upload-icon">
-                {isFileUploaded ? (
-                  <>
-                    {filePreview && (
-                      <div className="file-preview  d-flex justify-content-center align-item-center">
-                        <img
-                          src={filePreview}
-                          alt="File Preview"
-                          className="col-7"
+            <div className="container prescription-form col-12 flex-center flex-direction-row align-items-start">
+              <div className="col-5 float-start upload-prescription-form">
+                <h4>
+                  <strong>UPLOAD PRESCRIPTION</strong>{" "}
+                </h4>
+
+                <div className="input-field flex-center">
+                  <TextField
+                    label="Name"
+                    variant="standard"
+                    fullWidth
+                    type="text"
+                    required
+                    id="standard-required"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleFileChange}
+                  />
+                  <TextField
+                    label="Mobile Number"
+                    variant="standard"
+                    fullWidth
+                    type="text"
+                    required
+                    id="standard-required"
+                    name="mobileNumber"
+                    value={formData.mobileNumber}
+                    onChange={handleFileChange}
+                  />
+                  <TextField
+                    label="Email"
+                    variant="standard"
+                    type="text"
+                    name="email"
+                    required
+                    id="standard-required"
+                    value={formData.email}
+                    onChange={handleFileChange}
+                    fullWidth
+                  />
+                </div>
+                <button
+                  type="button"
+                  className="button button--aylen button--round-l button--text-thick mt-3"
+                  onClick={handleSubmit}
+                >
+                  <span className="check-icon">Submit</span>
+                </button>
+              </div>
+              <div className="drag-file-area col-7">
+                <div className="upload-icon">
+                  {isFileUploaded ? (
+                    <>
+                      {filePreview && (
+                        <div className="file-preview d-flex justify-content-center align-items-center">
+                          <img
+                            src={filePreview}
+                            alt="File Preview"
+                            className="col-7"
+                          />
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <IoCloudUploadOutline />
+                  )}
+                </div>
+                <h3 className="dynamic-message">
+                  {isFileUploaded
+                    ? "File Successfully Selected!"
+                    : "Select file here"}
+                </h3>
+                <label className="label">
+                  {isFileUploaded ? (
+                    <>
+                      <span>Change your file</span>
+                      <span className="browse-files alpha">
+                        <input
+                          type="file"
+                          className="default-file-input"
+                          style={{ top: 0 }}
+                          onChange={handleFileChange}
                         />
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  // renderFileTypeIcon()
-                  <IoCloudUploadOutline />
-                )}
-              </span>
-              <h3 className="dynamic-message">
-                {isFileUploaded
-                  ? "File Successfully Selected!"
-                  : "Select file here"}
-              </h3>
-              <label className="label">
-                {isFileUploaded ? (
-                  <>
-                    <span>Change your file</span>
-                    <span className="browse-files alpha">
-                      <input
-                        type="file"
-                        className="default-file-input"
-                        style={{ top: 0 }}
-                        onChange={handleFileChange}
-                      />
-                      <span className="browse-files-text"> Browse again</span>
-                    </span>
-                  </>
-                ) : (
-                  <>
-                    <span className="browse-files alpha">
-                      <input
-                        type="file"
-                        className="default-file-input"
-                        onChange={handleFileChange}
-                      />
-                      <span className="browse-files-text">browse file</span>
-                      <span> from device</span>
-                    </span>
-                  </>
-                )}
-              </label>
+                        <span className="browse-files-text"> Browse again</span>
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="browse-files alpha">
+                        <input
+                          type="file"
+                          className="default-file-input"
+                          onChange={handleFileChange}
+                        />
+                        <span className="browse-files-text">browse file</span>
+                        <span> from device</span>
+                      </span>
+                    </>
+                  )}
+                </label>
+              </div>
             </div>
 
             {showCannotUploadMessage ? (
@@ -227,11 +267,6 @@ const UploadForm = () => {
 
             {isFileUploaded && (
               <div className="file-block">
-                {/* {filePreview && (
-                  <div className="file-preview">
-                    <img src={filePreview} alt="File Preview" />
-                    </div>
-                  )} */}
                 <div className="file-info">
                   <span className="file-name">{fileName}</span> |{" "}
                   <span className="file-size">{fileSize}</span>
@@ -243,24 +278,6 @@ const UploadForm = () => {
                   <MdOutlineCancel />
                 </span>
               </div>
-            )}
-
-            {!isFileUploaded ? (
-              <button
-                type="button"
-                className="button button--aylen button--round-l button--text-thick mt-3"
-                onSubmit={handleUploadClick}
-              >
-                <span className="check_icon">upload</span>
-              </button>
-            ) : (
-              <button
-                type="button"
-                className="button button--aylen button--round-l button--text-thick mt-3"
-                onClick={handleSubmit}
-              >
-                <span className="check_icon">Submit</span>
-              </button>
             )}
           </div>
         </form>

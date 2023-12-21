@@ -8,7 +8,7 @@ import localFont from "next/font/local";
 import { Footer } from "@/components/Footer";
 import { GlobalDataProvider } from "@/context/context";
 import Cart from "../components/Cart.js";
-import smoothScroll from "../components/SmoothScroll";
+import SmoothScroll from "../components/SmoothScroll";
 
 import { BreadCrums } from "@/components/BreadCrums";
 import UploadForm from "@/components/UploadForm";
@@ -30,15 +30,19 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <GlobalDataProvider>
         <body className={AvertaStd.className}>
-          <Header />
-          <BreadCrums />
-          <Cart />
-          <smoothScroll>{children}</smoothScroll>
-          {/* {children} */}
-          <Footer />
-          <UploadForm />
+          {/* <SmoothScroll> */}
+          <div className="">
+            <Header />
+            <BreadCrums />
+            <Cart />
+            {children}
+            {/* {children} */}
+            <Footer />
+            <UploadForm />
+          </div>
+          {/* </SmoothScroll> */}
         </body>
-        <CookiesConset/>
+        <CookiesConset />
       </GlobalDataProvider>
     </html>
   );

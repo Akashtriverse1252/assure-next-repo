@@ -41,7 +41,7 @@ const SmoothScroll = ({ children }) => {
   const isMobile = window.matchMedia("(max-width: 480px)").matches;
   const physics = isMobile
     ? { damping: 10, mass: 0.2, stiffness: 400 }
-    : { damping: 1, mass: 1, stiffness: 30 };
+    : { damping: 10, mass: 0.01, stiffness: 30 };
 
   const spring = useSpring(transform, physics); // Apply easing to the negative scroll value
 

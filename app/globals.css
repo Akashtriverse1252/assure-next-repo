@@ -1380,21 +1380,24 @@ header {
   background-color: #fbfbfb;
   width: 56%;
   padding: 40px 50px;
-  border-radius: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  /* outline: 2px dashed #dde9f3;
+  outline-offset: -30px; */
+  border-radius: 30px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 10px 20px, rgba(0, 0, 0, 0.28) 0px 6px 9px;
 }
 
 .drag-file-area {
-  border: 2px dashed #dde9f3;
+  border: 2px solid #f1f1f1;
   border-radius: 40px;
   margin: 10px 0 15px;
   padding: 30px 50px;
   width: 100%;
   text-align: center;
+  background: #f1f1f1;
 }
 
 .drag-file-area .upload-icon {
@@ -1521,7 +1524,7 @@ header {
 }
 
 .upload-icon svg {
-  height: 150px;
+  height: 110px;
 }
 
 .check_icon svg {
@@ -2483,10 +2486,10 @@ button:disabled {
   position: fixed;
   height: 100%;
   width: 100%;
-  top: 0;
+  /* top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 0; */
 }
 
 .scroll-container {
@@ -3114,7 +3117,7 @@ button:disabled {
   bottom: -100%;
   background-color: #fdfdfd;
   border-radius: 5px;
-  padding: 40px 27px;
+  padding: 25px 30px;
   font-family: var(--font-family) !important;
   box-shadow: -2px 0px 15px rgba(112, 112, 112, 0.2);
   z-index: 15;
@@ -3146,5 +3149,18 @@ button:disabled {
 }
 
 .textbtn.decline {
-  opacity: 80% !important;
+  opacity: 70% !important;
+}
+
+.upload_prescription_form .input_felid {
+  flex-direction: column;
+  gap: 20px;
+  padding: 0px 40px 0 6px;
+  margin-top: 30px;
+}
+
+.prescrition_form {
+  border: 2px dashed #dde9f3;
+  border-radius: 35px;
+  padding: 40px 20px;
 }

@@ -7,6 +7,7 @@ import testData from "../Data/test_data.json";
 const CartContext = createContext();
 
 const initialState = {
+  radioData: [],
   isCookiesAllowed: false,
   isInputNotEmpty: false,
   uploadFormVisible: false,
@@ -135,6 +136,11 @@ const cartReducer = (state, action) => {
           ...action.userData,
         },
       };
+    case "UPDATE_RADIO_DATA":
+      return {
+        ...state,
+        radioData: action.radioData,
+      };  
     case "UPDATE_USER_ADDRESS":
       return {
         ...state,
@@ -143,6 +149,7 @@ const cartReducer = (state, action) => {
           ...action.userAddress,
         },
       };
+
     default:
       return state;
   }
@@ -247,6 +254,10 @@ const GlobalDataProvider = ({ children }) => {
       });
     }
   }, [cartState.userData]);
+
+
+
+  // this is for the data generation
 
   return (
     <CartContext.Provider value={{ cartState, cartDispatch }}>

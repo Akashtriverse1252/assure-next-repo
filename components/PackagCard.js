@@ -22,7 +22,7 @@ export const PackagCard = ({
   useEffect(() => {
     const card = cardRef.current;
     const card_height = card.clientHeight;
-    console.log("scroll", card_height);
+    // console.log("scroll", card_height);
 
     if (card) {
       setShowScrollbar(110 < card_height);

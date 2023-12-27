@@ -27,9 +27,9 @@ const UploadForm = () => {
   const [showCannotUploadMessage, setShowCannotUploadMessage] = useState(false);
   const [filePreview, setFilePreview] = useState(null);
   const [formData, setFormData] = useState({
-    name: "akasj  ",
-    mobileNumber: "fsakjb",
-    email: "ahfiugbknvi",
+    name: "",
+    mobileNumber: "",
+    email: "",
   });
 
   const handleClose = () => {
@@ -77,7 +77,7 @@ const UploadForm = () => {
       // Update form data
       setFormData({
         ...formData,
-        file: selectedFile, // Add this line to include the file in form data
+        file: selectedFile,
       });
     } else {
       setFileName("");
@@ -155,7 +155,7 @@ const UploadForm = () => {
                   <strong>UPLOAD PRESCRIPTION</strong>{" "}
                 </h4>
 
-                <div className="input-field flex-center">
+                <div className="input-field flex-center flex-direction-column">
                   <TextField
                     label="Name"
                     variant="standard"

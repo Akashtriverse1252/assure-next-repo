@@ -2,19 +2,42 @@
 
 import React, { useEffect, useState } from "react";
 import IsHomeCollection from "./IsHomeCollection";
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Typography,
-} from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
+import Image from "next/image";
+import { useData } from "@/context/context";
 
 export const HomeCollectionData = () => {
+  const { cartState, cartDispatch } = useData();
   const [selectedPlan, setSelectedPlan] = useState(null);
 
   const handleRadioChange = (event) => {
     setSelectedPlan(event.target.id);
   };
+  useEffect(() => {
+    if (selectedPlan === "Home_collection") {
+      // Set user address to 1 in the context API only if it's not already 1
+      const updatedData = {
+        isHomecollection: 1,
+      };
+      cartDispatch({
+        type: "UPDATE_USER_ADDRESS",
+        userAddress: updatedData,
+      });
+    } else {
+      const updatedData = {
+        isHomecollection: 0,
+      };
+      cartDispatch({
+        type: "UPDATE_USER_ADDRESS",
+        userAddress: updatedData,
+      });
+    }
+    console.log(
+      "this is the home collextion after making onemptied",
+      cartState.userAddress.isHomecollection
+    );  
+  }, [selectedPlan, cartState.userAddress.isHomecollection, cartDispatch]);
+
   return (
     <>
       <div className="container">
@@ -30,10 +53,12 @@ export const HomeCollectionData = () => {
                 onChange={handleRadioChange}
               />
               <div className="plan-content">
-                <img
+                <Image
                   loading="lazy"
-                  src="https://raw.githubusercontent.com/ismailvtl/ismailvtl.github.io/master/images/life-saver-img.svg"
+                  src="/HomeCollection.png"
                   alt=""
+                  width={72}
+                  height={72}
                 />
                 <div className="plan-details">
                   <span>Home Collection</span>
@@ -54,10 +79,12 @@ export const HomeCollectionData = () => {
                 onChange={handleRadioChange}
               />
               <div className="plan-content">
-                <img
+                <Image
                   loading="lazy"
-                  src="https://raw.githubusercontent.com/ismailvtl/ismailvtl.github.io/master/images/potted-plant-img.svg"
+                  src="/Microscope.png"
                   alt=""
+                  height={72}
+                  width={72}
                 />
                 <div className="plan-details">
                   <span>Walk In</span>

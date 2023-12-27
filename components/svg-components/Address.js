@@ -10,7 +10,7 @@ const Address = () => {
     >
       <g data-name="Layer 2" fill="#000000" className="color000 svgShape">
         <path
-          fill="#8eaddb"
+          fill="#cdd1ff"
           d="M25.11,29.17H20.45v-8.6h4.66a4.3,4.3,0,0,1,4.3,4.3h0A4.3,4.3,0,0,1,25.11,29.17Z"
           className="colorc6f9b9 svgShape"
         ></path>
@@ -20,7 +20,7 @@ const Address = () => {
           className="color302f2f svgShape"
         ></path>
         <path
-          fill="#8eaddb"
+          fill="#cdd1ff"
           d="M24.63,11.44c-.36,3.58-5,10-7.3,13l0,0V2.12h0C21.55,2.88,25.07,7.17,24.63,11.44Z"
           className="colorc6f9b9 svgShape"
         ></path>

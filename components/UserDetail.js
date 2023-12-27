@@ -7,6 +7,7 @@ import { Female } from "./svg-components/Female";
 import Image from "next/image";
 import { OtherGender } from "./svg-components/OtherGender";
 import { useData } from "@/context/context";
+import { Male } from "./svg-components/Male";
 
 export const UserDetail = () => {
   const { cartState, cartDispatch } = useData();
@@ -14,7 +15,13 @@ export const UserDetail = () => {
     designation: "",
     name: "",
     phoneNumber: "",
-    email: " ",
+    dob: "",
+    age: "",
+    gender: "",
+  });
+  const [errors, setErrors] = useState({
+    name: "",
+    phoneNumber: "",
     dob: "",
     age: "",
     gender: "",
@@ -24,8 +31,14 @@ export const UserDetail = () => {
   const calculateAge = (dob) => {
     const birthDate = new Date(dob);
     const currentDate = new Date();
+
     const age = currentDate.getFullYear() - birthDate.getFullYear();
-    return age;
+
+    if (age >= 0 && age <= 150) {
+      return age;
+    } else {
+      return 0;
+    }
   };
 
   // Handle form field changes
@@ -47,6 +60,51 @@ export const UserDetail = () => {
     }
   };
 
+  const validateForm = () => {
+    let isValid = true;
+    const newErrors = {};
+
+    // Check if the name field is empty or has less than 3 characters
+    if (userData.name.trim() === "") {
+      newErrors.name = "Name is required";
+      isValid = false;
+    }
+
+    // Check if the name field has a minimum length of 3 characters
+    if (userData.name.trim().length < 3) {
+      newErrors.name = "Name should have a minimum length of 3 characters";
+      isValid = false;
+    }
+
+    // Check if the phoneNumber field is empty or has an invalid format
+    if (userData.phoneNumber.trim() === "") {
+      newErrors.phoneNumber = "phoneNumber number is required";
+      isValid = false;
+    } else if (!/^[0-9]{10}$/.test(userData.phoneNumber)) {
+      newErrors.phoneNumber =
+        "Invalid phoneNumber number format (should be 10 digits)";
+      isValid = false;
+    }
+
+    // Check if the gender field is empty
+    if (userData.dob.trim() === "") {
+      newErrors.dob = "Date of birth reqiured is required";
+      isValid = false;
+    }
+
+    // Check if the gender field is empty
+    if (userData.gender.trim() === "") {
+      newErrors.gender = "Gender is required";
+      isValid = false;
+    }
+
+    // Update the component state with the new error messages
+    setErrors(newErrors);
+
+    // Return the overall validity of the form
+    return isValid;
+  };
+
   // Handle radio button changes
   const handleGenderChange = (e) => {
     setUserData((prevData) => ({
@@ -57,16 +115,18 @@ export const UserDetail = () => {
 
   // Use useEffect to log the state whenever it changes
   useEffect(() => {
-    cartDispatch({
-      type: "UPDATE_USER_DATA",
-      userData: userData,
-    });
+    if (validateForm()) {
+      cartDispatch({
+        type: "UPDATE_USER_DATA",
+        userData: userData,
+      });
+    }
     // You can perform additional actions here, such as sending data to a server.
   }, [userData]);
 
   return (
     <>
-      <div className="col-12 d-flex justify-content-between">
+      <div className="col-12 d-flex justify-content-between checkout_input">
         <TextField
           type="text"
           className="col-3 mx-3"
@@ -78,6 +138,7 @@ export const UserDetail = () => {
           name="name"
           value={userData.name}
           onChange={handleChange}
+          error={errors.name}
         />
         <TextField
           type="tel"
@@ -90,6 +151,7 @@ export const UserDetail = () => {
           name="phoneNumber"
           value={userData.phoneNumber}
           onChange={handleChange}
+          error={errors.phoneNumber}
         />
         <TextField
           className="col-3 mx-3"
@@ -101,6 +163,7 @@ export const UserDetail = () => {
           value={userData.dob}
           onChange={handleChange}
           InputLabelProps={{ shrink: true }}
+          error={errors.dob}
         />
       </div>
       <div className="container">
@@ -113,6 +176,7 @@ export const UserDetail = () => {
               id="male"
               checked={userData.gender === "male"}
               onChange={handleGenderChange}
+              error={errors.gender}
             />
             <span className="radio-btn">
               <i className="las la-check">
@@ -126,6 +190,7 @@ export const UserDetail = () => {
                   width="120"
                   height="120"
                 />
+                {/* <Male/> */}
                 <h3 className="">Male</h3>
               </div>
             </span>
@@ -137,6 +202,7 @@ export const UserDetail = () => {
               id="female"
               checked={userData.gender === "female"}
               onChange={handleGenderChange}
+              error={errors.gender}
             />
             <span className="radio-btn">
               <i className="las la-check">

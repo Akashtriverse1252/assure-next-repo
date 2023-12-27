@@ -2714,6 +2714,7 @@ button:disabled {
   font-family: inherit;
   font-size: 15px;
   padding: 23px 15px;
+  letter-spacing: 1px;
 }
 
 .formpatient .css-1ygcj2i-MuiTableCell-root {
@@ -3152,7 +3153,7 @@ button:disabled {
   opacity: 70% !important;
 }
 
-.upload_prescription_form .input_felid {
+.prescription-form .input-field {
   flex-direction: column;
   gap: 20px;
   padding: 0px 40px 0 6px;
@@ -3163,4 +3164,53 @@ button:disabled {
   border: 2px dashed #dde9f3;
   border-radius: 35px;
   padding: 40px 20px;
+}
+
+.stepper_cnt .css-1hv8oq8-MuiStepLabel-label {
+  font-family: inherit !important;
+  letter-spacing: 1px;
+}
+
+
+.address .css-1c2i806-MuiFormLabel-root-MuiInputLabel-root,
+.address .css-v4u5dn-MuiInputBase-root-MuiInput-root,
+.checkout_input .css-1c2i806-MuiFormLabel-root-MuiInputLabel-root,
+.checkout_input .css-v4u5dn-MuiInputBase-root-MuiInput-root,
+.address label,
+.checkout_input label,
+.checkout_input div,
+.checkout_input div,
+.address input,
+.checkout_input input {
+  font-family: inherit;
+  letter-spacing: 1px;
+}
+
+.form-control input:-webkit-autofill,
+.form-control input:-webkit-autofill:hover,
+.form-control input:-webkit-autofill:focus,
+.form-control input:-webkit-autofill:active {
+  background-color: transparent !important;
+}
+
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-active,
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-completed {
+  color: #888bf1 !important;
+}
+
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root {
+  color: #c6d0ff !important;
+}
+
+.MuiStepIcon-text.css-117w1su-MuiStepIcon-text {
+  color: #fff !important;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 2px;
+  font-family: var(--font-family);
+}
+
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root {
+  height: 28px;
+  width: 28px;
 }

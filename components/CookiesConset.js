@@ -4,7 +4,8 @@ import Link from "next/link";
 import { Modal } from "@mui/material";
 import Backdrop from "@mui/material";
 import React, { useState, useEffect } from "react";
-import { Cookies } from "@/components/svg-components/Cookies";
+import { Cookies as Cookiesicon } from "@/components/svg-components/Cookies";
+import Cookies from "js-cookie";
 import { useData } from "@/context/context";
 
 const CookiesConset = () => {
@@ -13,9 +14,9 @@ const CookiesConset = () => {
 
   useEffect(() => {
     const timerId = setTimeout(() => {
+      // const savedCookiesAllowed = Cookies.get("isCookiesAllowed");
       // Check local storage for user's cookie consent preference
-      const isCookiesAllowedFromLocal =
-        localStorage.getItem("isCookiesAllowed");
+      const isCookiesAllowedFromLocal = Cookies.get("isCookiesAllowed");
 
       // Set open based on user's cookie consent preference or default to true
       setOpen(
@@ -54,7 +55,7 @@ const CookiesConset = () => {
         {/* <div className="cookies_consent  position-fixed  d-flex flex-wrap justify-content-start align-items-start "> */}
         <div className="container">
           <div className="title">
-            <Cookies />
+            <Cookiesicon />
             <strong>Cookies</strong>
           </div>
           <div className=" mb-3">

@@ -33,15 +33,21 @@ const Page = () => {
   return (
     <>
       <div className="check_out">
-        <Box sx={{ marginTop: 2, marginBottom: 2 }}>
-          <Stepper activeStep={activeStep} alternativeLabel>
-            {steps.map((label, index) => (
-              <Step key={label}>
-                <StepLabel>{label}</StepLabel>
-              </Step>
-            ))}
-          </Stepper>
-        </Box>
+        <div className="container">
+          <div className="web-containers">
+            <div className="row">
+              <Box sx={{ marginTop: 2, marginBottom: 2 }} className="stepper_cnt">
+                <Stepper activeStep={activeStep} alternativeLabel>
+                  {steps.map((label, index) => (
+                    <Step key={label}>
+                      <StepLabel>{label}</StepLabel>
+                    </Step>
+                  ))}
+                </Stepper>
+              </Box>
+            </div>
+          </div>
+        </div>
         <div className="check_out_cnt">
           {activeStep === 0 && (
             <ProductDetail

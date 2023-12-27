@@ -24,7 +24,7 @@ export const Female = () => {
           </clipPath>
         </defs>
         <path
-          fill="#f2e796"
+          fill="#b3b4fe"
           d="M12488 0c6897,0 12488,5591 12488,12488 0,6897 -5591,12488 -12488,12488 -6897,0 -12488,-5591 -12488,-12488 0,-6897 5591,-12488 12488,-12488z"
           className="colorf2e796 svgShape"
         ></path>

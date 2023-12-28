@@ -198,7 +198,7 @@ export const Homecollection = () => {
         {Object.values(errors).some((error) => error !== "") && (
           <Snackbar
             open={isErrorOpen}
-            autoHideDuration={4000}
+            autoHideDuration={400000}
             onClose={handleCloseError}
           >
             <Alert

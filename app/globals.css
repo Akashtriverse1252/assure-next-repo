@@ -54,11 +54,6 @@ svg {
   margin: auto;
 }
 
-input,
-label {
-  font-family: var(--font-family) !important;
-}
-
 .testimonialbox,
 .web-container,
 .quality {
@@ -2915,18 +2910,29 @@ button:disabled {
   -o-transition: ease-in 0.3s;
   transition: ease-in 0.3s;
 }
-.our_diff_cnt .our_diff_item{
+
+.our_diff_cnt .our_diff_item svg path {
   color: #000;
   fill: #000;
+  transition: all 0.5 ease;
 }
-.our_diff_cnt .our_diff_item:nth-child(1) .circleicons span{
+
+.our_diff_cnt .our_diff_item:hover svg path {
+  color: #fff;
+  transition: all 0.5 ease;
+  fill: #fff;
+}
+
+.our_diff_cnt .our_diff_item:nth-child(1) .circleicons span {
   background: #7986cb;
 
 }
-.our_diff_cnt .our_diff_item:nth-child(2) .circleicons span{
+
+.our_diff_cnt .our_diff_item:nth-child(2) .circleicons span {
   background: #fef7a6;
 
 }
+
 .our_diff_cnt .our_diff_item:nth-child(3) .circleicons span {
   background: #d98594;
 
@@ -3195,6 +3201,8 @@ button:disabled {
   letter-spacing: 1px;
 }
 
+.css-mvoatl-MuiPaper-root-MuiAlert-root,
+.header_search input,
 .css-1x51dt5-MuiInputBase-input-MuiInput-input,
 .css-wb57ya-MuiFormControl-root-MuiTextField-root,
 .css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root,
@@ -3217,6 +3225,10 @@ button:disabled {
 .checkout_input input {
   font-family: inherit !important;
   letter-spacing: 1px;
+}
+
+.css-mvoatl-MuiPaper-root-MuiAlert-root {
+  letter-spacing: 0.6px;
 }
 
 .form-control input:-webkit-autofill,

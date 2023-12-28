@@ -2915,6 +2915,22 @@ button:disabled {
   -o-transition: ease-in 0.3s;
   transition: ease-in 0.3s;
 }
+.our_diff_cnt .our_diff_item{
+  color: #000;
+  fill: #000;
+}
+.our_diff_cnt .our_diff_item:nth-child(1) .circleicons span{
+  background: #7986cb;
+
+}
+.our_diff_cnt .our_diff_item:nth-child(2) .circleicons span{
+  background: #fef7a6;
+
+}
+.our_diff_cnt .our_diff_item:nth-child(3) .circleicons span {
+  background: #d98594;
+
+}
 
 @media screen and (max-width: 991px) {
   .plans {

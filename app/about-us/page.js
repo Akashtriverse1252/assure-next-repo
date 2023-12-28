@@ -111,8 +111,8 @@ export const page = () => {
                 </div>
                 <div className="our_diffrenc">
                   <div className="col-lg-8 mx-auto col-12  ">
-                    <div className="row justify-content-center">
-                      <div className="col-lg-3 col-sm-4 col-6 ">
+                    <div className="row justify-content-center our_diff_cnt">
+                      <div className="col-lg-3 col-sm-4 col-6 our_diff_item ">
                         <div className="circleicons float-start  text-center grid-center">
                           <span className="flex-center mb-2 button button--aylen button--round-l button--text-thick">
                             <AdvancedTechnology />
@@ -120,7 +120,7 @@ export const page = () => {
                           <p>New age Technology</p>
                         </div>
                       </div>
-                      <div className="col-lg-3 col-sm-4 col-6 ">
+                      <div className="col-lg-3 col-sm-4 col-6 our_diff_item ">
                         <div className="circleicons float-start  text-center grid-center">
                           <span className="flex-center mb-2 button button--aylen button--round-l button--text-thick">
                             <InternationalStandard />
@@ -128,7 +128,7 @@ export const page = () => {
                           <p>International Standards </p>
                         </div>
                       </div>
-                      <div className="col-lg-3 col-sm-4 col-6 ">
+                      <div className="col-lg-3 col-sm-4 col-6 our_diff_item ">
                         <div className="circleicons float-start  text-center grid-center">
                           <span className="flex-center mb-2 button button--aylen button--round-l button--text-thick">
                             <Doctor />

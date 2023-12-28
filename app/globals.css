@@ -36,6 +36,8 @@ body {
   --white-color: #fff;
   --bg-color: #deebf4;
   --btn-color: #0599d2;
+  --error: #d32f2f;
+  --bg-error: rgb(211 47 47 / 5%);
 }
 
 * {
@@ -50,6 +52,11 @@ svg {
 .container {
   min-width: 90%;
   margin: auto;
+}
+
+input,
+label {
+  font-family: var(--font-family) !important;
 }
 
 .testimonialbox,
@@ -766,6 +773,7 @@ section,
 .whatsapp svg {
   width: 50px;
   height: 48px;
+  margin: 0 auto;
 }
 
 .cta,
@@ -3171,7 +3179,16 @@ button:disabled {
   letter-spacing: 1px;
 }
 
-
+.css-1x51dt5-MuiInputBase-input-MuiInput-input,
+.css-wb57ya-MuiFormControl-root-MuiTextField-root,
+.css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root,
+.css-l4u8b9-MuiInputBase-root-MuiInput-root,
+.enquireform .MuiInputBase-root label,
+.css-xsqe0f-MuiButtonBase-root-MuiButton-root,
+.css-md26zr-MuiInputBase-root-MuiOutlinedInput-root,
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root,
+.enquireform .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root,
+.enquireform .css-wb57ya-MuiFormControl-root-MuiTextField-root,
 .address .css-1c2i806-MuiFormLabel-root-MuiInputLabel-root,
 .address .css-v4u5dn-MuiInputBase-root-MuiInput-root,
 .checkout_input .css-1c2i806-MuiFormLabel-root-MuiInputLabel-root,
@@ -3182,7 +3199,7 @@ button:disabled {
 .checkout_input div,
 .address input,
 .checkout_input input {
-  font-family: inherit;
+  font-family: inherit !important;
   letter-spacing: 1px;
 }
 
@@ -3213,4 +3230,14 @@ button:disabled {
 .css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root {
   height: 28px;
   width: 28px;
+}
+
+
+.input_error {
+  border: 1.5px solid var(--error);
+  background: var(--bg-error);
+}
+
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+  font-size: 15px;
 }

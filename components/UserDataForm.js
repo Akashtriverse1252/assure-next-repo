@@ -95,11 +95,11 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
 
   return (
     <>
-      {loading ? (
+      {/* {loading ? (
         <Box sx={{ display: "flex" }}>
           <CircularProgress />
         </Box>
-      ) : (
+      ) : ( */}
         <section className="position-relative">
           <div className="gradient-layer"></div>
           <div className="container">
@@ -146,7 +146,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
           <Dots className="hsection position-absolute svgwidth opacity-10" />
           <Line className="svgwidthline position-absolute opacity-10" />
         </section>
-      )}
+      {/* )} */}
     </>
   );
 };

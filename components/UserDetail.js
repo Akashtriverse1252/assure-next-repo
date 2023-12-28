@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { TextField } from "@mui/material";
+import { Alert, Snackbar, Stack, TextField } from "@mui/material";
 import { FaCheck } from "react-icons/fa6";
 import { Female } from "./svg-components/Female";
 import Image from "next/image";
@@ -26,6 +26,14 @@ export const UserDetail = () => {
     age: "",
     gender: "",
   });
+  const [touchedFields, setTouchedFields] = useState({
+    name: false,
+    phoneNumber: false,
+    dob: false,
+    gender: false,
+  });
+
+  const [isErrorOpen, setIsErrorOpen] = useState(false); // New state to manage error Snackbar
 
   // Function to calculate age based on date of birth
   const calculateAge = (dob) => {
@@ -37,6 +45,10 @@ export const UserDetail = () => {
     if (age >= 0 && age <= 150) {
       return age;
     } else {
+      const wrongAgeError = {
+        designation: "Enter the correct Date of birth",
+      };
+      setErrors(wrongAgeError);
       return 0;
     }
   };
@@ -44,6 +56,8 @@ export const UserDetail = () => {
   // Handle form field changes
   const handleChange = (e) => {
     const { name, value } = e.target;
+    setTouchedFields((prevTouched) => ({ ...prevTouched, [name]: true }));
+
     if (name === "dob") {
       // Update age when dob changes
       const age = calculateAge(value);
@@ -115,14 +129,24 @@ export const UserDetail = () => {
 
   // Use useEffect to log the state whenever it changes
   useEffect(() => {
-    if (validateForm()) {
+    // Check if all fields have been touched before validating
+    const allFieldsTouched = Object.values(touchedFields).every(Boolean);
+
+    if (allFieldsTouched && validateForm()) {
       cartDispatch({
         type: "UPDATE_USER_DATA",
         userData: userData,
       });
+    } else {
+      // If there are validation errors or not all fields touched, open the error Snackbar
+      setIsErrorOpen(true);
     }
     // You can perform additional actions here, such as sending data to a server.
-  }, [userData]);
+  }, [userData, touchedFields]); // Include touchedFields in the dependency array
+
+  const handleCloseError = () => {
+    setIsErrorOpen(false);
+  };
 
   return (
     <>
@@ -176,9 +200,10 @@ export const UserDetail = () => {
               id="male"
               checked={userData.gender === "male"}
               onChange={handleGenderChange}
-              error={errors.gender}
             />
-            <span className="radio-btn">
+            <span
+              className={` radio-btn ${errors.gender ? "input_error" : ""}`}
+            >
               <i className="las la-check">
                 <FaCheck />
               </i>
@@ -204,7 +229,9 @@ export const UserDetail = () => {
               onChange={handleGenderChange}
               error={errors.gender}
             />
-            <span className="radio-btn">
+            <span
+              className={` radio-btn ${errors.gender ? "input_error" : ""}`}
+            >
               <i className="las la-check">
                 <FaCheck />
               </i>
@@ -222,7 +249,9 @@ export const UserDetail = () => {
               checked={userData.gender === "other"}
               onChange={handleGenderChange}
             />
-            <span className="radio-btn">
+            <span
+              className={` radio-btn ${errors.gender ? "input_error" : ""}`}
+            >
               <i className="las la-check">
                 <FaCheck />
               </i>
@@ -234,6 +263,25 @@ export const UserDetail = () => {
           </label>
         </div>
       </div>
+      <Stack spacing={2} sx={{ width: "100%" }}>
+        {Object.values(errors).some((error) => error !== "") && (
+          <Snackbar
+            open={isErrorOpen}
+            autoHideDuration={4000}
+            onClose={handleCloseError}
+          >
+            <Alert
+              onClose={handleCloseError}
+              severity="error"
+              sx={{ width: "100%" }}
+            >
+              {Object.values(errors).map(
+                (error, index) => error !== "" && <div key={index}>{error}</div>
+              )}
+            </Alert>
+          </Snackbar>
+        )}
+      </Stack>
     </>
   );
 };

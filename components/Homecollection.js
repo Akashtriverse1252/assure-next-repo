@@ -1,49 +1,68 @@
 "use client";
 import React, { useState } from "react";
 import styles from "../app/page.module.css";
-import { TextField } from "@mui/material";
+import { Alert, Snackbar, Stack, TextField } from "@mui/material";
 import { Call } from "./svg-components/Call";
 import { WhatsApp } from "./svg-components/WhatsApp";
 
 export const Homecollection = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
+    phoneNumber: "",
     email: "",
-    mobile: "",
   });
   const [errors, setErrors] = useState({
     name: "",
+    phoneNumber: "",
     email: "",
-    mobile: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showThankYou, setShowThankYou] = useState(false);
 
+  const [isErrorOpen, setIsErrorOpen] = useState(false); // New state to manage error Snackbar
+
+  // Handle form field changes
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-    setErrors({
-      ...errors,
-      [name]: "",
-    });
+
+    if (name === "dob") {
+      // Update age when dob changes
+      const age = calculateAge(value);
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+        age: age,
+      }));
+    } else {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    }
   };
+
   const validateForm = () => {
     let isValid = true;
     const newErrors = {};
 
+    // Check if the name field is empty or has less than 3 characters
     if (formData.name.trim() === "") {
       newErrors.name = "Name is required";
       isValid = false;
     }
 
-    if (formData.mobile.trim() === "") {
-      newErrors.mobile = "Mobile number is required";
+    // Check if the name field has a minimum length of 3 characters
+    if (formData.name.trim().length < 3) {
+      newErrors.name = "Name should have a minimum length of 3 characters";
       isValid = false;
-    } else if (!/^[0-9]{10}$/.test(formData.mobile)) {
-      newErrors.mobile = "Invalid mobile number format (should be 10 digits)";
+    }
+
+    // Check if the phoneNumber field is empty or has an invalid format
+    if (formData.phoneNumber.trim() === "") {
+      newErrors.phoneNumber = "Phone Number number is required";
+      isValid = false;
+    } else if (!/^[0-9]{10}$/.test(formData.phoneNumber)) {
+      newErrors.phoneNumber =
+        "Invalid Phone Number number format (should be 10 digits)";
       isValid = false;
     }
 
@@ -51,15 +70,18 @@ export const Homecollection = () => {
       newErrors.email = "Email is required";
       isValid = false;
     } else {
-      // Regular expression to validate email format
-      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-      if (!emailPattern.test(formData.email)) {
+      // Check if the email format is valid
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formData.email)) {
         newErrors.email = "Invalid email format";
         isValid = false;
       }
     }
 
+    // Update the component state with the new error messages
     setErrors(newErrors);
+
+    // Return the overall validity of the form
     return isValid;
   };
 
@@ -97,8 +119,12 @@ export const Homecollection = () => {
           // Handle network errors here and display an error message to the user.
         });
     } else {
+      setIsErrorOpen(true);
       console.log("Form validation failed:", errors);
     }
+  };
+  const handleCloseError = () => {
+    setIsErrorOpen(false);
   };
 
   return (
@@ -111,46 +137,39 @@ export const Homecollection = () => {
         </div>
         <form onSubmit={handleSubmit}>
           <TextField
-            label="Name"
-            defaultValue=""
+            type="text"
+            required
+            id="standard-required"
+            defaultValue="Name"
             variant="outlined"
-            className={`styles.inputmodified input-field ${
-              errors.name ? "error-input" : formData.name ? "input-filled" : ""
-            }`}
-            fullWidth
+            label="Name"
+            name="name"
             value={formData.name}
             onChange={handleChange}
-            placeholder="Name"
             error={errors.name}
-          />
-          <TextField
-            label="Mobile Number"
-            defaultValue=""
-            variant="outlined"
-            className={`styles.inputmodified input-field ${
-              errors.mobile
-                ? "error-input"
-                : formData.mobile
-                ? "input-filled"
-                : ""
-            }`}
             fullWidth
-            value={formData.mobile}
-            onChange={handleChange}
-            placeholder="Mobile"
-            error={errors.mobile}
+            className={`styles.inputmodified input-field `}
           />
           <TextField
+            type="tel"
+            required
+            id="standard-required"
+            defaultValue="Contact Number"
+            variant="outlined"
+            label="Contact Number"
+            name="phoneNumber"
+            value={formData.phoneNumber}
+            onChange={handleChange}
+            error={errors.phoneNumber}
+            fullWidth
+            className={`styles.inputmodified input-field `}
+          />
+          <TextField
+            name="email"
             defaultValue=""
             label="Email"
             variant="outlined"
-            className={`styles.inputmodified input-field ${
-              errors.email
-                ? "error-input"
-                : formData.email
-                ? "input-filled"
-                : ""
-            }`}
+            className={`styles.inputmodified input-field `}
             fullWidth
             value={formData.email}
             onChange={handleChange}
@@ -165,15 +184,35 @@ export const Homecollection = () => {
             {isSubmitting ? "Submitting..." : "SUBMIT"}
           </button>
         </form>
-        {/* <div className="col-12 float-start cta flex-center justify-content-center">
-          <span className="col-lg-5 col-xs-6 col-12 grid-center text-center gap-1 whatsapp">
+        <div className="col-12 float-start cta flex-center justify-content-center">
+          <div className="col-lg-5 col-xs-6 col-12 grid-center text-center gap-1 whatsapp">
             <WhatsApp /> <p>WhatsApp</p>
-          </span>
-          <span className="col-lg-5 col-xs-6 col-12 grid-center text-center gap-1 call">
+          </div>
+          <div className="col-lg-5 col-xs-6 col-12 grid-center text-center gap-1 call">
             <Call /> <p>Call</p>
-          </span>
-        </div> */}
+          </div>
+        </div>
       </div>
+
+      <Stack spacing={2} sx={{ width: "100%" }}>
+        {Object.values(errors).some((error) => error !== "") && (
+          <Snackbar
+            open={isErrorOpen}
+            autoHideDuration={4000}
+            onClose={handleCloseError}
+          >
+            <Alert
+              onClose={handleCloseError}
+              severity="error"
+              sx={{ width: "100%" }}
+            >
+              {Object.values(errors).map(
+                (error, index) => error !== "" && <div key={index}>{error}</div>
+              )}
+            </Alert>
+          </Snackbar>
+        )}
+      </Stack>
     </>
   );
 };

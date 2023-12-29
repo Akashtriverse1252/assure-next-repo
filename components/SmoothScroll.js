@@ -1,62 +1,71 @@
-"use client";
-import React, { useRef, useState, useCallback, useLayoutEffect } from "react";
-import ResizeObserver from "resize-observer-polyfill";
-import {
-  useViewportScroll,
-  useTransform,
-  useSpring,
-  motion,
-} from "framer-motion";
+import React, { useRef, useEffect, useState } from "react";
 
 const SmoothScroll = ({ children }) => {
-  // Scroll container
-  const scrollRef = useRef(null);
+  const pageRef = useRef(null);
+  const wrapperRef = useRef(null);
 
-  // Page scrollable height based on content length
-  const [pageHeight, setPageHeight] = useState(0);
+  const [scroll, setScroll] = useState({
+    current: 0,
+    target: 0,
+    limit: 0,
+  });
 
-  // Update scrollable height when the browser is resizing
-  const resizePageHeight = useCallback((entries) => {
-    for (let entry of entries) {
-      setPageHeight(entry.contentRect.height);
-    }
+  const ease = 0.10000;
+
+  const updateTarget = (e) => {
+    setScroll((prevScroll) => ({
+      ...prevScroll,
+      target: prevScroll.target + e.deltaY,
+    }));
+  };
+
+  const lerp = (current, target) => {
+    const distanceBetween = target - current;
+    const distanceToTravel = distanceBetween * ease;
+    return current + distanceToTravel;
+  };
+
+  const clamp = (min, max, value) => {
+    return Math.min(Math.max(value, min), max);
+  };
+
+  const smoothScroll = () => {
+    const maxScroll = wrapperRef.current.clientHeight - window.innerHeight;
+
+    setScroll((prevScroll) => ({
+      ...prevScroll,
+      target: clamp(0, maxScroll, prevScroll.target),
+    }));
+
+    setScroll((prevScroll) => {
+      const transition = lerp(prevScroll.current, prevScroll.target);
+      return {
+        ...prevScroll,
+        current: transition,
+      };
+    });
+
+    wrapperRef.current.style.transform = `translateY(-${scroll.current}px)`;
+
+    window.requestAnimationFrame(smoothScroll);
+  };
+
+  useEffect(() => {
+    document.addEventListener("wheel", updateTarget);
+    smoothScroll();
+
+    return () => {
+      document.removeEventListener("wheel", updateTarget);
+    };
   }, []);
-
-  // Observe when the browser is resizing
-  useLayoutEffect(() => {
-    const resizeObserver = new ResizeObserver((entries) =>
-      resizePageHeight(entries)
-    );
-    scrollRef && resizeObserver.observe(scrollRef.current);
-    return () => resizeObserver.disconnect();
-  }, [scrollRef, resizePageHeight]);
-
-  const { scrollY } = useViewportScroll(); // Measures how many pixels the user has scrolled vertically
-
-  // As scrollY changes between 0px and the scrollable height, create a negative scroll value
-  // based on the current scroll position to translateY the document in a natural way
-  const transform = useTransform(scrollY, [0, pageHeight], [0, -pageHeight]);
-
-  // Conditionally set the physics values based on the screen width
-  const isMobile = window.matchMedia("(max-width: 480px)").matches;
-  const physics = isMobile
-    ? { damping: 10, mass: 0.2, stiffness: 400 }
-    : { damping: 10, mass: 0.01, stiffness: 30 };
-
-  const spring = useSpring(transform, physics); // Apply easing to the negative scroll value
 
   return (
     <>
-      <motion.div
-        ref={scrollRef}
-        style={{ y: spring }} // TranslateY of scroll container using negative scroll value
-        className="scroll-container"
-      >
-        {children}
-      </motion.div>
-      {/* Blank div that has a dynamic height based on the content's inherent height */}
-      {/* This is necessary to allow the scroll container to scroll using the browser's native scroll bar */}
-      <div style={{ height: pageHeight }} />
+      <div className="scroll-container" ref={pageRef}>
+        <div className="page__wrapper" ref={wrapperRef}>
+          {children}
+        </div>
+      </div>
     </>
   );
 };

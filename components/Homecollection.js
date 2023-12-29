@@ -7,6 +7,7 @@ import { WhatsApp } from "./svg-components/WhatsApp";
 
 export const Homecollection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showThankYou, setShowThankYou] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     phoneNumber: "",
@@ -90,7 +91,7 @@ export const Homecollection = () => {
     if (validateForm()) {
       setIsSubmitting(true);
       // Make the API call to submit the data
-      fetch("https://www.assurepathlabs.com/api/algos/request_a_call_api.php", {
+      fetch("http://assure.triverseadvertising.com/api/request_a_call_api.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -102,7 +103,6 @@ export const Homecollection = () => {
           setIsSubmitting(false);
           if (data.success) {
             setShowThankYou(true);
-            onStateChange(true);
             // Reset the form fields by setting the form data to an empty object
             setFormData({
               name: "",
@@ -110,13 +110,13 @@ export const Homecollection = () => {
               mobile: "",
             });
           } else {
-            // Handle server errors here and display an error message to the user.
+            // Handle cases where the server response indicates failure
+            console.error("Server response indicates failure:", data.message);
           }
         })
         .catch((error) => {
           setIsSubmitting(false);
-          console.error("Error:", error);
-          // Handle network errors here and display an error message to the user.
+          console.error("Error during fetch:", error);
         });
     } else {
       setIsErrorOpen(true);
@@ -193,7 +193,17 @@ export const Homecollection = () => {
           </div>
         </div>
       </div>
-
+      <Stack spacing={2} sx={{ width: "100%" }}>
+        <Snackbar open={showThankYou} autoHideDuration={4000}>
+          <Alert
+            onClose={(()=>(setShowThankYou(!showThankYou)))}
+            severity="success"
+            sx={{ width: "100%" }}
+          >
+           Our team connect you too soon!
+          </Alert>
+        </Snackbar>
+      </Stack>
       <Stack spacing={2} sx={{ width: "100%" }}>
         {Object.values(errors).some((error) => error !== "") && (
           <Snackbar

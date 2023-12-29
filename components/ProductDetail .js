@@ -15,6 +15,7 @@ import { useData } from "@/context/context";
 import { Rupees } from "./svg-components/Rupees";
 import { FiShoppingCart } from "react-icons/fi";  
 import { PiShoppingCartSimple, PiShoppingCartSimpleFill } from "react-icons/pi";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const ProductDetail = ({ onNextStep, onFormData }) => {
   const [productData, setProductData] = useState([]);
@@ -107,11 +108,12 @@ const ProductDetail = ({ onNextStep, onFormData }) => {
                       </button>
                     </div>
                     <div className=" mt-3  row text-right">
-                      <button
-                        className="button button--wayra pull-right red tab3"
+                    <button
+                        className="edit_cart button button--wayra pull-right red tab3"
                         onClick={handleNext}
                       >
                         Proceed
+                        <FaArrowRightLong className="m-2" />
                       </button>
                     </div>
                   </div>

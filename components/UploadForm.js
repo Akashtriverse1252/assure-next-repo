@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import {
   AiOutlineFileText,
   AiOutlineFileImage,
@@ -8,18 +8,26 @@ import {
 } from "react-icons/ai";
 import { MdOutlineCancel } from "react-icons/md";
 import { IoCloudUploadOutline } from "react-icons/io5";
-import { useData } from "@/context/context";
-import Modal from "@mui/material/Modal";
 import { RxCross2 } from "react-icons/rx";
 import { Alert, Snackbar, Stack, TextField } from "@mui/material";
+import Modal from "@mui/material/Modal";
 import axios from "axios";
+import { useData } from "@/context/context";
+import { useAlert } from "@/context/AlerterContext";
+
+const API_URL =
+  "http://assure.triverseadvertising.com/api/upload_prescription.php";
 
 const UploadForm = () => {
   const { cartState, cartDispatch } = useData();
   const [isOpen, setIsOpen] = useState(false);
-  const [showCannotUploadMessage, setShowCannotUploadMessage] = useState(false);
   const [isErrorOpen, setIsErrorOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [alertColor, setAlertColor] = useState("");
+  const [alertMessage, setAlertMessage] = useState("");
+  const [fileUploadError, setFileUploadError] = useState("");
+  const { showAlert } = useAlert();
+
   const [fileState, setFileState] = useState({
     fileName: "",
     fileSize: "",
@@ -29,23 +37,29 @@ const UploadForm = () => {
 
   const [formData, setFormData] = useState({
     name: "",
-    phoneNumber: "",
+    phone: "",
     email: "",
+    uploadPrescription: "",
   });
+
   const [errors, setErrors] = useState({
     name: "",
-    phoneNumber: "",
+    phone: "",
     email: "",
     files: "",
     api: "",
-    validation: "", // Corrected the typo
+    uploadPrescription: "",
+    validation: "",
   });
 
-  const handleFileChange = (e) => {
-    const selectedFile = e.target.files && e.target.files[0];
-    const { name, value } = e.target;
+  const handleFileChange = ({ target: { files, name, value } }) => {
+    const selectedFile = files && files[0];
 
-    setFormData((prevValues) => ({ ...prevValues, [name]: value }));
+    setFormData((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+      uploadPrescription: selectedFile,
+    }));
 
     if (selectedFile) {
       handleValidFile(selectedFile);
@@ -55,17 +69,17 @@ const UploadForm = () => {
   };
 
   const handleValidFile = (selectedFile) => {
-    const allowedTypes = [
+    const allowedTypes = new Set([
       "image/jpeg",
       "image/jpg",
       "image/webp",
       "image/png",
       "application/pdf",
       "application/msword",
-    ];
+    ]);
 
     if (
-      allowedTypes.includes(selectedFile.type) &&
+      allowedTypes.has(selectedFile.type) &&
       selectedFile.size <= 2 * 1024 * 1024
     ) {
       setFileState((prevState) => ({
@@ -79,24 +93,50 @@ const UploadForm = () => {
         handleImageFile(selectedFile);
       }
     } else {
-      handleInvalidFile();
+      handleInvalidFile(selectedFile);
     }
   };
 
-  const handleInvalidFile = () => {
+  const handleInvalidFile = (selectedFile) => {
     setFileState({
       fileName: "",
       fileSize: "",
       isFileUploaded: false,
       filePreview: null,
     });
-    console.error("Invalid files. Please select a valid file type and size.");
+
+    let errorMessage = "Invalid files. ";
+
+    if (selectedFile && selectedFile.size > 2 * 1024 * 1024) {
+      errorMessage += "File size should be less than 2MB. ";
+    }
+
+    if (!selectedFile || !selectedFile.type || !selectedFile.size) {
+      errorMessage += "File is required. ";
+    }
+
+    if (
+      selectedFile &&
+      selectedFile.type &&
+      !allowedTypes.has(selectedFile.type)
+    ) {
+      errorMessage += "Invalid file type. ";
+    }
+
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      files: errorMessage,
+    }));
+
+    setFileUploadError(errorMessage);
+
+    console.error(errorMessage);
   };
 
   const handleImageFile = (selectedFile) => {
     const reader = new FileReader();
     reader.onload = (e) => {
-      setFileState((prevState) => ({
+      setFileState(({ filePreview, ...prevState }) => ({
         ...prevState,
         filePreview: e.target.result,
       }));
@@ -109,11 +149,10 @@ const UploadForm = () => {
   };
 
   const handleRemoveFileClick = () => {
-    setFormData({
-      name: "",
-      phoneNumber: "",
-      email: "",
-    });
+    setFormData((prevValues) => ({
+      ...prevValues,
+      uploadPrescription: "",
+    }));
   };
 
   const handleSubmit = async (e) => {
@@ -121,38 +160,37 @@ const UploadForm = () => {
     if (validateForm()) {
       try {
         setIsSubmitting(true);
-
         const formDataApi = {
           name: formData.name,
           email: formData.email,
-          phoneNumber: formData.phoneNumber,
-          file: fileState.fileName,
+          phone: formData.phone,
+          uploadPrescription: formData.uploadPrescription,
         };
-        console.log("this is the api data", formDataApi);
 
-        const response = await axios.post(
-          "https://www.assurepathlabs.com/api/algos/upload_prescription.php",
-          formDataApi, // Change formDataObject to formData
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
-        );
+        const response = await axios.post(API_URL, formDataApi, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        });
+        console.log("this is the api response ", response);
 
         setIsSubmitting(false);
 
-        if (response.data.success) {
-          setShowThankYou(true);
-          onStateChange(true);
-          setFormData({
-            name: "",
-            email: "",
-            mobile: "",
-          });
+        if (response.status === 200) {
+          // Green Alert for 200
+          setAlertColor("success");
+          setAlertMessage("Prescription Uploaded Successfully!");
+        } else if (response.status === 500 || response.status === 404) {
+          // Red Alert for 500 or 404
+          setAlertColor("error");
+          setAlertMessage(`Server Error: ${response.data}`);
         } else {
-          // Handle server errors here and display an error message to the user.
+          // Blue Alert for other status codes
+          setAlertColor("info");
+          setAlertMessage(`Request Successful: ${response.data}`);
         }
+
+        setIsOpen(true);
       } catch (error) {
         setIsSubmitting(false);
         console.error("Error:", error);
@@ -160,7 +198,6 @@ const UploadForm = () => {
       }
     } else {
       setIsErrorOpen(true);
-      console.log("Form validation failed:", errors);
     }
   };
 
@@ -170,6 +207,7 @@ const UploadForm = () => {
 
     if (formData.name.trim() === "") {
       newErrors.name = "Name is required";
+      showAlert('Name', 'Name is required', 'error');
       isValid = false;
     }
 
@@ -178,12 +216,11 @@ const UploadForm = () => {
       isValid = false;
     }
 
-    if (formData.phoneNumber.trim() === "") {
-      newErrors.phoneNumber = "Phone number is required";
+    if (formData.phone.trim() === "") {
+      newErrors.phone = "Phone number is required";
       isValid = false;
-    } else if (!/^[0-9]{10}$/.test(formData.phoneNumber)) {
-      newErrors.phoneNumber =
-        "Invalid phone number format (should be 10 digits)";
+    } else if (!/^[0-9]{10}$/.test(formData.phone)) {
+      newErrors.phone = "Invalid phone number format (should be 10 digits)";
       isValid = false;
     }
 
@@ -191,7 +228,6 @@ const UploadForm = () => {
       newErrors.email = "Email is required";
       isValid = false;
     } else {
-      // Check if the email format is valid
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(formData.email)) {
         newErrors.email = "Invalid email format";
@@ -199,9 +235,16 @@ const UploadForm = () => {
       }
     }
 
+    // File validation
+    if (!fileState.isFileUploaded) {
+      newErrors.files = "File is required";
+      isValid = false;
+    }
+
     setErrors(newErrors);
     return isValid;
   };
+
   const handleClose = () => {
     setIsOpen(false);
   };
@@ -250,8 +293,8 @@ const UploadForm = () => {
                     type="text"
                     required
                     id="standard-required"
-                    name="phoneNumber"
-                    value={formData.phoneNumber}
+                    name="phone"
+                    value={formData.phone}
                     onChange={handleFileChange}
                   />
                   <TextField
@@ -297,7 +340,7 @@ const UploadForm = () => {
                   <div className="browse-files alpha">
                     <input
                       id="prescription"
-                      name="image"
+                      name="uploadPrescription"
                       accept="image/*"
                       type="file"
                       className="default-file-input"
@@ -315,7 +358,7 @@ const UploadForm = () => {
               </div>
             </div>
 
-            {showCannotUploadMessage && (
+            {/* {showCannotUploadMessage && (
               <div className="cannot-upload-message">
                 <AiOutlineFileText />
                 Please select a valid file (Image, PDF, or Word) less than 2MB
@@ -326,7 +369,7 @@ const UploadForm = () => {
                   <MdOutlineCancel />
                 </div>
               </div>
-            )}
+            )} */}
 
             {fileState.isFileUploaded && (
               <div className="file-block">
@@ -377,6 +420,15 @@ const UploadForm = () => {
           </Snackbar>
         )}
       </Stack>
+      <Snackbar open={isOpen} autoHideDuration={4000} onClose={handleClose}>
+        <Alert
+          onClose={handleClose}
+          severity={alertColor}
+          sx={{ width: "100%" }}
+        >
+          {alertMessage}
+        </Alert>
+      </Snackbar>
     </>
   );
 };

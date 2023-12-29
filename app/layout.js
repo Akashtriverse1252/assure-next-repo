@@ -13,6 +13,7 @@ import SmoothScroll from "../components/SmoothScroll";
 import { BreadCrums } from "@/components/BreadCrums";
 import UploadForm from "@/components/UploadForm";
 import CookiesConset from "@/components/CookiesConset";
+import { AlertProvider } from "@/context/AlerterContext";
 const AvertaStd = localFont({
   src: "./font/AvertaStd-Regular.woff2",
   display: "swap",
@@ -28,22 +29,24 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <GlobalDataProvider>
-        <body className={AvertaStd.className}>
-          {/* <SmoothScroll> */}
-          <div className="">
-            <Header />
-            <BreadCrums />
-            <Cart />
-            {children}
-            {/* {children} */}
-            <Footer />
-            <UploadForm />
-          </div>
-          {/* </SmoothScroll> */}
-        </body>
-        <CookiesConset />
-      </GlobalDataProvider>
+      <AlertProvider>
+        <GlobalDataProvider>
+          <body className={AvertaStd.className}>
+            {/* <SmoothScroll> */}
+            <div className="">
+              <Header />
+              <BreadCrums />
+              <Cart />
+              {children}
+              {/* {children} */}
+              <Footer />
+              <UploadForm />
+            </div>
+            {/* </SmoothScroll> */}
+          </body>
+          <CookiesConset />
+        </GlobalDataProvider>
+      </AlertProvider>
     </html>
   );
 }

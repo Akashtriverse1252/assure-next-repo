@@ -30,37 +30,33 @@ export const Page = () => {
     }
   };
 
+  const handleScroll = () => {
+    const lastCard = lastCardRef.current;
+    if (lastCard) {
+      const { top } = lastCard.getBoundingClientRect();
+      const isAtBottom = top <= window.innerHeight;
+      if (isAtBottom && !loading) {
+        fetchData();
+      }
+    }
+  };
+
   useEffect(() => {
     fetchData(); // Fetch initial data when the component mounts
   }, []);
 
-  const handleIntersection = (entries) => {
-    const target = entries[0];
-    if (target.isIntersecting && !loading) {
-      fetchData();
-    }
-  };
-
-  const observer = new IntersectionObserver(handleIntersection, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.1,
-  });
-
   useEffect(() => {
-    if (lastCardRef.current) {
-      observer.observe(lastCardRef.current);
-    }
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      if (lastCardRef.current) {
-        observer.unobserve(lastCardRef.current);
-      }
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastCardRef, observer]);
+  }, [loading, page]);
 
   return (
     <>
+      {/* Your existing code */}
+      {/* <BreadCrums PathName={pathname} /> */}
       <section className="position-relative">
         <div className="container">
           <div className="web-container">

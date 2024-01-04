@@ -1,13 +1,13 @@
 "use client";
 import React, { useState } from "react";
 import styles from "../app/page.module.css";
-import { Alert, Snackbar, Stack, TextField } from "@mui/material";
+import { Alert, Snackbar, TextField } from "@mui/material";
 import { Call } from "./svg-components/Call";
 import { WhatsApp } from "./svg-components/WhatsApp";
+import { useAlert } from "@/context/AlerterContext";
 
 export const Homecollection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showThankYou, setShowThankYou] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     phoneNumber: "",
@@ -18,15 +18,13 @@ export const Homecollection = () => {
     phoneNumber: "",
     email: "",
   });
+  const { showAlert } = useAlert();
+  const [isErrorOpen, setIsErrorOpen] = useState(false);
 
-  const [isErrorOpen, setIsErrorOpen] = useState(false); // New state to manage error Snackbar
-
-  // Handle form field changes
   const handleChange = (e) => {
     const { name, value } = e.target;
 
     if (name === "dob") {
-      // Update age when dob changes
       const age = calculateAge(value);
       setFormData((prevData) => ({
         ...prevData,
@@ -45,44 +43,48 @@ export const Homecollection = () => {
     let isValid = true;
     const newErrors = {};
 
-    // Check if the name field is empty or has less than 3 characters
     if (formData.name.trim() === "") {
-      newErrors.name = "Name is required";
+      showAlert("Failure", "Name is required", "error");
+      newErrors.name = true;
+      isValid = false;
+    } else if (formData.name.trim().length < 3) {
+      showAlert(
+        "Failure",
+        "Name should have a minimum length of 3 characters",
+        "error"
+      );
+      newErrors.name = true;
       isValid = false;
     }
 
-    // Check if the name field has a minimum length of 3 characters
-    if (formData.name.trim().length < 3) {
-      newErrors.name = "Name should have a minimum length of 3 characters";
-      isValid = false;
-    }
-
-    // Check if the phoneNumber field is empty or has an invalid format
     if (formData.phoneNumber.trim() === "") {
-      newErrors.phoneNumber = "Phone Number number is required";
+      showAlert("Failure", "Phone Number is required", "error");
+      newErrors.phoneNumber = true;
       isValid = false;
     } else if (!/^[0-9]{10}$/.test(formData.phoneNumber)) {
-      newErrors.phoneNumber =
-        "Invalid Phone Number number format (should be 10 digits)";
+      showAlert(
+        "Failure",
+        "Invalid Phone Number format (should be 10 digits)",
+        "error"
+      );
+      newErrors.phoneNumber = true;
       isValid = false;
     }
 
     if (formData.email.trim() === "") {
-      newErrors.email = "Email is required";
+      showAlert("Failure", "Email is required", "error");
+      newErrors.email = true;
       isValid = false;
     } else {
-      // Check if the email format is valid
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(formData.email)) {
-        newErrors.email = "Invalid email format";
+        showAlert("Failure", "Invalid email format", "error");
+        newErrors.email = true;
         isValid = false;
       }
     }
 
-    // Update the component state with the new error messages
     setErrors(newErrors);
-
-    // Return the overall validity of the form
     return isValid;
   };
 
@@ -90,27 +92,33 @@ export const Homecollection = () => {
     e.preventDefault();
     if (validateForm()) {
       setIsSubmitting(true);
-      // Make the API call to submit the data
-      fetch("http://assure.triverseadvertising.com/api/request_a_call_api.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      })
+
+      fetch(
+        "http://assure.triverseadvertising.com/api/request_a_call_api.php",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      )
         .then((response) => response.json())
         .then((data) => {
           setIsSubmitting(false);
           if (data.success) {
-            setShowThankYou(true);
-            // Reset the form fields by setting the form data to an empty object
+            showAlert("Success", "Our team will contact you soon", "success");
             setFormData({
               name: "",
+              phoneNumber: "",
               email: "",
-              mobile: "",
             });
           } else {
-            // Handle cases where the server response indicates failure
+            showAlert(
+              "Failure",
+              "Error in submitting inquiry, contact us on call or email",
+              "error"
+            );
             console.error("Server response indicates failure:", data.message);
           }
         })
@@ -120,9 +128,9 @@ export const Homecollection = () => {
         });
     } else {
       setIsErrorOpen(true);
-      console.log("Form validation failed:", errors);
     }
   };
+
   const handleCloseError = () => {
     setIsErrorOpen(false);
   };
@@ -193,36 +201,6 @@ export const Homecollection = () => {
           </div>
         </div>
       </div>
-      <Stack spacing={2} sx={{ width: "100%" }}>
-        <Snackbar open={showThankYou} autoHideDuration={4000}>
-          <Alert
-            onClose={(()=>(setShowThankYou(!showThankYou)))}
-            severity="success"
-            sx={{ width: "100%" }}
-          >
-           Our team connect you too soon!
-          </Alert>
-        </Snackbar>
-      </Stack>
-      <Stack spacing={2} sx={{ width: "100%" }}>
-        {Object.values(errors).some((error) => error !== "") && (
-          <Snackbar
-            open={isErrorOpen}
-            autoHideDuration={400000}
-            onClose={handleCloseError}
-          >
-            <Alert
-              onClose={handleCloseError}
-              severity="error"
-              sx={{ width: "100%" }}
-            >
-              {Object.values(errors).map(
-                (error, index) => error !== "" && <div key={index}>{error}</div>
-              )}
-            </Alert>
-          </Snackbar>
-        )}
-      </Stack>
     </>
   );
 };

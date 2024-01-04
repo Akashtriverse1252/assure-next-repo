@@ -1,15 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import {
-  AiOutlineFileText,
-  AiOutlineFileImage,
-  AiOutlineFilePdf,
-  AiOutlineFileWord,
-} from "react-icons/ai";
 import { MdOutlineCancel } from "react-icons/md";
 import { IoCloudUploadOutline } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
-import { Alert, Snackbar, Stack, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 import Modal from "@mui/material/Modal";
 import axios from "axios";
 import { useData } from "@/context/context";
@@ -18,15 +12,19 @@ import { useAlert } from "@/context/AlerterContext";
 const API_URL =
   "http://assure.triverseadvertising.com/api/upload_prescription.php";
 
+const allowedTypes = new Set([
+  "image/jpeg",
+  "image/jpg",
+  "image/webp",
+  "image/png",
+  "application/pdf",
+  "application/msword",
+]);
+
 const UploadForm = () => {
   const { cartState, cartDispatch } = useData();
-  const [isOpen, setIsOpen] = useState(false);
-  const [isErrorOpen, setIsErrorOpen] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [alertColor, setAlertColor] = useState("");
-  const [alertMessage, setAlertMessage] = useState("");
-  const [fileUploadError, setFileUploadError] = useState("");
   const { showAlert } = useAlert();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [fileState, setFileState] = useState({
     fileName: "",
@@ -35,6 +33,7 @@ const UploadForm = () => {
     filePreview: null,
   });
 
+  const [uploadPrescription, setUploadPrescription] = useState();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -47,13 +46,11 @@ const UploadForm = () => {
     phone: "",
     email: "",
     files: "",
-    api: "",
-    uploadPrescription: "",
-    validation: "",
   });
 
   const handleFileChange = ({ target: { files, name, value } }) => {
     const selectedFile = files && files[0];
+    setUploadPrescription(selectedFile);
 
     setFormData((prevValues) => ({
       ...prevValues,
@@ -69,15 +66,6 @@ const UploadForm = () => {
   };
 
   const handleValidFile = (selectedFile) => {
-    const allowedTypes = new Set([
-      "image/jpeg",
-      "image/jpg",
-      "image/webp",
-      "image/png",
-      "application/pdf",
-      "application/msword",
-    ]);
-
     if (
       allowedTypes.has(selectedFile.type) &&
       selectedFile.size <= 2 * 1024 * 1024
@@ -128,24 +116,22 @@ const UploadForm = () => {
       files: errorMessage,
     }));
 
-    setFileUploadError(errorMessage);
-
+    showAlert("File Error", errorMessage, "error");
     console.error(errorMessage);
   };
 
   const handleImageFile = (selectedFile) => {
     const reader = new FileReader();
     reader.onload = (e) => {
-      setFileState(({ filePreview, ...prevState }) => ({
+      setFileState((prevState) => ({
         ...prevState,
-        filePreview: e.target.result,
+        filePreview:
+          prevState.uploadPrescription === selectedFile.name
+            ? prevState.filePreview
+            : e.target.result,
       }));
     };
     reader.readAsDataURL(selectedFile);
-  };
-
-  const handleCancelAlertClick = () => {
-    setShowCannotUploadMessage(false);
   };
 
   const handleRemoveFileClick = () => {
@@ -164,7 +150,7 @@ const UploadForm = () => {
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
-          uploadPrescription: formData.uploadPrescription,
+          uploadPrescription: uploadPrescription,
         };
 
         const response = await axios.post(API_URL, formDataApi, {
@@ -172,32 +158,38 @@ const UploadForm = () => {
             "Content-Type": "multipart/form-data",
           },
         });
+
         console.log("this is the api response ", response);
 
         setIsSubmitting(false);
 
-        if (response.status === 200) {
-          // Green Alert for 200
-          setAlertColor("success");
-          setAlertMessage("Prescription Uploaded Successfully!");
-        } else if (response.status === 500 || response.status === 404) {
-          // Red Alert for 500 or 404
-          setAlertColor("error");
-          setAlertMessage(`Server Error: ${response.data}`);
-        } else {
-          // Blue Alert for other status codes
-          setAlertColor("info");
-          setAlertMessage(`Request Successful: ${response.data}`);
-        }
+        const alertType =
+          response.status === 200
+            ? "success"
+            : response.status === 500 || response.status === 404
+            ? "error"
+            : "info";
 
-        setIsOpen(true);
+        showAlert(
+          alertType,
+          response.data || `Request Successful: ${response.data}`,
+          alertType
+        );
+
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          uploadPrescription: "",
+        });
       } catch (error) {
         setIsSubmitting(false);
+        showAlert("Error", "Network error", "error");
         console.error("Error:", error);
         // Handle network errors here and display an error message to the user.
       }
     } else {
-      setIsErrorOpen(true);
+      showAlert("Error", "Fail to Submit form", "error");
     }
   };
 
@@ -205,52 +197,43 @@ const UploadForm = () => {
     let isValid = true;
     const newErrors = {};
 
-    if (formData.name.trim() === "") {
-      newErrors.name = "Name is required";
-      showAlert('Name', 'Name is required', 'error');
+    const showError = (field, message) => {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [field]: message,
+      }));
+      showAlert("Error", message, "error");
+      newErrors[field] = true;
       isValid = false;
-    }
+    };
 
-    if (formData.name.trim().length < 3) {
-      newErrors.name = "Name should have a minimum length of 3 characters";
-      isValid = false;
+    if (formData.name.trim() === "") {
+      showError("name", "Name is required");
+    } else if (formData.name.trim().length < 3) {
+      showError("name", "Name should have a minimum length of 3 characters");
     }
 
     if (formData.phone.trim() === "") {
-      newErrors.phone = "Phone number is required";
-      isValid = false;
+      showError("phone", "Phone Number is required");
     } else if (!/^[0-9]{10}$/.test(formData.phone)) {
-      newErrors.phone = "Invalid phone number format (should be 10 digits)";
-      isValid = false;
+      showError("phone", "Invalid Phone Number format (should be 10 digits)");
     }
 
     if (formData.email.trim() === "") {
-      newErrors.email = "Email is required";
-      isValid = false;
+      showError("email", "Email is required");
     } else {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(formData.email)) {
-        newErrors.email = "Invalid email format";
-        isValid = false;
+        showError("email", "Invalid email format");
       }
     }
 
-    // File validation
     if (!fileState.isFileUploaded) {
-      newErrors.files = "File is required";
-      isValid = false;
+      showError("files", "File is required");
     }
 
     setErrors(newErrors);
     return isValid;
-  };
-
-  const handleClose = () => {
-    setIsOpen(false);
-  };
-
-  const handleCloseError = () => {
-    setIsErrorOpen(false);
   };
 
   return (
@@ -296,6 +279,7 @@ const UploadForm = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleFileChange}
+                    error={errors.phone}
                   />
                   <TextField
                     label="Email"
@@ -307,6 +291,7 @@ const UploadForm = () => {
                     value={formData.email}
                     onChange={handleFileChange}
                     fullWidth
+                    error={errors.email}
                   />
                 </div>
                 <button
@@ -314,7 +299,9 @@ const UploadForm = () => {
                   className="button button--aylen button--round-l button--text-thick mt-3"
                   onClick={handleSubmit}
                 >
-                  <span className="check-icon">Submit</span>
+                  <span className="check-icon">
+                    {isSubmitting ? "Submitting..." : "SUBMIT"}
+                  </span>
                 </button>
               </div>
               <div className="drag-file-area col-7">
@@ -358,19 +345,6 @@ const UploadForm = () => {
               </div>
             </div>
 
-            {/* {showCannotUploadMessage && (
-              <div className="cannot-upload-message">
-                <AiOutlineFileText />
-                Please select a valid file (Image, PDF, or Word) less than 2MB
-                <div
-                  className="material-icons-outlined cancel-alert-button"
-                  onClick={handleCancelAlertClick}
-                >
-                  <MdOutlineCancel />
-                </div>
-              </div>
-            )} */}
-
             {fileState.isFileUploaded && (
               <div className="file-block">
                 <div className="file-info">
@@ -388,47 +362,6 @@ const UploadForm = () => {
           </div>
         </form>
       </Modal>
-
-      <Stack spacing={2} sx={{ width: "100%" }}>
-        <Snackbar open={isOpen} autoHideDuration={4000} onClose={handleClose}>
-          <Alert
-            onClose={handleClose}
-            severity="success"
-            sx={{ width: "100%" }}
-          >
-            Prescription Uploaded Successfully!
-          </Alert>
-        </Snackbar>
-      </Stack>
-
-      <Stack spacing={2} sx={{ width: "100%" }}>
-        {Object.values(errors).some((error) => error !== "") && (
-          <Snackbar
-            open={isErrorOpen}
-            autoHideDuration={4000}
-            onClose={handleCloseError}
-          >
-            <Alert
-              onClose={handleCloseError}
-              severity="error"
-              sx={{ width: "100%" }}
-            >
-              {Object.values(errors).map(
-                (error, index) => error !== "" && <div key={index}>{error}</div>
-              )}
-            </Alert>
-          </Snackbar>
-        )}
-      </Stack>
-      <Snackbar open={isOpen} autoHideDuration={4000} onClose={handleClose}>
-        <Alert
-          onClose={handleClose}
-          severity={alertColor}
-          sx={{ width: "100%" }}
-        >
-          {alertMessage}
-        </Alert>
-      </Snackbar>
     </>
   );
 };

@@ -4,64 +4,69 @@ import { Line } from "@/components/svg-components/Line";
 import { AdvancedTechnology } from "@/components/svg-components/AdvancedTechnology";
 import { Doctor } from "@/components/svg-components/Doctor";
 import { InternationalStandard } from "@/components/svg-components/InternationalStandard";
-import Aboutbanner from "../../public/about-us-banner.webp";
+import Aboutbanner from "../../public/aboutUSBanner.webp";
+import Mission from "../../public/mission.jpg";
 import Image from "next/image";
 import { AboutGradient } from "@/components/AboutGradient";
 import { ChooseAssure } from "@/components/ChooseAssure";
+import AboutDoctor from "@/components/svg-components/AboutDoctor";
 import { HForm } from "@/components/HForm";
 
 export const page = () => {
   return (
     <>
       <main className="d-flex flex-wrap float-start col-12">
-        {/* <section className="position-relative">
+        <section className="position-relative">
           <div className="gradient-layer"></div>
           <div className="container">
             <div className="row">
-              <div className="col-lg-9 col-md-8 col-xs-12 col-12 abt_banner">
+              <div className=" col-12 abt_banner">
                 <Image
                   src={Aboutbanner}
                   alt="Comprehensive Health Checkup"
-                  width={1220}
-                  height={730}
+                  width="100%"
+                  height="auto"
                 />
-              </div>
-              <div className="col-lg-3 col-md-4 col-xs-12 col-12 d-flex align-items-center">
-                <HForm />
               </div>
             </div>
           </div>
           <Dots className="hsection position-absolute svgwidth opacity-10" />
           <Line className="svgwidthline position-absolute opacity-10" />
-        </section> */}
+        </section>
         <section className="position-relative">
           <div className="container">
-            <div className="row">
-              <div className="title col-12 float-start text-center">
-                <h2>About us</h2>
-              </div>
-              <div className=" m-auto col-9 d-flex justify-content-center flex-direction-row  text-center">
-                <div className="col-xl-6 pull-right ml-auto d-flex justify-content-center text-left ">
-                  <p className="col-10 text-start">
-                    Assure Pathlabs is the best blood test pathalogy laboratory
-                    in Jalandhar, established in 2015 by Dr. Sanjay Wadhwa and
-                    Dr. Lovely Razdan with a commitment to excellence. Backed by
-                    NABH certification, Assure Pathlabs upholds international
-                    standards having adequate lab tests cost. Our commitment
-                    guarantees not just efficient service but also valuable
-                    advice, timely reports, unwavering support, and
-                    compassionate care because your well-being is our priority.
-                  </p>
+            <div className="web-container">
+              <div className="row">
+                <div className="title col-12 float-start text-center">
+                  <h2>Assure Pathlabs</h2>
                 </div>
-                <div className="col-xl-6">
-                  <div className="abt_img"></div>
+                <div className=" m-auto col-10 d-flex justify-content-center flex-direction-row  text-center">
+                  <div className=" d-flex justify-content-center text-left flex-column ">
+                    <p className=" ">
+                      Assure Pathlabs is the best blood test pathalogy
+                      laboratory in Jalandhar, established in 2015 by Dr. Sanjay
+                      Wadhwa and Dr. Lovely Razdan with a commitment to
+                      excellence. Backed by NABH certification, Assure Pathlabs
+                      upholds international standards having adequate lab tests
+                      cost.
+                    </p>
+                    <p className=" ">
+                      Our commitment guarantees not just efficient service but
+                      also valuable advice, timely reports, unwavering support,
+                      and compassionate care because your well-being is our
+                      priority.
+                    </p>
+                  </div>
+                  {/* <div className="abt_img col-5">
+                    <AboutDoctor />
+                  </div> */}
                 </div>
               </div>
             </div>
           </div>
-          <div className="bg-gradient-image abt_bg_img position-absolute col-12">
+          {/* <div className="bg-gradient-image abt_bg_img position-absolute col-12">
             <AboutGradient />
-          </div>
+          </div> */}
           <Dots className="hsection position-absolute svgwidth opacity-10" />
           <Line className="svgwidthline position-absolute opacity-10 bottom-0 end-0" />
         </section>
@@ -69,31 +74,37 @@ export const page = () => {
           <div className="container">
             <div className="web-container">
               <div className="row">
-                <div className="our-ethos col-10 mx-auto pt-4  mt-3 d-flex flex-column gap-5">
-                  <div className="our-ethos-item col-10 mx-auto d-flex justify-content-center align-item-center flex-row">
-                    <div className="our-ethos-title col-5 mx-auto d-flex align-items-center ">
-                      <h3 className="col-12 mx-auto text-center fw-bolder">
-                        OUR VISION
-                      </h3>
-                    </div>
-                    <div className="our-ethos-content col-7">
-                      <p>
-                        Become the most trusted and best pathology laboratory
-                        that ensures international standards in diagnostics.
-                      </p>
-                    </div>
+                <div className="ethos_cnt col-lg-10 d-flex">
+                  <div className="ethos_img">
+                    <Image
+                      src={Mission}
+                      alt="mission and vision"
+                      width="100%"
+                      height="auto"
+                    />
                   </div>
-                  <div className="our-ethos-item col-10 mx-auto d-flex justify-content-center align-item-center flex-row-reverse">
-                    <div className="our-ethos-title col-5 mx-auto d-flex align-items-center ">
-                      <h3 className="col-12 mx-auto text-center fw-bolder">
-                        OUR MISSION
-                      </h3>
+                  <div className="our-ethos d-flex flex-column ">
+                    <div className="our-ethos-item flex-center flex-column ">
+                      <div className="our-ethos-title d-flex align-items-center  ">
+                          OUR VISION
+                      </div>
+                      <div className="our-ethos-content ">
+                        <p>
+                          Become the most trusted and best pathology laboratory
+                          that ensures international standards in diagnostics.
+                        </p>
+                      </div>
                     </div>
-                    <div className="our-ethos-content col-7">
-                      <p>
-                        Our mission is to redefine healthcare accessibility and
-                        elevate diagnostic standards.
-                      </p>
+                    <div className="our-ethos-item flex-center flex-column">
+                      <div className="our-ethos-title  d-flex align-items-center  ">
+                          OUR MISSION
+                      </div>
+                      <div className="our-ethos-content ">
+                        <p>
+                          Our mission is to redefine healthcare accessibility
+                          and elevate diagnostic standards.
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>

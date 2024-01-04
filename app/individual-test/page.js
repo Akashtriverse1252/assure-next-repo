@@ -1,15 +1,66 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect, useRef } from "react";
 import { Dots } from "@/components/svg-components/Dots";
 import { Line } from "@/components/svg-components/Line";
-import data from "@/Data/test_data.json";
 import { TestCard } from "@/components/TestCard";
-import { BreadCrums } from "@/components/BreadCrums";
 import { usePathname } from "next/navigation";
+import data from "@/Data/test_data.json";
 
-export const page = () => {
+export const Page = () => {
+  const [tests, setTests] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [page, setPage] = useState(0);
+
+  const pathname = usePathname();
+  const lastCardRef = useRef(null);
+
+  const fetchData = async () => {
+    try {
+      setLoading(true);
+      const response = await fetch(
+        `http://assure.triverseadvertising.com/api/fetch_details.php?category=test&start=${page}&limit=12`
+      );
+      const newData = await response.json();
+      setTests((prevTests) => [...prevTests, ...newData.test_data]);
+      setPage((prevPage) => prevPage + 10);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData(); // Fetch initial data when the component mounts
+  }, []);
+
+  const handleIntersection = (entries) => {
+    const target = entries[0];
+    if (target.isIntersecting && !loading) {
+      fetchData();
+    }
+  };
+
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.1,
+  });
+
+  useEffect(() => {
+    if (lastCardRef.current) {
+      observer.observe(lastCardRef.current);
+    }
+
+    return () => {
+      if (lastCardRef.current) {
+        observer.unobserve(lastCardRef.current);
+      }
+    };
+  }, [lastCardRef, observer]);
+
   return (
     <>
-      {/* <BreadCrums PathName={pathname} /> */}
       <section className="position-relative">
         <div className="container">
           <div className="web-container">
@@ -19,7 +70,7 @@ export const page = () => {
               </div>
               <div className="col-12 float-start all-test">
                 <div className="row justify-content-center">
-                  {data.test_data.map((test, index) => (
+                  {tests.map((test, index) => (
                     <TestCard
                       key={index}
                       Slug={test.Slug}
@@ -35,9 +86,12 @@ export const page = () => {
                       BaseDirectory={"individual-test"}
                     />
                   ))}
+                  <div ref={lastCardRef}></div>
+                  {loading && <p>Loading...</p>}
                 </div>
               </div>
             </div>
+            {/* Dots and Line components */}
             <Dots className="hsection position-absolute svgwidth opacity-10 end-0 left-inherit" />
             <Line className="svgwidthline position-absolute opacity-10 top-20 start-0" />
           </div>
@@ -47,4 +101,4 @@ export const page = () => {
   );
 };
 
-export default page;
+export default Page;

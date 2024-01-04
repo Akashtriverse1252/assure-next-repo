@@ -1,11 +1,10 @@
 "use client";
 
 import React, { useEffect } from "react";
-import Snackbar from "@mui/material/Snackbar";
-import { Alert, Snackbar, Stack } from "@mui/material";
+import { Alert, AlertTitle, Snackbar, Stack } from "@mui/material";
 import { useAlert } from "@/context/AlerterContext";
 
-const Alert = () => {
+const Alerter = () => {
   const { alert, hideAlert } = useAlert();
 
   useEffect(() => {
@@ -45,4 +44,4 @@ const Alert = () => {
   );
 };
 
-export default Alert;
+export default Alerter;

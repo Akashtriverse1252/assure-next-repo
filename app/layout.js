@@ -14,6 +14,7 @@ import { BreadCrums } from "@/components/BreadCrums";
 import UploadForm from "@/components/UploadForm";
 import CookiesConset from "@/components/CookiesConset";
 import { AlertProvider } from "@/context/AlerterContext";
+import Alert from "@/components/Alert";
 const AvertaStd = localFont({
   src: "./font/AvertaStd-Regular.woff2",
   display: "swap",
@@ -37,6 +38,7 @@ export default function RootLayout({ children }) {
               <Header />
               <BreadCrums />
               <Cart />
+              <Alert />
               {children}
               {/* {children} */}
               <Footer />

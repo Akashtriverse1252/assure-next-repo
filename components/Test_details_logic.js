@@ -1,21 +1,55 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Rupees } from "./svg-components/Rupees";
 import { Cart } from "./svg-components/Cart";
 import Bin from "./svg-components/Bin";
+import NoData from "./svg-components/NoData";
 import { useData } from "@/context/context";
 import data from "../Data/test_data.json";
 import { Faq } from "./Faq";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-export const Test_details_logic = ({ Slug }) => {
+import { AccordionComponent } from "@/components/Accordian";
+import { ChooseAssure } from "@/components/ChooseAssure";
+import { useAlert } from "@/context/AlerterContext";
+
+export const Test_details_logic = ({ Slug, Category }) => {
   const router = useRouter();
   const { cartState, cartDispatch } = useData();
   const [isInCart, setIsInCart] = useState(false);
-  const project = data.test_data.find((p) => p.Slug === Slug) || null;
+  const [project, setProject] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const { showAlert } = useAlert();
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `http://assure.triverseadvertising.com/api/fetch_details.php?category=${Category}&slug=${Slug}`
+        );
+        // if (response.test_data && response.test_data.length > 0) {
+        //   setProject(response.test_data[0]);
+        // } else {
+        //   showAlert("Info", "No data found", "info");
+        // }
+        const data = await response.json();
+        setProject(data.test_data[0]);
+        if (data.test_data.length === 0) {
+          showAlert("info", "no data is found", "info");
+          // console.log("no data is found");
+        }
+        // console.log("this is the api data", data);
+      } catch (error) {
+        // console.error("Error fetching data:", error);
+        showAlert("Error", "network Error", "error");
+      } finally {
+        setLoading(false);
+      }
+    };
 
+    fetchData();
+  }, [Slug]);
   const _discount = project?.Test_Amount
     ? (
         ((project.Test_Amount - project.Discount_Amount) /
@@ -39,7 +73,7 @@ export const Test_details_logic = ({ Slug }) => {
         id: project.id,
         name: project.Test_Name,
         price: project.Test_Amount,
-        dis_price: project.Discount_Amount,   
+        dis_price: project.Discount_Amount,
         quantity: 1,
         discount: _discount,
       };
@@ -70,10 +104,14 @@ export const Test_details_logic = ({ Slug }) => {
     // Redirect to the desired page
     router.push("/check-out");
   };
-
+  // console.log("thsi is the data from the state store", project);
   return (
     <>
-      {project && (
+      {loading ? (
+        <div className="_loader_cnt col-12 d-flex justify-content-center">
+          <div className="_loader"></div>
+        </div>
+      ) : project ? (
         <div className="row">
           <div className="title col-12 float-start text-center">
             <h2>{project.Test_Name}</h2>
@@ -170,7 +208,7 @@ export const Test_details_logic = ({ Slug }) => {
             )}
             {project.Who_is_it_for && (
               <div className="detailrow">
-                <div className="row">
+                <div className="row align-item-start">
                   <div className="detailtitle col-lg-3 col-md-4 col-12">
                     <p>
                       <strong>Who is it for</strong>
@@ -212,6 +250,61 @@ export const Test_details_logic = ({ Slug }) => {
                     <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
                       <p>{project.Pre_test_information}</p>
                     </div>
+                  </div>
+                </div>
+              </div>
+            )}
+            <div className="detailrow ">
+              <div className="row gap-md-2 gap-lg-0 justify-content-start align-items-start">
+                <div className="detailtitle col-lg-3 col-12">
+                  <p>
+                    <strong>Highlights</strong>
+                  </p>
+                </div>
+                <div className="detaildescrp col-lg-9 col-md-11 col-12 ">
+                  <div className="highlights flex-center px-md-3 flex-wrap gap-3 justify-content-start">
+                    {project.TestInfo.length ? (
+                      <p>
+                        <strong>{project.TestInfo.length} </strong>
+                        Parameters
+                      </p>
+                    ) : null}
+
+                    <p>
+                      <strong>FREE</strong> Sample Collection
+                    </p>
+                    <p>
+                      <strong>FREE</strong> Report Counselling
+                    </p>
+                    <p>
+                      Test booked so far: <strong>200</strong>
+                    </p>
+                    <p>
+                      Report Time: <strong>Same Day</strong>
+                    </p>
+                    <p>
+                      Fasting: Overnight <strong>8 hours</strong>
+                    </p>
+                    <p>
+                      Test Recommended for <strong>Male</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {project.TestInfo && (
+              <div className="detailrow ">
+                <div className="row justify-content-start align-items-start">
+                  <div className="detailtitle col-lg-3 col-12">
+                    <p>
+                      <strong>
+                        Test Details <br />
+                        {/* (Parameters included : {lengthOfTestInfo}) */}
+                      </strong>
+                    </p>
+                  </div>
+                  <div className="detaildescrp col-lg-9 col-md-11 px-md-3 col-12">
+                    <AccordionComponent ParameterData={project.TestInfo} cat={project.category} />
                   </div>
                 </div>
               </div>
@@ -261,8 +354,13 @@ export const Test_details_logic = ({ Slug }) => {
             </div>
           </div>
         </div>
+      ) : (
+        <div className="No_Data d-flex justify-content-center col-12">
+          <NoData />
+          {/* No data Found... */}
+        </div>
       )}
-      <section id="faq" className="faq pt-5 ">
+      <section id="faq" className="faq pt-5 col-12 ">
         <div className="row">
           <div className="title col-12 float-start text-center">
             <h2 className="">Frequently Asked Questions.</h2>

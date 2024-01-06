@@ -15,11 +15,24 @@ export const Footer = () => {
   const buttonRef1 = useRef(null);
   const buttonRef2 = useRef(null);
   const { cartState, cartDispatch } = useData();
+  const [tabData, setTabData] = useState([]);
+
+  const fetchTabData = async (category) => {
+    try {
+      const response = await fetch(
+        `http://assure.triverseadvertising.com/api/fetch_details.php?category=${category}`
+      );
+      const data = await response.json();
+      setTabData(data.test_data);
+      console.log(data.test_data);
+    } catch (error) {
+      console.error(`Error fetching ${category} data:`, error);
+    }
+  };
 
   const getWidth = () => {
     const activeButtonRef = selectedTab === 1 ? buttonRef1 : buttonRef2;
     const buttonRect = activeButtonRef.current.getBoundingClientRect();
-    // const buttonWidth = buttonRect.width;
     setButtonWidth(buttonRect.width);
     const width1ref = buttonRef1.current.getBoundingClientRect();
     setButtonWidth2(width1ref.width);
@@ -28,9 +41,10 @@ export const Footer = () => {
   useEffect(() => {
     getWidth();
   }, [selectedTab]);
-  const packageData = data.test_data.filter(
-    (item) => item.category === "package"
-  );
+
+  useEffect(() => {
+    fetchTabData(selectedTab === 1 ? "test" : "package");
+  }, [selectedTab]);
 
   return (
     <>
@@ -76,12 +90,17 @@ export const Footer = () => {
                   </div>
 
                   <div className="_acc_cnt">
-                    {selectedTab === 1 ? (
+                    {selectedTab === 1 || selectedTab === 2 ? (
                       <div className="footer_tabs">
                         <ul className="flex-center">
                           <li>
-                            {data.test_data.map((test, index) => (
-                              <Link key={test.id}  href={`/test-detail/${test.Slug}`}>
+                            {tabData.map((test, index) => (
+                              <Link
+                                key={test.id}
+                                href={`/${
+                                  selectedTab === 1 ? "test-detail" : "packages"
+                                }/${test.Slug}`}
+                              >
                                 {" "}
                                 {test.Test_Name}
                               </Link>
@@ -90,22 +109,6 @@ export const Footer = () => {
                         </ul>
                       </div>
                     ) : null}
-                    {selectedTab === 2 && (
-                      <div className="footer_tabs">
-                        <div className="footer_tabs">
-                          <ul className="flex-center">
-                            <li>
-                              {packageData.map((test, index) => (
-                                <Link key={test.id}  href={`/packages/${test.Slug}`}>
-                                  {" "}
-                                  {test.Test_Name}
-                                </Link>
-                              ))}
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    )}
                   </div>
                 </div>
               </div>

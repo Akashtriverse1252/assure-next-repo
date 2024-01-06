@@ -18,6 +18,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { Videos } from "@/components/Videos";
 import { Faq } from "@/components/Faq";
 import Link from "next/link";
+import Aos from "aos";
 
 export default function Home() {
   return (

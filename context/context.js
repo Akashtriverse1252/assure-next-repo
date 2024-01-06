@@ -232,7 +232,7 @@ const GlobalDataProvider = ({ children }) => {
       }
     );
 
-    console.log("this is the cart state", cartState.isCookiesAllowed);
+    // console.log("this is the cart state", cartState.isCookiesAllowed);
     // updateCookiesAllowed(cartState.isCookiesAllowed);
   }, [cartState.isCookiesAllowed]);
 

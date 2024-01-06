@@ -9,7 +9,7 @@ import {
   AccordionItemPanel,
 } from "react-accessible-accordion";
 
-export const AccordionComponent = ({ ParameterData }) => {
+export const AccordionComponent = ({ ParameterData, cat }) => {
   return (
     <div className="faqcont col-lg-11 col-12">
       <Accordion allowZeroExpanded={true}>
@@ -18,7 +18,10 @@ export const AccordionComponent = ({ ParameterData }) => {
             {item.count === 1 ? (
               <AccordionItemHeading>
                 <AccordionItemButton>
-                  <Link href={`/parameter/${item.slug}`}>{item.testName}</Link>
+                  <Link href={`/parameter/${item.slug}`}>
+                  {/* <Link href={`/parameter/${item.slug}?c=${cat}`}> */}
+                    {item.testName}
+                  </Link>
                 </AccordionItemButton>
               </AccordionItemHeading>
             ) : (

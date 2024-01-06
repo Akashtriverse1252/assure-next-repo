@@ -5,6 +5,7 @@ import { Line } from "@/components/svg-components/Line";
 import { TestCard } from "@/components/TestCard";
 import { usePathname } from "next/navigation";
 import data from "@/Data/test_data.json";
+import { useAlert } from "@/context/AlerterContext";
 
 export const Page = () => {
   const [tests, setTests] = useState([]);
@@ -13,10 +14,12 @@ export const Page = () => {
 
   const pathname = usePathname();
   const lastCardRef = useRef(null);
+  const { showAlert } = useAlert();
 
   const fetchData = async () => {
     try {
       setLoading(true);
+
       const response = await fetch(
         `http://assure.triverseadvertising.com/api/fetch_details.php?category=test&start=${page}&limit=12`
       );
@@ -25,24 +28,34 @@ export const Page = () => {
       setPage((prevPage) => prevPage + 10);
     } catch (error) {
       console.error("Error fetching data:", error);
+      showAlert("Error", "network Error", "error");
     } finally {
       setLoading(false);
     }
   };
 
+  let timeoutId;
+
   const handleScroll = () => {
-    const lastCard = lastCardRef.current;
-    if (lastCard) {
-      const { top } = lastCard.getBoundingClientRect();
-      const isAtBottom = top <= window.innerHeight;
-      if (isAtBottom && !loading) {
-        fetchData();
-      }
+    if (timeoutId) {
+      // Clear any existing timeout to debounce the function
+      clearTimeout(timeoutId);
     }
+
+    timeoutId = setTimeout(() => {
+      const lastCard = lastCardRef.current;
+      if (lastCard) {
+        const { top, bottom } = lastCard.getBoundingClientRect();
+        const isAtBottom = top <= window.innerHeight && bottom >= 0;
+        if (isAtBottom && !loading) {
+          fetchData();
+        }
+      }
+    }, 250); // Adjust the debounce time (in milliseconds) as needed
   };
 
   useEffect(() => {
-    fetchData(); // Fetch initial data when the component mounts
+    fetchData();
   }, []);
 
   useEffect(() => {
@@ -52,11 +65,10 @@ export const Page = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [loading, page]);
+  console.log("is loading", loading);
 
   return (
     <>
-      {/* Your existing code */}
-      {/* <BreadCrums PathName={pathname} /> */}
       <section className="position-relative">
         <div className="container">
           <div className="web-container">
@@ -64,6 +76,7 @@ export const Page = () => {
               <div className="title col-12 float-start text-center">
                 <h2>Individual Test</h2>
               </div>
+
               <div className="col-12 float-start all-test">
                 <div className="row justify-content-center">
                   {tests.map((test, index) => (
@@ -83,7 +96,11 @@ export const Page = () => {
                     />
                   ))}
                   <div ref={lastCardRef}></div>
-                  {loading && <p>Loading...</p>}
+                  {loading && (
+                    <div className="_loader_cnt col-12 d-flex justify-content-center">
+                      <div class="_loader"></div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

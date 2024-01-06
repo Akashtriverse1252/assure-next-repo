@@ -11,7 +11,7 @@ export const page = ({ params: { slug } }) => {
         <section>
           <div className="container">
             <div className="web-container">
-              <Test_details_logic Slug={slug} data={data} />
+              <Test_details_logic Slug={slug} data={data} Category="test" />
             </div>
           </div>
         </section>

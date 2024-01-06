@@ -14,6 +14,7 @@ export default function Cart() {
   const convertToNumber = (value) => {
     return parseFloat(value);
   };
+  // console.log("cart is empty ", cartState.products.length == 0)
 
   // Calculate subtotal, totalDiscount, and discountedPrice
   const calculateTotals = () => {
@@ -159,22 +160,27 @@ export default function Cart() {
                   </div>
                   <div className="mt-sm-6 mt-2  cart_btn">
                     <Link
-                      href="/check-out"
+                      href={
+                        !cartState.products.length === 0 ? "/check-out" : ""
+                      }
                       onClick={() => cartDispatch({ type: "TOGGLE_CART" })}
-                      className="button button--aylen button--round-l button--text-thick mt-sm-3"
+                      className={`button button--aylen button--round-l button--text-thick mt-sm-3 {${
+                        cartState.products.length == 0
+                      }?"disabled":""}`}
+                      disabled={cartState.products.length === 0}
                     >
                       Checkout
                     </Link>
                   </div>
                   <div className="mt-sm-6 mt-2 mb-2 d-flex justify-content-center text-center text-sm text-gray-500">
-                    <button
-                      type="button"
+                    <Link
                       className="cnt_shp_btn textbtn"
                       onClick={isOpen}
+                      href="/serach"
                     >
                       Continue Search
                       <span aria-hidden="true"> &rarr;</span>
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>

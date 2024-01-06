@@ -67,7 +67,7 @@ const CookiesConset = () => {
           </div>
           <div className="d-flex gap-4 items-center">
             <div onClick={handleAllowCookies} className="textbtn">
-              Allow Cookies
+              Allow 
             </div>
             <div onClick={handleDecline} className="textbtn decline">
               Decline

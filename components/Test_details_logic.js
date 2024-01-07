@@ -65,10 +65,9 @@ export const Test_details_logic = ({ Slug, Category }) => {
   const handleToggleCart = () => {
     if (cartIds.includes(project.id)) {
       // Remove product from cart logic here
-      // cartDispatch({ type: "REMOVE", productId: project.id });
+      cartDispatch({ type: "REMOVE", productId: project.id });
     } else {
       // Add product to cart logic here
-      cartDispatch({ type: "TOGGLE_CART" });
       const product = {
         id: project.id,
         name: project.Test_Name,
@@ -93,6 +92,9 @@ export const Test_details_logic = ({ Slug, Category }) => {
           type: "ADD_TO_CART",
           product,
         });
+      }
+      if (!cartState.cartVisible) {
+        cartDispatch({ type: "TOGGLE_CART" });
       }
     }
 
@@ -304,7 +306,10 @@ export const Test_details_logic = ({ Slug, Category }) => {
                     </p>
                   </div>
                   <div className="detaildescrp col-lg-9 col-md-11 px-md-3 col-12">
-                    <AccordionComponent ParameterData={project.TestInfo} cat={project.category} />
+                    <AccordionComponent
+                      ParameterData={project.TestInfo}
+                      cat={project.category}
+                    />
                   </div>
                 </div>
               </div>

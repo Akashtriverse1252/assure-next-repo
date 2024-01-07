@@ -6,7 +6,7 @@ import SearchBar from "./SearchBar";
 import { PiArrowLeftThin } from "react-icons/pi";
 import { DropDown_search } from "./DropDown_search";
 import { usePathname } from "next/navigation";
-import { RiSearch2Line } from "react-icons/ri";
+import { BsSearch } from "react-icons/bs";
 
 const MobileSearchBar = () => {
   const [isSearchOpen, setSearchOpen] = useState(false);
@@ -16,11 +16,13 @@ const MobileSearchBar = () => {
   }, [pathname]);
   return (
     <>
-      <RiSearch2Line
-        onClick={() => {
-          setSearchOpen(!isSearchOpen);
-        }}
-      />
+      <span className="search_icon">
+        <BsSearch className="search_icon"
+          onClick={() => {
+            setSearchOpen(!isSearchOpen);
+          }}
+        />
+      </span>
       {/* <iframe
         onClick={() => {
           setSearchOpen(!isSearchOpen);

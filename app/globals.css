@@ -3282,3 +3282,6 @@ button:disabled{
 .unsetAll{
   all: unset;
 }
+.search_icon{
+  width: 23px;
+}

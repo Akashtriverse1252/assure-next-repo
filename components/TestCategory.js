@@ -3,7 +3,7 @@
 import React from "react";
 import { TestCard } from "@/components/TestCard";
 import { useAlert } from "@/context/AlerterContext";
-const TestCategory = ({Slug}) => {
+const TestCategory = ({ Slug }) => {
   const [project, setProject] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
   const { showAlert } = useAlert();
@@ -30,10 +30,10 @@ const TestCategory = ({Slug}) => {
 
     fetchData();
   }, [Slug]);
-  
+
   // Check if project is not null before filtering
   const filtered_slug_data =
-  project && project.filter((p) => p.Test_Category === Slug);
+    project && project.filter((p) => p.Test_Category === Slug);
   console.log("this is the page slug", filtered_slug_data);
 
   return (
@@ -44,7 +44,7 @@ const TestCategory = ({Slug}) => {
             <div className="_loader"></div>
           </div>
         ) : project ? (
-          <div className="row">
+          <>
             <div className="title col-12 float-start text-center">
               <h3>{Slug} Test</h3>
             </div>
@@ -75,7 +75,7 @@ const TestCategory = ({Slug}) => {
                 )}
               </div>
             </div>
-          </div>
+          </>
         ) : (
           <div className="No_Data d-flex justify-content-center col-12">
             {/* Make sure NoData component is imported */}

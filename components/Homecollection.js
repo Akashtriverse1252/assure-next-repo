@@ -193,10 +193,10 @@ export const Homecollection = () => {
           </button>
         </form>
         <div className="col-12 float-start cta flex-center justify-content-center">
-          <div className="col-lg-5 col-xs-6 col-12 grid-center text-center gap-1 whatsapp">
+          <div className="col-lg-5 col-xs-6 col-6 grid-center text-center gap-1 whatsapp">
             <WhatsApp /> <p>WhatsApp</p>
           </div>
-          <div className="col-lg-5 col-xs-6 col-12 grid-center text-center gap-1 call">
+          <div className="col-lg-5 col-xs-6 col-6 grid-center text-center gap-1 call">
             <Call /> <p>Call</p>
           </div>
         </div>

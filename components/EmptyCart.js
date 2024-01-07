@@ -14,6 +14,7 @@ const EmptyCart = () => {
       <div className="add_item text-center">
         <h4>Your cart is empty.</h4>
         <p>Add item to your cart</p>
+          
       </div>
     </>
   );

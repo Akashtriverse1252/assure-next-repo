@@ -3,6 +3,7 @@
 import { useData } from "@/context/context";
 import React, { Fragment, useState } from "react";
 import { IoIosArrowRoundBack } from "react-icons/io";
+import { RiCloseFill } from "react-icons/ri";
 import { LuX } from "react-icons/lu";
 import EmptyCart from "./EmptyCart";
 import Link from "next/link";
@@ -64,14 +65,14 @@ export default function Cart() {
             <div className="h-100 ">
               <div className="d-flex flex-column h-100 bg-white shadow-xl">
                 <div className="flex-grow-1 overflow-auto px-sm-4 py-6 sm:px-6">
-                  <div className="_cart_header d-flex justify-content-between align-items-center">
+                  <div className="_cart_header d-flex justify-content-between align-items-center flex-row-reverse ">
                     <div className="ml-3 d-flex h-7 align-items-center">
                       <button
                         type="button"
                         className=" _cart_back_icon"
                         onClick={isOpen}
                       >
-                        <IoIosArrowRoundBack className="" />
+                        <RiCloseFill />
                       </button>
                     </div>
                     <div className="_cart_heading">My Cart</div>
@@ -160,9 +161,7 @@ export default function Cart() {
                   </div>
                   <div className="mt-sm-6 mt-2  cart_btn">
                     <Link
-                      href={
-                        !cartState.products.length === 0 ? "/check-out" : ""
-                      }
+                      href="/check-out"
                       onClick={() => cartDispatch({ type: "TOGGLE_CART" })}
                       className={`button button--aylen button--round-l button--text-thick mt-sm-3 {${
                         cartState.products.length == 0
@@ -176,7 +175,7 @@ export default function Cart() {
                     <Link
                       className="cnt_shp_btn textbtn"
                       onClick={isOpen}
-                      href="/serach"
+                      href="/individual-test"
                     >
                       Continue Search
                       <span aria-hidden="true"> &rarr;</span>

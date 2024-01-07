@@ -23,7 +23,7 @@ import Aos from "aos";
 export default function Home() {
   return (
     <main className="d-flex flex-wrap float-start col-12">
-      <section className="position-relative pt-4">
+      <section className="position-relative pt-md-4">
         <div className="gradient-layer"></div>
         <div className="container">
           <div className="row gap-sm-3 gap-md-0  ">

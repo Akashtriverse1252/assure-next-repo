@@ -3275,13 +3275,53 @@ label.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
   width: 50%;
 }
 .disabled,
-button:disabled{
+button:disabled {
   cursor: not-allowed;
   filter: grayscale(0.3);
 }
-.unsetAll{
+.unsetAll {
   all: unset;
 }
-.search_icon{
+.search_icon {
   width: 23px;
+}
+.main_loader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_loader_sec {
+  width: 33.33333333334%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #000;
+  background-color: #000;
+}
+.main_loader_svg {
+  height: 300px;
+  margin: auto;
+}
+.main_loader_svg .fil0 {
+  fill: #fff;
+  fill-rule: nonzero;
+}
+/* .string_right {
+  fill: #0000ff !important;
+} */
+
+.string_right {
+  stroke: blue; 
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000; 
+  animation: fillBottomToTop 2s forwards;
+}
+
+@keyframes fillBottomToTop {
+  to {
+    stroke-dashoffset: 0; 
+  }
 }

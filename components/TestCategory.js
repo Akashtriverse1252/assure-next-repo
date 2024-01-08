@@ -12,13 +12,13 @@ const TestCategory = ({ Slug }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://assure.triverseadvertising.com/api/fetch_details.php?category=test`
+          `https://www.assurepathlabs.com/api/algos/fetch_details.php?category=test`
         );
         const data = await response.json();
         setProject(data.test_data);
         if (data.test_data.length === 0) {
           showAlert("info", "no data is found", "info");
-          // console.log("no data is found"); 
+          // console.log("no data is found");
         }
         console.log("this is the api data", data);
       } catch (error) {

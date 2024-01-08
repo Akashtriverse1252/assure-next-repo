@@ -26,7 +26,7 @@ export const Test_details_logic = ({ Slug, Category }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://assure.triverseadvertising.com/api/fetch_details.php?category=${Category}&slug=${Slug}`
+          `https://www.assurepathlabs.com/api/algos/fetch_details.php?category=${Category}&slug=${Slug}`
         );
         // if (response.test_data && response.test_data.length > 0) {
         //   setProject(response.test_data[0]);

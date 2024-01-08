@@ -21,7 +21,7 @@ export const Page = () => {
       setLoading(true);
 
       const response = await fetch(
-        `http://assure.triverseadvertising.com/api/fetch_details.php?category=test&start=${page}&limit=12`
+        `https://www.assurepathlabs.com/api/algos/fetch_details.php?category=test&start=${page}&limit=12`
       );
       const newData = await response.json();
       setTests((prevTests) => [...prevTests, ...newData.test_data]);

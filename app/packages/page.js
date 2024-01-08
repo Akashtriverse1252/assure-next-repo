@@ -1,17 +1,71 @@
+"use client";
+import React, { useState, useEffect, useRef } from "react";
 import { Dots } from "@/components/svg-components/Dots";
 import { Line } from "@/components/svg-components/Line";
-import { Rupees } from "@/components/svg-components/Rupees";
-import React from "react";
-// import data from "@/Data/All_packages.json";
 import { TestCard } from "@/components/TestCard";
-import { PackagCard } from "@/components/PackagCard";
+import { usePathname } from "next/navigation";
 import data from "@/Data/test_data.json";
+import { useAlert } from "@/context/AlerterContext";
 
-export const page = () => {
-  // console.log("this is the data", data.test_data);
-  const packageData = data.test_data.filter(
-    (item) => item.category === "package"
-  );
+export const Page = () => {
+  const [tests, setTests] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [page, setPage] = useState(0);
+
+  const pathname = usePathname();
+  const lastCardRef = useRef(null);
+  const { showAlert } = useAlert();
+
+  const fetchData = async () => {
+    try {
+      setLoading(true);
+
+      const response = await fetch(
+        `http://assure.triverseadvertising.com/api/fetch_details.php?category=package&start=${page}&limit=12`
+      );
+      const newData = await response.json();
+      setTests((prevTests) => [...prevTests, ...newData.test_data]);
+      setPage((prevPage) => prevPage + 10);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      showAlert("Error", "network Error", "error");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  let timeoutId;
+
+  const handleScroll = () => {
+    if (timeoutId) {
+      // Clear any existing timeout to debounce the function
+      clearTimeout(timeoutId);
+    }
+
+    timeoutId = setTimeout(() => {
+      const lastCard = lastCardRef.current;
+      if (lastCard) {
+        const { top, bottom } = lastCard.getBoundingClientRect();
+        const isAtBottom = top <= window.innerHeight && bottom >= 0;
+        if (isAtBottom && !loading) {
+          fetchData();
+        }
+      }
+    }, 250); // Adjust the debounce time (in milliseconds) as needed
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [loading, page]);
+  console.log("is loading", loading);
 
   return (
     <>
@@ -20,26 +74,37 @@ export const page = () => {
           <div className="web-container">
             <div className="row">
               <div className="title col-12 float-start text-center">
-                <h2>HEALTH CHECK-UP PACKAGES</h2>
+                <h2>Individual Test</h2>
               </div>
+
               <div className="col-12 float-start all-test">
                 <div className="row justify-content-center">
-                  {packageData.map((test, index) => (
-                    <PackagCard
+                  {tests.map((test, index) => (
+                    <TestCard
                       key={index}
+                      Slug={test.Slug}
                       Test_Name={test.Test_Name}
-                      Test_for={test.Test_Name}
-                      Test_Amount={parseInt(test.Test_Amount)}
-                      Discount_Amount={parseInt(test.Discount_Amount)}
-                      Test_info={test.TestInfo || []}
-                      Number_test={test.TestInfo ? test.TestInfo.length : 0}
-                      Test_Slug={test.Slug}
-                      BaseDirectory={"package"}
+                      Test_Amount={test.Test_Amount}
+                      Discount_Amount={test.Discount_Amount}
+                      Test_Category={test.Test_Category}
+                      Test_ID={test.Test_ID}
+                      Test_Description={test.Test_Description}
+                      Who_is_it_for={test.Who_is_it_for}
+                      Pre_test_information={test.Pre_test_information}
+                      Turn_around_time={test.Turn_around_time}
+                      BaseDirectory={"individual-test"}
                     />
                   ))}
+                  <div ref={lastCardRef}></div>
+                  {loading && (
+                    <div className="_loader_cnt col-12 d-flex justify-content-center">
+                      <div class="_loader"></div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
+            {/* Dots and Line components */}
             <Dots className="hsection position-absolute svgwidth opacity-10 end-0 left-inherit" />
             <Line className="svgwidthline position-absolute opacity-10 top-20 start-0" />
           </div>
@@ -49,4 +114,4 @@ export const page = () => {
   );
 };
 
-export default page;
+export default Page;

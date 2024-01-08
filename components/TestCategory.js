@@ -3,6 +3,7 @@
 import React from "react";
 import { TestCard } from "@/components/TestCard";
 import { useAlert } from "@/context/AlerterContext";
+import NoData from "./svg-components/NoData";
 const TestCategory = ({ Slug }) => {
   const [project, setProject] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
@@ -17,7 +18,7 @@ const TestCategory = ({ Slug }) => {
         setProject(data.test_data);
         if (data.test_data.length === 0) {
           showAlert("info", "no data is found", "info");
-          console.log("no data is found");
+          // console.log("no data is found"); 
         }
         console.log("this is the api data", data);
       } catch (error) {

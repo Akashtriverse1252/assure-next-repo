@@ -3335,6 +3335,14 @@ button:disabled {
 .main_loader_svg path {
   fill: none;
 }
+.main_loader_svg {
+  opacity: 1;
+  transform: opacity 0.2s linear;
+}
+.svg-opacity {
+  opacity: 0;
+  transform: opacity 0.2s linear;
+}
 /* .main_loader_svg path.string_right  {
   fill: #a09999;
   animation: fill 0.3s ease infinite ;

@@ -18,7 +18,7 @@ const Loader = (isLoading) => {
   };
 
   // Automatically hide loader after 3 seconds
-  const timeout = setTimeout(hideLoaderSec, 5000);
+  const timeout = setTimeout(hideLoaderSec, 5100);
   const timeoutId = setTimeout(hideLoader, 5800);
 
   // Cleanup the timeout to avoid memory leaks

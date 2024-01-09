@@ -23,8 +23,8 @@ const LogoDNA = () => {
         const strokeAnimation = path.animate(
           [{ strokeDashoffset: length }, { strokeDashoffset: 0 }],
           {
-            duration: 3000,
-            easing: "ease-out",
+            duration: 2500,
+            easing: "linear",
           }
         );
 
@@ -35,11 +35,15 @@ const LogoDNA = () => {
 
           // Animate the fill
           path.animate([{ fill: "transparent" }, { fill: "white" }], {
-            duration: 1000, // Adjust the duration as needed
+            duration: 1500, // Adjust the duration as needed
             easing: "ease-in-out", // You can use other easing functions
           });
         };
       });
+      setTimeout(() => {
+        svgElement.style.transition = "opacity 0.3s ease";
+        svgElement.style.opacity = "0";
+      }, 4200);
     }
   }, []);
   const svgStyle = {

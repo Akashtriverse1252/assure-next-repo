@@ -34,7 +34,7 @@ export default function RootLayout({ children, isLoading }) {
       <AlertProvider>
         <GlobalDataProvider>
           <body className={AvertaStd.className}>
-            {isLoading && <Loader isLoading={isLoading} />}
+            <Loader isLoading={isLoading} />
             {/* <SmoothScroll> */}
             <div className="">
               <Header />

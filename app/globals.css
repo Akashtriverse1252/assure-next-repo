@@ -3308,7 +3308,7 @@ button:disabled {
   height: 100%;
   background-color: #1e1e1e;
   flex: 1;
-  transition: height 0.3s ease-in-out;
+  transition: height 0.3s cubic-bezier(0.83, 0, 0.17, 1);
 }
 .main_loader_sec:nth-child(2) {
   border-left: 1px solid #5a5a5a;

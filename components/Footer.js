@@ -24,7 +24,7 @@ export const Footer = () => {
       );
       const data = await response.json();
       setTabData(data.test_data);
-      console.log(data.test_data);
+      // console.log(data.test_data);
     } catch (error) {
       console.error(`Error fetching ${category} data:`, error);
     }

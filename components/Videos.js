@@ -19,7 +19,7 @@ export const Videos = (props) => {
     setVideoLoading(false);
     setIsVideoPlaying(false);
   };
-  console.log(isVideoPlaying);
+  // console.log(isVideoPlaying);
   const settings = {
     dots: false,
     infinite: true,

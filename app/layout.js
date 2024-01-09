@@ -15,6 +15,7 @@ import UploadForm from "@/components/UploadForm";
 import CookiesConset from "@/components/CookiesConset";
 import { AlertProvider } from "@/context/AlerterContext";
 import Alert from "@/components/Alert";
+import Loader from "@/components/Loader";
 const AvertaStd = localFont({
   src: "./font/AvertaStd-Regular.woff2",
   display: "swap",
@@ -27,12 +28,13 @@ export const metadata = {
     "Assure Pathlabs - Best Pathology Lab in Jalandhar | Get Best Health Chek -Up Packages in Jalandhar from Assure | Best diagnostic Labs in Jalandhar",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, isLoading }) {
   return (
     <html lang="en">
       <AlertProvider>
         <GlobalDataProvider>
           <body className={AvertaStd.className}>
+            {isLoading && <Loader isLoading={isLoading} />}
             {/* <SmoothScroll> */}
             <div className="">
               <Header />

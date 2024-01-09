@@ -19,7 +19,7 @@ const Loader = (isLoading) => {
 
   // Automatically hide loader after 3 seconds
   const timeout = setTimeout(hideLoaderSec, 3500);
-  const timeoutId = setTimeout(hideLoader, 3900);
+  const timeoutId = setTimeout(hideLoader, 4200);
 
   // Cleanup the timeout to avoid memory leaks
   useEffect(() => {

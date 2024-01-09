@@ -308,7 +308,6 @@ export const Test_details_logic = ({ Slug, Category }) => {
                   <div className="detaildescrp col-lg-9 col-md-11 px-md-3 col-12">
                     <AccordionComponent
                       ParameterData={project.TestInfo}
-                      cat={project.category}
                     />
                   </div>
                 </div>

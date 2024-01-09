@@ -3301,7 +3301,8 @@ button:disabled {
 }
 
 .main_loader_sec {
-  width: 33.33333333334%;
+  /* width: 33.33333333334%; */
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -3309,15 +3310,11 @@ button:disabled {
   /* background-color: #49108b; */
   background-color: #575aa8;
   flex: 1;
-  transition: height 0.3s cubic-bezier(0.83, 0, 0.17, 1);
-}
-.main_loader_sec:nth-child(2) {
-  /* border-left: 1px solid #5a5a5a; */
-  /* border-right: 1px solid #5a5a5a; */
+  transition: height 0.5s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
 .main_loader_sec {
-  transition-delay: 0.7s;
+  transition-delay: 0.8s;
 }
 .main_loader_sec:nth-child(2) {
   transition-delay: 0.4s;

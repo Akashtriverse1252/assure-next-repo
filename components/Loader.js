@@ -18,7 +18,7 @@ const Loader = (isLoading) => {
   };
 
   // Automatically hide loader after 3 seconds
-  const timeout = setTimeout(hideLoaderSec, 3200);
+  const timeout = setTimeout(hideLoaderSec, 3500);
   const timeoutId = setTimeout(hideLoader, 3900);
 
   // Cleanup the timeout to avoid memory leaks
@@ -31,11 +31,11 @@ const Loader = (isLoading) => {
         className={`main_loader ${isLoading ? "loaded" : ""}`}
         ref={mainLoaderRef}
       >
-        <div className="main_loader_sec"></div>
+        {/* <div className="main_loader_sec"></div> */}
         <div className="main_loader_sec">
           <LogoDNA />
         </div>
-        <div className="main_loader_sec"></div>
+        {/* <div className="main_loader_sec"></div> */}
       </div>
     </>
   );

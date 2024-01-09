@@ -1,52 +1,42 @@
 "use client";
 
 import LogoDNA from "@/components/svg-components/LogoDNA";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
-const Loader = () => {
-  const [isLoading, setIsLoading] = useState(false);
+const Loader = (isLoading) => {
+  const mainLoaderRef = useRef(null);
 
-  const handleToggle = () => {
-    setIsLoading((prevLoading) => !prevLoading);
-  };
+  // const hideLoader = () => {
+  //   if (mainLoaderRef.current) {
+  //     mainLoaderRef.current.classList.add("d-none");
+  //   }
+  // };
+  // const hideLoaderSec = () => {
+  //   document.querySelectorAll(".main_loader_sec").forEach((sec) => {
+  //     sec.classList.add("mainSecLoaderLoaded");
+  //   });
+  // };
 
-  useEffect(() => {
-    let timeout;
+  // // Automatically hide loader after 3 seconds
+  // const timeout = setTimeout(hideLoaderSec, 3200);
+  // // const timeoutId = setTimeout(hideLoader, 3900);
 
-    if (isLoading) {
-      document.querySelectorAll(".main_loader_sec").forEach((sec) => {
-        sec.classList.add("mainSecLoaderLoaded");
-      });
-
-      timeout = setTimeout(() => {
-        document
-          .querySelector(".main_loader")
-          .classList.add("main-loader-loaded");
-      }, 3000);
-    }
-
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, [isLoading]);
-
-  // .main_loader_sec.mainSecLoaderLoaded:nth-child(2) {
-  //   height: 0;
-  //   transition: height 0.2s ease-in-out 2s;
-  // }
-
+  // // Cleanup the timeout to avoid memory leaks
+  // useEffect(() => {
+  //   return () => clearTimeout(timeoutId, timeout);
+  // }, []);
   return (
     <>
-      <div className={`main_loader ${isLoading ? "loaded" : ""}`}>
+      <div
+        className={`main_loader ${isLoading ? "loaded" : ""}`}
+        ref={mainLoaderRef}
+      >
         <div className="main_loader_sec"></div>
         <div className="main_loader_sec">
           <LogoDNA />
-          <button onClick={handleToggle}>Toggle Loading</button>
-
         </div>
         <div className="main_loader_sec"></div>
       </div>
-
     </>
   );
 };

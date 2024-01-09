@@ -3306,17 +3306,17 @@ button:disabled {
   justify-content: center;
   align-items: flex-start;
   height: 100%;
-  background-color: #1e1e1e;
+  background-color: #49108b;
   flex: 1;
   transition: height 0.3s cubic-bezier(0.83, 0, 0.17, 1);
 }
 .main_loader_sec:nth-child(2) {
-  border-left: 1px solid #5a5a5a;
-  border-right: 1px solid #5a5a5a;
+  /* border-left: 1px solid #5a5a5a; */
+  /* border-right: 1px solid #5a5a5a; */
 }
 
 .main_loader_sec {
-  transition-delay: 0.8s;
+  transition-delay: 0.7s;
 }
 .main_loader_sec:nth-child(2) {
   transition-delay: 0.4s;
@@ -3329,7 +3329,7 @@ button:disabled {
 }
 
 .main_loader_svg {
-  height: 150px;
+  height: 100px;
   margin: auto;
 }
 .main_loader_svg path {

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import LogoDNA from "./svg-components/LogoDNA";
+import LogoDNA from "@/components/svg-components/LogoDNA";
 
 const Loader = (isLoading) => {
   const mainLoaderRef = useRef(null);
@@ -18,8 +18,8 @@ const Loader = (isLoading) => {
   };
 
   // Automatically hide loader after 3 seconds
-  const timeout = setTimeout(hideLoaderSec, 5100);
-  const timeoutId = setTimeout(hideLoader, 5800);
+  const timeout = setTimeout(hideLoaderSec, 3200);
+  const timeoutId = setTimeout(hideLoader, 3900);
 
   // Cleanup the timeout to avoid memory leaks
   useEffect(() => {

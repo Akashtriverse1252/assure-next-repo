@@ -23,7 +23,7 @@ const LogoDNA = () => {
         const strokeAnimation = path.animate(
           [{ strokeDashoffset: length }, { strokeDashoffset: 0 }],
           {
-            duration: 3500,
+            duration: 3000,
             easing: "ease-out",
           }
         );

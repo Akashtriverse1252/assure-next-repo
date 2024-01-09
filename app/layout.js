@@ -36,16 +36,18 @@ export default function RootLayout({ children, isLoading }) {
           <body className={AvertaStd.className}>
             <Loader isLoading={isLoading} />
             {/* <SmoothScroll> */}
-            <div className="">
-              <Header />
-              <BreadCrums />
-              <Cart />
-              <Alert />
-              {children}
-              {/* {children} */}
-              <Footer />
-              <UploadForm />
-            </div>
+            {!isLoading && (
+              <div className="">
+                <Header />
+                <BreadCrums />
+                <Cart />
+                <Alert />
+                {children}
+                {/* {children} */}
+                <Footer />
+                <UploadForm />
+              </div>
+            )}
             {/* </SmoothScroll> */}
           </body>
           <CookiesConset />

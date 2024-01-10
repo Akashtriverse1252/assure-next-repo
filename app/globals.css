@@ -3314,14 +3314,9 @@ button:disabled {
 }
 
 .main_loader_sec {
-  transition-delay: 0.8s;
+  transition-delay: 0.5s;
 }
-.main_loader_sec:nth-child(2) {
-  transition-delay: 0.4s;
-}
-.main_loader_sec:nth-child(3) {
-  transition-delay: 0.1s;
-}
+
 .main_loader_sec.mainSecLoaderLoaded {
   height: 0;
 }

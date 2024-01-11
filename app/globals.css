@@ -3151,6 +3151,7 @@ button:disabled {
   font-family: var(--font-family) !important;
   letter-spacing: 1px;
 }
+.css-1bp1ao6,
 label.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root,
 .css-mvoatl-MuiPaper-root-MuiAlert-root,
 .header_search input,
@@ -3174,8 +3175,8 @@ label.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root,
 .checkout_input div,
 .address input,
 .checkout_input input {
-  font-family: inherit !important;
-  letter-spacing: 1px;
+  font-family: var(--font-family) !important;
+  letter-spacing: 1.2px !important;
 }
 
 .css-mvoatl-MuiPaper-root-MuiAlert-root {

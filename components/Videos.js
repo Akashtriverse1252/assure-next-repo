@@ -9,7 +9,7 @@ import { BsYoutube } from "react-icons/bs";
 export const Videos = (props) => {
   const [selectedVideoIndex, setSelectedVideoIndex] = useState(null);
   const [videoLoading, setVideoLoading] = useState(false);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(true);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   const handleVideoClick = (index) => {
     setSelectedVideoIndex(index);
@@ -94,7 +94,7 @@ export const Videos = (props) => {
                     </div>
                     <iframe
                       width="400"
-                      height="215"
+                      height="250"
                       src={video.videoUrl}
                       title="YouTube video player"
                       frameBorder="0"
@@ -113,7 +113,7 @@ export const Videos = (props) => {
                       alt="gradient file"
                       width={400}
                       objectFit="cover"
-                      height={215}
+                      height={250}
                     />
                     <i>
                       <BsYoutube />

@@ -5,6 +5,7 @@ import { Rupees } from "./svg-components/Rupees";
 import { Cart } from "./svg-components/Cart";
 import Bin from "./svg-components/Bin";
 import NoData from "./svg-components/NoData";
+import DNALoader from "./svg-components/DNALoader";
 import { useData } from "@/context/context";
 import data from "../Data/test_data.json";
 import { Faq } from "./Faq";
@@ -109,10 +110,14 @@ export const Test_details_logic = ({ Slug, Category }) => {
   // console.log("thsi is the data from the state store", project);
   return (
     <>
+      {/* <DNALoader /> */}
       {loading ? (
-        <div className="_loader_cnt col-12 d-flex justify-content-center">
-          <div className="_loader"></div>
-        </div>
+        // <div className="_loader_cnt col-12 d-flex justify-content-center">
+        //   <div className="_loader"></div>
+        // </div>
+        <>
+          <DNALoader />
+        </>
       ) : project ? (
         <div className="row">
           <div className="title col-12 float-start text-center">
@@ -306,9 +311,7 @@ export const Test_details_logic = ({ Slug, Category }) => {
                     </p>
                   </div>
                   <div className="detaildescrp col-lg-9 col-md-11 px-md-3 col-12">
-                    <AccordionComponent
-                      ParameterData={project.TestInfo}
-                    />
+                    <AccordionComponent ParameterData={project.TestInfo} />
                   </div>
                 </div>
               </div>

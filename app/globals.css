@@ -3397,3 +3397,15 @@ div#notfound a.active {
 .sucess_msg svg {
   height: 520px;
 }
+
+/* HTML: <div class="loader"></div> */
+.loadersdfdgd {
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+  animation: l4 1s infinite steps(10);
+}
+@keyframes l4 {
+  to {
+    transform: rotate(1turn);
+  }
+}

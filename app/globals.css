@@ -3360,3 +3360,39 @@ button:disabled {
   .main_loader_svg path.string_left{
     animation-delay: 3s;
   } */
+
+/* not found css */
+
+div#notfound {
+  align-items: center;
+  display: flex;
+  float: left;
+  justify-content: center;
+  margin: 200px 0;
+  width: 100%;
+}
+
+.notfound {
+  text-align: center;
+  width: 50%;
+}
+.notfound-404 h1 {
+  font-weight: 600;
+  font-size: 40px;
+  letter-spacing: 2px;
+}
+
+/* .notfound h1,
+.notfound h2 {
+  margin: 0;
+} */
+
+div#notfound a.active {
+  color: #575aa8;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.sucess_msg svg {
+  height: 520px;
+}

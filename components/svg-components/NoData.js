@@ -1,7 +1,20 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import "./svgcss.css";
 
 const NoData = (props) => {
+  useEffect(() => {
+    const dots = document.querySelectorAll(".no_data-1");
+    let delay = 100;
+
+    dots.forEach((dot, index) => {
+      setTimeout(() => {
+        dot.style.animationDelay = `-${index * delay}ms`;
+      }, 0);
+    });
+  }, []); // Empty dependency array ensures the effect runs only once after initial render
+
   return (
     <>
       <svg
@@ -139,6 +152,19 @@ const NoData = (props) => {
                 d="M609.58,571.03l-17.69-76.83c11.47-21.42,17.69-45.49,17.69-70.04,0-81.75-66.52-148.27-148.27-148.27s-148.4,66.52-148.4,148.27,66.57,148.4,148.4,148.4c22.09,0,44-5.16,63.74-14.6l73.54,23.22c6.35,2.01,12.5-3.65,10.99-10.15Z"
               />
               <g>
+                <text
+                  x="54%"
+                  y="58%"
+                  className="not_found_text"
+                  textAnchor="middle"
+                  fontSize="36"
+                  fill="#000"
+                >
+                  No Data Found!
+                </text>
+              </g>
+
+              <g>
                 <circle
                   className="no_data-1"
                   cx={462.06}
@@ -147,15 +173,15 @@ const NoData = (props) => {
                   transform="translate(-191.38 311.91) rotate(-31.24)"
                 />
                 <path
-                  className="no_data-1"
+                  className="no_data-1 _wifi"
                   d="M497.31,474.21c-19.44-19.44-51.06-19.44-70.5,0l-14.1-14.1c27.21-27.21,71.48-27.21,98.69,0l-14.1,14.1Z"
                 />
                 <path
-                  className="no_data-1"
+                  className="no_data-1 _wifi"
                   d="M525.51,446.01c-34.98-34.98-91.91-34.98-126.89,0l-14.1-14.1c42.76-42.76,112.33-42.76,155.09,0l-14.1,14.1Z"
                 />
                 <path
-                  className="no_data-1"
+                  className="no_data-1 _wifi"
                   d="M553.7,417.81c-50.53-50.53-132.75-50.53-183.29,0l-14.1-14.1c58.31-58.31,153.18-58.31,211.49,0l-14.1,14.1Z"
                 />
               </g>

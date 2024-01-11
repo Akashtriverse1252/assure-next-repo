@@ -3273,7 +3273,7 @@ label.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
 }
 
 .No_Data svg {
-  width: 50%;
+  width: 40%;
 }
 .disabled,
 button:disabled {
@@ -3407,5 +3407,36 @@ div#notfound a.active {
 @keyframes l4 {
   to {
     transform: rotate(1turn);
+  }
+}
+
+.no_data-1 {
+  opacity: 0;
+  animation: dotAnimation 1s infinite alternate;
+}
+.no_data-1._wifi {
+  animation-direction: reverse;
+  animation: dotAnimationReverse 1s cubic-bezier(0.29, 0.1, 0.34, -0.9) infinite
+    alternate;
+}
+
+.not_found_text{
+ font-weight: 700;
+}
+
+@keyframes dotAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes dotAnimationReverse {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }

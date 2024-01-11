@@ -994,6 +994,9 @@
   .hemburgur span:nth-child(2) {
     top: 12px;
   }
+  .No_Data svg {
+    width: 80%;
+  }
 
   .swiperslider img {
     height: auto;
@@ -1085,7 +1088,6 @@
     letter-spacing: 1px;
     text-wrap: balance;
     width: 95%;
-    
   }
 
   .home_banner img {
@@ -1288,5 +1290,8 @@
   .conditionshape span {
     top: -40px;
     left: 0;
+  }
+  .No_Data svg {
+    width: 90%;
   }
 }

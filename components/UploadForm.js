@@ -250,7 +250,7 @@ const UploadForm = () => {
             >
               <RxCross2 />
             </div>
-            <div className="container prescription-form col-12 flex-center flex-direction-row align-items-start">
+            <div className=" prescription-form  flex-center flex-direction-row align-items-start">
               <div className="col-5 float-start upload-prescription-form">
                 <h4>
                   <strong>UPLOAD PRESCRIPTION</strong>{" "}

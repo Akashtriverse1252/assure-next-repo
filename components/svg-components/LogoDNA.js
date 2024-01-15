@@ -35,7 +35,7 @@ const LogoDNA = () => {
 
           // Animate the fill
           path.animate([{ fill: "transparent" }, { fill: "white" }], {
-            duration: 450, // Adjust the duration as needed
+            duration: 600, // Adjust the duration as needed
             easing: "ease-in-out", // You can use other easing functions
           });
         };

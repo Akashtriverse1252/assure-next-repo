@@ -3347,12 +3347,12 @@ button:disabled {
 
 .main_loader_svg {
   opacity: 1;
-  transform: opacity 0.2s linear;
+  transform: opacity 0.3s linear;
 }
 
 .svg-opacity {
   opacity: 0;
-  transform: opacity 0.2s linear;
+  transform: opacity 0.3s linear;
 }
 
 /* .main_loader_svg path.string_right  {

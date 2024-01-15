@@ -9,7 +9,7 @@ import SuccessMessage from "@/components/SuccessMessage";
 const steps = ["Cart Detail", "User Detail", "Success"];
 
 const Page = () => {
-  const [activeStep, setActiveStep] = useState(1);
+  const [activeStep, setActiveStep] = useState(0);
   const [formData, setFormData] = useState({
     productDetail: {},
     userData: {},

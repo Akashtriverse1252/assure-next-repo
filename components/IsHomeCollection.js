@@ -9,18 +9,21 @@ import Clock from "./svg-components/Clock";
 import Address from "./svg-components/Address";
 import { TextField } from "@mui/material";
 import { useData } from "@/context/context";
+import { CleaningServices } from "@mui/icons-material";
 
 const IsHomeCollection = () => {
   const { cartState, cartDispatch } = useData();
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
-  const [removedDates] = useState(["2023-12-29"]);
+  const [removedDates] = useState([""]);
 
   const bookingDate = generateRadioData(removedDates).map((date) => ({
     value: date.value,
     label: date.label,
     body: date.body,
+    month: date.month,
   }));
+  console.log(bookingDate);
 
   const [formData, setFormData] = useState({
     address: "",
@@ -64,7 +67,7 @@ const IsHomeCollection = () => {
       userAddress: updatedData,
     });
   };
-  console.log(cartState.userAddress.IsHomeCollection);
+  // console.log(cartState.userAddress.IsHomeCollection);
   return (
     <>
       <div
@@ -113,7 +116,9 @@ const IsHomeCollection = () => {
                             </i>
                             <div className="hobbies-icon">
                               <div className="slot-option">
-                                <span className="day-picker-month">Dec</span>
+                                <span className="day-picker-month">
+                                  {item.month}
+                                </span>
                                 <span className="day-picker-day">
                                   <strong>{item.label}</strong>
                                 </span>
@@ -129,7 +134,6 @@ const IsHomeCollection = () => {
                 <div className="time-picker mt-6">
                   <div className="title">
                     <Clock className="mx-2" />
-                    {/* <MdOutlineAccessTime className="mx-2" /> */}
                     Select preferred time slot
                   </div>
                   <div
@@ -260,6 +264,7 @@ const generateRadioData = (removedDates) => {
     radioData.push({
       value: formattedDate,
       label: date.getDate().toString(),
+      month: date.toLocaleDateString("en-US", { month: "long" }),
       body:
         i === 0
           ? "Today"

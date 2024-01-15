@@ -95,58 +95,49 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
 
   return (
     <>
-      {/* {loading ? (
-        <Box sx={{ display: "flex" }}>
-          <CircularProgress />
-        </Box>
-      ) : ( */}
-        <section className="position-relative">
-          <div className="gradient-layer"></div>
-          <div className="container">
-            <div className="web-container">
-              <div className="row gap-sm-3 gap-md-0  ">
-                <div className="col-10 mx-auto">
-                  <h3>
-                    <strong>User Details</strong>
-                  </h3>
-                  <form onSubmit  ={handleSubmit}>
-                    <UserDetail />
-                    <HomeCollectionData />
-                    <button type="submit" className="btn">
-                      Submit the data
+      <section className="position-relative">
+        <div className="gradient-layer"></div>
+        <div className="container">
+          <div className="web-container">
+            <div className="row gap-sm-3 gap-md-0  ">
+              <div className="col-10 mx-auto">
+                <h3>
+                  <strong>User Details</strong>
+                </h3>
+                <form onSubmit={handleSubmit}>
+                  <UserDetail />
+                  <HomeCollectionData />
+                  <button type="submit" className="btn">
+                    Submit the data
+                  </button>
+                </form>
+                <div className="nav_button mt-5 col-12 d-flex justify-content-between">
+                  <div className=" mt-3  row text-right">
+                    <button
+                      className="edit_cart button button--wayra pull-right red tab3"
+                      onClick={handlePrev}
+                    >
+                      <FaArrowLeftLong className="m-2" />
+                      Check Cart
                     </button>
-                  </form>
-
-                  <div className="nav_button mt-5 col-12 d-flex justify-content-between">
-                    <div className=" mt-3  row text-right">
-                      <button
-                        className="edit_cart button button--wayra pull-right red tab3"
-                        onClick={handlePrev}
-                      >
-                        <FaArrowLeftLong className="m-2" />
-                        Check Cart
-                      </button>
-                    </div>
-                    <div className=" mt-3  row text-right">
-                      <button
-                        className="edit_cart button button--wayra pull-right red tab3"
-                        onClick={handleNext}
-                      >
-                        Proceed
-                        <FaArrowRightLong className="m-2" />
-                      </button>
-                    </div>
                   </div>
-                  {/* <button onClick={handlePrev}>Previous</button>
-                <button onClick={handleNext}>Next</button> */}
+                  <div className=" mt-3  row text-right">
+                    <button
+                      className="edit_cart button button--wayra pull-right red tab3"
+                      onClick={handleNext}
+                    >
+                      Proceed
+                      <FaArrowRightLong className="m-2" />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <Dots className="hsection position-absolute svgwidth opacity-10" />
-          <Line className="svgwidthline position-absolute opacity-10" />
-        </section>
-      {/* )} */}
+        </div>
+        <Dots className="hsection position-absolute svgwidth opacity-10" />
+        <Line className="svgwidthline position-absolute opacity-10" />
+      </section>
     </>
   );
 };

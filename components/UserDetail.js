@@ -208,14 +208,14 @@ export const UserDetail = () => {
                 <FaCheck />
               </i>
               <div className="hobbies-icon">
-                <Image
+                {/* <Image
                   src="/consultant.png"
                   alt=""
                   title="Dr. Sanjay Wadhwa"
                   width="120"
                   height="120"
-                />
-                {/* <Male/> */}
+                /> */}
+                <Male/>
                 <h3 className="">Male</h3>
               </div>
             </span>

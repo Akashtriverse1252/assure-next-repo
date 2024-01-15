@@ -4,7 +4,7 @@ import { Dots } from "@/components/svg-components/Dots";
 import { Line } from "@/components/svg-components/Line";
 import { TestCard } from "@/components/TestCard";
 import { usePathname } from "next/navigation";
-import data from "@/Data/test_data.json";
+// import data from "@/Data/test_data.json";
 import { useAlert } from "@/context/AlerterContext";
 
 export const Page = () => {
@@ -74,7 +74,7 @@ export const Page = () => {
           <div className="web-container">
             <div className="row">
               <div className="title col-12 float-start text-center">
-                <h2>Individual Test</h2>
+                <h2>Individual Packages</h2>
               </div>
 
               <div className="col-12 float-start all-test">

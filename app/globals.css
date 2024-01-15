@@ -1167,8 +1167,8 @@ header {
   fill: #000;
 }
 
-.quality li+li,
-.dropdowntab ul li+li {
+.quality li + li,
+.dropdowntab ul li + li {
   margin: 10px 0;
 }
 
@@ -1200,8 +1200,8 @@ header {
   border: none;
 }
 
-.accordion__item+.accordion__item,
-.sitemapcol li+li,
+.accordion__item + .accordion__item,
+.sitemapcol li + li,
 .keyfeaturecont li {
   margin: 10px 0;
 }
@@ -1857,17 +1857,25 @@ div#bookAppointmentForm .width50:first-chlid {
   background-repeat: no-repeat;
   filter: invert();
 }
+.vedio_review .slick-prev:before,
+.vedio_review .slick-next:before {
+  background-image: url(../public/svg/right_arrow.svg);
+}
 
 .vedio_review .slick-prev {
-  right: 11%;
-  top: -30%;
+  right: 8%;
+  top: 110%;
   left: inherit;
+  width: 50px;
+  height: 50px;
 }
 
 .vedio_review .slick-next {
   left: inherit;
-  right: 3%;
-  top: -30%;
+  width: 50px;
+  height: 50px;
+  right: 0.5%;
+  top: 110%;
 }
 
 .googlereviewslider .slick-prev,
@@ -1890,7 +1898,7 @@ div#bookAppointmentForm .width50:first-chlid {
 }
 
 .faqcont,
-.faq .accordion__item+.accordion__item {
+.faq .accordion__item + .accordion__item {
   margin: 15px auto;
 }
 
@@ -2415,6 +2423,7 @@ li.MuiBreadcrumbs-li svg {
 
 .home_banner img {
   height: auto;
+  width: auto;
 }
 
 .banner_slide svg {
@@ -2734,7 +2743,7 @@ button:disabled {
   cursor: pointer;
 }
 
-.radio-btn>i {
+.radio-btn > i {
   color: #ffffff;
   background-color: #5a98f5;
   font-size: 3px;
@@ -2783,12 +2792,12 @@ button:disabled {
 }
 
 /* Common style for checked state */
-.custom-radio input:checked+.radio-btn {
+.custom-radio input:checked + .radio-btn {
   border: 2px solid #5a98f5;
   background: #eaf1fe59;
 }
 
-.custom-radio input:checked+.radio-btn>i {
+.custom-radio input:checked + .radio-btn > i {
   opacity: 1;
   transform: translateX(-50%) scale(0.9);
 }
@@ -2858,7 +2867,7 @@ button:disabled {
   box-shadow: 0px 3px 5px 0px #e8e8e8;
 }
 
-.plans .plan input[type="radio"]:checked+.plan-content:after {
+.plans .plan input[type="radio"]:checked + .plan-content:after {
   content: "";
   position: absolute;
   height: 15px;
@@ -2872,7 +2881,7 @@ button:disabled {
   box-shadow: 0px 0px 0px 2px #0066ff;
 }
 
-.plans .plan input[type="radio"]:checked+.plan-content {
+.plans .plan input[type="radio"]:checked + .plan-content {
   border: 2px solid #216ee0;
   background: #eaf1fe;
   -webkit-transition: ease-in 0.3s;
@@ -2930,7 +2939,7 @@ button:disabled {
     display: inline-block;
   }
 
-  .plans .plan input[type="radio"]:checked+.plan-content:after {
+  .plans .plan input[type="radio"]:checked + .plan-content:after {
     top: 45%;
     -webkit-transform: translate(-50%);
     -ms-transform: translate(-50%);
@@ -2954,7 +2963,7 @@ button:disabled {
     transition: height 0.4s;
   }
 
-  .plans .plan input[type="radio"]:checked+.plan-content:after {
+  .plans .plan input[type="radio"]:checked + .plan-content:after {
     top: 20px;
     right: 10px;
   }
@@ -3076,8 +3085,8 @@ button:disabled {
   width: 23px;
 }
 
-.time_slots label input:checked+.slot-wrapper {
-  border: 2px solid #5a98f5;
+.time_slots label input:checked + .slot-wrapper {
+  border: 1px solid #5a98f5;
   background: #eaf1fe59;
 }
 
@@ -3266,7 +3275,8 @@ label.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
   color: #4e4e4e;
   font-family: var(--font-family);
 }
-
+.whatsapp,
+.call,
 .fmenu ul li {
   cursor: pointer;
 }
@@ -3448,7 +3458,8 @@ div#notfound a.active {
 
 .no_data-1._wifi {
   animation-direction: reverse;
-  animation: dotAnimationReverse 1s cubic-bezier(0.29, 0.1, 0.34, -0.9) infinite alternate;
+  animation: dotAnimationReverse 1s cubic-bezier(0.29, 0.1, 0.34, -0.9) infinite
+    alternate;
 }
 
 .not_found_text {

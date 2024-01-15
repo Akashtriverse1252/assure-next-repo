@@ -66,30 +66,9 @@ const Sucess = (props) => {
                 />
                 <g>
                   {/* Replace the lines with the text element */}
-                  <text
-                    x={1277.85}
-                    y={1026.76}
-                    className=""
-                    textAnchor="middle"
-                  >
+                  <text x={1260} y={1580} className="" textAnchor="middle">
                     Booking Successful
                   </text>
-                </g>
-                <g>
-                  {/* <line
-                    className="cls-5"
-                    x1={994.14}
-                    y1={1482.2}
-                    x2={1564.36}
-                    y2={1482.2}
-                  />
-                  <line
-                    className="cls-5"
-                    x1={1085.43}
-                    y1={1576.58}
-                    x2={1473.06}
-                    y2={1576.58}
-                  /> */}
                 </g>
                 <g>
                   <circle

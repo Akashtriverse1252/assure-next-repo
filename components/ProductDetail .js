@@ -13,7 +13,7 @@ import { Dots } from "./svg-components/Dots";
 import { Line } from "./svg-components/Line";
 import { useData } from "@/context/context";
 import { Rupees } from "./svg-components/Rupees";
-import { FiShoppingCart } from "react-icons/fi";  
+import { FiShoppingCart } from "react-icons/fi";
 import { PiShoppingCartSimple, PiShoppingCartSimpleFill } from "react-icons/pi";
 import { FaArrowRightLong } from "react-icons/fa6";
 
@@ -28,7 +28,7 @@ const ProductDetail = ({ onNextStep, onFormData }) => {
   // console.log("this is the data", cartState.products);
   const calculateSubtotal = () => {
     return productData.reduce((total, product) => {
-      return total + product.quantity * product.price;
+      return total + product.quantity * product.dis_price;
     }, 0);
   };
 
@@ -49,13 +49,13 @@ const ProductDetail = ({ onNextStep, onFormData }) => {
               </div>
               <div>
                 <div className="formpatient tablecenter">
-                  <TableContainer component={Paper}>
+                  <TableContainer >
                     <Table className="">
                       <TableHead>
                         <TableRow>
                           <TableCell className="redcolor">S No.</TableCell>
                           <TableCell>Package/Test Name</TableCell>
-                          <TableCell>Unit Price ()</TableCell>
+                          <TableCell>Unit Price </TableCell>
                           <TableCell>Discount</TableCell>
                           <TableCell>Quantity</TableCell>
                           <TableCell>Price</TableCell>
@@ -108,7 +108,7 @@ const ProductDetail = ({ onNextStep, onFormData }) => {
                       </button>
                     </div>
                     <div className=" mt-3  row text-right">
-                    <button
+                      <button
                         className="edit_cart button button--wayra pull-right red tab3"
                         onClick={handleNext}
                       >

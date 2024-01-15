@@ -162,9 +162,7 @@ export default function Cart() {
                       <Link
                         href="/check-out"
                         onClick={() => cartDispatch({ type: "TOGGLE_CART" })}
-                        className={`button button--aylen button--round-l button--text-thick mt-sm-3 {${cartState.products.length == 0
-                          }?"disabled":""}`}
-                        disabled={cartState.products.length === 0}
+                        className="button button--aylen button--round-l button--text-thick mt-sm-3"
                       >
                         Checkout
                       </Link>

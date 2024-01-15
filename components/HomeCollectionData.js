@@ -2,6 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import IsHomeCollection from "./IsHomeCollection";
+import homecollection from "@/components/svg-components/homecollection.svg";
+import microscope from "@/components/svg-components/microscope.svg";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import Image from "next/image";
 import { useData } from "@/context/context";
@@ -35,7 +37,7 @@ export const HomeCollectionData = () => {
     console.log(
       "this is the home collextion after making onemptied",
       cartState.userAddress.isHomecollection
-    );  
+    );
   }, [selectedPlan, cartState.userAddress.isHomecollection, cartDispatch]);
 
   return (
@@ -55,7 +57,7 @@ export const HomeCollectionData = () => {
               <div className="plan-content">
                 <Image
                   loading="lazy"
-                  src="/HomeCollection.png"
+                  src={homecollection}
                   alt=""
                   width={72}
                   height={72}
@@ -81,7 +83,7 @@ export const HomeCollectionData = () => {
               <div className="plan-content">
                 <Image
                   loading="lazy"
-                  src="/Microscope.png"
+                  src={microscope}
                   alt=""
                   height={72}
                   width={72}

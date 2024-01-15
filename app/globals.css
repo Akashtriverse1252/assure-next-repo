@@ -1706,6 +1706,10 @@ header {
   align-items: center;
 }
 
+.empty_cart {
+  margin-top: 12%;
+}
+
 .packagename_test {
   height: 55px;
 
@@ -3180,6 +3184,12 @@ label.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root,
 .checkout_input input {
   font-family: var(--font-family) !important;
   letter-spacing: 1.2px !important;
+}
+
+.css-p0rm37 {
+  text-indent: 10px;
+  font-size: 15px;
+  line-height: 26px;
 }
 
 .css-mvoatl-MuiPaper-root-MuiAlert-root {

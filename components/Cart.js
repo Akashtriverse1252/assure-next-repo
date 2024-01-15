@@ -57,9 +57,8 @@ export default function Cart() {
     <Fragment>
       <>
         <div
-          className={`_cart fixed-top inset-0 overflow-hidden ${
-            cartState.cartVisible ? "__visible " : null
-          }`}
+          className={`_cart fixed-top inset-0 overflow-hidden ${cartState.cartVisible ? "__visible " : null
+            }`}
         >
           <div className="h-100 absolute-top inset-0 overflow-hidden _shadow">
             <div className="h-100 ">
@@ -145,43 +144,44 @@ export default function Cart() {
                     </div>
                   </div>
                 </div>
+                {(cartState.products && cartState.products.length > 0) &&
+                  <div className="border-top border-gray-200 px-4 py-6 sm:px-6">
+                    <div className="sub_total d-flex justify-content-between text-base font-medium text-gray-900">
+                      <p className="mb-0">Subtotal</p>
+                      <p className="mb-0 rupee">{subtotal.toFixed(2)}</p>
+                    </div>
+                    <div className="sub_total d-flex justify-content-between text-base font-medium text-gray-900">
+                      <p className="mb-0">Total Discount</p>
+                      <p className="mb-0 rupee">{totalDiscount.toFixed(2)}</p>
+                    </div>
+                    <div className="sub_total d-flex justify-content-between text-base font-medium text-gray-900">
+                      <p className="mb-0">Discounted Price</p>
+                      <p className="mb-0 rupee">{discountedPrice.toFixed(2)}</p>
+                    </div>
+                    <div className="mt-sm-6 mt-2  cart_btn">
+                      <Link
+                        href="/check-out"
+                        onClick={() => cartDispatch({ type: "TOGGLE_CART" })}
+                        className={`button button--aylen button--round-l button--text-thick mt-sm-3 {${cartState.products.length == 0
+                          }?"disabled":""}`}
+                        disabled={cartState.products.length === 0}
+                      >
+                        Checkout
+                      </Link>
+                    </div>
+                    <div className="mt-sm-6 mt-2 mb-2 d-flex justify-content-center text-center text-sm text-gray-500">
+                      <Link
+                        className="cnt_shp_btn textbtn"
+                        onClick={isOpen}
+                        href="/individual-test"
+                      >
+                        Continue Search
+                        <span aria-hidden="true"> &rarr;</span>
+                      </Link>
+                    </div>
+                  </div>
 
-                <div className="border-top border-gray-200 px-4 py-6 sm:px-6">
-                  <div className="sub_total d-flex justify-content-between text-base font-medium text-gray-900">
-                    <p className="mb-0">Subtotal</p>
-                    <p className="mb-0 rupee">{subtotal.toFixed(2)}</p>
-                  </div>
-                  <div className="sub_total d-flex justify-content-between text-base font-medium text-gray-900">
-                    <p className="mb-0">Total Discount</p>
-                    <p className="mb-0 rupee">{totalDiscount.toFixed(2)}</p>
-                  </div>
-                  <div className="sub_total d-flex justify-content-between text-base font-medium text-gray-900">
-                    <p className="mb-0">Discounted Price</p>
-                    <p className="mb-0 rupee">{discountedPrice.toFixed(2)}</p>
-                  </div>
-                  <div className="mt-sm-6 mt-2  cart_btn">
-                    <Link
-                      href="/check-out"
-                      onClick={() => cartDispatch({ type: "TOGGLE_CART" })}
-                      className={`button button--aylen button--round-l button--text-thick mt-sm-3 {${
-                        cartState.products.length == 0
-                      }?"disabled":""}`}
-                      disabled={cartState.products.length === 0}
-                    >
-                      Checkout
-                    </Link>
-                  </div>
-                  <div className="mt-sm-6 mt-2 mb-2 d-flex justify-content-center text-center text-sm text-gray-500">
-                    <Link
-                      className="cnt_shp_btn textbtn"
-                      onClick={isOpen}
-                      href="/individual-test"
-                    >
-                      Continue Search
-                      <span aria-hidden="true"> &rarr;</span>
-                    </Link>
-                  </div>
-                </div>
+                }
               </div>
             </div>
           </div>

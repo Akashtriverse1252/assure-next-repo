@@ -45,7 +45,7 @@ export const Test_details_logic = ({ Slug, Category }) => {
         // console.error("Error fetching data:", error);
         showAlert("Error", "network Error", "error");
       } finally {
-        // setLoading(false);
+        setLoading(false);
       }
     };
 

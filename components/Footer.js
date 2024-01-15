@@ -6,8 +6,12 @@ import { TabContext, TabList, TabPanel } from "@mui/material";
 import data from "@/Data/test_data.json";
 import Link from "next/link";
 import { useData } from "@/context/context";
+import Aos from "aos";
 
 export const Footer = () => {
+  useEffect(() => {
+    Aos.init({ duration: 400 });
+  }, []);
   const currentYear = new Date().getFullYear();
   const [selectedTab, setSelectedTab] = useState(1);
   const [buttonWidth, setButtonWidth] = useState(0);
@@ -16,14 +20,20 @@ export const Footer = () => {
   const buttonRef2 = useRef(null);
   const { cartState, cartDispatch } = useData();
   const [tabData, setTabData] = useState([]);
+  const [isFadeIn, setIsFadeIn] = useState(true);
 
   const fetchTabData = async (category) => {
     try {
+      setIsFadeIn(false);
       const response = await fetch(
         `https://www.assurepathlabs.com/api/algos/fetch_details.php?category=${category}`
       );
       const data = await response.json();
       setTabData(data.test_data);
+      setTimeout(() => {
+        setIsFadeIn(true);
+      }, 300); // Adjust the delay time based on your transition duration
+
       // console.log(data.test_data);
     } catch (error) {
       console.error(`Error fetching ${category} data:`, error);
@@ -91,8 +101,12 @@ export const Footer = () => {
 
                   <div className="_acc_cnt">
                     {selectedTab === 1 || selectedTab === 2 ? (
-                      <div className="footer_tabs">
-                        <ul className="flex-center">
+                      <div
+                        className={`footer_tabs ${
+                          isFadeIn ? "fade-in" : "fade-out"
+                        }`}
+                      >
+                        <ul className="flex-center ">
                           <li>
                             {tabData.map((test, index) => (
                               <Link

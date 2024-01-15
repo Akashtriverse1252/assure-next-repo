@@ -21,7 +21,7 @@ export const Page = () => {
       setLoading(true);
 
       const response = await fetch(
-        `http://assure.triverseadvertising.com/api/fetch_details.php?category=package&start=${page}&limit=12`
+        `https://www.assurepathlabs.com/api/algos/fetch_details.php?category=package&start=${page}&limit=12`
       );
       const newData = await response.json();
       setTests((prevTests) => [...prevTests, ...newData.test_data]);
@@ -65,7 +65,7 @@ export const Page = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [loading, page]);
-  console.log("is loading", loading);
+  // console.log("is loading", loading);
 
   return (
     <>
@@ -92,7 +92,7 @@ export const Page = () => {
                       Who_is_it_for={test.Who_is_it_for}
                       Pre_test_information={test.Pre_test_information}
                       Turn_around_time={test.Turn_around_time}
-                      BaseDirectory={"individual-test"}
+                      BaseDirectory={"packages"}
                     />
                   ))}
                   <div ref={lastCardRef}></div>

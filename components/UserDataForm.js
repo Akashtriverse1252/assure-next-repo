@@ -107,9 +107,9 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                 <form onSubmit={handleSubmit}>
                   <UserDetail />
                   <HomeCollectionData />
-                  <button type="submit" className="btn">
+                  {/* <button type="submit" className="btn">
                     Submit the data
-                  </button>
+                  </button> */}
                 </form>
                 <div className="nav_button mt-5 col-12 d-flex justify-content-between">
                   <div className=" mt-3  row text-right">

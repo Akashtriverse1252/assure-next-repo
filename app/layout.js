@@ -15,7 +15,7 @@ import UploadForm from "@/components/UploadForm";
 import CookiesConset from "@/components/CookiesConset";
 import { AlertProvider } from "@/context/AlerterContext";
 import Alert from "@/components/Alert";
-import Loader from "@/components/Loader";
+
 const AvertaStd = localFont({
   src: "./font/AvertaStd-Regular.woff2",
   display: "swap",
@@ -34,7 +34,7 @@ export default function RootLayout({ children, isLoading }) {
       <AlertProvider>
         <GlobalDataProvider>
           <body className={AvertaStd.className}>
-            <Loader isLoading={isLoading} />
+            
             <div className="">
               <Header />
               <BreadCrums />

@@ -29,7 +29,7 @@ export const AssureSlide = (props) => {
                   width={630}
                   height={500}
                 />
-                <Link href="/packages">
+                <Link href="/packages/assure-complete-wellness-package-for-man">
                   <button className="button button--aylen button--round-l button--text-thick  gradient   flex-center gap-2">
                     Know more
                   </button>
@@ -45,7 +45,7 @@ export const AssureSlide = (props) => {
                   width={630}
                   height={500}
                 />
-                <Link href="/organ/heart">
+                <Link href="/packages/healthy-heart-panel">
                   <button className="button button--aylen button--round-l button--text-thick  gradient   flex-center gap-2">
                     Know more
                   </button>
@@ -61,7 +61,7 @@ export const AssureSlide = (props) => {
                   width={630}
                   height={500}
                 />
-                <Link href="condition/fever">
+                <Link href="/test-detail/dengue-antibodies-igg-igm-ns1ag">
                   <button className="button button--aylen button--round-l button--text-thick  gradient   flex-center gap-2">
                     Know more
                   </button>
@@ -77,7 +77,7 @@ export const AssureSlide = (props) => {
                   width={630}
                   height={500}
                 />
-                <Link href="/individual-test">
+                <Link href="https://patient-in.creliohealth.com/patient/login">
                   <button className="button button--aylen button--round-l button--text-thick  gradient   flex-center gap-2">
                     Know more
                   </button>

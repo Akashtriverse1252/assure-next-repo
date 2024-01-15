@@ -2331,22 +2331,28 @@ li.MuiBreadcrumbs-li svg {
   padding: 10px 5px;
   position: absolute;
   width: 250px;
-  transform: translate(-50%, 22%);
+  transform: translateX(-50%);
   z-index: 1;
   font-size: 14px;
   box-shadow: 0 4px 4px rgba(161, 160, 160, 0.25);
+  top: 35px;
 }
 
 ._tooltip ._tooltip-text h5 {
-  font-size: 16px;
+  font-size: 15px;
   color: #000;
-  line-height: 1;
+  line-height: 1.4;
 }
 
 ._tooltip ._tooltip-text p {
-  font-size: 15px;
-  line-height: 1.3;
-  margin: 0;
+  font-size: 13px;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  text-align: left;
+  width: 90%;
+  text-wrap: wrap;
+  text-transform: lowercase;
+  margin: 0 auto;
 }
 
 ._tooltip ._tooltip-text::after {

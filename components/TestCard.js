@@ -56,12 +56,10 @@ export const TestCard = ({
                 </>
               )}
             </div>
-            <div className="packagename">
+            <div className="packagedetail _test">
               <p className="m-0">
                 <strong className="text-black">TEST DETAILS</strong>
               </p>
-            </div>
-            <div className="packagedetail _test">
               <ul>
                 {/* {Test_Category && <li>{Test_Category} Related Test</li>} */}
                 {/* {Turn_around_time && <li>Report Time: {Turn_around_time}</li>} */}
@@ -130,7 +128,7 @@ export const TestCard = ({
                 )} */}
               </ul>
             </div>
-            <div className="packageprice">
+            <div className='packageprice_btn'>
               <div className="textbtn">
                 <span href={`/${BaseDirectory || "test-detail"}/${Slug}`}>
                   KNOW MORE +

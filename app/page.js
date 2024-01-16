@@ -46,9 +46,9 @@ export default function Home() {
               <div className="row">
                 <div className="col-md-12 col-12">
                   <div className="title col-12 float-start text-center">
-                    <h2 className="grid-center lh-1">
+                    <h2 className="grid-center ">
                       SEASONAL packages{" "}
-                      <span>DENGUE, CHIKUNGUNYA, MALARIA</span>
+                      {/* <span>DENGUE, CHIKUNGUNYA, MALARIA</span> */}
                     </h2>
                   </div>
                   <Seasonalpack className="arrows productslider minusbottom seasonalpack" />

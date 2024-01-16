@@ -1,16 +1,45 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useAlert } from "@/context/AlerterContext";
 import Slider from "react-slick";
-import Image from "next/image";
 import { Rupees } from "./svg-components/Rupees";
-import Link from "next/link";
-import { PackagCard } from "./PackagCard";
-import data from "@/Data/test_data.json";
+import testData from "../Data/seasonaltst.json";
+import { TestCard } from "@/components/TestCard";
+import { useData } from "@/context/context";
+const URL = `https://www.assurepathlabs.com/api/algos/fetch_details.php?category=package&start=packages&limit=10`;
 
 export const ProductSlider = (props) => {
+  const { cartState, cartDispatch } = useData();
+  const [isInCart, setIsInCart] = useState(false);
+  const [project, setProject] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const { showAlert } = useAlert();
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(URL);
+
+        const data = await response.json();
+        setProject(data);
+        if (data.test_data.length === 0) {
+          showAlert("info", "no data is found", "info");
+          // console.log("no data is found");
+        }
+        console.log("this is the seasonal api data", project);
+      } catch (error) {
+        // console.error("Error fetching data:", error);
+        showAlert("Error", "network Error", "error");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   var settings = {
-    dots: false,
-    infinite: true,
+    dots: true,
+    infinite: false,
     speed: 1000,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -22,11 +51,10 @@ export const ProductSlider = (props) => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          dots: false,
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 700,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -41,27 +69,31 @@ export const ProductSlider = (props) => {
       },
     ],
   };
-  const packageData = data.test_data.filter(
-    (item) => item.category === "package"
-  );
   return (
     <>
       <Slider {...settings} {...props}>
-        {packageData.map((test, index) => (
-          <div className="  m-auto">
-            <PackagCard
-              key={index}
-              Test_Name={test.Test_Name}
-              Test_for={test.Test_Name}
-              Test_Amount={parseInt(test.Test_Amount)}
-              Discount_Amount={parseInt(test.Discount_Amount)}
-              Test_info={test.TestInfo || []}
-              Number_test={test.TestInfo ? test.TestInfo.length : 0}
-              Test_Slug={test.Slug}
-              widthFull={true}
-            />
-          </div>
-        ))}
+        {project &&
+          project.test_data.map((test, index) => (
+            <div>
+              <TestCard
+                key={index}
+                Slug={test.Slug}
+                Test_Name={test.Test_Name}
+                Test_Amount={test.Test_Amount}
+                Discount_Amount={test.Discount_Amount}
+                Test_Category={test.Test_Category}
+                Test_ID={test.Test_ID}
+                Test_Description={test.Test_Description}
+                Who_is_it_for={test.Who_is_it_for}
+                Pre_test_information={test.Pre_test_information}
+                Turn_around_time={test.Turn_around_time}
+                widthFull={true}
+                BaseDirectory={
+                  test.category === "test" ? "test-detail" : test.category
+                }
+              />
+            </div>
+          ))}
       </Slider>
     </>
   );

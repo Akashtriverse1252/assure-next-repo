@@ -79,9 +79,7 @@ const TestCategory = ({ Slug }) => {
           </>
         ) : (
           <div className="No_Data d-flex justify-content-center col-12">
-            {/* Make sure NoData component is imported */}
             <NoData />
-            No data Found...
           </div>
         )}
       </div>

@@ -112,13 +112,13 @@ export const Test_details_logic = ({ Slug, Category }) => {
     <>
       {/* <DNALoader /> */}
       {loading ? (
-        // <div className="_loader_cnt col-12 d-flex justify-content-center">
-        //   <div className="_loader"></div>
-        // </div>
-        <>
-          <DNALoader />
-        </>
-      ) : project ? (
+        <div className="_loader_cnt col-12 d-flex justify-content-center">
+          <div className="_loader"></div>
+        </div>
+      ) : // <>
+      //   <DNALoader />
+      // </>
+      project ? (
         <div className="row">
           <div className="title col-12 float-start text-center">
             <h2>{project.Test_Name}</h2>
@@ -269,7 +269,7 @@ export const Test_details_logic = ({ Slug, Category }) => {
                   </p>
                 </div>
                 <div className="detaildescrp col-lg-9 col-md-11 col-12 ">
-                  <div className="highlights flex-center px-md-3 flex-wrap gap-3 justify-content-start">
+                  <div className="highlights flex-center  flex-wrap gap-3 justify-content-start">
                     {project.TestInfo.length ? (
                       <p>
                         <strong>{project.TestInfo.length} </strong>
@@ -310,7 +310,7 @@ export const Test_details_logic = ({ Slug, Category }) => {
                       </strong>
                     </p>
                   </div>
-                  <div className="detaildescrp col-lg-9 col-md-11 px-md-3 col-12">
+                  <div className="detaildescrp col-lg-9 col-md-11  col-12">
                     <AccordionComponent ParameterData={project.TestInfo} />
                   </div>
                 </div>
@@ -364,7 +364,6 @@ export const Test_details_logic = ({ Slug, Category }) => {
       ) : (
         <div className="No_Data d-flex justify-content-center col-12">
           <NoData />
-          {/* No data Found... */}
         </div>
       )}
       <section id="faq" className="faq pt-5 col-12 ">

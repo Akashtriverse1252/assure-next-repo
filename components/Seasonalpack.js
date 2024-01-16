@@ -1,11 +1,42 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useAlert } from "@/context/AlerterContext";
 import Slider from "react-slick";
 import { Rupees } from "./svg-components/Rupees";
 import testData from "../Data/seasonaltst.json";
 import { TestCard } from "@/components/TestCard";
+import { useData } from "@/context/context";
+const URL = "https://www.assurepathlabs.com/api/algos/seasonal_api.php";
 
 export const Seasonalpack = (props) => {
+  const { cartState, cartDispatch } = useData();
+  const [isInCart, setIsInCart] = useState(false);
+  const [project, setProject] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const { showAlert } = useAlert();
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(URL);
+
+        const data = await response.json();
+        setProject(data);
+        if (data.test_data.length === 0) {
+          showAlert("info", "no data is found", "info");
+          // console.log("no data is found");
+        }
+        console.log("this is the seasonal api data", project);
+      } catch (error) {
+        // console.error("Error fetching data:", error);
+        showAlert("Error", "network Error", "error");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  },[]);
+
   var settings = {
     dots: true,
     infinite: false,
@@ -41,24 +72,28 @@ export const Seasonalpack = (props) => {
   return (
     <>
       <Slider {...settings} {...props}>
-        {testData.test_data.map((test, index) => (
-          <div>
-            <TestCard
-              key={index}
-              Slug={test.Slug}
-              Test_Name={test.Test_Name}
-              Test_Amount={test.Test_Amount}
-              Discount_Amount={test.Discount_Amount}
-              Test_Category={test.Test_Category}
-              Test_ID={test.Test_ID}
-              Test_Description={test.Test_Description}
-              Who_is_it_for={test.Who_is_it_for}
-              Pre_test_information={test.Pre_test_information}
-              Turn_around_time={test.Turn_around_time}
-              widthFull={true}
-            />
-          </div>
-        ))}
+        {project &&
+          project.test_data.map((test, index) => (
+            <div>
+              <TestCard
+                key={index}
+                Slug={test.Slug}
+                Test_Name={test.Test_Name}
+                Test_Amount={test.Test_Amount}
+                Discount_Amount={test.Discount_Amount}
+                Test_Category={test.Test_Category}
+                Test_ID={test.Test_ID}
+                Test_Description={test.Test_Description}
+                Who_is_it_for={test.Who_is_it_for}
+                Pre_test_information={test.Pre_test_information}
+                Turn_around_time={test.Turn_around_time}
+                widthFull={true}
+                BaseDirectory={
+                  test.category === "test" ? "test-detail" : test.category=== "package"?"packages":null
+                }
+              />
+            </div>
+          ))}
       </Slider>
     </>
   );

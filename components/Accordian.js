@@ -11,7 +11,7 @@ import {
 
 export const AccordionComponent = ({ ParameterData }) => {
   return (
-    <div className="faqcont col-lg-11 col-12">
+    <div className="faqcont  col-12">
       <Accordion allowZeroExpanded={true}>
         {ParameterData.map((item, index) => (
           <AccordionItem key={index}>

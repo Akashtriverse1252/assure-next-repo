@@ -2814,6 +2814,7 @@ button:disabled {
   opacity: 0;
   width: 21px;
   height: 21px;
+  display: flex;
 }
 
 .radio-btn .hobbies-icon {

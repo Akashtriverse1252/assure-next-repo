@@ -230,13 +230,13 @@ const IsHomeCollection = () => {
                     onChange={(e) => handleInputChange("state", e.target.value)}
                   />
                 </div>
-                <div
+                {/* <div
                   type="button"
                   className="textbtn px-3"
                   onClick={handleFormSubmit}
                 >
                   Add Your Address
-                </div>
+                </div> */}
               </article>
             </div>
           </div>

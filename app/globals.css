@@ -226,7 +226,7 @@ ul {
   top: 28px;
 }
 
-.header{
+.header {
   padding: 15px 0;
 }
 
@@ -2265,16 +2265,44 @@ html::-webkit-scrollbar-thumb:hover,
   padding-left: 0;
 }
 .footer_tabs {
+  opacity: 0;
+  transition: opacity 0.3s ease; /* Add a smooth opacity transition */
+}
+
+.fade-in {
   opacity: 1;
-  transition: opacity 0.5s ease-in;
 }
 
 .fade-out {
   opacity: 0;
 }
 
+/* Add keyframes for a smoother fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Add keyframes for a smoother fade-out effect */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 .fade-in {
-  opacity: 1;
+  animation: fadeIn 0.3s ease;
+}
+
+.fade-out {
+  animation: fadeOut 0.3s ease;
 }
 .search_loader.vedio_revieew_loader {
   position: absolute;
@@ -3516,12 +3544,16 @@ div#notfound a.active {
 .detaildescrp {
   padding-right: 30px !important;
 }
-
-.packageprice {
-  margin: 18px 0;
-  gap: 18px;
+._flex_center_col {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.packageprice {
+  margin: 18px 0;
+  gap: 18px;
+}
+.detaildescrp .actualprice svg {
+  left: 0;
 }

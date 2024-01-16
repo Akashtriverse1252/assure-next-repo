@@ -38,7 +38,7 @@ export const TestCard = ({
             <div className="packagename_test">
               <h5 className="">{Test_Name}</h5>
             </div>
-            <div className="packageprice">
+            <div className="packageprice _flex_center_col">
               {Discount_Amount == 0 ? (
                 <>
                   <div className="discountprice gradient text-white">

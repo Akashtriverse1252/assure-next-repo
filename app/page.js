@@ -235,7 +235,7 @@ export default function Home() {
             <div className="web-container">
               <div className="row">
                 <div className="title col-12 float-start text-center">
-                  <h2 className="">Frequently Asked Questions.</h2>
+                  <h2 className="">Frequently Asked Questions</h2>
                 </div>
                 <div className="col-lg-11 col-md-11 col-12 m-auto float-start">
                   <Faq className="minusbottom " />

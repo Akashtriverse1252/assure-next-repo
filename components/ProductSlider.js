@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useAlert } from "@/context/AlerterContext";
 import Slider from "react-slick";
+import { PackagCard } from "./PackagCard";
 import { Rupees } from "./svg-components/Rupees";
 import testData from "../Data/seasonaltst.json";
 import { TestCard } from "@/components/TestCard";
@@ -38,7 +39,7 @@ export const ProductSlider = (props) => {
   }, []);
 
   var settings = {
-    dots: true,
+    dots: false,
     infinite: false,
     speed: 1000,
     slidesToShow: 3,
@@ -54,7 +55,7 @@ export const ProductSlider = (props) => {
         },
       },
       {
-        breakpoint: 700,
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -75,7 +76,19 @@ export const ProductSlider = (props) => {
         {project &&
           project.test_data.map((test, index) => (
             <div>
-              <TestCard
+              <PackagCard
+                key={index}
+                Test_Name={test.Test_Name}
+                Test_for={test.Test_Name}
+                Test_Amount={parseInt(test.Test_Amount)}
+                Discount_Amount={parseInt(test.Discount_Amount)}
+                Test_info={test.TestInfo || []}
+                Number_test={test.TestInfo ? test.TestInfo.length : 0}
+                Test_Slug={test.Slug}
+                widthFull={true}
+                BaseDirectory="packages"
+              />
+              {/* <TestCard
                 key={index}
                 Slug={test.Slug}
                 Test_Name={test.Test_Name}
@@ -91,7 +104,7 @@ export const ProductSlider = (props) => {
                 BaseDirectory={
                   test.category === "test" ? "test-detail" : test.category
                 }
-              />
+              /> */}
             </div>
           ))}
       </Slider>

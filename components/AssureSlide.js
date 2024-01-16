@@ -45,7 +45,7 @@ export const AssureSlide = (props) => {
                   width={630}
                   height={500}
                 />
-                <Link href="/packages/healthy-heart-panel">
+                <Link href="/organ/heart">
                   <button className="button button--aylen button--round-l button--text-thick  gradient   flex-center gap-2">
                     Know more
                   </button>
@@ -77,7 +77,10 @@ export const AssureSlide = (props) => {
                   width={630}
                   height={500}
                 />
-                <Link href="https://patient-in.creliohealth.com/patient/login">
+                <Link
+                  href="https://patient-in.creliohealth.com/patient/login"
+                  target="_blank"
+                >
                   <button className="button button--aylen button--round-l button--text-thick  gradient   flex-center gap-2">
                     Know more
                   </button>

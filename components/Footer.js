@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Line } from "@/components/svg-components/Line";
 import { Tab } from "@mui/material/Tab";
 import { TabContext, TabList, TabPanel } from "@mui/material";
@@ -21,6 +21,7 @@ export const Footer = () => {
   const { cartState, cartDispatch } = useData();
   const [tabData, setTabData] = useState([]);
   const [isFadeIn, setIsFadeIn] = useState(true);
+  const memoizedTabData = useMemo(() => tabData, [tabData]);
 
   const fetchTabData = async (category) => {
     try {
@@ -108,7 +109,7 @@ export const Footer = () => {
                       >
                         <ul className="flex-center ">
                           <li>
-                            {tabData.map((test, index) => (
+                            {memoizedTabData.map((test, index) => (
                               <Link
                                 key={test.id}
                                 href={`/${
@@ -154,9 +155,21 @@ export const Footer = () => {
                   </div>
                   <div className="fmenu">
                     <ul className="p-0 m-0">
-                      <li>DR SANJAY WADHWA</li>
-                      <li>DR LOVELY RAZDAN</li>
-                      <li>DR GURPAL KAUR</li>
+                      <li>
+                        <Link href="/doctor-profile/details/dr-sanjay-wadhwa">
+                          DR SANJAY WADHWA
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/doctor-profile/details/dr-lovely-razdan">
+                          DR LOVELY RAZDAN
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/doctor-profile/details/dr-gurpal-kaur">
+                          DR GURPAL KAUR
+                        </Link>
+                      </li>
                     </ul>
                   </div>
                 </div>

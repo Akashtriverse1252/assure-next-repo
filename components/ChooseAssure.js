@@ -49,7 +49,7 @@ export const ChooseAssure = () => {
         </div>
       </div>
       <Dots className="hsection position-absolute svgwidth opacity-10 start-0 bottom-0 top-inherit" />
-      <Line className="svgwidthline position-absolute opacity-10 bottom-0 end-0" />
+      {/* <Line className="svgwidthline position-absolute opacity-10 bottom-0 end-0" /> */}
     </section>
   );
 };

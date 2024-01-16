@@ -28,7 +28,7 @@ export const ChooseAssure = () => {
       <div className="container">
         <div className="web-container">
           <div className="row">
-            <div className="title col-12 float-start text-center mt-0 mt-sm-5">
+            <div className="title col-12 float-start text-center ">
               <h2>{title}</h2>
             </div>
             <div className="col-lg-8 m-auto col-12 float-start chooseassure">

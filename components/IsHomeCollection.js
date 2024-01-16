@@ -10,6 +10,7 @@ import Address from "./svg-components/Address";
 import { TextField } from "@mui/material";
 import { useData } from "@/context/context";
 import { CleaningServices } from "@mui/icons-material";
+import SlotTime from "./SlotTime";
 
 const IsHomeCollection = () => {
   const { cartState, cartDispatch } = useData();
@@ -131,52 +132,7 @@ const IsHomeCollection = () => {
                     ))}
                   </div>
                 </div>
-                <div className="time-picker mt-6">
-                  <div className="title">
-                    <Clock className="mx-2" />
-                    Select preferred time slot
-                  </div>
-                  <div
-                    className="time_slots d-flex"
-                    role="radiogroup"
-                    aria-required="false"
-                    dir="ltr"
-                    tabIndex="0"
-                  >
-                    <label className="" htmlFor="morning">
-                      <input
-                        type="radio"
-                        name="timeSlot"
-                        id="morning"
-                        className="d-none"
-                        onChange={() =>
-                          handleInputChange("timeSlot", "morning")
-                        }
-                        checked={selectedTime === "10:00"}
-                      />
-                      <div className="slot-wrapper">
-                        <Morning />
-                        Afternoon
-                      </div>
-                    </label>
-                    <label className="" htmlFor="evening">
-                      <input
-                        type="radio"
-                        name="timeSlot"
-                        id="evening"
-                        className="d-none"
-                        onChange={() =>
-                          handleInputChange("timeSlot", "evening")
-                        }
-                        checked={selectedTime === "16:00"}
-                      />
-                      <div className="slot-wrapper">
-                        <Evening />
-                        Evening
-                      </div>
-                    </label>
-                  </div>
-                </div>
+                <SlotTime />
               </article>
               <article className="address mt-5">
                 <div className="title">

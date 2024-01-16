@@ -119,44 +119,45 @@ export const Test_details_logic = ({ Slug, Category }) => {
       //   <DNALoader />
       // </>
       project ? (
-        <div className="row">
-          <div className="title col-12 float-start text-center">
-            <h2>{project.Test_Name}</h2>
-            {/* {!project.Test_Category ? (
+        <>
+          <div className="row">
+            <div className="title col-12 float-start text-center">
+              <h2>{project.Test_Name}</h2>
+              {/* {!project.Test_Category ? (
               <>
               </>
             ) : (
               <h2>{project.Test_Category}-test</h2>
             )} */}
-          </div>
-          <div className="col-lg-11 m-auto col-12 float-start grey-background pt-4 px-0">
-            <div className="detailrow">
-              <div className="row">
-                <div className="detailtitle col-lg-3 col-md-4 col-12">
-                  <p>
-                    <strong>Package Name</strong>
-                  </p>
-                </div>
-                <div className="detaildescrp col-lg-9 col-md-8 col-12">
-                  <p>
-                    <strong>{project.Test_Name}</strong>
-                  </p>
+            </div>
+            <div className="col-lg-11 m-auto col-12 float-start grey-background pt-4 px-0">
+              <div className="detailrow">
+                <div className="row">
+                  <div className="detailtitle col-lg-3 col-md-4 col-12">
+                    <p>
+                      <strong>Package Name</strong>
+                    </p>
+                  </div>
+                  <div className="detaildescrp col-lg-9 col-md-8 col-12">
+                    <p>
+                      <strong>{project.Test_Name}</strong>
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="detailrow">
-              <div className="row">
-                <div className="detailtitle col-lg-3 col-md-4 col-12">
-                  <p>
-                    <strong>About Package</strong>
-                  </p>
-                </div>
-                <div className="detaildescrp col-lg-9 col-md-8 col-12">
-                  <p>{project.Test_Description}</p>
+              <div className="detailrow">
+                <div className="row">
+                  <div className="detailtitle col-lg-3 col-md-4 col-12">
+                    <p>
+                      <strong>About Package</strong>
+                    </p>
+                  </div>
+                  <div className="detaildescrp col-lg-9 col-md-8 col-12">
+                    <p>{project.Test_Description}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            {/* <div className="detailrow">
+              {/* <div className="detailrow">
                     <div className="row">
                       <div className="detailtitle col-lg-3 col-md-4 col-12">
                         <p>
@@ -168,214 +169,213 @@ export const Test_details_logic = ({ Slug, Category }) => {
                       </div>
                     </div>
                   </div> */}
-            <div className="detailrow">
-              <div className="row">
-                <div className="detailtitle col-lg-3 col-md-4 col-12">
-                  <p>
-                    <strong>Exclusive Offer</strong>
-                  </p>
-                </div>
-                <div className="detaildescrp col-lg-9 col-md-8 col-12 ">
-                  <div className="packageprice d-flex align-items-center gap-5">
-                    {project.Discount_Amount != 0 ? (
-                      <>
-                        <div className="actualprice">
-                          <Rupees /> <span>{project.Test_Amount}</span>
-                        </div>
-                        <div className="discountprice gradient  text-white m-0">
-                          <Rupees /> <span>{project.Discount_Amount}</span>
-                        </div>
-                      </>
-                    ) : (
-                      <>
-                        <div className="discountprice gradient  text-white m-0">
-                          <Rupees /> <span>{project.Test_Amount}</span>
-                        </div>
-                      </>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </div>
-            {_discount !== "100" && (
               <div className="detailrow">
                 <div className="row">
                   <div className="detailtitle col-lg-3 col-md-4 col-12">
                     <p>
-                      <strong>Discount</strong>
+                      <strong>Exclusive Offer</strong>
                     </p>
                   </div>
                   <div className="detaildescrp col-lg-9 col-md-8 col-12 ">
-                    <p>
-                      UPTO <strong>{Math.round(_discount)}%</strong>{" "}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            )}
-            {project.Who_is_it_for && (
-              <div className="detailrow">
-                <div className="row align-item-start">
-                  <div className="detailtitle col-lg-3 col-md-4 col-12">
-                    <p>
-                      <strong>Who is it for</strong>
-                    </p>
-                  </div>
-                  <div className="detaildescrp col-lg-9 col-md-8 col-12 ">
-                    <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
-                      <p>{project.Who_is_it_for}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-            {project.Turn_around_time && (
-              <div className="detailrow">
-                <div className="row">
-                  <div className="detailtitle col-lg-3 col-md-4 col-12">
-                    <p>
-                      <strong>Turn around time</strong>
-                    </p>
-                  </div>
-                  <div className="detaildescrp col-lg-9 col-md-8 col-12 ">
-                    <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
-                      <p>{project.Turn_around_time}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-            {project.Pre_test_information && (
-              <div className="detailrow">
-                <div className="row">
-                  <div className="detailtitle col-lg-3 col-md-4 col-12">
-                    <p>
-                      <strong>Pre test information</strong>
-                    </p>
-                  </div>
-                  <div className="detaildescrp col-lg-9 col-md-8 col-12 ">
-                    <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
-                      <p>{project.Pre_test_information}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-            <div className="detailrow ">
-              <div className="row gap-md-2 gap-lg-0 justify-content-start align-items-start">
-                <div className="detailtitle col-lg-3 col-12">
-                  <p>
-                    <strong>Highlights</strong>
-                  </p>
-                </div>
-                <div className="detaildescrp col-lg-9 col-md-11 col-12 ">
-                  <div className="highlights flex-center  flex-wrap gap-3 justify-content-start">
-                    {project.TestInfo.length ? (
-                      <p>
-                        <strong>{project.TestInfo.length} </strong>
-                        Parameters
-                      </p>
-                    ) : null}
-
-                    <p>
-                      <strong>FREE</strong> Sample Collection
-                    </p>
-                    <p>
-                      <strong>FREE</strong> Report Counselling
-                    </p>
-                    <p>
-                      Test booked so far: <strong>200</strong>
-                    </p>
-                    <p>
-                      Report Time: <strong>Same Day</strong>
-                    </p>
-                    <p>
-                      Fasting: Overnight <strong>8 hours</strong>
-                    </p>
-                    <p>
-                      Test Recommended for <strong>Male</strong>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {project.TestInfo && (
-              <div className="detailrow ">
-                <div className="row justify-content-start align-items-start">
-                  <div className="detailtitle col-lg-3 col-12">
-                    <p>
-                      <strong>
-                        Test Details <br />
-                        {/* (Parameters included : {lengthOfTestInfo}) */}
-                      </strong>
-                    </p>
-                  </div>
-                  <div className="detaildescrp col-lg-9 col-md-11  col-12">
-                    <AccordionComponent ParameterData={project.TestInfo} />
-                  </div>
-                </div>
-              </div>
-            )}
-            <div className="detailrow">
-              <div className="row">
-                <div className="detailtitle col-lg-3 col-md-4 col-12">
-                  <p>
-                    <strong>Book Now</strong>
-                  </p>
-                </div>
-                <div className="detaildescrp col-lg-9 col-md-8 col-12">
-                  <div className="col-12 flex-center mt-5 mb-2 mb-sm-5 justify-content-center justify-content-sm-start flex-wrap gap-3 m-auto">
-                    <button
-                      className={`button button--aylen button--round-l button--text-thick gradient col-lg-3 col-md-4 col-11 flex-center gap-2 ${
-                        isInCart ? "button--remove" : ""
-                      }`}
-                      onClick={handleToggleCart}
-                    >
-                      {cartIds.includes(project.id) ? (
+                    <div className="packageprice d-flex align-items-center gap-5">
+                      {project.Discount_Amount != 0 ? (
                         <>
-                          <Bin />
-                          Remove from Cart
+                          <div className="actualprice">
+                            <Rupees /> <span>{project.Test_Amount}</span>
+                          </div>
+                          <div className="discountprice gradient  text-white m-0">
+                            <Rupees /> <span>{project.Discount_Amount}</span>
+                          </div>
                         </>
                       ) : (
                         <>
-                          <Cart /> Add to Cart
+                          <div className="discountprice gradient  text-white m-0">
+                            <Rupees /> <span>{project.Test_Amount}</span>
+                          </div>
                         </>
                       )}
-                    </button>
-                    {/* <button
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {_discount !== "100" && (
+                <div className="detailrow">
+                  <div className="row">
+                    <div className="detailtitle col-lg-3 col-md-4 col-12">
+                      <p>
+                        <strong>Discount</strong>
+                      </p>
+                    </div>
+                    <div className="detaildescrp col-lg-9 col-md-8 col-12 ">
+                      <p>
+                        UPTO <strong>{Math.round(_discount)}%</strong>{" "}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
+              {project.Who_is_it_for && (
+                <div className="detailrow">
+                  <div className="row align-item-start">
+                    <div className="detailtitle col-lg-3 col-md-4 col-12">
+                      <p>
+                        <strong>Who is it for</strong>
+                      </p>
+                    </div>
+                    <div className="detaildescrp col-lg-9 col-md-8 col-12 ">
+                      <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
+                        <p>{project.Who_is_it_for}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+              {project.Turn_around_time && (
+                <div className="detailrow">
+                  <div className="row">
+                    <div className="detailtitle col-lg-3 col-md-4 col-12">
+                      <p>
+                        <strong>Turn around time</strong>
+                      </p>
+                    </div>
+                    <div className="detaildescrp col-lg-9 col-md-8 col-12 ">
+                      <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
+                        <p>{project.Turn_around_time}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+              {project.Pre_test_information && (
+                <div className="detailrow">
+                  <div className="row">
+                    <div className="detailtitle col-lg-3 col-md-4 col-12">
+                      <p>
+                        <strong>Pre test information</strong>
+                      </p>
+                    </div>
+                    <div className="detaildescrp col-lg-9 col-md-8 col-12 ">
+                      <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
+                        <p>{project.Pre_test_information}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+              <div className="detailrow ">
+                <div className="row gap-md-2 gap-lg-0 justify-content-start align-items-start">
+                  <div className="detailtitle col-lg-3 col-12">
+                    <p>
+                      <strong>Highlights</strong>
+                    </p>
+                  </div>
+                  <div className="detaildescrp col-lg-9 col-md-11 col-12 ">
+                    <div className="highlights flex-center  flex-wrap gap-3 justify-content-start">
+                      {project.TestInfo.length ? (
+                        <p>
+                          <strong>{project.TestInfo.length} </strong>
+                          Parameters
+                        </p>
+                      ) : null}
+
+                      <p>
+                        <strong>FREE</strong> Sample Collection
+                      </p>
+                      <p>
+                        <strong>FREE</strong> Report Counselling
+                      </p>
+                      <p>
+                        Test booked so far: <strong>200</strong>
+                      </p>
+                      <p>
+                        Report Time: <strong>Same Day</strong>
+                      </p>
+                      <p>
+                        Fasting: Overnight <strong>8 hours</strong>
+                      </p>
+                      <p>
+                        Test Recommended for <strong>Male</strong>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {project.TestInfo && (
+                <div className="detailrow ">
+                  <div className="row justify-content-start align-items-start">
+                    <div className="detailtitle col-lg-3 col-12">
+                      <p>
+                        <strong>
+                          Test Parameters <br />
+                          {/* (Parameters included : {lengthOfTestInfo}) */}
+                        </strong>
+                      </p>
+                    </div>
+                    <div className="detaildescrp col-lg-9 col-md-11  col-12">
+                      <AccordionComponent ParameterData={project.TestInfo} />
+                    </div>
+                  </div>
+                </div>
+              )}
+              <div className="detailrow">
+                <div className="row">
+                  <div className="detailtitle col-lg-3 col-md-4 col-12">
+                    <p>
+                      <strong>Book Now</strong>
+                    </p>
+                  </div>
+                  <div className="detaildescrp col-lg-9 col-md-8 col-12">
+                    <div className="col-12 flex-center mt-5 mb-2 mb-sm-5 justify-content-center justify-content-sm-start flex-wrap gap-3 m-auto">
+                      <button
+                        className={`button button--aylen button--round-l button--text-thick gradient col-lg-3 col-md-4 col-11 flex-center gap-2 ${
+                          isInCart ? "button--remove" : ""
+                        }`}
+                        onClick={handleToggleCart}
+                      >
+                        {cartIds.includes(project.id) ? (
+                          <>
+                            <Bin />
+                            Remove from Cart
+                          </>
+                        ) : (
+                          <>
+                            <Cart /> Add to Cart
+                          </>
+                        )}
+                      </button>
+                      {/* <button
                       className="button button--aylen button--round-l button--text-thick  gradient col-lg-3 col-md-4 col-11   flex-center gap-2"
                       onClick={handleAddToCart}
                       disabled={cartState.cartVisible}
                     >
                       <Cart /> Add to Cart
                     </button> */}
-                    <button
-                      className="button button--aylen button--round-l button--text-thick  gradient col-xxl-3 col-lg-4 col-md-5 col-11 "
-                      onClick={handleBookHomeCollectionClick}
-                    >
-                      Book Home Collection
-                    </button>
+                      <button
+                        className="button button--aylen button--round-l button--text-thick  gradient col-xxl-3 col-lg-4 col-md-5 col-11 "
+                        onClick={handleBookHomeCollectionClick}
+                      >
+                        Book Home Collection
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+          <div className="row pt-80">
+            <div className="title col-12 float-start text-center">
+              <h2 className="">Frequently Asked Questions.</h2>
+            </div>
+            <div className="col-lg-11 col-12 m-auto float-start">
+              <Faq className="minusbottom  " />
+            </div>
+          </div>
+        </>
       ) : (
         <div className="No_Data d-flex justify-content-center col-12">
           <NoData />
         </div>
       )}
-      <section id="faq" className="faq pt-5 col-12 ">
-        <div className="row">
-          <div className="title col-12 float-start text-center">
-            <h2 className="">Frequently Asked Questions.</h2>
-          </div>
-          <div className="col-lg-11 col-12 m-auto float-start">
-            <Faq className="minusbottom  " />
-          </div>
-        </div>
-      </section>
     </>
   );
 };

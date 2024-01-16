@@ -3271,7 +3271,7 @@ label.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
 .form-control input:-webkit-autofill:active {
   background-color: transparent !important;
 }
-
+.css-4ff9q7.Mui-completed,
 .css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-active,
 .css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-completed {
   color: #888bf1 !important;
@@ -3280,14 +3280,17 @@ label.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
 .css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root {
   color: #c6d0ff !important;
 }
-
+.css-10psl7k,
 .MuiStepIcon-text.css-117w1su-MuiStepIcon-text {
   color: #fff !important;
   font-weight: 600;
   padding: 2px;
   font-family: var(--font-family);
 }
-
+.css-4ff9q7 {
+  color: #c6d0ff !important;
+}
+.css-4ff9q7,
 .css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root {
   height: 28px;
   width: 28px;
@@ -3556,4 +3559,8 @@ div#notfound a.active {
 }
 .detaildescrp .actualprice svg {
   left: 0;
+}
+.sucess_msg text {
+  font-size: 85px;
+  font-weight: 600;
 }

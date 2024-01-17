@@ -1433,6 +1433,13 @@ header {
   opacity: 0;
   display: none;
 }
+.prescription-form {
+  width: 95%;
+}
+
+.upload-prescription-form {
+  width: 60%;
+}
 
 .cannot-upload-message {
   background-color: #ffc6c4;
@@ -3574,4 +3581,3 @@ div#notfound a.active {
 .app-border {
   transition: opacity 0.3s ease; /* Add a transition for a smooth effect */
 }
-

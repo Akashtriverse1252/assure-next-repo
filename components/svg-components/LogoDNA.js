@@ -36,8 +36,8 @@ const LogoDNA = () => {
             path.style.fill = "white";
 
             // Animate the fill
-            path.animate([{ fill: "#ffffff2b" }, { fill: "#ffffff" }], {
-              duration: 600, // Adjust the duration as needed
+            path.animate([{ fill: "#ffffff42" }, { fill: "#ffffff" }], {
+              duration: 1200, // Adjust the duration as needed
               easing: "linear", // You can use other easing functions
             });
           }, 200); // Adjust the delay (in milliseconds) as needed
@@ -46,7 +46,7 @@ const LogoDNA = () => {
 
       // Additional code for hiding the SVG after animations
       setTimeout(() => {
-        svgElement.style.transition = "opacity 0.4s ease";
+        svgElement.style.transition = "opacity 0.8s ease";
         svgElement.style.opacity = "0";
       }, 3800);
     }

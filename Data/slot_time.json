@@ -1,0 +1,17 @@
+{
+    "timeSlots": [
+      {
+        "label": "Morning Slot",
+        "times": ["730AM", "800AM", "830AM", "900AM", "930AM", "1000AM", "1030AM", "1100AM", "1130AM"]
+      },
+      {
+        "label": "Afternoon",
+        "times": ["1200PM", "1230PM", "100PM", "130PM", "200PM", "230PM", "300PM", "330PM"]
+      },
+      {
+        "label": "Evening",
+        "times": ["400PM", "430PM", "500PM", "530PM", "600PM", "630PM", "700PM", "730PM", "800PM"]
+      }
+    ]
+  }
+  

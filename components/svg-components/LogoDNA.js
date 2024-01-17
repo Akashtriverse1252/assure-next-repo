@@ -9,7 +9,7 @@ const LogoDNA = () => {
 
     if (svgElement) {
       svgElement.style.stroke = "white";
-      svgElement.style.strokeWidth = "10px";
+      svgElement.style.strokeWidth = "30px";
 
       const paths = svgElement.querySelectorAll("path");
 
@@ -23,29 +23,35 @@ const LogoDNA = () => {
         const strokeAnimation = path.animate(
           [{ strokeDashoffset: length }, { strokeDashoffset: 0 }],
           {
-            duration: 2000,
+            duration: 2300,
             easing: "linear",
           }
         );
 
         // Add event listener for the animation finish
         strokeAnimation.onfinish = () => {
-          // Set styles for the fill animation
-          path.style.fill = "white";
+          // Set a delay before starting the fill animation
+          setTimeout(() => {
+            // Set styles for the fill animation
+            path.style.fill = "white";
 
-          // Animate the fill
-          path.animate([{ fill: "transparent" }, { fill: "white" }], {
-            duration: 600, // Adjust the duration as needed
-            easing: "ease-in-out", // You can use other easing functions
-          });
+            // Animate the fill
+            path.animate([{ fill: "#ffffff2b" }, { fill: "#ffffff" }], {
+              duration: 600, // Adjust the duration as needed
+              easing: "linear", // You can use other easing functions
+            });
+          }, 200); // Adjust the delay (in milliseconds) as needed
         };
       });
+
+      // Additional code for hiding the SVG after animations
       setTimeout(() => {
-        svgElement.style.transition = "opacity 0.3s ease";
+        svgElement.style.transition = "opacity 0.4s ease";
         svgElement.style.opacity = "0";
-      }, 2800);
+      }, 3800);
     }
   }, []);
+
   const svgStyle = {
     shapeRendering: "geometricPrecision",
     textRendering: "geometricPrecision",

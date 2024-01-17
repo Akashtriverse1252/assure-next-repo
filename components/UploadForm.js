@@ -251,7 +251,7 @@ const UploadForm = () => {
               <RxCross2 />
             </div>
             <div className=" prescription-form  flex-center flex-direction-row align-items-start">
-              <div className="col-5 float-start upload-prescription-form">
+              <div className=" float-start upload-prescription-form">
                 <h4>
                   <strong>UPLOAD PRESCRIPTION</strong>{" "}
                 </h4>
@@ -304,7 +304,7 @@ const UploadForm = () => {
                   </span>
                 </button>
               </div>
-              <div className="drag-file-area col-7">
+              <div className="drag-file-area ">
                 <div className="upload-icon">
                   {fileState.isFileUploaded ? (
                     <div className="file-preview d-flex justify-content-center align-items-center">

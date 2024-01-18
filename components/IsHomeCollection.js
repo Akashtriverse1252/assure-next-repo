@@ -13,7 +13,7 @@ import { CleaningServices } from "@mui/icons-material";
 import SlotTime from "./SlotTime";
 import slotTimes from "@/Data/slot_time.json";
 
-const IsHomeCollection = () => {
+const IsHomeCollection = ({ HomeColData }) => {
   const { cartState, cartDispatch } = useData();
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
@@ -25,7 +25,6 @@ const IsHomeCollection = () => {
     body: date.body,
     month: date.month,
   }));
-  console.log(bookingDate);
 
   const [formData, setFormData] = useState({
     address: "",
@@ -42,34 +41,16 @@ const IsHomeCollection = () => {
 
     if (name === "dateSelection") {
       setSelectedDate(value);
-    } else if (name === "timeSlot") {
-      setSelectedTime(value === "morning" ? "10:00" : "16:00");
     }
+    // else if (name === "timeSlot") {
+    //   setSelectedTime(value === "morning" ? "10:00" : "16:00");
+    // }
   };
+  useEffect(() => {
+    // Trigger form submission when formData changes
+    HomeColData(formData);
+  }, [formData, HomeColData]);
 
-  const handleFormSubmit = () => {
-    const { address, pincode, city, state } = formData;
-    const selectedDateTime = new Date(`${selectedDate}T${selectedTime}`);
-
-    const formattedDateTime = `${
-      selectedDateTime.toISOString().split("T")[0]
-    }T${selectedDateTime.toTimeString().split(" ")[0]}Z`;
-    // console.log(formattedDateTime);
-
-    const updatedData = {
-      address,
-      pincode,
-      city,
-      state,
-      homeCollectionDateTime: formattedDateTime,
-    };
-
-    cartDispatch({
-      type: "UPDATE_USER_ADDRESS",
-      userAddress: updatedData,
-    });
-  };
-  // console.log(cartState.userAddress.IsHomeCollection);
   return (
     <>
       <div
@@ -134,311 +115,6 @@ const IsHomeCollection = () => {
                   </div>
                 </div>
                 <SlotTime timeSlots={slotTimes.timeSlots} />
-                {/* <div className="Time-slot">
-                  <div className="app-time">
-                    <div>
-                      <p>Morning Slot</p>
-                      <div className="app-check">
-                        <div className="app-border app-730AM">
-                          <input
-                            className="option-input "
-                            id="730AM"
-                            type="radio"
-                            name="timeSlot"
-                          />
-                          <label className="app-label" htmlFor="730AM">
-                            7:30 AM
-                          </label>
-                        </div>
-                        <div className="app-border app-800AM">
-                          <input
-                            className="option-input "
-                            id="800AM"
-                            type="radio"
-                            name="timeSlot"
-                          />
-                          <label className="app-label" htmlFor="800AM">
-                            8:00 AM
-                          </label>
-                        </div>
-                        <div className="app-border app-830AM">
-                          <input
-                            className="option-input "
-                            id="830AM"
-                            type="radio"
-                            name="timeSlot"
-                          />
-                          <label className="app-label" htmlFor="830AM">
-                            8:30 AM
-                          </label>
-                        </div>
-                        <div className="app-border app-900AM">
-                          <input
-                            className="option-input "
-                            id="900AM"
-                            type="radio"
-                            name="timeSlot"
-                          />
-                          <label className="app-label" htmlFor="900AM">
-                            9:00 AM
-                          </label>
-                        </div>
-                        <div className="app-border app-930AM">
-                          <input
-                            className="option-input "
-                            id="930AM"
-                            type="radio"
-                            name="timeSlot"
-                          />
-                          <label className="app-label" htmlFor="930AM">
-                            9:30 AM
-                          </label>
-                        </div>
-                        <div className="app-border app-1000AM">
-                          <input
-                            className="option-input "
-                            id="1000AM"
-                            type="radio"
-                            name="timeSlot"
-                          />
-                          <label className="app-label" htmlFor="1000AM">
-                            10:00 AM
-                          </label>
-                        </div>
-                        <div className="app-border app-1030AM">
-                          <input
-                            className="option-input "
-                            id="1030AM"
-                            type="radio"
-                            name="timeSlot"
-                          />
-                          <label className="app-label" htmlFor="1030AM">
-                            10:30 AM
-                          </label>
-                        </div>
-                        <div className="app-border app-1100AM">
-                          <input
-                            className="option-input "
-                            id="1100AM"
-                            type="radio"
-                            name="timeSlot"
-                          />
-                          <label className="app-label" htmlFor="1100AM">
-                            11:00 AM
-                          </label>
-                        </div>
-                        <div className="app-border app-1130AM">
-                          <input
-                            className="option-input "
-                            id="1130AM"
-                            type="radio"
-                            name="timeSlot"
-                          />
-                          <label className="app-label" htmlFor="1130AM">
-                            11:30 AM
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <p>Afternoon</p>
-                      <div className="app-check">
-                        <div className="app-border app-1200PM">
-                          <input
-                            className="option-input "
-                            id="1200PM"
-                            type="radio"
-                            name="timeSlot"
-                          />
-                          <label className="app-label" htmlFor="1200PM">
-                            12:00 PM
-                          </label>
-                        </div>
-                        <div className="app-border app-1230PM">
-                          <input
-                            className="option-input "
-                            id="1230PM"
-                            type="radio"
-                            name="timeSlot"
-                          />
-                          <label className="app-label" htmlFor="1230PM">
-                            12:30 PM
-                          </label>
-                        </div>
-                        <div className="app-border app-100PM">
-                          <input
-                            className="option-input "
-                            id="100PM"
-                            type="radio"
-                            name="timeSlot"
-                          />
-                          <label className="app-label" htmlFor="100PM">
-                            1:00 PM
-                          </label>
-                        </div>
-                        <div className="app-border app-130PM">
-                          <input
-                            className="option-input "
-                            id="130PM"
-                            type="radio"
-                            name="timeSlot"
-                          />
-                          <label className="app-label" htmlFor="130PM">
-                            1:30 PM
-                          </label>
-                        </div>
-                        <div className="app-border app-200PM">
-                          <input
-                            className="option-input "
-                            id="200PM"
-                            type="radio"
-                            name="timeSlot"
-                          />
-                          <label className="app-label" htmlFor="200PM">
-                            2:00 PM
-                          </label>
-                        </div>
-                        <div className="app-border app-230PM">
-                          <input
-                            className="option-input "
-                            id="230PM"
-                            type="radio"
-                            name="timeSlot"
-                          />
-                          <label className="app-label" htmlFor="230PM">
-                            2:30 PM
-                          </label>
-                        </div>
-                        <div className="app-border app-300PM">
-                          <input
-                            className="option-input "
-                            id="300PM"
-                            type="radio"
-                            name="timeSlot"
-                          />
-                          <label className="app-label" htmlFor="300PM">
-                            3:00 PM
-                          </label>
-                        </div>
-                        <div className="app-border app-330PM">
-                          <input
-                            className="option-input "
-                            id="330PM"
-                            type="radio"
-                            name="timeSlot"
-                          />
-                          <label className="app-label" htmlFor="330PM">
-                            3:30 PM
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <p>Evening</p>
-                      <div className="app-check">
-                        <div className="app-border app-400PM">
-                          <input
-                            className="option-input "
-                            id="400PM"
-                            type="radio"
-                            name="timeSlot"
-                          />
-                          <label className="app-label" htmlFor="400PM">
-                            4:00 PM
-                          </label>
-                        </div>
-                        <div className="app-border app-430PM">
-                          <input
-                            className="option-input "
-                            id="430PM"
-                            type="radio"
-                            name="timeSlot"
-                          />
-                          <label className="app-label" htmlFor="430PM">
-                            4:30 PM
-                          </label>
-                        </div>
-                        <div className="app-border app-500PM">
-                          <input
-                            className="option-input "
-                            id="500PM"
-                            type="radio"
-                            name="timeSlot"
-                          />
-                          <label className="app-label" htmlFor="500PM">
-                            5:00 PM
-                          </label>
-                        </div>
-                        <div className="app-border app-530PM">
-                          <input
-                            className="option-input "
-                            id="530PM"
-                            type="radio"
-                            name="timeSlot"
-                          />
-                          <label className="app-label" htmlFor="530PM">
-                            5:30 PM
-                          </label>
-                        </div>
-                        <div className="app-border app-600PM">
-                          <input
-                            className="option-input "
-                            id="600PM"
-                            type="radio"
-                            name="timeSlot"
-                          />
-                          <label className="app-label" htmlFor="600PM">
-                            6:00 PM
-                          </label>
-                        </div>
-                        <div className="app-border app-630PM">
-                          <input
-                            className="option-input "
-                            id="630PM"
-                            type="radio"
-                            name="timeSlot"
-                          />
-                          <label className="app-label" htmlFor="630PM">
-                            6:30 PM
-                          </label>
-                        </div>
-                        <div className="app-border app-700PM">
-                          <input
-                            className="option-input "
-                            id="700PM"
-                            type="radio"
-                            name="timeSlot"
-                          />
-                          <label className="app-label" htmlFor="700PM">
-                            7:00 PM
-                          </label>
-                        </div>
-                        <div className="app-border app-730PM">
-                          <input
-                            className="option-input "
-                            id="730PM"
-                            type="radio"
-                            name="timeSlot"
-                          />
-                          <label className="app-label" htmlFor="730PM">
-                            7:30 PM
-                          </label>
-                        </div>
-                        <div className="app-border app-800PM">
-                          <input
-                            className="option-input "
-                            id="800PM"
-                            type="radio"
-                            name="timeSlot"
-                          />
-                          <label className="app-label" htmlFor="800PM">
-                            8:00 PM
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
               </article>
               <article className="address mt-5">
                 <div className="title">
@@ -492,13 +168,6 @@ const IsHomeCollection = () => {
                     onChange={(e) => handleInputChange("state", e.target.value)}
                   />
                 </div>
-                {/* <div
-                  type="button"
-                  className="textbtn px-3"
-                  onClick={handleFormSubmit}
-                >
-                  Add Your Address
-                </div> */}
               </article>
             </div>
           </div>

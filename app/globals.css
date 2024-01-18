@@ -616,7 +616,7 @@ section,
 }
 
 .bg-gradient-image {
-  bottom: -50%;
+  bottom: -25%;
   z-index: -1;
 }
 
@@ -3286,6 +3286,9 @@ label.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
   border: 1.5px solid var(--error);
   background: var(--bg-error);
 }
+.abt_banner {
+  margin-left: auto;
+}
 
 .abt_banner img {
   width: 100% !important;
@@ -3572,6 +3575,13 @@ div#notfound a.active {
   justify-content: center;
   align-items: center;
 }
+.about-assure-text {
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.6px;
+}
 
 .app-check input:checked + .app-label {
   color: #5a98f5;
@@ -3585,4 +3595,49 @@ i.my-cart_cnt.mycart_qty_high {
   width: 25px;
   height: 25px;
   transition: all 0.3s ease;
+}
+table {
+  margin: 0;
+  width: 100%;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: 0.5em 0 0.75em;
+}
+
+table tr {
+  background-color: rgb(249 253 255);
+  border-bottom: 1px solid #c9e1f5;
+}
+thead {
+  background: rgb(213, 233, 253);
+}
+table th,
+table td {
+  padding: 18px;
+  text-align: left;
+}
+
+table th {
+  padding: 22px 20px;
+}
+table th {
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background-color: rgb(180 210 255 / 94%);
+}
+.effectheading.newheading {
+  font-size: 57px;
+  text-align: center;
+  color: #cccaca;
+}
+.menustn {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

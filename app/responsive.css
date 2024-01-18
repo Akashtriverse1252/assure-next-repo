@@ -390,6 +390,9 @@
   .actualprice {
     padding: 10px 0;
   }
+  .menustn {
+    height: auto;
+  }
 
   .fixed .menslide.active {
     top: 90px;
@@ -831,6 +834,58 @@
     height: 100dvh;
     inset: 1;
   }
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    /* border-bottom: 3px solid #eeeeee; */
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 15px;
+    text-align: right;
+    padding: 20px 15px;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+    width: 45%;
+    text-align: left;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+  .bread_crums {
+    margin: 5px 0 ;
+}
+.checkout_input{
+  gap: 15px;
+}
 }
 
 @media (max-width: 580px) {

@@ -150,10 +150,10 @@ export const UserDetail = () => {
 
   return (
     <>
-      <div className="col-12 d-flex justify-content-between checkout_input">
+      <div className="col-12 d-flex justify-content-between flex-column flex-md-row checkout_input">
         <TextField
           type="text"
-          className="col-3 mx-3"
+          className="col-md-3 col-12 mx-md-3"
           required
           id="standard-required"
           defaultValue="Name"
@@ -166,7 +166,7 @@ export const UserDetail = () => {
         />
         <TextField
           type="tel"
-          className="col-3 mx-3"
+          className="col-md-3 col-12 mx-md-3"
           required
           id="standard-required"
           defaultValue="Contact Number"
@@ -178,7 +178,7 @@ export const UserDetail = () => {
           error={errors.phoneNumber}
         />
         <TextField
-          className="col-3 mx-3"
+          className="col-md-3 col-12 mx-md-3"
           required
           label="Date of Birth"
           type="date"
@@ -190,78 +190,70 @@ export const UserDetail = () => {
           error={errors.dob}
         />
       </div>
-      <div className="container">
-        <div className="radio-buttons">
-          <div className="title">Choose your Gender</div>
-          <label className="custom-radio" htmlFor="male">
-            <input
-              type="radio"
-              name="gender"
-              id="male"
-              checked={userData.gender === "male"}
-              onChange={handleGenderChange}
-            />
-            <span
-              className={` radio-btn ${errors.gender ? "input_error" : ""}`}
-            >
-              <i className="las la-check">
-                <FaCheck />
-              </i>
-              <div className="hobbies-icon">
-                {/* <Image
+      <div className="radio-buttons">
+        <div className="title">Choose your Gender</div>
+        <label className="custom-radio" htmlFor="male">
+          <input
+            type="radio"
+            name="gender"
+            id="male"
+            checked={userData.gender === "male"}
+            onChange={handleGenderChange}
+          />
+          <span className={` radio-btn ${errors.gender ? "input_error" : ""}`}>
+            <i className="las la-check">
+              <FaCheck />
+            </i>
+            <div className="hobbies-icon">
+              {/* <Image
                   src="/consultant.png"
                   alt=""
                   title="Dr. Sanjay Wadhwa"
                   width="120"
                   height="120"
                 /> */}
-                <Male/>
-                <h3 className="">Male</h3>
-              </div>
-            </span>
-          </label>
-          <label className="custom-radio" htmlFor="female">
-            <input
-              type="radio"
-              name="gender"
-              id="female"
-              checked={userData.gender === "female"}
-              onChange={handleGenderChange}
-              error={errors.gender}
-            />
-            <span
-              className={` radio-btn ${errors.gender ? "input_error" : ""}`}
-            >
-              <i className="las la-check">
-                <FaCheck />
-              </i>
-              <div className="hobbies-icon">
-                <Female />
-                <h3 className="">Female</h3>
-              </div>
-            </span>
-          </label>
-          <label className="custom-radio" htmlFor="other">
-            <input
-              type="radio"
-              name="gender"
-              id="other"
-              checked={userData.gender === "other"}
-              onChange={handleGenderChange}
-            />
-            <span
-              className={` radio-btn ${errors.gender ? "input_error" : ""}`}
-            >
-              <i className="las la-check">
-                <FaCheck />
-              </i>
-              <div className="hobbies-icon">
-                <OtherGender />
-                <h3 className="">Other</h3>
-              </div>
-            </span>
-          </label>
-        </div>
+              <Male />
+              <h3 className="">Male</h3>
+            </div>
+          </span>
+        </label>
+        <label className="custom-radio" htmlFor="female">
+          <input
+            type="radio"
+            name="gender"
+            id="female"
+            checked={userData.gender === "female"}
+            onChange={handleGenderChange}
+            error={errors.gender}
+          />
+          <span className={` radio-btn ${errors.gender ? "input_error" : ""}`}>
+            <i className="las la-check">
+              <FaCheck />
+            </i>
+            <div className="hobbies-icon">
+              <Female />
+              <h3 className="">Female</h3>
+            </div>
+          </span>
+        </label>
+        <label className="custom-radio" htmlFor="other">
+          <input
+            type="radio"
+            name="gender"
+            id="other"
+            checked={userData.gender === "other"}
+            onChange={handleGenderChange}
+          />
+          <span className={` radio-btn ${errors.gender ? "input_error" : ""}`}>
+            <i className="las la-check">
+              <FaCheck />
+            </i>
+            <div className="hobbies-icon">
+              <OtherGender />
+              <h3 className="">Other</h3>
+            </div>
+          </span>
+        </label>
       </div>
       <Stack spacing={2} sx={{ width: "100%" }}>
         {Object.values(errors).some((error) => error !== "") && (

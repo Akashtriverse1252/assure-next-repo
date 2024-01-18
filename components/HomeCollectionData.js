@@ -8,7 +8,11 @@ import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import Image from "next/image";
 import { useData } from "@/context/context";
 
-export const HomeCollectionData = () => {
+export const 
+
+
+
+HomeCollectionData = () => {
   const { cartState, cartDispatch } = useData();
   const [selectedPlan, setSelectedPlan] = useState(null);
 

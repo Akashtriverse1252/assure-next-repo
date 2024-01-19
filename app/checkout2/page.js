@@ -195,7 +195,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
     e.preventDefault();
     try {
       const apiUrl =
-        "http://assure.triverseadvertising.com/api/booking_submit_api.php";
+        "https://www.assurepathlabs.com/api/algos/booking_submit_api.php";
 
       const apiData = {
         fullName: userData.name,
@@ -435,7 +435,6 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                       <IsHomeCollection HomeColData={handleHomeColData} />
                     </AccordionDetails>
                   </Accordion>
-                  buttons
                   <button
                     className="edit_cart button button--wayra pull-right red tab3"
                     type="submit"

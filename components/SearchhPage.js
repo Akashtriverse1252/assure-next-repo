@@ -2,13 +2,16 @@
 
 import { useState, useEffect } from "react";
 import mappingdata from "../Data/Maping.json";
-import testData from "../Data/test_data.json";
+import axios from "axios";
+// import testData from "../Data/test_data.json";
 import { TestCard } from "@/components/TestCard";
+// import { NoData } from "@/components/NoData";
 
 const SearchhPage = ({ slug }) => {
   const [selectedIds, setSelectedIds] = useState([]);
   const [packageData, setPackageData] = useState(null);
   const [loading, setLoading] = useState(true);
+  // console.log("this is the test id", selectedIds);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -46,11 +49,14 @@ const SearchhPage = ({ slug }) => {
     const fetchPackageData = async () => {
       try {
         if (selectedIds.length > 0) {
-          const matchedPackages = testData.test_data.filter((item) =>
-            selectedIds.includes(item.id)
-          );
-          if (matchedPackages.length > 0) {
-            setPackageData(matchedPackages);
+          const idsString = selectedIds.join(",");
+          // console.log("thid is the snding id", idsString);
+          const apiUrl = `https://www.assurepathlabs.com/api/algos/fetch_details.php?ids=${idsString}`;
+
+          const response = await axios.get(apiUrl);
+
+          if (response.data && response.data.test_data) {
+            setPackageData(response.data.test_data);
           } else {
             setPackageData(null);
           }
@@ -90,6 +96,7 @@ const SearchhPage = ({ slug }) => {
         </div>
       ) : (
         <p>No package data found.</p>
+        // <NoData/>
       )}
     </div>
   );

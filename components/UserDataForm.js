@@ -19,7 +19,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
   const submitBookingData = async (userData, userAddress, userProduct) => {
     try {
       const apiUrl =
-        "http://assure.triverseadvertising.com/api/booking_submit_api.php";
+        "https://www.assurepathlabs.com/api/algos/booking_submit_api.php";
 
       const apiData = {
         fullName: userData.name,

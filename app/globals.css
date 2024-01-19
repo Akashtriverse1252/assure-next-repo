@@ -616,6 +616,11 @@ section,
 }
 
 .bg-gradient-image {
+  bottom: -50%;
+  z-index: -1;
+}
+
+.bg-gradient-image.about_page {
   bottom: -25%;
   z-index: -1;
 }

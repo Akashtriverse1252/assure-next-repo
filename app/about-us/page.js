@@ -55,7 +55,7 @@ export const page = () => {
           </div>
           <Dots className="hsection position-absolute svgwidth opacity-10" />
           <Line className="svgwidthline position-absolute opacity-10" />
-          <div className="bg-gradient-image position-absolute col-12">
+          <div className="bg-gradient-image about_page position-absolute col-12">
             <AboutGradient />
           </div>
         </section>

@@ -57,9 +57,9 @@ const IsHomeCollection = ({ HomeColData }) => {
         className={`home_collection_data ${(cartState.userAddress.IsHomeCollection =
           1 ? "d-block" : "d-none")}`}
       >
-        <h5>
+        <h3>
           <strong> Home Collection Details</strong>
-        </h5>
+        </h3>
         <div className="hcd_time">
           <div className="hcd_time_date">
             <div className="hcd_select_date">

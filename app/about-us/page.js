@@ -9,6 +9,7 @@ import Image from "next/image";
 import { AboutGradient } from "@/components/AboutGradient";
 import { ChooseAssure } from "@/components/ChooseAssure";
 import { HForm } from "@/components/HForm";
+import OurFounders from "@/components/OurFounders";
 
 export const page = () => {
   return (
@@ -59,6 +60,7 @@ export const page = () => {
             <AboutGradient />
           </div>
         </section>
+        <OurFounders/>
         <section className="position-relative mt-5">
           <div className="container">
             <div className="row">

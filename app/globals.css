@@ -621,7 +621,7 @@ section,
 }
 
 .bg-gradient-image.about_page {
-  bottom: -25%;
+  bottom: -125%;
   z-index: -1;
 }
 
@@ -3646,10 +3646,53 @@ table th {
   justify-content: center;
   align-items: center;
 }
-.noData{
+.noData {
   max-width: 50%;
   width: 600px;
   margin: 0 auto;
   margin-top: 8vh;
-
+}
+.our-founder-title {
+  width: 35%;
+}
+.our-founder-title h2 {
+  font-size: 82px;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(52deg, #7610c7, #0c90d2);
+  background-size: 100% 100%;
+  background-position: 0;
+}
+.our-founder-content {
+  width: 65%;
+}
+.founder-card {
+  background-color: #fff;
+  border: 1px #f6f6f6 solid;
+  width: 385px;
+  margin: 15px;
+  padding: 30px;
+  height: 715px;
+}
+.founder-image {
+  width: 240px;
+  height: 240px;
+  background: #e1d7f5;
+  background-position: 50% 50%;
+  margin: 0 auto 0 0;
+  border-radius: 50% !important;
+}
+.founder-social-icon {
+  margin: 0 7px;
+}
+.founder-social-icon svg {
+  width: 23px;
+  fill: #632fdd;
+}
+.founder-card-body {
+  flex-direction: column; 
+}
+.founder-details{
+  min-height: 195px;
 }

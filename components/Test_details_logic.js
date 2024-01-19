@@ -27,7 +27,7 @@ export const Test_details_logic = ({ Slug, Category }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://www.assurepathlabs.com/api/algos/fetch_details.php?category=${Category}&slug=${Slug}`
+          `https://www.assurepathlabs.com/api/algos/fetch_details.php?category=${Category}&slug=${Slug}&hits=1`
         );
         // if (response.test_data && response.test_data.length > 0) {
         //   setProject(response.test_data[0]);
@@ -271,17 +271,57 @@ export const Test_details_logic = ({ Slug, Category }) => {
                   </div>
                   <div className="detaildescrp col-lg-9 col-md-11 col-12 ">
                     <div className="highlights flex-center  flex-wrap gap-3 justify-content-start">
-                      {project.TestInfo.length ? (
+                      {/* {project.TestInfo.length ? (
                         <p>
                           <strong>{project.TestInfo.length} </strong>
                           Parameters
                         </p>
-                      ) : null}
+                      ) : null} */}
 
-                      <p>
-                        <strong>FREE</strong> Sample Collection
-                      </p>
-                      <p>
+                      {project.high_param >0 ? (
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: project.high_param,
+                          }}
+                        ></p>
+                      ): null}
+                      {project.high_sample && (
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: project.high_sample,
+                          }}
+                        ></p>
+                      )}
+                      {project.high_report && (
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: project.high_report,
+                          }}
+                        ></p>
+                      )}
+                      {project.high_test_booking && (
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: project.high_test_booking,
+                          }}
+                        ></p>
+                      )}
+                      {project.high_report_time && (
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: project.high_report_time,
+                          }}
+                        ></p>
+                      )}
+                      {project.high_recommended_for && (
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: project.high_recommended_for,
+                          }}
+                        ></p>
+                      )}
+
+                      {/* <p>
                         <strong>FREE</strong> Report Counselling
                       </p>
                       <p>
@@ -295,7 +335,7 @@ export const Test_details_logic = ({ Slug, Category }) => {
                       </p>
                       <p>
                         Test Recommended for <strong>Male</strong>
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                 </div>

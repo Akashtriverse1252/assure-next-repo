@@ -278,13 +278,13 @@ export const Test_details_logic = ({ Slug, Category }) => {
                         </p>
                       ) : null} */}
 
-                      {project.high_param >0 ? (
+                      {project.high_param > 0 ? (
                         <p
                           dangerouslySetInnerHTML={{
                             __html: project.high_param,
                           }}
                         ></p>
-                      ): null}
+                      ) : null}
                       {project.high_sample && (
                         <p
                           dangerouslySetInnerHTML={{

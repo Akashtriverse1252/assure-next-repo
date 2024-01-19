@@ -5,7 +5,7 @@ import mappingdata from "../Data/Maping.json";
 import axios from "axios";
 // import testData from "../Data/test_data.json";
 import { TestCard } from "@/components/TestCard";
-// import { NoData } from "@/components/NoData";
+import NoData from "@/components/svg-components/NoData";
 
 const SearchhPage = ({ slug }) => {
   const [selectedIds, setSelectedIds] = useState([]);
@@ -74,8 +74,8 @@ const SearchhPage = ({ slug }) => {
   return (
     <div>
       {loading ? (
-        <div className="search_loader">
-          <div className="loader"></div>
+        <div className="_loader_cnt col-12 d-flex justify-content-center mt-5">
+          <div className="_loader"></div>
         </div>
       ) : packageData ? (
         <div className="row justify-content-center">
@@ -95,8 +95,10 @@ const SearchhPage = ({ slug }) => {
           ))}
         </div>
       ) : (
-        <p>No package data found.</p>
-        // <NoData/>
+        // <p>No package data found.</p>
+        <div className="noData">
+          <NoData />
+        </div>
       )}
     </div>
   );

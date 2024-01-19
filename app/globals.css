@@ -3641,3 +3641,10 @@ table th {
   justify-content: center;
   align-items: center;
 }
+.noData{
+  max-width: 50%;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 8vh;
+
+}

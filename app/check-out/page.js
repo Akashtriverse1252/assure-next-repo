@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Box, Stepper, Step, StepLabel } from "@mui/material";
 import ProductDetail from "@/components/ProductDetail ";
-import UserDataForm from "@/components/UserDataForm";
+import Check_out from "@/components/Check_out";
 import SuccessMessage from "@/components/SuccessMessage";
 
 const steps = ["Cart Detail", "User Detail", "Success"];
@@ -36,7 +36,10 @@ const Page = () => {
         <div className="container">
           <div className="web-containers">
             <div className="row">
-              <Box sx={{ marginTop: 2, marginBottom: 2 }} className="stepper_cnt">
+              <Box
+                sx={{ marginTop: 2, marginBottom: 2 }}
+                className="stepper_cnt"
+              >
                 <Stepper activeStep={activeStep} alternativeLabel>
                   {steps.map((label, index) => (
                     <Step key={label}>
@@ -56,7 +59,7 @@ const Page = () => {
             />
           )}
           {activeStep === 1 && (
-            <UserDataForm
+            <Check_out
               onPrevStep={handlePrevStep}
               onNextStep={handleNextStep}
               onFormData={handleFormData}

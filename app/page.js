@@ -47,7 +47,7 @@ export default function Home() {
                 <div className="col-md-12 col-12">
                   <div className="title col-12 float-start text-center">
                     <h2 className="grid-center ">
-                      SEASONAL packages{" "}
+                      Popular Seasonal Packages
                       {/* <span>DENGUE, CHIKUNGUNYA, MALARIA</span> */}
                     </h2>
                   </div>
@@ -65,7 +65,7 @@ export default function Home() {
               <div className="row">
                 <div className="col-md-12 col-12">
                   <div className="title col-12 float-start text-center">
-                    <h2>Health Check-up packages</h2>
+                    <h2>Popular Wellness Packages</h2>
                   </div>
                   <ProductSlider className="colornavigations col-12 float-start arrows productslider minusbottom" />
                 </div>

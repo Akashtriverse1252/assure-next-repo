@@ -28,6 +28,7 @@ const IsHomeCollection = ({ HomeColData }) => {
 
   const [formData, setFormData] = useState({
     address: "",
+    homeCollectionDateTime: "",
     pincode: "",
     city: "",
     state: "",
@@ -50,6 +51,20 @@ const IsHomeCollection = ({ HomeColData }) => {
     // Trigger form submission when formData changes
     HomeColData(formData);
   }, [formData, HomeColData]);
+
+  // selected slot from the time slot component
+  const handleSlotSelection = (selectedSlots) => {
+    // Log selected slots to check the structure
+    console.log("Selected Slots:", selectedSlots);
+    console.log("Selected Date:", selectedDate);
+
+    // Format the selected time as needed
+    const formattedDateTime = formatDateTime(selectedDate, selectedSlots);
+    console.log("Formatted Date and Time:", formattedDateTime);
+
+    // Send the formatted date and time to the parent component
+    HomeColData({ ...formData, homeCollectionDateTime: formattedDateTime });
+  };
 
   return (
     <>
@@ -114,7 +129,10 @@ const IsHomeCollection = ({ HomeColData }) => {
                     ))}
                   </div>
                 </div>
-                <SlotTime timeSlots={slotTimes.timeSlots} />
+                <SlotTime
+                  timeSlots={slotTimes.timeSlots}
+                  onSlotSelect={handleSlotSelection}
+                />
               </article>
               <article className="address mt-5">
                 <div className="title">
@@ -209,4 +227,21 @@ const generateRadioData = (removedDates) => {
   }
 
   return radioData;
+};
+const formatDateTime = (date, time) => {
+  if (!date || !time) {
+    return "";
+  }
+
+  const parsedDate = new Date(date);
+  const year = parsedDate.getFullYear();
+  const month = (parsedDate.getMonth() + 1).toString().padStart(2, "0");
+  const day = parsedDate.getDate().toString().padStart(2, "0");
+
+  const formattedTime = time
+    .split(":")
+    .map((component) => component.padStart(2, "0"))
+    .join(":");
+
+  return `${year}-${month}-${day} ${formattedTime}`;
 };

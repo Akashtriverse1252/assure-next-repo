@@ -137,7 +137,7 @@ export const Header = () => {
                       </div>
 
                       <div className="homecollection float-start d-grid">
-                        <h4 className="text-black">Home Collection</h4>
+                        <span className="text-black">Home Collection</span>
                         <h3>
                           <Link href="tel:0181-4667555">0181-4667555</Link>
                         </h3>

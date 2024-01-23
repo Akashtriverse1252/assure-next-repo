@@ -150,7 +150,7 @@ ul {
   background-color: rgb(245, 254, 255);
 }
 
-.homecollection h4 {
+.homecollection span {
   font-size: 24px;
   font-weight: bold;
   text-transform: uppercase;

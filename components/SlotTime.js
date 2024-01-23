@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 
-const SlotTime = ({ timeSlots }) => {
-  const [selectedSlots, setSelectedSlots] = useState({});
+const SlotTime = ({ timeSlots, onSlotSelect }) => {
+  const [selectedTime, setSelectedTime] = useState(null);
 
-  const handleSlotSelect = (label, time) => {
-    const newSelectedSlots = { ...selectedSlots, [label]: time };
-    setSelectedSlots(newSelectedSlots);
+  const handleSlotSelect = (time) => {
+    // If the same slot is clicked again, deselect it
+    const newSelectedTime = selectedTime === time ? null : time;
+    setSelectedTime(newSelectedTime);
+
+    // Pass the selected time information to the parent component
+    onSlotSelect(newSelectedTime);
   };
 
   const renderTimeSlot = (label, times) => (
@@ -15,21 +19,17 @@ const SlotTime = ({ timeSlots }) => {
         {times.map((time) => (
           <div
             key={time}
-            className={`app-border  ${
-              selectedSlots[label] === time ? "selected" : ""
-            }`}
+            className={`app-border  ${selectedTime === time ? "selected" : ""}`}
           >
             <input
               className="option-input"
               id={time}
               type="radio"
               name="timeSlot"
-              onChange={() => handleSlotSelect(label, time)}
+              onChange={() => handleSlotSelect(time)}
             />
             <label
-              className={`app-label ${
-                selectedSlots[label] === time ? "selected" : ""
-              }`}
+              className={`app-label ${selectedTime === time ? "selected" : ""}`}
               htmlFor={time}
             >
               {time}

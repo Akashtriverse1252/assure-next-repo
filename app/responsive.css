@@ -21,7 +21,7 @@
 }
 
 @media (max-width: 1600px) {
-  .homecollection h4 {
+  .homecollection span {
     font-size: 21px;
   }
 
@@ -280,7 +280,7 @@
     font-size: 30px;
   }
 
-  .homecollection h4 {
+  .homecollection span {
     font-size: 19px;
     line-height: 0;
   }
@@ -557,7 +557,7 @@
     font-size: 27px;
   }
 
-  .homecollection h4 {
+  .homecollection span {
     font-size: 17px;
     line-height: 0;
   }
@@ -736,7 +736,7 @@
     font-size: 25px;
   }
 
-  .homecollection h4 {
+  .homecollection span {
     font-size: 16px;
     line-height: 0;
   }
@@ -794,7 +794,7 @@
     width: 85%;
   }
 
-  .homecollection h4,
+  .homecollection span,
   .homecollection h3,
   .nah_logo {
     display: none;

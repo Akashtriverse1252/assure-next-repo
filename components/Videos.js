@@ -33,7 +33,7 @@ export const Videos = (props) => {
     pauseOnHover: true, // Enable pause on hover
     responsive: [
       {
-        breakpoint: 1300, // Small devices
+        breakpoint: 1400, // Small devices
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,

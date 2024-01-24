@@ -191,12 +191,15 @@
   }
 
   .footercolumn,
-  .fheading article,
+  .footercolumn .fheading article,
   .slimenu ul li {
     font-size: 13px;
     line-height: 24px;
   }
 
+._cart_test_detail span{
+  font-size:16px ;
+}
   ._cart p {
     font-size: 14px;
     line-height: 20px;
@@ -318,7 +321,7 @@
   .effectheading.newheading {
     font-size: 45px;
   }
-  .fmenu ul li  {
+  .fmenu ul li {
     color: #000;
     font-size: 14px;
     letter-spacing: 1.2px;
@@ -372,11 +375,6 @@
   .page_equireheading__sSxvP article:before {
     content: none !important;
   }
-
-  .page_equireheading__sSxvP article {
-    margin: 20px 0 10px !important;
-  }
-
   .discountprice,
   .actualprice {
     font-size: 23px;
@@ -451,22 +449,31 @@
     top: 90px;
   }
 
-  .banner_slide {
+  /* .banner_slide {
     height: 80vh;
     padding: 0;
     padding-bottom: 40px;
+  } */
+  .packageprice {
+    margin: 10px 0;
+    gap: 10px;
   }
-
-  .home_banner .banner_slider:after {
-    height: 80vh;
+  .packagename span,
+  .circleicons span {
+    width: 120px;
+    height: 120px;
+    min-width: 120px;
+  }
+  .circleicons svg {
+    width: 60px;
   }
 }
 
 @media (max-width: 1300px) {
-  .banner_slide,
+  /* .banner_slide,
   .home_banner .banner_slider:after {
     height: 525px;
-  }
+  } */
 
   .slimenu ul li {
     font-size: 12px;

@@ -11,6 +11,7 @@ export const Page = () => {
   const [tests, setTests] = useState([]);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(0);
+  const [allDataLoaded, setAllDataLoaded] = useState(false);
 
   const pathname = usePathname();
   const lastCardRef = useRef(null);
@@ -18,27 +19,36 @@ export const Page = () => {
 
   const fetchData = async () => {
     try {
+      if (allDataLoaded) {
+        return; // Do not fetch more data if all data is already loaded
+      }
+
       setLoading(true);
 
       const response = await fetch(
         `https://www.assurepathlabs.com/api/algos/fetch_details.php?category=package&start=${page}&limit=12`
       );
       const newData = await response.json();
-      setTests((prevTests) => [...prevTests, ...newData.test_data]);
-      setPage((prevPage) => prevPage + 10);
+
+      if (newData.test_data.length === 0) {
+        setAllDataLoaded(true);
+      } else {
+        setTests((prevTests) => [...prevTests, ...newData.test_data]);
+        setPage((prevPage) => prevPage + 10);
+      }
     } catch (error) {
       console.error("Error fetching data:", error);
-      showAlert("Error", "network Error", "error");
+      showAlert("Error", "Network Error", "error");
     } finally {
       setLoading(false);
     }
   };
+  // console.log("is data finished", allDataLoaded);
 
   let timeoutId;
 
   const handleScroll = () => {
     if (timeoutId) {
-      // Clear any existing timeout to debounce the function
       clearTimeout(timeoutId);
     }
 
@@ -51,7 +61,7 @@ export const Page = () => {
           fetchData();
         }
       }
-    }, 250); // Adjust the debounce time (in milliseconds) as needed
+    }, 250);
   };
 
   useEffect(() => {
@@ -74,7 +84,7 @@ export const Page = () => {
           <div className="web-container">
             <div className="row">
               <div className="title col-12 float-start text-center">
-                <h2>Individual Packages</h2>
+                <h1>Individual Packages</h1>
               </div>
 
               <div className="col-12 float-start all-test">
@@ -95,7 +105,9 @@ export const Page = () => {
                       BaseDirectory={"packages"}
                     />
                   ))}
-                  <div ref={lastCardRef}></div>
+                  <div className="refclass" ref={lastCardRef}></div>
+                  {/* {tests === 0 && (
+                  )} */}
                   {loading && (
                     <div className="_loader_cnt col-12 d-flex justify-content-center">
                       <div class="_loader"></div>

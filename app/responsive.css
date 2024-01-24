@@ -81,7 +81,7 @@
   header {
     margin-bottom: 0px;
   }
-  .page_equireheading__sSxvP h2:before {
+  .page_equireheading__sSxvP article:before {
     content: none !important;
   }
 
@@ -140,20 +140,29 @@
     margin-bottom: 8px;
   }
 
+  .title h1,
   .title h2,
   .title h3 {
     font-size: 27px;
     line-height: 2;
   }
 
+  .title h1 span,
   .title h2 span,
   .title h3 span {
     font-size: 20px;
     font-size: 1.2;
   }
-
+  .packagename_test h2,
   .packagename_test h3 {
-    font-size: 19px;
+    font-size: 17px;
+    letter-spacing: 1.2px;
+    line-height: 1.3;
+    text-wrap: balance;
+    vertical-align: middle;
+  }
+  .packagename_test {
+    height: 62px;
   }
 
   .discountprice {
@@ -283,6 +292,39 @@
     height: 140px;
     overflow: hidden;
   }
+  .home_banner .banner_slider:after {
+    background-size: cover;
+    background-position: left;
+  }
+  .package_card .packagedetail {
+    height: 100px;
+  }
+  .package_card .packagename h3 {
+    height: 80px;
+  }
+  .our-founder-title h2 {
+    font-size: 70px;
+  }
+  .bg-gradient-image.about_page {
+    bottom: -140%;
+  }
+  .founder-details {
+    max-height: 195px;
+    overflow: hidden;
+  }
+  .founder-card-body h3 {
+    font-size: 23px;
+  }
+  .effectheading.newheading {
+    font-size: 45px;
+  }
+  .fmenu ul li  {
+    color: #000;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+    text-wrap: nowrap;
+    line-height: 2;
+  }
 }
 
 @media (max-width: 1390px) {
@@ -325,13 +367,13 @@
     height: 35px;
   }
 
-  .page_equireheading__sSxvP h2:after,
-  .page_equireheading__sSxvP h2:after,
-  .page_equireheading__sSxvP h2:before {
+  .page_equireheading__sSxvP article:after,
+  .page_equireheading__sSxvP article:after,
+  .page_equireheading__sSxvP article:before {
     content: none !important;
   }
 
-  .page_equireheading__sSxvP h2 {
+  .page_equireheading__sSxvP article {
     margin: 20px 0 10px !important;
   }
 
@@ -351,6 +393,7 @@
     top: -20%;
   }
 
+  .title h1,
   .title h2,
   .title h3 {
     font-size: 25px;
@@ -381,7 +424,7 @@
     margin: 0;
     font-size: 30px !important;
   }
-
+  .packagename_test h2,
   .packagename_test h3 {
     font-size: 17px;
   }
@@ -490,6 +533,7 @@
     font-size: 13px !important;
   }
 
+  .title h1,
   .title h2,
   .title h3 {
     font-size: 22px;
@@ -497,12 +541,13 @@
   }
 
   .conditionshape h3,
+  .title h1 span,
   .title h2 span,
   .title h3 span {
     font-size: 18px;
     line-height: 1.2;
   }
-
+  .packagename_test h2,
   .packagename h3,
   .packagename_test h3 {
     font-size: 16px;
@@ -622,10 +667,10 @@
     font-size: 16px !important;
   }
 
-  .page_equireheading__sSxvP h2 {
+  .page_equireheading__sSxvP article {
     margin: 0 !important;
   }
-
+  .packagename_test h2,
   .packagename h3,
   .packagename_test h3 {
     font-size: 15px;
@@ -931,6 +976,7 @@
     margin-bottom: 25px;
   }
 
+  .title h1,
   .title h2 {
     font-size: 19px;
     width: 90%;
@@ -940,6 +986,7 @@
     text-wrap: balance;
   }
 
+  .title h1 span,
   .title h2 span {
     line-height: 1.3;
     text-wrap: balance;
@@ -1220,6 +1267,7 @@
     letter-spacing: 1px;
   }
 
+  .title h1:after,
   .title h2:after,
   .title h3:after {
     width: 30px;
@@ -1295,7 +1343,7 @@
   .sliderbox {
     box-shadow: 0px 4px 7px rgb(217 229 236);
   }
-
+  .packagename_test h2,
   .packagename_test,
   .packagename_test h3 {
     height: auto;

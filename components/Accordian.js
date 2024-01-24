@@ -20,16 +20,16 @@ export const AccordionComponent = ({ ParameterData }) => {
                 <AccordionItemButton>
                   {/* <Link href={`/parameter/${item.slug}`}> */}
                   <Link href={`/parameter/${item.slug}?cat=${item.category}`}>
-                    {item.testName}
+                    <h3>{item.testName}</h3>
                   </Link>
                 </AccordionItemButton>
               </AccordionItemHeading>
             ) : (
               <AccordionItemHeading>
                 <AccordionItemButton>
-                  <span>
+                  <h3>
                     {item.testName}&nbsp;({item.items && item.items.length})
-                  </span>
+                  </h3>
                 </AccordionItemButton>
               </AccordionItemHeading>
             )}

@@ -342,6 +342,7 @@ section,
   position: relative;
 }
 
+.title h1,
 .title h2,
 .title h3 {
   margin: 0;
@@ -357,6 +358,7 @@ section,
   background-position: 0;
 }
 
+.title h1:after,
 .title h2:after,
 .title h3:after {
   content: "";
@@ -498,6 +500,7 @@ section,
   transform: translateY(-50%);
 }
 
+.title h1 span,
 .title h2 span,
 .title h3 span {
   font-size: 22px;
@@ -505,6 +508,7 @@ section,
   margin-bottom: 20px;
 }
 
+.title h1.text-white,
 .title h2.text-white,
 .title h3.text-white {
   -webkit-text-fill-color: var(--white-color);
@@ -920,6 +924,7 @@ footer {
   margin: 0 auto;
 }
 
+.title h1.text-white:after,
 .title h2.text-white:after,
 .title h3.text-white:after {
   background-color: var(--bg-color);
@@ -1649,8 +1654,10 @@ header {
   align-items: center;
 }
 
-._cart_test_detail h5 {
+._cart_test_detail span {
   margin: 0;
+  font-size: 19px;
+  font-weight: 500;
 }
 
 .org_price p span {
@@ -1737,6 +1744,7 @@ header {
   overflow: hidden;
 }
 
+.packagename_test h2,
 .packagename_test h3 {
   font-weight: 700;
   font-size: 20px;
@@ -3713,7 +3721,7 @@ table th {
   all: unset;
   font-size: 18px;
 }
-.detailtitle h3 {
+.detailtitle h2 {
   font-size: 17px;
   padding: 0 25px;
   margin: 0;
@@ -3728,4 +3736,8 @@ table th {
 ._acc_header article {
   font-weight: 500;
   padding-bottom: 5px;
+}
+
+.faqcont .accordion__button h3 {
+  all: unset;
 }

@@ -31,7 +31,7 @@ export const page = () => {
               </div>
               <div className="row">
                 <div className="title col-12 float-start text-center">
-                  <h2>Assure Pathlabs</h2>
+                  <h1>Assure Pathlabs</h1>
                 </div>
                 <div className=" m-auto col-10 d-flex justify-content-center flex-direction-row  text-center">
                   <div className=" d-flex justify-content-center text-left flex-column ">

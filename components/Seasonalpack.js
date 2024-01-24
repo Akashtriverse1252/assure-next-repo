@@ -35,7 +35,7 @@ export const Seasonalpack = (props) => {
     };
 
     fetchData();
-  },[]);
+  }, []);
 
   var settings = {
     dots: true,
@@ -89,8 +89,13 @@ export const Seasonalpack = (props) => {
                 Turn_around_time={test.Turn_around_time}
                 widthFull={true}
                 BaseDirectory={
-                  test.category === "test" ? "test-detail" : test.category=== "package"?"packages":null
+                  test.category === "test"
+                    ? "test-detail"
+                    : test.category === "package"
+                    ? "packages"
+                    : null
                 }
+                IsSeoH3={true}
               />
             </div>
           ))}

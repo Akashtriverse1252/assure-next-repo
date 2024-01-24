@@ -122,7 +122,7 @@ export const Test_details_logic = ({ Slug, Category }) => {
         <>
           <div className="row">
             <div className="title col-12 float-start text-center">
-              <h2>{project.Test_Name}</h2>
+              <h1>{project.Test_Name}</h1>
               {/* {!project.Test_Category ? (
               <>
               </>
@@ -134,9 +134,9 @@ export const Test_details_logic = ({ Slug, Category }) => {
               <div className="detailrow">
                 <div className="row">
                   <div className="detailtitle col-lg-3 col-md-4 col-12">
-                    <h3>
+                    <h2>
                       <strong>Package Name</strong>
-                    </h3>
+                    </h2>
                   </div>
                   <div className="detaildescrp col-lg-9 col-md-8 col-12">
                     <p>
@@ -148,9 +148,9 @@ export const Test_details_logic = ({ Slug, Category }) => {
               <div className="detailrow">
                 <div className="row">
                   <div className="detailtitle col-lg-3 col-md-4 col-12">
-                    <h3>
+                    <h2>
                       <strong>About Package</strong>
-                    </h3>
+                    </h2>
                   </div>
                   <div className="detaildescrp col-lg-9 col-md-8 col-12">
                     <p>{project.Test_Description}</p>
@@ -172,9 +172,9 @@ export const Test_details_logic = ({ Slug, Category }) => {
               <div className="detailrow">
                 <div className="row">
                   <div className="detailtitle col-lg-3 col-md-4 col-12">
-                    <h3>
+                    <h2>
                       <strong>Exclusive Offer</strong>
-                    </h3>
+                    </h2>
                   </div>
                   <div className="detaildescrp col-lg-9 col-md-8 col-12 ">
                     <div className="packageprice d-flex align-items-center gap-5">
@@ -202,9 +202,9 @@ export const Test_details_logic = ({ Slug, Category }) => {
                 <div className="detailrow">
                   <div className="row">
                     <div className="detailtitle col-lg-3 col-md-4 col-12">
-                      <h3>
+                      <h2>
                         <strong>Discount</strong>
-                      </h3>
+                      </h2>
                     </div>
                     <div className="detaildescrp col-lg-9 col-md-8 col-12 ">
                       <p>
@@ -218,9 +218,9 @@ export const Test_details_logic = ({ Slug, Category }) => {
                 <div className="detailrow">
                   <div className="row align-item-start">
                     <div className="detailtitle col-lg-3 col-md-4 col-12">
-                      <h3>
+                      <h2>
                         <strong>Who is it for</strong>
-                      </h3>
+                      </h2>
                     </div>
                     <div className="detaildescrp col-lg-9 col-md-8 col-12 ">
                       <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
@@ -234,9 +234,9 @@ export const Test_details_logic = ({ Slug, Category }) => {
                 <div className="detailrow">
                   <div className="row">
                     <div className="detailtitle col-lg-3 col-md-4 col-12">
-                      <h3>
+                      <h2>
                         <strong>Turn around time</strong>
-                      </h3>
+                      </h2>
                     </div>
                     <div className="detaildescrp col-lg-9 col-md-8 col-12 ">
                       <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
@@ -250,9 +250,9 @@ export const Test_details_logic = ({ Slug, Category }) => {
                 <div className="detailrow">
                   <div className="row">
                     <div className="detailtitle col-lg-3 col-md-4 col-12">
-                      <h3>
+                      <h2>
                         <strong>Pre test information</strong>
-                      </h3>
+                      </h2>
                     </div>
                     <div className="detaildescrp col-lg-9 col-md-8 col-12 ">
                       <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
@@ -265,9 +265,9 @@ export const Test_details_logic = ({ Slug, Category }) => {
               <div className="detailrow ">
                 <div className="row gap-md-2 gap-lg-0 justify-content-start align-items-start">
                   <div className="detailtitle col-lg-3 col-12">
-                    <h3>
+                    <h2>
                       <strong>Highlights</strong>
-                    </h3>
+                    </h2>
                   </div>
                   <div className="detaildescrp col-lg-9 col-md-11 col-12 ">
                     <div className="highlights flex-center  flex-wrap gap-3 justify-content-start">
@@ -344,12 +344,12 @@ export const Test_details_logic = ({ Slug, Category }) => {
                 <div className="detailrow ">
                   <div className="row justify-content-start align-items-start">
                     <div className="detailtitle col-lg-3 col-12">
-                      <h3>
+                      <h2>
                         <strong>
                           Test Parameters <br />
                           {/* (Parameters included : {lengthOfTestInfo}) */}
                         </strong>
-                      </h3>
+                      </h2>
                     </div>
                     <div className="detaildescrp col-lg-9 col-md-11  col-12">
                       <AccordionComponent ParameterData={project.TestInfo} />

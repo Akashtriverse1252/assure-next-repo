@@ -57,8 +57,9 @@ export default function Cart() {
     <Fragment>
       <>
         <div
-          className={`_cart fixed-top inset-0 overflow-hidden ${cartState.cartVisible ? "__visible " : null
-            }`}
+          className={`_cart fixed-top inset-0 overflow-hidden ${
+            cartState.cartVisible ? "__visible " : null
+          }`}
         >
           <div className="h-100 absolute-top inset-0 overflow-hidden _shadow">
             <div className="h-100 ">
@@ -94,7 +95,7 @@ export default function Cart() {
                             <div className="ml-4 d-flex flex-column flex-grow-1">
                               <div>
                                 <div className="_cart_test_detail d-flex justify-content-between text-base font-medium text-gray-900">
-                                  <h5>{product.name}</h5>
+                                  <span>{product.name}</span>
 
                                   <button
                                     type="button"
@@ -144,7 +145,7 @@ export default function Cart() {
                     </div>
                   </div>
                 </div>
-                {(cartState.products && cartState.products.length > 0) &&
+                {cartState.products && cartState.products.length > 0 && (
                   <div className="border-top border-gray-200 px-4 py-6 sm:px-6">
                     <div className="sub_total d-flex justify-content-between text-base font-medium text-gray-900">
                       <p className="mb-0">Subtotal</p>
@@ -178,8 +179,7 @@ export default function Cart() {
                       </Link>
                     </div>
                   </div>
-
-                }
+                )}
               </div>
             </div>
           </div>

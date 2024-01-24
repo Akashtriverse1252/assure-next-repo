@@ -139,9 +139,9 @@ export const Homecollection = () => {
     <>
       <div className="enquireform col-12 float-start">
         <div className={styles.equireheading}>
-          <h2>
+          <article>
             <span className="pb-md-2">BOOK HOME COLLECTION</span>
-          </h2>
+          </article>
         </div>
         <form onSubmit={handleSubmit}>
           <TextField

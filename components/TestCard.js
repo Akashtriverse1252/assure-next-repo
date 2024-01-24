@@ -18,6 +18,7 @@ export const TestCard = ({
   Turn_around_time,
   widthFull,
   BaseDirectory,
+  IsSeoH3,
 }) => {
   const [isTooltipVisible, setTooltipVisible] = useState(false);
 
@@ -36,7 +37,11 @@ export const TestCard = ({
         <Link href={`/${BaseDirectory || "test-detail"}/${Slug}`}>
           <div className="sliderbox">
             <div className="packagename_test">
-              <h3 className="">{Test_Name}</h3>
+              {IsSeoH3 ? (
+                <h3 className="">{Test_Name}</h3>
+              ) : (
+                <h2 className="">{Test_Name}</h2>
+              )}
             </div>
             <div className="packageprice _flex_center_col">
               {Discount_Amount == 0 ? (
@@ -87,7 +92,7 @@ export const TestCard = ({
                 {Turn_around_time && (
                   <li>
                     Report Available In
-                    <div  
+                    <div
                       className="_tooltip"
                       tabIndex="0"
                       onMouseEnter={handleTooltipToggle}
@@ -104,7 +109,7 @@ export const TestCard = ({
                       </span>
                     </div>
                   </li>
-                )} 
+                )}
                 {/* {Test_Description && (
                   <li>
                     Test Description
@@ -128,7 +133,7 @@ export const TestCard = ({
                 )} */}
               </ul>
             </div>
-            <div className='packageprice_btn'>
+            <div className="packageprice_btn">
               <div className="textbtn">
                 <span href={`/${BaseDirectory || "test-detail"}/${Slug}`}>
                   KNOW MORE +

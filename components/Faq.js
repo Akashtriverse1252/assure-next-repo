@@ -18,9 +18,11 @@ export const Faq = ({ Data }) => {
         <Accordion allowZeroExpanded={true}>
           {faqItems.map((item, index) => (
             <AccordionItem key={index}>
-              <AccordionItemHeading>
-                <AccordionItemButton>{item.question}</AccordionItemButton>
-              </AccordionItemHeading>
+              <h3>
+                <AccordionItemHeading>
+                  <AccordionItemButton>{item.question}</AccordionItemButton>
+                </AccordionItemHeading>
+              </h3>
               <AccordionItemPanel>
                 <div
                   className="accordiancont"

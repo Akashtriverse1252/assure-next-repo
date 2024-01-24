@@ -60,14 +60,14 @@ export const page = () => {
             <AboutGradient />
           </div>
         </section>
-        <OurFounders/>
+        <OurFounders />
         <section className="position-relative mt-5">
           <div className="container">
             <div className="row">
               <div className="col-lg-7 m-auto col-12 float-start sm-padding-0">
                 <div className="col-12 flaot-start flex-center mb-5 text-center">
                   <div className="title col-12 float-start text-center">
-                    <h3>OUR ETHOS</h3>
+                    <h2>OUR ETHOS</h2>
                   </div>
                 </div>
                 <div className="overview col-lg-12 float-start">
@@ -126,7 +126,7 @@ export const page = () => {
                           <span className="flex-center mb-2 button button--aylen button--round-l button--text-thick">
                             <AdvancedTechnology />
                           </span>
-                          <p>New age Technology</p>
+                          <h3>New age Technology</h3>
                         </div>
                       </div>
                       <div className="col-lg-3 col-sm-4 col-6 our_diff_item ">
@@ -134,7 +134,7 @@ export const page = () => {
                           <span className="flex-center mb-2 button button--aylen button--round-l button--text-thick">
                             <InternationalStandard />
                           </span>
-                          <p>International Standards </p>
+                          <h3>International Standards </h3>
                         </div>
                       </div>
                       <div className="col-lg-3 col-sm-4 col-6 our_diff_item ">
@@ -142,7 +142,7 @@ export const page = () => {
                           <span className="flex-center mb-2 button button--aylen button--round-l button--text-thick">
                             <Doctor />
                           </span>
-                          <p>Founded by doctors</p>
+                          <h3>Founded by doctors</h3>
                         </div>
                       </div>
                     </div>

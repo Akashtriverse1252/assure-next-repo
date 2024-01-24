@@ -76,13 +76,13 @@ export const Footer = () => {
                         ref={buttonRef1}
                         onClick={() => setSelectedTab(1)}
                       >
-                        <h5>Popular Test</h5>
+                        <article>Popular Test</article>
                       </button>
                       <button
                         ref={buttonRef2}
                         onClick={() => setSelectedTab(2)}
                       >
-                        <h5>Popular Packages</h5>
+                        <article>Popular Packages</article>
                       </button>
                     </div>
                     <span
@@ -130,16 +130,16 @@ export const Footer = () => {
               <div className="col-12 mb-5 float-start flex-center align-items-start footerrow">
                 <div className="footercolumn">
                   <div className="fheading">
-                    <h5 className="text-uppercase">Home</h5>
+                    <article className="text-uppercase">Home</article>
                   </div>
                 </div>
                 <div className="footercolumn">
                   <div className="fheading">
-                    <h5 className="text-uppercase">
+                    <article className="text-uppercase">
                       <Link href="/about-us">ABOUT US</Link>
-                    </h5>
+                    </article>
                   </div>
-                  <div className="fmenu">
+                  {/* <div className="fmenu">
                     <ul className="p-0 m-0">
                       <li>
                         <Link href="/about-us/#quality" className="text-black">
@@ -147,11 +147,11 @@ export const Footer = () => {
                         </Link>
                       </li>
                     </ul>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="footercolumn">
                   <div className="fheading">
-                    <h5 className="text-uppercase">OUR DOCTORS</h5>
+                    <article className="text-uppercase">OUR DOCTORS</article>
                   </div>
                   <div className="fmenu">
                     <ul className="p-0 m-0">
@@ -175,7 +175,7 @@ export const Footer = () => {
                 </div>
                 <div className="footercolumn">
                   <div className="fheading">
-                    <h5 className="text-uppercase">SERVICES</h5>
+                    <article className="text-uppercase">SERVICES</article>
                   </div>
                   <div className="fmenu">
                     <ul className="p-0 m-0">
@@ -186,14 +186,14 @@ export const Footer = () => {
                 </div>
                 <div className="footercolumn">
                   <div className="fheading">
-                    <h5 className="text-uppercase">
+                    <article className="text-uppercase">
                       <Link href="/packages">HEALTH PACKAGES</Link>
-                    </h5>
+                    </article>
                   </div>
                 </div>
                 <div className="footercolumn">
                   <div className="fheading">
-                    <h5 className="text-uppercase">MY ACCOUNT</h5>
+                    <article className="text-uppercase">MY ACCOUNT</article>
                   </div>
                   <div className="fmenu">
                     <ul className="p-0 m-0">

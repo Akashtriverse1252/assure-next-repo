@@ -34,7 +34,7 @@ const page = () => {
                     </p>
 
                     <div class="contentbox">
-                      <h4>Information Collected from the Users</h4>
+                      <h3>Information Collected from the Users</h3>
                       <p>
                         We accumulate the following "personal information" about
                         you online when you voluntarily provide it to us through
@@ -54,9 +54,9 @@ const page = () => {
                         How the information collected will be used by
                         assurepathlab.com?
                       </p>
-                      <h4>
+                      <h3>
                         Usage of email address &amp; mobile number is for:
-                      </h4>
+                      </h3>
                       <ul>
                         <li>
                           Inform any kind of alteration in the privacy policy or
@@ -91,7 +91,7 @@ const page = () => {
                           the public.
                         </li>
                       </ul>
-                      <h4>Usage of your personal information is:</h4>
+                      <h3>Usage of your personal information is:</h3>
                       <p>
                         ASSURE PATHLABS does collect your personal information
                         for a variety of regulatory and business purposes. These
@@ -119,9 +119,9 @@ const page = () => {
                           customer surveys
                         </li>
                       </ul>
-                      <h4>
+                      <h3>
                         Use and Disclose of your Report / information / data:
-                      </h4>
+                      </h3>
                       <ul>
                         <li>
                           We may use or disclose your report in the course of
@@ -232,7 +232,7 @@ const page = () => {
                           </ol>
                         </li>
                       </ul>
-                      <h4>Other websites</h4>
+                      <h3>Other websites</h3>
                       <p>
                         Our Website may contain links to other websites. Please
                         note that when you click on one of these links, you are
@@ -245,7 +245,7 @@ const page = () => {
                         your privacy of Personal Information or loss incurred by
                         your use of these websites.
                       </p>
-                      <h4>Usage of anonymous traffic information is to:</h4>
+                      <h3>Usage of anonymous traffic information is to:</h3>
                       <p>
                         Prompt us of who you are in order to deliver superior
                         and more personalized service Aid to make a diagnosis of
@@ -255,7 +255,7 @@ const page = () => {
                         website <br />
                         www.assurepathlabs.com.
                       </p>
-                      <h4>Privacy Update:</h4>
+                      <h3>Privacy Update:</h3>
                       <p>
                         Assure Pathlabs reserves the privilege to modify or
                         renew this policy at any time by placing a notice on our
@@ -266,7 +266,7 @@ const page = () => {
                         to this policy, we will notify you by means of a notice
                         on our homepage only.
                       </p>
-                      <h4>Governing Law and Dispute Resolution</h4>
+                      <h3>Governing Law and Dispute Resolution</h3>
                       <p>
                         This Privacy Policy and Terms of Use shall be governed
                         by and constructed in accordance with the laws of India
@@ -275,14 +275,14 @@ const page = () => {
                         subject to the exclusive jurisdiction of the competent
                         courts of Jalandhar in Punjab, India.
                       </p>
-                      <h4>Contacting the Website</h4>
+                      <h3>Contacting the Website</h3>
                       <p>
                         If you have any questions about this Privacy Policy, the
                         privacy practices of this Website, or if you want to
                         exercise any of the rights that you are given under this
                         Privacy Policy, you can contact us.
                       </p>
-                      <h4>Assignability</h4>
+                      <h3>Assignability</h3>
                       <p>
                         Assure Pathlabs may assign any of its
                         responsibilities/obligations to any other person without
@@ -292,7 +292,7 @@ const page = () => {
                         party, unless a written consent is taken from Assure
                         Pathlabs.
                       </p>
-                      <h4>Disclaimer</h4>
+                      <h3>Disclaimer</h3>
                       <p>
                         Assure Pathlabs does not access, store or keep credit
                         card data. All credit card transactions occur using

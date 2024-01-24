@@ -36,7 +36,7 @@ export const TestCard = ({
         <Link href={`/${BaseDirectory || "test-detail"}/${Slug}`}>
           <div className="sliderbox">
             <div className="packagename_test">
-              <h5 className="">{Test_Name}</h5>
+              <h3 className="">{Test_Name}</h3>
             </div>
             <div className="packageprice _flex_center_col">
               {Discount_Amount == 0 ? (
@@ -77,7 +77,7 @@ export const TestCard = ({
                       <BsInfoCircleFill className="_info" />
                       <span className="_tooltip-text">
                         <div className="pre_test_content flex-center flex-column px-2 py-1">
-                          <h5>Pre Test Information</h5>
+                          <article>Pre Test Information</article>
                           <p>{Pre_test_information}</p>
                         </div>
                       </span>
@@ -98,13 +98,13 @@ export const TestCard = ({
                       <BsInfoCircleFill className="_info" />
                       <span className="_tooltip-text">
                         <div className="pre_test_content flex-center flex-column px-2 py-1">
-                          <h5>Report Available In</h5>
+                          <article>Report Available In</article>
                           <p>{Turn_around_time}</p>
                         </div>
                       </span>
                     </div>
                   </li>
-                )}
+                )} 
                 {/* {Test_Description && (
                   <li>
                     Test Description

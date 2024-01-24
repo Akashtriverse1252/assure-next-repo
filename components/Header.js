@@ -138,9 +138,9 @@ export const Header = () => {
 
                       <div className="homecollection float-start d-grid">
                         <span className="text-black">Home Collection</span>
-                        <h3>
+                        <article>
                           <Link href="tel:0181-4667555">0181-4667555</Link>
-                        </h3>
+                        </article>
                       </div>
                     </div>
                   </div>
@@ -157,24 +157,24 @@ export const Header = () => {
                             <div className="col-12 float-start flex-center align-items-start footerrow">
                               <div className="footercolumn">
                                 <div className="fheading">
-                                  <h5
+                                  <article
                                     className="text-uppercase"
                                     onClick={toggleMenu}
                                   >
                                     <Link href="/">Home</Link>
-                                  </h5>
+                                  </article>
                                 </div>
                               </div>
                               <div className="footercolumn">
                                 <div className="fheading">
-                                  <h5
+                                  <article
                                     className="text-uppercase"
                                     onClick={toggleMenu}
                                   >
                                     <Link href="/about-us">ABOUT US</Link>
-                                  </h5>
+                                  </article>
                                 </div>
-                                <div className="fmenu">
+                                {/* <div className="fmenu">
                                   <ul className="p-0 m-0">
                                     <li>
                                       <Link
@@ -185,13 +185,15 @@ export const Header = () => {
                                       </Link>
                                     </li>
                                   </ul>
-                                </div>
+                                </div> */}
                               </div>
                               <div className="footercolumn">
                                 <div className="fheading">
-                                  <h5 className="text-uppercase">
-                                    OUR DOCTORS
-                                  </h5>
+                                  <article className="text-uppercase">
+                                    <Link href="/doctor-profile">
+                                      OUR DOCTORS
+                                    </Link>
+                                  </article>
                                 </div>
                                 <div className="fmenu">
                                   <ul className="p-0 m-0">
@@ -215,7 +217,9 @@ export const Header = () => {
                               </div>
                               <div className="footercolumn">
                                 <div className="fheading">
-                                  <h5 className="text-uppercase">SERVICES</h5>
+                                  <article className="text-uppercase">
+                                    SERVICES
+                                  </article>
                                 </div>
                                 <div className="fmenu">
                                   <ul className="p-0 m-0">
@@ -226,16 +230,18 @@ export const Header = () => {
                               </div>
                               <div className="footercolumn">
                                 <div className="fheading">
-                                  <h5 className="text-uppercase">
+                                  <article className="text-uppercase">
                                     <Link href="/packages">
                                       HEALTH PACKAGES
                                     </Link>
-                                  </h5>
+                                  </article>
                                 </div>
                               </div>
                               <div className="footercolumn">
                                 <div className="fheading">
-                                  <h5 className="text-uppercase">MY ACCOUNT</h5>
+                                  <article className="text-uppercase">
+                                    MY ACCOUNT
+                                  </article>
                                 </div>
                                 <div className="fmenu">
                                   <ul className="p-0 m-0">

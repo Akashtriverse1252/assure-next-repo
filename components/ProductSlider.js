@@ -4,10 +4,9 @@ import { useAlert } from "@/context/AlerterContext";
 import Slider from "react-slick";
 import { PackagCard } from "./PackagCard";
 import { Rupees } from "./svg-components/Rupees";
-import testData from "../Data/seasonaltst.json";
 import { TestCard } from "@/components/TestCard";
 import { useData } from "@/context/context";
-const URL = `https://www.assurepathlabs.com/api/algos/fetch_details.php?category=package&start=packages&limit=10`;
+const URL = `https://www.assurepathlabs.com/api/algos/fetch_details.php?category=package&start=packages&start=0&limit=8`;
 
 export const ProductSlider = (props) => {
   const { cartState, cartDispatch } = useData();
@@ -26,7 +25,6 @@ export const ProductSlider = (props) => {
           showAlert("info", "no data is found", "info");
           // console.log("no data is found");
         }
-        console.log("this is the seasonal api data", project);
       } catch (error) {
         // console.error("Error fetching data:", error);
         showAlert("Error", "network Error", "error");
@@ -34,6 +32,7 @@ export const ProductSlider = (props) => {
         setLoading(false);
       }
     };
+    console.log("this is the wellness api data", project);
 
     fetchData();
   }, []);
@@ -74,7 +73,7 @@ export const ProductSlider = (props) => {
     <>
       <Slider {...settings} {...props}>
         {project &&
-          project.test_data.map((test, index) => (
+          project.test_data.slice(0, 6).map((test, index) => (
             <div>
               <PackagCard
                 key={index}

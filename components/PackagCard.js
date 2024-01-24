@@ -50,10 +50,10 @@ export const PackagCard = ({
             </span>
           </div>
           <div className="packagename">
-            <h4>
+            <h3>
               <strong className="text-black">{Test_Name}</strong>
               {/* {Test_for} */}
-            </h4>
+            </h3>
             <p className="m-0">
               Includes <strong className="text-black">{Number_test}</strong>{" "}
               Parameters

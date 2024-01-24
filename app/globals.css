@@ -12,8 +12,8 @@ body {
 
 a,
 .contact a,
-.fheading h5 a,
-.homecollection h3 a,
+.fheading article a,
+.homecollection article a,
 .textbtn a,
 .slimenu ul li a,
 .leftmenu .button a {
@@ -158,7 +158,7 @@ ul {
   margin: 0;
 }
 
-.homecollection h3 {
+.homecollection article {
   font-size: 38px;
   color: #0599d2;
   font-weight: bold;
@@ -447,11 +447,12 @@ section,
   margin: 0px auto;
 }
 
-.packagename h4 {
+.packagename h3 {
   font-size: 18px;
   display: grid;
   line-height: 26px;
   margin-bottom: 20px;
+  font-weight: 600;
 }
 
 .flex-center,
@@ -589,13 +590,13 @@ section,
 }
 
 .footercolumn,
-.fheading h5,
+.fheading article,
 .slimenu ul li {
   font-size: 14px;
   line-height: 26px;
 }
 
-.fheading h5 {
+.fheading article {
   font-weight: 600;
   letter-spacing: 1.5px;
 }
@@ -625,7 +626,7 @@ section,
   z-index: -1;
 }
 
-.package_card .packagename h4 {
+.package_card .packagename h3 {
   height: 55px;
   overflow-y: hidden;
 }
@@ -1361,7 +1362,7 @@ header {
   background-color: var(--white-color);
 }
 
-.contentbox h4,
+.contentbox h3,
 .contentbox ul li {
   padding-bottom: 5px;
 }
@@ -1736,10 +1737,11 @@ header {
   overflow: hidden;
 }
 
-.packagename_test h5 {
+.packagename_test h3 {
   font-weight: 700;
   font-size: 20px;
   text-transform: capitalize;
+  text-wrap: balance;
   text-align: center;
   line-height: 30px;
   max-width: 95%;
@@ -2402,12 +2404,14 @@ li.MuiBreadcrumbs-li svg {
   /* width: 90%; */
 }
 
-._tooltip ._tooltip-text h5 {
+._tooltip ._tooltip-text article {
   text-align: left;
   width: 90%;
   font-size: 15px;
   color: #000;
   line-height: 1.4;
+  font-weight: 500;
+  margin-bottom: 8px;
 }
 
 ._tooltip ._tooltip-text p {
@@ -2451,6 +2455,7 @@ li.MuiBreadcrumbs-li svg {
   width: 50%;
   text-wrap: balance;
   font-size: 13px;
+  line-height: 1.4;
 }
 
 .packagedetail._test ul li::before {
@@ -2626,8 +2631,10 @@ button:disabled {
   all: unset;
 }
 
-.add_item h4 {
+.add_item span {
   text-transform: capitalize;
+  font-size: 23px;
+  font-weight: 500;
 }
 
 /* 
@@ -3566,6 +3573,8 @@ div#notfound a.active {
   display: flex;
   transition: all 0.15s ease-out 0s;
   gap: 10px;
+  max-width: 100%;
+  flex-wrap: wrap;
 }
 .app-label {
   position: relative;
@@ -3691,8 +3700,32 @@ table th {
   fill: #632fdd;
 }
 .founder-card-body {
-  flex-direction: column; 
+  flex-direction: column;
 }
-.founder-details{
+.founder-details {
   min-height: 195px;
+}
+.footercolumn .fheading article {
+  font-size: 16px;
+  text-wrap: nowrap;
+}
+.faqcont h3 {
+  all: unset;
+  font-size: 18px;
+}
+.detailtitle h3 {
+  font-size: 17px;
+  padding: 0 25px;
+  margin: 0;
+}
+.circleicons h3 {
+  all: unset;
+}
+.privacy_pol_cnt h3,
+.contentbox h3 {
+  font-size: 22px;
+}
+._acc_header article {
+  font-weight: 500;
+  padding-bottom: 5px;
 }

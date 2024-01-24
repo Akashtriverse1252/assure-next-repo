@@ -16,7 +16,7 @@ const page = () => {
                   </div>
                   <div className="privacy_pol_cnt">
                     <div class="contentbox">
-                      <h4>Home Collection Policy</h4>
+                      <h3>Home Collection Policy</h3>
                       <p>
                         If the total value of all the tests/packages in the cart
                         is equal to or more than Rs. 500/-, then there will be
@@ -26,7 +26,7 @@ const page = () => {
                       </p>
                     </div>
                     <div class="contentbox">
-                      <h4>Order Cancellation Policy Cancellation Charges</h4>
+                      <h3>Order Cancellation Policy Cancellation Charges</h3>
                       <p>
                         Any time after the transaction and before the
                         phlebotomist’s visit to the patient's home – 0

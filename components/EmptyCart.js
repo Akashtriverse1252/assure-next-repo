@@ -12,7 +12,7 @@ const EmptyCart = () => {
         </span>
       </div>
       <div className="add_item text-center">
-        <h4>Your cart is empty.</h4>
+        <span>Your cart is empty.</span>
         <p>Add item to your cart</p>
           
       </div>

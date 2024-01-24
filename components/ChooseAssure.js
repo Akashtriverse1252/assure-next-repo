@@ -39,7 +39,7 @@ export const ChooseAssure = () => {
                       <span className="flex-center mb-2 button button--aylen button--round-l button--text-thick">
                         {React.createElement(iconComponents[icon])}
                       </span>
-                      <p>{text}</p>
+                      <h3>{text}</h3>
                     </div>
                   </div>
                 ))}

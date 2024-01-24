@@ -22,7 +22,7 @@ const page = () => {
                       on www.assurepathlabs.com
                     </p>
                     <div class="contentbox">
-                      <h4>General</h4>
+                      <h3>General</h3>
                       <p>
                         The health packages booked online are non-transferable.
                         This means that the person on whose name the package has
@@ -48,7 +48,7 @@ const page = () => {
                     </div>
 
                     <div class="contentbox">
-                      <h4>Internet Banking</h4>
+                      <h3>Internet Banking</h3>
                       <p>
                         You can make payments through the banks that we admit
                         and you have an account with using the net banking
@@ -76,7 +76,7 @@ const page = () => {
                       </p>
                     </div>
                     <div class="contentbox">
-                      <h4>Online Card Payments</h4>
+                      <h3>Online Card Payments</h3>
                       <p>
                         Payments made using visa or master card can be processed
                         using a gateway system for online payment. The
@@ -94,7 +94,7 @@ const page = () => {
                         <strong>
                           Terms and conditions on{" "}
                           <a href="www.assurepathlabs.com">
-                            www.assurepathlabs.com. 
+                            www.assurepathlabs.com.
                           </a>
                         </strong>
                         Online credit card payments are subject to change at any
@@ -104,7 +104,7 @@ const page = () => {
                       </p>
                     </div>
                     <div class="contentbox">
-                      <h4>Terms of Use</h4>
+                      <h3>Terms of Use</h3>
                       <p>
                         You abide by the Terms and Conditions mentioned herewith
                         by accessing and using the services on this website. At
@@ -119,7 +119,7 @@ const page = () => {
                     </div>
                   </div>
                   <div class="contentbox">
-                    <h4>Terms of Modifications on Site</h4>
+                    <h3>Terms of Modifications on Site</h3>
                     <p>
                       Assure Pathlabs is free to revise or edit any of its terms
                       of use or ‘terms and conditions’ as per its convenience

@@ -93,9 +93,9 @@ export const Organslider = (props) => {
                       <span className="bg-transparent">{organ.icon}</span>
                     </div>
                     <div className="packagename text-white">
-                      <h4>
+                      <h3>
                         <strong>{organ.name}</strong>
-                      </h4>
+                      </h3>
                       <p className="m-0 minheight-120">{organ.description}</p>
                       <div className="packageprice">
                         <div className="textbtn">KNOW MORE +</div>

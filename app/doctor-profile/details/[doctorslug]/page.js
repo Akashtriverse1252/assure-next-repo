@@ -18,24 +18,24 @@ const Page = ({ params: { doctorslug } }) => {
     list.length > 0 && (
       <div className={`docinfo-row ${className}`}>
         <div className="heading">
-          <h4
+          <h3
             data-aos="fade"
             data-aos-delay={200}
             data-aos-duration={200}
             data-aos-once="true"
           >
             <strong>{title}</strong>
-          </h4>
+          </h3>
         </div>
         <div className="abt_cont">
-          <h5
+          <p
             data-aos="fade"
             data-aos-delay={400}
             data-aos-duration={800}
             data-aos-once="true"
           >
             {subtitle}
-          </h5>
+          </p>
           {Array.isArray(list) && (
             <ul>
               {list.map((item, index) => (

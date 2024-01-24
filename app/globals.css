@@ -3741,3 +3741,10 @@ table th {
 .faqcont .accordion__button h3 {
   all: unset;
 }
+.app-time p {
+  font-size: 20px;
+  font-weight: 500;
+  flex-basis: 100%;
+  color: #252f42;
+  margin: 10px 0;
+}

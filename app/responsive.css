@@ -134,10 +134,9 @@
   .iframe_scn iframe {
     width: 100%;
   }
-
+  .container .title,
   ._acc_header h5 {
     font-size: 19px;
-    margin-bottom: 8px;
   }
 
   .title h1,
@@ -196,10 +195,13 @@
     font-size: 13px;
     line-height: 24px;
   }
+  .menustn {
+    height: 60px;
+  }
 
-._cart_test_detail span{
-  font-size:16px ;
-}
+  ._cart_test_detail span {
+    font-size: 16px;
+  }
   ._cart p {
     font-size: 14px;
     line-height: 20px;
@@ -251,7 +253,7 @@
   }
 
   .accordion__button {
-    padding: 12px 20px;
+    padding: 18px 20px;
   }
 
   ._user svg,
@@ -323,14 +325,25 @@
   }
   .fmenu ul li {
     color: #000;
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 1.2px;
     text-wrap: nowrap;
     line-height: 2;
   }
+  .check_out_cnt h3 {
+    font-size: 21px;
+  }
+  .faqcont h3 {
+    font-size: inherit;
+  }
 }
 
 @media (max-width: 1390px) {
+  html,
+  body {
+    font-size: 15px;
+    line-height: 24px;
+  }
   .homecollection article a {
     font-size: 30px;
   }
@@ -386,11 +399,6 @@
     width: 90%;
   }
 
-  .vedio_review .slick-next,
-  .vedio_review .slick-prev {
-    top: -20%;
-  }
-
   .title h1,
   .title h2,
   .title h3 {
@@ -422,6 +430,7 @@
     margin: 0;
     font-size: 30px !important;
   }
+  .app-time p,
   .packagename_test h2,
   .packagename_test h3 {
     font-size: 17px;
@@ -431,18 +440,9 @@
     font-size: 18px !important;
   }
 
-  html,
-  body {
-    font-size: 15px;
-    line-height: 24px;
-  }
-
   .header,
   .actualprice {
     padding: 10px 0;
-  }
-  .menustn {
-    height: auto;
   }
 
   .fixed .menslide.active {
@@ -467,13 +467,16 @@
   .circleicons svg {
     width: 60px;
   }
+  .founder-details {
+    max-height: 250px;
+    min-height: 250px;
+  }
 }
 
 @media (max-width: 1300px) {
-  /* .banner_slide,
   .home_banner .banner_slider:after {
-    height: 525px;
-  } */
+    height: 680px;
+  }
 
   .slimenu ul li {
     font-size: 12px;
@@ -483,6 +486,24 @@
   .drag-file-area h3 {
     font-size: 18px;
     margin: 15px 0 0 0;
+  }
+  .our-founder-title h2 {
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 1.6px;
+  }
+  .bg-gradient-image.about_page {
+    bottom: -155%;
+  }
+  .effectheading.newheading {
+    font-size: 40px;
+  }
+  .plans .plan .plan-content {
+    padding: 15px 30px;
+  }
+  .home_collection_data {
+    padding: 40px 30px;
   }
 
   .drag-file-area label {
@@ -609,11 +630,6 @@
     width: 60px;
   }
 
-  .banner_slide,
-  .home_banner .banner_slider:after {
-    height: 65vh;
-  }
-
   .homecollection article a {
     font-size: 27px;
   }
@@ -633,19 +649,13 @@
     width: 100px;
     height: 100px;
   }
-
-  .h_form ._icon,
-  .css-md26zr-MuiInputBase-root-MuiOutlinedInput-root,
-  .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input,
-  .enquireform .rbt-input-hint,
-  .enquireform .form-control,
-  .MuiInputBase-root.formbtn {
-    max-height: 42px !important;
-    height: 42px !important;
-    line-height: 42px !important;
-    font-size: 13px !important;
+  .cta {
+    display: none;
   }
-
+  .banner_slide,
+  .home_banner .banner_slider:after {
+    height: 520px;
+  }
   ._icon {
     width: 20%;
   }
@@ -729,6 +739,13 @@
   .googlereviewslider .slick-prev:before,
   .googlereviewslider .slick-next:before {
     height: 30px;
+  }
+  .effectheading.newheading {
+    font-size: 33px;
+  }
+  .doctor_name .procont_name {
+    padding: 0 !important;
+    margin-top: 15px;
   }
 }
 
@@ -1026,11 +1043,6 @@
     height: 30px;
   }
 
-  .vedio_review .slick-next,
-  .vedio_review .slick-prev {
-    top: -35px;
-  }
-
   .gradient-layer {
     display: none;
   }
@@ -1269,7 +1281,6 @@
   }
 
   .detaildescrp .accordion__button {
-    padding: 8px 18px;
     font-size: 14px;
     letter-spacing: 1px;
   }
@@ -1335,7 +1346,6 @@
   }
 
   .accordion__button {
-    padding: 10px 22px;
     border-radius: 30px;
   }
 

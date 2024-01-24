@@ -139,9 +139,9 @@ const IsHomeCollection = ({ HomeColData }) => {
                   <Address className="mx-2" />
                   Fill your address
                 </div>
-                <div className="col-11 d-flex justify-content-between">
+                <div className="col-12 d-flex justify-content-between">
                   <TextField
-                    className=" mx-3 col-6"
+                    className=" mx-3 col-lg-6 col-10"
                     id="standard-required"
                     variant="standard"
                     defaultValue="Address"
@@ -153,7 +153,7 @@ const IsHomeCollection = ({ HomeColData }) => {
                     }
                   />
                 </div>
-                <div className="col-7 mt-5 d-flex ">
+                <div className="col-lg-7 col-12 mt-5 d-flex ">
                   <TextField
                     className=" mx-3 col-2"
                     id="standard-required"
@@ -176,7 +176,6 @@ const IsHomeCollection = ({ HomeColData }) => {
                     value={formData.city}
                     onChange={(e) => handleInputChange("city", e.target.value)}
                   />
-                  {/* ... (your existing JSX code) */}
                   <TextField
                     label="state"
                     name="state"

@@ -239,7 +239,7 @@ export const Test_details_logic = ({ Slug, Category }) => {
                       </h2>
                     </div>
                     <div className="detaildescrp col-lg-9 col-md-8 col-12 ">
-                      <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
+                      <div className="highlights turn_around flex-center flex-wrap gap-3 justify-content-start">
                         <p>{project.Turn_around_time}</p>
                       </div>
                     </div>
@@ -249,13 +249,13 @@ export const Test_details_logic = ({ Slug, Category }) => {
               {project.Pre_test_information && (
                 <div className="detailrow">
                   <div className="row">
-                    <div className="detailtitle col-lg-3 col-md-4 col-12">
+                    <div className="detailtitle  align-items-lg-start col-lg-3 col-md-4 col-12">
                       <h2>
                         <strong>Pre test information</strong>
                       </h2>
                     </div>
                     <div className="detaildescrp col-lg-9 col-md-8 col-12 ">
-                      <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
+                      <div className="highlights pre_test flex-center flex-wrap gap-3 justify-content-start">
                         <p>{project.Pre_test_information}</p>
                       </div>
                     </div>
@@ -367,7 +367,7 @@ export const Test_details_logic = ({ Slug, Category }) => {
                   <div className="detaildescrp col-lg-9 col-md-8 col-12">
                     <div className="col-12 flex-center mt-5 mb-2 mb-sm-5 justify-content-center justify-content-sm-start flex-wrap gap-3 m-auto">
                       <button
-                        className={`button button--aylen button--round-l button--text-thick gradient col-lg-3 col-md-4 col-11 flex-center gap-2 ${
+                        className={`button button--aylen button--round-l button--text-thick gradient col-xxl-3 col-lg-4 col-md-5 col-11  ${
                           isInCart ? "button--remove" : ""
                         }`}
                         onClick={handleToggleCart}

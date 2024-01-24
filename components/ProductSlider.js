@@ -43,14 +43,16 @@ export const ProductSlider = (props) => {
     speed: 1000,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplaySpeed: 5000,
-    autoplay: false,
+    autoplaySpeed: 6000,
+    autoplay: true,
+    initialSlide: 1, // Update this to 0
     responsive: [
       {
         breakpoint: 1100,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          initialSlide: 1, // Update this to 0
         },
       },
       {
@@ -58,12 +60,14 @@ export const ProductSlider = (props) => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          initialSlide: 1, // Update this to 0
         },
       },
       {
         breakpoint: 580,
         settings: {
           slidesToShow: 1,
+          initialSlide: 1, // Update this to 0
           slidesToScroll: 1,
         },
       },

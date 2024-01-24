@@ -3002,76 +3002,6 @@ button:disabled {
   background: #d98594;
 }
 
-@media screen and (max-width: 991px) {
-  .plans {
-    margin: 0 20px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    padding: 40px;
-  }
-
-  .plans .plan {
-    width: 100%;
-  }
-
-  .plan.complete-plan {
-    margin-top: 20px;
-  }
-
-  .plans .plan .plan-content .plan-details {
-    width: 70%;
-    display: inline-block;
-  }
-
-  .plans .plan input[type="radio"]:checked + .plan-content:after {
-    top: 45%;
-    -webkit-transform: translate(-50%);
-    -ms-transform: translate(-50%);
-    transform: translate(-50%);
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .plans .plan .plan-content .plan-details {
-    width: 60%;
-    display: inline-block;
-  }
-}
-
-@media screen and (max-width: 540px) {
-  .plans .plan .plan-content img {
-    margin-bottom: 20px;
-    height: 56px;
-    -webkit-transition: height 0.4s;
-    -o-transition: height 0.4s;
-    transition: height 0.4s;
-  }
-
-  .plans .plan input[type="radio"]:checked + .plan-content:after {
-    top: 20px;
-    right: 10px;
-  }
-
-  .plans .plan .plan-content .plan-details {
-    width: 100%;
-  }
-
-  .plans .plan .plan-content {
-    padding: 20px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: baseline;
-    -ms-flex-align: baseline;
-    align-items: baseline;
-  }
-}
 
 .plans_selection {
   display: flex;
@@ -3747,4 +3677,8 @@ table th {
   flex-basis: 100%;
   color: #252f42;
   margin: 10px 0;
+}
+
+.detaildescrp{
+  max-width: 100%
 }

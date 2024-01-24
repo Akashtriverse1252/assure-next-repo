@@ -43,8 +43,9 @@ export const Seasonalpack = (props) => {
     speed: 1000,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplaySpeed: 5000,
-    autoplay: false,
+    autoplaySpeed: 6000,
+    autoplay: true,
+    initialSlide: 1, // Update this to 0
     responsive: [
       {
         breakpoint: 1100,

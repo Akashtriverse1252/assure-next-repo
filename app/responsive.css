@@ -135,7 +135,7 @@
     width: 100%;
   }
   .container .title,
-  ._acc_header h5 {
+  ._acc_header article {
     font-size: 19px;
   }
 
@@ -536,7 +536,7 @@
     height: 300px;
   }
 
-  ._acc_header h5 {
+  ._acc_header article {
     font-size: 17px;
   }
 
@@ -922,6 +922,7 @@
   .detailtitle h2 {
     font-size: 16px;
   }
+  .highlights.whoIs p,
   .highlights.turn_around p,
   .highlights.pre_test p {
     border: none !important;
@@ -947,6 +948,18 @@
   }
   .hcd_date_seection {
     flex-wrap: wrap;
+  }
+  .our-founder-title {
+    width: 90%;
+    justify-content: flex-start;
+  }
+  .our-founder-title h2 {
+    font-size: 50px;
+  }
+  .overview p {
+    width: 55ch;
+    margin: 0 auto;
+    text-align: center;
   }
 }
 
@@ -1013,6 +1026,7 @@
   .conditionshape h3 {
     top: 100%;
   }
+  .highlights.whoIs p,
   .highlights.turn_around p,
   .highlights.pre_test p,
   .detailrow p {
@@ -1021,6 +1035,24 @@
   .radio-btn {
     width: 90px;
     height: 90px;
+  }
+  .our-founder-content {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .bg-gradient-image.about_page {
+    bottom: -270%;
+  }
+  .our-founder-title h2 {
+    font-size: 45px;
+  }
+  .overview p {
+    width: 80%;
+  }
+  .leaderships {
+    gap: 17px;
+    flex-wrap: wrap;
   }
 }
 
@@ -1105,7 +1137,7 @@
     display: none;
   }
 
-  ._acc_header h5 {
+  ._acc_header article {
     font-size: 15px;
     text-align: center;
   }
@@ -1197,9 +1229,12 @@
   .web-container {
     width: 98%;
   }
+  .mobile_nav_search {
+    gap: 14px !important;
+  }
 
   .mobile_nav_search svg {
-    font-size: 28px;
+    font-size: 26px;
     color: #7e7e7e;
   }
 
@@ -1222,9 +1257,11 @@
 
   .sliderbox {
     width: 95%;
-    padding: 10px;
+    padding: 20px 15px;
   }
-
+  .menustn {
+    height: 40px;
+  }
   #organs .sliderbox {
     margin-top: 0;
     padding-top: 0;
@@ -1392,7 +1429,9 @@
   .banner_slide,
   .home_banner .banner_slider:after {
     height: 350px;
+    padding: 35px 0 30px;
   }
+  .enquireform:first-child,
   .home_banner .slick-dots {
     display: none !important;
   }
@@ -1508,7 +1547,18 @@
   }
   ._acc_header article {
     font-size: 13px;
-}
+  }
+  .highlights.whoIs p,
+  .highlights.turn_around p,
+  .highlights.pre_test p {
+    padding-inline: 0 !important;
+  }
+  .overview p {
+    width: 95%;
+  }
+  .effectheading.newheading {
+    font-size: 27px;
+  }
 }
 
 @media (max-width: 480px) {

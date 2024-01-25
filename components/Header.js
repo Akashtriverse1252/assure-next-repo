@@ -73,7 +73,7 @@ export const Header = () => {
               </div>
             </div>
             <div className="col-lg-10 col-md-10 col-9">
-              <div className="d-flex align-items-center justify-content-end gap-xxl-4 gap-xl-2 gap-3">
+              <div className="d-flex align-items-center justify-content-end gap-xxl-4 gap-xl-2 gap-1">
                 <div
                   className={
                     showSearchBar
@@ -86,7 +86,7 @@ export const Header = () => {
                     <SearchBar />
                   </div>
                 </div>
-                <div className="mobile_nav_search position-relative d-flex gap-xxl-3 gap-2 d-sm-none align-items-end ">
+                <div className="mobile_nav_search position-relative d-flex  d-sm-none align-items-end ">
                   <MobileSearchBar />
                   {cartState.products.length !== 0 && (
                     <Badge badgeContent={totalQuantity} color="error">

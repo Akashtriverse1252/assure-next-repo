@@ -223,7 +223,7 @@ export const Test_details_logic = ({ Slug, Category }) => {
                       </h2>
                     </div>
                     <div className="detaildescrp col-lg-9 col-md-8 col-12 ">
-                      <div className="highlights flex-center flex-wrap gap-3 justify-content-start">
+                      <div className="highlights whoIs flex-center flex-wrap gap-3 justify-content-start">
                         <p>{project.Who_is_it_for}</p>
                       </div>
                     </div>

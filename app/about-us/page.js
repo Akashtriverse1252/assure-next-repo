@@ -33,7 +33,7 @@ export const page = () => {
                 <div className="title col-12 float-start text-center">
                   <h1>Assure Pathlabs</h1>
                 </div>
-                <div className=" m-auto col-10 d-flex justify-content-center flex-direction-row  text-center">
+                <div className=" m-auto col-12 col-md-10 d-flex justify-content-center flex-direction-row  text-center">
                   <div className=" d-flex justify-content-center text-left flex-column ">
                     <p className="about-assure-text ">
                       Assure Pathlabs is the best blood test pathalogy
@@ -65,7 +65,7 @@ export const page = () => {
           <div className="container">
             <div className="row">
               <div className="col-lg-7 m-auto col-12 float-start sm-padding-0">
-                <div className="col-12 flaot-start flex-center mb-5 text-center">
+                <div className="col-12 flaot-start flex-center mb-2 mb-md-4 mb-lg-5 text-center">
                   <div className="title col-12 float-start text-center">
                     <h2>OUR ETHOS</h2>
                   </div>

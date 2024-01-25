@@ -11,7 +11,7 @@ const OurFounders = () => {
         <div className="container">
           <div className="web-container">
             <div className="row   ">
-              <div className="col-12 flex-center flex-col">
+              <div className="col-12 flex-center flex-column flex-md-row">
                 <div className="our-founder-title  flex-center">
                   <h2 class="">
                     Meet The <br /> Founders

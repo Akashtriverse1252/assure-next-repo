@@ -3002,7 +3002,6 @@ button:disabled {
   background: #d98594;
 }
 
-
 .plans_selection {
   display: flex;
   justify-content: space-between;
@@ -3314,7 +3313,7 @@ button:disabled {
 }
 
 .search_icon {
-  width: 23px;
+  width: 24px;
 }
 
 .main_loader {
@@ -3679,6 +3678,6 @@ table th {
   margin: 10px 0;
 }
 
-.detaildescrp{
-  max-width: 100%
+.detaildescrp {
+  max-width: 100%;
 }

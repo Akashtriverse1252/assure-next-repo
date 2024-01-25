@@ -30,17 +30,15 @@ const LogoDNA = () => {
 
         // Add event listener for the animation finish
         strokeAnimation.onfinish = () => {
-          // Set a delay before starting the fill animation
-          setTimeout(() => {
-            // Set styles for the fill animation
-            path.style.fill = "white";
+          // Set styles for the fill animation
+          path.style.fill = "white";
+          path.style.stroke = "none"; // Remove stroke when fill starts
 
-            // Animate the fill
-            path.animate([{ fill: "#ffffff42" }, { fill: "#ffffff" }], {
-              duration: 1200, // Adjust the duration as needed
-              easing: "linear", // You can use other easing functions
-            });
-          }, 200); // Adjust the delay (in milliseconds) as needed
+          // Animate the fill without a blink
+          path.animate([{ fill: "#ffffff82" }, { fill: "#ffffff" }], {
+            duration: 1000,
+            easing: "linear",
+          });
         };
       });
 

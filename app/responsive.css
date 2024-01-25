@@ -926,10 +926,11 @@
   .highlights.turn_around p,
   .highlights.pre_test p {
     border: none !important;
-    padding: 0 20px !important;
+    padding: 0 25px !important;
   }
+  .detailrow p,
   .detaildescrp .packageprice {
-    padding: 0 20px !important;
+    padding: 0 25px !important;
   }
   .detailrow .row {
     gap: 10px;
@@ -960,6 +961,10 @@
     width: 55ch;
     margin: 0 auto;
     text-align: center;
+  }
+  ._cart {
+    width: 100%;
+    right: -105% !important;
   }
 }
 
@@ -1032,10 +1037,7 @@
   .detailrow p {
     padding-inline: 25px !important;
   }
-  .radio-btn {
-    width: 90px;
-    height: 90px;
-  }
+
   .our-founder-content {
     width: 100%;
     flex-wrap: wrap;
@@ -1044,6 +1046,7 @@
   .bg-gradient-image.about_page {
     bottom: -270%;
   }
+
   .our-founder-title h2 {
     font-size: 45px;
   }
@@ -1397,7 +1400,7 @@
   }
 
   .detailrow .highlights p {
-    padding: 10px 20px;
+    padding: 10px 20px !important;
     border: solid 1px #d8dee7;
     border-radius: 35px;
   }
@@ -1558,6 +1561,10 @@
   }
   .effectheading.newheading {
     font-size: 27px;
+  }
+  .radio-btn {
+    width: 95px;
+    margin: 6px;
   }
 }
 

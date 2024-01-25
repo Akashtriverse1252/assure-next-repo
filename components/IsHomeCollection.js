@@ -153,9 +153,9 @@ const IsHomeCollection = ({ HomeColData }) => {
                     }
                   />
                 </div>
-                <div className="col-lg-7 col-12 mt-5 d-flex ">
+                <div className="col-lg-7 col-12 mt-2 mt-md-5 flex-column gap-2 flex-md-row d-flex ">
                   <TextField
-                    className=" mx-3 col-2"
+                    className=" mx-3 col-10 col-md-2"
                     id="standard-required"
                     variant="standard"
                     label="pincode"
@@ -167,7 +167,7 @@ const IsHomeCollection = ({ HomeColData }) => {
                     }
                   />
                   <TextField
-                    className=" mx-3 col-3"
+                    className=" mx-3 col-10 col-md-3"
                     variant="standard"
                     id="standard-required"
                     defaultValue="city"
@@ -177,6 +177,7 @@ const IsHomeCollection = ({ HomeColData }) => {
                     onChange={(e) => handleInputChange("city", e.target.value)}
                   />
                   <TextField
+                    className=" mx-3 col-10 col-md-3"
                     label="state"
                     name="state"
                     defaultValue="state"

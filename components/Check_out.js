@@ -249,7 +249,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
         <div className="container">
           <div className="web-container">
             <div className="row gap-sm-3 gap-md-0  ">
-              <div className="col-10 mx-auto">
+              <div className="col-11 col-md-10 mx-auto">
                 <h3>
                   <strong>User Details</strong>
                 </h3>
@@ -258,7 +258,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                     <div className="col-12 d-flex justify-content-between flex-column flex-md-row checkout_input">
                       <TextField
                         type="text"
-                        className="col-md-3 col-12 mx-md-3"
+                        className="col-md-3 col-10 mx-md-3"
                         // required
                         id="standard-required"
                         defaultValue="Name"
@@ -271,7 +271,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                       />
                       <TextField
                         type="tel"
-                        className="col-md-3 col-12 mx-md-3"
+                        className="col-md-3 col-10 mx-md-3"
                         // required
                         id="standard-required"
                         defaultValue="Contact Number"
@@ -283,7 +283,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                         error={errors.phoneNumber}
                       />
                       <TextField
-                        className="col-md-3 col-12 mx-md-3"
+                        className="col-md-3 col-10 mx-md-3"
                         // required
                         label="Date of Birth"
                         type="date"
@@ -435,13 +435,13 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                       <IsHomeCollection HomeColData={handleHomeColData} />
                     </AccordionDetails>
                   </Accordion>
-                  <button
+                  {/* <button
                     className="edit_cart button button--wayra pull-right red tab3"
                     type="submit"
                   >
                     Proceed
                     <FaArrowRightLong className="m-2" />
-                  </button>
+                  </button> */}
                 </form>
                 <div className="nav_button mt-5 col-12 d-flex justify-content-between">
                   <div className=" mt-3  row text-right">

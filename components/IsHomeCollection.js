@@ -155,7 +155,7 @@ const IsHomeCollection = ({ HomeColData }) => {
                 </div>
                 <div className="col-lg-7 col-12 mt-2 mt-md-5 flex-column gap-2 flex-md-row d-flex ">
                   <TextField
-                    className=" mx-3 col-10 col-md-2"
+                    className=" mx-3 col-10 col-md-3"
                     id="standard-required"
                     variant="standard"
                     label="pincode"

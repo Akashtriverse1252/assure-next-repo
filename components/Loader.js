@@ -1,9 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import LogoDNA from "@/components/svg-components/LogoDNA";
+import Cookies from "js-cookie";
 
 const Loader = (isLoading) => {
+  const [loaderVisiblity, setLoaderVisiblity] = useState();
   const mainLoaderRef = useRef(null);
 
   const hideLoaderSec = () => {
@@ -12,7 +14,7 @@ const Loader = (isLoading) => {
     });
   };
   const hideLoader = () => {
-    if (mainLoaderRef.current) {
+    if (mainLoaderRef.current) {  
       mainLoaderRef.current.classList.add("d-none");
     }
   };
@@ -25,6 +27,22 @@ const Loader = (isLoading) => {
   useEffect(() => {
     return () => clearTimeout(timeoutId, timeout);
   }, []);
+  useEffect(() => {
+    const showLoader = !Cookies.get("loaderHidden");
+    console.log(showLoader);
+
+    if (showLoader) {
+      const loaderTimeout = setTimeout(() => {
+        setLoaderVisiblity(false);
+        Cookies.set("loaderHidden", true, { expires: 10 / (24 * 60) });
+      }, 3000);
+
+      return () => clearTimeout(loaderTimeout);
+    } else {
+      setLoaderVisiblity(false);
+    }
+  }, []);
+
   return (
     <>
       <div

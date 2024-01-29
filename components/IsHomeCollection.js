@@ -90,7 +90,7 @@ const IsHomeCollection = ({ HomeColData }) => {
                     className="hcd_date_seection"
                     role="radiogroup"
                     aria-required="false"
-                    dir="ltr"
+                    dir="ltr" 
                     tabIndex="0"
                   >
                     {bookingDate.map((item, index) => (

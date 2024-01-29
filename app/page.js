@@ -29,7 +29,7 @@ export default function Home() {
           <div className="gradient-layer"></div>
           <div className="container">
             <div className="row gap-sm-3 gap-lg-0  ">
-              <div className="col-xl-9 col-lg-8 col-md-10 pull-md-right mr-md-auto col-sm-12 mb-3 mb-md-0  col-12">
+              <div className="col-xl-9 col-lg-8 col-md-12 pull-md-right mr-md-auto col-sm-12 mb-3 mb-md-0  col-12">
                 <AssureSlide className="no-buttons colornavigations col-12 float-start" />
               </div>
               <div className="col-xl-3 col-lg-4 col-sm-11 mx-sm-auto col-12 d-flex align-items-center">

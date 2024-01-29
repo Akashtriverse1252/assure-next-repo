@@ -28,11 +28,11 @@ export const ProductSlider = (props) => {
       } catch (error) {
         // console.error("Error fetching data:", error);
         showAlert("Error", "network Error", "error");
-      } finally {
+      } finally { 
         setLoading(false);
       }
     };
-    console.log("this is the wellness api data", project);
+    // console.log("this is the wellness api data", project);
 
     fetchData();
   }, []);
@@ -78,7 +78,7 @@ export const ProductSlider = (props) => {
       <Slider {...settings} {...props}>
         {project &&
           project.test_data.slice(0, 6).map((test, index) => (
-            <div>
+            <div key={test.id}>
               <PackagCard
                 key={index}
                 Test_Name={test.Test_Name}

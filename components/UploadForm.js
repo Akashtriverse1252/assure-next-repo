@@ -42,28 +42,28 @@ const UploadForm = () => {
   });
 
   const [errors, setErrors] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    files: "",
+    name: false,
+    phone: false,
+    email: false,
+    files: false,
   });
 
-  const handleFileChange = ({ target: { files, name, value } }) => {
-    const selectedFile = files && files[0];
-    setUploadPrescription(selectedFile);
+    const handleFileChange = ({ target: { files, name, value } }) => {
+      const selectedFile = files && files[0];
+      setUploadPrescription(selectedFile);
 
-    setFormData((prevValues) => ({
-      ...prevValues,
-      [name]: value,
-      uploadPrescription: selectedFile,
-    }));
+      setFormData((prevValues) => ({
+        ...prevValues,
+        [name]: value,
+        uploadPrescription: selectedFile,
+      }));
 
-    if (selectedFile) {
-      handleValidFile(selectedFile);
-    } else {
-      handleInvalidFile();
-    }
-  };
+      if (selectedFile) {
+        handleValidFile(selectedFile);
+      } else {
+        handleInvalidFile();
+      }
+    };
 
   const handleValidFile = (selectedFile) => {
     if (
@@ -159,7 +159,7 @@ const UploadForm = () => {
           },
         });
 
-        console.log("this is the api response ", response);
+        // console.log("this is the api response ", response);
 
         setIsSubmitting(false);
 

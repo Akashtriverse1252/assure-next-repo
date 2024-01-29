@@ -9,7 +9,7 @@ import Aos from "aos";
 
 const Page = ({ params: { doctorslug } }) => {
   useEffect(() => {
-    Aos.init({ duration: 1000 });
+    Aos.init();
   }, []);
   const doctorData = doctorsData.find((p) => p.slug === doctorslug) || null;
 

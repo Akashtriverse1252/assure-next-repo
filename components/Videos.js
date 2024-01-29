@@ -112,7 +112,6 @@ export const Videos = (props) => {
                       src={video.thumbnail}
                       alt="gradient file"
                       width={400}
-                      objectFit="cover"
                       height={250}
                     />
                     <i>

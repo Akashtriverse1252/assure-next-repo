@@ -14,9 +14,9 @@ export const Homecollection = () => {
     email: "",
   });
   const [errors, setErrors] = useState({
-    name: "",
-    phoneNumber: "",
-    email: "",
+    name: false,
+    phoneNumber: false,
+    email: false,
   });
   const { showAlert } = useAlert();
   const [isErrorOpen, setIsErrorOpen] = useState(false);
@@ -147,8 +147,7 @@ export const Homecollection = () => {
           <TextField
             type="text"
             required
-            id="standard-required"
-            defaultValue="Name"
+            id="name"
             variant="outlined"
             label="Name"
             name="name"
@@ -156,15 +155,16 @@ export const Homecollection = () => {
             onChange={handleChange}
             error={errors.name}
             fullWidth
+            autocomplete="username"
             className={`styles.inputmodified input-field `}
           />
           <TextField
             type="tel"
             required
-            id="standard-required"
-            defaultValue="Contact Number"
+            id="phone_number"
             variant="outlined"
             label="Contact Number"
+            autocomplete="tel"
             name="phoneNumber"
             value={formData.phoneNumber}
             onChange={handleChange}
@@ -174,8 +174,8 @@ export const Homecollection = () => {
           />
           <TextField
             name="email"
-            defaultValue=""
             label="Email"
+            autocomplete="email"
             variant="outlined"
             className={`styles.inputmodified input-field `}
             fullWidth

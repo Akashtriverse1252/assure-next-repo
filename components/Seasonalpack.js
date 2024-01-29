@@ -25,7 +25,7 @@ export const Seasonalpack = (props) => {
           showAlert("info", "no data is found", "info");
           // console.log("no data is found");
         }
-        console.log("this is the seasonal api data", project);
+        // console.log("this is the seasonal api data", project);
       } catch (error) {
         // console.error("Error fetching data:", error);
         showAlert("Error", "network Error", "error");
@@ -75,7 +75,7 @@ export const Seasonalpack = (props) => {
       <Slider {...settings} {...props}>
         {project &&
           project.test_data.map((test, index) => (
-            <div>
+            <div key={test.id}>
               <TestCard
                 key={index}
                 Slug={test.Slug}

@@ -11,7 +11,6 @@ const CustomSvg = (props) => {
       viewBox="0 0 1000 328.6"
       style={{ enableBackground: "new 0 0 1000 328.6" }}
       xmlSpace="preserve"
-      dataLivestyleExtension="available"
       {...props}
     >
       <style type="text/css">

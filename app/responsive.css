@@ -966,6 +966,12 @@
     width: 100%;
     right: -105% !important;
   }
+  header {
+    min-height: auto;
+  }
+  .logo {
+    width: 95%;
+  }
 }
 
 @media (max-width: 680px) {

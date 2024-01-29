@@ -29,8 +29,7 @@ export const metadata = {
     "Assure Pathlabs - Best Pathology Lab in Jalandhar | Get Best Health Chek -Up Packages in Jalandhar from Assure | Best diagnostic Labs in Jalandhar",
 };
 
-export default function RootLayout({ children, isLoading }) {
-  console.log("this sit he loading form thw layout page ", isLoading);
+export default function RootLayout({ children, isLoading}) {
   return (
     <html lang="en">
       <AlertProvider>

@@ -15,6 +15,7 @@ import UploadForm from "@/components/UploadForm";
 import CookiesConset from "@/components/CookiesConset";
 import { AlertProvider } from "@/context/AlerterContext";
 import Alert from "@/components/Alert";
+import Loader from "@/components/Loader";
 
 const AvertaStd = localFont({
   src: "./font/AvertaStd-Regular.woff2",
@@ -29,12 +30,13 @@ export const metadata = {
 };
 
 export default function RootLayout({ children, isLoading }) {
+  console.log("this sit he loading form thw layout page ", isLoading);
   return (
     <html lang="en">
       <AlertProvider>
         <GlobalDataProvider>
           <body className={AvertaStd.className}>
-            
+            <Loader />
             <div className="">
               <Header />
               <BreadCrums />

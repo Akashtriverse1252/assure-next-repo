@@ -14,7 +14,7 @@ const Loader = (isLoading) => {
     });
   };
   const hideLoader = () => {
-    if (mainLoaderRef.current) {  
+    if (mainLoaderRef.current) {
       mainLoaderRef.current.classList.add("d-none");
     }
   };
@@ -29,7 +29,7 @@ const Loader = (isLoading) => {
   }, []);
   useEffect(() => {
     const showLoader = !Cookies.get("loaderHidden");
-    console.log(showLoader);
+    // console.log(showLoader);
 
     if (showLoader) {
       const loaderTimeout = setTimeout(() => {
@@ -45,16 +45,18 @@ const Loader = (isLoading) => {
 
   return (
     <>
-      <div
-        className={`main_loader ${isLoading ? "loaded" : ""}`}
-        ref={mainLoaderRef}
-      >
-        {/* <div className="main_loader_sec"></div> */}
-        <div className="main_loader_sec">
-          <LogoDNA />
+      {loaderVisiblity && (
+        <div
+          className={`main_loader ${isLoading ? "loaded" : ""}`}
+          ref={mainLoaderRef}
+        >
+          {/* <div className="main_loader_sec"></div> */}
+          <div className="main_loader_sec">
+            <LogoDNA />
+          </div>
+          {/* <div className="main_loader_sec"></div> */}
         </div>
-        {/* <div className="main_loader_sec"></div> */}
-      </div>
+      )}
     </>
   );
 };

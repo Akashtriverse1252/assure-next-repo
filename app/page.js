@@ -18,12 +18,10 @@ import { Testimonials } from "@/components/Testimonials";
 import { Videos } from "@/components/Videos";
 import { Faq } from "@/components/Faq";
 import Link from "next/link";
-import Loader from "@/components/Loader";
 
 export default function Home() {
   return (
     <>
-      <Loader />
       <main className="d-flex flex-wrap float-start col-12">
         <section className="position-relative pt-md-4">
           <div className="gradient-layer"></div>

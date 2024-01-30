@@ -56,10 +56,73 @@ export const Footer = () => {
   useEffect(() => {
     fetchTabData(selectedTab === 1 ? "test" : "package");
   }, [selectedTab]);
+  const menuItems = [
+    { title: "Home", aosDelay: 100, links: [] },
+    {
+      title: "About Us",
+      aosDelay: 200,
+      links: [{ href: "/about-us", label: "ABOUT US" }],
+    },
+    {
+      title: "Our Doctors",
+      aosDelay: 300,
+      links: [
+        {
+          href: "/doctor-profile/details/dr-sanjay-wadhwa",
+          label: "DR SANJAY WADHWA",
+        },
+        {
+          href: "/doctor-profile/details/dr-lovely-razdan",
+          label: "DR LOVELY RAZDAN",
+        },
+        {
+          href: "/doctor-profile/details/dr-gurpal-kaur",
+          label: "DR GURPAL KAUR",
+        },
+      ],
+    },
+    {
+      title: "Services",
+      aosDelay: 400,
+      links: [{ label: "FOR INDIVIDUALS" }, { label: "FOR HOSPITALS" }],
+    },
+    {
+      title: "Health Packages",
+      aosDelay: 500,
+      links: [{ href: "/packages", label: "HEALTH PACKAGES" }],
+    },
+    {
+      title: "My Account",
+      aosDelay: 600,
+      links: [
+        {
+          label: "MY CART",
+          onClick: () => cartDispatch({ type: "TOGGLE_CART" }),
+        },
+        { label: "BLOG" },
+        {
+          href: "https://patient-in.creliohealth.com/patient/login",
+          label: "LOGIN",
+          external: true,
+        },
+        { href: "/terms-conditions", label: "TERMS & CONDITIONS" },
+        { href: "/privacy-policy", label: "PRIVACY POLICY" },
+        { href: "/refund-cancellation", label: "REFUND & CANCELLATION" },
+      ],
+    },
+  ];
 
   return (
     <>
-      <footer className="col-12 float-start position-relative">
+      <footer
+        className="col-12 float-start position-relative"
+        // data-aos="fade-up"
+        // data-aos-delay={100}
+        // data-aos-duration={200}
+        // data-aos-once="true"
+        // data-aos-offset={100}
+        // data-aos-easing="ease-in"
+      >
         {/* <div className="footergray col-12 float-start">
           <div className="container">
             <div className="web-container "></div>
@@ -71,7 +134,15 @@ export const Footer = () => {
               <div className="row mb-5 pb-3">
                 <div className="_acc flex-center  flex-column ">
                   <div className="_acc_btn flex-center position-relative flex-column ">
-                    <div className="_acc_header position-relative  flex-center ">
+                    <div
+                      className="_acc_header position-relative  flex-center "
+                      data-aos="fade-zoom-in"
+                      data-aos-delay={100}
+                      data-aos-duration={300}
+                      data-aos-once="true"
+                      data-aos-offset={120}
+                      data-aos-easing="ease-in"
+                    >
                       <button
                         ref={buttonRef1}
                         onClick={() => setSelectedTab(1)}
@@ -100,7 +171,15 @@ export const Footer = () => {
                     ></span>
                   </div>
 
-                  <div className="_acc_cnt">
+                  <div
+                    className="_acc_cnt"
+                    data-aos="fade-up"
+                    data-aos-delay={100}
+                    data-aos-duration={250}
+                    data-aos-once="true"
+                    data-aos-offset={100}
+                    data-aos-easing="ease-in"
+                  >
                     {selectedTab === 1 || selectedTab === 2 ? (
                       <div
                         className={`footer_tabs ${
@@ -128,117 +207,71 @@ export const Footer = () => {
                 </div>
               </div>
               <div className="col-12 mb-5 float-start flex-center align-items-start footerrow">
-                <div className="footercolumn">
-                  <div className="fheading">
-                    <article className="text-uppercase">Home</article>
+                {menuItems.map((menuItem, index) => (
+                  <div key={index} className="footercolumn">
+                    <div
+                      className="fheading"
+                      data-aos="fade"
+                      data-aos-delay={150 + index * 20}
+                      data-aos-duration={150 + index * 20}
+                      data-aos-once="true"
+                      data-aos-offset={150 + index * 20}
+                      data-aos-easing="ease-in"
+                    >
+                      <article className="text-uppercase">
+                        {menuItem.title}
+                      </article>
+                    </div>
+                    {menuItem.links && (
+                      <div className="fmenu">
+                        <ul className="p-0 m-0">
+                          {menuItem.links.map((link, linkIndex) => (
+                            <li
+                              key={linkIndex}
+                              data-aos="fade-up"
+                              data-aos-delay={200 + index * 50}
+                              data-aos-duration={200 + index * 20}
+                              data-aos-once="true"
+                              data-aos-offset={120 + index * 20}
+                              data-aos-easing="ease-in"
+                            >
+                              {link.external ? (
+                                <a
+                                  href={link.href}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-black"
+                                >
+                                  {link.label}
+                                </a>
+                              ) : link.href ? (
+                                <Link href={link.href}>{link.label}</Link>
+                              ) : (
+                                <span>{link.label}</span> // Add this line to handle undefined href
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
-                </div>
-                <div className="footercolumn">
-                  <div className="fheading">
-                    <article className="text-uppercase">
-                      <Link href="/about-us">ABOUT US</Link>
-                    </article>
-                  </div>
-                  {/* <div className="fmenu">
-                    <ul className="p-0 m-0">
-                      <li>
-                        <Link href="/about-us/#quality" className="text-black">
-                          OUR QUALITY
-                        </Link>
-                      </li>
-                    </ul>
-                  </div> */}
-                </div>
-                <div className="footercolumn">
-                  <div className="fheading">
-                    <article className="text-uppercase">OUR DOCTORS</article>
-                  </div>
-                  <div className="fmenu">
-                    <ul className="p-0 m-0">
-                      <li>
-                        <Link href="/doctor-profile/details/dr-sanjay-wadhwa">
-                          DR SANJAY WADHWA
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/doctor-profile/details/dr-lovely-razdan">
-                          DR LOVELY RAZDAN
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/doctor-profile/details/dr-gurpal-kaur">
-                          DR GURPAL KAUR
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="footercolumn">
-                  <div className="fheading">
-                    <article className="text-uppercase">SERVICES</article>
-                  </div>
-                  <div className="fmenu">
-                    <ul className="p-0 m-0">
-                      <li>FOR INDIVIDUALS</li>
-                      <li>FOR HOSPITALS</li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="footercolumn">
-                  <div className="fheading">
-                    <article className="text-uppercase">
-                      <Link href="/packages">HEALTH PACKAGES</Link>
-                    </article>
-                  </div>
-                </div>
-                <div className="footercolumn">
-                  <div className="fheading">
-                    <article className="text-uppercase">MY ACCOUNT</article>
-                  </div>
-                  <div className="fmenu">
-                    <ul className="p-0 m-0">
-                      <li onClick={() => cartDispatch({ type: "TOGGLE_CART" })}>
-                        MY CART
-                      </li>
-                      <li>BLOG</li>
-                      <li>
-                        <Link
-                          href="https://patient-in.creliohealth.com/patient/login"
-                          target="_blank"
-                          rel="none"
-                          className="text-black"
-                        >
-                          LOGIN
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="text-black" href="/terms-conditions">
-                          TERMS & CONDITIONS
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="text-black" href="/privacy-policy">
-                          PRIVACY POLICY
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          className="text-black"
-                          href="/refund-cancellation"
-                        >
-                          REFUND & CANCELLATION
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                ))}
               </div>
               <div className="row  gap-4 gap-sm-0 mt-3">
                 <div className="col-lg-4 col-xs-6 col-sm-4 col-12">
                   <div className="contact">
                     <a href="tel:0181-4667555">
-                      <span className="flex-center align-items-start gap-2 sm-gap-4">
-                        <strong>T</strong>0181-4667555
+                      <span
+                        className="flex-center align-items-start gap-2 sm-gap-4"
+                        data-aos="fade-up"
+                        data-aos-delay={150}
+                        data-aos-duration={150}
+                        data-aos-once="true"
+                        data-aos-offset={200}
+                        data-aos-anchor-placement="bottom-bottom"
+                      >
+                        <strong>T</strong>
+                        0181-4667555
                       </span>
                     </a>
                   </div>
@@ -246,23 +279,47 @@ export const Footer = () => {
                 <div className="col-lg-4 col-xs-6 col-sm-4 col-12">
                   <div className="contact">
                     <a href="mailto:assurepathlabs@gmail.com">
-                      <span className="flex-center align-items-start gap-2 sm-gap-4">
-                        <strong>E</strong>assurepathlabs@gmail.com
+                      <span
+                        className="flex-center align-items-start gap-2 sm-gap-4"
+                        data-aos="fade-up"
+                        data-aos-delay={150}
+                        data-aos-duration={350}
+                        data-aos-once="true"
+                        data-aos-offset={200}
+                      >
+                        <strong>E</strong>
+                        assurepathlabs@gmail.com
                       </span>
                     </a>
                   </div>
                 </div>
                 <div className="col-lg-4 col-xs-6 col-sm-4 col-12">
                   <div className="contact">
-                    <span className="flex-center align-items-start gap-2 gap-sm-0">
-                      <strong>A </strong>&nbsp; 3, Waryam Nagar, <br />
+                    <span
+                      className="flex-center align-items-start gap-2 gap-sm-0"
+                      data-aos="fade-up"
+                      data-aos-delay={150}
+                      data-aos-duration={350}
+                      data-aos-once="true"
+                      data-aos-offset={200}
+                    >
+                      <strong>A </strong>
+                      &nbsp; 3, Waryam Nagar, <br />
                       Vasant Vihar Road, <br />
                       Jalandhar
                     </span>
                   </div>
                 </div>
                 <div className="col-12  mx-auto  flex-center mt-4 mb-3 mt-sm-5">
-                  <a className="button button--aylen button--round-l button--text-thick text-uppercase gradient col-lg-3 col-md-5 col-12">
+                  <a
+                    className="button button--aylen button--round-l button--text-thick text-uppercase gradient col-lg-3 col-md-5 col-12"
+                    data-aos="flip-right"
+                    data-aos-delay={100}
+                    data-aos-duration={350}
+                    data-aos-once="true"
+                    data-aos-offset={120}
+                    data-aos-easing="ease-in"
+                  >
                     BOOK HOME COLLECTION
                   </a>
                 </div>

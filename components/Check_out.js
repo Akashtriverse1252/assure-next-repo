@@ -180,9 +180,10 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
     onPrevStep();
   };
 
-  const handleNext = () => {
+  const handleNext = (e) => {
     // onNextStep();
-    // onFormData({ userData: cartState.userData });
+    e.preventDefault();
+    handleSubmit(e);
   };
   const handleGenderChange = (e) => {
     setUserData((prevData) => ({

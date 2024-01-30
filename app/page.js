@@ -109,7 +109,16 @@ export default function Home() {
                 <div className="title col-12 float-start text-center">
                   <h2>ABOUT ASSURE PATHLAB</h2>
                 </div>
-                <div className="col-xxl-7 col-xl-10 m-auto col-xs-12 col-11 text-center">
+                <div
+                  className="col-xxl-7 col-xl-10 m-auto col-xs-12 col-11 text-center"
+                  data-aos="fade-zoom-in"
+                  data-aos-delay={100}
+                  data-aos-duration={450}
+                  data-aos-once="true"
+                  data-aos-offset={200}
+                  data-aos-easing="ease"
+                  data-aos-anchor-placement="bottom-bottom"
+                >
                   <p>
                     Assure Pathlabs is the best blood test pathalogy laboratory
                     in Jalandhar, established in 2015 by Dr. Sanjay Wadhwa and
@@ -125,7 +134,7 @@ export default function Home() {
                       href="/about-us"
                       className="button button--aylen button--round-l button--text-thick text-uppercase gradient col-lg-3 col-md-4 col-12 mt-3"
                     >
-                      know more{" "}
+                      know more
                     </Link>
                   </div>
                 </div>
@@ -145,65 +154,191 @@ export default function Home() {
                   <div className="row justify-content-center">
                     <div className="col-lg-3 col-md-4 col-6">
                       <div className="circleicons float-start col-12 text-center grid-center">
-                        <span className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick">
-                          {" "}
+                        <span
+                          className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick"
+                          data-aos="flip-right"
+                          data-aos-anchor-placement="bottom-bottom"
+                          data-aos-delay={100}
+                          data-aos-duration={150}
+                          data-aos-once="true"
+                          data-aos-offset={120}
+                          data-aos-easing="ease-in"
+                        >
                           <Alltime />
                         </span>
-                        <p>24x7</p>
+                        <p
+                          data-aos="fade-up"
+                          data-aos-anchor-placement="bottom-bottom"
+                          data-aos-delay={100}
+                          data-aos-duration={120}
+                          data-aos-once="true"
+                          data-aos-offset={120}
+                          data-aos-easing="linear"
+                        >
+                          24x7
+                        </p>
                       </div>
                     </div>
                     <div className="col-lg-3 col-md-4 col-6">
                       <div className="circleicons float-start col-12 text-center grid-center">
-                        <span className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick">
-                          {" "}
+                        <span
+                          className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick"
+                          data-aos="flip-right"
+                          data-aos-anchor-placement="bottom-bottom"
+                          data-aos-delay={100}
+                          data-aos-duration={120}
+                          data-aos-once="true"
+                          data-aos-offset={120}
+                          data-aos-easing="ease-in"
+                        >
                           <Samedaydelivery />
                         </span>
-                        <p>Same Day Report</p>
+                        <p
+                          data-aos="fade-up"
+                          data-aos-anchor-placement="bottom-bottom"
+                          data-aos-delay={100}
+                          data-aos-duration={120}
+                          data-aos-once="true"
+                          data-aos-offset={120}
+                          data-aos-easing="linear"
+                        >
+                          Same Day Report
+                        </p>
                       </div>
                     </div>
                     <div className="col-lg-3 col-md-4 col-6">
                       <div className="circleicons float-start col-12 text-center grid-center">
-                        <span className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick">
-                          {" "}
+                        <span
+                          className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick"
+                          data-aos="flip-right"
+                          data-aos-anchor-placement="bottom-bottom"
+                          data-aos-delay={100}
+                          data-aos-duration={120}
+                          data-aos-once="true"
+                          data-aos-offset={120}
+                          data-aos-easing="ease-in"
+                        >
                           <FoundedDoctor />
                         </span>
-                        <p>Founded by Doctors</p>
+                        <p
+                          data-aos="fade-up"
+                          data-aos-anchor-placement="bottom-bottom"
+                          data-aos-delay={100}
+                          data-aos-duration={120}
+                          data-aos-once="true"
+                          data-aos-offset={120}
+                          data-aos-easing="linear"
+                        >
+                          Founded by Doctors
+                        </p>
                       </div>
                     </div>
                     <div className="col-lg-3 col-md-4 col-6">
                       <div className="circleicons float-start col-12 text-center grid-center">
-                        <span className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick">
-                          {" "}
+                        <span
+                          className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick"
+                          data-aos="flip-right"
+                          data-aos-anchor-placement="bottom-bottom"
+                          data-aos-delay={100}
+                          data-aos-duration={120}
+                          data-aos-once="true"
+                          data-aos-offset={120}
+                          data-aos-easing="ease-in"
+                        >
                           <AdvancedTechnology />
                         </span>
-                        <p>Advanced Technology</p>
+                        <p
+                          data-aos="fade-up"
+                          data-aos-anchor-placement="bottom-bottom"
+                          data-aos-delay={100}
+                          data-aos-duration={120}
+                          data-aos-once="true"
+                          data-aos-offset={120}
+                          data-aos-easing="linear"
+                        >
+                          Advanced Technology
+                        </p>
                       </div>
                     </div>
                     <div className="col-lg-3 col-md-4 col-6">
                       <div className="circleicons float-start col-12 text-center grid-center">
-                        <span className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick">
-                          {" "}
+                        <span
+                          className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick"
+                          data-aos="flip-right"
+                          data-aos-anchor-placement="bottom-bottom"
+                          data-aos-delay={100}
+                          data-aos-duration={120}
+                          data-aos-once="true"
+                          data-aos-offset={120}
+                          data-aos-easing="ease-in"
+                        >
                           <HighOn />
                         </span>
-                        <p>High on Safety and Hygeine</p>
+                        <p
+                          data-aos="fade-up"
+                          data-aos-anchor-placement="bottom-bottom"
+                          data-aos-delay={100}
+                          data-aos-duration={120}
+                          data-aos-once="true"
+                          data-aos-offset={120}
+                          data-aos-easing="linear"
+                        >
+                          High on Safety and Hygeine
+                        </p>
                       </div>
                     </div>
                     <div className="col-lg-3 col-md-4 col-6">
                       <div className="circleicons float-start col-12 text-center grid-center">
-                        <span className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick">
-                          {" "}
+                        <span
+                          className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick"
+                          data-aos="flip-right"
+                          data-aos-anchor-placement="bottom-bottom"
+                          data-aos-delay={100}
+                          data-aos-duration={120}
+                          data-aos-once="true"
+                          data-aos-offset={120}
+                          data-aos-easing="ease-in"
+                        >
                           <FiveHundredplus />
                         </span>
-                        <p>500+ Test</p>
+                        <p
+                          data-aos="fade-up"
+                          data-aos-anchor-placement="bottom-bottom"
+                          data-aos-delay={100}
+                          data-aos-duration={120}
+                          data-aos-once="true"
+                          data-aos-offset={120}
+                          data-aos-easing="linear"
+                        >
+                          500+ Test
+                        </p>
                       </div>
                     </div>
                     <div className="col-lg-3 col-md-4 col-6">
                       <div className="circleicons float-start col-12 text-center grid-center">
-                        <span className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick">
-                          {" "}
+                        <span
+                          className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick"
+                          data-aos="flip-right"
+                          data-aos-anchor-placement="bottom-bottom"
+                          data-aos-delay={100}
+                          data-aos-duration={120}
+                          data-aos-once="true"
+                          data-aos-offset={120}
+                          data-aos-easing="ease-in"
+                        >
                           <ConsultingService />
                         </span>
-                        <p>Consultation Services</p>
+                        <p
+                          data-aos="fade-up"
+                          data-aos-anchor-placement="bottom-bottom"
+                          data-aos-delay={100}
+                          data-aos-duration={120}
+                          data-aos-once="true"
+                          data-aos-offset={120}
+                          data-aos-easing="linear"
+                        >
+                          Consultation Services
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -214,7 +349,16 @@ export default function Home() {
           <Dots className="hsection position-absolute svgwidth opacity-10 start-0 bottom-0 top-inherit" />
           <Line className="svgwidthline position-absolute opacity-10 bottom-0 end-0" />
         </section>
-        <section id="testimonial" className="testimonial">
+        <section
+          id="testimonial"
+          className="testimonial"
+          data-aos="fade-up"
+          data-aos-delay={0}
+          data-aos-duration={320}
+          data-aos-once="true"
+          data-aos-offset={120}
+          data-aos-easing="ease"
+        >
           <div className="container position-relative z-index-2">
             <div className="web-container">
               <div className="row">

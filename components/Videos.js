@@ -75,13 +75,33 @@ export const Videos = (props) => {
       description: "Description for video 4 | Another Source",
     },
   ];
+  const getAosDuration = (index) => {
+    // Adjust the duration values as per your requirement
+    if (index === 0) {
+      return 350; // First slide duration
+    } else if (index === 1) {
+      return 300; // Second slide duration
+    } else if (index === 2) {
+      return 350; // Second slide duration
+    } else {
+      return 400; // Third and subsequent slides duration
+    }
+  };
 
   return (
     <>
       <div className="vedio_review_scn pt-0 pt-sm-3">
         <Slider {...settings} {...props} adaptiveHeight={true}>
           {data.map((video, index) => (
-            <div key={index}>
+            <div
+              key={index}
+              data-aos="fade-up"
+              data-aos-delay={getAosDuration(index)}
+              data-aos-duration={getAosDuration(index)}
+              data-aos-once="true"
+              data-aos-offset={getAosDuration(index)}
+              data-aos-easing="ease-in"
+            s>
               <div className="vedio_cont">
                 {selectedVideoIndex === index ? (
                   <div className=" iframe_scn">

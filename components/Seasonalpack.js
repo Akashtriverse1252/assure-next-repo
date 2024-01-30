@@ -6,6 +6,9 @@ import { Rupees } from "./svg-components/Rupees";
 import testData from "../Data/seasonaltst.json";
 import { TestCard } from "@/components/TestCard";
 import { useData } from "@/context/context";
+import "aos/dist/aos.css"; // Import AOS CSS
+import Aos from "aos";
+import useIntersectionObserver from "@/context/useIntersectionObserver";
 const URL = "https://www.assurepathlabs.com/api/algos/seasonal_api.php";
 
 export const Seasonalpack = (props) => {
@@ -36,6 +39,14 @@ export const Seasonalpack = (props) => {
 
     fetchData();
   }, []);
+  useEffect(() => {
+    Aos.init({ easing: "linear" });
+  }, []);
+  const { targetElementRef, isElementVisible } = useIntersectionObserver({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5,
+  });
 
   var settings = {
     dots: true,
@@ -43,9 +54,9 @@ export const Seasonalpack = (props) => {
     speed: 1000,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplaySpeed: 6000,
-    autoplay: true,
-    initialSlide: 1, // Update this to 0
+    autoplaySpeed: 8000,
+    autoplay: { isElementVisible },
+    initialSlide: 0, // Update this to 0
     responsive: [
       {
         breakpoint: 1100,
@@ -53,6 +64,7 @@ export const Seasonalpack = (props) => {
           slidesToShow: 2,
           slidesToScroll: 1,
         },
+        autoplaySpeed: 6000,
       },
       {
         breakpoint: 700,
@@ -63,6 +75,7 @@ export const Seasonalpack = (props) => {
       },
       {
         breakpoint: 580,
+        autoplaySpeed: 5000,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -70,12 +83,32 @@ export const Seasonalpack = (props) => {
       },
     ],
   };
+
+  const getAosDuration = (index) => {
+    // Adjust the duration values as per your requirement
+    if (index === 0) {
+      return 350; // First slide duration
+    } else if (index === 1) {
+      return 300; // Second slide duration
+    } else if (index === 2) {
+      return 350; // Second slide duration
+    } else {
+      return 400; // Third and subsequent slides duration
+    }
+  };
   return (
     <>
-      <Slider {...settings} {...props}>
+      <Slider {...settings} {...props} ref={targetElementRef}>
         {project &&
           project.test_data.map((test, index) => (
-            <div key={test.id}>
+            <div
+              key={test.id}
+              data-aos="fade-up"
+              data-aos-delay={getAosDuration(index)}
+              data-aos-duration={getAosDuration(index)}
+              data-aos-once="true"
+              data-aos-offset={getAosDuration(index)}
+            >
               <TestCard
                 key={index}
                 Slug={test.Slug}

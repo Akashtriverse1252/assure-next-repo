@@ -17,7 +17,15 @@ export const Faq = ({ Data }) => {
       <div className="faqcont col-lg-11 col-12">
         <Accordion allowZeroExpanded={true}>
           {faqItems.map((item, index) => (
-            <AccordionItem key={index}>
+            <AccordionItem
+              key={index}
+              data-aos="fade-up"
+              data-aos-delay={150 + index * 20}
+              data-aos-duration={150 + index * 20}
+              data-aos-once="true"
+              data-aos-offset={100 + index * 20}
+              data-aos-easing="ease-in"
+            >
               <h3>
                 <AccordionItemHeading>
                   <AccordionItemButton>{item.question}</AccordionItemButton>

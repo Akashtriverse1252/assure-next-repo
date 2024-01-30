@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 import { Thyroid } from "@/components/svg-components/Thyroid";
 import { Kidney } from "@/components/svg-components/Kidney";
@@ -87,11 +87,31 @@ export const Organslider = (props) => {
       icon: <Liver />,
     },
   ];
+
+  const getAosDuration = (index) => {
+    // Adjust the duration values as per your requirement
+    if (index === 0 || index === 4) {
+      return 350; // First slide duration
+    } else if (index === 1 || index === 3) {
+      return 300; // Second slide duration
+    } else if (index === 2) {
+      return 250; // Second slide duration
+    } else {
+      return 400; // Third and subsequent slides duration
+    }
+  };
   return (
     <>
       <Slider {...settings}>
         {organData.map((organ, index) => (
-          <div key={index}>
+          <div
+            key={index}
+            data-aos="fade-up"
+            data-aos-delay={getAosDuration(index)}
+            data-aos-duration={getAosDuration(index)}
+            data-aos-once="true"
+            data-aos-offset={getAosDuration(index)}
+          >
             <Link href={`/organ/${organ.slug}`}>
               <div className="organcolumnrow flex-center navigationwhite hovershadow">
                 <div className="organcolumn">

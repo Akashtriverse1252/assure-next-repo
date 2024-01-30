@@ -3593,10 +3593,10 @@ table th {
   align-items: center;
 }
 .noData {
-  max-width: 50%;
-  width: 600px;
-  margin: 0 auto;
-  margin-top: 8vh;
+  max-width: 50% !important;
+  width: 600px !important;
+  margin: 0 auto !important;
+  margin-top: 8vh !important;
 }
 .our-founder-title {
   width: 35%;

@@ -1,8 +1,10 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
 import Link from "next/link";
+import "aos/dist/aos.css"; // Import AOS CSS
+import Aos from "aos";
 
 export const AssureSlide = (props) => {
   var settings = {
@@ -15,10 +17,19 @@ export const AssureSlide = (props) => {
     autoplaySpeed: 5000,
     autoplay: true,
   };
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
     <>
       <div className="home_banner position-relative">
-        <div className="banner_slider">
+        <div
+          className="banner_slider"
+          data-aos="fade-up"
+          data-aos-delay={100}
+          data-aos-duration={120}
+          data-aos-once="true"
+        >
           <Slider {...settings} {...props}>
             <div>
               <div className="banner_slide">

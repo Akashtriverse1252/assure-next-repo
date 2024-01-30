@@ -1,11 +1,14 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { useAlert } from "@/context/AlerterContext";
+import useIntersectionObserver from "@/context/useIntersectionObserver";
 import Slider from "react-slick";
 import { PackagCard } from "./PackagCard";
 import { Rupees } from "./svg-components/Rupees";
 import { TestCard } from "@/components/TestCard";
 import { useData } from "@/context/context";
+import "aos/dist/aos.css"; // Import AOS CSS
+import Aos from "aos";
 const URL = `https://www.assurepathlabs.com/api/algos/fetch_details.php?category=package&start=packages&start=0&limit=8`;
 
 export const ProductSlider = (props) => {
@@ -28,7 +31,7 @@ export const ProductSlider = (props) => {
       } catch (error) {
         // console.error("Error fetching data:", error);
         showAlert("Error", "network Error", "error");
-      } finally { 
+      } finally {
         setLoading(false);
       }
     };
@@ -36,6 +39,12 @@ export const ProductSlider = (props) => {
 
     fetchData();
   }, []);
+  const { targetElementRef, isElementVisible } = useIntersectionObserver({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5,
+  })
+
 
   var settings = {
     dots: false,
@@ -44,8 +53,8 @@ export const ProductSlider = (props) => {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplaySpeed: 6000,
-    autoplay: true,
-    initialSlide: 1, // Update this to 0
+    autoplay: {isElementVisible },
+    initialSlide: 0, // Update this to 0
     responsive: [
       {
         breakpoint: 1100,
@@ -73,12 +82,35 @@ export const ProductSlider = (props) => {
       },
     ],
   };
+  useEffect(() => {
+    Aos.init();
+  }, []);
+  const getAosDuration = (index) => {
+    // Adjust the duration values as per your requirement
+    if (index === 0) {
+      return 350; // First slide duration
+    } else if (index === 1) {
+      return 300; // Second slide duration
+    } else if (index === 2) {
+      return 350; // Second slide duration
+    } else {
+      return 400; // Third and subsequent slides duration
+    }
+  };
   return (
     <>
-      <Slider {...settings} {...props}>
+      <Slider {...settings} {...props} ref={targetElementRef}>
         {project &&
-          project.test_data.slice(0, 6).map((test, index) => (
-            <div key={test.id}>
+          project.test_data.map((test, index) => (
+            <div
+              key={test.id}
+              data-aos="fade-up"
+              data-aos-delay={getAosDuration(index)}
+              data-aos-duration={getAosDuration(index)}
+              data-aos-once="true"
+              data-aos-offset={getAosDuration(index)}
+              data-aos-easing="ease-in"
+            >
               <PackagCard
                 key={index}
                 Test_Name={test.Test_Name}
@@ -91,23 +123,6 @@ export const ProductSlider = (props) => {
                 widthFull={true}
                 BaseDirectory="packages"
               />
-              {/* <TestCard
-                key={index}
-                Slug={test.Slug}
-                Test_Name={test.Test_Name}
-                Test_Amount={test.Test_Amount}
-                Discount_Amount={test.Discount_Amount}
-                Test_Category={test.Test_Category}
-                Test_ID={test.Test_ID}
-                Test_Description={test.Test_Description}
-                Who_is_it_for={test.Who_is_it_for}
-                Pre_test_information={test.Pre_test_information}
-                Turn_around_time={test.Turn_around_time}
-                widthFull={true}
-                BaseDirectory={
-                  test.category === "test" ? "test-detail" : test.category
-                }
-              /> */}
             </div>
           ))}
       </Slider>

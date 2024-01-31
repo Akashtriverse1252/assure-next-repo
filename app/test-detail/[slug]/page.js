@@ -4,7 +4,7 @@ import data from "@/Data/Test_detail.json";
 import { Test_details_logic } from "@/components/Test_details_logic";
 
 export const page = ({ params: { slug } }) => {
-  console.log("this is the slug", slug);
+  // console.log("this is the slug", slug);
   return (
     <>
       <main className="d-flex flex-wrap float-start col-12">

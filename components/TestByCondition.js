@@ -83,12 +83,6 @@ export const TestByCondition = () => {
                 <div
                   className="condition col-lg-3 col-md-4 col-sm-6 col-6 position-relative"
                   key={index}
-                  data-aos="fade-up"
-                  data-aos-delay={150 + index * 20}
-                  data-aos-duration={180 + index * 20}
-                  data-aos-once="true"
-                  data-aos-offset={100 + index * 20}
-                  data-aos-easing="ease-in"
                 >
                   <Link href={`/condition/${condition.slug}`}>
                     <div className="condtionicon">{condition.icon}</div>

@@ -1,3 +1,4 @@
+"use client";
 import { HForm } from "@/components/HForm";
 import Image from "next/image";
 import { Alltime } from "@/components/svg-components/Alltime";
@@ -18,8 +19,14 @@ import { Testimonials } from "@/components/Testimonials";
 import { Videos } from "@/components/Videos";
 import { Faq } from "@/components/Faq";
 import Link from "next/link";
+import { useEffect } from "react";
+import Aos from "aos";
+import { easing } from "jquery";
 
 export default function Home() {
+  useEffect(() => {
+    Aos.init({ duration: 450, easing: "ease-in" });
+  }, []);
   return (
     <>
       <main className="d-flex flex-wrap float-start col-12">
@@ -188,12 +195,12 @@ export default function Home() {
               <div className="row">
                 <div
                   className="title col-12 float-start text-center"
-                  data-aos="fade-up"
-                  data-aos-delay={100}
-                  data-aos-duration={250}
-                  data-aos-once="true"
-                  data-aos-offset={150}
-                  data-aos-easing="ease-in"
+                  // data-aos="fade-up"
+                  // data-aos-delay={100}
+                  // data-aos-duration={250}
+                  // data-aos-once="true"
+                  // data-aos-offset={150}
+                  // data-aos-easing="ease-in"
                 >
                   <h2>WHY ASSURE PATHLABS?</h2>
                 </div>
@@ -204,7 +211,7 @@ export default function Home() {
                         <span
                           className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick"
                           data-aos="flip-right"
-                          data-aos-delay={100}
+                          data-aos-delay={150}
                           data-aos-duration={150}
                           data-aos-once="true"
                           data-aos-offset={120}
@@ -214,7 +221,7 @@ export default function Home() {
                         </span>
                         <p
                           data-aos="fade-up"
-                          data-aos-delay={100}
+                          data-aos-delay={150}
                           data-aos-duration={120}
                           data-aos-once="true"
                           data-aos-offset={120}
@@ -229,7 +236,7 @@ export default function Home() {
                         <span
                           className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick"
                           data-aos="flip-right"
-                          data-aos-delay={100}
+                          data-aos-delay={150}
                           data-aos-duration={120}
                           data-aos-once="true"
                           data-aos-offset={120}
@@ -239,7 +246,7 @@ export default function Home() {
                         </span>
                         <p
                           data-aos="fade-up"
-                          data-aos-delay={100}
+                          data-aos-delay={150}
                           data-aos-duration={120}
                           data-aos-once="true"
                           data-aos-offset={120}
@@ -254,7 +261,7 @@ export default function Home() {
                         <span
                           className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick"
                           data-aos="flip-right"
-                          data-aos-delay={100}
+                          data-aos-delay={150}
                           data-aos-duration={120}
                           data-aos-once="true"
                           data-aos-offset={120}
@@ -264,7 +271,7 @@ export default function Home() {
                         </span>
                         <p
                           data-aos="fade-up"
-                          data-aos-delay={100}
+                          data-aos-delay={150}
                           data-aos-duration={120}
                           data-aos-once="true"
                           data-aos-offset={120}
@@ -279,7 +286,7 @@ export default function Home() {
                         <span
                           className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick"
                           data-aos="flip-right"
-                          data-aos-delay={100}
+                          data-aos-delay={150}
                           data-aos-duration={120}
                           data-aos-once="true"
                           data-aos-offset={120}
@@ -289,7 +296,7 @@ export default function Home() {
                         </span>
                         <p
                           data-aos="fade-up"
-                          data-aos-delay={100}
+                          data-aos-delay={150}
                           data-aos-duration={120}
                           data-aos-once="true"
                           data-aos-offset={120}
@@ -305,7 +312,7 @@ export default function Home() {
                           className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick"
                           data-aos="flip-right"
                           data-aos-anchor-placement="bottom-bottom"
-                          data-aos-delay={100}
+                          data-aos-delay={150}
                           data-aos-duration={120}
                           data-aos-once="true"
                           data-aos-offset={120}
@@ -316,7 +323,7 @@ export default function Home() {
                         <p
                           data-aos="fade-up"
                           data-aos-anchor-placement="bottom-bottom"
-                          data-aos-delay={100}
+                          data-aos-delay={150}
                           data-aos-duration={120}
                           data-aos-once="true"
                           data-aos-offset={120}
@@ -331,7 +338,7 @@ export default function Home() {
                         <span
                           className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick"
                           data-aos="flip-right"
-                          data-aos-delay={100}
+                          data-aos-delay={150}
                           data-aos-duration={120}
                           data-aos-once="true"
                           data-aos-offset={120}
@@ -390,7 +397,7 @@ export default function Home() {
           id="testimonial"
           className="testimonial"
           data-aos="fade-up"
-          data-aos-delay={0}
+          data-aos-delay={100}
           data-aos-duration={320}
           data-aos-once="true"
           data-aos-offset={120}

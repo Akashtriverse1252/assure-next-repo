@@ -10,7 +10,7 @@ import Aos from "aos";
 
 export const Footer = () => {
   useEffect(() => {
-    Aos.init({ duration: 400 });
+    Aos.init();
   }, []);
   const currentYear = new Date().getFullYear();
   const [selectedTab, setSelectedTab] = useState(1);

@@ -3,6 +3,18 @@ import { Line } from "@/components/svg-components/Line";
 import React from "react";
 
 const page = () => {
+  const generateAOSAttributes = (index, baseDelay = 150, step = 30) => {
+    const delay = baseDelay + index * step;
+    return {
+      "data-aos": "fade-up",
+      "data-aos-delay": delay,
+      "data-aos-duration": 200,
+      "data-aos-once": true,
+      "data-aos-offset": delay,
+      "data-aos-easing": "cubic-bezier(.57,.21,.69,3.25)",
+    };
+  };
+
   return (
     <>
       <main className="d-flex flex-wrap float-start col-12">
@@ -15,7 +27,14 @@ const page = () => {
                     <h2>PRIVACY POLICY</h2>
                   </div>
                   <div className="privacy_pol_cnt">
-                    <p>
+                    <p
+                      data-aos="fade-up"
+                      data-aos-delay={150}
+                      data-aos-duration={150}
+                      data-aos-once="true"
+                      data-aos-offset={150}
+                      data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                    >
                       Assure Pathlabs Privacy Policy briefly gives the way your
                       information is collected and used by Assure Pathlabs
                       through Assurepathlabs.com. By accessing the services
@@ -25,50 +44,220 @@ const page = () => {
                       this Privacy Policy. You are advised to read the policy
                       carefully.
                     </p>
-                    <p>
+                    <p
+                      data-aos="fade-up"
+                      data-aos-delay={180}
+                      data-aos-duration={180}
+                      data-aos-once="true"
+                      data-aos-offset={180}
+                      data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                    >
                       If you have any query or doubt regarding this declaration,
-                      you should contact ASSURE PATHLABS Customer Care at : 
+                      you should contact ASSURE PATHLABS Customer Care at :
                       <a href="mailto:assurepathlabs@gmail.com">
-                         assurepathlabs@gmail.com
+                        assurepathlabs@gmail.com
                       </a>
                     </p>
 
-                    <div class="contentbox">
-                      <h3>Information Collected from the Users</h3>
-                      <p>
+                    <div
+                      class="contentbox"
+                      data-aos="fade-up"
+                      data-aos-delay={200}
+                      data-aos-duration={200}
+                      data-aos-once="true"
+                      data-aos-offset={200}
+                      data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                    >
+                      <h3
+                        data-aos="fade-up"
+                        data-aos-delay={230}
+                        data-aos-duration={230}
+                        data-aos-once="true"
+                        data-aos-offset={230}
+                        data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                      >
+                        Information Collected from the Users
+                      </h3>
+                      <p
+                        data-aos="fade-up"
+                        data-aos-delay={250}
+                        data-aos-duration={250}
+                        data-aos-once="true"
+                        data-aos-offset={250}
+                        data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                      >
                         We accumulate the following "personal information" about
                         you online when you voluntarily provide it to us through
                         our website:
                       </p>
-                      <ul>
-                        <li>Salutation</li>
-                        <li>First Name, Last Name</li>
-                        <li>Age &amp; Gender</li>
-                        <li>Email Address</li>
-                        <li>Billing and Collection Address</li>
-                        <li>Phone Number</li>
-                        <li>Zip / Postal Code</li>
-                        <li>Aadhaar Card</li>
+                      <ul
+                        data-aos="fade-up"
+                        data-aos-delay={250}
+                        data-aos-duration={250}
+                        data-aos-once="true"
+                        data-aos-offset={250}
+                        data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                      >
+                        <li
+                          data-aos="fade-up"
+                          data-aos-delay={230}
+                          data-aos-duration={230}
+                          data-aos-once="true"
+                          data-aos-offset={230}
+                          data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                        >
+                          Salutation
+                        </li>
+                        <li
+                          data-aos="fade-up"
+                          data-aos-delay={230}
+                          data-aos-duration={230}
+                          data-aos-once="true"
+                          data-aos-offset={230}
+                          data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                        >
+                          First Name, Last Name
+                        </li>
+                        <li
+                          data-aos="fade-up"
+                          data-aos-delay={230}
+                          data-aos-duration={230}
+                          data-aos-once="true"
+                          data-aos-offset={230}
+                          data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                        >
+                          Age &amp; Gender
+                        </li>
+                        <li
+                          data-aos="fade-up"
+                          data-aos-delay={230}
+                          data-aos-duration={230}
+                          data-aos-once="true"
+                          data-aos-offset={230}
+                          data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                        >
+                          Email Address
+                        </li>
+                        <li
+                          data-aos="fade-up"
+                          data-aos-delay={230}
+                          data-aos-duration={230}
+                          data-aos-once="true"
+                          data-aos-offset={230}
+                          data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                        >
+                          Billing and Collection Address
+                        </li>
+                        <li
+                          data-aos="fade-up"
+                          data-aos-delay={230}
+                          data-aos-duration={230}
+                          data-aos-once="true"
+                          data-aos-offset={230}
+                          data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                        >
+                          Phone Number
+                        </li>
+                        <li
+                          data-aos="fade-up"
+                          data-aos-delay={230}
+                          data-aos-duration={230}
+                          data-aos-once="true"
+                          data-aos-offset={230}
+                          data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                        >
+                          Zip / Postal Code
+                        </li>
+                        <li
+                          data-aos="fade-up"
+                          data-aos-delay={230}
+                          data-aos-duration={230}
+                          data-aos-once="true"
+                          data-aos-offset={230}
+                          data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                        >
+                          Aadhaar Card
+                        </li>
                       </ul>
-                      <p>
+                      <p
+                        data-aos="fade-up"
+                        data-aos-delay={280}
+                        data-aos-duration={280}
+                        data-aos-once="true"
+                        data-aos-offset={280}
+                        data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                      >
                         How the information collected will be used by
                         assurepathlab.com?
                       </p>
-                      <h3>
+                      <h3
+                        data-aos="fade-up"
+                        data-aos-delay={300}
+                        data-aos-duration={300}
+                        data-aos-once="true"
+                        data-aos-offset={300}
+                        data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                      >
                         Usage of email address &amp; mobile number is for:
                       </h3>
-                      <ul>
-                        <li>
+                      <ul
+                        data-aos="fade-up"
+                        data-aos-delay={300}
+                        data-aos-duration={300}
+                        data-aos-once="true"
+                        data-aos-offset={300}
+                        data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                      >
+                        <li
+                          data-aos="fade-up"
+                          data-aos-delay={150}
+                          data-aos-duration={150}
+                          data-aos-once="true"
+                          data-aos-offset={150}
+                          data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                        >
                           Inform any kind of alteration in the privacy policy or
                           terms and condition
                         </li>
-                        <li>Registration affirmation and password reminder</li>
-                        <li>
+                        <li
+                          data-aos="fade-up"
+                          data-aos-delay={150}
+                          data-aos-duration={150}
+                          data-aos-once="true"
+                          data-aos-offset={150}
+                          data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                        >
+                          Registration affirmation and password reminder
+                        </li>
+                        <li
+                          data-aos="fade-up"
+                          data-aos-delay={150}
+                          data-aos-duration={150}
+                          data-aos-once="true"
+                          data-aos-offset={150}
+                          data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                        >
                           Event based communication such as order information,
                           delivery information, etc.
                         </li>
-                        <li>Special offers, if any</li>
-                        <li>
+                        <li
+                          data-aos="fade-up"
+                          data-aos-delay={150}
+                          data-aos-duration={150}
+                          data-aos-once="true"
+                          data-aos-offset={150}
+                          data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                        >
+                          Special offers, if any
+                        </li>
+                        <li
+                          data-aos="fade-up"
+                          data-aos-delay={150}
+                          data-aos-duration={150}
+                          data-aos-once="true"
+                          data-aos-offset={150}
+                          data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                        >
                           We may share or aggregate, non-personal information
                           about website usage with unaffiliated third parties.
                           This aggregate information does not contain any
@@ -77,7 +266,14 @@ const page = () => {
                           reasonable level of security practices and procedures
                           to ensure security of personal information
                         </li>
-                        <li>
+                        <li
+                          data-aos="fade-up"
+                          data-aos-delay={150}
+                          data-aos-duration={150}
+                          data-aos-once="true"
+                          data-aos-offset={150}
+                          data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                        >
                           We will not disclose any personal information to any
                           third party, unless (I) it is necessary for providing
                           services to or you have authorized us to do so, (ii)
@@ -91,46 +287,143 @@ const page = () => {
                           the public.
                         </li>
                       </ul>
-                      <h3>Usage of your personal information is:</h3>
-                      <p>
+                      <h3
+                        data-aos="fade-up"
+                        data-aos-delay={320}
+                        data-aos-duration={320}
+                        data-aos-once="true"
+                        data-aos-offset={320}
+                        data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                      >
+                        Usage of your personal information is:
+                      </h3>
+                      <p
+                        data-aos="fade-up"
+                        data-aos-delay={350}
+                        data-aos-duration={350}
+                        data-aos-once="true"
+                        data-aos-offset={350}
+                        data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                      >
                         ASSURE PATHLABS does collect your personal information
                         for a variety of regulatory and business purposes. These
                         include, but are not limited to:
                       </p>
-                      <ul>
-                        <li>Provide results for the tests requested by you</li>
-                        <li>
+                      <ul
+                        data-aos="fade-up"
+                        data-aos-delay={380}
+                        data-aos-duration={380}
+                        data-aos-once="true"
+                        data-aos-offset={380}
+                        data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                      >
+                        <li
+                          data-aos="fade-up"
+                          data-aos-delay={380}
+                          data-aos-duration={380}
+                          data-aos-once="true"
+                          data-aos-offset={380}
+                          data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                        >
+                          Provide results for the tests requested by you
+                        </li>
+                        <li
+                          data-aos="fade-up"
+                          data-aos-delay={380}
+                          data-aos-duration={380}
+                          data-aos-once="true"
+                          data-aos-offset={380}
+                          data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                        >
                           Respond to your request for service or assistance
                         </li>
-                        <li>
+                        <li
+                          data-aos="fade-up"
+                          data-aos-delay={380}
+                          data-aos-duration={380}
+                          data-aos-once="true"
+                          data-aos-offset={380}
+                          data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                        >
                           Age &amp; Gender for reporting results accurately
                         </li>
-                        <li>Provide, maintain and improve our services</li>
-                        <li>
+                        <li
+                          data-aos="fade-up"
+                          data-aos-delay={380}
+                          data-aos-duration={380}
+                          data-aos-once="true"
+                          data-aos-offset={380}
+                          data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                        >
+                          Provide, maintain and improve our services
+                        </li>
+                        <li
+                          data-aos="fade-up"
+                          data-aos-delay={380}
+                          data-aos-duration={380}
+                          data-aos-once="true"
+                          data-aos-offset={380}
+                          data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                        >
                           Safeguard social history as governed by existing law
                           or policy
                         </li>
-                        <li>
+                        <li
+                          data-aos="fade-up"
+                          data-aos-delay={380}
+                          data-aos-duration={380}
+                          data-aos-once="true"
+                          data-aos-offset={380}
+                          data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                        >
                           Ensure adherence to legal and regulatory requirements
                           for prevention and detection of frauds and crimes.
                         </li>
-                        <li>
+                        <li
+                          data-aos="fade-up"
+                          data-aos-delay={380}
+                          data-aos-duration={380}
+                          data-aos-once="true"
+                          data-aos-offset={380}
+                          data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                        >
                           Evaluate our services and products and to conduct
                           customer surveys
                         </li>
                       </ul>
-                      <h3>
+                      <h3
+                        data-aos="fade-up"
+                        data-aos-delay={400}
+                        data-aos-duration={400}
+                        data-aos-once="true"
+                        data-aos-offset={400}
+                        data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                      >
                         Use and Disclose of your Report / information / data:
                       </h3>
                       <ul>
-                        <li>
+                        <li
+                          data-aos="fade-up"
+                          data-aos-delay={420}
+                          data-aos-duration={420}
+                          data-aos-once="true"
+                          data-aos-offset={420}
+                          data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                        >
                           We may use or disclose your report in the course of
                           activities necessary to support our health care
                           operations, such as performing quality checks on our
                           testing, for teaching purposes, or for developing
                           normal reference ranges for tests that we perform.
                         </li>
-                        <li>
+                        <li
+                          data-aos="fade-up"
+                          data-aos-delay={450}
+                          data-aos-duration={450}
+                          data-aos-once="true"
+                          data-aos-offset={450}
+                          data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                        >
                           We may disclose your reports to other companies or
                           individuals who need your reports in order to provide
                           specific services to us. These other entities, known
@@ -140,12 +433,12 @@ const page = () => {
                           data we provide to them or which they create on our
                           behalf.
                         </li>
-                        <li>
+                        <li {...generateAOSAttributes(3, 250, 30)}>
                           We may disclose your report to the physicians and
                           other authorized health care professionals who need to
                           access your laboratory report to treat you.
                         </li>
-                        <li>
+                        <li {...generateAOSAttributes(3, 250, 30)}>
                           We may use your report with our billing department and
                           may disclose it to insurance companies, hospitals,
                           physicians or to third parties for payment purpose.
@@ -153,13 +446,13 @@ const page = () => {
                           Confidentiality Policies which obligate them to
                           protect the confidentiality of personal information.
                         </li>
-                        <li>
+                        <li {...generateAOSAttributes(3, 250, 30)}>
                           We may disclose your reports to Health Department or
                           any other Govt. body or regulatory authority as and
                           when required by them for collection, processing
                           health information of the state / country.
                         </li>
-                        <li>
+                        <li {...generateAOSAttributes(3, 250, 30)}>
                           We may also share your personal information with
                           Government agencies or other authorized law
                           enforcement agencies (LEAs) mandated under law to
@@ -168,27 +461,36 @@ const page = () => {
                           investigation including but not limited to cyber
                           incidents, prosecution, and punishment of offences.
                         </li>
-                        <li>
+                        <li {...generateAOSAttributes(3, 250, 30)}>
                           To support our health care operations, such as
                           performing quality checks on your testing, for
                           teaching purposes, or for developing normal reference
                           ranges for the tests we perform.
                         </li>
-                        <li>
+                        <li {...generateAOSAttributes(3, 250, 30)}>
                           To respond to summons, court orders, or legal process,
                           or to establish or exercise our legal rights or defend
                           against legal claims.
                         </li>
-                        <li>
+                        <li {...generateAOSAttributes(3, 250, 30)}>
                           You agree that we may share your Personal Information
                           with the following categories of activities with from
                           time-to-time:
                         </li>
-                        <li class="noborder">
+                        <li
+                          class="noborder"
+                          {...generateAOSAttributes(3, 250, 30)}
+                        >
                           <ol>
-                            <li className="pt-2">
+                            <li
+                              className="pt-2"
+                              {...generateAOSAttributes(3, 250, 30)}
+                            >
                               Advertisements
-                              <ol className="py-2">
+                              <ol
+                                className="py-2"
+                                {...generateAOSAttributes(3, 250, 30)}
+                              >
                                 <li>
                                   Website may aggregate (gather up data across
                                   all accounts) Personal Information and
@@ -214,7 +516,10 @@ const page = () => {
                             </li>
                             <li>
                               Posting to public areas of the website
-                              <ol className="py-2">
+                              <ol
+                                className="py-2"
+                                {...generateAOSAttributes(3, 250, 30)}
+                              >
                                 <li>
                                   Please remember that if you post any of your
                                   Personal Information in public areas of the
@@ -232,8 +537,10 @@ const page = () => {
                           </ol>
                         </li>
                       </ul>
-                      <h3>Other websites</h3>
-                      <p>
+                      <h3 {...generateAOSAttributes(3, 250, 30)}>
+                        Other websites
+                      </h3>
+                      <p {...generateAOSAttributes(3, 250, 30)}>
                         Our Website may contain links to other websites. Please
                         note that when you click on one of these links, you are
                         entering another website over which the Website has no
@@ -245,7 +552,9 @@ const page = () => {
                         your privacy of Personal Information or loss incurred by
                         your use of these websites.
                       </p>
-                      <h3>Usage of anonymous traffic information is to:</h3>
+                      <h3 {...generateAOSAttributes(3, 250, 30)}>
+                        Usage of anonymous traffic information is to:
+                      </h3>
                       <p>
                         Prompt us of who you are in order to deliver superior
                         and more personalized service Aid to make a diagnosis of
@@ -255,8 +564,10 @@ const page = () => {
                         website <br />
                         www.assurepathlabs.com.
                       </p>
-                      <h3>Privacy Update:</h3>
-                      <p>
+                      <h3 {...generateAOSAttributes(3, 250, 30)}>
+                        Privacy Update:
+                      </h3>
+                      <p {...generateAOSAttributes(3, 250, 30)}>
                         Assure Pathlabs reserves the privilege to modify or
                         renew this policy at any time by placing a notice on our
                         site. Any kind of modification shall come into effect
@@ -266,8 +577,10 @@ const page = () => {
                         to this policy, we will notify you by means of a notice
                         on our homepage only.
                       </p>
-                      <h3>Governing Law and Dispute Resolution</h3>
-                      <p>
+                      <h3 {...generateAOSAttributes(3, 250, 30)}>
+                        Governing Law and Dispute Resolution
+                      </h3>
+                      <p {...generateAOSAttributes(3, 250, 30)}>
                         This Privacy Policy and Terms of Use shall be governed
                         by and constructed in accordance with the laws of India
                         only without reference to conflict of laws principles
@@ -275,15 +588,19 @@ const page = () => {
                         subject to the exclusive jurisdiction of the competent
                         courts of Jalandhar in Punjab, India.
                       </p>
-                      <h3>Contacting the Website</h3>
+                      <h3 {...generateAOSAttributes(3, 250, 30)}>
+                        Contacting the Website
+                      </h3>
                       <p>
                         If you have any questions about this Privacy Policy, the
                         privacy practices of this Website, or if you want to
                         exercise any of the rights that you are given under this
                         Privacy Policy, you can contact us.
                       </p>
-                      <h3>Assignability</h3>
-                      <p>
+                      <h3 {...generateAOSAttributes(3, 250, 30)}>
+                        Assignability
+                      </h3>
+                      <p {...generateAOSAttributes(3, 250, 30)}>
                         Assure Pathlabs may assign any of its
                         responsibilities/obligations to any other person without
                         notice to the User, at its sole discretion. However, you
@@ -292,8 +609,8 @@ const page = () => {
                         party, unless a written consent is taken from Assure
                         Pathlabs.
                       </p>
-                      <h3>Disclaimer</h3>
-                      <p>
+                      <h3 {...generateAOSAttributes(3, 250, 30)}>Disclaimer</h3>
+                      <p {...generateAOSAttributes(3, 250, 30)}>
                         Assure Pathlabs does not access, store or keep credit
                         card data. All credit card transactions occur using
                         Secure Server Software (SSL) for 128 bit encryption
@@ -304,7 +621,7 @@ const page = () => {
                         any loss or damage due to any disclosure whatsoever of
                         Personal Information.
                       </p>
-                      <p>
+                      <p {...generateAOSAttributes(3, 250, 30)}>
                         Assure Pathlabs shall not be liable for any loss or
                         damage sustained by reason of any disclosure
                         (inadvertent or otherwise) of any Personal Information

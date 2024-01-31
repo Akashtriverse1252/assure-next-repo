@@ -7,18 +7,34 @@ const OurFounders = () => {
   return (
     <>
       <section className="position-relative pt-md-4">
-        <div className="gradient-layer"></div>
+        {/* <div className="gradient-layer"></div> */}
         <div className="container">
           <div className="web-container">
             <div className="row   ">
               <div className="col-12 flex-center flex-column flex-md-row">
-                <div className="our-founder-title  flex-center">
+                <div
+                  className="our-founder-title  flex-center"
+                  data-aos="zoom-in"
+                  data-aos-delay={100}
+                  data-aos-duration={300}
+                  data-aos-once="true"
+                  data-aos-offset={100}
+                  data-aos-easing="ease-in"
+                >
                   <h2 class="">
                     Meet The <br /> Founders
                   </h2>
                 </div>
                 <div className=" our-founder-content flex-center">
-                  <div class="founder-card text-left mb-3 rounded-0">
+                  <div
+                    class="founder-card text-left mb-3 rounded-0"
+                    data-aos="fade-left"
+                    data-aos-delay={100}
+                    data-aos-duration={300}
+                    data-aos-once="true"
+                    data-aos-offset={100}
+                    data-aos-easing="ease-in"
+                  >
                     <div class="founder-card-body d-flex align-items-top">
                       <div
                         alt=""
@@ -66,7 +82,15 @@ const OurFounders = () => {
                       </div>
                     </div>
                   </div>
-                  <div class="founder-card text-left mb-3 rounded-0">
+                  <div
+                    class="founder-card text-left mb-3 rounded-0"
+                    data-aos="fade-right"
+                    data-aos-delay={100}
+                    data-aos-duration={300}
+                    data-aos-once="true"
+                    data-aos-offset={100}
+                    data-aos-easing="ease-in"
+                  >
                     <div class="founder-card-body d-flex align-items-top">
                       <div
                         alt=""

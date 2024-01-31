@@ -59,14 +59,22 @@ export const TestByCondition = () => {
       <div className="web-container">
         <div className="row ">
           <div className="col-lg-10 m-auto col-12">
-            <div className="title col-12 float-start text-center mb-0 mt-3 mt-sm-5">
+            <div
+              className="title col-12 float-start text-center mb-0 mt-3 mt-sm-5"
+              data-aos="fade-up"
+              data-aos-delay={100}
+              data-aos-duration={250}
+              data-aos-once="true"
+              data-aos-offset={150}
+              data-aos-easing="ease-in"
+            >
               <h2>TEST BY CONDITION</h2>
             </div>
             <div
               className="row justify-content-md-center"
               data-aos="fade-up"
               data-aos-delay={100}
-              data-aos-duration={320}
+              data-aos-duration={150}
               data-aos-once="true"
               data-aos-offset={150}
               data-aos-easing="ease-in"
@@ -75,6 +83,12 @@ export const TestByCondition = () => {
                 <div
                   className="condition col-lg-3 col-md-4 col-sm-6 col-6 position-relative"
                   key={index}
+                  data-aos="fade-up"
+                  data-aos-delay={150 + index * 20}
+                  data-aos-duration={180 + index * 20}
+                  data-aos-once="true"
+                  data-aos-offset={100 + index * 20}
+                  data-aos-easing="ease-in"
                 >
                   <Link href={`/condition/${condition.slug}`}>
                     <div className="condtionicon">{condition.icon}</div>

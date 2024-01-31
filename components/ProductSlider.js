@@ -88,11 +88,11 @@ export const ProductSlider = (props) => {
   const getAosDuration = (index) => {
     // Adjust the duration values as per your requirement
     if (index === 0) {
-      return 350; // First slide duration
+      return 380; // First slide duration
     } else if (index === 1) {
-      return 300; // Second slide duration
+      return 320; // Second slide duration
     } else if (index === 2) {
-      return 350; // Second slide duration
+      return 380; // Second slide duration
     } else {
       return 400; // Third and subsequent slides duration
     }

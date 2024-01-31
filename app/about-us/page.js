@@ -20,7 +20,15 @@ export const page = () => {
           <div className="container">
             <div className="web-container">
               <div className="row">
-                <div className="col-lg-9 col-md-8 col-xs-12 col-12 abt_banner">
+                <div
+                  className="col-lg-9 col-md-8 col-xs-12 col-12 abt_banner"
+                  data-aos="fade-in"
+                  data-aos-delay={100}
+                  data-aos-duration={200}
+                  data-aos-once="true"
+                  data-aos-offset={100}
+                  data-aos-easing="ease-in"
+                >
                   <Image
                     src={Aboutbanner}
                     alt="Comprehensive Health Checkup"
@@ -30,12 +38,28 @@ export const page = () => {
                 </div>
               </div>
               <div className="row">
-                <div className="title col-12 float-start text-center">
+                <div
+                  className="title col-12 float-start text-center"
+                  data-aos="fade-up"
+                  data-aos-delay={100}
+                  data-aos-duration={250}
+                  data-aos-once="true"
+                  data-aos-offset={150}
+                  data-aos-easing="ease-in"
+                >
                   <h1>Assure Pathlabs</h1>
                 </div>
                 <div className=" m-auto col-12 col-md-10 d-flex justify-content-center flex-direction-row  text-center">
                   <div className=" d-flex justify-content-center text-left flex-column ">
-                    <p className="about-assure-text ">
+                    <p
+                      className="about-assure-text "
+                      data-aos="fade-up"
+                      data-aos-delay={100}
+                      data-aos-duration={300}
+                      data-aos-once="true"
+                      data-aos-offset={100}
+                      data-aos-easing="ease-in"
+                    >
                       Assure Pathlabs is the best blood test pathalogy
                       laboratory in Jalandhar, established in 2015 by Dr. Sanjay
                       Wadhwa and Dr. Lovely Razdan with a commitment to
@@ -43,7 +67,15 @@ export const page = () => {
                       upholds international standards having adequate lab tests
                       cost.
                     </p>
-                    <p className="about-assure-text ">
+                    <p
+                      className="about-assure-text "
+                      data-aos="fade-up"
+                      data-aos-delay={100}
+                      data-aos-duration={300}
+                      data-aos-once="true"
+                      data-aos-offset={100}
+                      data-aos-easing="ease-in"
+                    >
                       Our commitment guarantees not just efficient service but
                       also valuable advice, timely reports, unwavering support,
                       and compassionate care because your well-being is our
@@ -66,7 +98,15 @@ export const page = () => {
             <div className="row">
               <div className="col-lg-7 m-auto col-12 float-start sm-padding-0">
                 <div className="col-12 flaot-start flex-center mb-2 mb-md-4 mb-lg-5 text-center">
-                  <div className="title col-12 float-start text-center">
+                  <div
+                    className="title col-12 float-start text-center"
+                    data-aos="fade-up"
+                    data-aos-delay={100}
+                    data-aos-duration={250}
+                    data-aos-once="true"
+                    data-aos-offset={150}
+                    data-aos-easing="ease-in"
+                  >
                     <h2>OUR ETHOS</h2>
                   </div>
                 </div>
@@ -74,12 +114,28 @@ export const page = () => {
                   <div className="row align-items-center">
                     <div className="col-lg-5 col-12">
                       <div className="heading p-0 h-auto border-0 mb-2">
-                        <h3 className="effectheading newheading aos-init aos-animate">
+                        <h3
+                          className="effectheading newheading "
+                          data-aos="flip-right"
+                          data-aos-delay={100}
+                          data-aos-duration={300}
+                          data-aos-once="true"
+                          data-aos-offset={100}
+                          data-aos-easing="ease-in"
+                        >
                           OUR VISION
                         </h3>
                       </div>
                     </div>
-                    <div className="col-lg-7 col-12 aos-init aos-animate">
+                    <div
+                      className="col-lg-7 col-12 "
+                      data-aos="fade-up"
+                      data-aos-delay={100}
+                      data-aos-duration={300}
+                      data-aos-once="true"
+                      data-aos-offset={100}
+                      data-aos-easing="ease-in"
+                    >
                       <p>
                         Become the most trusted and best pathology laboratory
                         that ensures international standards in diagnostics.
@@ -94,12 +150,28 @@ export const page = () => {
                       style={{ textAlign: "right" }}
                     >
                       <div className="heading p-0 h-auto border-0 mb-2">
-                        <h3 className="effectheading newheading aos-init aos-animate">
+                        <h3
+                          className="effectheading newheading "
+                          data-aos="flip-left"
+                          data-aos-delay={100}
+                          data-aos-duration={300}
+                          data-aos-once="true"
+                          data-aos-offset={100}
+                          data-aos-easing="ease-in"
+                        >
                           OUR MISSION
                         </h3>
                       </div>
                     </div>
-                    <div className="col-lg-6 col-12 aos-init aos-animate">
+                    <div
+                      className="col-lg-6 col-12 "
+                      data-aos="fade-up"
+                      data-aos-delay={100}
+                      data-aos-duration={300}
+                      data-aos-once="true"
+                      data-aos-offset={100}
+                      data-aos-easing="ease-in"
+                    >
                       <p>
                         Our mission is to redefine healthcare accessibility and
                         elevate diagnostic standards.
@@ -115,7 +187,15 @@ export const page = () => {
           <div className="container">
             <div className="web-container">
               <div className="row">
-                <div className="title col-12 float-start text-center mt-5 mb-4">
+                <div
+                  className="title col-12 float-start text-center mt-5 mb-4"
+                  data-aos="fade-tp"
+                  data-aos-delay={100}
+                  data-aos-duration={200}
+                  data-aos-once="true"
+                  data-aos-offset={100}
+                  data-aos-easing="ease-in"
+                >
                   <h2>OUR DIFFERENTIATORS</h2>
                 </div>
                 <div className="our_diffrenc">
@@ -123,26 +203,77 @@ export const page = () => {
                     <div className="row justify-content-center our_diff_cnt">
                       <div className="col-lg-3 col-sm-4 col-6 our_diff_item ">
                         <div className="circleicons float-start  text-center grid-center">
-                          <span className="flex-center mb-2 button button--aylen button--round-l button--text-thick">
+                          <span
+                            className="flex-center mb-2 button button--aylen button--round-l button--text-thick"
+                            data-aos="flip-right"
+                            data-aos-delay={100}
+                            data-aos-duration={120}
+                            data-aos-once="true"
+                            data-aos-offset={120}
+                            data-aos-easing="ease-in"
+                          >
                             <AdvancedTechnology />
                           </span>
-                          <h3>New age Technology</h3>
+                          <h3
+                            data-aos="fade-up"
+                            data-aos-delay={100}
+                            data-aos-duration={120}
+                            data-aos-once="true"
+                            data-aos-offset={120}
+                            data-aos-easing="linear"
+                          >
+                            New age Technology
+                          </h3>
                         </div>
                       </div>
                       <div className="col-lg-3 col-sm-4 col-6 our_diff_item ">
                         <div className="circleicons float-start  text-center grid-center">
-                          <span className="flex-center mb-2 button button--aylen button--round-l button--text-thick">
+                          <span
+                            className="flex-center mb-2 button button--aylen button--round-l button--text-thick"
+                            data-aos="flip-right"
+                            data-aos-delay={60}
+                            data-aos-duration={120}
+                            data-aos-once="true"
+                            data-aos-offset={120}
+                            data-aos-easing="ease-in"
+                          >
                             <InternationalStandard />
                           </span>
-                          <h3>International Standards </h3>
+                          <h3
+                            data-aos="fade-up"
+                            data-aos-delay={65}
+                            data-aos-duration={120}
+                            data-aos-once="true"
+                            data-aos-offset={120}
+                            data-aos-easing="linear"
+                          >
+                            International Standards{" "}
+                          </h3>
                         </div>
                       </div>
                       <div className="col-lg-3 col-sm-4 col-6 our_diff_item ">
                         <div className="circleicons float-start  text-center grid-center">
-                          <span className="flex-center mb-2 button button--aylen button--round-l button--text-thick">
+                          <span
+                            className="flex-center mb-2 button button--aylen button--round-l button--text-thick"
+                            data-aos="flip-right"
+                            data-aos-delay={70}
+                            data-aos-duration={120}
+                            data-aos-once="true"
+                            data-aos-offset={120}
+                            data-aos-easing="ease-in"
+                          >
                             <Doctor />
                           </span>
-                          <h3>Founded by doctors</h3>
+                          <h3
+                            data-aos="fade-up"
+                            data-aos-delay={100}
+                            data-aos-duration={120}
+                            data-aos-once="true"
+                            data-aos-offset={120}
+                            data-aos-easing="linear"
+                          >
+                            Founded by doctors
+                          </h3>
                         </div>
                       </div>
                     </div>

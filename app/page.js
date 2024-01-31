@@ -43,7 +43,15 @@ export default function Home() {
             <div className="web-container">
               <div className="row">
                 <div className="col-md-12 col-12">
-                  <div className="title col-12 float-start text-center">
+                  <div
+                    className="title col-12 float-start text-center"
+                    data-aos="fade-up"
+                    data-aos-delay={100}
+                    data-aos-duration={250}
+                    data-aos-once="true"
+                    data-aos-offset={150}
+                    data-aos-easing="ease-in"
+                  >
                     <h2 className="grid-center ">
                       Popular Seasonal Packages
                       {/* <span>DENGUE, CHIKUNGUNYA, MALARIA</span> */}
@@ -62,7 +70,15 @@ export default function Home() {
             <div className="web-container">
               <div className="row">
                 <div className="col-md-12 col-12">
-                  <div className="title col-12 float-start text-center">
+                  <div
+                    className="title col-12 float-start text-center"
+                    data-aos="fade-up"
+                    data-aos-delay={100}
+                    data-aos-duration={250}
+                    data-aos-once="true"
+                    data-aos-offset={150}
+                    data-aos-easing="ease-in"
+                  >
                     <h2>Popular Wellness Packages</h2>
                   </div>
                   <ProductSlider className="colornavigations col-12 float-start arrows productslider minusbottom" />
@@ -78,7 +94,15 @@ export default function Home() {
             <div className="web-container">
               <div className="row">
                 <div className="col-md-12 col-12">
-                  <div className="title col-12 float-start text-center mb-3">
+                  <div
+                    className="title col-12 float-start text-center mb-3"
+                    data-aos="fade-up"
+                    data-aos-delay={100}
+                    data-aos-duration={250}
+                    data-aos-once="true"
+                    data-aos-offset={150}
+                    data-aos-easing="ease-in"
+                  >
                     <h2 className="grid-center text-white">TEST BY ORGAN</h2>
                   </div>
                   <Organslider className="navigationwhite hovershadow" />
@@ -106,18 +130,25 @@ export default function Home() {
           <div className="container">
             <div className="web-container">
               <div className="row">
-                <div className="title col-12 float-start text-center">
+                <div
+                  className="title col-12 float-start text-center"
+                  data-aos="fade-up"
+                  data-aos-delay={100}
+                  data-aos-duration={250}
+                  data-aos-once="true"
+                  data-aos-offset={150}
+                  data-aos-easing="ease-in"
+                >
                   <h2>ABOUT ASSURE PATHLAB</h2>
                 </div>
                 <div
                   className="col-xxl-7 col-xl-10 m-auto col-xs-12 col-11 text-center"
                   data-aos="fade-zoom-in"
                   data-aos-delay={100}
-                  data-aos-duration={450}
+                  data-aos-duration={200}
                   data-aos-once="true"
                   data-aos-offset={200}
                   data-aos-easing="ease"
-                  data-aos-anchor-placement="bottom-bottom"
                 >
                   <p>
                     Assure Pathlabs is the best blood test pathalogy laboratory
@@ -129,7 +160,15 @@ export default function Home() {
                     advice, timely reports, unwavering support, and
                     compassionate care because your well-being is our priority.
                   </p>
-                  <div className=" flex-center mt-4 btn_main">
+                  <div
+                    className=" flex-center mt-4 btn_main"
+                    data-aos="flip-right"
+                    data-aos-delay={100}
+                    data-aos-duration={120}
+                    data-aos-once="true"
+                    data-aos-offset={120}
+                    data-aos-easing="ease-in"
+                  >
                     <Link
                       href="/about-us"
                       className="button button--aylen button--round-l button--text-thick text-uppercase gradient col-lg-3 col-md-4 col-12 mt-3"
@@ -147,7 +186,15 @@ export default function Home() {
           <div className="container">
             <div className="web-container">
               <div className="row">
-                <div className="title col-12 float-start text-center">
+                <div
+                  className="title col-12 float-start text-center"
+                  data-aos="fade-up"
+                  data-aos-delay={100}
+                  data-aos-duration={250}
+                  data-aos-once="true"
+                  data-aos-offset={150}
+                  data-aos-easing="ease-in"
+                >
                   <h2>WHY ASSURE PATHLABS?</h2>
                 </div>
                 <div className="col-lg-10 m-auto col-12 float-start">
@@ -157,7 +204,6 @@ export default function Home() {
                         <span
                           className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick"
                           data-aos="flip-right"
-                          data-aos-anchor-placement="bottom-bottom"
                           data-aos-delay={100}
                           data-aos-duration={150}
                           data-aos-once="true"
@@ -168,7 +214,6 @@ export default function Home() {
                         </span>
                         <p
                           data-aos="fade-up"
-                          data-aos-anchor-placement="bottom-bottom"
                           data-aos-delay={100}
                           data-aos-duration={120}
                           data-aos-once="true"
@@ -184,7 +229,6 @@ export default function Home() {
                         <span
                           className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick"
                           data-aos="flip-right"
-                          data-aos-anchor-placement="bottom-bottom"
                           data-aos-delay={100}
                           data-aos-duration={120}
                           data-aos-once="true"
@@ -195,7 +239,6 @@ export default function Home() {
                         </span>
                         <p
                           data-aos="fade-up"
-                          data-aos-anchor-placement="bottom-bottom"
                           data-aos-delay={100}
                           data-aos-duration={120}
                           data-aos-once="true"
@@ -211,7 +254,6 @@ export default function Home() {
                         <span
                           className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick"
                           data-aos="flip-right"
-                          data-aos-anchor-placement="bottom-bottom"
                           data-aos-delay={100}
                           data-aos-duration={120}
                           data-aos-once="true"
@@ -222,7 +264,6 @@ export default function Home() {
                         </span>
                         <p
                           data-aos="fade-up"
-                          data-aos-anchor-placement="bottom-bottom"
                           data-aos-delay={100}
                           data-aos-duration={120}
                           data-aos-once="true"
@@ -238,7 +279,6 @@ export default function Home() {
                         <span
                           className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick"
                           data-aos="flip-right"
-                          data-aos-anchor-placement="bottom-bottom"
                           data-aos-delay={100}
                           data-aos-duration={120}
                           data-aos-once="true"
@@ -249,7 +289,6 @@ export default function Home() {
                         </span>
                         <p
                           data-aos="fade-up"
-                          data-aos-anchor-placement="bottom-bottom"
                           data-aos-delay={100}
                           data-aos-duration={120}
                           data-aos-once="true"
@@ -292,7 +331,6 @@ export default function Home() {
                         <span
                           className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick"
                           data-aos="flip-right"
-                          data-aos-anchor-placement="bottom-bottom"
                           data-aos-delay={100}
                           data-aos-duration={120}
                           data-aos-once="true"
@@ -303,7 +341,6 @@ export default function Home() {
                         </span>
                         <p
                           data-aos="fade-up"
-                          data-aos-anchor-placement="bottom-bottom"
                           data-aos-delay={100}
                           data-aos-duration={120}
                           data-aos-once="true"
@@ -362,7 +399,15 @@ export default function Home() {
           <div className="container position-relative z-index-2">
             <div className="web-container">
               <div className="row">
-                <div className="title col-12 float-start text-center">
+                <div
+                  className="title col-12 float-start text-center"
+                  data-aos="fade-up"
+                  data-aos-delay={100}
+                  data-aos-duration={250}
+                  data-aos-once="true"
+                  data-aos-offset={150}
+                  data-aos-easing="ease-in"
+                >
                   <h2 className="text-white">TESTIMONIALS</h2>
                 </div>
                 <div className="col-lg-11 col-12 m-auto float-start">
@@ -376,7 +421,15 @@ export default function Home() {
           <div className="container position-relative z-index-2">
             <div className="web-container">
               <div className="row">
-                <div className="title col-12 float-start text-center">
+                <div
+                  className="title col-12 float-start text-center"
+                  data-aos="fade-up"
+                  data-aos-delay={100}
+                  data-aos-duration={250}
+                  data-aos-once="true"
+                  data-aos-offset={150}
+                  data-aos-easing="ease-in"
+                >
                   <h2 className="">Frequently Asked Questions</h2>
                 </div>
                 <div className="col-lg-11 col-md-11 col-12 m-auto float-start">
@@ -390,7 +443,15 @@ export default function Home() {
           <div className="container position-relative z-index-2">
             <div className="web-containers">
               <div className="row">
-                <div className="title col-12 float-start text-center">
+                <div
+                  className="title col-12 float-start text-center"
+                  data-aos="fade-up"
+                  data-aos-delay={100}
+                  data-aos-duration={250}
+                  data-aos-once="true"
+                  data-aos-offset={150}
+                  data-aos-easing="ease-in"
+                >
                   <h2 className="">OUR VIDEOS</h2>
                 </div>
                 <div className="col-lg-10 col-12 m-auto float-start">

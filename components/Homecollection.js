@@ -134,6 +134,17 @@ export const Homecollection = () => {
   const handleCloseError = () => {
     setIsErrorOpen(false);
   };
+  const generateAOSAttributes = (index, baseDelay = 150, step = 30) => {
+    const delay = baseDelay + index * step;
+    return {
+      "data-aos": "fade-up",
+      "data-aos-delay": delay,
+      "data-aos-duration": 200,
+      "data-aos-once": true,
+      "data-aos-offset": delay,
+      "data-aos-easing": "cubic-bezier(.57,.21,.69,3.25)",
+    };
+  };
 
   return (
     <>
@@ -157,6 +168,7 @@ export const Homecollection = () => {
             fullWidth
             autocomplete="username"
             className={`styles.inputmodified input-field `}
+            {...generateAOSAttributes(1, 150, 20)}
           />
           <TextField
             type="tel"
@@ -171,6 +183,8 @@ export const Homecollection = () => {
             error={errors.phoneNumber}
             fullWidth
             className={`styles.inputmodified input-field `}
+            {...generateAOSAttributes(2, 150, 20)}
+
           />
           <TextField
             name="email"
@@ -183,6 +197,8 @@ export const Homecollection = () => {
             onChange={handleChange}
             placeholder="Email"
             error={errors.email}
+            {...generateAOSAttributes(1, 150, 20)}
+
           />
           <button
             type="submit"

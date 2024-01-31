@@ -25,7 +25,7 @@ export const AssureSlide = (props) => {
       <div className="home_banner position-relative">
         <div
           className="banner_slider"
-          data-aos="fade-up"
+          data-aos="fade-zoom-in"
           data-aos-delay={100}
           data-aos-duration={120}
           data-aos-once="true"

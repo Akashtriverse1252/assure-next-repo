@@ -3280,6 +3280,7 @@ label.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
 /* HTML: <div class="loader"></div> */
 ._loader {
   width: 50px;
+  height: 50px;
   padding: 3.2px;
   aspect-ratio: 1;
   border-radius: 50%;
@@ -3680,4 +3681,32 @@ table th {
 
 .detaildescrp {
   max-width: 100%;
+}
+
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+.line {
+  height: 15px; /* Adjust the height of each line */
+  margin-bottom: 10px; /* Adjust the spacing between lines */
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+._loader_cnt {
+  height: 70dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

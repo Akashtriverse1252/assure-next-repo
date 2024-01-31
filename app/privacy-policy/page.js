@@ -70,20 +70,20 @@ const page = () => {
                     >
                       <h3
                         data-aos="fade-up"
-                        data-aos-delay={230}
-                        data-aos-duration={230}
+                        data-aos-delay={180}
+                        data-aos-duration={180}
                         data-aos-once="true"
-                        data-aos-offset={230}
+                        data-aos-offset={180}
                         data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                       >
                         Information Collected from the Users
                       </h3>
                       <p
                         data-aos="fade-up"
-                        data-aos-delay={250}
-                        data-aos-duration={250}
+                        data-aos-delay={180}
+                        data-aos-duration={180}
                         data-aos-once="true"
-                        data-aos-offset={250}
+                        data-aos-offset={180}
                         data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                       >
                         We accumulate the following "personal information" about
@@ -92,88 +92,88 @@ const page = () => {
                       </p>
                       <ul
                         data-aos="fade-up"
-                        data-aos-delay={250}
-                        data-aos-duration={250}
+                        data-aos-delay={180}
+                        data-aos-duration={180}
                         data-aos-once="true"
-                        data-aos-offset={250}
+                        data-aos-offset={180}
                         data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                       >
                         <li
                           data-aos="fade-up"
-                          data-aos-delay={230}
-                          data-aos-duration={230}
+                          data-aos-delay={180}
+                          data-aos-duration={180}
                           data-aos-once="true"
-                          data-aos-offset={230}
+                          data-aos-offset={180}
                           data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                         >
                           Salutation
                         </li>
                         <li
                           data-aos="fade-up"
-                          data-aos-delay={230}
-                          data-aos-duration={230}
+                          data-aos-delay={180}
+                          data-aos-duration={180}
                           data-aos-once="true"
-                          data-aos-offset={230}
+                          data-aos-offset={180}
                           data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                         >
                           First Name, Last Name
                         </li>
                         <li
                           data-aos="fade-up"
-                          data-aos-delay={230}
-                          data-aos-duration={230}
+                          data-aos-delay={180}
+                          data-aos-duration={180}
                           data-aos-once="true"
-                          data-aos-offset={230}
+                          data-aos-offset={180}
                           data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                         >
                           Age &amp; Gender
                         </li>
                         <li
                           data-aos="fade-up"
-                          data-aos-delay={230}
-                          data-aos-duration={230}
+                          data-aos-delay={180}
+                          data-aos-duration={180}
                           data-aos-once="true"
-                          data-aos-offset={230}
+                          data-aos-offset={180}
                           data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                         >
                           Email Address
                         </li>
                         <li
                           data-aos="fade-up"
-                          data-aos-delay={230}
-                          data-aos-duration={230}
+                          data-aos-delay={180}
+                          data-aos-duration={180}
                           data-aos-once="true"
-                          data-aos-offset={230}
+                          data-aos-offset={180}
                           data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                         >
                           Billing and Collection Address
                         </li>
                         <li
                           data-aos="fade-up"
-                          data-aos-delay={230}
-                          data-aos-duration={230}
+                          data-aos-delay={180}
+                          data-aos-duration={180}
                           data-aos-once="true"
-                          data-aos-offset={230}
+                          data-aos-offset={180}
                           data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                         >
                           Phone Number
                         </li>
                         <li
                           data-aos="fade-up"
-                          data-aos-delay={230}
-                          data-aos-duration={230}
+                          data-aos-delay={180}
+                          data-aos-duration={180}
                           data-aos-once="true"
-                          data-aos-offset={230}
+                          data-aos-offset={180}
                           data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                         >
                           Zip / Postal Code
                         </li>
                         <li
                           data-aos="fade-up"
-                          data-aos-delay={230}
-                          data-aos-duration={230}
+                          data-aos-delay={180}
+                          data-aos-duration={180}
                           data-aos-once="true"
-                          data-aos-offset={230}
+                          data-aos-offset={180}
                           data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                         >
                           Aadhaar Card
@@ -181,10 +181,10 @@ const page = () => {
                       </ul>
                       <p
                         data-aos="fade-up"
-                        data-aos-delay={280}
-                        data-aos-duration={280}
+                        data-aos-delay={180}
+                        data-aos-duration={180}
                         data-aos-once="true"
-                        data-aos-offset={280}
+                        data-aos-offset={180}
                         data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                       >
                         How the information collected will be used by
@@ -192,20 +192,20 @@ const page = () => {
                       </p>
                       <h3
                         data-aos="fade-up"
-                        data-aos-delay={300}
-                        data-aos-duration={300}
+                        data-aos-delay={180}
+                        data-aos-duration={180}
                         data-aos-once="true"
-                        data-aos-offset={300}
+                        data-aos-offset={180}
                         data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                       >
                         Usage of email address &amp; mobile number is for:
                       </h3>
                       <ul
                         data-aos="fade-up"
-                        data-aos-delay={300}
-                        data-aos-duration={300}
+                        data-aos-delay={180}
+                        data-aos-duration={180}
                         data-aos-once="true"
-                        data-aos-offset={300}
+                        data-aos-offset={180}
                         data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                       >
                         <li
@@ -289,20 +289,20 @@ const page = () => {
                       </ul>
                       <h3
                         data-aos="fade-up"
-                        data-aos-delay={320}
-                        data-aos-duration={320}
+                        data-aos-delay={200}
+                        data-aos-duration={200}
                         data-aos-once="true"
-                        data-aos-offset={320}
+                        data-aos-offset={200}
                         data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                       >
                         Usage of your personal information is:
                       </h3>
                       <p
                         data-aos="fade-up"
-                        data-aos-delay={350}
-                        data-aos-duration={350}
+                        data-aos-delay={200}
+                        data-aos-duration={200}
                         data-aos-once="true"
-                        data-aos-offset={350}
+                        data-aos-offset={200}
                         data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                       >
                         ASSURE PATHLABS does collect your personal information
@@ -311,58 +311,58 @@ const page = () => {
                       </p>
                       <ul
                         data-aos="fade-up"
-                        data-aos-delay={380}
-                        data-aos-duration={380}
+                        data-aos-delay={200}
+                        data-aos-duration={200}
                         data-aos-once="true"
-                        data-aos-offset={380}
+                        data-aos-offset={200}
                         data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                       >
                         <li
                           data-aos="fade-up"
-                          data-aos-delay={380}
-                          data-aos-duration={380}
+                          data-aos-delay={200}
+                          data-aos-duration={200}
                           data-aos-once="true"
-                          data-aos-offset={380}
+                          data-aos-offset={200}
                           data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                         >
                           Provide results for the tests requested by you
                         </li>
                         <li
                           data-aos="fade-up"
-                          data-aos-delay={380}
-                          data-aos-duration={380}
+                          data-aos-delay={200}
+                          data-aos-duration={200}
                           data-aos-once="true"
-                          data-aos-offset={380}
+                          data-aos-offset={200}
                           data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                         >
                           Respond to your request for service or assistance
                         </li>
                         <li
                           data-aos="fade-up"
-                          data-aos-delay={380}
-                          data-aos-duration={380}
+                          data-aos-delay={200}
+                          data-aos-duration={200}
                           data-aos-once="true"
-                          data-aos-offset={380}
+                          data-aos-offset={200}
                           data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                         >
                           Age &amp; Gender for reporting results accurately
                         </li>
                         <li
                           data-aos="fade-up"
-                          data-aos-delay={380}
-                          data-aos-duration={380}
+                          data-aos-delay={200}
+                          data-aos-duration={200}
                           data-aos-once="true"
-                          data-aos-offset={380}
+                          data-aos-offset={200}
                           data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                         >
                           Provide, maintain and improve our services
                         </li>
                         <li
                           data-aos="fade-up"
-                          data-aos-delay={380}
-                          data-aos-duration={380}
+                          data-aos-delay={200}
+                          data-aos-duration={200}
                           data-aos-once="true"
-                          data-aos-offset={380}
+                          data-aos-offset={200}
                           data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                         >
                           Safeguard social history as governed by existing law
@@ -370,10 +370,10 @@ const page = () => {
                         </li>
                         <li
                           data-aos="fade-up"
-                          data-aos-delay={380}
-                          data-aos-duration={380}
+                          data-aos-delay={200}
+                          data-aos-duration={200}
                           data-aos-once="true"
-                          data-aos-offset={380}
+                          data-aos-offset={200}
                           data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                         >
                           Ensure adherence to legal and regulatory requirements
@@ -381,10 +381,10 @@ const page = () => {
                         </li>
                         <li
                           data-aos="fade-up"
-                          data-aos-delay={380}
-                          data-aos-duration={380}
+                          data-aos-delay={200}
+                          data-aos-duration={200}
                           data-aos-once="true"
-                          data-aos-offset={380}
+                          data-aos-offset={200}
                           data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                         >
                           Evaluate our services and products and to conduct
@@ -393,10 +393,10 @@ const page = () => {
                       </ul>
                       <h3
                         data-aos="fade-up"
-                        data-aos-delay={400}
-                        data-aos-duration={400}
+                        data-aos-delay={200}
+                        data-aos-duration={200}
                         data-aos-once="true"
-                        data-aos-offset={400}
+                        data-aos-offset={200}
                         data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                       >
                         Use and Disclose of your Report / information / data:
@@ -404,10 +404,10 @@ const page = () => {
                       <ul>
                         <li
                           data-aos="fade-up"
-                          data-aos-delay={420}
-                          data-aos-duration={420}
+                          data-aos-delay={200}
+                          data-aos-duration={200}
                           data-aos-once="true"
-                          data-aos-offset={420}
+                          data-aos-offset={200}
                           data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                         >
                           We may use or disclose your report in the course of
@@ -418,10 +418,10 @@ const page = () => {
                         </li>
                         <li
                           data-aos="fade-up"
-                          data-aos-delay={450}
-                          data-aos-duration={450}
+                          data-aos-delay={200}
+                          data-aos-duration={200}
                           data-aos-once="true"
-                          data-aos-offset={450}
+                          data-aos-offset={200}
                           data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                         >
                           We may disclose your reports to other companies or
@@ -433,12 +433,12 @@ const page = () => {
                           data we provide to them or which they create on our
                           behalf.
                         </li>
-                        <li {...generateAOSAttributes(3, 250, 30)}>
+                        <li {...generateAOSAttributes(3, 180, 30)}>
                           We may disclose your report to the physicians and
                           other authorized health care professionals who need to
                           access your laboratory report to treat you.
                         </li>
-                        <li {...generateAOSAttributes(3, 250, 30)}>
+                        <li {...generateAOSAttributes(3, 180, 30)}>
                           We may use your report with our billing department and
                           may disclose it to insurance companies, hospitals,
                           physicians or to third parties for payment purpose.
@@ -446,13 +446,13 @@ const page = () => {
                           Confidentiality Policies which obligate them to
                           protect the confidentiality of personal information.
                         </li>
-                        <li {...generateAOSAttributes(3, 250, 30)}>
+                        <li {...generateAOSAttributes(3, 180, 30)}>
                           We may disclose your reports to Health Department or
                           any other Govt. body or regulatory authority as and
                           when required by them for collection, processing
                           health information of the state / country.
                         </li>
-                        <li {...generateAOSAttributes(3, 250, 30)}>
+                        <li {...generateAOSAttributes(3, 180, 30)}>
                           We may also share your personal information with
                           Government agencies or other authorized law
                           enforcement agencies (LEAs) mandated under law to
@@ -461,35 +461,35 @@ const page = () => {
                           investigation including but not limited to cyber
                           incidents, prosecution, and punishment of offences.
                         </li>
-                        <li {...generateAOSAttributes(3, 250, 30)}>
+                        <li {...generateAOSAttributes(3, 180, 30)}>
                           To support our health care operations, such as
                           performing quality checks on your testing, for
                           teaching purposes, or for developing normal reference
                           ranges for the tests we perform.
                         </li>
-                        <li {...generateAOSAttributes(3, 250, 30)}>
+                        <li {...generateAOSAttributes(3, 180, 30)}>
                           To respond to summons, court orders, or legal process,
                           or to establish or exercise our legal rights or defend
                           against legal claims.
                         </li>
-                        <li {...generateAOSAttributes(3, 250, 30)}>
+                        <li {...generateAOSAttributes(3, 180, 30)}>
                           You agree that we may share your Personal Information
                           with the following categories of activities with from
                           time-to-time:
                         </li>
                         <li
                           class="noborder"
-                          {...generateAOSAttributes(3, 250, 30)}
+                          {...generateAOSAttributes(3, 180, 30)}
                         >
                           <ol>
                             <li
                               className="pt-2"
-                              {...generateAOSAttributes(3, 250, 30)}
+                              {...generateAOSAttributes(3, 180, 30)}
                             >
                               Advertisements
                               <ol
                                 className="py-2"
-                                {...generateAOSAttributes(3, 250, 30)}
+                                {...generateAOSAttributes(3, 180, 30)}
                               >
                                 <li>
                                   Website may aggregate (gather up data across
@@ -518,7 +518,7 @@ const page = () => {
                               Posting to public areas of the website
                               <ol
                                 className="py-2"
-                                {...generateAOSAttributes(3, 250, 30)}
+                                {...generateAOSAttributes(3, 180, 30)}
                               >
                                 <li>
                                   Please remember that if you post any of your
@@ -537,10 +537,10 @@ const page = () => {
                           </ol>
                         </li>
                       </ul>
-                      <h3 {...generateAOSAttributes(3, 250, 30)}>
+                      <h3 {...generateAOSAttributes(3, 180, 30)}>
                         Other websites
                       </h3>
-                      <p {...generateAOSAttributes(3, 250, 30)}>
+                      <p {...generateAOSAttributes(3, 180, 30)}>
                         Our Website may contain links to other websites. Please
                         note that when you click on one of these links, you are
                         entering another website over which the Website has no
@@ -552,7 +552,7 @@ const page = () => {
                         your privacy of Personal Information or loss incurred by
                         your use of these websites.
                       </p>
-                      <h3 {...generateAOSAttributes(3, 250, 30)}>
+                      <h3 {...generateAOSAttributes(3, 180, 30)}>
                         Usage of anonymous traffic information is to:
                       </h3>
                       <p>
@@ -564,10 +564,10 @@ const page = () => {
                         website <br />
                         www.assurepathlabs.com.
                       </p>
-                      <h3 {...generateAOSAttributes(3, 250, 30)}>
+                      <h3 {...generateAOSAttributes(3, 180, 30)}>
                         Privacy Update:
                       </h3>
-                      <p {...generateAOSAttributes(3, 250, 30)}>
+                      <p {...generateAOSAttributes(3, 180, 30)}>
                         Assure Pathlabs reserves the privilege to modify or
                         renew this policy at any time by placing a notice on our
                         site. Any kind of modification shall come into effect
@@ -577,10 +577,10 @@ const page = () => {
                         to this policy, we will notify you by means of a notice
                         on our homepage only.
                       </p>
-                      <h3 {...generateAOSAttributes(3, 250, 30)}>
+                      <h3 {...generateAOSAttributes(3, 180, 30)}>
                         Governing Law and Dispute Resolution
                       </h3>
-                      <p {...generateAOSAttributes(3, 250, 30)}>
+                      <p {...generateAOSAttributes(3, 180, 30)}>
                         This Privacy Policy and Terms of Use shall be governed
                         by and constructed in accordance with the laws of India
                         only without reference to conflict of laws principles
@@ -588,7 +588,7 @@ const page = () => {
                         subject to the exclusive jurisdiction of the competent
                         courts of Jalandhar in Punjab, India.
                       </p>
-                      <h3 {...generateAOSAttributes(3, 250, 30)}>
+                      <h3 {...generateAOSAttributes(3, 180, 30)}>
                         Contacting the Website
                       </h3>
                       <p>
@@ -597,10 +597,10 @@ const page = () => {
                         exercise any of the rights that you are given under this
                         Privacy Policy, you can contact us.
                       </p>
-                      <h3 {...generateAOSAttributes(3, 250, 30)}>
+                      <h3 {...generateAOSAttributes(3, 180, 30)}>
                         Assignability
                       </h3>
-                      <p {...generateAOSAttributes(3, 250, 30)}>
+                      <p {...generateAOSAttributes(3, 180, 30)}>
                         Assure Pathlabs may assign any of its
                         responsibilities/obligations to any other person without
                         notice to the User, at its sole discretion. However, you
@@ -609,8 +609,8 @@ const page = () => {
                         party, unless a written consent is taken from Assure
                         Pathlabs.
                       </p>
-                      <h3 {...generateAOSAttributes(3, 250, 30)}>Disclaimer</h3>
-                      <p {...generateAOSAttributes(3, 250, 30)}>
+                      <h3 {...generateAOSAttributes(3, 180, 30)}>Disclaimer</h3>
+                      <p {...generateAOSAttributes(3, 180, 30)}>
                         Assure Pathlabs does not access, store or keep credit
                         card data. All credit card transactions occur using
                         Secure Server Software (SSL) for 128 bit encryption
@@ -621,7 +621,7 @@ const page = () => {
                         any loss or damage due to any disclosure whatsoever of
                         Personal Information.
                       </p>
-                      <p {...generateAOSAttributes(3, 250, 30)}>
+                      <p {...generateAOSAttributes(3, 180, 30)}>
                         Assure Pathlabs shall not be liable for any loss or
                         damage sustained by reason of any disclosure
                         (inadvertent or otherwise) of any Personal Information

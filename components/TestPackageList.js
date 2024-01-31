@@ -85,7 +85,7 @@ const TestPackageList = ({ Type }) => {
       ) : // <>
       //   <DNALoader />
       // </>
-      tests  ? (
+      tests ? (
         <>
           {tests.map((test, index) => (
             <TestCard
@@ -101,6 +101,8 @@ const TestPackageList = ({ Type }) => {
               Pre_test_information={test.Pre_test_information}
               Turn_around_time={test.Turn_around_time}
               BaseDirectory={"individual-test"}
+              index={index}
+              
             />
           ))}
           {!allDataLoaded && <div ref={lastCardRef}></div>}

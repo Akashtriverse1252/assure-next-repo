@@ -36,6 +36,12 @@ export const PackagCard = ({
           ? "col-lg-12 col-12 test_card package_card"
           : "col-xxl-3  col-xl-4 col-md-4 col-sm-6 col-12 test_card"
       }
+      data-aos="fade-up"
+      data-aos-delay={180}
+      data-aos-duration={180}
+      data-aos-once="true"
+      data-aos-offset={120}
+      data-aos-easing="ease-in"
     >
       <Link href={`/packages/${Test_Slug}`}>
         <div className="sliderbox package_card ">

@@ -85,6 +85,7 @@ const IsHomeCollection = ({ HomeColData }) => {
         setInternalTimeSlots(slotData);
       } catch (error) {
         console.error("Error fetching time slots:", error);
+        setInternalTimeSlots(error);
         // Handle the error state
       }
     };

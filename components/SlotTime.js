@@ -37,61 +37,39 @@ const SlotTime = ({ timeSlots, onSlotSelect }) => {
       </div>
     </div>
   );
-  const hasValidTimeSlots =
-    timeSlots &&
-    timeSlots.result === "success" &&
-    Object.keys(timeSlots.available_time_slots).length > 0;
-
-  const isEmptyArray =
-    timeSlots &&
-    timeSlots.result === "success" &&
-    Object.keys(timeSlots.available_time_slots).length === 0;
-
-  const noTimeSlots = timeSlots && timeSlots.result === "no-time-slot";
-
-  const timeSlotsContent = isEmptyArray ? (
-    <p className="col-12 col-md-10 col-lg-7 slot-time-not">
-      Please select a date.
-    </p>
-  ) : hasValidTimeSlots ? (
-    Object.entries(timeSlots.available_time_slots).map(([label, times]) =>
-      renderTimeSlot(label, times)
-    )
-  ) : noTimeSlots ? (
-    <p className="col-12 col-md-10 col-lg-7 slot-time-not">
-      We regret to inform you that all slots are currently occupied. For
-      emergency purposes, please contact us at:
-      <a href="tel:01814667555"> 0181-4667555</a>
-    </p>
-  ) : (
-    <></>
-  );
 
   return (
     <div className="Time-slot">
       <div className="app-time">
-        {timeSlots.result === "success" ? (
-          Object.keys(timeSlots.available_time_slots).length > 0 ? (
-            Object.entries(timeSlots.available_time_slots).map(
-              ([label, times]) => renderTimeSlot(label, times)
-            )
-          ) : (
-            <p className="col-12 col-md-10 col-lg-7 slot-time-not">
-              Please select a date.
-            </p>
-          )
-        ) : timeSlots.result === "no timeslot found" ? (
+        {timeSlots.message === "error" ? (
           <p className="col-12 col-md-10 col-lg-7 slot-time-not">
-            We regret to inform you that all slots are currently occupied. For
-            emergency purposes, please contact us at:
-            <a href="tel:01814667555"> 0181-4667555</a>
+            Booking is not available right now. Please contact customer care.
           </p>
         ) : (
           <>
-            {" "}
-            <p className="col-12 col-md-10 col-lg-7 slot-time-not">
-              Booking is not available right now. Please contact customer care.
-            </p>
+            {timeSlots.result === "success" ? (
+              Object.keys(timeSlots.available_time_slots).length > 0 ? (
+                Object.entries(timeSlots.available_time_slots).map(
+                  ([label, times]) => renderTimeSlot(label, times)
+                )
+              ) : (
+                <p className="col-12 col-md-10 col-lg-7 slot-time-not">
+                  Please select a date.
+                </p>
+              )
+            ) : timeSlots.result === "no timeslot found" ? (
+              <p className="col-12 col-md-10 col-lg-7 slot-time-not">
+                We regret to inform you that all slots are currently occupied.
+                For emergency purposes, please contact us at:
+                <a href="tel:01814667555"> 0181-4667555</a>
+              </p>
+            ) : (
+              <>
+                <p className="col-12 col-md-10 col-lg-7 slot-time-not">
+                  Please select a date.
+                </p>
+              </>
+            )}
           </>
         )}
       </div>

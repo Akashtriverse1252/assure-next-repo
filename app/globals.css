@@ -3710,3 +3710,12 @@ table th {
   justify-content: center;
   align-items: center;
 }
+.slot-time-not {
+  font-size: 15px !important;
+  background-color: #efefef;
+  padding: 5px 10px;
+  margin: 10px 0 10px 25px !important;
+}
+.slot-time-not a {
+  color: #000;
+}

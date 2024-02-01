@@ -125,7 +125,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
   //   handllers
 
   const handleHomeColData = (formData) => {
-    console.log("Home collection data received in parent:", formData);
+    // console.log("Home collection data received in parent:", formData);
     setUserAddress(formData);
   };
 
@@ -219,7 +219,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
         integrationCode: "-",
         dictionaryId: "-",
       };
-      console.log(apiData);
+      // console.log(apiData);
 
       const response = await axios.post(apiUrl, apiData);
 

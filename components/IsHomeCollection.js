@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { FaCheck } from "react-icons/fa6";
 import Morning from "./svg-components/Morning";
 import Evening from "./svg-components/Evening";
@@ -12,11 +12,13 @@ import { useData } from "@/context/context";
 import { CleaningServices } from "@mui/icons-material";
 import SlotTime from "./SlotTime";
 import slotTimes from "@/Data/slot_time.json";
+import axios from "axios";
 
 const IsHomeCollection = ({ HomeColData }) => {
   const { cartState, cartDispatch } = useData();
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
+  const [internalTimeSlots, setInternalTimeSlots] = useState([]);
   const [removedDates] = useState([""]);
 
   const bookingDate = generateRadioData(removedDates).map((date) => ({
@@ -53,18 +55,46 @@ const IsHomeCollection = ({ HomeColData }) => {
   }, [formData, HomeColData]);
 
   // selected slot from the time slot component
-  const handleSlotSelection = (selectedSlots) => {
-    // Log selected slots to check the structure
-    console.log("Selected Slots:", selectedSlots);
+  const handleSlotSelection = (selectedTime, selectedDate) => {
+    // Log selected slots and date to check the structure
+    console.log("Selected Time:", selectedTime);
     console.log("Selected Date:", selectedDate);
 
-    // Format the selected time as needed
-    const formattedDateTime = formatDateTime(selectedDate, selectedSlots);
+    // Format the selected date and time as needed
+    const formattedDateTime = formatDateTime(selectedDate, selectedTime);
     console.log("Formatted Date and Time:", formattedDateTime);
 
     // Send the formatted date and time to the parent component
     HomeColData({ ...formData, homeCollectionDateTime: formattedDateTime });
   };
+
+  // this is the api for the time slot
+  useEffect(() => {
+    const fetchTimeSlots = async () => {
+      try {
+        // Use the selectedDate state to pass the selected date to the API
+        const response = await axios.get(
+          `https://www.assurepathlabs.com/api/algos/generate_time_slot.php?currentDate=${selectedDate}`
+        );
+
+        // Assuming the response data has a structure like { test_data: { result: "success", available_time_slots: {...} } }
+        const slotData = response.data.test_data;
+
+        // Check if the result is "success" and available_time_slots is not empty
+
+        setInternalTimeSlots(slotData);
+      } catch (error) {
+        console.error("Error fetching time slots:", error);
+        // Handle the error state
+      }
+    };
+
+    // Fetch time slots when selectedDate changes
+    if (selectedDate) {
+      fetchTimeSlots();
+    }
+  }, [selectedDate]);
+  console.log("this si the data of slot api ", internalTimeSlots);
 
   return (
     <>
@@ -90,7 +120,7 @@ const IsHomeCollection = ({ HomeColData }) => {
                     className="hcd_date_seection"
                     role="radiogroup"
                     aria-required="false"
-                    dir="ltr" 
+                    dir="ltr"
                     tabIndex="0"
                   >
                     {bookingDate.map((item, index) => (
@@ -129,10 +159,12 @@ const IsHomeCollection = ({ HomeColData }) => {
                     ))}
                   </div>
                 </div>
-                <SlotTime
-                  timeSlots={slotTimes.timeSlots}
-                  onSlotSelect={handleSlotSelection}
-                />
+                <Suspense>
+                  <SlotTime
+                    timeSlots={internalTimeSlots}
+                    onSlotSelect={handleSlotSelection}
+                  />
+                </Suspense>
               </article>
               <article className="address mt-5">
                 <div className="title">

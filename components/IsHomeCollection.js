@@ -14,6 +14,7 @@ import SlotTime from "./SlotTime";
 import slotTimes from "@/Data/slot_time.json";
 import axios from "axios";
 
+
 const IsHomeCollection = ({ HomeColData }) => {
   const { cartState, cartDispatch } = useData();
   const [selectedDate, setSelectedDate] = useState("");
@@ -95,7 +96,7 @@ const IsHomeCollection = ({ HomeColData }) => {
       fetchTimeSlots();
     }
   }, [selectedDate]);
-  console.log("this si the data of slot api ", internalTimeSlots);
+  // console.log("this si the data of slot api ", internalTimeSlots); 
 
   return (
     <>

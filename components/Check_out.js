@@ -194,6 +194,11 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const validationResult = validateForm();
+    if (!validationResult.isValid) {
+      console.log("Form validation failed. Please correct the errors.");
+      return;
+    }
     try {
       const apiUrl =
         "https://www.assurepathlabs.com/api/algos/booking_submit_api.php";
@@ -219,7 +224,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
         integrationCode: "-",
         dictionaryId: "-",
       };
-      // console.log(apiData);
+      console.log(apiData);
 
       const response = await axios.post(apiUrl, apiData);
 

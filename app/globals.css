@@ -3232,8 +3232,8 @@ label.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
 }
 
 .input_error {
-  border: 1.5px solid var(--error);
-  background: var(--bg-error);
+  border: 1.5px solid var(--error) !important;
+  background: var(--bg-error) !important;
 }
 .abt_banner {
   margin-left: auto;

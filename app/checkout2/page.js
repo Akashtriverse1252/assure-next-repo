@@ -1,5 +1,9 @@
 "use client";
+<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
+=======
+import React from "react";
+>>>>>>> e89337843e08b75d6eec2c2c6dd2ef8bdf3c8848
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import {
@@ -24,17 +28,23 @@ import IsHomeCollection from "@/components/IsHomeCollection";
 import homecollection from "@/components/svg-components/homecollection.svg";
 import microscope from "@/components/svg-components/microscope.svg";
 import { useAlert } from "@/context/AlerterContext";
+<<<<<<< HEAD
 import Address from "@/components/svg-components/Address";
 import Calender from "@/components/svg-components/Calender";
 import SlotTime from "@/components/SlotTime";
+=======
+>>>>>>> e89337843e08b75d6eec2c2c6dd2ef8bdf3c8848
 
 const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
   const { cartState, cartDispatch } = useData();
   const { showAlert } = useAlert();
+<<<<<<< HEAD
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
   const [internalTimeSlots, setInternalTimeSlots] = useState([]);
   const [removedDates] = useState([""]);
+=======
+>>>>>>> e89337843e08b75d6eec2c2c6dd2ef8bdf3c8848
 
   const validationSchema = Yup.object().shape({
     name: Yup.string()
@@ -48,12 +58,15 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
       ),
     dob: Yup.string().required("Date of birth is required"),
     gender: Yup.string().required("Gender is required"),
+<<<<<<< HEAD
     address: Yup.string().required("Address is required"),
     date: Yup.string().required("Home Collection Date and Time is required"),
     time: Yup.string().required("Home Collection Date and Time is required"),
     pincode: Yup.string().required("Pincode is required"),
     city: Yup.string().required("City is required"),
     state: Yup.string().required("State is required"),
+=======
+>>>>>>> e89337843e08b75d6eec2c2c6dd2ef8bdf3c8848
   });
 
   const formik = useFormik({
@@ -63,6 +76,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
       dob: "",
       age: "",
       gender: "",
+<<<<<<< HEAD
       date: "",
       time: "",
       isHomecollection: 0, // Initially set to false
@@ -122,10 +136,22 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
           console.error("Response headers:", error.response.headers);
         }
         throw error; // rethrow the error to propagate it
+=======
+    },
+    validationSchema,
+    onSubmit: async (values) => {
+      // Handle form submission
+      try {
+        // ... existing handleSubmit logic ...
+      } catch (error) {
+        console.error("Error submitting booking data:", error.message);
+        // ... handle errors ...
+>>>>>>> e89337843e08b75d6eec2c2c6dd2ef8bdf3c8848
       }
     },
   });
 
+<<<<<<< HEAD
   useEffect(() => {
     const calculateAndSetAge = async () => {
       const age = calculateAge(formik.values.dob);
@@ -134,6 +160,20 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
 
     calculateAndSetAge();
   }, [formik.values.dob]);
+=======
+  const handleHomeColData = (formData) => {
+    formik.setFieldValue("isHomecollection", formData.isHomecollection);
+    formik.setFieldValue("address", formData.address);
+    formik.setFieldValue("pincode", formData.pincode);
+    formik.setFieldValue("city", formData.city);
+    formik.setFieldValue("state", formData.state);
+    formik.setFieldValue(
+      "homeCollectionDateTime",
+      formData.homeCollectionDateTime
+    );
+  };
+
+>>>>>>> e89337843e08b75d6eec2c2c6dd2ef8bdf3c8848
   const handleRadioChange = (event) => {
     formik.setFieldValue("selectedPlan", event.target.id);
   };
@@ -142,6 +182,10 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
     const { name, value } = e.target;
 
     if (name === "dob") {
+<<<<<<< HEAD
+=======
+      // Update age when dob changes
+>>>>>>> e89337843e08b75d6eec2c2c6dd2ef8bdf3c8848
       const age = calculateAge(value);
       formik.setFieldValue("age", age);
     }
@@ -152,15 +196,25 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
   const calculateAge = (dob) => {
     const birthDate = new Date(dob);
     const currentDate = new Date();
+<<<<<<< HEAD
+=======
+
+>>>>>>> e89337843e08b75d6eec2c2c6dd2ef8bdf3c8848
     const age = currentDate.getFullYear() - birthDate.getFullYear();
 
     if (age >= 0 && age <= 150) {
       return age;
     } else {
       const wrongAgeError = {
+<<<<<<< HEAD
         dob: "Enter the correct Date of birth",
       };
       formik.setErrors(wrongAgeError);
+=======
+        designation: "Enter the correct Date of birth",
+      };
+      setErrors(wrongAgeError);
+>>>>>>> e89337843e08b75d6eec2c2c6dd2ef8bdf3c8848
       return 0;
     }
   };
@@ -169,6 +223,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
     formik.setFieldValue("gender", e.target.id);
   };
 
+<<<<<<< HEAD
   useEffect(() => {
     const fetchTimeSlots = async () => {
       console.log(formik.values.date);
@@ -203,6 +258,8 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
   };
   console.log(formik.touched.name && Boolean(formik.errors.name));
 
+=======
+>>>>>>> e89337843e08b75d6eec2c2c6dd2ef8bdf3c8848
   return (
     <>
       <section className="position-relative">
@@ -229,6 +286,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                           formik.touched.name && Boolean(formik.errors.name)
                         }
                         helperText={formik.touched.name && formik.errors.name}
+<<<<<<< HEAD
                         onBlur={() => formik.setFieldTouched("name", true)}
                         inputProps={{
                           onFocus: () => formik.setFieldTouched("name", false),
@@ -240,6 +298,8 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                             }, []);
                           },
                         }}
+=======
+>>>>>>> e89337843e08b75d6eec2c2c6dd2ef8bdf3c8848
                       />
                       <TextField
                         type="tel"
@@ -257,6 +317,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                           formik.touched.phoneNumber &&
                           formik.errors.phoneNumber
                         }
+<<<<<<< HEAD
                         onBlur={() =>
                           formik.setFieldTouched("phoneNumber", true)
                         }
@@ -293,6 +354,20 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                             }, []);
                           },
                         }}
+=======
+                      />
+                      <TextField
+                        className="col-md-3 col-10 mx-md-3"
+                        label="Date of Birth"
+                        type="date"
+                        name="dob"
+                        variant="standard"
+                        value={formik.values.dob}
+                        onChange={formik.handleChange}
+                        InputLabelProps={{ shrink: true }}
+                        error={formik.touched.dob && Boolean(formik.errors.dob)}
+                        helperText={formik.touched.dob && formik.errors.dob}
+>>>>>>> e89337843e08b75d6eec2c2c6dd2ef8bdf3c8848
                       />
                     </div>
                     <div className="radio-buttons">
@@ -307,10 +382,14 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                         />
                         <span
                           className={`radio-btn ${
+<<<<<<< HEAD
                             formik.touched.gender &&
                             Boolean(formik.errors.gender)
                               ? "input_error"
                               : ""
+=======
+                            formik.errors.gender ? "input_error" : ""
+>>>>>>> e89337843e08b75d6eec2c2c6dd2ef8bdf3c8848
                           }`}
                         >
                           <i className="las la-check">
@@ -333,10 +412,14 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                         />
                         <span
                           className={`radio-btn ${
+<<<<<<< HEAD
                             formik.touched.gender &&
                             Boolean(formik.errors.gender)
                               ? "input_error"
                               : ""
+=======
+                            formik.errors.gender ? "input_error" : ""
+>>>>>>> e89337843e08b75d6eec2c2c6dd2ef8bdf3c8848
                           }`}
                         >
                           <i className="las la-check">
@@ -359,10 +442,14 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                         />
                         <span
                           className={`radio-btn ${
+<<<<<<< HEAD
                             formik.touched.gender &&
                             Boolean(formik.errors.gender)
                               ? "input_error"
                               : ""
+=======
+                            formik.errors.gender ? "input_error" : ""
+>>>>>>> e89337843e08b75d6eec2c2c6dd2ef8bdf3c8848
                           }`}
                         >
                           <i className="las la-check">
@@ -379,11 +466,16 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                   <div className="plans">
                     <div className="title">Choose Test Type</div>
                     <div className="plans_selection">
+<<<<<<< HEAD
                       <label className="plan basic-plan" for="Home_collection">
+=======
+                      <label className="custom-radio" htmlFor="Home_collection">
+>>>>>>> e89337843e08b75d6eec2c2c6dd2ef8bdf3c8848
                         <input
                           type="radio"
                           name="plan"
                           id="Home_collection"
+<<<<<<< HEAD
                           checked={
                             formik.values.selectedPlan === "Home_collection"
                           }
@@ -431,6 +523,73 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                             </p>
                           </div>
                         </div>
+=======
+                          checked={formik.values.plan === "Home_collection"}
+                          onChange={handleRadioChange}
+                        />
+                        <span
+                          className={`radio-btn ${
+                            formik.errors.plan ? "input_error" : ""
+                          }`}
+                        >
+                          <i className="las la-check">
+                            <FaCheck />
+                          </i>
+                          <div className="hobbies-icon">
+                            {/* <HomeCollection /> */}
+                            <h3 className="">Home Collection</h3>
+                          </div>
+                        </span>
+                      </label>
+
+                      <label
+                        className="custom-radio"
+                        htmlFor="Office_collection"
+                      >
+                        <input
+                          type="radio"
+                          name="plan"
+                          id="Office_collection"
+                          checked={formik.values.plan === "Office_collection"}
+                          onChange={handleRadioChange}
+                        />
+                        <span
+                          className={`radio-btn ${
+                            formik.errors.plan ? "input_error" : ""
+                          }`}
+                        >
+                          <i className="las la-check">
+                            <FaCheck />
+                          </i>
+                          <div className="hobbies-icon">
+                            {/* <OfficeCollection /> */}
+                            <h3 className="">Office Collection</h3>
+                          </div>
+                        </span>
+                      </label>
+
+                      <label className="custom-radio" htmlFor="Both_collection">
+                        <input
+                          type="radio"
+                          name="plan"
+                          id="Both_collection"
+                          checked={formik.values.plan === "Both_collection"}
+                          onChange={handleRadioChange}
+                        />
+                        <span
+                          className={`radio-btn ${
+                            formik.errors.plan ? "input_error" : ""
+                          }`}
+                        >
+                          <i className="las la-check">
+                            <FaCheck />
+                          </i>
+                          <div className="hobbies-icon">
+                            {/* <BothCollection /> */}
+                            <h3 className="">Both Collection</h3>
+                          </div>
+                        </span>
+>>>>>>> e89337843e08b75d6eec2c2c6dd2ef8bdf3c8848
                       </label>
                     </div>
                   </div>
@@ -438,6 +597,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                     expanded={formik.values.selectedPlan === "Home_collection"}
                     className="shadow-none isHomeCollection"
                   >
+<<<<<<< HEAD
                     <AccordionSummary
                       aria-controls="panel1a-content"
                       id="panel1a-header"
@@ -691,6 +851,11 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                           </div>
                         </div>
                       </div>
+=======
+                    {/* ... existing Accordion code ... */}
+                    <AccordionDetails className="shadow-none p-0">
+                      <IsHomeCollection HomeColData={handleHomeColData} />
+>>>>>>> e89337843e08b75d6eec2c2c6dd2ef8bdf3c8848
                     </AccordionDetails>
                   </Accordion>
                   <div className="nav_button mt-5 col-12 d-flex justify-content-between">
@@ -707,9 +872,14 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                     <div className=" mt-3  row text-right">
                       <button
                         className="edit_cart button button--wayra pull-right red tab3"
+<<<<<<< HEAD
                         // onClick={formik.handleSubmit}
 
                         type="submit"
+=======
+                        onClick={formik.handleSubmit}
+                        type="button"
+>>>>>>> e89337843e08b75d6eec2c2c6dd2ef8bdf3c8848
                       >
                         Proceed
                         <FaArrowRightLong className="m-2" />
@@ -729,6 +899,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
 };
 
 export default UserDataForm;
+<<<<<<< HEAD
 
 const generateRadioData = (removedDates) => {
   const today = new Date();
@@ -778,3 +949,5 @@ const formatDateTime = (date, time) => {
 
   return `${year}-${month}-${day}T${formattedTime}Z`;
 };
+=======
+>>>>>>> e89337843e08b75d6eec2c2c6dd2ef8bdf3c8848

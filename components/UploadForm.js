@@ -217,12 +217,18 @@ const UploadForm = () => {
                     />
                     <span className="browse-files-text">
                       {formik.values.uploadPrescription
-                        ? "Browse again"
+                        ? "Browse again "
                         : "Browse file from device"}
                     </span>
                     {formik.values.uploadPrescription && (
                       <span>Change your file</span>
                     )}
+                    {formik.touched.uploadPrescription &&
+                      formik.errors.uploadPrescription && (
+                        <div className="error_message">
+                          {formik.errors.uploadPrescription}
+                        </div>
+                      )}
                   </div>
                 </label>
               </div>

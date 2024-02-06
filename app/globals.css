@@ -3720,3 +3720,9 @@ table th {
 .slot-time-not a {
   color: #000;
 }
+.error_message {
+  color: var(--error);
+  background-color: var(--bg-error);
+  padding: 5px 18px;
+  font-weight: 600;
+}

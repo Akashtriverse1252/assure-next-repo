@@ -185,7 +185,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
   };
   const handleRadioChange = (event) => {
     formik.setFieldValue("selectedPlan", event.target.id);
-    // setIsHomeCollection(initialValues);
+    // setIsHomeCollection(initialValues);    
     setIsHomeCollection((prevState) => ({
       ...prevState,
       selectedPlan: event.target.id,

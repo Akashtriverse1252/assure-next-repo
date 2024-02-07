@@ -222,7 +222,7 @@ const UploadForm = () => {
                     </span>
                     {formik.values.uploadPrescription && (
                       <span>Change your file</span>
-                    )}
+                    )}  
                     {formik.touched.uploadPrescription &&
                       formik.errors.uploadPrescription && (
                         <div className="error_message">

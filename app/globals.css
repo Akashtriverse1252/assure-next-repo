@@ -3726,3 +3726,25 @@ table th {
   padding: 5px 18px;
   font-weight: 600;
 }
+
+.success_data {
+  width: 60%;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 20px;
+}
+.sucess_msg {
+  height: 50vh;
+}
+.sucess_msg svg {
+  height: 520px;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  left: 50%;
+  transform: translateX(-50%);
+}

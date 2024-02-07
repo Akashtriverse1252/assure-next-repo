@@ -42,48 +42,6 @@ const Sucess = (props) => {
                 </g>
               </g>
             </g>
-            <g id="Layer_3">
-              <g className="cls-8">
-                <rect
-                  className="cls-9"
-                  x={800.44}
-                  y={624.69}
-                  width={1097.97}
-                  height={1286.58}
-                  rx={125.18}
-                  ry={125.18}
-                />
-              </g>
-              <g>
-                <rect
-                  className="cls-2"
-                  x={715.29}
-                  y={541.29}
-                  width={1097.97}
-                  height={1286.58}
-                  rx={125.18}
-                  ry={125.18}
-                />
-                <g>
-                  {/* Replace the lines with the text element */}
-                  <text x={1260} y={1580} className="" textAnchor="middle">
-                    Booking Successful
-                  </text>
-                </g>
-                <g>
-                  <circle
-                    className="cls-7"
-                    cx={1277.85}
-                    cy={1026.76}
-                    r={237.32}
-                  />
-                  <polyline
-                    className="cls-4"
-                    points="1173.7 1026.76 1254.05 1107.11 1555.78 789.44"
-                  />
-                </g>
-              </g>
-            </g>
           </g>
         </svg>
       </>

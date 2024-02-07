@@ -32,6 +32,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
   const { cartState, cartDispatch } = useData();
   const { showAlert } = useAlert();
   const [internalTimeSlots, setInternalTimeSlots] = useState([]);
+  const [isHomeCollection, setIsHomeCollection] = useState("none");
   const [removedDates] = useState([""]);
 
   const validationSchema = Yup.object().shape({
@@ -46,12 +47,14 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
       ),
     dob: Yup.string().required("Date of birth is required"),
     gender: Yup.string().required("Gender is required"),
-    address: Yup.string().required("Address is required"),
-    date: Yup.string().required(" Date  is required"),
-    time: Yup.string().required("Time is required"),
-    pincode: Yup.string().required("Pincode is required"),
-    city: Yup.string().required("City is required"),
-    state: Yup.string().required("State is required"),
+    ...(isHomeCollection.selectedPlan === "Home_collection" && {
+      address: Yup.string().required("Address is required"),
+      date: Yup.string().required("Date is required"),
+      time: Yup.string().required("Time is required"),
+      pincode: Yup.string().required("Pincode is required"),
+      city: Yup.string().required("City is required"),
+      state: Yup.string().required("State is required"),
+    }),
   });
 
   const formik = useFormik({
@@ -61,10 +64,10 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
       dob: "",
       age: "",
       gender: "",
+      isHomecollection: false, // Initially set to false
+      address: "",
       date: "",
       time: "",
-      isHomecollection: 0, // Initially set to false
-      address: "",
       pincode: "",
       city: "",
       state: "",
@@ -85,11 +88,16 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
           gender: values.gender,
           isHomecollection:
             values.selectedPlan === "Home_collection" ? "1" : "0",
-          address: values.address,
-          pincode: values.pincode,
-          city: values.city,
-          state: values.state,
-          homeCollectionDateTime: formatDateTime(values.date, values.time),
+          address:
+            values.selectedPlan === "Home_collection" ? values.address : "",
+          pincode:
+            values.selectedPlan === "Home_collection" ? values.pincode : "",
+          city: values.selectedPlan === "Home_collection" ? values.city : "",
+          state: values.selectedPlan === "Home_collection" ? values.state : "",
+          homeCollectionDateTime:
+            values.selectedPlan === "Home_collection"
+              ? formatDateTime(values.date, values.time)
+              : "",
           totalAmount: 1205,
           advance: 0,
           organizationIdLH: 324559,
@@ -100,11 +108,22 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
         };
 
         console.log(apiData);
+        cartDispatch({
+          type: "UPDATE_USER_DATA",
+          userData: {
+            name: apiData.fullName,
+            age: apiData.age,
+            gender: apiData.gender,
+          },
+        });
+        console.log("thiws is the slctresedf plab", values.selectedPlan);
 
         const response = await axios.post(apiUrl, apiData);
 
         if (response.data && response.data.code === 200) {
           console.log("Booking submitted successfully!");
+          showAlert("success", "Booking success", "success");
+          onNextStep();
         } else {
           console.error(
             "API request failed. Error message:",
@@ -113,6 +132,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
         }
       } catch (error) {
         console.error("Error submitting booking data:", error.message);
+        showAlert("Error", "Network error", "error");
 
         if (error.response) {
           console.error("Response data:", error.response.data);
@@ -132,9 +152,6 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
 
     calculateAndSetAge();
   }, [formik.values.dob]);
-  const handleRadioChange = (event) => {
-    formik.setFieldValue("selectedPlan", event.target.id);
-  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -165,6 +182,14 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
 
   const handleGenderChange = (e) => {
     formik.setFieldValue("gender", e.target.id);
+  };
+  const handleRadioChange = (event) => {
+    formik.setFieldValue("selectedPlan", event.target.id);
+    // setIsHomeCollection(initialValues);
+    setIsHomeCollection((prevState) => ({
+      ...prevState,
+      selectedPlan: event.target.id,
+    }));
   };
 
   useEffect(() => {
@@ -545,7 +570,10 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                                     type="text"
                                     variant="standard"
                                     value={formik.values.address}
-                                    onChange={formik.handleChange}
+                                    onChange={(e) => {
+                                      formik.handleChange(e);
+                                      formik.setFieldTouched("address", true);
+                                    }}
                                     error={
                                       formik.touched.address &&
                                       Boolean(formik.errors.address)
@@ -563,16 +591,6 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                                           "address",
                                           false
                                         ),
-                                    }}
-                                    InputProps={{
-                                      onEmpty: (event) => {
-                                        useEffect(() => {
-                                          formik.setFieldTouched(
-                                            "address",
-                                            true
-                                          );
-                                        }, []);
-                                      },
                                     }}
                                   />
                                 </div>

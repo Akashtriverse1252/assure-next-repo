@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useRef, useState } from "react";
 import LogoDNA from "@/components/svg-components/LogoDNA";
 import Cookies from "js-cookie";
@@ -8,10 +8,11 @@ const Loader = ({ isLoading }) => {
   const mainLoaderRef = useRef(null);
 
   const hideLoaderSec = () => {
-    document.querySelectorAll(".main_loader_sec").forEach((sec) => {
-      sec.classList.add("mainSecLoaderLoaded");
-    });
+    if (mainLoaderRef.current) {
+      mainLoaderRef.current.classList.add("mainSecLoaderLoaded");
+    }
   };
+
   const hideLoader = () => {
     if (mainLoaderRef.current) {
       mainLoaderRef.current.classList.add("d-none");
@@ -26,6 +27,7 @@ const Loader = ({ isLoading }) => {
   useEffect(() => {
     return () => clearTimeout(timeoutId, timeout);
   }, []);
+
   useEffect(() => {
     if (isLoading) {
       const loaderTimeout = setTimeout(() => {
@@ -40,16 +42,17 @@ const Loader = ({ isLoading }) => {
   }, [isLoading]);
 
   useEffect(() => {
-    if (!process.browser) return;
-    const hideLoaderSecClient = () => {
-      document.querySelectorAll(".main_loader_sec").forEach((sec) => {
-        sec.classList.add("mainSecLoaderLoaded");
-      });
-    };
+    if (process.browser) {
+      const hideLoaderSecClient = () => {
+        if (mainLoaderRef.current) {
+          mainLoaderRef.current.classList.add("mainSecLoaderLoaded");
+        }
+      };
 
-    const timeout = setTimeout(hideLoaderSecClient, 4000);
+      const timeout = setTimeout(hideLoaderSecClient, 4000);
 
-    return () => clearTimeout(timeout);
+      return () => clearTimeout(timeout);
+    }
   }, []);
 
   return (

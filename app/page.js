@@ -21,7 +21,6 @@ import { Faq } from "@/components/Faq";
 import Link from "next/link";
 import { useEffect } from "react";
 import Aos from "aos";
-import { easing } from "jquery";
 
 export default function Home() {
   useEffect(() => {

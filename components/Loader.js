@@ -4,6 +4,7 @@
 // import Cookies from "js-cookie";
 
 // const Loader = ({ isLoading }) => {
+    
 //   const [loaderVisiblity, setLoaderVisiblity] = useState(isLoading);
 //   const mainLoaderRef = useRef(null);
 

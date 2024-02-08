@@ -101,7 +101,7 @@ export const Videos = (props) => {
               data-aos-once="true"
               data-aos-offset={getAosDuration(index)}
               data-aos-easing="ease-in"
-            s>
+            >
               <div className="vedio_cont">
                 {selectedVideoIndex === index ? (
                   <div className=" iframe_scn">

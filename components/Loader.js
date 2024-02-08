@@ -1,74 +1,74 @@
-"use client";
-import React, { useEffect, useRef, useState } from "react";
-import LogoDNA from "@/components/svg-components/LogoDNA";
-import Cookies from "js-cookie";
+// "use client";
+// import React, { useEffect, useRef, useState } from "react";
+// import LogoDNA from "@/components/svg-components/LogoDNA";
+// import Cookies from "js-cookie";
 
-const Loader = ({ isLoading }) => {
-  const [loaderVisiblity, setLoaderVisiblity] = useState(isLoading);
-  const mainLoaderRef = useRef(null);
+// const Loader = ({ isLoading }) => {
+//   const [loaderVisiblity, setLoaderVisiblity] = useState(isLoading);
+//   const mainLoaderRef = useRef(null);
 
-  const hideLoaderSec = () => {
-    if (mainLoaderRef.current) {
-      mainLoaderRef.current.classList.add("mainSecLoaderLoaded");
-    }
-  };
+//   const hideLoaderSec = () => {
+//     if (mainLoaderRef.current) {
+//       mainLoaderRef.current.classList.add("mainSecLoaderLoaded");
+//     }
+//   };
 
-  const hideLoader = () => {
-    if (mainLoaderRef.current) {
-      mainLoaderRef.current.classList.add("d-none");
-    }
-  };
+//   const hideLoader = () => {
+//     if (mainLoaderRef.current) {
+//       mainLoaderRef.current.classList.add("d-none");
+//     }
+//   };
 
-  // Automatically hide loader after 3 seconds
-  const timeout = setTimeout(hideLoaderSec, 4000);
-  const timeoutId = setTimeout(hideLoader, 4500);
+//   // Automatically hide loader after 3 seconds
+//   const timeout = setTimeout(hideLoaderSec, 4000);
+//   const timeoutId = setTimeout(hideLoader, 4500);
 
-  // Cleanup the timeout to avoid memory leaks
-  useEffect(() => {
-    return () => clearTimeout(timeoutId, timeout);
-  }, []);
+//   // Cleanup the timeout to avoid memory leaks
+//   useEffect(() => {
+//     return () => clearTimeout(timeoutId, timeout);
+//   }, []);
 
-  useEffect(() => {
-    if (isLoading) {
-      const loaderTimeout = setTimeout(() => {
-        setLoaderVisiblity(false);
-        Cookies.set("loaderHidden", true, { expires: 10 / (24 * 60) });
-      }, 3000);
+//   useEffect(() => {
+//     if (isLoading) {
+//       const loaderTimeout = setTimeout(() => {
+//         setLoaderVisiblity(false);
+//         Cookies.set("loaderHidden", true, { expires: 10 / (24 * 60) });
+//       }, 3000);
 
-      return () => clearTimeout(loaderTimeout);
-    } else {
-      setLoaderVisiblity(false);
-    }
-  }, [isLoading]);
+//       return () => clearTimeout(loaderTimeout);
+//     } else {
+//       setLoaderVisiblity(false);
+//     }
+//   }, [isLoading]);
 
-  useEffect(() => {
-    if (process.browser) {
-      const hideLoaderSecClient = () => {
-        if (mainLoaderRef.current) {
-          mainLoaderRef.current.classList.add("mainSecLoaderLoaded");
-        }
-      };
+//   useEffect(() => {
+//     if (process.browser) {
+//       const hideLoaderSecClient = () => {
+//         if (mainLoaderRef.current) {
+//           mainLoaderRef.current.classList.add("mainSecLoaderLoaded");
+//         }
+//       };
 
-      const timeout = setTimeout(hideLoaderSecClient, 4000);
+//       const timeout = setTimeout(hideLoaderSecClient, 4000);
 
-      return () => clearTimeout(timeout);
-    }
-  }, []);
+//       return () => clearTimeout(timeout);
+//     }
+//   }, []);
 
-  return (
-    <>
-      {loaderVisiblity && (
-        <div
-          className={`main_loader ${isLoading ? "loaded" : ""}`}
-          ref={mainLoaderRef}
-        >
-          <div className="main_loader_sec">
-            <LogoDNA />
-          </div>
-        </div>
-      )}
-    </>
-  );
-};
+//   return (
+//     <>
+//       {loaderVisiblity && (
+//         <div
+//           className={`main_loader ${isLoading ? "loaded" : ""}`}
+//           ref={mainLoaderRef}
+//         >
+//           <div className="main_loader_sec">
+//             <LogoDNA />
+//           </div>
+//         </div>
+//       )}
+//     </>
+//   );
+// };
 
-export default Loader;
+// export default Loader;

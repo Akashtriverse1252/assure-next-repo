@@ -35,7 +35,7 @@ export default function RootLayout({ children, isLoading }) {
       <AlertProvider>
         <GlobalDataProvider>
           <body className={AvertaStd.className}>
-            <Loader />
+            {/* <Loader /> */}
             <div className="">
               <Header />
               <BreadCrums />

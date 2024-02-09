@@ -12,18 +12,18 @@ const Nabh = () => {
       <style>
         {`
           tspan { white-space: pre }
-          .s0 { fill: #fefefe }
-          .s1 { fill: #ef0e5b }
-          .s2 { fill: #a0ebfb }
-          .s3 { fill: #13befc }
+          .s0 { fill: #fefefe !Important }
+          .s1 { fill: #ef0e5b !Important}
+          .s2 { fill: #a0ebfb !Important}
+          .s3 { fill: #13befc !Important}
           .s4 { fill: none; stroke: #ffffff; stroke-miterlimit: 10; stroke-width: 0.5 }
-          .s5 { fill: #4672b7 }
+          .s5 { fill: #4672b7 !Important}
           .s6 { fill: none; stroke: #0000ff; stroke-miterlimit: 10; stroke-width: 1 }
-          .s7 { fill: #ffffff }
+          .s7 { fill: #ffffff !Important}
           .t8 { font-size: 114px; fill: #ffffff; font-weight: bold; font-family: "Arial" }
         `}
       </style>
-      <g xmlns="http://www.w3.org/2000/svg" id="Layer 1">
+      <g xmlns="http://www.w3.org/2000/svg" id="nabh_logo">
         <g id="&lt;Group&gt;">
           <path
             id="&lt;Path&gt;"

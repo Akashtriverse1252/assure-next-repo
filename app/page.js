@@ -21,6 +21,8 @@ import { Faq } from "@/components/Faq";
 import Link from "next/link";
 import { useEffect } from "react";
 import Aos from "aos";
+import Nabh from "@/components/svg-components/Nabh";
+
 
 export default function Home() {
   useEffect(() => {
@@ -205,6 +207,31 @@ export default function Home() {
                 </div>
                 <div className="col-lg-10 m-auto col-12 float-start">
                   <div className="row justify-content-center">
+                    <div className="choose_assure col-lg-3 col-md-4 col-6">
+                      <div className="circleicons float-start col-12 text-center grid-center">
+                        <span
+                          className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick"
+                          data-aos="flip-right"
+                          data-aos-delay={150}
+                          data-aos-duration={150}
+                          data-aos-once="true"
+                          data-aos-offset={120}
+                          data-aos-easing="ease-in"
+                        >
+                          <Nabh />
+                        </span>
+                        <p
+                          data-aos="fade-up"
+                          data-aos-delay={150}
+                          data-aos-duration={120}
+                          data-aos-once="true"
+                          data-aos-offset={120}
+                          data-aos-easing="linear"
+                        >
+                          NABH Certified Labs
+                        </p>
+                      </div>
+                    </div>
                     <div className="col-lg-3 col-md-4 col-6">
                       <div className="circleicons float-start col-12 text-center grid-center">
                         <span
@@ -357,7 +384,7 @@ export default function Home() {
                         </p>
                       </div>
                     </div>
-                    <div className="col-lg-3 col-md-4 col-6">
+                    {/* <div className="col-lg-3 col-md-4 col-6">
                       <div className="circleicons float-start col-12 text-center grid-center">
                         <span
                           className="gradient flex-center mb-2 button button--aylen button--round-l button--text-thick"
@@ -383,7 +410,7 @@ export default function Home() {
                           Consultation Services
                         </p>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

@@ -3769,3 +3769,45 @@ table th {
 .founder-social-icons {
   width: max-content;
 }
+
+.chooseassure .circleicons:first-child svg path.s4 {
+  fill: none!important;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  stroke-width: .5
+}
+
+.chooseassure .circleicons:first-child svg path.s6 {
+  fill: none!important;
+  stroke: #00f!important;
+  stroke-miterlimit: 10;
+  stroke-width: 1
+}
+
+.choose_assure .circleicons svg path.s5 {
+  fill: #4672b7!important
+}
+
+.choose_assure .circleicons svg path.s7 {
+  fill: #fff!important
+}
+
+.choose_assure .circleicons svg path.s2 {
+  fill: #a0ebfb!important
+}
+
+.choose_assure .circleicons svg path.s1 {
+  fill: #ef0e5b!important
+}
+
+.choose_assure .circleicons svg path.s0 {
+  fill: #fefefe!important
+}
+
+.choose_assure .circleicons svg path.s3 {
+  fill: #13befc!important
+}
+
+.choose_assure .circleicons svg {
+  width: 80%!important
+}

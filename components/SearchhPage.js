@@ -28,6 +28,7 @@ const SearchhPage = ({ slug }) => {
         // } else {
         //   setSelectedIds([]);
         // }
+        console.log(matchedItem) 
 
         if (matchedItem) {
           const ids = matchedItem.id;

@@ -19,7 +19,7 @@ export const page = () => {
           <div className="gradient-layer"></div>
           <div className="container">
             <div className="web-container">
-              <div className="row">
+              {/* <div className="row">
                 <div
                   className="col-lg-9 col-md-8 col-xs-12 col-12 abt_banner"
                   data-aos="fade-in"
@@ -36,7 +36,7 @@ export const page = () => {
                     height={730}
                   />
                 </div>
-              </div>
+              </div> */}
               <div className="row">
                 <div
                   className="title col-12 float-start text-center"

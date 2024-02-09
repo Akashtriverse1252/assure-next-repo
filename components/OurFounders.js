@@ -2,6 +2,7 @@ import React from "react";
 import { Dots } from "./svg-components/Dots";
 import { Line } from "./svg-components/Line";
 import { FaFacebook, FaInstagram, FaXTwitter } from "react-icons/fa6";
+import Link from "next/link";
 
 const OurFounders = () => {
   return (
@@ -56,28 +57,38 @@ const OurFounders = () => {
                           of expertise to the realm of diagnostic &amp; ensures
                           quality of health services
                         </p>
-                        <div class="founder-social-icons mt-3">
-                          <a
-                            class="founder-social-icon"
-                            target="_blank"
-                            href="#"
-                          >
-                            <FaFacebook />
-                          </a>
-                          <a
-                            class="founder-social-icon"
-                            target="_blank"
-                            href="#"
-                          >
-                            <FaXTwitter />
-                          </a>
-                          <a
-                            class="founder-social-icon"
-                            target="_blank"
-                            href="#"
-                          >
-                            <FaInstagram />
-                          </a>
+                        <div className="founder-footer">
+                          <div class="founder-social-icons">
+                            <a
+                              class="founder-social-icon"
+                              target="_blank"
+                              href="#"
+                            >
+                              <FaFacebook />
+                            </a>
+                            <a
+                              class="founder-social-icon"
+                              target="_blank"
+                              href="#"
+                            >
+                              <FaXTwitter />
+                            </a>
+                            <a
+                              class="founder-social-icon"
+                              target="_blank"
+                              href="#"
+                            >
+                              <FaInstagram />
+                            </a>
+                          </div>
+                          <div className="founder_details">
+                            <Link
+                              className="textbtn founder_btn"
+                              href="doctor-profile/details/dr-sanjay-wadhwa"
+                            >
+                              Know More
+                            </Link>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -111,28 +122,38 @@ const OurFounders = () => {
                           makes her a key player in the dynamic and critical
                           field of infectious diseases.
                         </p>
-                        <div class="founder-social-icons mt-3">
-                          <a
-                            class="founder-social-icon"
-                            target="_blank"
-                            href="#"
-                          >
-                            <FaFacebook />
-                          </a>
-                          <a
-                            class="founder-social-icon"
-                            target="_blank"
-                            href="#"
-                          >
-                            <FaXTwitter />
-                          </a>
-                          <a
-                            class="founder-social-icon"
-                            target="_blank"
-                            href="#"
-                          >
-                            <FaInstagram />
-                          </a>
+                        <div className="founder-footer">
+                          <div class="founder-social-icons">
+                            <a
+                              class="founder-social-icon"
+                              target="_blank"
+                              href="#"
+                            >
+                              <FaFacebook />
+                            </a>
+                            <a
+                              class="founder-social-icon"
+                              target="_blank"
+                              href="#"
+                            >
+                              <FaXTwitter />
+                            </a>
+                            <a
+                              class="founder-social-icon"
+                              target="_blank"
+                              href="#"
+                            >
+                              <FaInstagram />
+                            </a>
+                          </div>
+                          <div className="founder_details">
+                            <Link
+                              className="textbtn founder_btn"
+                              href="doctor-profile/details/dr-lovely-razdan"
+                            >
+                              Know More
+                            </Link>
+                          </div>
                         </div>
                       </div>
                     </div>

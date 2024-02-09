@@ -30,7 +30,6 @@ export const MyCart = () => {
           onClick={handleToggleCart}
         >
           <LuShoppingCart className=" " />
-          Cart
         </button>
         {!totalQuantity == 0 ? (
           <i className={`my-cart_cnt ${(totalQuantity > 10? "mycart_qty_high" : "")}`}> {totalQuantity > 10 ? "10+" : totalQuantity}</i>

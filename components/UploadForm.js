@@ -11,8 +11,7 @@ import { useAlert } from "@/context/AlerterContext";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-const API_URL =
-  "http://assure.triverseadvertising.com/api/upload_prescription.php";
+const API_URL ="http://assure.triverseadvertising.com/api/upload_prescription.php";
 
 const allowedTypes = new Set([
   "image/jpeg",

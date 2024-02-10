@@ -80,7 +80,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
       try {
         // Handle form submission
         const apiUrl =
-          "https://uat.crelio.solutions/LHRegisterBillAPI/8862c370-09ef-11eb-841c-02524da836c8/";
+          "https://crelio.solutions/LHRegisterBillAPI/8862c370-09ef-11eb-841c-02524da836c8/";
 
         const apiData = {
           fullName: values.name,

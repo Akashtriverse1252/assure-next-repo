@@ -49,7 +49,7 @@ const SearchhPage = ({ slug }) => {
     const fetchPackageData = async () => {
       try {
         if (selectedIds.length > 0) {
-          const idsString = selectedIds.join(",");
+          const idsString = selectedIds.join("-");
           // console.log("thid is the snding id", idsString);
           const apiUrl = `https://www.assurepathlabs.com/api/algos/fetch_details.php?ids=${idsString}`;
 

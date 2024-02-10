@@ -59,7 +59,7 @@ export const Seasonalpack = (props) => {
     initialSlide: 0, // Update this to 0
     responsive: [
       {
-        breakpoint: 1100,
+        breakpoint: 1500,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,

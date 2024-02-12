@@ -3,68 +3,54 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Line } from "@/components/svg-components/Line";
 import { Tab } from "@mui/material/Tab";
 import { TabContext, TabList, TabPanel } from "@mui/material";
-import data from "@/Data/test_data.json";
 import Link from "next/link";
 import { useData } from "@/context/context";
 import Aos from "aos";
+import {
+  BiLogoWhatsapp,
+  BiLogoFacebook,
+  BiLogoLinkedin,
+  BiLogoYoutube,
+  BiLogoInstagram,
+} from "react-icons/bi";
+import { RiWhatsappFill } from "react-icons/ri";
+import { BsInstagram } from "react-icons/bs";
 
 export const Footer = () => {
   useEffect(() => {
     Aos.init();
   }, []);
   const currentYear = new Date().getFullYear();
-  const [selectedTab, setSelectedTab] = useState(1);
-  const [buttonWidth, setButtonWidth] = useState(0);
-  const [buttonWidth2, setButtonWidth2] = useState(0);
-  const buttonRef1 = useRef(null);
-  const buttonRef2 = useRef(null);
   const { cartState, cartDispatch } = useData();
   const [tabData, setTabData] = useState([]);
-  const [isFadeIn, setIsFadeIn] = useState(true);
-  const memoizedTabData = useMemo(() => tabData, [tabData]);
 
   const fetchTabData = async (category) => {
     try {
-      setIsFadeIn(false);
       const response = await fetch(
-        `https://www.assurepathlabs.com/api/algos/fetch_details.php?category=${category}`
+        `https://www.assurepathlabs.com/api/algos/fetch_details.php?category=package`
       );
       const data = await response.json();
       setTabData(data.test_data);
-      setTimeout(() => {
-        setIsFadeIn(true);
-      }, 300); // Adjust the delay time based on your transition duration
+      setTimeout(() => {}, 300); // Adjust the delay time based on your transition duration
 
-      // console.log(data.test_data);
+      console.log("this is the data", data.test_data);
     } catch (error) {
       console.error(`Error fetching ${category} data:`, error);
     }
   };
-
-  const getWidth = () => {
-    const activeButtonRef = selectedTab === 1 ? buttonRef1 : buttonRef2;
-    const buttonRect = activeButtonRef.current.getBoundingClientRect();
-    setButtonWidth(buttonRect.width);
-    const width1ref = buttonRef1.current.getBoundingClientRect();
-    setButtonWidth2(width1ref.width);
-  };
-
   useEffect(() => {
-    getWidth();
-  }, [selectedTab]);
-
-  useEffect(() => {
-    fetchTabData(selectedTab === 1 ? "test" : "package");
-  }, [selectedTab]);
+    fetchTabData();
+  }, []);
   const menuItems = [
-    { title: "Home", aosDelay: 100, links: [] },
     {
       title: "About Us",
       aosDelay: 200,
-      links: [{ href: "/about-us", label: "ABOUT US" }],
+      href: "/about-us",
+      // links: [{ href: "/about-us", label: "ABOUT US" }],
     },
     {
       title: "Our Doctors",
+      href: "/doctor-profile",
       aosDelay: 300,
       links: [
         {
@@ -88,8 +74,9 @@ export const Footer = () => {
     },
     {
       title: "Health Packages",
+      href: "/packages",
       aosDelay: 500,
-      links: [{ href: "/packages", label: "HEALTH PACKAGES" }],
+      // links: [{ href: "/packages", label: "HEALTH PACKAGES" }],
     },
     {
       title: "My Account",
@@ -97,7 +84,10 @@ export const Footer = () => {
       links: [
         {
           label: "MY CART",
-          onClick: () => cartDispatch({ type: "TOGGLE_CART" }),
+          onClick: () => {
+            console.log("Clicking on MY CART");
+            cartDispatch({ type: "TOGGLE_CART" });
+          },
         },
         { label: "BLOG" },
         {
@@ -105,9 +95,9 @@ export const Footer = () => {
           label: "LOGIN",
           external: true,
         },
-        { href: "/terms-conditions", label: "TERMS & CONDITIONS" },
-        { href: "/privacy-policy", label: "PRIVACY POLICY" },
-        { href: "/refund-cancellation", label: "REFUND & CANCELLATION" },
+        // { href: "/terms-conditions", label: "TERMS & CONDITIONS" },
+        // { href: "/privacy-policy", label: "PRIVACY POLICY" },
+        // { href: "/refund-cancellation", label: "REFUND & CANCELLATION" },
       ],
     },
   ];
@@ -128,85 +118,59 @@ export const Footer = () => {
             <div className="web-container "></div>
           </div>
         </div> */}
-        <div className="footergray col-12 float-start">
+        <div className="footergray pb-0 col-12 float-start">
           <div className="container">
-            <div className="web-container ">
-              <div className="row mb-5 pb-3">
+            <div className="">
+              <div className="row mb-3 pb-3">
                 <div className="_acc flex-center  flex-column ">
-                  <div className="_acc_btn flex-center position-relative flex-column ">
-                    <div
-                      className="_acc_header position-relative  flex-center "
-                      data-aos="fade-zoom-in"
-                      data-aos-delay={100}
-                      data-aos-duration={300}
-                      data-aos-once="true"
-                      data-aos-offset={120}
-                      data-aos-easing="ease-in"
-                    >
-                      <button
-                        ref={buttonRef1}
-                        onClick={() => setSelectedTab(1)}
-                      >
-                        <article>Popular Test</article>
-                      </button>
-                      <button
-                        ref={buttonRef2}
-                        onClick={() => setSelectedTab(2)}
-                      >
-                        <article>Popular Packages</article>
-                      </button>
+                  <div className="popular_packages">
+                    <div className="popular_packaes_title">
+                      <strong>Popular Test</strong>
                     </div>
-                    <span
-                      className="underline"
-                      style={{
-                        left:
-                          selectedTab === 1
-                            ? "0"
-                            : `calc(${buttonWidth2}px + 60px)`, // Adjust the width based on your design
-                        width: `${buttonWidth}px`, // Adjust the width based on your design
-                        // backgroundColor: "blue", // Set the color of the underline
-                        height: "2px", // Set the height of the underline
-                        transition: " 0.8s ease", // Add a smooth transition effect
-                      }}
-                    ></span>
-                  </div>
-
-                  <div
-                    className="_acc_cnt"
-                    data-aos="fade-up"
-                    data-aos-delay={100}
-                    data-aos-duration={250}
-                    data-aos-once="true"
-                    data-aos-offset={100}
-                    data-aos-easing="ease-in"
-                  >
-                    {selectedTab === 1 || selectedTab === 2 ? (
-                      <div
-                        className={`footer_tabs ${
-                          isFadeIn ? "fade-in" : "fade-out"
-                        }`}
-                      >
-                        <ul className="flex-center ">
+                    <div className="popular_packages_cnt">
+                      <ul className="flex-center ">
+                        {tabData.map((test, index) => (
                           <li>
-                            {memoizedTabData.map((test, index) => (
-                              <Link
-                                key={test.id}
-                                href={`/${
-                                  selectedTab === 1 ? "test-detail" : "packages"
-                                }/${test.Slug}`}
-                              >
-                                {" "}
-                                {test.Test_Name}
-                              </Link>
-                            ))}
+                            <Link
+                              key={test.id}
+                              href={`/test-detail/${test.Slug}`}
+                            >
+                              {test.Test_Name}
+                            </Link>
                           </li>
-                        </ul>
-                      </div>
-                    ) : null}
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="popular_packages mt-3 pt-4 bt">
+                    <div className="popular_packaes_title">
+                      <strong>Popular Packages</strong>
+                    </div>
+                    <div className="popular_packages_cnt">
+                      <ul className="flex-center ">
+                        {tabData.map((test, index) => (
+                          <li>
+                            <Link
+                              key={test.id}
+                              href={`/test-detail/${test.Slug}`}
+                            >
+                              {test.Test_Name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="col-12 mb-5 float-start flex-center align-items-start footerrow">
+            </div>
+          </div>
+          <Line className="svgwidthline position-absolute top-0 end-0" />
+        </div>
+        <div className="footergray _chnage_color mt-0 pb-0  col-12 float-start">
+          <div className="container ">
+            <div className="row footer_bottom pb-4">
+              <div className="col-7 float-end flex-center align-items-start footerrow justify-content-between">
                 {menuItems.map((menuItem, index) => (
                   <div key={index} className="footercolumn">
                     <div
@@ -219,7 +183,11 @@ export const Footer = () => {
                       data-aos-easing="ease-in"
                     >
                       <article className="text-uppercase">
-                        {menuItem.title}
+                        {menuItem.href ? (
+                          <Link href={menuItem.href}>{menuItem.title}</Link>
+                        ) : (
+                          <span>{menuItem.title}</span>
+                        )}
                       </article>
                     </div>
                     {menuItem.links && (
@@ -257,26 +225,24 @@ export const Footer = () => {
                   </div>
                 ))}
               </div>
-              <div className="row  gap-4 gap-sm-0 mt-3">
-                <div className="col-lg-4 col-xs-6 col-sm-4 col-12">
-                  <div className="contact">
-                    <a href="tel:0181-4667555">
-                      <span
-                        className="flex-center align-items-start gap-2 sm-gap-4"
-                        data-aos="fade-up"
-                        data-aos-delay={150}
-                        data-aos-duration={150}
-                        data-aos-once="true"
-                        data-aos-offset={200}
-                        data-aos-anchor-placement="bottom-bottom"
-                      >
-                        <strong>T</strong>
-                        0181-4667555
-                      </span>
-                    </a>
-                  </div>
+              <div className="col-lg-4 contact_detail">
+                <div className="contact">
+                  <a href="tel:0181-4667555">
+                    <span
+                      className="flex-center align-items-start gap-2 sm-gap-4"
+                      data-aos="fade-up"
+                      data-aos-delay={150}
+                      data-aos-duration={150}
+                      data-aos-once="true"
+                      data-aos-offset={200}
+                      data-aos-anchor-placement="bottom-bottom"
+                    >
+                      <strong>T</strong>
+                      0181-4667555
+                    </span>
+                  </a>
                 </div>
-                <div className="col-lg-4 col-xs-6 col-sm-4 col-12">
+                <div className="">
                   <div className="contact">
                     <a href="mailto:assurepathlabs@gmail.com">
                       <span
@@ -293,7 +259,7 @@ export const Footer = () => {
                     </a>
                   </div>
                 </div>
-                <div className="col-lg-4 col-xs-6 col-sm-4 col-12">
+                <div className=" ">
                   <div className="contact">
                     <span
                       className="flex-center align-items-start gap-2 gap-sm-0"
@@ -310,9 +276,37 @@ export const Footer = () => {
                     </span>
                   </div>
                 </div>
-                <div className="col-12  mx-auto  flex-center mt-4 mb-3 mt-sm-5">
+                <div className="socail_icon">
+                  <div className="">
+                    <Link href="#">
+                      <BiLogoFacebook />
+                    </Link>
+                  </div>
+                  <div className="">
+                    <Link href="#">
+                      <BiLogoLinkedin />
+                    </Link>
+                  </div>
+
+                  <div className="whatsapp">
+                    <Link href="#">
+                      <RiWhatsappFill />
+                    </Link>
+                  </div>
+                  <div className="">
+                    <Link href="#">
+                      <BiLogoYoutube />
+                    </Link>
+                  </div>
+                  <div className="">
+                    <Link href="#">
+                      <BiLogoInstagram />
+                    </Link>
+                  </div>
+                </div>
+                <div className="col-12  mx-auto  flex-center ">
                   <a
-                    className="button button--aylen button--round-l button--text-thick text-uppercase gradient col-lg-3 col-md-5 col-12"
+                    className="button button--aylen button--round-l footer_btn button--text-thick text-uppercase gradient justify-content-start"
                     data-aos="flip-right"
                     data-aos-delay={100}
                     data-aos-duration={350}
@@ -325,29 +319,34 @@ export const Footer = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <Line className="svgwidthline position-absolute top-0 end-0" />
-        </div>
 
-        <div className="footergray col-12 float-start ftrbdr m-0 pt-3 pb-3">
-          <div className="container">
-            <div className="web-container">
-              <div className="row">
-                <div className="col-lg-6 col-sm-6  col-8">
-                  <p className="m-0">
-                    &copy; {currentYear} All Rights Reserved.{" "}
-                  </p>
-                </div>
-                <div className="col-lg-6 col-sm-6  col-4 text-end">
-                  <p className="m-0">
-                    <a href="https://triverseadvertising.com/" target="_blank">
-                      site : triverse
-                    </a>
-                  </p>
-                </div>
+            <div className="row p-3">
+              <div className="col-lg-6 col-sm-6  col-8 footer_site">
+                <p className="m-0">
+                  &copy; {currentYear} All Rights Reserved.{" "}
+                </p>
+                <p className="m-0">
+                  <Link href="/terms-conditions">Terms & conditions</Link>
+                </p>
+                <p className="m-0">
+                  <Link href="/privacy-policy">Privacy Policy</Link>
+                </p>
+                <p className="m-0">
+                  <Link href="/refund-cancellation">
+                    Refund and Cancellation
+                  </Link>
+                </p>
+              </div>
+              <div className="col-lg-6 col-sm-6  col-4 text-end">
+                <p className="m-0">
+                  <a href="https://triverseadvertising.com/" target="_blank">
+                    site : triverse
+                  </a>
+                </p>
               </div>
             </div>
           </div>
+          <Line className="svgwidthline position-absolute top-0 end-0" />
         </div>
       </footer>
     </>

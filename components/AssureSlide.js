@@ -8,14 +8,14 @@ import Aos from "aos";
 
 export const AssureSlide = (props) => {
   var settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
     fade: true,
     autoplaySpeed: 5000,
-    autoplay: true,
+    autoplay: false,
   };
   useEffect(() => {
     Aos.init();
@@ -35,16 +35,16 @@ export const AssureSlide = (props) => {
               <div className="banner_slide">
                 <Image
                   className=""
-                  src="/banner1.png"
+                  src="/banner-01.webp"
                   alt="Early Detection is the Key of Cure"
-                  width={630}
-                  height={500}
+                  width={1270}
+                  height={780}
                 />
-                <Link href="/packages/assure-complete-wellness-package-for-man">
+                {/* <Link href="/packages/assure-complete-wellness-package-for-man">
                   <button className="button button--aylen button--round-l button--text-thick  gradient   flex-center gap-2">
                     Know more
                   </button>
-                </Link>
+                </Link> */}
               </div>
             </div>
             <div>

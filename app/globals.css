@@ -151,7 +151,7 @@ ul {
 }
 
 .homecollection span {
-  font-size: 24px;
+  font-size: 21px;
   font-weight: bold;
   text-transform: uppercase;
   line-height: 20px;
@@ -159,7 +159,7 @@ ul {
 }
 
 .homecollection article {
-  font-size: 38px;
+  font-size: 34px;
   color: #0599d2;
   font-weight: bold;
   line-height: 38px;
@@ -351,11 +351,6 @@ section,
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  background-image: linear-gradient(80deg, #611ca2, #1198ca);
-  background-size: 100% 100%;
-  background-position: 0;
 }
 
 .title h1:after,
@@ -820,6 +815,9 @@ footer {
 
 .slick-slider .slick-dots {
   bottom: 15px;
+  left: 95%;
+  width: 100%;
+  transform: translate(-50%, -50%);
 }
 
 .slick-slider .slick-dots li button:before {
@@ -952,14 +950,22 @@ footer {
 }
 
 .leftmenu .button {
-  min-width: 120px;
-  height: 40px;
-  line-height: 40px;
-  font-size: 16px;
+  min-width: 50px;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-transform: capitalize;
-  padding: 0 20px;
+}
+.leftmenu .button svg {
+  width: 20px;
+  color: #000;
 }
 
+.__menus {
+  margin-left: 4%;
+}
 svg.color-black path {
   fill: #607586;
 }
@@ -1042,11 +1048,12 @@ header {
 }
 
 .logo {
-  width: 75%;
+  width: 135%;
+  transition: 0.3s ease all;
 }
 
 .fixed .logo {
-  width: 65%;
+  width: 115%;
 }
 
 .nah_logo svg {
@@ -1076,7 +1083,7 @@ header {
 }
 
 .headersearchbox {
-  width: 45%;
+  width: 42%;
   transition: ease all 0.5s;
 }
 
@@ -1626,12 +1633,6 @@ header {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  background-image: linear-gradient(80deg, #611ca2, #1198ca);
-  background-size: 100% 100%;
-  background-position: 0;
   margin: 0 auto;
 }
 
@@ -2144,12 +2145,6 @@ html::-webkit-scrollbar-thumb:hover,
   /* Add a smooth transition */
 }
 
-._user svg,
-.my-cart svg {
-  width: 21px;
-  margin-right: 4px;
-}
-
 ._icon {
   color: rgba(255, 255, 255, 0.95);
   right: 0;
@@ -2490,30 +2485,19 @@ li.MuiBreadcrumbs-li svg {
 
 .home_banner .banner_slider {
   position: relative;
+  display: flex;
 }
 
-.home_banner .banner_slider:after {
-  content: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-image: url(../public/banner-background.webp);
-  background-position: center;
-  background-size: contain;
-  height: 720px;
-  width: 1200px;
-  z-index: -1;
-  background-repeat: no-repeat;
+.__Banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
 }
-
 .home_banner img {
-  height: 100%;
   width: 100%;
 }
-
-/* .banner_slide svg {
-  width: 50%;
-} */
 
 .banner_slide {
   display: flex;
@@ -2522,7 +2506,13 @@ li.MuiBreadcrumbs-li svg {
   flex-direction: column;
   z-index: 5;
   position: relative;
-  height: 780px;
+}
+.home_banner img {
+  width: 100%;
+  height: auto;
+}
+.banner_slide a {
+  width: 100%;
 }
 
 button:disabled {
@@ -3837,4 +3827,177 @@ table th {
 }
 .socail_icon .whatsapp a svg {
   padding: 2px;
+}
+
+.__Banner .slick-slider .slick-dots {
+  bottom: 15px;
+  left: 95%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.__Banner .slick-dots li button {
+  font-size: 13px;
+  line-height: 15px;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  color: #000;
+}
+.__Banner .slick-dots li button::before {
+  display: none;
+}
+.slider_count {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider_count svg {
+  margin: 0 7px;
+  object-fit: contain;
+  height: 15px;
+
+  stroke-width: 2px;
+}
+.currentslide span {
+  font-size: 13px;
+  line-height: 15px;
+  font-weight: 500;
+}
+.currentslide {
+  position: absolute;
+  right: 1%;
+  bottom: 4%;
+}
+.why_assure {
+  background-color: rgb(242 242 242);
+  padding: 40px 0;
+}
+.why_assure .circleicons span {
+  background-color: #fff;
+  box-shadow: 4px 4px 30px rgb(193 193 193);
+}
+.why_assure .circleicons span svg path {
+  fill: var(--btn-color);
+}
+.why_assure .circleicons span:hover svg path {
+  fill: #fff !important;
+}
+.why_assure .circleicons p {
+  width: 80%;
+  margin: auto;
+  font-weight: 600;
+  color: #4b4b4b;
+}
+
+.about_us_image img {
+  height: auto;
+}
+
+.about_us_scn .title h2:after {
+  left: 0;
+  transform: none;
+}
+.about_us_scn {
+  width: 50%;
+  text-align: left;
+  padding: 30px;
+  left: 19%;
+  top: 15%;
+  align-items: flex-start;
+}
+.abt_scn__ {
+  width: 90%;
+  display: flex;
+  margin: 0 auto;
+}
+.about_us_image {
+  width: 700px;
+}
+
+.about_us_cnt p {
+  text-align: left;
+  width: 75%;
+  text-wrap: balance;
+}
+.about_us_image img {
+  border-radius: 50px;
+}
+.header .container {
+  min-width: 96%;
+  width: 96%;
+}
+
+.upload_btn_sc {
+  display: flex;
+  gap: 12px;
+}
+
+.upload_btn {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  width: 100%;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 100%;
+  flex: 1 1;
+  height: 50px;
+}
+.upload_btn.___cart {
+  margin-left: 2px;
+}
+
+.upload_btn_cnt {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    223.23deg,
+    rgb(255, 255, 255) -39.74%,
+    rgb(210 226 244) 94.44%
+  ) !important;
+}
+.upload_btn_cnt:first-child > svg {
+  width: 30px;
+  height: auto;
+}
+.upload_btn_cnt.user svg {
+  width: 25px;
+}
+.upload_btn_cnt svg {
+  color: #000;
+}
+.upload_btn p {
+  color: #000;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  width: min-content;
+  margin: 0;
+  letter-spacing: 0.5px;
+  line-height: 16px;
+  font-size: 14px;
+}
+.__menus {
+  margin-left: 4%;
+  justify-content: flex-end;
+  gap: 25px;
+}
+.mr-adj {
+  margin: 0 6px;
 }

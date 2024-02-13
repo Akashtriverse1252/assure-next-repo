@@ -36,7 +36,7 @@ export const TestCard = ({
         }
         data-aos="fade-up"
         data-aos-delay={180}
-        data-aos-duration={180}
+        data-aos-duration={200}
         data-aos-once="true"
         data-aos-offset={120}
         data-aos-easing="ease-in"

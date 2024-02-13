@@ -24,16 +24,30 @@ export const MyCart = () => {
   return (
     <>
       <div className="position-relative">
-        <button
+        <div
+          class="upload_btn pl-2 ___cart"
           disabled={cartState.cartVisible}
-          className="button button--aylen button--round-l button--text-thick my-cart"
           onClick={handleToggleCart}
         >
-          <LuShoppingCart className=" " />
-          Cart
-        </button>
+          <div
+            class="upload_btn_cnt user"
+            style={{
+              background: "#e5e4f4",
+            }}
+          >
+            <LuShoppingCart className=" " />
+          </div>
+        </div>
+
         {!totalQuantity == 0 ? (
-          <i className={`my-cart_cnt ${(totalQuantity > 10? "mycart_qty_high" : "")}`}> {totalQuantity > 10 ? "10+" : totalQuantity}</i>
+          <i
+            className={`my-cart_cnt ${
+              totalQuantity > 10 ? "mycart_qty_high" : ""
+            }`}
+          >
+            {" "}
+            {totalQuantity > 10 ? "10+" : totalQuantity}
+          </i>
         ) : null}
         {/* Use totalQuantity here */}
       </div>

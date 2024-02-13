@@ -1,7 +1,6 @@
 import React from "react";
 import { Dots } from "@/components/svg-components/Dots";
 import { Line } from "@/components/svg-components/Line";
-import Aboutbanner from "../../public/about-us-banner.webp";
 import { AdvancedTechnology } from "@/components/svg-components/AdvancedTechnology";
 import { Doctor } from "@/components/svg-components/Doctor";
 import { InternationalStandard } from "@/components/svg-components/InternationalStandard";

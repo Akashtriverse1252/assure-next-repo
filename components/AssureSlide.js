@@ -1,12 +1,17 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
 import Link from "next/link";
 import "aos/dist/aos.css"; // Import AOS CSS
 import Aos from "aos";
-
+import Left from "./svg-components/Left";
+import Right from "./svg-components/Right";
+import { FaAngleRight } from "react-icons/fa6";
+import { FaAngleLeft } from "react-icons/fa6";
 export const AssureSlide = (props) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const sliderRef = useRef(null);
   var settings = {
     dots: false,
     infinite: true,
@@ -15,7 +20,22 @@ export const AssureSlide = (props) => {
     slidesToScroll: 1,
     fade: true,
     autoplaySpeed: 5000,
-    autoplay: false,
+    autoplay: true,
+    beforeChange: (current, next) => {
+      setCurrentSlide(next);
+    },
+  };
+
+  const goToPrevSlide = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickPrev();
+    }
+  };
+
+  const goToNextSlide = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickNext();
+    }
   };
   useEffect(() => {
     Aos.init();
@@ -30,75 +50,80 @@ export const AssureSlide = (props) => {
           data-aos-duration={120}
           data-aos-once="true"
         >
-          <Slider {...settings} {...props}>
+          <Slider {...settings} {...props} ref={sliderRef}>
             <div>
               <div className="banner_slide">
-                <Image
-                  className=""
-                  src="/banner-01.webp"
-                  alt="Early Detection is the Key of Cure"
-                  width={1270}
-                  height={780}
-                />
-                {/* <Link href="/packages/assure-complete-wellness-package-for-man">
-                  <button className="button button--aylen button--round-l button--text-thick  gradient   flex-center gap-2">
-                    Know more
-                  </button>
-                </Link> */}
+                <Link href="/packages/assure-complete-wellness-package-for-man">
+                  <Image
+                    className=""
+                    src="/banner-4.webp"
+                    alt="Early Detection is the Key of Cure"
+                    width={1270}
+                    height={780}
+                  />
+                </Link>
               </div>
             </div>
             <div>
               <div className="banner_slide">
-                <Image
-                  className=""
-                  src="/banner2.png"
-                  alt="Early Detection is the Key of Cure"
-                  width={630}
-                  height={500}
-                />
                 <Link href="/organ/heart">
-                  <button className="button button--aylen button--round-l button--text-thick  gradient   flex-center gap-2">
-                    Know more
-                  </button>
+                  <Image
+                    className=""
+                    src="/banner-2.webp"
+                    alt="Early Detection is the Key of Cure"
+                    width={1270}
+                    height={780}
+                  />
                 </Link>
               </div>
             </div>
             <div>
               <div className="banner_slide">
-                <Image
-                  className=""
-                  src="/banner3.png"
-                  alt="Early Detection is the Key of Cure"
-                  width={630}
-                  height={500}
-                />
                 <Link href="/test-detail/dengue-antibodies-igg-igm-ns1ag">
-                  <button className="button button--aylen button--round-l button--text-thick  gradient   flex-center gap-2">
-                    Know more
-                  </button>
+                  <Image
+                    className=""
+                    src="/banner-3.webp"
+                    alt="Early Detection is the Key of Cure"
+                    width={1270}
+                    height={780}
+                  />
                 </Link>
               </div>
             </div>
             <div>
               <div className="banner_slide">
-                <Image
-                  className=""
-                  src="/banner4.png"
-                  alt="Early Detection is the Key of Cure"
-                  width={630}
-                  height={500}
-                />
                 <Link
                   href="https://patient-in.creliohealth.com/patient/login"
                   target="_blank"
                 >
-                  <button className="button button--aylen button--round-l button--text-thick  gradient   flex-center gap-2">
-                    Know more
-                  </button>
+                  <Image
+                    className=""
+                    src="/banner-01.webp"
+                    alt="Early Detection is the Key of Cure"
+                    width={1270}
+                    height={780}
+                  />
                 </Link>
               </div>
             </div>
           </Slider>
+          <div className="currentslide flex-center">
+            <button
+              className="slider_count left flex-center "
+              onClick={goToPrevSlide}
+            >
+              <FaAngleLeft />
+            </button>
+            <span>
+              {currentSlide + 1} - {4}
+            </span>
+            <button
+              className="slider_count  flex-center"
+              onClick={goToNextSlide}
+            >
+              <FaAngleRight />
+            </button>
+          </div>
         </div>
       </div>
     </>

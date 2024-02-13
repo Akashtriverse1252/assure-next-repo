@@ -2,25 +2,34 @@
   .headersearchbox {
     width: 40%;
   }
-
   ._icon {
     width: 70px;
   }
-
   .headersearchbox .header_search .form-control {
     height: 45px !important;
   }
-
   ._cart_test_detail h5 {
     font-size: 17px;
   }
-
   ._cart p {
     font-size: 15px;
+  }
+  .cta {
+    margin-top: 30px;
+  }
+  .page_equireheading__sSxvP article {
+    margin: 10px 0 !important;
   }
 }
 
 @media (max-width: 1600px) {
+  .whatsapp p,
+  .call p {
+    margin: 0;
+  }
+  .__menus {
+    margin-left: 0;
+  }
   .homecollection span {
     font-size: 21px;
   }
@@ -53,15 +62,50 @@
   .discountprice {
     line-height: 42px;
   }
-
 }
 
 @media (max-width: 1500px) {
   header {
     margin-bottom: 0px;
   }
+  .enquireform .MuiInputBase-root {
+    margin-bottom: 12px !important;
+  }
+  .cta {
+    margin-top: 15px;
+  }
+  .upload_btn_cnt,
+  .call svg,
+  .whatsapp svg {
+    width: 45px;
+    height: 45px;
+  }
+  .upload_btn_cnt:first-child > svg,
+  .upload_btn_cnt.user svg {
+    width: 20px;
+  }
+  .homecollection article a {
+    font-size: 30px;
+    line-height: 0.8;
+  }
+  .homecollection span {
+    font-size: 19px;
+    line-height: 1;
+  }
+  .nah_logo svg {
+    width: 75px;
+  }
+  .page_equireheading__sSxvP article {
+    margin: 0 !important;
+  }
+  .headersearchbox {
+    width: 35%;
+  }
   .page_equireheading__sSxvP article:before {
     content: none !important;
+  }
+  .__menus {
+    gap: 15px;
   }
 
   .abt_bg_img {
@@ -85,14 +129,6 @@
   .leftmenu .button {
     min-width: 100px;
     font-size: 15px;
-  }
-  .banner_slide img{
-    width: 100%;
-    height: 100%;
-  }
-
-  .banner_slide {
-    height: 690px;
   }
 
   .title {
@@ -162,14 +198,6 @@
 
   .detaildescrp .button {
     letter-spacing: 0.5px;
-  }
-
-  .logo {
-    width: 80%;
-  }
-
-  .fixed .logo {
-    width: 75%;
   }
 
   .footercolumn,
@@ -775,14 +803,6 @@
 }
 
 @media (max-width: 1000px) {
-  .logo {
-    width: 90%;
-  }
-
-  .fixed .logo {
-    width: 100%;
-  }
-
   .headersearchbox {
     width: 55%;
   }
@@ -951,9 +971,6 @@
   }
   header {
     min-height: auto;
-  }
-  .logo {
-    width: 95%;
   }
 }
 

@@ -17,6 +17,8 @@ import { PiShoppingCartSimple } from "react-icons/pi";
 import { useData } from "@/context/context";
 import { Badge } from "@mui/material";
 import { Attachement } from "./svg-components/Attachement";
+import Upload from "./svg-components/Upload";
+import AddPackages from "./svg-components/AddPackages";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -60,7 +62,7 @@ export const Header = () => {
       <div className={header ? "header fixed" : "header"}>
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-2 col-md-2 col-3">
+            <div className="col-lg-1 ">
               <div
                 className="logo"
                 data-aos="fade"
@@ -72,8 +74,8 @@ export const Header = () => {
                 </Link>
               </div>
             </div>
-            <div className="col-lg-10 col-md-10 col-9">
-              <div className="d-flex align-items-center justify-content-end gap-xxl-4 gap-xl-2 gap-1">
+            <div className="col-lg-11 ">
+              <div className="d-flex align-items-center  __menus">
                 <div
                   className={
                     showSearchBar
@@ -96,36 +98,52 @@ export const Header = () => {
                     </Badge>
                   )}
                 </div>
-                <div className="navbar p-0 align-items-end gap-xxl-4 gap-xl-2">
-                  <div className="d-none d-sm-flex justify-content-center align-items-center gap-xxl-4 gap-xl-2  navbar_item">
+                <div class="upload_btn_sc ">
+                  <div
+                    class="upload_btn"
+                    href="#"
+                    onClick={() => cartDispatch({ type: "TOGGLE_UPLOD_FORM" })}
+                  >
                     <div
-                      className="leftmenu float-start gap-xxl-3 gap-xl-1 "
-                      data-aos="fade"
-                      data-aos-once="true"
-                      data-aos-duration="600"
+                      class="upload_btn_cnt"
+                      style={{
+                        background:
+                          "linear-gradient(223.23deg, #FFFFFF -39.74%, #DBF5F9 94.44%)",
+                      }}
                     >
-                      {/* <span className="button button--aylen button--round-l button--text-thick ">
-                        <Link href="/individual-test">
-                          <span>
-                            <IndividualTest />
-                          </span>
-                          Individual Test
-                        </Link>
-                      </span> */}
-                      {/* <span className="button button--aylen button--round-l button--text-thick my-cart">
-                        My Cart
-                      </span> */}
-                      <MyCart />
-                      <Link
-                        href="https://patient-in.creliohealth.com/patient/login"
-                        target="_blank"
-                      >
-                        <span className="button button--aylen button--round-l button--text-thick _user d-flex align-items-center">
-                          <LuUser />
-                          Login
-                        </span>
-                      </Link>
+                      <Upload />
                     </div>
+                    <p>Upload Prescription</p>
+                  </div>
+                  <Link class="upload_btn mr-adj" href="/packages">
+                    <div
+                      class="upload_btn_cnt"
+                      style={{
+                        background: "#F9E0DB",
+                      }}
+                    >
+                      <AddPackages />
+                    </div>
+                    <p>Health Package</p>
+                  </Link>
+                  <Link
+                    class="upload_btn"
+                    href="https://patient-in.creliohealth.com/patient/login"
+                    target="_blank"
+                  >
+                    <div
+                      class="upload_btn_cnt user"
+                      style={{
+                        background: "#f4e0e7",
+                      }}
+                    >
+                      <LuUser />
+                    </div>
+                  </Link>
+                  <MyCart />
+                </div>
+                <div className="navbar p-0 align-items-end ">
+                  <div className="d-none d-sm-flex justify-content-center align-items-center  navbar_item">
                     <div
                       className=" d-flex align-items-center flex-row justify-content-center "
                       data-aos="fade"
@@ -154,7 +172,7 @@ export const Header = () => {
                       <div className="container">
                         <div className="row">
                           <div className="web-container">
-                            <div className="col-12 float-start flex-center align-items-start footerrow">
+                            <div className="col-8 justify-content-around mx-auto  flex-center align-items-start footerrow">
                               <div className="footercolumn">
                                 <div className="fheading">
                                   <article
@@ -174,18 +192,6 @@ export const Header = () => {
                                     <Link href="/about-us">ABOUT US</Link>
                                   </article>
                                 </div>
-                                {/* <div className="fmenu">
-                                  <ul className="p-0 m-0">
-                                    <li>
-                                      <Link
-                                        href="/about-us/#quality"
-                                        className="text-black"
-                                      >
-                                        OUR QUALITY
-                                      </Link>
-                                    </li>
-                                  </ul>
-                                </div> */}
                               </div>
                               <div className="footercolumn">
                                 <div className="fheading">
@@ -294,67 +300,6 @@ export const Header = () => {
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="menslide fixvisible">
-            <div className="row">
-              <div className="headerstrip">
-                <div className="container">
-                  <div className="row">
-                    <div className="slimenu d-flex justify-content-end">
-                      <ul className="d-flex gap-xxl-5 gap-xl-4 gap-lg-3 gap-md-2 m-0">
-                        <li>
-                          {/* <span>
-                            <Attachement />
-                          </span>
-                          Upload Prescription */}
-                          {/* <UploadPrescription /> */}
-                          <Link
-                            href="#"
-                            className=""
-                            onClick={() =>
-                              cartDispatch({ type: "TOGGLE_UPLOD_FORM" })
-                            }
-                          >
-                            <span>
-                              <Attachement />
-                            </span>
-                            Upload Prescription
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/individual-test">
-                            <span>
-                              <Booktest />
-                            </span>
-                            Book a Test
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="https://patient-in.creliohealth.com/patient/login"
-                            target="_blank"
-                          >
-                            <span>
-                              <Report />
-                            </span>
-                            Booking & Reports
-                          </Link>
-                        </li>
-                        <li
-                          className="cart_in_slimenu "
-                          onClick={() => cartDispatch({ type: "TOGGLE_CART" })}
-                        >
-                          <span>
-                            <LuShoppingCart />
-                          </span>
-                          Cart
-                        </li>
-                      </ul>
                     </div>
                   </div>
                 </div>

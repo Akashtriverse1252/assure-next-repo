@@ -148,10 +148,10 @@ export const Homecollection = () => {
 
   return (
     <>
-      <div className="enquireform col-12 float-start">
+      <div className="enquireform col-12 mx-auto">
         <div className={styles.equireheading}>
-          <article>
-            <span className="pb-md-2">BOOK HOME COLLECTION</span>
+          <article className="col-12 mx-auto">
+            <span className="pb-md-2 ">BOOK HOME COLLECTION</span>
           </article>
         </div>
         <form onSubmit={handleSubmit}>

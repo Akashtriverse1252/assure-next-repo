@@ -170,7 +170,7 @@ export const Footer = () => {
         <div className="footergray _chnage_color mt-0 pb-0  col-12 float-start">
           <div className="container ">
             <div className="row footer_bottom pb-4">
-              <div className="col-7 float-end flex-center align-items-start footerrow justify-content-between">
+              <div className="col-xl-7 col-md-8 float-end flex-center align-items-start footerrow justify-content-between">
                 {menuItems.map((menuItem, index) => (
                   <div key={index} className="footercolumn">
                     <div
@@ -321,7 +321,7 @@ export const Footer = () => {
             </div>
 
             <div className="row p-3">
-              <div className="col-lg-6 col-sm-6  col-8 footer_site">
+              <div className="   footer_site">
                 <p className="m-0">
                   &copy; {currentYear} All Rights Reserved.{" "}
                 </p>
@@ -337,7 +337,7 @@ export const Footer = () => {
                   </Link>
                 </p>
               </div>
-              <div className="col-lg-6 col-sm-6  col-4 text-end">
+              <div className=" _cerdit text-end">
                 <p className="m-0">
                   <a href="https://triverseadvertising.com/" target="_blank">
                     site : triverse

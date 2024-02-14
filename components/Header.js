@@ -61,8 +61,8 @@ export const Header = () => {
     <header>
       <div className={header ? "header fixed" : "header"}>
         <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-1 ">
+          <div className="row align-items-center justify-contet">
+            <div className="col-lg-1 col-md-2 col-3 ">
               <div
                 className="logo"
                 data-aos="fade"
@@ -74,7 +74,7 @@ export const Header = () => {
                 </Link>
               </div>
             </div>
-            <div className="col-lg-11 ">
+            <div className="col-lg-11 col-md-9 ">
               <div className="d-flex align-items-center  __menus">
                 <div
                   className={

@@ -40,12 +40,12 @@ export const HForm = () => {
         data-aos-duration={150}
         data-aos-once="true"
         data-aos-offset={150}
-        data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+        data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"  
       >
-        <div className="enquireform col-12 col-md-12 mx-md-auto   float-start d-lg-block d-none">
+        <div className="enquireform col-12 col-md-12 mx-auto  ">
           <SearchBar {...generateAOSAttributes(1, 150, 20)} />
 
-          <div className="col-12 col-md-5 col-lg-12  d-sm-none d-lg-block position-relative">
+          <div className="col-12 _upload_hform  d-sm-none d-lg-block position-relative">
             <Button
               {...generateAOSAttributes(1, 150, 20)}
               variant="outlined"
@@ -61,7 +61,7 @@ export const HForm = () => {
           </div>
 
           <div
-            className="col-12 col-md-5 col-lg-12 d-sm-none d-lg-block position-relative"
+            className="col-12 _upload_hform d-sm-none d-lg-block position-relative"
             {...generateAOSAttributes(1, 150, 20)}
           >
             <Button

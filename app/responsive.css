@@ -6,7 +6,7 @@
     width: 70px;
   }
   .headersearchbox .header_search .form-control {
-    height: 45px !important;
+    height: 50px !important;
   }
   ._cart_test_detail h5 {
     font-size: 17px;
@@ -308,10 +308,6 @@
     height: 140px;
     overflow: hidden;
   }
-  .home_banner .banner_slider:after {
-    background-size: cover;
-    background-position: left;
-  }
   .package_card .packagedetail {
     height: 100px;
   }
@@ -460,11 +456,6 @@
     top: 90px;
   }
 
-  /* .banner_slide {
-    height: 80vh;
-    padding: 0;
-    padding-bottom: 40px;
-  } */
   .packageprice {
     margin: 10px 0;
     gap: 10px;
@@ -485,8 +476,8 @@
 }
 
 @media (max-width: 1300px) {
-  .home_banner .banner_slider:after {
-    height: 680px;
+  ._home__banner .container {
+    max-width: 96%;
   }
 
   .slimenu ul li {
@@ -617,6 +608,37 @@
     height: auto;
     left: 0;
   }
+  .homecollection span {
+    font-size: 16px;
+    line-height: 0;
+  }
+  .homecollection article a {
+    font-size: 26px;
+  }
+  .upload_btn p {
+    line-height: 15px;
+    font-size: 13px;
+  }
+  .__menus,
+  .upload_btn_sc {
+    gap: 8px;
+  }
+  .mr-adj {
+    margin: 0;
+  }
+  .upload-files-container {
+    width: 75%;
+    padding: 35px;
+  }
+  .prescription-form .input-field {
+    margin-top: 10px;
+    margin-right: 40px;
+    padding: 0;
+    gap: 10px;
+  }
+  .upload-prescription-form h4 {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -660,13 +682,17 @@
     width: 100px;
     height: 100px;
   }
-  .cta {
+  .whatsapp p,
+  .call p {
     display: none;
   }
-  .banner_slide,
-  .home_banner .banner_slider:after {
-    height: 520px;
+  .upload_btn_cnt,
+  .call svg,
+  .whatsapp svg {
+    width: 40px;
+    height: 40px;
   }
+
   ._icon {
     width: 20%;
   }
@@ -736,15 +762,6 @@
   .leftmenu {
     display: none;
   }
-
-  .headersearchbox {
-    width: 60%;
-  }
-
-  .desktop_nav_search {
-    width: 92%;
-  }
-
   .vedio_review .slick-prev:before,
   .vedio_review .slick-next:before,
   .googlereviewslider .slick-prev:before,
@@ -758,6 +775,55 @@
     padding: 0 !important;
     margin-top: 15px;
   }
+  .headersearchbox {
+    width: 30%;
+  }
+  .__menus,
+  .upload_btn_sc,
+  .upload_btn {
+    gap: 5px;
+  }
+  .homecollection span {
+    font-size: 14px;
+    line-height: 0;
+  }
+  .homecollection article a {
+    font-size: 23px;
+  }
+  ._upload_hform {
+    width: 48% !important;
+    margin: 0 auto;
+  }
+  ._upload_hform span {
+    display: none;
+  }
+  .enquireform {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .desktop_nav_search {
+    width: 100%;
+  }
+  .h_form ._icon,
+  .css-md26zr-MuiInputBase-root-MuiOutlinedInput-root,
+  .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input,
+  .enquireform .rbt-input-hint,
+  .enquireform button,
+  .enquireform .form-control,
+  .MuiInputBase-root.formbtn {
+    max-height: 45px !important;
+    height: 45px !important;
+    line-height: 45px !important;
+    font-size: 12.5px !important;
+  }
+  .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input,
+  .enquireform .rbt-input-hint,
+  .enquireform .form-control,
+  .enquireform .MuiInputBase-root label,
+  label.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+    font-size: 12px !important;
+    letter-spacing: 1px;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -767,7 +833,7 @@
   }
 
   .footerrow {
-    gap: 40px;
+    gap: 20px;
   }
 
   .sliderbox {
@@ -795,17 +861,16 @@
   .packagename img {
     width: 50px;
   }
-
-  .home_banner .banner_slider:after {
-    background-position: left;
-    background-size: cover;
-  }
 }
 
 @media (max-width: 1000px) {
   .headersearchbox {
     width: 55%;
   }
+  
+.upload_btn_sc {
+ display: none; 
+}
 
   .homecollection article a {
     line-height: 0;
@@ -834,10 +899,6 @@
     width: 30% !important;
   }
 
-  .banner_slide,
-  .home_banner .banner_slider:after {
-    height: 62vh;
-  }
   .conditionshape h3 {
     top: 70%;
   }
@@ -870,11 +931,6 @@
     width: 100vw;
     top: -100%;
     background-color: #dae8ec;
-  }
-
-  .banner_slide,
-  .home_banner .banner_slider:after {
-    height: 490px;
   }
 
   .slick-slider .slick-dots li button:before {
@@ -1438,11 +1494,6 @@
     z-index: 1;
   }
 
-  .banner_slide,
-  .home_banner .banner_slider:after {
-    height: 350px;
-    padding: 35px 0 30px;
-  }
   .enquireform:first-child,
   .home_banner .slick-dots {
     display: none !important;

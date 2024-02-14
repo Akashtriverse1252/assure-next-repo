@@ -16,6 +16,7 @@ import CookiesConset from "@/components/CookiesConset";
 import { AlertProvider } from "@/context/AlerterContext";
 import Alert from "@/components/Alert";
 import Loader from "@/components/Loader";
+import SpeedDial from "@/components/SpeedDial";
 
 const AvertaStd = localFont({
   src: "./font/AvertaStd-Regular.woff2",
@@ -42,6 +43,7 @@ export default function RootLayout({ children, isLoading }) {
               <Cart />
               <Alert />
               {children}
+              <SpeedDial />
               <Footer />
               <UploadForm />
             </div>

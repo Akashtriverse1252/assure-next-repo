@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <>
       <main className="d-flex flex-wrap float-start col-12 mt-4">
-        <section className="position-relative ">
+        <section className="position-relative _home__banner">
           <div className="gradient-layer"></div>
           <div className="container">
             <div className="row ">

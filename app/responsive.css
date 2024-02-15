@@ -867,10 +867,21 @@
   .headersearchbox {
     width: 55%;
   }
-  
-.upload_btn_sc {
- display: none; 
-}
+
+  .upload_btn_sc {
+    display: none;
+  }
+  .__Banner {
+    flex-direction: column;
+  }
+  .speed-dail {
+    display: block;
+  }
+  .footerrow {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 30px;
+  }
 
   .homecollection article a {
     line-height: 0;
@@ -881,9 +892,17 @@
     font-size: 16px;
     line-height: 0;
   }
+  .enquireform._serach__ {
+    display: none;
+  }
 
   .nah_logo svg {
     width: 51px;
+  }
+  .page_equireheading__sSxvP,
+  .enquireform form {
+    width: 100%;
+    margin: 0 auto;
   }
 
   .conditionshape span {
@@ -900,7 +919,7 @@
   }
 
   .conditionshape h3 {
-    top: 70%;
+    top: 100%;
   }
 
   .plans .plan {
@@ -921,6 +940,47 @@
     -webkit-transform: translate(-50%);
     -ms-transform: translate(-50%);
     transform: translate(-50%);
+  }
+  .abt_title {
+    display: block;
+  }
+  .about_us_scn .title {
+    display: none;
+  }
+  .about_us_cnt {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .abt_scn__ {
+    flex-direction: column-reverse;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+  }
+  .about_us_cnt p {
+    text-align: center;
+    width: auto;
+    text-wrap: balance;
+  }
+  .about_us_scn {
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+    left: 0;
+    top: 0;
+    align-items: flex-start;
+    margin: 0 auto;
+  }
+  .about_us_image img {
+    border-radius: 0;
+    padding-top: 10px;
+  }
+  .bg-gradient-image {
+    bottom: -60%;
+    z-index: -1;
   }
 }
 
@@ -965,16 +1025,9 @@
     position: relative;
     z-index: 10;
   }
-
   .hemburgur {
     z-index: 10;
   }
-
-  .footerrow {
-    flex-direction: column;
-    gap: 25px;
-  }
-
   .headerstrip {
     display: none;
   }
@@ -1028,12 +1081,33 @@
   header {
     min-height: auto;
   }
+  .conditionshape h3 {
+    top: 70%;
+  }
+  .footer_site {
+    width: 90% !important;
+  }
+  ._cerdit {
+    width: 10% !important;
+  }
+  .footer_site p {
+    padding: 0 6px;
+  }
+  .footergray p {
+    font-size: 11px;
+  }
+  .footer_btn {
+    padding: 0 15px;
+  }
+  .__menus {
+    justify-content: space-between;
+  }
+  .popular_packages_cnt li {
+    width: 30%;
+  }
 }
 
 @media (max-width: 680px) {
-  .header_search {
-    display: none;
-  }
   ._cart {
     height: 100dvh;
     inset: 1;
@@ -1119,6 +1193,18 @@
     gap: 17px;
     flex-wrap: wrap;
   }
+  .title h2 {
+    padding-bottom: 8px;
+  }
+  .footer_bottom {
+    gap: 15px;
+  }
+  .about_us_scn {
+    padding: 15px 0;
+  }
+  .popular_packages_cnt li {
+    width: 50%;
+  }
 }
 
 @media (max-width: 580px) {
@@ -1130,10 +1216,10 @@
   }
 
   /* .circleicons span,
-    .packagename span {
-        width: 120px !important;
-        height: 120px;
-    } */
+  .packagename span {
+    width: 120px !important;
+    height: 120px;
+  } */
 
   ._cart_cross svg {
     width: 20px;
@@ -1209,16 +1295,9 @@
     font-size: 15px;
     text-align: center;
   }
-
-  .contact span {
-    display: grid;
-    justify-content: start;
-  }
-
   ._icon svg {
     height: 30px;
   }
-
   .enquireform .MuiInputBase-root,
   .h_form ._icon,
   .h_form .MuiInputBase-root.formbtn,
@@ -1382,12 +1461,6 @@
     text-wrap: balance;
     width: 95%;
   }
-
-  .home_banner img {
-    height: auto;
-    width: 62%;
-  }
-
   .mobile_nav_search .cross {
     margin-top: 5px;
     position: absolute;
@@ -1587,7 +1660,7 @@
     top: 20px;
     right: 10px;
   }
-
+  .abt_scn__,
   .plans .plan .plan-content .plan-details {
     width: 100%;
   }
@@ -1626,6 +1699,23 @@
     width: 95px;
     margin: 6px;
   }
+  .footer_site {
+    flex-wrap: wrap;
+  }
+  .__menus {
+    justify-content: flex-end;
+  }
+  .contact_detail {
+    gap: 5px;
+  }
+  .footercolumn {
+    width: 29%;
+  }
+  .mdl-button--fab_flinger-container.activated {
+    position: fixed;
+    bottom: 35px;
+    right: 35px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1635,5 +1725,44 @@
   }
   .No_Data svg {
     width: 90%;
+  }
+  .popular_packages_cnt li {
+    width: auto;
+  }
+  .footercolumn {
+    width: 45%;
+  }
+  .footercolumn:first-child {
+    order: 5;
+  }
+  .footercolumn:nth-child(3) {
+    order: 4;
+  }
+  .logo {
+    width: 100px;
+  }
+  .fixed .logo {
+    width: 90px;
+  }
+  header {
+    min-height: auto;
+  }
+  .about_us_scn {
+    padding: 25px 0 0;
+  }
+  .mdl-button--fab_flinger-container.activated {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+  }
+  .page_equireheading__sSxvP article {
+    padding: 0 0 15px !important ;
+  }
+  ._cerdit ,
+  .footer_site{
+   width: 100% !important;
+   display: flex;
+   justify-content: center;
+   align-items: center;
   }
 }

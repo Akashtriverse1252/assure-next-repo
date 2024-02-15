@@ -20,7 +20,7 @@ export const AssureSlide = (props) => {
     slidesToScroll: 1,
     fade: true,
     autoplaySpeed: 5000,
-    autoplay: true,
+    autoplay: false,
     beforeChange: (current, next) => {
       setCurrentSlide(next);
     },
@@ -55,10 +55,17 @@ export const AssureSlide = (props) => {
               <div className="banner_slide">
                 <Link href="/packages/assure-complete-wellness-package-for-man">
                   <Image
-                    className=""
+                    className="d-none d-sm-block"
                     src="/banner-4.webp"
                     alt="Early Detection is the Key of Cure"
                     width={1270}
+                    height={780}
+                  />
+                  <Image
+                    className="d-sm-none m_home_banner"
+                    src="/banner-04-m.jpg"
+                    alt="Early Detection is the Key of Cure"
+                    width={630}
                     height={780}
                   />
                 </Link>
@@ -68,8 +75,15 @@ export const AssureSlide = (props) => {
               <div className="banner_slide">
                 <Link href="/organ/heart">
                   <Image
-                    className=""
+                    className="d-none d-sm-block"
                     src="/banner-2.webp"
+                    alt="Early Detection is the Key of Cure"
+                    width={1270}
+                    height={780}
+                  />
+                  <Image
+                    className="d-sm-none m_home_banner"
+                    src="/banner-02-m.jpg"
                     alt="Early Detection is the Key of Cure"
                     width={1270}
                     height={780}
@@ -81,10 +95,17 @@ export const AssureSlide = (props) => {
               <div className="banner_slide">
                 <Link href="/test-detail/dengue-antibodies-igg-igm-ns1ag">
                   <Image
-                    className=""
+                    className="d-none d-sm-block"
                     src="/banner-3.webp"
                     alt="Early Detection is the Key of Cure"
                     width={1270}
+                    height={780}
+                  />
+                  <Image
+                    className="d-sm-none m_home_banner"
+                    src="/banner-03-m.jpg"
+                    alt="Early Detection is the Key of Cure"
+                    width={630}
                     height={780}
                   />
                 </Link>
@@ -97,10 +118,17 @@ export const AssureSlide = (props) => {
                   target="_blank"
                 >
                   <Image
-                    className=""
+                    className="d-none d-sm-block"
                     src="/banner-01.webp"
                     alt="Early Detection is the Key of Cure"
                     width={1270}
+                    height={780}
+                  />
+                  <Image
+                    className="d-sm-none m_home_banner"
+                    src="/banner-01-m.jpg"
+                    alt="Early Detection is the Key of Cure"
+                    width={630}
                     height={780}
                   />
                 </Link>

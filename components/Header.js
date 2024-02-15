@@ -61,8 +61,8 @@ export const Header = () => {
     <header>
       <div className={header ? "header fixed" : "header"}>
         <div className="container">
-          <div className="row align-items-center justify-contet">
-            <div className="col-lg-1 col-md-2 col-3 ">
+          <div className="row align-items-center justify-content-sm-between justify-content-end">
+            <div className="col-lg-1 col-md-2 col-sm-2  col-3">
               <div
                 className="logo"
                 data-aos="fade"
@@ -74,7 +74,7 @@ export const Header = () => {
                 </Link>
               </div>
             </div>
-            <div className="col-lg-11 col-md-9 ">
+            <div className="col-lg-11  col-9">
               <div className="d-flex align-items-center  __menus">
                 <div
                   className={
@@ -84,7 +84,7 @@ export const Header = () => {
                   }
                 >
                   {/* {!showSearchBar ? <SearchBar /> : null} */}
-                  <div className="desktop_nav_search d-none d-sm-block">
+                  <div className="desktop_nav_search ">
                     <SearchBar />
                   </div>
                 </div>

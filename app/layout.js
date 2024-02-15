@@ -17,6 +17,7 @@ import { AlertProvider } from "@/context/AlerterContext";
 import Alert from "@/components/Alert";
 import Loader from "@/components/Loader";
 import SpeedDial from "@/components/SpeedDial";
+import BottomNav from "@/components/BottomNav";
 
 const AvertaStd = localFont({
   src: "./font/AvertaStd-Regular.woff2",
@@ -45,6 +46,7 @@ export default function RootLayout({ children, isLoading }) {
               {children}
               <SpeedDial />
               <Footer />
+              <BottomNav/>
               <UploadForm />
             </div>
           </body>

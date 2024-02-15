@@ -28,13 +28,13 @@ export default function Home() {
   }, []);
   return (
     <>
-      <main className="d-flex flex-wrap float-start col-12 mt-4">
+      <main className="d-flex flex-wrap float-start col-12 mt-lg-4 mt-0">
         <section className="position-relative _home__banner">
           <div className="gradient-layer"></div>
           <div className="container">
             <div className="row ">
               <div className="__Banner">
-                <div className="col-xl-9 col-lg-8 col-md-12 pull-md-right mr-md-auto col-sm-12 mb-3 mb-md-0  col-12">
+                <div className="col-xl-9 col-lg-8 col-md-12 pull-md-right mr-md-auto col-sm-12 mb-0  col-12">
                   <AssureSlide className="no-buttons colornavigations col-12 float-start" />
                 </div>
                 <div className="col-xl-3 col-lg-4 col-sm-11 mx-sm-auto col-12 d-flex align-items-center">
@@ -134,9 +134,20 @@ export default function Home() {
           </div>
           <Line className="svgwidthline position-absolute opacity-10 bottom-0 start-0" />
         </section>
-        <section className="position-relative py-5 mt-5 ">
+        <section className="position-relative py-lg-5 py-md-0  mt-5 ">
           <div className="container">
             <div className="web-container">
+            <div
+                    className="title col-12 mx-auto abt_title  float-start text-center"
+                    data-aos="fade-up"
+                    data-aos-delay={100}
+                    data-aos-duration={250}
+                    data-aos-once="true"
+                    data-aos-offset={150}
+                    data-aos-easing="ease-in"
+                  >
+                    <h2>ABOUT ASSURE PATHLAB</h2>
+                  </div>
               <div className="abt_scn__">
                 <div className="about_us_scn  flex-center  flex-column align-items-start">
                   <div
@@ -213,7 +224,7 @@ export default function Home() {
                 </div>
                 <div className="col-lg-10 m-auto col-12 float-start">
                   <div className="row justify-content-center pt-3">
-                    <div className="col-lg-3 col-md-4 col-6">
+                    <div className="col-lg-3 col-md-4 col-sm-4 col-6">
                       <div className="circleicons float-start col-12 text-center grid-center">
                         <span
                           className=" flex-center mb-2 button button--aylen button--round-l button--text-thick"
@@ -238,7 +249,7 @@ export default function Home() {
                         </p>
                       </div>
                     </div>
-                    <div className="col-lg-3 col-md-4 col-6">
+                    <div className="col-lg-3 col-md-4 col-sm-4 col-6">
                       <div className="circleicons float-start col-12 text-center grid-center">
                         <span
                           className=" flex-center mb-2 button button--aylen button--round-l button--text-thick"
@@ -263,7 +274,7 @@ export default function Home() {
                         </p>
                       </div>
                     </div>
-                    <div className="col-lg-3 col-md-4 col-6">
+                    <div className="col-lg-3 col-md-4 col-sm-4 col-6">
                       <div className="circleicons float-start col-12 text-center grid-center">
                         <span
                           className=" flex-center mb-2 button button--aylen button--round-l button--text-thick"
@@ -288,7 +299,7 @@ export default function Home() {
                         </p>
                       </div>
                     </div>
-                    <div className="col-lg-3 col-md-4 col-6">
+                    <div className="col-lg-3 col-md-4 col-sm-4 col-6">
                       <div className="circleicons float-start col-12 text-center grid-center">
                         <span
                           className=" flex-center mb-2 button button--aylen button--round-l button--text-thick"
@@ -313,7 +324,7 @@ export default function Home() {
                         </p>
                       </div>
                     </div>
-                    <div className="col-lg-3 col-md-4 col-6">
+                    <div className="col-lg-3 col-md-4 col-sm-4 col-6">
                       <div className="circleicons float-start col-12 text-center grid-center">
                         <span
                           className=" flex-center mb-2 button button--aylen button--round-l button--text-thick"
@@ -340,7 +351,7 @@ export default function Home() {
                         </p>
                       </div>
                     </div>
-                    <div className="col-lg-3 col-md-4 col-6">
+                    <div className="col-lg-3 col-md-4 col-sm-4 col-6">
                       <div className="circleicons float-start col-12 text-center grid-center">
                         <span
                           className=" flex-center mb-2 button button--aylen button--round-l button--text-thick"
@@ -365,7 +376,7 @@ export default function Home() {
                         </p>
                       </div>
                     </div>
-                    <div className="col-lg-3 col-md-4 col-6">
+                    <div className="col-lg-3 col-md-4 col-sm-4 col-6">
                       <div className="circleicons float-start col-12 text-center grid-center">
                         <span
                           className=" flex-center mb-2 button button--aylen button--round-l button--text-thick"

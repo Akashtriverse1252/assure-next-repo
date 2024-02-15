@@ -19,7 +19,7 @@ export const page = () => {
           <div className="container">
             <div className="web-container">
               <div className="row">
-                <div
+                {/* <div
                   className="col-lg-9 col-md-8 col-xs-12 col-12 abt_banner"
                   data-aos="fade-in"
                   data-aos-delay={100}
@@ -34,7 +34,7 @@ export const page = () => {
                     width={1220}
                     height={730}
                   />
-                </div>
+                </div> */}
               </div>
               <div className="row">
                 <div

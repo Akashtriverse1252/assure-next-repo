@@ -170,7 +170,7 @@ export const Footer = () => {
         <div className="footergray _chnage_color mt-0 pb-0  col-12 float-start">
           <div className="container ">
             <div className="row footer_bottom pb-4">
-              <div className="col-xl-7 col-md-8 float-end flex-center align-items-start footerrow justify-content-between">
+              <div className="col-xl-7 col-md-8 float-end flex-center align-items-start footerrow">
                 {menuItems.map((menuItem, index) => (
                   <div key={index} className="footercolumn">
                     <div
@@ -225,7 +225,7 @@ export const Footer = () => {
                   </div>
                 ))}
               </div>
-              <div className="col-lg-4 contact_detail">
+              <div className="col-lg-4 col-md-4 col-sm-12 contact_detail">
                 <div className="contact">
                   <a href="tel:0181-4667555">
                     <span
@@ -320,8 +320,8 @@ export const Footer = () => {
               </div>
             </div>
 
-            <div className="row p-3">
-              <div className="   footer_site">
+            <div className="row p-sm-3 p-2">
+              <div className=" footer_site">
                 <p className="m-0">
                   &copy; {currentYear} All Rights Reserved.{" "}
                 </p>

@@ -42,7 +42,7 @@ export const HForm = () => {
         data-aos-offset={150}
         data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"  
       >
-        <div className="enquireform col-12 col-md-12 mx-auto  ">
+        <div className="enquireform _serach__ col-12 col-md-12 mx-auto  ">
           <SearchBar {...generateAOSAttributes(1, 150, 20)} />
 
           <div className="col-12 _upload_hform  d-sm-none d-lg-block position-relative">

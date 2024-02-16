@@ -200,7 +200,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="about_us_image ">
-                  <Image src="/About-us.jpg" width={850} height={700} />
+                  <Image src="/about-us.jpg" width={850} height={700} />
                 </div>
               </div>
             </div>

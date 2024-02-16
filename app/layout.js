@@ -46,7 +46,7 @@ export default function RootLayout({ children, isLoading }) {
               {children}
               <SpeedDial />
               <Footer />
-              <BottomNav/>
+              {/* <BottomNav/> */}
               <UploadForm />
             </div>
           </body>

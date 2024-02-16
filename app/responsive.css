@@ -80,6 +80,19 @@
     width: 45px;
     height: 45px;
   }
+  .about_us_image {
+    width: AUTO;
+  }
+  .about_us_scn {
+    width: 60%;
+    padding: 0px;
+  }
+  .about_us_image img {
+    height: 100%;
+  }
+  .abt_scn__ {
+    width: 100%;
+  }
   .upload_btn_cnt:first-child > svg,
   .upload_btn_cnt.user svg {
     width: 20px;
@@ -472,6 +485,11 @@
   .founder-details {
     max-height: 250px;
     min-height: 250px;
+  }
+  .about_us_cnt p {
+    text-align: left;
+    width: 90%;
+    text-wrap: balance;
   }
 }
 
@@ -1758,11 +1776,11 @@
   .page_equireheading__sSxvP article {
     padding: 0 0 15px !important ;
   }
-  ._cerdit ,
-  .footer_site{
-   width: 100% !important;
-   display: flex;
-   justify-content: center;
-   align-items: center;
+  ._cerdit,
+  .footer_site {
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

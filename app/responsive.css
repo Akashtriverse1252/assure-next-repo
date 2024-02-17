@@ -1253,7 +1253,7 @@
   }
   .upload-files-container {
     width: 100%;
-    padding: 35px;
+    padding: 0 25px;
     height: 100%;
     border-radius: 0;
   }

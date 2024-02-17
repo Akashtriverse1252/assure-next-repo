@@ -27,7 +27,7 @@ export const AccordionComponent = ({ ParameterData }) => {
               <AccordionItemHeading>
                 <AccordionItemButton>
                   {/* <Link href={`/parameter/${item.slug}`}> */}
-                  <Link href={`/parameter/${item.slug}?cat=${item.category}`}>
+                  <Link href={`/parameter/${item.slug}`}>
                     <h3>{item.testName}</h3>
                   </Link>
                 </AccordionItemButton>

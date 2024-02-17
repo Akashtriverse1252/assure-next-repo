@@ -14,7 +14,7 @@ export const page = ({ params }) => {
           <div className="container">
             <div className="web-container">
               {/* <p>this si the cat {catData }</p>  */}
-              <Test_details_logic Slug={slug} Category="test" />
+              <Test_details_logic Slug={slug} Category="testpack" />
             </div>
           </div>
         </section>

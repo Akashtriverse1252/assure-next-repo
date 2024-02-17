@@ -54,16 +54,11 @@ export default function Home() {
                   <div
                     className="title col-12 float-start text-center"
                     data-aos="fade-up"
-                    data-aos-delay={100}
                     data-aos-duration={250}
                     data-aos-once="true"
-                    data-aos-offset={150}
                     data-aos-easing="ease-in"
                   >
-                    <h2 className="grid-center ">
-                      Popular Seasonal Packages
-                      {/* <span>DENGUE, CHIKUNGUNYA, MALARIA</span> */}
-                    </h2>
+                    <h2 className="grid-center ">Popular Seasonal Packages</h2>
                   </div>
                   <Seasonalpack className="arrows productslider minusbottom seasonalpack" />
                 </div>
@@ -81,10 +76,8 @@ export default function Home() {
                   <div
                     className="title col-12 float-start text-center"
                     data-aos="fade-up"
-                    data-aos-delay={100}
                     data-aos-duration={250}
                     data-aos-once="true"
-                    data-aos-offset={150}
                     data-aos-easing="ease-in"
                   >
                     <h2>Popular Wellness Packages</h2>
@@ -105,10 +98,8 @@ export default function Home() {
                   <div
                     className="title col-12 float-start text-center mb-3"
                     data-aos="fade-up"
-                    data-aos-delay={100}
                     data-aos-duration={250}
                     data-aos-once="true"
-                    data-aos-offset={150}
                     data-aos-easing="ease-in"
                   >
                     <h2 className="grid-center text-white">TEST BY ORGAN</h2>
@@ -137,37 +128,32 @@ export default function Home() {
         <section className="position-relative py-lg-5 py-md-0  mt-5 ">
           <div className="container">
             <div className="web-container">
-            <div
-                    className="title col-12 mx-auto abt_title  float-start text-center"
-                    data-aos="fade-up"
-                    data-aos-delay={100}
-                    data-aos-duration={250}
-                    data-aos-once="true"
-                    data-aos-offset={150}
-                    data-aos-easing="ease-in"
-                  >
-                    <h2>ABOUT ASSURE PATHLAB</h2>
-                  </div>
+              <div
+                className="title col-12 mx-auto abt_title  float-start text-center"
+                data-aos="fade-up"
+                data-aos-duration={250}
+                data-aos-once="true"
+                data-aos-easing="ease-in"
+              >
+                <h2>ABOUT ASSURE PATHLAB</h2>
+              </div>
               <div className="abt_scn__">
                 <div className="about_us_scn  flex-center  flex-column align-items-start">
                   <div
                     className="title  float-start text-center"
                     data-aos="fade-up"
-                    data-aos-delay={100}
                     data-aos-duration={250}
                     data-aos-once="true"
-                    data-aos-offset={150}
                     data-aos-easing="ease-in"
                   >
                     <h2>ABOUT ASSURE PATHLAB</h2>
                   </div>
                   <div
                     className="about_us_cnt text-center "
-                    data-aos="fade-zoom-in"
+                    data-aos="fade"
                     data-aos-delay={100}
                     data-aos-duration={200}
                     data-aos-once="true"
-                    data-aos-offset={200}
                     data-aos-easing="ease"
                   >
                     <p>
@@ -183,11 +169,10 @@ export default function Home() {
                     </p>
                     <div
                       className=" mt-3 mb-2 btn_main"
-                      data-aos="flip-right"
+                      data-aos="flip"
                       data-aos-delay={100}
-                      data-aos-duration={120}
+                      data-aos-duration={200}
                       data-aos-once="true"
-                      data-aos-offset={120}
                       data-aos-easing="ease-in"
                     >
                       <Link
@@ -199,7 +184,14 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="about_us_image ">
+                <div
+                  className="about_us_image "
+                  data-aos="zoom-in"
+                  data-aos-delay={100}
+                  data-aos-duration={500}
+                  data-aos-once="true"
+                  data-aos-easing="ease"
+                >
                   <Image src="/about-us.jpg" width={850} height={700} />
                 </div>
               </div>
@@ -213,12 +205,10 @@ export default function Home() {
               <div className="row">
                 <div
                   className="title col-12 float-start text-center"
-                  // data-aos="fade-up"
-                  // data-aos-delay={100}
-                  // data-aos-duration={250}
-                  // data-aos-once="true"
-                  // data-aos-offset={150}
-                  // data-aos-easing="ease-in"
+                  data-aos="fade-up"
+                  data-aos-duration={250}
+                  data-aos-once="true"
+                  data-aos-easing="ease-in"
                 >
                   <h2>WHY ASSURE PATHLABS?</h2>
                 </div>
@@ -229,20 +219,18 @@ export default function Home() {
                         <span
                           className=" flex-center mb-2 button button--aylen button--round-l button--text-thick"
                           data-aos="flip-right"
-                          data-aos-delay={150}
-                          data-aos-duration={150}
+                          data-aos-delay={100}
+                          data-aos-duration={300}
                           data-aos-once="true"
-                          data-aos-offset={120}
                           data-aos-easing="ease-in"
                         >
                           <Alltime />
                         </span>
                         <p
                           data-aos="fade-up"
-                          data-aos-delay={150}
-                          data-aos-duration={120}
+                          data-aos-delay={100}
+                          data-aos-duration={350}
                           data-aos-once="true"
-                          data-aos-offset={120}
                           data-aos-easing="linear"
                         >
                           24x7
@@ -254,20 +242,18 @@ export default function Home() {
                         <span
                           className=" flex-center mb-2 button button--aylen button--round-l button--text-thick"
                           data-aos="flip-right"
-                          data-aos-delay={150}
-                          data-aos-duration={120}
+                          data-aos-delay={100}
+                          data-aos-duration={300}
                           data-aos-once="true"
-                          data-aos-offset={120}
                           data-aos-easing="ease-in"
                         >
                           <Samedaydelivery />
                         </span>
                         <p
                           data-aos="fade-up"
-                          data-aos-delay={150}
-                          data-aos-duration={120}
+                          data-aos-delay={100}
+                          data-aos-duration={350}
                           data-aos-once="true"
-                          data-aos-offset={120}
                           data-aos-easing="linear"
                         >
                           Same Day Report
@@ -279,20 +265,18 @@ export default function Home() {
                         <span
                           className=" flex-center mb-2 button button--aylen button--round-l button--text-thick"
                           data-aos="flip-right"
-                          data-aos-delay={150}
-                          data-aos-duration={120}
+                          data-aos-delay={100}
+                          data-aos-duration={300}
                           data-aos-once="true"
-                          data-aos-offset={120}
                           data-aos-easing="ease-in"
                         >
                           <FoundedDoctor />
                         </span>
                         <p
                           data-aos="fade-up"
-                          data-aos-delay={150}
-                          data-aos-duration={120}
+                          data-aos-delay={100}
+                          data-aos-duration={350}
                           data-aos-once="true"
-                          data-aos-offset={120}
                           data-aos-easing="linear"
                         >
                           Founded by Doctors
@@ -304,20 +288,18 @@ export default function Home() {
                         <span
                           className=" flex-center mb-2 button button--aylen button--round-l button--text-thick"
                           data-aos="flip-right"
-                          data-aos-delay={150}
-                          data-aos-duration={120}
+                          data-aos-delay={100}
+                          data-aos-duration={300}
                           data-aos-once="true"
-                          data-aos-offset={120}
                           data-aos-easing="ease-in"
                         >
                           <AdvancedTechnology />
                         </span>
                         <p
                           data-aos="fade-up"
-                          data-aos-delay={150}
-                          data-aos-duration={120}
+                          data-aos-delay={100}
+                          data-aos-duration={350}
                           data-aos-once="true"
-                          data-aos-offset={120}
                           data-aos-easing="linear"
                         >
                           Advanced Technology
@@ -330,10 +312,9 @@ export default function Home() {
                           className=" flex-center mb-2 button button--aylen button--round-l button--text-thick"
                           data-aos="flip-right"
                           data-aos-anchor-placement="bottom-bottom"
-                          data-aos-delay={150}
-                          data-aos-duration={120}
+                          data-aos-delay={100}
+                          data-aos-duration={300}
                           data-aos-once="true"
-                          data-aos-offset={120}
                           data-aos-easing="ease-in"
                         >
                           <HighOn />
@@ -341,10 +322,9 @@ export default function Home() {
                         <p
                           data-aos="fade-up"
                           data-aos-anchor-placement="bottom-bottom"
-                          data-aos-delay={150}
-                          data-aos-duration={120}
+                          data-aos-delay={100}
+                          data-aos-duration={350}
                           data-aos-once="true"
-                          data-aos-offset={120}
                           data-aos-easing="linear"
                         >
                           High on Safety and Hygeine
@@ -356,10 +336,9 @@ export default function Home() {
                         <span
                           className=" flex-center mb-2 button button--aylen button--round-l button--text-thick"
                           data-aos="flip-right"
-                          data-aos-delay={150}
-                          data-aos-duration={120}
+                          data-aos-delay={100}
+                          data-aos-duration={300}
                           data-aos-once="true"
-                          data-aos-offset={120}
                           data-aos-easing="ease-in"
                         >
                           <FiveHundredplus />
@@ -367,9 +346,8 @@ export default function Home() {
                         <p
                           data-aos="fade-up"
                           data-aos-delay={100}
-                          data-aos-duration={120}
+                          data-aos-duration={350}
                           data-aos-once="true"
-                          data-aos-offset={120}
                           data-aos-easing="linear"
                         >
                           500+ Test
@@ -383,9 +361,8 @@ export default function Home() {
                           data-aos="flip-right"
                           data-aos-anchor-placement="bottom-bottom"
                           data-aos-delay={100}
-                          data-aos-duration={120}
+                          data-aos-duration={300}
                           data-aos-once="true"
-                          data-aos-offset={120}
                           data-aos-easing="ease-in"
                         >
                           <ConsultingService />
@@ -394,9 +371,8 @@ export default function Home() {
                           data-aos="fade-up"
                           data-aos-anchor-placement="bottom-bottom"
                           data-aos-delay={100}
-                          data-aos-duration={120}
+                          data-aos-duration={350}
                           data-aos-once="true"
-                          data-aos-offset={120}
                           data-aos-easing="linear"
                         >
                           Consultation Services
@@ -415,10 +391,8 @@ export default function Home() {
           id="testimonial"
           className="testimonial"
           data-aos="fade-up"
-          data-aos-delay={100}
-          data-aos-duration={320}
+          data-aos-duration={200}
           data-aos-once="true"
-          data-aos-offset={120}
           data-aos-easing="ease"
         >
           <div className="container position-relative z-index-2">
@@ -427,10 +401,8 @@ export default function Home() {
                 <div
                   className="title col-12 float-start text-center"
                   data-aos="fade-up"
-                  data-aos-delay={100}
                   data-aos-duration={250}
                   data-aos-once="true"
-                  data-aos-offset={150}
                   data-aos-easing="ease-in"
                 >
                   <h2 className="text-white">TESTIMONIALS</h2>
@@ -449,10 +421,8 @@ export default function Home() {
                 <div
                   className="title col-12 float-start text-center"
                   data-aos="fade-up"
-                  data-aos-delay={100}
                   data-aos-duration={250}
                   data-aos-once="true"
-                  data-aos-offset={150}
                   data-aos-easing="ease-in"
                 >
                   <h2 className="">Frequently Asked Questions</h2>
@@ -471,10 +441,8 @@ export default function Home() {
                 <div
                   className="title col-12 float-start text-center"
                   data-aos="fade-up"
-                  data-aos-delay={100}
                   data-aos-duration={250}
                   data-aos-once="true"
-                  data-aos-offset={150}
                   data-aos-easing="ease-in"
                 >
                   <h2 className="">OUR VIDEOS</h2>

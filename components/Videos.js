@@ -99,7 +99,6 @@ export const Videos = (props) => {
               data-aos-delay={getAosDuration(index)}
               data-aos-duration={getAosDuration(index)}
               data-aos-once="true"
-              data-aos-offset={getAosDuration(index)}
               data-aos-easing="ease-in"
             >
               <div className="vedio_cont">

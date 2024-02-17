@@ -114,7 +114,7 @@
 
 .doctor_name {
   padding: 60px 40px;
-  background: linear-gradient(80deg, #8827ca, #178fee);
+  background: linear-gradient(80deg, #6319a2, #0f9bcb);
 }
 
 .doctor_name .procont {
@@ -137,7 +137,7 @@
   padding: 8px 30px;
   color: #fff;
   border-radius: 35px;
-  background: linear-gradient(80deg, #8827ca, #178fee);
+  background: linear-gradient(80deg, #6319a2, #0f9bcb);
 }
 
 .abt_cont h5 {

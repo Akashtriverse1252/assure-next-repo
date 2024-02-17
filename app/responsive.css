@@ -1227,6 +1227,38 @@
   .popular_packages_cnt li {
     width: 50%;
   }
+  .upload-files-container {
+    width: 100%;
+    padding: 35px;
+    height: 100%;
+    border-radius: 0;
+  }
+  .prescription-form {
+    width: 98%;
+    flex-direction: column;
+  }
+  .upload-prescription-form {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .mobile_upload_prs {
+    display: block;
+  }
+  .desktop_upload_pres {
+    display: none;
+  }
+  .drag-file-area {
+    border: 2px solid #f1f1f1;
+    border-radius: 0;
+    margin: 30px 0 20px;
+    padding: 30px 50px;
+    width: 100%;
+    text-align: center;
+    background: #f1f1f1;
+  }
+  ._cross {
+    color: #000;
+  }
 }
 
 @media (max-width: 580px) {
@@ -1245,6 +1277,22 @@
 
   ._cart_cross svg {
     width: 20px;
+  }
+  .cart_container {
+    padding: 0 10px;
+    background-color: #fff;
+  }
+  ._cart_list {
+    background-color: #fbfbfb;
+    padding: 10px;
+  }
+  ._cart_list {
+    margin: 0;
+    margin-top: 16px;
+  }
+  ._cart_test li::before {
+    bottom: -5px;
+    background-color: rgb(179 179 179 / 50%);
   }
 
   .cnt_shp_btn {
@@ -1375,25 +1423,73 @@
   .fixed .logo {
     width: 100px;
   }
-
-  .hemburgur span:nth-child(3) {
-    top: 26;
+  .hemburgur {
+    height: 35px;
+    outline: 0;
+    position: relative;
+    right: 0;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    width: 35px;
   }
 
-  .hemburgur span:nth-child(1) {
-    top: 6px;
-  }
   .hemburgur span:nth-child(2) {
-    top: 16px;
+    width: 50%;
   }
+  .hemburgur span:nth-child(1) {
+    top: 4px;
+  }
+  .hemburgur span:nth-child(3) {
+    top: 24px;
+  }
+
   .hemburgur span {
     width: 100%;
     height: 1.3px;
-    border-radius: 0;
+    border-radius: 2px;
   }
+
+  .hemburgur span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: 1px;
+    background: #7e7e7e;
+    transition: 0.5s ease-in-out;
+    float: left;
+    position: absolute;
+  }
+
+  .hemburgur.active span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 15px;
+    left: 5px;
+    width: 80%;
+  }
+
+  .hemburgur.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hemburgur.active span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 15px;
+    left: 5px;
+    width: 80%;
+  }
+  
+  .search_icon {
+    width: 22px;
+}
   .No_Data svg {
     width: 80%;
   }
+  .mobile_nav_search svg {
+    font-size: 24px;
+    color: #7e7e7e;
+}
 
   .swiperslider img {
     height: auto;
@@ -1410,11 +1506,6 @@
     gap: 14px !important;
   }
 
-  .mobile_nav_search svg {
-    font-size: 26px;
-    color: #7e7e7e;
-  }
-
   .btn_main {
     max-width: 130px;
     margin: auto;
@@ -1426,9 +1517,15 @@
     width: 25px;
     height: 30px;
   }
+  .hemburgur {
+    width: 22px;
+  }
+  .menslide.active {
+    padding-top: 60px !important;
+}
 
   .conditionshape span {
-    top: -60px;
+    top: 0px;
     left: 0;
   }
 
@@ -1439,6 +1536,9 @@
   .menustn {
     height: 40px;
   }
+  .menslide .footercolumn {
+    width: 100%;
+}
   #organs .sliderbox {
     margin-top: 0;
     padding-top: 0;
@@ -1794,5 +1894,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .__menus {
+    gap: 12px;
   }
 }

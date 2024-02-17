@@ -31,10 +31,8 @@ export const ChooseAssure = () => {
             <div
               className="title col-12 float-start text-center "
               data-aos="fade-up"
-              data-aos-delay={100}
               data-aos-duration={250}
               data-aos-once="true"
-              data-aos-offset={150}
               data-aos-easing="ease-in"
             >
               <h2>{title}</h2>
@@ -50,10 +48,9 @@ export const ChooseAssure = () => {
                       <span
                         className="flex-center mb-2 button button--aylen button--round-l button--text-thick"
                         data-aos="flip-right"
-                        data-aos-delay={50 + id * 10}
-                        data-aos-duration={30 + id * 5}
+                        data-aos-delay={100 + id * 10}
+                        data-aos-duration={200 + id * 50}
                         data-aos-once="true"
-                        data-aos-offset={120}
                         data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                       >
                         {React.createElement(iconComponents[icon])}
@@ -63,7 +60,6 @@ export const ChooseAssure = () => {
                         data-aos-delay={200}
                         data-aos-duration={200}
                         data-aos-once="true"
-                        data-aos-offset={120}
                         data-aos-easing="linear"
                       >
                         {text}

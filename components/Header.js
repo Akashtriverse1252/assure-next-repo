@@ -98,7 +98,12 @@ export const Header = () => {
                     </Badge>
                   )}
                 </div>
-                <div class="upload_btn_sc ">
+                <div
+                  class="upload_btn_sc "
+                  data-aos="fade"
+                  data-aos-once="true"
+                  data-aos-duration="500"
+                >
                   <div
                     class="upload_btn"
                     href="#"
@@ -172,7 +177,7 @@ export const Header = () => {
                       <div className="container">
                         <div className="row">
                           <div className="web-container">
-                            <div className="col-8 justify-content-md-around justify-content-start   flex-center align-items-start footerrow">
+                            <div className="col-md-8 col-12 justify-content-md-around justify-content-start   flex-center align-items-start footerrow">
                               {/* <div className="footercolumn">
                                 <div className="fheading">
                                   <article

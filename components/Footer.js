@@ -23,23 +23,35 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
   const { cartState, cartDispatch } = useData();
   const [tabData, setTabData] = useState([]);
+  const [testTabData, setTestTabData] = useState([]);
+  const [packageTabData, setPackageTabData] = useState([]);
 
   const fetchTabData = async (category) => {
     try {
       const response = await fetch(
-        `https://www.assurepathlabs.com/api/algos/fetch_details.php?category=package`
+        `https://www.assurepathlabs.com/api/algos/fetch_details.php?category=${category}&limit=30`
       );
       const data = await response.json();
-      setTabData(data.test_data);
-      setTimeout(() => {}, 300); // Adjust the delay time based on your transition duration
-
-      console.log("this is the data", data.test_data);
+      return data.test_data;
     } catch (error) {
       console.error(`Error fetching ${category} data:`, error);
+      return [];
     }
   };
+
   useEffect(() => {
-    fetchTabData();
+    const fetchTestTabData = async () => {
+      const testData = await fetchTabData("test");
+      setTestTabData(testData);
+    };
+
+    const fetchPackageTabData = async () => {
+      const packageData = await fetchTabData("package");
+      setPackageTabData(packageData);
+    };
+
+    fetchTestTabData();
+    fetchPackageTabData();
   }, []);
   const menuItems = [
     {
@@ -106,12 +118,7 @@ export const Footer = () => {
     <>
       <footer
         className="col-12 float-start position-relative"
-        // data-aos="fade-up"
-        // data-aos-delay={100}
-        // data-aos-duration={200}
-        // data-aos-once="true"
-        // data-aos-offset={100}
-        // data-aos-easing="ease-in"
+       
       >
         {/* <div className="footergray col-12 float-start">
           <div className="container">
@@ -122,14 +129,28 @@ export const Footer = () => {
           <div className="container">
             <div className="">
               <div className="row mb-3 pb-3">
-                <div className="_acc flex-center  flex-column ">
+                <div
+                  className="_acc flex-center  flex-column "
+                  data-aos="fade-up"
+                  data-aos-duration={500}
+                  data-aos-once="true"
+                  data-aos-easing="ease-in"
+                  data-aos-delay={150}
+                >
                   <div className="popular_packages">
-                    <div className="popular_packaes_title">
+                    <div
+                      className="popular_packaes_title"
+                      data-aos="fade-up"
+                      data-aos-duration={500}
+                      data-aos-once="true"
+                      data-aos-easing="ease-in"
+                      data-aos-delay={150}
+                    >
                       <strong>Popular Test</strong>
                     </div>
                     <div className="popular_packages_cnt">
                       <ul className="flex-center ">
-                        {tabData.map((test, index) => (
+                        {testTabData.slice(0, 32).map((test, index) => (
                           <li>
                             <Link
                               key={test.id}
@@ -143,16 +164,23 @@ export const Footer = () => {
                     </div>
                   </div>
                   <div className="popular_packages mt-3 pt-4 bt">
-                    <div className="popular_packaes_title">
+                    <div
+                      className="popular_packaes_title"
+                      data-aos="fade-up"
+                      data-aos-duration={500}
+                      data-aos-once="true"
+                      data-aos-easing="ease-in"
+                      data-aos-delay={150}
+                    >
                       <strong>Popular Packages</strong>
                     </div>
                     <div className="popular_packages_cnt">
                       <ul className="flex-center ">
-                        {tabData.map((test, index) => (
+                        {packageTabData.slice(0, 32).map((test, index) => (
                           <li>
                             <Link
                               key={test.id}
-                              href={`/test-detail/${test.Slug}`}
+                              href={`/packages/${test.Slug}`}
                             >
                               {test.Test_Name}
                             </Link>
@@ -176,10 +204,9 @@ export const Footer = () => {
                     <div
                       className="fheading"
                       data-aos="fade"
-                      data-aos-delay={150 + index * 20}
-                      data-aos-duration={150 + index * 20}
+                      data-aos-delay={150}
+                      data-aos-duration={300 + index * 50}
                       data-aos-once="true"
-                      data-aos-offset={150 + index * 20}
                       data-aos-easing="ease-in"
                     >
                       <article className="text-uppercase">
@@ -197,10 +224,9 @@ export const Footer = () => {
                             <li
                               key={linkIndex}
                               data-aos="fade-up"
-                              data-aos-delay={200 + index * 50}
-                              data-aos-duration={200 + index * 20}
+                              data-aos-delay={200}
+                              data-aos-duration={400 + index * 50}
                               data-aos-once="true"
-                              data-aos-offset={120 + index * 20}
                               data-aos-easing="ease-in"
                             >
                               {link.external ? (
@@ -230,11 +256,10 @@ export const Footer = () => {
                   <a href="tel:0181-4667555">
                     <span
                       className="flex-center align-items-start gap-2 sm-gap-4"
-                      data-aos="fade-up"
-                      data-aos-delay={150}
-                      data-aos-duration={150}
+                      data-aos="fade-right"
+                      data-aos-delay={100}
+                      data-aos-duration={500}
                       data-aos-once="true"
-                      data-aos-offset={200}
                       data-aos-anchor-placement="bottom-bottom"
                     >
                       <strong>T</strong>
@@ -249,9 +274,8 @@ export const Footer = () => {
                         className="flex-center align-items-start gap-2 sm-gap-4"
                         data-aos="fade-up"
                         data-aos-delay={150}
-                        data-aos-duration={350}
+                        data-aos-duration={500}
                         data-aos-once="true"
-                        data-aos-offset={200}
                       >
                         <strong>E</strong>
                         assurepathlabs@gmail.com
@@ -263,11 +287,10 @@ export const Footer = () => {
                   <div className="contact">
                     <span
                       className="flex-center align-items-start gap-2 gap-sm-0"
-                      data-aos="fade-up"
+                      data-aos="fade-right"
                       data-aos-delay={150}
-                      data-aos-duration={350}
+                      data-aos-duration={500}
                       data-aos-once="true"
-                      data-aos-offset={200}
                     >
                       <strong>A </strong>
                       &nbsp; 3, Waryam Nagar, <br />
@@ -276,7 +299,13 @@ export const Footer = () => {
                     </span>
                   </div>
                 </div>
-                <div className="socail_icon">
+                <div
+                  className="socail_icon"
+                  data-aos="fade-right"
+                  data-aos-delay={150}
+                  data-aos-duration={500}
+                  data-aos-once="true"
+                >
                   <div className="">
                     <Link href="#">
                       <BiLogoFacebook />
@@ -307,11 +336,10 @@ export const Footer = () => {
                 <div className="col-12  mx-auto  flex-center ">
                   <a
                     className="button button--aylen button--round-l footer_btn button--text-thick text-uppercase gradient justify-content-start"
-                    data-aos="flip-right"
-                    data-aos-delay={100}
-                    data-aos-duration={350}
+                    data-aos="fade-right"
+                    data-aos-delay={150}
+                    data-aos-duration={500}
                     data-aos-once="true"
-                    data-aos-offset={120}
                     data-aos-easing="ease-in"
                   >
                     BOOK HOME COLLECTION
@@ -321,7 +349,13 @@ export const Footer = () => {
             </div>
 
             <div className="row p-sm-3 p-2">
-              <div className=" footer_site">
+              <div
+                className=" footer_site"
+                data-aos="fade-right"
+                data-aos-duration={300}
+                data-aos-once="true"
+                data-aos-easing="ease-in"
+              >
                 <p className="m-0">
                   &copy; {currentYear} All Rights Reserved.{" "}
                 </p>
@@ -337,7 +371,13 @@ export const Footer = () => {
                   </Link>
                 </p>
               </div>
-              <div className=" _cerdit text-end">
+              <div
+                className=" _cerdit text-end"
+                data-aos="fade-right"
+                data-aos-duration={300}
+                data-aos-once="true"
+                data-aos-easing="ease-in"
+              >
                 <p className="m-0">
                   <a href="https://triverseadvertising.com/" target="_blank">
                     site : triverse

@@ -70,6 +70,7 @@ const SearchhPage = ({ slug }) => {
 
     fetchPackageData();
   }, [selectedIds]);
+  // console.log("this si the package ",packageData.category)
 
   return (
     <div>
@@ -91,6 +92,7 @@ const SearchhPage = ({ slug }) => {
               Test_Description={test.Test_Description}
               Who_is_it_for={test.Who_is_it_for}
               Pre_test_information={test.Pre_test_information}
+              BaseDirectory={test.category === 'package' ? `packages` : ''}
             />
           ))}
         </div>

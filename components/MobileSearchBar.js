@@ -7,6 +7,7 @@ import { PiArrowLeftThin } from "react-icons/pi";
 import { DropDown_search } from "./DropDown_search";
 import { usePathname } from "next/navigation";
 import { BsSearch } from "react-icons/bs";
+import { SlMagnifier } from "react-icons/sl";
 
 const MobileSearchBar = () => {
   const [isSearchOpen, setSearchOpen] = useState(false);
@@ -17,7 +18,7 @@ const MobileSearchBar = () => {
   return (
     <>
       <span className="search_icon">
-        <BsSearch className="search_icon"
+        <SlMagnifier className="search_icon"
           onClick={() => {
             setSearchOpen(!isSearchOpen);
           }}

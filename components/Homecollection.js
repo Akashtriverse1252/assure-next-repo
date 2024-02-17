@@ -168,7 +168,7 @@ export const Homecollection = () => {
             fullWidth
             autoComplete="username"
             className={`styles.inputmodified input-field `}
-            {...generateAOSAttributes(1, 150, 20)}
+           
           />
           <TextField
             type="tel"
@@ -183,7 +183,7 @@ export const Homecollection = () => {
             error={errors.phoneNumber}
             fullWidth
             className={`styles.inputmodified input-field `}
-            {...generateAOSAttributes(2, 150, 20)}
+           
 
           />
           <TextField
@@ -197,7 +197,7 @@ export const Homecollection = () => {
             onChange={handleChange}
             placeholder="Email"
             error={errors.email}
-            {...generateAOSAttributes(1, 150, 20)}
+           
 
           />
           <button

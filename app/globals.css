@@ -586,6 +586,7 @@ section,
 
 .footerrow {
   justify-content: space-between;
+  margin: 0 auto;
 }
 
 .footercolumn,
@@ -621,7 +622,7 @@ section,
 }
 
 .bg-gradient-image.about_page {
-  bottom: -125%;
+  bottom: -465%;
   z-index: -1;
 }
 
@@ -4175,7 +4176,7 @@ table th {
   width: 100vw;
   height: 64px;
   background: #fff;
-  transition: bottom .5s;
+  transition: bottom 0.5s;
   z-index: 1200;
   display: flex;
   justify-content: space-between;
@@ -4195,11 +4196,11 @@ table th {
   row-gap: 7px;
   padding: 0 5px;
   border-radius: 10px;
-  width: 30vw
+  width: 30vw;
 }
 
 .BottomNavItem.Reports {
-  width: 40vw
+  width: 40vw;
 }
 
 .BottomNavText {
@@ -4218,7 +4219,7 @@ table th {
   top: 0;
   width: 12px;
   border-radius: 0 0 4px 4px;
-  transition: left .15s linear
+  transition: left 0.15s linear;
 }
 
 .BottomNavItem svg {
@@ -4226,5 +4227,7 @@ table th {
   height: 22px;
   color: #000;
   stroke: #000;
-
+}
+.mobile_upload_prs{
+  display: none;
 }

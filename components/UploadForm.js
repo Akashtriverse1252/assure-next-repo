@@ -173,7 +173,7 @@ const UploadForm = () => {
                 </div>
                 <button
                   type="button"
-                  className="button button--aylen button--round-l button--text-thick mt-3"
+                  className="button button--aylen button--round-l button--text-thick mt-3 desktop_upload_pres"
                   onClick={formik.handleSubmit}
                 >
                   <span className="check-icon">
@@ -231,6 +231,15 @@ const UploadForm = () => {
                   </div>
                 </label>
               </div>
+              <button
+                  type="button "
+                  className="button button--aylen button--round-l button--text-thick mt-3 mobile_upload_prs"
+                  onClick={formik.handleSubmit}
+                >
+                  <span className="check-icon">
+                    {formik.isSubmitting ? "Submitting..." : "SUBMIT"}
+                  </span>
+                </button>
             </div>
 
             {formik.values.uploadPrescription && (

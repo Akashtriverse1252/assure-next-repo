@@ -35,19 +35,16 @@ export const HForm = () => {
 
       <div
         className="col-12 float-start d-grid gap-3 gap-sm-1  h_form"
-        data-aos="fade"
-        data-aos-delay={150}
-        data-aos-duration={150}
+        data-aos="fade-up"
+        data-aos-duration={400}
         data-aos-once="true"
-        data-aos-offset={150}
-        data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"  
+        
       >
         <div className="enquireform _serach__ col-12 col-md-12 mx-auto  ">
-          <SearchBar {...generateAOSAttributes(1, 150, 20)} />
+          <SearchBar />
 
           <div className="col-12 _upload_hform  d-sm-none d-lg-block position-relative">
             <Button
-              {...generateAOSAttributes(1, 150, 20)}
               variant="outlined"
               className="MuiInputBase-root formbtn d-flex justify-content-between"
               fullWidth
@@ -60,10 +57,7 @@ export const HForm = () => {
             </Button>
           </div>
 
-          <div
-            className="col-12 _upload_hform d-sm-none d-lg-block position-relative"
-            {...generateAOSAttributes(1, 150, 20)}
-          >
+          <div className="col-12 _upload_hform d-sm-none d-lg-block position-relative">
             <Button
               variant="outlined"
               className="MuiInputBase-root formbtn d-flex justify-content-between"

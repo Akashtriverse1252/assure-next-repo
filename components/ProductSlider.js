@@ -43,8 +43,7 @@ export const ProductSlider = (props) => {
     root: null,
     rootMargin: "0px",
     threshold: 0.5,
-  })
-
+  });
 
   var settings = {
     dots: false,
@@ -53,7 +52,7 @@ export const ProductSlider = (props) => {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplaySpeed: 6000,
-    autoplay: {isElementVisible },
+    autoplay: { isElementVisible },
     initialSlide: 0, // Update this to 0
     responsive: [
       {
@@ -108,7 +107,6 @@ export const ProductSlider = (props) => {
               data-aos-delay={getAosDuration(index)}
               data-aos-duration={getAosDuration(index)}
               data-aos-once="true"
-              data-aos-offset={getAosDuration(index)}
               data-aos-easing="ease-in"
             >
               <PackagCard

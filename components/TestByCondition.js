@@ -62,10 +62,8 @@ export const TestByCondition = () => {
             <div
               className="title col-12 float-start text-center mb-0 mt-3 mt-sm-5"
               data-aos="fade-up"
-              data-aos-delay={100}
               data-aos-duration={250}
               data-aos-once="true"
-              data-aos-offset={150}
               data-aos-easing="ease-in"
             >
               <h2>TEST BY CONDITION</h2>
@@ -74,9 +72,8 @@ export const TestByCondition = () => {
               className="row justify-content-md-center"
               data-aos="fade-up"
               data-aos-delay={100}
-              data-aos-duration={150}
+              data-aos-duration={300}
               data-aos-once="true"
-              data-aos-offset={150}
               data-aos-easing="ease-in"
             >
               {conditionData.map((condition, index) => (

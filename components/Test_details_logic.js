@@ -108,14 +108,13 @@ export const Test_details_logic = ({ Slug, Category }) => {
     router.push("/check-out");
   };
   // console.log("thsi is the data from the state store", project);
-  const generateAOSAttributes = (index, baseDelay = 150, step = 30) => {
+  const generateAOSAttributes = (index, baseDelay, step) => {
     const delay = baseDelay + index * step;
     return {
-      "data-aos": "fade-up",
-      "data-aos-delay": delay,
-      "data-aos-duration": 200,
+      "data-aos": "fade-left",
+      "data-aos-delay": 100,
+      "data-aos-duration": delay,
       "data-aos-once": true,
-      "data-aos-offset": delay,
       "data-aos-easing": "cubic-bezier(.57,.21,.69,3.25)",
     };
   };
@@ -135,7 +134,7 @@ export const Test_details_logic = ({ Slug, Category }) => {
           <div className="row">
             <div
               className="title col-12 float-start text-center"
-              {...generateAOSAttributes(3, 180, 30)}
+              {...generateAOSAttributes(1, 400, 50)}
             >
               <h1>{project.Test_Name}</h1>
               {/* {!project.Test_Category ? (
@@ -149,12 +148,18 @@ export const Test_details_logic = ({ Slug, Category }) => {
               <div className="detailrow">
                 <div className="row">
                   <div className="detailtitle col-lg-3 col-md-4 col-12">
-                    <h2 {...generateAOSAttributes(1, 180, 20)}>
+                    <h2
+                      data-aos="fade-right"
+                      data-aos-delay={100}
+                      data-aos-duration={400}
+                      data-aos-once="true"
+                      data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                    >
                       <strong>Package Name</strong>
                     </h2>
                   </div>
                   <div className="detaildescrp col-lg-9 col-md-8 col-12">
-                    <p {...generateAOSAttributes(1, 180, 20)}>
+                    <p {...generateAOSAttributes(1, 400, 50)}>
                       <strong>{project.Test_Name}</strong>
                     </p>
                   </div>
@@ -163,12 +168,18 @@ export const Test_details_logic = ({ Slug, Category }) => {
               <div className="detailrow">
                 <div className="row">
                   <div className="detailtitle col-lg-3 col-md-4 col-12">
-                    <h2 {...generateAOSAttributes(2, 180, 20)}>
+                    <h2
+                      data-aos="fade-right"
+                      data-aos-delay={100}
+                      data-aos-duration={400}
+                      data-aos-once="true"
+                      data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                    >
                       <strong>About Package</strong>
                     </h2>
                   </div>
                   <div className="detaildescrp col-lg-9 col-md-8 col-12">
-                    <p {...generateAOSAttributes(2, 180, 20)}>
+                    <p {...generateAOSAttributes(1, 400, 50)}>
                       {project.Test_Description}
                     </p>
                   </div>
@@ -189,7 +200,13 @@ export const Test_details_logic = ({ Slug, Category }) => {
               <div className="detailrow">
                 <div className="row">
                   <div className="detailtitle col-lg-3 col-md-4 col-12">
-                    <h2 {...generateAOSAttributes(3, 180, 20)}>
+                    <h2
+                      data-aos="fade-right"
+                      data-aos-delay={100}
+                      data-aos-duration={400}
+                      data-aos-once="true"
+                      data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                    >
                       <strong>Exclusive Offer</strong>
                     </h2>
                   </div>
@@ -200,10 +217,9 @@ export const Test_details_logic = ({ Slug, Category }) => {
                           <div
                             className="actualprice"
                             data-aos="flip-right"
-                            data-aos-delay={150}
-                            data-aos-duration={150}
+                            data-aos-delay={100}
+                            data-aos-duration={400}
                             data-aos-once="true"
-                            data-aos-offset={150}
                             data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                           >
                             <Rupees /> <span>{project.Test_Amount}</span>
@@ -211,10 +227,9 @@ export const Test_details_logic = ({ Slug, Category }) => {
                           <div
                             className="discountprice gradient  text-white m-0"
                             data-aos="flip-left"
-                            data-aos-delay={150}
-                            data-aos-duration={150}
+                            data-aos-delay={100}
+                            data-aos-duration={400}
                             data-aos-once="true"
-                            data-aos-offset={150}
                             data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                           >
                             <Rupees /> <span>{project.Discount_Amount}</span>
@@ -235,12 +250,18 @@ export const Test_details_logic = ({ Slug, Category }) => {
                 <div className="detailrow">
                   <div className="row">
                     <div className="detailtitle col-lg-3 col-md-4 col-12">
-                      <h2 {...generateAOSAttributes(3, 180, 20)}>
+                      <h2
+                        data-aos="fade-right"
+                        data-aos-delay={100}
+                        data-aos-duration={400}
+                        data-aos-once="true"
+                        data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                      >
                         <strong>Discount</strong>
                       </h2>
                     </div>
                     <div className="detaildescrp col-lg-9 col-md-8 col-12 ">
-                      <p {...generateAOSAttributes(3, 180, 20)}>
+                      <p {...generateAOSAttributes(1, 400, 50)}>
                         UPTO <strong>{Math.round(_discount)}%</strong>{" "}
                       </p>
                     </div>
@@ -251,13 +272,19 @@ export const Test_details_logic = ({ Slug, Category }) => {
                 <div className="detailrow">
                   <div className="row align-item-start">
                     <div className="detailtitle col-lg-3 col-md-4 col-12">
-                      <h2 {...generateAOSAttributes(4, 180, 20)}>
+                      <h2
+                        data-aos="fade-right"
+                        data-aos-delay={100}
+                        data-aos-duration={400}
+                        data-aos-once="true"
+                        data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                      >
                         <strong>Who is it for</strong>
                       </h2>
                     </div>
                     <div className="detaildescrp col-lg-9 col-md-8 col-12 ">
                       <div className="highlights whoIs flex-center flex-wrap gap-3 justify-content-start">
-                        <p {...generateAOSAttributes(4, 180, 20)}>
+                        <p {...generateAOSAttributes(1, 400, 50)}>
                           {project.Who_is_it_for}
                         </p>
                       </div>
@@ -269,13 +296,19 @@ export const Test_details_logic = ({ Slug, Category }) => {
                 <div className="detailrow">
                   <div className="row">
                     <div className="detailtitle col-lg-3 col-md-4 col-12">
-                      <h2 {...generateAOSAttributes(4, 180, 10)}>
+                      <h2
+                        data-aos="fade-right"
+                        data-aos-delay={100}
+                        data-aos-duration={400}
+                        data-aos-once="true"
+                        data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                      >
                         <strong>Turn around time</strong>
                       </h2>
                     </div>
                     <div className="detaildescrp col-lg-9 col-md-8 col-12 ">
                       <div className="highlights turn_around flex-center flex-wrap gap-3 justify-content-start">
-                        <p {...generateAOSAttributes(4, 180, 10)}>
+                        <p {...generateAOSAttributes(1, 400, 50)}>
                           {project.Turn_around_time}
                         </p>
                       </div>
@@ -287,13 +320,19 @@ export const Test_details_logic = ({ Slug, Category }) => {
                 <div className="detailrow">
                   <div className="row">
                     <div className="detailtitle  align-items-lg-start col-lg-3 col-md-4 col-12">
-                      <h2 {...generateAOSAttributes(5, 180, 10)}>
+                      <h2
+                        data-aos="fade-right"
+                        data-aos-delay={100}
+                        data-aos-duration={400}
+                        data-aos-once="true"
+                        data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                      >
                         <strong>Pre test information</strong>
                       </h2>
                     </div>
                     <div className="detaildescrp col-lg-9 col-md-8 col-12 ">
                       <div className="highlights pre_test flex-center flex-wrap gap-3 justify-content-start">
-                        <p {...generateAOSAttributes(5, 180, 10)}>
+                        <p {...generateAOSAttributes(1, 400, 50)}>
                           {project.Pre_test_information}
                         </p>
                       </div>
@@ -304,7 +343,13 @@ export const Test_details_logic = ({ Slug, Category }) => {
               <div className="detailrow ">
                 <div className="row gap-md-2 gap-lg-0 justify-content-start align-items-start">
                   <div className="detailtitle col-lg-3 col-12">
-                    <h2 {...generateAOSAttributes(6, 180, 10)}>
+                    <h2
+                      data-aos="fade-right"
+                      data-aos-delay={100}
+                      data-aos-duration={400}
+                      data-aos-once="true"
+                      data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                    >
                       <strong>Highlights</strong>
                     </h2>
                   </div>
@@ -320,10 +365,9 @@ export const Test_details_logic = ({ Slug, Category }) => {
                       {project.high_param > 0 ? (
                         <p
                           data-aos="fade"
-                          data-aos-delay={250}
-                          data-aos-duration={250}
+                          data-aos-delay={100}
+                          data-aos-duration={400}
                           data-aos-once="true"
-                          data-aos-offset={250}
                           data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                           dangerouslySetInnerHTML={{
                             __html: project.high_param,
@@ -333,10 +377,9 @@ export const Test_details_logic = ({ Slug, Category }) => {
                       {project.high_sample && (
                         <p
                           data-aos="fade"
-                          data-aos-delay={250}
-                          data-aos-duration={250}
+                          data-aos-delay={100}
+                          data-aos-duration={400}
                           data-aos-once="true"
-                          data-aos-offset={250}
                           data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                           dangerouslySetInnerHTML={{
                             __html: project.high_sample,
@@ -346,10 +389,9 @@ export const Test_details_logic = ({ Slug, Category }) => {
                       {project.high_report && (
                         <p
                           data-aos="fade"
-                          data-aos-delay={250}
-                          data-aos-duration={250}
+                          data-aos-delay={100}
+                          data-aos-duration={400}
                           data-aos-once="true"
-                          data-aos-offset={250}
                           data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                           dangerouslySetInnerHTML={{
                             __html: project.high_report,
@@ -359,10 +401,9 @@ export const Test_details_logic = ({ Slug, Category }) => {
                       {project.high_test_booking && (
                         <p
                           data-aos="fade"
-                          data-aos-delay={250}
-                          data-aos-duration={250}
+                          data-aos-delay={100}
+                          data-aos-duration={400}
                           data-aos-once="true"
-                          data-aos-offset={250}
                           data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                           dangerouslySetInnerHTML={{
                             __html: project.high_test_booking,
@@ -372,10 +413,9 @@ export const Test_details_logic = ({ Slug, Category }) => {
                       {project.high_report_time && (
                         <p
                           data-aos="fade"
-                          data-aos-delay={250}
-                          data-aos-duration={250}
+                          data-aos-delay={100}
+                          data-aos-duration={400}
                           data-aos-once="true"
-                          data-aos-offset={250}
                           data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                           dangerouslySetInnerHTML={{
                             __html: project.high_report_time,
@@ -385,10 +425,9 @@ export const Test_details_logic = ({ Slug, Category }) => {
                       {project.high_recommended_for && (
                         <p
                           data-aos="fade"
-                          data-aos-delay={250}
-                          data-aos-duration={250}
+                          data-aos-delay={100}
+                          data-aos-duration={400}
                           data-aos-once="true"
-                          data-aos-offset={250}
                           data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                           dangerouslySetInnerHTML={{
                             __html: project.high_recommended_for,
@@ -419,7 +458,13 @@ export const Test_details_logic = ({ Slug, Category }) => {
                 <div className="detailrow ">
                   <div className="row justify-content-start align-items-start">
                     <div className="detailtitle col-lg-3 col-12">
-                      <h2 {...generateAOSAttributes(6, 180, 10)}>
+                      <h2
+                        data-aos="fade-right"
+                        data-aos-delay={100}
+                        data-aos-duration={400}
+                        data-aos-once="true"
+                        data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                      >
                         <strong>
                           Test Parameters <br />
                           {/* (Parameters included : {lengthOfTestInfo}) */}
@@ -428,7 +473,7 @@ export const Test_details_logic = ({ Slug, Category }) => {
                     </div>
                     <div
                       className="detaildescrp col-lg-9 col-md-11  col-12"
-                      {...generateAOSAttributes(2, 180, 10)}
+                      {...generateAOSAttributes(1, 400, 50)}
                     >
                       <AccordionComponent ParameterData={project.TestInfo} />
                     </div>
@@ -445,11 +490,10 @@ export const Test_details_logic = ({ Slug, Category }) => {
                   <div className="detaildescrp col-lg-9 col-md-8 col-12">
                     <div className="col-12 flex-center mt-5 mb-2 mb-sm-5 justify-content-center justify-content-sm-start flex-wrap gap-3 m-auto">
                       <button
-                        data-aos="flip-right"
-                        data-aos-delay={150}
-                        data-aos-duration={150}
+                        data-aos="flip-up"
+                        data-aos-delay={100}
+                        data-aos-duration={400}
                         data-aos-once="true"
-                        data-aos-offset={150}
                         data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                         className={`button button--aylen button--round-l button--text-thick gradient col-xxl-3 col-lg-4 col-md-5 col-11  ${
                           isInCart ? "button--remove" : ""
@@ -476,10 +520,9 @@ export const Test_details_logic = ({ Slug, Category }) => {
                         </button> */}
                       <button
                         data-aos="flip-left"
-                        data-aos-delay={150}
-                        data-aos-duration={150}
+                        data-aos-delay={100}
+                        data-aos-duration={400}
                         data-aos-once="true"
-                        data-aos-offset={150}
                         data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                         className="button button--aylen button--round-l button--text-thick  gradient col-xxl-3 col-lg-4 col-md-5 col-11 "
                         onClick={handleBookHomeCollectionClick}
@@ -496,10 +539,9 @@ export const Test_details_logic = ({ Slug, Category }) => {
             <div
               className="title col-12 float-start text-center"
               data-aos="fade-up"
-              data-aos-delay={150}
-              data-aos-duration={150}
+              data-aos-delay={100}
+              data-aos-duration={400}
               data-aos-once="true"
-              data-aos-offset={150}
               data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
             >
               <h2 className="">Frequently Asked Questions.</h2>
@@ -507,10 +549,9 @@ export const Test_details_logic = ({ Slug, Category }) => {
             <div
               className="col-lg-11 col-12 m-auto float-start"
               data-aos="fade-up"
-              data-aos-delay={150}
-              data-aos-duration={150}
+              data-aos-delay={100}
+              data-aos-duration={400}
               data-aos-once="true"
-              data-aos-offset={150}
               data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
             >
               <Faq className="minusbottom  " />

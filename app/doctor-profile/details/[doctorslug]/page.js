@@ -20,8 +20,8 @@ const Page = ({ params: { doctorslug } }) => {
         <div className="heading">
           <h3
             data-aos="fade"
-            data-aos-delay={200}
-            data-aos-duration={200}
+            data-aos-delay={100}
+            data-aos-duration={300}
             data-aos-once="true"
           >
             <strong>{title}</strong>
@@ -30,8 +30,8 @@ const Page = ({ params: { doctorslug } }) => {
         <div className="abt_cont">
           <p
             data-aos="fade"
-            data-aos-delay={400}
-            data-aos-duration={800}
+            data-aos-delay={100}
+            data-aos-duration={400}
             data-aos-once="true"
           >
             {subtitle}
@@ -43,8 +43,8 @@ const Page = ({ params: { doctorslug } }) => {
                   key={index}
                   className=""
                   data-aos="fade-up"
-                  data-aos-delay={120 + index * 600}
-                  data-aos-duration={600 + index * 200}
+                  data-aos-delay={100 + index * 50}
+                  data-aos-duration={300 + index * 50}
                   data-aos-once="true"
                 >
                   <span>{item}</span>
@@ -56,7 +56,7 @@ const Page = ({ params: { doctorslug } }) => {
             <h5
               className=""
               data-aos="fade-left"
-              data-aos-delay="120"
+              data-aos-delay="100"
               data-aos-duration="1000"
               data-aos-once="true"
             >
@@ -82,7 +82,7 @@ const Page = ({ params: { doctorslug } }) => {
                     width="250"
                     height="250"
                     data-aos="fade"
-                    data-aos-delay={300}
+                    data-aos-delay={100}
                     data-aos-duration={400}
                     data-aos-once="true"
                   />
@@ -90,7 +90,7 @@ const Page = ({ params: { doctorslug } }) => {
                 <div className="procont_name">
                   <h2
                     data-aos="fade-up"
-                    data-aos-delay={400}
+                    data-aos-delay={100}
                     data-aos-duration={400}
                     data-aos-once="true"
                   >
@@ -98,16 +98,16 @@ const Page = ({ params: { doctorslug } }) => {
                   </h2>
                   <strong
                     data-aos="fade-up"
-                    data-aos-delay={500}
-                    data-aos-duration={500}
+                    data-aos-delay={100}
+                    data-aos-duration={400}
                     data-aos-once="true"
                   >
                     {doctorData?.doctor_education}
                   </strong>
                   <p
                     data-aos="fade-up"
-                    data-aos-delay={600}
-                    data-aos-duration={600}
+                    data-aos-delay={100}
+                    data-aos-duration={400}
                     data-aos-once="true"
                   >
                     {doctorData?.doctor_details}

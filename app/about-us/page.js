@@ -40,10 +40,8 @@ export const page = () => {
                 <div
                   className="title col-12 float-start text-center"
                   data-aos="fade-up"
-                  data-aos-delay={100}
                   data-aos-duration={250}
                   data-aos-once="true"
-                  data-aos-offset={150}
                   data-aos-easing="ease-in"
                 >
                   <h1>Assure Pathlabs</h1>
@@ -56,7 +54,6 @@ export const page = () => {
                       data-aos-delay={100}
                       data-aos-duration={300}
                       data-aos-once="true"
-                      data-aos-offset={100}
                       data-aos-easing="ease-in"
                     >
                       Assure Pathlabs is the best blood test pathalogy
@@ -72,7 +69,6 @@ export const page = () => {
                       data-aos-delay={100}
                       data-aos-duration={300}
                       data-aos-once="true"
-                      data-aos-offset={100}
                       data-aos-easing="ease-in"
                     >
                       Our commitment guarantees not just efficient service but
@@ -100,10 +96,8 @@ export const page = () => {
                   <div
                     className="title col-12 float-start text-center"
                     data-aos="fade-up"
-                    data-aos-delay={100}
                     data-aos-duration={250}
                     data-aos-once="true"
-                    data-aos-offset={150}
                     data-aos-easing="ease-in"
                   >
                     <h2>OUR ETHOS</h2>
@@ -188,11 +182,9 @@ export const page = () => {
               <div className="row">
                 <div
                   className="title col-12 float-start text-center mt-5 mb-4"
-                  data-aos="fade-tp"
-                  data-aos-delay={100}
-                  data-aos-duration={200}
+                  data-aos="fade-up"
+                  data-aos-duration={250}
                   data-aos-once="true"
-                  data-aos-offset={100}
                   data-aos-easing="ease-in"
                 >
                   <h2>OUR DIFFERENTIATORS</h2>
@@ -206,9 +198,8 @@ export const page = () => {
                             className="flex-center mb-2 button button--aylen button--round-l button--text-thick"
                             data-aos="flip-right"
                             data-aos-delay={100}
-                            data-aos-duration={120}
+                            data-aos-duration={300}
                             data-aos-once="true"
-                            data-aos-offset={120}
                             data-aos-easing="ease-in"
                           >
                             <AdvancedTechnology />
@@ -216,9 +207,8 @@ export const page = () => {
                           <h3
                             data-aos="fade-up"
                             data-aos-delay={100}
-                            data-aos-duration={120}
+                            data-aos-duration={350}
                             data-aos-once="true"
-                            data-aos-offset={120}
                             data-aos-easing="linear"
                           >
                             New age Technology
@@ -230,20 +220,18 @@ export const page = () => {
                           <span
                             className="flex-center mb-2 button button--aylen button--round-l button--text-thick"
                             data-aos="flip-right"
-                            data-aos-delay={60}
-                            data-aos-duration={120}
+                            data-aos-delay={100}
+                            data-aos-duration={300}
                             data-aos-once="true"
-                            data-aos-offset={120}
                             data-aos-easing="ease-in"
                           >
                             <InternationalStandard />
                           </span>
                           <h3
                             data-aos="fade-up"
-                            data-aos-delay={65}
-                            data-aos-duration={120}
+                            data-aos-delay={100}
+                            data-aos-duration={350}
                             data-aos-once="true"
-                            data-aos-offset={120}
                             data-aos-easing="linear"
                           >
                             International Standards{" "}
@@ -255,10 +243,9 @@ export const page = () => {
                           <span
                             className="flex-center mb-2 button button--aylen button--round-l button--text-thick"
                             data-aos="flip-right"
-                            data-aos-delay={70}
-                            data-aos-duration={120}
+                            data-aos-delay={100}
+                            data-aos-duration={300}
                             data-aos-once="true"
-                            data-aos-offset={120}
                             data-aos-easing="ease-in"
                           >
                             <Doctor />
@@ -266,9 +253,8 @@ export const page = () => {
                           <h3
                             data-aos="fade-up"
                             data-aos-delay={100}
-                            data-aos-duration={120}
+                            data-aos-duration={350}
                             data-aos-once="true"
-                            data-aos-offset={120}
                             data-aos-easing="linear"
                           >
                             Founded by doctors

@@ -27,12 +27,11 @@ export const Testimonials = (props) => {
               <div className="google-icon-head">
                 <div
                   className="rating "
-                  data-aos="fade-zom-in"
+                  data-aos="fade-zoom-in"
                   data-aos-anchor-placement="bottom-bottom"
                   data-aos-delay={100}
-                  data-aos-duration={120}
+                  data-aos-duration={205}
                   data-aos-once="true"
-                  data-aos-offset={120}
                   data-aos-easing="ease-in"
                 >
                   <div className="g-logo">
@@ -61,10 +60,9 @@ export const Testimonials = (props) => {
                   className="baseon-rating"
                   data-aos="flip-right"
                   data-aos-anchor-placement="bottom-bottom"
-                  data-aos-delay={100}
-                  data-aos-duration={120}
+                  data-aos-delay={150}
+                  data-aos-duration={200}
                   data-aos-once="true"
-                  data-aos-offset={120}
                   data-aos-easing="ease-in"
                 >
                   <p> Based on 405+ reviews</p>
@@ -76,10 +74,9 @@ export const Testimonials = (props) => {
                   data-aos="fade-up"
                   data-aos-anchor-placement="bottom-bottom"
                   data-aos-delay={100}
-                  data-aos-duration={220}
+                  data-aos-duration={300}
                   data-aos-once="true"
-                  data-aos-offset={120}
-                  data-aos-easing="ease-in"
+                  data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                 >
                   {/* Mapping over the reviews data to generate slider items */}
                   {TestimonialData.reviews.map((review, index) => (
@@ -87,9 +84,8 @@ export const Testimonials = (props) => {
                       key={index}
                       data-aos="fade-up"
                       data-aos-delay={200 + index * 50}
-                      data-aos-duration={200 + index * 20}
+                      data-aos-duration={200 + index * 50}
                       data-aos-once="true"
-                      data-aos-offset={120 + index * 20}
                       data-aos-easing="ease-in"
                     >
                       <p>{review.content}</p>
@@ -100,12 +96,11 @@ export const Testimonials = (props) => {
               </div>
               <div
                 className="col-12 flex-center mt-0 mt-sm-4 __trestmonail"
-                data-aos="flip-right"
+                data-aos="fade-up"
                 data-aos-anchor-placement="fade-up"
                 data-aos-delay={100}
-                data-aos-duration={220}
+                data-aos-duration={350}
                 data-aos-once="true"
-                data-aos-offset={120}
                 data-aos-easing="ease-in"
               >
                 <a

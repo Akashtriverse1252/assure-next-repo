@@ -62,7 +62,7 @@ export default function Cart() {
           }`}
         >
           <div className="h-100 absolute-top inset-0 overflow-hidden _shadow">
-            <div className="h-100 ">
+            <div className="h-100 cart_container ">
               <div className="d-flex flex-column h-100 bg-white shadow-xl">
                 <div className="flex-grow-1 overflow-auto px-sm-4 py-6 sm:px-6">
                   <div className="_cart_header d-flex justify-content-between align-items-center flex-row-reverse ">
@@ -86,7 +86,7 @@ export default function Cart() {
                         </div>
                       ) : null}
 
-                      <ul className="list-unstyled _cart_test mx-3">
+                      <ul className="list-unstyled _cart_test ">
                         {cartState.products.map((product) => (
                           <li
                             key={product.id}

@@ -110,7 +110,6 @@ export const Organslider = (props) => {
             data-aos-delay={getAosDuration(index)}
             data-aos-duration={getAosDuration(index)}
             data-aos-once="true"
-            data-aos-offset={getAosDuration(index)}
           >
             <Link href={`/organ/${organ.slug}`}>
               <div className="organcolumnrow flex-center navigationwhite hovershadow">

@@ -94,7 +94,7 @@ const FabFlinger = () => {
               className="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"
               data-upgraded=",MaterialButton,MaterialRipple"
             >
-              <Link class=" mr-adj" href="/test-detail">
+              <Link class=" mr-adj" href="/individual-test">
                 <PiTestTubeDuotone />
               </Link>
               <span className="mdl-button__ripple-container">

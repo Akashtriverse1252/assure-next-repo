@@ -116,10 +116,7 @@ export const Footer = () => {
 
   return (
     <>
-      <footer
-        className="col-12 float-start position-relative"
-       
-      >
+      <footer className="col-12 float-start position-relative">
         {/* <div className="footergray col-12 float-start">
           <div className="container">
             <div className="web-container "></div>
@@ -141,7 +138,7 @@ export const Footer = () => {
                     <div
                       className="popular_packaes_title"
                       data-aos="fade-up"
-                      data-aos-duration={500}
+                      data-aos-duration={300}
                       data-aos-once="true"
                       data-aos-easing="ease-in"
                       data-aos-delay={150}
@@ -149,7 +146,14 @@ export const Footer = () => {
                       <strong>Popular Test</strong>
                     </div>
                     <div className="popular_packages_cnt">
-                      <ul className="flex-center ">
+                      <ul
+                        className="flex-center "
+                        data-aos="fade-up"
+                        data-aos-duration={500}
+                        data-aos-once="true"
+                        data-aos-easing="ease-in"
+                        data-aos-delay={150}
+                      >
                         {testTabData.slice(0, 32).map((test, index) => (
                           <li>
                             <Link
@@ -167,7 +171,7 @@ export const Footer = () => {
                     <div
                       className="popular_packaes_title"
                       data-aos="fade-up"
-                      data-aos-duration={500}
+                      data-aos-duration={300}
                       data-aos-once="true"
                       data-aos-easing="ease-in"
                       data-aos-delay={150}
@@ -175,13 +179,17 @@ export const Footer = () => {
                       <strong>Popular Packages</strong>
                     </div>
                     <div className="popular_packages_cnt">
-                      <ul className="flex-center ">
+                      <ul
+                        className="flex-center "
+                        data-aos="fade-up"
+                        data-aos-duration={500}
+                        data-aos-once="true"
+                        data-aos-easing="ease-in"
+                        data-aos-delay={150}
+                      >
                         {packageTabData.slice(0, 32).map((test, index) => (
                           <li>
-                            <Link
-                              key={test.id}
-                              href={`/packages/${test.Slug}`}
-                            >
+                            <Link key={test.id} href={`/packages/${test.Slug}`}>
                               {test.Test_Name}
                             </Link>
                           </li>

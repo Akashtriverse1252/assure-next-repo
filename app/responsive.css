@@ -1176,11 +1176,27 @@
     width: 45%;
     text-align: left;
   }
-  .css-imxc6v-MuiBadge-badge{
+  .css-imxc6v-MuiBadge-badge {
     font-size: 11px !important;
     padding: 0 !important;
   }
+  .drag-file-area {
+    overflow: hidden;
+    padding: 0;
+  }
+  .drag-file-area input {
+    object-fit: contain;
+    height: 100%;
+    width: auto;
+  }
 
+  .file-block {
+    display: none;
+  }
+  .browse-files.alpha,
+  .drag-file-area h3 {
+    width: 100%;
+  }
   table td:last-child {
     border-bottom: 0;
   }
@@ -1189,6 +1205,10 @@
   }
   .checkout_input {
     gap: 15px;
+  }
+  .upload-icon {
+    height: 200px;
+    overflow: hidden;
   }
   .conditionshape h3 {
     top: 100%;
@@ -1255,10 +1275,11 @@
     border: 2px solid #f1f1f1;
     border-radius: 0;
     margin: 30px 0 20px;
-    padding: 30px 50px;
     width: 100%;
     text-align: center;
     background: #f1f1f1;
+    overflow: hidden;
+    padding: 20px  0;
   }
   ._cross {
     color: #000;
@@ -1483,17 +1504,17 @@
     left: 5px;
     width: 80%;
   }
-  
+
   .search_icon {
     width: 22px;
-}
+  }
   .No_Data svg {
     width: 80%;
   }
   .mobile_nav_search svg {
     font-size: 24px;
     color: #7e7e7e;
-}
+  }
 
   .swiperslider img {
     height: auto;
@@ -1526,7 +1547,7 @@
   }
   .menslide.active {
     padding-top: 60px !important;
-}
+  }
 
   .conditionshape span {
     top: 0px;
@@ -1542,7 +1563,7 @@
   }
   .menslide .footercolumn {
     width: 100%;
-}
+  }
   #organs .sliderbox {
     margin-top: 0;
     padding-top: 0;

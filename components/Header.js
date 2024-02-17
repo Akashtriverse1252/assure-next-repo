@@ -172,8 +172,8 @@ export const Header = () => {
                       <div className="container">
                         <div className="row">
                           <div className="web-container">
-                            <div className="col-8 justify-content-around mx-auto  flex-center align-items-start footerrow">
-                              <div className="footercolumn">
+                            <div className="col-8 justify-content-md-around justify-content-start   flex-center align-items-start footerrow">
+                              {/* <div className="footercolumn">
                                 <div className="fheading">
                                   <article
                                     className="text-uppercase"
@@ -182,7 +182,7 @@ export const Header = () => {
                                     <Link href="/">Home</Link>
                                   </article>
                                 </div>
-                              </div>
+                              </div> */}
                               <div className="footercolumn">
                                 <div className="fheading">
                                   <article

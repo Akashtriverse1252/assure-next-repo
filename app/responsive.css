@@ -849,6 +849,10 @@
     width: 80px;
     height: 80px;
   }
+  .enquireform .MuiInputBase-root label {
+    left: 0 !important;
+    text-wrap: nowrap;
+  }
 
   .footerrow {
     gap: 20px;
@@ -1373,11 +1377,19 @@
   }
 
   .hemburgur span:nth-child(3) {
-    top: 24px;
+    top: 26;
   }
 
+  .hemburgur span:nth-child(1) {
+    top: 6px;
+  }
   .hemburgur span:nth-child(2) {
-    top: 12px;
+    top: 16px;
+  }
+  .hemburgur span {
+    width: 100%;
+    height: 1.3px;
+    border-radius: 0;
   }
   .No_Data svg {
     width: 80%;

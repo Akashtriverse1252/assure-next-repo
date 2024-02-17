@@ -17,7 +17,7 @@ export const MyCart = () => {
   const handleToggleCart = () => {
     if (!cartState.cartVisible) {
       cartDispatch({ type: "TOGGLE_CART" });
-      console.log("is cart is open", cartState.TOOGLE_CART);
+      // console.log("is cart is open", cartState.TOOGLE_CART);
     }
   };
 
@@ -46,10 +46,10 @@ export const MyCart = () => {
             }`}
           >
             {" "}
-            {totalQuantity > 10 ? "10+" : totalQuantity}
+            {totalQuantity <= 10 ? totalQuantity : "9+"}
+
           </i>
         ) : null}
-        {/* Use totalQuantity here */}
       </div>
     </>
   );

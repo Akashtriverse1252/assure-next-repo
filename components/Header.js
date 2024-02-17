@@ -91,7 +91,7 @@ export const Header = () => {
                 <div className="mobile_nav_search position-relative d-flex  d-sm-none align-items-end ">
                   <MobileSearchBar />
                   {cartState.products.length !== 0 && (
-                    <Badge badgeContent={totalQuantity} color="error">
+                    <Badge badgeContent={totalQuantity <= 10 ? totalQuantity : "9+"} color="error">
                       <PiShoppingCartSimple
                         onClick={() => cartDispatch({ type: "TOGGLE_CART" })}
                       />

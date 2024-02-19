@@ -1007,6 +1007,10 @@
 }
 
 @media (max-width: 780px) {
+  .h_form {
+    width: 90%;
+    margin: 0 auto;
+  }
   .menslide {
     position: fixed;
     height: 100vh;
@@ -1293,12 +1297,11 @@
   .header_search {
     display: block;
   }
+  .h_form {
+    width: 98%;
+    margin-top: 20px;
+  }
 
-  /* .circleicons span,
-  .packagename span {
-    width: 120px !important;
-    height: 120px;
-  } */
 
   ._cart_cross svg {
     width: 20px;

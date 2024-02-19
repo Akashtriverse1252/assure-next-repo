@@ -75,7 +75,7 @@ export const ProductSlider = (props) => {
         breakpoint: 580,
         settings: {
           slidesToShow: 1,
-          initialSlide: 1, // Update this to 0
+          initialSlide: 0, // Update this to 0
           slidesToScroll: 1,
         },
       },

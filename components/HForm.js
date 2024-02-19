@@ -6,6 +6,8 @@ import { Attachement } from "./svg-components/Attachement";
 import { Homecollection } from "@/components/Homecollection";
 import UploadForm from "./UploadForm";
 import { useData } from "@/context/context";
+import Upload from "./svg-components/Upload";
+import Download from "./svg-components/Download";
 
 export const HForm = () => {
   const [showDialog, setShowDialog] = useState(false);
@@ -34,11 +36,10 @@ export const HForm = () => {
       {/* {showDialog ? <UploadForm /> : null} */}
 
       <div
-        className="col-12 float-start d-grid gap-3 gap-sm-1  h_form"
+        className=" d-grid gap-3 gap-sm-1  h_form"
         data-aos="fade-up"
         data-aos-duration={400}
         data-aos-once="true"
-        
       >
         <div className="enquireform _serach__ col-12 col-md-12 mx-auto  ">
           <SearchBar />
@@ -52,7 +53,7 @@ export const HForm = () => {
             >
               <label>Upload Prescription</label>
               <span>
-                <Attachement />
+                <Upload />
               </span>
             </Button>
           </div>
@@ -64,6 +65,9 @@ export const HForm = () => {
               fullWidth
             >
               <label>Download Reports</label>
+              <span>
+                <Download />
+              </span>
             </Button>
           </div>
         </div>

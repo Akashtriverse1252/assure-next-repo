@@ -9,6 +9,7 @@ import Left from "./svg-components/Left";
 import Right from "./svg-components/Right";
 import { FaAngleRight } from "react-icons/fa6";
 import { FaAngleLeft } from "react-icons/fa6";
+import { PiCaretLeftThin, PiCaretRightThin } from "react-icons/pi";
 export const AssureSlide = (props) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderRef = useRef(null);
@@ -140,16 +141,16 @@ export const AssureSlide = (props) => {
               className="slider_count left flex-center "
               onClick={goToPrevSlide}
             >
-              <FaAngleLeft />
+              <PiCaretLeftThin />
             </button>
-            <span>
+            {/* <span>
               {currentSlide + 1} - {4}
-            </span>
+            </span> */}
             <button
               className="slider_count  flex-center"
               onClick={goToNextSlide}
             >
-              <FaAngleRight />
+              <PiCaretRightThin />
             </button>
           </div>
         </div>

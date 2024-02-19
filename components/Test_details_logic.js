@@ -490,7 +490,7 @@ export const Test_details_logic = ({ Slug, Category }) => {
                   <div className="detaildescrp col-lg-9 col-md-8 col-12">
                     <div className="col-12 flex-center mt-5 mb-2 mb-sm-5 justify-content-center justify-content-sm-start flex-wrap gap-3 m-auto">
                       <button
-                        data-aos="flip-up"
+                        data-aos="zoom-in"
                         data-aos-delay={100}
                         data-aos-duration={400}
                         data-aos-once="true"
@@ -519,7 +519,7 @@ export const Test_details_logic = ({ Slug, Category }) => {
                           <Cart /> Add to Cart
                         </button> */}
                       <button
-                        data-aos="flip-left"
+                        data-aos="zoom-in"
                         data-aos-delay={100}
                         data-aos-duration={400}
                         data-aos-once="true"

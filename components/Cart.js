@@ -64,7 +64,7 @@ export default function Cart() {
           <div className="h-100 absolute-top inset-0 overflow-hidden _shadow">
             <div className="h-100 cart_container ">
               <div className="d-flex flex-column h-100 bg-white shadow-xl">
-                <div className="flex-grow-1 overflow-auto px-sm-4 py-6 sm:px-6">
+                <div className="flex-grow-1 overflow-auto px-sm-4 py-6 px-6">
                   <div className="_cart_header d-flex justify-content-between align-items-center flex-row-reverse ">
                     <div className="ml-3 d-flex h-7 align-items-center">
                       <button
@@ -146,7 +146,7 @@ export default function Cart() {
                   </div>
                 </div>
                 {cartState.products && cartState.products.length > 0 && (
-                  <div className="border-top border-gray-200 px-4 py-6 sm:px-6">
+                  <div className="border-top border-gray-200 px-sm-4 px-0 py-6 sm:px-6">
                     <div className="sub_total d-flex justify-content-between text-base font-medium text-gray-900">
                       <p className="mb-0">Subtotal</p>
                       <p className="mb-0 rupee">{subtotal.toFixed(2)}</p>

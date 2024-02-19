@@ -10,7 +10,7 @@ export const Page = () => {
           <div className="web-container">
             <div className="row">
               <div className="title col-12 float-start text-center">
-                <h1>Individual Packages</h1>
+                <h1>Individual Test</h1>
               </div>
 
               <div className="col-12 float-start all-test">
@@ -28,5 +28,5 @@ export const Page = () => {
     </>
   );
 };
-
+s
 export default Page;

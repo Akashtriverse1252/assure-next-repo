@@ -1634,7 +1634,6 @@ header {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin: 0 auto;
 }
 
 ._cart_test li::before {
@@ -4228,6 +4227,6 @@ table th {
   color: #000;
   stroke: #000;
 }
-.mobile_upload_prs{
+.mobile_upload_prs {
   display: none;
 }

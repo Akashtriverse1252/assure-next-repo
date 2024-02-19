@@ -28,5 +28,5 @@ export const Page = () => {
     </>
   );
 };
-s
+
 export default Page;

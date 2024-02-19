@@ -2,6 +2,7 @@ import React from "react";
 import { Dots } from "./svg-components/Dots";
 import { Line } from "./svg-components/Line";
 import { FaFacebook, FaInstagram, FaXTwitter } from "react-icons/fa6";
+import Image from "next/image";
 
 const OurFounders = () => {
   return (
@@ -36,12 +37,14 @@ const OurFounders = () => {
                     data-aos-easing="ease-in"
                   >
                     <div class="founder-card-body d-flex align-items-top">
-                      <div
-                        alt=""
-                        class="founder-image mb-5"
-                        data-image-width="404"
-                        data-image-height="404"
-                      ></div>
+                      <div alt="" class="founder-image mb-5">
+                        <Image
+                          src="/dr-sanjay.png"
+                          alt="dr-sanjay"
+                          width={500}
+                          height={500}
+                        />
+                      </div>
                       <div class="ml-3">
                         <h3 class="fw-bolder">Dr. Sanjay Wadhwa</h3>
                         <p class="text-muted">
@@ -97,7 +100,14 @@ const OurFounders = () => {
                         class="founder-image mb-5"
                         data-image-width="404"
                         data-image-height="404"
-                      ></div>
+                      >
+                        <Image
+                          src="/dr-lovely.png"
+                          alt="dr-sanjay"
+                          width={500}
+                          height={500}
+                        />
+                      </div>
                       <div class="ml-3">
                         <h3 class="fw-bolder">Dr. Lovely Razdan</h3>
                         <p class="text-muted">

@@ -2018,7 +2018,7 @@ div#bookAppointmentForm .width50:first-chlid {
 .enquireform .rbt-input-hint,
 .enquireform .form-control {
   line-height: 56px;
-  letter-spacing: 0.5px  !important;
+  letter-spacing: 0.5px !important;
   color: #607586;
   border: solid 1px #abb5bb;
   max-height: 56px;
@@ -3619,17 +3619,23 @@ table th {
 .founder-image {
   width: 240px;
   height: 240px;
-  background: #e1d7f5;
+  background: #f3f3f3;
   background-position: 50% 50%;
   margin: 0 auto 0 0;
   border-radius: 50% !important;
+  border: 1px solid #e5e5e5;
+}
+.founder-image img {
+  width: auto;
+  height: auto;
+  border-radius: 50%;
 }
 .founder-social-icon {
   margin: 0 7px;
 }
 .founder-social-icon svg {
   width: 23px;
-  fill: #632fdd;
+  fill: #898989;
 }
 .founder-card-body {
   flex-direction: column;

@@ -17,7 +17,7 @@ const Page = () => (
               <div className="leadership2" key={index}>
                 <div className="leadershipimg">
                   <Image
-                    src="/doctor-01.webp"
+                    src={doctor.imageSrc}
                     alt="Dr. Sanjay Wadhwa"
                     title="Dr. Sanjay Wadhwa"
                     width="350"

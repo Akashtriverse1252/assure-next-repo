@@ -488,13 +488,15 @@ export const Test_details_logic = ({ Slug, Category }) => {
                     </p>
                   </div>
                   <div className="detaildescrp col-lg-9 col-md-8 col-12">
-                    <div className="col-12 flex-center mt-5 mb-2 mb-sm-5 justify-content-center justify-content-sm-start flex-wrap gap-3 m-auto">
+                    <div
+                      className="col-12 flex-center mt-5 mb-2 mb-sm-5 justify-content-center justify-content-sm-start flex-wrap gap-3 m-auto"
+                      data-aos="zoom-in"
+                      data-aos-delay={100}
+                      data-aos-duration={400}
+                      data-aos-once="true"
+                      data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
+                    >
                       <button
-                        data-aos="zoom-in"
-                        data-aos-delay={100}
-                        data-aos-duration={400}
-                        data-aos-once="true"
-                        data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                         className={`button button--aylen button--round-l button--text-thick gradient col-xxl-3 col-lg-4 col-md-5 col-11  ${
                           isInCart ? "button--remove" : ""
                         }`}
@@ -511,19 +513,8 @@ export const Test_details_logic = ({ Slug, Category }) => {
                           </>
                         )}
                       </button>
-                      {/* <button
-                          className="button button--aylen button--round-l button--text-thick  gradient col-lg-3 col-md-4 col-11   flex-center gap-2"
-                          onClick={handleAddToCart}
-                          disabled={cartState.cartVisible}
-                        >
-                          <Cart /> Add to Cart
-                        </button> */}
+                     
                       <button
-                        data-aos="zoom-in"
-                        data-aos-delay={100}
-                        data-aos-duration={400}
-                        data-aos-once="true"
-                        data-aos-easing="cubic-bezier(.57,.21,.69,3.25)"
                         className="button button--aylen button--round-l button--text-thick  gradient col-xxl-3 col-lg-4 col-md-5 col-11 "
                         onClick={handleBookHomeCollectionClick}
                       >

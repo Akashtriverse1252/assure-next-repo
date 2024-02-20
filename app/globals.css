@@ -641,7 +641,7 @@ section,
 }
 
 .package_card .packagedetail {
-  height: 120px;
+  height: 130px;
   overflow: hidden;
 }
 
@@ -3483,8 +3483,8 @@ div#notfound a.active {
   flex-direction: column;
 }
 .packageprice {
-  margin: 18px 0;
-  gap: 18px;
+  margin: 12px 0;
+  gap: 12px;
 }
 .detaildescrp .actualprice svg {
   left: 0;
@@ -3831,16 +3831,14 @@ table th {
 }
 
 .socail_icon a svg {
-  color: #2b2b2b;
-  width: 25px;
-  height: 25px;
+  color: #000000;
+  width: 30px;
+  height: 30px;
   transition: 0.3s ease all;
+  stroke-width: 2px;
 }
 .socail_icon a:hover svg {
-  color: #3e53b4;
-}
-.socail_icon .whatsapp a svg {
-  padding: 2px;
+  fill: #3362b8;
 }
 
 .__Banner .slick-slider .slick-dots {
@@ -4241,4 +4239,24 @@ table th {
 .enquireform .MuiInputBase-root label {
   letter-spacing: 0.5px !important;
   font-size: 14px !important;
+}
+._seasonalpack {
+  width: 96%;
+  margin: 0 auto;
+}
+
+
+.vedio_review_scn .slick-slide.slick-active:nth-child(1),
+.vedio_review_scn .slick-slide.slick-active:nth-child(3),
+.vedio_review_scn .slick-slide {
+  transform: scale(0.9) translateX(3%);
+  opacity: 0.9;
+  z-index: 1;
+  transition: all 0.3s ease-in;
+}
+
+.vedio_review_scn .slick-slide.slick-active {
+  transition: all 0.3s ease-in;
+  opacity: 1;
+  transform: scale(1) translateX(0);
 }

@@ -177,7 +177,7 @@ export default function Home() {
                     >
                       <Link
                         href="/about-us"
-                        className="button button--aylen button--round-l button--text-thick text-uppercase gradient col-lg-3 col-md-4 col-12 mt-3"
+                        className="button button--aylen button--round-l button--text-thick text-uppercase gradient col-lg-4 col-md-4 col-12 mt-3"
                       >
                         know more
                       </Link>

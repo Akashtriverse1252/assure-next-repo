@@ -98,41 +98,43 @@ export const Seasonalpack = (props) => {
   };
   return (
     <>
-      <Slider {...settings} {...props} ref={targetElementRef}>
-        {project &&
-          project.test_data.map((test, index) => (
-            <div
-              key={test.id}
-              data-aos="fade-up"
-              data-aos-delay={getAosDuration(index)}
-              data-aos-duration={getAosDuration(index)}
-              data-aos-once="true"
-            >
-              <TestCard
-                key={index}
-                Slug={test.Slug}
-                Test_Name={test.Test_Name}
-                Test_Amount={test.Test_Amount}
-                Discount_Amount={test.Discount_Amount}
-                Test_Category={test.Test_Category}
-                Test_ID={test.Test_ID}
-                Test_Description={test.Test_Description}
-                Who_is_it_for={test.Who_is_it_for}
-                Pre_test_information={test.Pre_test_information}
-                Turn_around_time={test.Turn_around_time}
-                widthFull={true}
-                BaseDirectory={
-                  test.category === "test"
-                    ? "test-detail"
-                    : test.category === "package"
-                    ? "packages"
-                    : null
-                }
-                IsSeoH3={true}
-              />
-            </div>
-          ))}
-      </Slider>
+      <div className="_seasonalpack">
+        <Slider {...settings} {...props} ref={targetElementRef}>
+          {project &&
+            project.test_data.map((test, index) => (
+              <div
+                key={test.id}
+                data-aos="fade-up"
+                data-aos-delay={getAosDuration(index)}
+                data-aos-duration={getAosDuration(index)}
+                data-aos-once="true"
+              >
+                <TestCard
+                  key={index}
+                  Slug={test.Slug}
+                  Test_Name={test.Test_Name}
+                  Test_Amount={test.Test_Amount}
+                  Discount_Amount={test.Discount_Amount}
+                  Test_Category={test.Test_Category}
+                  Test_ID={test.Test_ID}
+                  Test_Description={test.Test_Description}
+                  Who_is_it_for={test.Who_is_it_for}
+                  Pre_test_information={test.Pre_test_information}
+                  Turn_around_time={test.Turn_around_time}
+                  widthFull={true}
+                  BaseDirectory={
+                    test.category === "test"
+                      ? "test-detail"
+                      : test.category === "package"
+                      ? "packages"
+                      : null
+                  }
+                  IsSeoH3={true}
+                />
+              </div>
+            ))}
+        </Slider>
+      </div>
     </>
   );
 };

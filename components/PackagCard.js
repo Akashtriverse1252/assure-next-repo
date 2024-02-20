@@ -68,9 +68,9 @@ export const PackagCard = ({
           <div className="packagedetail">
             <ul
               ref={cardRef}
-              style={{
-                overflowY: showScrollbar ? "scroll" : "hidden",
-              }}
+              // style={{
+              //   overflowY: showScrollbar ? "scroll" : "hidden",
+              // }}
             >
               {Test_info.slice(0, 3).map((test, testIndex) => (
                 <li key={testIndex}>{test.testName}</li>

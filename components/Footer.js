@@ -2,6 +2,11 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Line } from "@/components/svg-components/Line";
 import { Tab } from "@mui/material/Tab";
+import { Facebook } from "@/components/svg-components/Facebook";
+import { LinkedIn } from "@/components/svg-components/LinkedIn";
+import { Twitter } from "@/components/svg-components/Twitter";
+import  Youtube    from "@/components/svg-components/Youtube";
+import { Instagram } from "@/components/svg-components/Instagram";
 import { TabContext, TabList, TabPanel } from "@mui/material";
 import Link from "next/link";
 import { useData } from "@/context/context";
@@ -316,28 +321,28 @@ export const Footer = () => {
                 >
                   <div className="">
                     <Link href="#">
-                      <BiLogoFacebook />
+                      <Facebook />
                     </Link>
                   </div>
                   <div className="">
                     <Link href="#">
-                      <BiLogoLinkedin />
+                      <Instagram />
                     </Link>
                   </div>
 
-                  <div className="whatsapp">
+                  <div className="">
                     <Link href="#">
-                      <RiWhatsappFill />
+                      <LinkedIn />
                     </Link>
                   </div>
                   <div className="">
                     <Link href="#">
-                      <BiLogoYoutube />
+                      <Youtube />
                     </Link>
                   </div>
                   <div className="">
                     <Link href="#">
-                      <BiLogoInstagram />
+                      <Twitter />
                     </Link>
                   </div>
                 </div>

@@ -21,6 +21,8 @@ export const Videos = (props) => {
   };
   // console.log(isVideoPlaying);
   const settings = {
+    // className: "center",
+    // centerMode: true,
     dots: false,
     infinite: true,
     autoplay: isVideoPlaying,

@@ -15,11 +15,9 @@ const OurFounders = () => {
               <div className="col-12 flex-center flex-column flex-md-row">
                 <div
                   className="our-founder-title  flex-center"
-                  data-aos="zoom-in"
-                  data-aos-delay={100}
+                  data-aos="fade-in"
                   data-aos-duration={300}
                   data-aos-once="true"
-                  data-aos-offset={100}
                   data-aos-easing="ease-in"
                 >
                   <h2 class="">
@@ -30,10 +28,8 @@ const OurFounders = () => {
                   <div
                     class="founder-card text-left mb-3 rounded-0"
                     data-aos="fade-left"
-                    data-aos-delay={100}
-                    data-aos-duration={300}
+                    data-aos-duration={500}
                     data-aos-once="true"
-                    data-aos-offset={100}
                     data-aos-easing="ease-in"
                   >
                     <div class="founder-card-body d-flex align-items-top">
@@ -88,10 +84,8 @@ const OurFounders = () => {
                   <div
                     class="founder-card text-left mb-3 rounded-0"
                     data-aos="fade-right"
-                    data-aos-delay={100}
-                    data-aos-duration={300}
+                    data-aos-duration={500}
                     data-aos-once="true"
-                    data-aos-offset={100}
                     data-aos-easing="ease-in"
                   >
                     <div class="founder-card-body d-flex align-items-top">

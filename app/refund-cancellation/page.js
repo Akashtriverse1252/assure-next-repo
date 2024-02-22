@@ -11,10 +11,23 @@ const page = () => {
             <div className="web-container">
               <div className="row">
                 <div className="col-md-12 col-12">
-                  <div className="title col-12 float-start text-center">
+                  <div
+                    className="title col-12 float-start text-center"
+                    data-aos="fade-up"
+                    data-aos-duration={500}
+                    data-aos-once="true"
+                    data-aos-easing="ease-in"
+                  >
                     <h2>Refund and Cancellation Policy</h2>
                   </div>
-                  <div className="privacy_pol_cnt">
+                  <div
+                    className="privacy_pol_cnt"
+                    data-aos="fade-up"
+                    data-aos-duration={500}
+                    data-aos-once="true"
+                    data-aos-easing="ease-in"
+                    data-aos-delay={100}
+                  >
                     <div class="contentbox">
                       <h3>Home Collection Policy</h3>
                       <p>

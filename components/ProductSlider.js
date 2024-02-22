@@ -84,18 +84,7 @@ export const ProductSlider = (props) => {
   useEffect(() => {
     Aos.init();
   }, []);
-  const getAosDuration = (index) => {
-    // Adjust the duration values as per your requirement
-    if (index === 0) {
-      return 380; // First slide duration
-    } else if (index === 1) {
-      return 320; // Second slide duration
-    } else if (index === 2) {
-      return 380; // Second slide duration
-    } else {
-      return 400; // Third and subsequent slides duration
-    }
-  };
+ 
   return (
     <>
       <Slider {...settings} {...props} ref={targetElementRef}>
@@ -104,8 +93,7 @@ export const ProductSlider = (props) => {
             <div
               key={test.id}
               data-aos="fade-up"
-              data-aos-delay={getAosDuration(index)}
-              data-aos-duration={getAosDuration(index)}
+              data-aos-duration={400}
               data-aos-once="true"
               data-aos-easing="ease-in"
             >

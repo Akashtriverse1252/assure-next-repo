@@ -20,6 +20,7 @@ import { Videos } from "@/components/Videos";
 import { Faq } from "@/components/Faq";
 import Link from "next/link";
 import { useEffect } from "react";
+import Nabh from "@/components/svg-components/Nabh";
 import Aos from "aos";
 
 export default function Home() {
@@ -54,7 +55,7 @@ export default function Home() {
                   <div
                     className="title col-12 float-start text-center"
                     data-aos="fade-up"
-                    data-aos-duration={250}
+                    data-aos-duration={500}
                     data-aos-once="true"
                     data-aos-easing="ease-in"
                   >
@@ -76,7 +77,7 @@ export default function Home() {
                   <div
                     className="title col-12 float-start text-center"
                     data-aos="fade-up"
-                    data-aos-duration={250}
+                    data-aos-duration={500}
                     data-aos-once="true"
                     data-aos-easing="ease-in"
                   >
@@ -98,7 +99,7 @@ export default function Home() {
                   <div
                     className="title col-12 float-start text-center mb-3"
                     data-aos="fade-up"
-                    data-aos-duration={250}
+                    data-aos-duration={500}
                     data-aos-once="true"
                     data-aos-easing="ease-in"
                   >
@@ -131,7 +132,7 @@ export default function Home() {
               <div
                 className="title col-12 mx-auto abt_title  float-start text-center"
                 data-aos="fade-up"
-                data-aos-duration={250}
+                data-aos-duration={500}
                 data-aos-once="true"
                 data-aos-easing="ease-in"
               >
@@ -142,7 +143,7 @@ export default function Home() {
                   <div
                     className="title  float-start text-center"
                     data-aos="fade-up"
-                    data-aos-duration={250}
+                    data-aos-duration={500}
                     data-aos-once="true"
                     data-aos-easing="ease-in"
                   >
@@ -150,9 +151,8 @@ export default function Home() {
                   </div>
                   <div
                     className="about_us_cnt text-center "
-                    data-aos="fade"
-                    data-aos-delay={100}
-                    data-aos-duration={200}
+                    data-aos="fade-up"
+                    data-aos-duration={500}
                     data-aos-once="true"
                     data-aos-easing="ease"
                   >
@@ -170,8 +170,7 @@ export default function Home() {
                     <div
                       className=" mt-3 mb-2 btn_main"
                       data-aos="flip"
-                      data-aos-delay={100}
-                      data-aos-duration={200}
+                      data-aos-duration={500}
                       data-aos-once="true"
                       data-aos-easing="ease-in"
                     >
@@ -186,9 +185,9 @@ export default function Home() {
                 </div>
                 <div
                   className="about_us_image "
-                  data-aos="zoom-in"
+                  data-aos="fade"
                   data-aos-delay={100}
-                  data-aos-duration={500}
+                  data-aos-duration={600}
                   data-aos-once="true"
                   data-aos-easing="ease"
                 >
@@ -206,177 +205,83 @@ export default function Home() {
                 <div
                   className="title col-12 float-start text-center"
                   data-aos="fade-up"
-                  data-aos-duration={250}
+                  data-aos-duration={500}
                   data-aos-once="true"
                   data-aos-easing="ease-in"
                 >
                   <h2>WHY ASSURE PATHLABS?</h2>
                 </div>
-                <div className="col-lg-10 m-auto col-12 float-start">
+                <div
+                  className="col-lg-10 m-auto col-12 float-start "
+                  data-aos="fade-up"
+                  data-aos-duration={500}
+                  data-aos-once="true"
+                  data-aos-easing="ease-in"
+                >
                   <div className="row justify-content-center pt-3">
-                    <div className="col-lg-3 col-md-4 col-sm-4 col-6">
-                      <div className="circleicons float-start col-12 text-center grid-center">
-                        <span
-                          className=" flex-center mb-2 button button--aylen button--round-l button--text-thick"
-                          data-aos="flip-right"
-                          data-aos-delay={100}
-                          data-aos-duration={300}
-                          data-aos-once="true"
-                          data-aos-easing="ease-in"
-                        >
+                    <div class="why_assure_cnt  ">
+                      <div class="why_assure_item">
+                        <span className=" flex-center ">
+                          <Nabh />
+                        </span>
+                        <div class="why_assure_text">
+                          NABH Certified Labs
+                        </div>
+                      </div>
+                      <div class="why_assure_item">
+                        <span className=" flex-center ">
                           <Alltime />
                         </span>
-                        <p
-                          data-aos="fade-up"
-                          data-aos-delay={100}
-                          data-aos-duration={350}
-                          data-aos-once="true"
-                          data-aos-easing="linear"
-                        >
-                          24x7
-                        </p>
+                        <div class="why_assure_text">24x7</div>
                       </div>
-                    </div>
-                    <div className="col-lg-3 col-md-4 col-sm-4 col-6">
-                      <div className="circleicons float-start col-12 text-center grid-center">
-                        <span
-                          className=" flex-center mb-2 button button--aylen button--round-l button--text-thick"
-                          data-aos="flip-right"
-                          data-aos-delay={100}
-                          data-aos-duration={300}
-                          data-aos-once="true"
-                          data-aos-easing="ease-in"
-                        >
+                      <div class="why_assure_item">
+                        <span className=" flex-center ">
                           <Samedaydelivery />
                         </span>
-                        <p
-                          data-aos="fade-up"
-                          data-aos-delay={100}
-                          data-aos-duration={350}
-                          data-aos-once="true"
-                          data-aos-easing="linear"
-                        >
+                        <div class="why_assure_text">
                           Same Day Report
-                        </p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="col-lg-3 col-md-4 col-sm-4 col-6">
-                      <div className="circleicons float-start col-12 text-center grid-center">
-                        <span
-                          className=" flex-center mb-2 button button--aylen button--round-l button--text-thick"
-                          data-aos="flip-right"
-                          data-aos-delay={100}
-                          data-aos-duration={300}
-                          data-aos-once="true"
-                          data-aos-easing="ease-in"
-                        >
+                      <div class="why_assure_item">
+                        <span className=" flex-center ">
                           <FoundedDoctor />
                         </span>
-                        <p
-                          data-aos="fade-up"
-                          data-aos-delay={100}
-                          data-aos-duration={350}
-                          data-aos-once="true"
-                          data-aos-easing="linear"
-                        >
+                        <div class="why_assure_text">
                           Founded by Doctors
-                        </p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="col-lg-3 col-md-4 col-sm-4 col-6">
-                      <div className="circleicons float-start col-12 text-center grid-center">
-                        <span
-                          className=" flex-center mb-2 button button--aylen button--round-l button--text-thick"
-                          data-aos="flip-right"
-                          data-aos-delay={100}
-                          data-aos-duration={300}
-                          data-aos-once="true"
-                          data-aos-easing="ease-in"
-                        >
+
+                      <div class="why_assure_item">
+                        <span className=" flex-center ">
                           <AdvancedTechnology />
                         </span>
-                        <p
-                          data-aos="fade-up"
-                          data-aos-delay={100}
-                          data-aos-duration={350}
-                          data-aos-once="true"
-                          data-aos-easing="linear"
-                        >
+                        <div class="why_assure_text">
                           Advanced Technology
-                        </p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="col-lg-3 col-md-4 col-sm-4 col-6">
-                      <div className="circleicons float-start col-12 text-center grid-center">
-                        <span
-                          className=" flex-center mb-2 button button--aylen button--round-l button--text-thick"
-                          data-aos="flip-right"
-                          data-aos-anchor-placement="bottom-bottom"
-                          data-aos-delay={100}
-                          data-aos-duration={300}
-                          data-aos-once="true"
-                          data-aos-easing="ease-in"
-                        >
+                      <div class="why_assure_item">
+                        <span className=" flex-center ">
                           <HighOn />
                         </span>
-                        <p
-                          data-aos="fade-up"
-                          data-aos-anchor-placement="bottom-bottom"
-                          data-aos-delay={100}
-                          data-aos-duration={350}
-                          data-aos-once="true"
-                          data-aos-easing="linear"
-                        >
+                        <div class="why_assure_text">
                           High on Safety and Hygeine
-                        </p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="col-lg-3 col-md-4 col-sm-4 col-6">
-                      <div className="circleicons float-start col-12 text-center grid-center">
-                        <span
-                          className=" flex-center mb-2 button button--aylen button--round-l button--text-thick"
-                          data-aos="flip-right"
-                          data-aos-delay={100}
-                          data-aos-duration={300}
-                          data-aos-once="true"
-                          data-aos-easing="ease-in"
-                        >
+                      <div class="why_assure_item">
+                        <span className=" flex-center ">
                           <FiveHundredplus />
                         </span>
-                        <p
-                          data-aos="fade-up"
-                          data-aos-delay={100}
-                          data-aos-duration={350}
-                          data-aos-once="true"
-                          data-aos-easing="linear"
-                        >
+                        <div class="why_assure_text">
                           500+ Test
-                        </p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="col-lg-3 col-md-4 col-sm-4 col-6">
-                      <div className="circleicons float-start col-12 text-center grid-center">
-                        <span
-                          className=" flex-center mb-2 button button--aylen button--round-l button--text-thick"
-                          data-aos="flip-right"
-                          data-aos-anchor-placement="bottom-bottom"
-                          data-aos-delay={100}
-                          data-aos-duration={300}
-                          data-aos-once="true"
-                          data-aos-easing="ease-in"
-                        >
+                      <div class="why_assure_item">
+                        <span className=" flex-center ">
                           <ConsultingService />
                         </span>
-                        <p
-                          data-aos="fade-up"
-                          data-aos-anchor-placement="bottom-bottom"
-                          data-aos-delay={100}
-                          data-aos-duration={350}
-                          data-aos-once="true"
-                          data-aos-easing="linear"
-                        >
+                        <div class="why_assure_text">
                           Consultation Services
-                        </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -387,21 +292,14 @@ export default function Home() {
           <Dots className="hsection position-absolute svgwidth opacity-10 start-0 bottom-0 top-inherit" />
           <Line className="svgwidthline position-absolute opacity-10 bottom-0 end-0" />
         </section>
-        <section
-          id="testimonial"
-          className="testimonial"
-          data-aos="fade-up"
-          data-aos-duration={200}
-          data-aos-once="true"
-          data-aos-easing="ease"
-        >
+        <section id="testimonial" className="testimonial">
           <div className="container position-relative z-index-2">
             <div className="web-container">
               <div className="row">
                 <div
                   className="title col-12 float-start text-center"
                   data-aos="fade-up"
-                  data-aos-duration={250}
+                  data-aos-duration={500}
                   data-aos-once="true"
                   data-aos-easing="ease-in"
                 >
@@ -421,7 +319,7 @@ export default function Home() {
                 <div
                   className="title col-12 float-start text-center"
                   data-aos="fade-up"
-                  data-aos-duration={250}
+                  data-aos-duration={500}
                   data-aos-once="true"
                   data-aos-easing="ease-in"
                 >
@@ -441,7 +339,7 @@ export default function Home() {
                 <div
                   className="title col-12 float-start text-center"
                   data-aos="fade-up"
-                  data-aos-duration={250}
+                  data-aos-duration={500}
                   data-aos-once="true"
                   data-aos-easing="ease-in"
                 >

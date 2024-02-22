@@ -38,8 +38,9 @@ export const HForm = () => {
       <div
         className=" d-grid gap-3 gap-sm-1  h_form"
         data-aos="fade-up"
-        data-aos-duration={400}
+        data-aos-duration={600}
         data-aos-once="true"
+        data-aos-easing= "ease-in"
       >
         <div className="enquireform _serach__ col-12 col-md-12 mx-auto  ">
           <SearchBar />

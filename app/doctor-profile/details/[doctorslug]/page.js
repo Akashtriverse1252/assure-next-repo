@@ -16,53 +16,30 @@ const Page = ({ params: { doctorslug } }) => {
   const renderList = (list, title, className, subtitle) =>
     list &&
     list.length > 0 && (
-      <div className={`docinfo-row ${className}`}>
+      <div
+        className={`docinfo-row ${className}`}
+        data-aos="fade-up"
+        data-aos-delay={100}
+        data-aos-duration={400}
+        data-aos-once="true"
+      >
         <div className="heading">
-          <h3
-            data-aos="fade"
-            data-aos-delay={100}
-            data-aos-duration={300}
-            data-aos-once="true"
-          >
+          <h3>
             <strong>{title}</strong>
           </h3>
         </div>
         <div className="abt_cont">
-          <p
-            data-aos="fade"
-            data-aos-delay={100}
-            data-aos-duration={400}
-            data-aos-once="true"
-          >
-            {subtitle}
-          </p>
+          <p>{subtitle}</p>
           {Array.isArray(list) && (
             <ul>
               {list.map((item, index) => (
-                <li
-                  key={index}
-                  className=""
-                  data-aos="fade-up"
-                  data-aos-delay={100 + index * 50}
-                  data-aos-duration={300 + index * 50}
-                  data-aos-once="true"
-                >
+                <li>
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           )}
-          {typeof list === "string" && (
-            <h5
-              className=""
-              data-aos="fade-left"
-              data-aos-delay="100"
-              data-aos-duration="1000"
-              data-aos-once="true"
-            >
-              {list}
-            </h5>
-          )}
+          {typeof list === "string" && <h5 className="">{list}</h5>}
         </div>
       </div>
     );
@@ -72,46 +49,36 @@ const Page = ({ params: { doctorslug } }) => {
       <section className="position-relative">
         <div className="container">
           <div className="web-container">
-            <div className="row doctor_name ">
+            <div
+              className="row doctor_name "
+              data-aos="fade-up"
+              data-aos-duration={200}
+              data-aos-once="true"
+            >
               <div className="procont ">
-                <div className="doctor_name_img">
+                <div
+                  className="doctor_name_img"
+                  data-aos="fade-in"
+                  data-aos-duration={600}
+                  data-aos-once="true"
+                >
                   <Image
                     src={doctorData?.image?.src}
                     alt="Dr. Sanjay Wadhwa"
                     title="Dr. Sanjay Wadhwa"
                     width="250"
                     height="250"
-                    data-aos="fade"
-                    data-aos-delay={100}
-                    data-aos-duration={400}
-                    data-aos-once="true"
                   />
                 </div>
-                <div className="procont_name">
-                  <h2
-                    data-aos="fade-up"
-                    data-aos-delay={100}
-                    data-aos-duration={400}
-                    data-aos-once="true"
-                  >
-                    {doctorData?.doctor_name}
-                  </h2>
-                  <strong
-                    data-aos="fade-up"
-                    data-aos-delay={100}
-                    data-aos-duration={400}
-                    data-aos-once="true"
-                  >
-                    {doctorData?.doctor_education}
-                  </strong>
-                  <p
-                    data-aos="fade-up"
-                    data-aos-delay={100}
-                    data-aos-duration={400}
-                    data-aos-once="true"
-                  >
-                    {doctorData?.doctor_details}
-                  </p>
+                <div
+                  className="procont_name"
+                  data-aos="fade-up"
+                  data-aos-duration={500}
+                  data-aos-once="true"
+                >
+                  <h2>{doctorData?.doctor_name}</h2>
+                  <strong>{doctorData?.doctor_education}</strong>
+                  <p>{doctorData?.doctor_details}</p>
                 </div>
               </div>
             </div>

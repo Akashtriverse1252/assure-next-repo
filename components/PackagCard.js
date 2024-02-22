@@ -50,8 +50,8 @@ export const PackagCard = ({
               <Image
                 src="/svg/healthcompletewellness.svg"
                 alt="Health Check-up packages"
-                width={80}
-                height={80}
+                width={60}
+                height={60}
               />
             </span>
           </div>

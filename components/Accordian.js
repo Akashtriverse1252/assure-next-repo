@@ -11,18 +11,16 @@ import {
 
 export const AccordionComponent = ({ ParameterData }) => {
   return (
-    <div className="faqcont  col-12">
+    <div
+      className="faqcont  col-12"
+      data-aos="fade-up"
+      data-aos-duration={500}
+      data-aos-once="true"
+      data-aos-easing="ease-in"
+    >
       <Accordion allowZeroExpanded={true}>
         {ParameterData.map((item, index) => (
-          <AccordionItem
-            key={index}
-            data-aos="fade-up"
-            data-aos-delay={200 + index * 20}
-            data-aos-duration={200 + index * 20}
-            data-aos-once="true"
-            data-aos-offset={200 + index * 20}
-            data-aos-easing="ease-in"
-          >
+          <AccordionItem key={index}>
             {item.count === 1 ? (
               <AccordionItemHeading>
                 <AccordionItemButton>

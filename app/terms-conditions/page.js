@@ -11,10 +11,23 @@ const page = () => {
             <div className="web-container">
               <div className="row">
                 <div className="col-md-12 col-12">
-                  <div className="title col-12 float-start text-center">
+                  <div
+                    className="title col-12 float-start text-center"
+                    data-aos="fade-up"
+                    data-aos-duration={500}
+                    data-aos-once="true"
+                    data-aos-easing="ease-in"
+                  >
                     <h2>TERMS AND CONDITIONS</h2>
                   </div>
-                  <div className="privacy_pol_cnt">
+                  <div
+                    className="privacy_pol_cnt"
+                    data-aos="fade-up"
+                    data-aos-duration={500}
+                    data-aos-once="true"
+                    data-aos-easing="ease-in"
+                    data-aos-delay={100}
+                  >
                     <p>
                       We at www.assurepathlabs.com allow our customers to book
                       health check-up packages online. In order to avail this

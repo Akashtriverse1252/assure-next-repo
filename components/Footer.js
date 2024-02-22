@@ -5,7 +5,7 @@ import { Tab } from "@mui/material/Tab";
 import { Facebook } from "@/components/svg-components/Facebook";
 import { LinkedIn } from "@/components/svg-components/LinkedIn";
 import { Twitter } from "@/components/svg-components/Twitter";
-import  Youtube    from "@/components/svg-components/Youtube";
+import Youtube from "@/components/svg-components/Youtube";
 import { Instagram } from "@/components/svg-components/Instagram";
 import { TabContext, TabList, TabPanel } from "@mui/material";
 import Link from "next/link";
@@ -122,11 +122,6 @@ export const Footer = () => {
   return (
     <>
       <footer className="col-12 float-start position-relative">
-        {/* <div className="footergray col-12 float-start">
-          <div className="container">
-            <div className="web-container "></div>
-          </div>
-        </div> */}
         <div className="footergray pb-0 col-12 float-start">
           <div className="container">
             <div className="">
@@ -172,11 +167,11 @@ export const Footer = () => {
                       </ul>
                     </div>
                   </div>
-                  <div className="popular_packages mt-3 pt-4 bt">
+                  <div className="popular_packages mt-5 pt-4 bt">
                     <div
                       className="popular_packaes_title"
                       data-aos="fade-up"
-                      data-aos-duration={300}
+                      data-aos-duration={600}
                       data-aos-once="true"
                       data-aos-easing="ease-in"
                       data-aos-delay={150}
@@ -187,7 +182,7 @@ export const Footer = () => {
                       <ul
                         className="flex-center "
                         data-aos="fade-up"
-                        data-aos-duration={500}
+                        data-aos-duration={700}
                         data-aos-once="true"
                         data-aos-easing="ease-in"
                         data-aos-delay={150}
@@ -211,17 +206,17 @@ export const Footer = () => {
         <div className="footergray _chnage_color mt-0 pb-0  col-12 float-start">
           <div className="container ">
             <div className="row footer_bottom pb-4">
-              <div className="col-xl-7 col-md-8 float-end flex-center align-items-start footerrow">
+              <div
+                className="col-xl-7 col-md-8 float-end flex-center align-items-start footerrow"
+                data-aos="fade-in"
+                data-aos-delay={150}
+                data-aos-duration={600}
+                data-aos-once="true"
+                data-aos-easing="ease-in"
+              >
                 {menuItems.map((menuItem, index) => (
                   <div key={index} className="footercolumn">
-                    <div
-                      className="fheading"
-                      data-aos="fade"
-                      data-aos-delay={150}
-                      data-aos-duration={300 + index * 50}
-                      data-aos-once="true"
-                      data-aos-easing="ease-in"
-                    >
+                    <div className="fheading">
                       <article className="text-uppercase">
                         {menuItem.href ? (
                           <Link href={menuItem.href}>{menuItem.title}</Link>
@@ -234,14 +229,7 @@ export const Footer = () => {
                       <div className="fmenu">
                         <ul className="p-0 m-0">
                           {menuItem.links.map((link, linkIndex) => (
-                            <li
-                              key={linkIndex}
-                              data-aos="fade-up"
-                              data-aos-delay={200}
-                              data-aos-duration={400 + index * 50}
-                              data-aos-once="true"
-                              data-aos-easing="ease-in"
-                            >
+                            <li key={linkIndex}>
                               {link.external ? (
                                 <a
                                   href={link.href}
@@ -264,17 +252,16 @@ export const Footer = () => {
                   </div>
                 ))}
               </div>
-              <div className="col-lg-4 col-md-4 col-sm-12 contact_detail">
+              <div
+                className=" col-lg-4 col-md-4 col-sm-12 contact_detail"
+                data-aos="fade-in"
+                data-aos-duration={600}
+                data-aos-once="true"
+                data-aos-easing="ease-in"
+              >
                 <div className="contact">
                   <a href="tel:0181-4667555">
-                    <span
-                      className="flex-center align-items-start gap-2 sm-gap-4"
-                      data-aos="fade-right"
-                      data-aos-delay={100}
-                      data-aos-duration={500}
-                      data-aos-once="true"
-                      data-aos-anchor-placement="bottom-bottom"
-                    >
+                    <span className="flex-center align-items-start gap-2 sm-gap-4">
                       <strong>T</strong>
                       0181-4667555
                     </span>
@@ -283,13 +270,7 @@ export const Footer = () => {
                 <div className="">
                   <div className="contact">
                     <a href="mailto:assurepathlabs@gmail.com">
-                      <span
-                        className="flex-center align-items-start gap-2 sm-gap-4"
-                        data-aos="fade-up"
-                        data-aos-delay={150}
-                        data-aos-duration={500}
-                        data-aos-once="true"
-                      >
+                      <span className="flex-center align-items-start gap-2 sm-gap-4">
                         <strong>E</strong>
                         assurepathlabs@gmail.com
                       </span>
@@ -298,27 +279,15 @@ export const Footer = () => {
                 </div>
                 <div className=" ">
                   <div className="contact">
-                    <span
-                      className="flex-center align-items-start gap-2 gap-sm-0"
-                      data-aos="fade-right"
-                      data-aos-delay={150}
-                      data-aos-duration={500}
-                      data-aos-once="true"
-                    >
+                    <span className="flex-center align-items-start gap-2 gap-sm-0">
                       <strong>A </strong>
-                      &nbsp; 3, Waryam Nagar, <br />
+                      &nbsp;3, Waryam Nagar, <br />
                       Vasant Vihar Road, <br />
                       Jalandhar
                     </span>
                   </div>
                 </div>
-                <div
-                  className="socail_icon"
-                  data-aos="fade-right"
-                  data-aos-delay={150}
-                  data-aos-duration={500}
-                  data-aos-once="true"
-                >
+                <div className="socail_icon">
                   <div className="">
                     <Link href="#">
                       <Facebook />
@@ -347,14 +316,7 @@ export const Footer = () => {
                   </div>
                 </div>
                 <div className="col-12  mx-auto  flex-center ">
-                  <a
-                    className="button button--aylen button--round-l footer_btn button--text-thick text-uppercase gradient justify-content-start"
-                    data-aos="fade-right"
-                    data-aos-delay={150}
-                    data-aos-duration={500}
-                    data-aos-once="true"
-                    data-aos-easing="ease-in"
-                  >
+                  <a className="button button--aylen button--round-l footer_btn button--text-thick text-uppercase gradient justify-content-start">
                     BOOK HOME COLLECTION
                   </a>
                 </div>
@@ -362,13 +324,7 @@ export const Footer = () => {
             </div>
 
             <div className="row p-sm-3 p-2">
-              <div
-                className=" footer_site"
-                data-aos="fade-right"
-                data-aos-duration={300}
-                data-aos-once="true"
-                data-aos-easing="ease-in"
-              >
+              <div className=" footer_site">
                 <p className="m-0">
                   &copy; {currentYear} All Rights Reserved.{" "}
                 </p>
@@ -384,13 +340,7 @@ export const Footer = () => {
                   </Link>
                 </p>
               </div>
-              <div
-                className=" _cerdit text-end"
-                data-aos="fade-right"
-                data-aos-duration={300}
-                data-aos-once="true"
-                data-aos-easing="ease-in"
-              >
+              <div className=" _cerdit text-end">
                 <p className="m-0">
                   <a href="https://triverseadvertising.com/" target="_blank">
                     site : triverse

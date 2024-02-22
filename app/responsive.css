@@ -93,9 +93,9 @@
   .abt_scn__ {
     width: 100%;
   }
-  .upload_btn_cnt:first-child > svg,
+  .upload_btn_cnt:first-child svg,
   .upload_btn_cnt.user svg {
-    width: 20px;
+    width: 25px;
   }
   .homecollection article a {
     font-size: 30px;
@@ -324,9 +324,11 @@
   .package_card .packagedetail {
     height: 100px;
   }
-  .package_card .packagename h3 {
-    height: 80px;
+  .slider_count svg {
+    height: 50px;
   }
+  /* .package_card .packagename h3 {
+  } */
   .our-founder-title h2 {
     font-size: 70px;
   }
@@ -723,6 +725,7 @@
 
   .abt_banner img {
     height: auto;
+    border-radius: 35px;
   }
 
   body {
@@ -1004,6 +1007,12 @@
     bottom: -60%;
     z-index: -1;
   }
+  .why_assure_item {
+    width: 33%;
+  }
+  .why_assure_cnt {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 780px) {
@@ -1017,6 +1026,9 @@
     width: 100vw;
     top: -100%;
     background-color: #dae8ec;
+  }
+  .why_assure_item {
+    width: 48%;
   }
 
   .slick-slider .slick-dots li button:before {
@@ -1040,11 +1052,17 @@
   .nah_logo {
     display: none;
   }
+  .our_diff_item .circleicons {
+    width: 100%;
+  }
 
   .fixed .menslide.active,
   .menslide.active {
     top: 0px;
     padding-top: 10vh;
+  }
+  .slider_count svg {
+    height: 40px;
   }
 
   .logo {
@@ -1093,7 +1111,7 @@
     justify-content: flex-start;
   }
   .our-founder-title h2 {
-    font-size: 50px;
+    font-size: 40px;
   }
   .overview p {
     width: 55ch;
@@ -1230,17 +1248,17 @@
     justify-content: flex-start;
   }
   .bg-gradient-image.about_page {
-    bottom: -270%;
+    bottom: -520%;
   }
 
   .our-founder-title h2 {
-    font-size: 45px;
+    font-size: 35px;
   }
   .overview p {
     width: 80%;
   }
   .leaderships {
-    gap: 17px;
+    gap: 17px !important;
     flex-wrap: wrap;
   }
   .title h2 {
@@ -1288,6 +1306,22 @@
   ._cross {
     color: #000;
   }
+  .founder-card,
+  .founder-details {
+    height: auto;
+    max-height: none;
+    min-height: 100px;
+  }
+  .abt_banner img {
+    border-radius: 0;
+  }
+  .leaderships,
+  .__menus {
+    gap: 15px;
+  }
+  .procont .doctor_name_img img {
+    width: auto;
+}
 }
 
 @media (max-width: 580px) {
@@ -1301,7 +1335,6 @@
     width: 98%;
     margin-top: 20px;
   }
-
 
   ._cart_cross svg {
     width: 20px;
@@ -1553,7 +1586,7 @@
   }
 
   .conditionshape span {
-    top: 0px;
+    top: -60px;
     left: 0;
   }
 
@@ -1881,12 +1914,17 @@
     top: -40px;
     left: 0;
   }
+  .why_assure_item {
+    flex-direction: column;
+  }
+  .why_assure_text {
+    width: auto;
+    text-align: center;
+  }
   .No_Data svg {
     width: 90%;
   }
-  .popular_packages_cnt li {
-    width: auto;
-  }
+
   .footercolumn {
     width: 45%;
   }
@@ -1925,5 +1963,18 @@
   }
   .__menus {
     gap: 12px;
+  }
+  .bg-gradient-image.about_page {
+    bottom: -420%;
+  }
+
+}
+
+@media (max-width: 360px) {
+  .why_assure_item {
+    width: 98%;
+  }
+  .popular_packages_cnt li {
+    width: 100%;
   }
 }

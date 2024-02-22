@@ -9,38 +9,51 @@ import { AboutGradient } from "@/components/AboutGradient";
 import { ChooseAssure } from "@/components/ChooseAssure";
 import { HForm } from "@/components/HForm";
 import OurFounders from "@/components/OurFounders";
+import Aboutbanner from "@/public/About-us-banner.webp";
+import Breadcrumbs from "@mui/material/Breadcrumbs";
+import { Link } from "@mui/material";
 
 export const page = () => {
   return (
     <>
       <main className="d-flex flex-wrap float-start col-12">
+        <section className="position-relative __about__">
+          <div className="container">
+            <div className="row">
+              <div
+                className=" col-12 abt_banner"
+                data-aos="fade-in"
+                data-aos-duration={500}
+                data-aos-once="true"
+                data-aos-easing="ease-in"
+              >
+                <Image
+                  src={Aboutbanner}
+                  alt="Comprehensive Health Checkup"
+                  width={1220}
+                  height={730}
+                />
+              </div>
+
+              <div role="presentation" className="bread_crums ">
+                <Breadcrumbs className="mb-3 " aria-label="breadcrumb">
+                  <Link href="/">Home</Link>
+                  <Link href="#">About-us</Link>
+                </Breadcrumbs>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="position-relative">
           <div className="gradient-layer"></div>
           <div className="container">
             <div className="web-container">
               <div className="row">
-                {/* <div
-                  className="col-lg-9 col-md-8 col-xs-12 col-12 abt_banner"
-                  data-aos="fade-in"
-                  data-aos-delay={100}
-                  data-aos-duration={200}
-                  data-aos-once="true"
-                  data-aos-offset={100}
-                  data-aos-easing="ease-in"
-                >
-                  <Image
-                    src={Aboutbanner}
-                    alt="Comprehensive Health Checkup"
-                    width={1220}
-                    height={730}
-                  />
-                </div> */}
-              </div>
-              <div className="row">
                 <div
-                  className="title col-12 float-start text-center"
+                  className="title mt-3 col-12 float-start text-center"
                   data-aos="fade-up"
-                  data-aos-duration={250}
+                  data-aos-duration={500}
                   data-aos-once="true"
                   data-aos-easing="ease-in"
                 >
@@ -52,9 +65,8 @@ export const page = () => {
                       className="about-assure-text "
                       data-aos="fade-up"
                       data-aos-delay={100}
-                      data-aos-duration={300}
+                      data-aos-duration={500}
                       data-aos-once="true"
-                      data-aos-easing="ease-in"
                     >
                       Assure Pathlabs is the best blood test pathalogy
                       laboratory in Jalandhar, established in 2015 by Dr. Sanjay
@@ -67,9 +79,8 @@ export const page = () => {
                       className="about-assure-text "
                       data-aos="fade-up"
                       data-aos-delay={100}
-                      data-aos-duration={300}
+                      data-aos-duration={500}
                       data-aos-once="true"
-                      data-aos-easing="ease-in"
                     >
                       Our commitment guarantees not just efficient service but
                       also valuable advice, timely reports, unwavering support,
@@ -96,7 +107,7 @@ export const page = () => {
                   <div
                     className="title col-12 float-start text-center"
                     data-aos="fade-up"
-                    data-aos-duration={250}
+                    data-aos-duration={500}
                     data-aos-once="true"
                     data-aos-easing="ease-in"
                   >
@@ -113,7 +124,6 @@ export const page = () => {
                           data-aos-delay={100}
                           data-aos-duration={300}
                           data-aos-once="true"
-                          data-aos-offset={100}
                           data-aos-easing="ease-in"
                         >
                           OUR VISION
@@ -126,7 +136,6 @@ export const page = () => {
                       data-aos-delay={100}
                       data-aos-duration={300}
                       data-aos-once="true"
-                      data-aos-offset={100}
                       data-aos-easing="ease-in"
                     >
                       <p>
@@ -149,7 +158,6 @@ export const page = () => {
                           data-aos-delay={100}
                           data-aos-duration={300}
                           data-aos-once="true"
-                          data-aos-offset={100}
                           data-aos-easing="ease-in"
                         >
                           OUR MISSION
@@ -162,7 +170,6 @@ export const page = () => {
                       data-aos-delay={100}
                       data-aos-duration={300}
                       data-aos-once="true"
-                      data-aos-offset={100}
                       data-aos-easing="ease-in"
                     >
                       <p>
@@ -183,7 +190,7 @@ export const page = () => {
                 <div
                   className="title col-12 float-start text-center mt-5 mb-4"
                   data-aos="fade-up"
-                  data-aos-duration={250}
+                  data-aos-duration={500}
                   data-aos-once="true"
                   data-aos-easing="ease-in"
                 >
@@ -191,74 +198,35 @@ export const page = () => {
                 </div>
                 <div className="our_diffrenc">
                   <div className="col-lg-8 mx-auto col-12  ">
-                    <div className="row justify-content-center our_diff_cnt">
+                    <div
+                      className="row justify-content-center our_diff_cnt "
+                      data-aos="fade-up"
+                      data-aos-duration={400}
+                      data-aos-once="true"
+                      data-aos-easing="ease-in"
+                    >
                       <div className="col-lg-3 col-sm-4 col-6 our_diff_item ">
                         <div className="circleicons float-start  text-center grid-center">
-                          <span
-                            className="flex-center mb-2 button button--aylen button--round-l button--text-thick"
-                            data-aos="flip-right"
-                            data-aos-delay={100}
-                            data-aos-duration={300}
-                            data-aos-once="true"
-                            data-aos-easing="ease-in"
-                          >
+                          <span className="flex-center mb-2 button button--aylen button--round-l button--text-thick">
                             <AdvancedTechnology />
                           </span>
-                          <h3
-                            data-aos="fade-up"
-                            data-aos-delay={100}
-                            data-aos-duration={350}
-                            data-aos-once="true"
-                            data-aos-easing="linear"
-                          >
-                            New age Technology
-                          </h3>
+                          <h3>New age Technology</h3>
                         </div>
                       </div>
                       <div className="col-lg-3 col-sm-4 col-6 our_diff_item ">
                         <div className="circleicons float-start  text-center grid-center">
-                          <span
-                            className="flex-center mb-2 button button--aylen button--round-l button--text-thick"
-                            data-aos="flip-right"
-                            data-aos-delay={100}
-                            data-aos-duration={300}
-                            data-aos-once="true"
-                            data-aos-easing="ease-in"
-                          >
+                          <span className="flex-center mb-2 button button--aylen button--round-l button--text-thick">
                             <InternationalStandard />
                           </span>
-                          <h3
-                            data-aos="fade-up"
-                            data-aos-delay={100}
-                            data-aos-duration={350}
-                            data-aos-once="true"
-                            data-aos-easing="linear"
-                          >
-                            International Standards{" "}
-                          </h3>
+                          <h3>International Standards </h3>
                         </div>
                       </div>
                       <div className="col-lg-3 col-sm-4 col-6 our_diff_item ">
                         <div className="circleicons float-start  text-center grid-center">
-                          <span
-                            className="flex-center mb-2 button button--aylen button--round-l button--text-thick"
-                            data-aos="flip-right"
-                            data-aos-delay={100}
-                            data-aos-duration={300}
-                            data-aos-once="true"
-                            data-aos-easing="ease-in"
-                          >
+                          <span className="flex-center mb-2 button button--aylen button--round-l button--text-thick">
                             <Doctor />
                           </span>
-                          <h3
-                            data-aos="fade-up"
-                            data-aos-delay={100}
-                            data-aos-duration={350}
-                            data-aos-once="true"
-                            data-aos-easing="linear"
-                          >
-                            Founded by doctors
-                          </h3>
+                          <h3>Founded by doctors</h3>
                         </div>
                       </div>
                     </div>

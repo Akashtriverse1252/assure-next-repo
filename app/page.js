@@ -139,23 +139,17 @@ export default function Home() {
                 <h2>ABOUT ASSURE PATHLAB</h2>
               </div>
               <div className="abt_scn__">
-                <div className="about_us_scn  flex-center  flex-column align-items-start">
-                  <div
-                    className="title  float-start text-center"
-                    data-aos="fade-up"
-                    data-aos-duration={500}
-                    data-aos-once="true"
-                    data-aos-easing="ease-in"
-                  >
+                <div
+                  className="about_us_scn  flex-center  flex-column align-items-start"
+                  data-aos="fade-up"
+                  data-aos-duration={500}
+                  data-aos-once="true"
+                  data-aos-easing="ease-in"
+                >
+                  <div className="title  float-start text-center">
                     <h2>ABOUT ASSURE PATHLAB</h2>
                   </div>
-                  <div
-                    className="about_us_cnt text-center "
-                    data-aos="fade-up"
-                    data-aos-duration={500}
-                    data-aos-once="true"
-                    data-aos-easing="ease"
-                  >
+                  <div className="about_us_cnt text-center ">
                     <p>
                       Assure Pathlabs is the best blood test pathalogy
                       laboratory in Jalandhar, established in 2015 by Dr. Sanjay
@@ -198,89 +192,81 @@ export default function Home() {
           </div>
           <Dots className="hsection position-absolute svgwidth opacity-10 end-0 left-inherit" />
         </section>
-        <section className="position-relative why_assure">
-          <div className="container">
-            <div className="web-container">
-              <div className="row">
-                <div
-                  className="title col-12 float-start text-center"
-                  data-aos="fade-up"
-                  data-aos-duration={500}
-                  data-aos-once="true"
-                  data-aos-easing="ease-in"
-                >
-                  <h2>WHY ASSURE PATHLABS?</h2>
-                </div>
-                <div
-                  className="col-lg-10 m-auto col-12 float-start "
-                  data-aos="fade-up"
-                  data-aos-duration={500}
-                  data-aos-once="true"
-                  data-aos-easing="ease-in"
-                >
-                  <div className="row justify-content-center pt-3">
-                    <div class="why_assure_cnt  ">
-                      <div class="why_assure_item">
-                        <span className=" flex-center ">
-                          <Nabh />
-                        </span>
-                        <div class="why_assure_text">
-                          NABH Certified Labs
+        <section className="position-relative  ">
+          <div className="why_assure  ">
+            <div className="container">
+              <div className="web-container">
+                <div className="row">
+                  <div
+                    className="title col-12 float-start text-center"
+                    data-aos="fade-up"
+                    data-aos-duration={500}
+                    data-aos-once="true"
+                    data-aos-easing="ease-in"
+                  >
+                    <h2>WHY ASSURE PATHLABS?</h2>
+                  </div>
+                  <div
+                    className="col-lg-10 m-auto col-12 float-start "
+                    data-aos="fade-up"
+                    data-aos-duration={500}
+                    data-aos-once="true"
+                    data-aos-easing="ease-in"
+                  >
+                    <div className="row justify-content-center pt-3">
+                      <div class="why_assure_cnt  ">
+                        <div class="why_assure_item">
+                          <span className=" flex-center ">
+                            <Nabh />
+                          </span>
+                          <div class="why_assure_text">NABH Certified Labs</div>
                         </div>
-                      </div>
-                      <div class="why_assure_item">
-                        <span className=" flex-center ">
-                          <Alltime />
-                        </span>
-                        <div class="why_assure_text">24x7</div>
-                      </div>
-                      <div class="why_assure_item">
-                        <span className=" flex-center ">
-                          <Samedaydelivery />
-                        </span>
-                        <div class="why_assure_text">
-                          Same Day Report
+                        <div class="why_assure_item">
+                          <span className=" flex-center ">
+                            <Alltime />
+                          </span>
+                          <div class="why_assure_text">24x7</div>
                         </div>
-                      </div>
-                      <div class="why_assure_item">
-                        <span className=" flex-center ">
-                          <FoundedDoctor />
-                        </span>
-                        <div class="why_assure_text">
-                          Founded by Doctors
+                        <div class="why_assure_item">
+                          <span className=" flex-center ">
+                            <Samedaydelivery />
+                          </span>
+                          <div class="why_assure_text">Same Day Report</div>
                         </div>
-                      </div>
+                        <div class="why_assure_item">
+                          <span className=" flex-center ">
+                            <FoundedDoctor />
+                          </span>
+                          <div class="why_assure_text">Founded by Doctors</div>
+                        </div>
 
-                      <div class="why_assure_item">
-                        <span className=" flex-center ">
-                          <AdvancedTechnology />
-                        </span>
-                        <div class="why_assure_text">
-                          Advanced Technology
+                        <div class="why_assure_item">
+                          <span className=" flex-center ">
+                            <AdvancedTechnology />
+                          </span>
+                          <div class="why_assure_text">Advanced Technology</div>
                         </div>
-                      </div>
-                      <div class="why_assure_item">
-                        <span className=" flex-center ">
-                          <HighOn />
-                        </span>
-                        <div class="why_assure_text">
-                          High on Safety and Hygeine
+                        <div class="why_assure_item">
+                          <span className=" flex-center ">
+                            <HighOn />
+                          </span>
+                          <div class="why_assure_text">
+                            High on Safety and Hygeine
+                          </div>
                         </div>
-                      </div>
-                      <div class="why_assure_item">
-                        <span className=" flex-center ">
-                          <FiveHundredplus />
-                        </span>
-                        <div class="why_assure_text">
-                          500+ Test
+                        <div class="why_assure_item">
+                          <span className=" flex-center ">
+                            <FiveHundredplus />
+                          </span>
+                          <div class="why_assure_text">500+ Test</div>
                         </div>
-                      </div>
-                      <div class="why_assure_item">
-                        <span className=" flex-center ">
-                          <ConsultingService />
-                        </span>
-                        <div class="why_assure_text">
-                          Consultation Services
+                        <div class="why_assure_item">
+                          <span className=" flex-center ">
+                            <ConsultingService />
+                          </span>
+                          <div class="why_assure_text">
+                            Consultation Services
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -289,28 +275,29 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <Dots className="hsection position-absolute svgwidth opacity-10 start-0 bottom-0 top-inherit" />
-          <Line className="svgwidthline position-absolute opacity-10 bottom-0 end-0" />
-        </section>
-        <section id="testimonial" className="testimonial">
-          <div className="container position-relative z-index-2">
-            <div className="web-container">
-              <div className="row">
-                <div
-                  className="title col-12 float-start text-center"
-                  data-aos="fade-up"
-                  data-aos-duration={500}
-                  data-aos-once="true"
-                  data-aos-easing="ease-in"
-                >
-                  <h2 className="text-white">TESTIMONIALS</h2>
-                </div>
-                <div className="col-lg-11 col-12 m-auto float-start">
-                  <Testimonials className="minusbottom navigationwhite" />
+
+          <div className="testimonial">
+            <div className="container position-relative z-index-2">
+              <div className="web-container">
+                <div className="row">
+                  <div
+                    className="title col-12 float-start text-center"
+                    data-aos="fade-up"
+                    data-aos-duration={500}
+                    data-aos-once="true"
+                    data-aos-easing="ease-in"
+                  >
+                    <h2 className="text-white">TESTIMONIALS</h2>
+                  </div>
+                  <div className="col-lg-11 col-12 m-auto float-start">
+                    <Testimonials className="minusbottom navigationwhite" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <Dots className="hsection position-absolute svgwidth opacity-10 start-0 bottom-0 top-inherit" />
+          <Line className="svgwidthline position-absolute opacity-10 bottom-0 end-0" />
         </section>
         <section id="faq" className="faq">
           <div className="container position-relative z-index-2">

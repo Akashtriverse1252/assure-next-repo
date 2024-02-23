@@ -10,12 +10,12 @@ export const Homecollection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
-    phoneNumber: "",
+    phone: "",
     email: "",
   });
   const [errors, setErrors] = useState({
     name: false,
-    phoneNumber: false,
+    phone: false,
     email: false,
   });
   const { showAlert } = useAlert();
@@ -57,17 +57,17 @@ export const Homecollection = () => {
       isValid = false;
     }
 
-    if (formData.phoneNumber.trim() === "") {
+    if (formData.phone.trim() === "") {
       showAlert("Failure", "Phone Number is required", "error");
-      newErrors.phoneNumber = true;
+      newErrors.phone = true;
       isValid = false;
-    } else if (!/^[0-9]{10}$/.test(formData.phoneNumber)) {
+    } else if (!/^[0-9]{10}$/.test(formData.phone)) {
       showAlert(
         "Failure",
         "Invalid Phone Number format (should be 10 digits)",
         "error"
       );
-      newErrors.phoneNumber = true;
+      newErrors.phone = true;
       isValid = false;
     }
 
@@ -88,44 +88,44 @@ export const Homecollection = () => {
     return isValid;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
       setIsSubmitting(true);
-
-      fetch(
-        "http://assure.triverseadvertising.com/api/request_a_call_api.php",
-        {
+  
+      try {
+        const response = await fetch("/api/product", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(formData),
-        }
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          setIsSubmitting(false);
-          if (data.success) {
-            showAlert("Success", "Our team will contact you soon", "success");
-            setFormData({
-              name: "",
-              phoneNumber: "",
-              email: "",
-            });
-          } else {
-            showAlert(
-              "Failure",
-              "Error in submitting inquiry, contact us on call or email",
-              "error"
-            );
-            console.error("Server response indicates failure:", data.message);
-          }
-        })
-        .catch((error) => {
-          setIsSubmitting(false);
-          console.error("Error during fetch:", error);
         });
+  
+        const data = await response;
+        console.log("this is the data", data)
+  
+        setIsSubmitting(false);
+  
+        if (data.status === 201) {  
+          showAlert("Success", "Our team will contact you soon", "success");
+          setFormData({
+            name: "",
+            phone: "",
+            email: "",
+          });
+        } else {
+          showAlert(
+            "Failure",
+            "Error in submitting inquiry, contact us on call or email",
+            "error"
+          );
+          console.error("Server response indicates failure:", data);
+        }
+      } catch (error) {
+        setIsSubmitting(false);
+        console.error("Error during fetch:", error);
+      }
     } else {
       setIsErrorOpen(true);
     }
@@ -177,10 +177,10 @@ export const Homecollection = () => {
             variant="outlined"
             label="Contact Number"
             autoComplete="tel"
-            name="phoneNumber"
-            value={formData.phoneNumber}
+            name="phone"
+            value={formData.phone}
             onChange={handleChange}
-            error={errors.phoneNumber}
+            error={errors.phone}
             fullWidth
             className={`styles.inputmodified input-field `}
            

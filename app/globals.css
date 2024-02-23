@@ -1590,15 +1590,14 @@ header {
 
 /* cart css */
 ._cart {
-  width: 30%;
+  width: 24%;
   left: inherit !important;
   height: 100vh;
   right: -30% !important;
   font-family: inherit;
-  box-shadow: 0 0 15px rgb(0 0 0 / 34%);
+  box-shadow: 0 0 10px rgb(86 86 86 / 22%);
   transition: all 0.3s cubic-bezier(0.42, 0, 0.58, 1);
 }
-
 .__cart_cnt {
   position: relative;
   right: 100%;
@@ -1856,7 +1855,7 @@ section.googlereview-sec {
   color: rgb(0 0 0 / 70%);
   padding: 40px 30px;
   margin: 10px;
-  border-radius: 30% 0;
+  border-radius: 0 30% ;
   aspect-ratio: 1/1;
   display: flex;
   justify-content: flex-start;
@@ -4285,9 +4284,8 @@ table th {
   align-items: center;
   justify-content: space-between;
   row-gap: 50px;
-  margin: 40px auto 0;
   width: auto;
-  padding-top: 30px;
+  padding-top: 20px;
 }
 .why_assure_item {
   text-align: center;
@@ -4314,7 +4312,7 @@ table th {
   color: #2e2e2e;
   text-align: left;
   text-wrap: balance;
-  width: 15ch;
+  width: 13ch;
   line-height: 20px;
   letter-spacing: 0.2px;
 }

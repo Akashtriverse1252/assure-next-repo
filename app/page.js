@@ -258,7 +258,7 @@ export default function Home() {
                           <span className=" flex-center ">
                             <FiveHundredplus />
                           </span>
-                          <div class="why_assure_text">500+ Test</div>
+                          <div class="why_assure_text">1000+ Test</div>
                         </div>
                         <div class="why_assure_item">
                           <span className=" flex-center ">

@@ -5,7 +5,7 @@ import { SameDayreport } from "@/components/svg-components/SameDayreport";
 import AffordablePricing from "@/components/svg-components/AffordablePricing";
 import PlayStore from "@/components/svg-components/PlayStore";
 import Nabh from "@/components/svg-components/Nabh";
-import { Consultant } from "./svg-components/Consultant";
+import { FiveHundredplus } from "@/components/svg-components/FiveHundredplus";
 import { Dots } from "@/components/svg-components/Dots";
 import { Line } from "@/components/svg-components/Line";
 import data from "@/Data/Choose_us.json";
@@ -16,7 +16,7 @@ const iconComponents = {
   SameDayreport,
   FreeHomeCollection,
   AffordablePricing,
-  Consultant,
+  FiveHundredplus,
   PlayStore,
 };
 

@@ -87,13 +87,21 @@ export const Footer = () => {
     {
       title: "Services",
       aosDelay: 400,
-      links: [{ label: "FOR INDIVIDUALS" }, { label: "FOR HOSPITALS" }],
+      links: [
+        {
+          label: "FOR INDIVIDUALS",
+          href: "https://patient-in.creliohealth.com/patient/login",
+        },
+        { label: "FOR HOSPITALS" },
+      ],
     },
     {
-      title: "Health Packages",
-      href: "/packages",
+      title: "Booking",
       aosDelay: 500,
-      // links: [{ href: "/packages", label: "HEALTH PACKAGES" }],
+      links: [
+        { href: "/packages", label: "BOOK A PACKAGES" },
+        { href: "/individual-test", label: "BOOK A TEST" },
+      ],
     },
     {
       title: "My Account",

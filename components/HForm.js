@@ -8,6 +8,7 @@ import UploadForm from "./UploadForm";
 import { useData } from "@/context/context";
 import Upload from "./svg-components/Upload";
 import Download from "./svg-components/Download";
+import Link from "next/link";
 
 export const HForm = () => {
   const [showDialog, setShowDialog] = useState(false);
@@ -40,7 +41,7 @@ export const HForm = () => {
         data-aos="fade-up"
         data-aos-duration={600}
         data-aos-once="true"
-        data-aos-easing= "ease-in"
+        data-aos-easing="ease-in"
       >
         <div className="enquireform _serach__ col-12 col-md-12 mx-auto  ">
           <SearchBar />
@@ -60,16 +61,18 @@ export const HForm = () => {
           </div>
 
           <div className="col-12 _upload_hform d-sm-none d-lg-block position-relative">
-            <Button
-              variant="outlined"
-              className="MuiInputBase-root formbtn d-flex justify-content-between"
-              fullWidth
-            >
-              <label>Download Reports</label>
-              <span>
-                <Download />
-              </span>
-            </Button>
+            <Link href="https://patient-in.creliohealth.com/patient/login">
+              <Button
+                variant="outlined"
+                className="MuiInputBase-root formbtn d-flex justify-content-between"
+                fullWidth
+              >
+                <label>Download Reports</label>
+                <span>
+                  <Download />
+                </span>
+              </Button>
+            </Link>
           </div>
         </div>
         <Homecollection />

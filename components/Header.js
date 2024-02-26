@@ -17,6 +17,11 @@ import { PiShoppingCartSimple } from "react-icons/pi";
 import { useData } from "@/context/context";
 import { Badge } from "@mui/material";
 import { Attachement } from "./svg-components/Attachement";
+import { Facebook } from "@/components/svg-components/Facebook";
+import { LinkedIn } from "@/components/svg-components/LinkedIn";
+import { Twitter } from "@/components/svg-components/Twitter";
+import Youtube from "@/components/svg-components/Youtube";
+import { Instagram } from "@/components/svg-components/Instagram";
 import Upload from "./svg-components/Upload";
 import AddPackages from "./svg-components/AddPackages";
 
@@ -91,7 +96,10 @@ export const Header = () => {
                 <div className="mobile_nav_search position-relative d-flex  d-sm-none align-items-end ">
                   <MobileSearchBar />
                   {cartState.products.length !== 0 && (
-                    <Badge badgeContent={totalQuantity <= 10 ? totalQuantity : "9+"} color="error">
+                    <Badge
+                      badgeContent={totalQuantity <= 10 ? totalQuantity : "9+"}
+                      color="error"
+                    >
                       <PiShoppingCartSimple
                         onClick={() => cartDispatch({ type: "TOGGLE_CART" })}
                       />
@@ -176,28 +184,29 @@ export const Header = () => {
                     <div className={menuClasses}>
                       <div className="container">
                         <div className="row">
-                          <div className="web-container">
-                            <div className="col-md-8 col-12 justify-content-md-around justify-content-start   flex-center align-items-start footerrow">
-                              {/* <div className="footercolumn">
-                                <div className="fheading">
-                                  <article
-                                    className="text-uppercase"
-                                    onClick={toggleMenu}
-                                  >
-                                    <Link href="/">Home</Link>
-                                  </article>
-                                </div>
-                              </div> */}
+                          <div className="web-container justify-content-between d-flex">
+                            <div className="header_columns">
                               <div className="footercolumn">
                                 <div className="fheading">
                                   <article
                                     className="text-uppercase"
-                                    onClick={toggleMenu}
+                                    // onClick={toggleMenu}
+                                  >
+                                    <Link href="/">Home</Link>
+                                  </article>
+                                </div>
+                              </div>
+                              <div className="footercolumn">
+                                <div className="fheading">
+                                  <article
+                                    className="text-uppercase"
+                                    // onClick={toggleMenu}
                                   >
                                     <Link href="/about-us">ABOUT US</Link>
                                   </article>
                                 </div>
                               </div>
+
                               <div className="footercolumn">
                                 <div className="fheading">
                                   <article className="text-uppercase">
@@ -229,25 +238,43 @@ export const Header = () => {
                               <div className="footercolumn">
                                 <div className="fheading">
                                   <article className="text-uppercase">
-                                    SERVICES
+                                    <Link href="#">Bookings</Link>
                                   </article>
                                 </div>
                                 <div className="fmenu">
                                   <ul className="p-0 m-0">
-                                    <li>FOR INDIVIDUALS</li>
-                                    <li>FOR HOSPITALS</li>
+                                    <li>
+                                      <Link href="/individual-test">
+                                        BOOK A TEST
+                                      </Link>
+                                    </li>
+                                    <li>
+                                      <Link href="/packages">
+                                        BOOK A PACKAGES
+                                      </Link>
+                                    </li>
                                   </ul>
                                 </div>
                               </div>
                               <div className="footercolumn">
                                 <div className="fheading">
                                   <article className="text-uppercase">
-                                    <Link href="/packages">
-                                      HEALTH PACKAGES
-                                    </Link>
+                                    SERVICES
                                   </article>
                                 </div>
+                                <div className="fmenu">
+                                  <ul className="p-0 m-0">
+                                    <li>
+                                      {" "}
+                                      <Link href="https://patient-in.creliohealth.com/patient/login">
+                                        FOR INDIVIDUALS
+                                      </Link>
+                                    </li>
+                                    <li>FOR HOSPITALS</li>
+                                  </ul>
+                                </div>
                               </div>
+
                               <div className="footercolumn">
                                 <div className="fheading">
                                   <article className="text-uppercase">
@@ -274,31 +301,125 @@ export const Header = () => {
                                         LOGIN
                                       </Link>
                                     </li>
-                                    <li>
-                                      <Link
-                                        className="text-black"
-                                        href="/terms-conditions"
-                                      >
-                                        TERMS & CONDITIONS
-                                      </Link>
-                                    </li>
-                                    <li>
-                                      <Link
-                                        className="text-black"
-                                        href="/privacy-policy"
-                                      >
-                                        PRIVACY POLICY
-                                      </Link>
-                                    </li>
-                                    <li>
-                                      <Link
-                                        className="text-black"
-                                        href="/refund-cancellation"
-                                      >
-                                        REFUND & CANCELLATION
-                                      </Link>
-                                    </li>
                                   </ul>
+                                </div>
+                              </div>
+                              <div className="footercolumn">
+                                <div className="fheading">
+                                  <article
+                                    className="text-uppercase"
+                                    // onClick={toggleMenu}
+                                  >
+                                    <Link
+                                      className="text-black"
+                                      href="/terms-conditions"
+                                    >
+                                      TERMS & CONDITIONS
+                                    </Link>
+                                  </article>
+                                </div>
+                              </div>
+                              <div className="footercolumn">
+                                <div className="fheading">
+                                  <article
+                                    className="text-uppercase"
+                                    // onClick={toggleMenu}
+                                  >
+                                    <Link
+                                      className="text-black"
+                                      href="/privacy-policy"
+                                    >
+                                      PRIVACY POLICY
+                                    </Link>
+                                  </article>
+                                </div>
+                              </div>
+                              <div className="footercolumn">
+                                <div className="fheading">
+                                  <article
+                                    className="text-uppercase"
+                                    // onClick={toggleMenu}
+                                  >
+                                    <Link
+                                      className="text-black"
+                                      href="/refund-cancellation"
+                                    >
+                                      REFUND & CANCELLATION
+                                    </Link>
+                                  </article>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              className=" col-xxl-2 col-xl-3 col-md-4 col-sm-12 contact_detail"
+                              data-aos="fade-in"
+                              data-aos-duration={600}
+                              data-aos-once="true"
+                              data-aos-easing="ease-in"
+                            >
+                              <div className="contact">
+                                <a href="tel:0181-4667555">
+                                  <span className="flex-center align-items-start gap-2 sm-gap-4">
+                                    <strong>T</strong>
+                                    0181-4667555
+                                  </span>
+                                </a>
+                              </div>
+                              <div className="">
+                                <div className="contact">
+                                  <a href="mailto:assurepathlabs@gmail.com">
+                                    <span className="flex-center align-items-start gap-2 sm-gap-4">
+                                      <strong>E</strong>
+                                      assurepathlabs@gmail.com
+                                    </span>
+                                  </a>
+                                </div>
+                              </div>
+                              <div className=" ">
+                                <div className="contact">
+                                  <span className="flex-center align-items-start gap-2 gap-sm-0">
+                                    <strong>A </strong>
+                                    &nbsp;3, Waryam Nagar, <br />
+                                    Vasant Vihar Road, <br />
+                                    Jalandhar
+                                  </span>
+                                </div>
+                              </div>
+                              <div className="col-12  mx-auto  flex-center ">
+                                <a className="button button--aylen button--round-l footer_btn button--text-thick text-uppercase gradient justify-content-start">
+                                  BOOK HOME COLLECTION
+                                </a>
+                              </div>
+
+                              <strong className="haeader_folow-us">
+                                Follow us
+                              </strong>
+                              <div className="socail_icon ">
+                                <div className="">
+                                  <Link href="#">
+                                    <Facebook />
+                                  </Link>
+                                </div>
+                                <div className="">
+                                  <Link href="#">
+                                    <Instagram />
+                                  </Link>
+                                </div>
+
+                                <div className="">
+                                  <Link href="#">
+                                    <LinkedIn />
+                                  </Link>
+                                </div>
+                                <div className="">
+                                  <Link href="#">
+                                    <Youtube />
+                                  </Link>
+                                </div>
+                                <div className="">
+                                  <Link href="#">
+                                    <Twitter />
+                                  </Link>
                                 </div>
                               </div>
                             </div>

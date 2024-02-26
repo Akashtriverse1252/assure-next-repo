@@ -5,6 +5,7 @@ import { Alert, Snackbar, TextField } from "@mui/material";
 import { Call } from "./svg-components/Call";
 import { WhatsApp } from "./svg-components/WhatsApp";
 import { useAlert } from "@/context/AlerterContext";
+import Link from "next/link";
 
 export const Homecollection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -92,7 +93,7 @@ export const Homecollection = () => {
     e.preventDefault();
     if (validateForm()) {
       setIsSubmitting(true);
-  
+
       try {
         const response = await fetch("/api/product", {
           method: "POST",
@@ -101,13 +102,13 @@ export const Homecollection = () => {
           },
           body: JSON.stringify(formData),
         });
-  
+
         const data = await response;
-        console.log("this is the data", data)
-  
+        console.log("this is the data", data);
+
         setIsSubmitting(false);
-  
-        if (data.status === 201) {  
+
+        if (data.status === 201) {
           showAlert("Success", "Our team will contact you soon", "success");
           setFormData({
             name: "",
@@ -168,7 +169,6 @@ export const Homecollection = () => {
             fullWidth
             autoComplete="username"
             className={`styles.inputmodified input-field `}
-           
           />
           <TextField
             type="tel"
@@ -183,8 +183,6 @@ export const Homecollection = () => {
             error={errors.phone}
             fullWidth
             className={`styles.inputmodified input-field `}
-           
-
           />
           <TextField
             name="email"
@@ -197,8 +195,6 @@ export const Homecollection = () => {
             onChange={handleChange}
             placeholder="Email"
             error={errors.email}
-           
-
           />
           <button
             type="submit"
@@ -209,11 +205,15 @@ export const Homecollection = () => {
           </button>
         </form>
         <div className="col-12 float-start cta flex-center justify-content-center">
-          <div className="col-lg-5 col-xs-6 col-6 grid-center text-center gap-1 whatsapp">
-            <WhatsApp /> <p>WhatsApp</p>
+          <div className="col-lg-5 col-xs-6 col-6 grid-center text-center text-black gap-1 whatsapp">
+            <Link href="https://api.whatsapp.com/send/?phone=%2B919716664040&text=Hello%21+assurepathlabs.com%2C+I+am+looking+for+Support.&type=phone_number&app_absent=0">
+              <WhatsApp /> <p className="text-black">WhatsApp</p>
+            </Link>
           </div>
-          <div className="col-lg-5 col-xs-6 col-6 grid-center text-center gap-1 call">
-            <Call /> <p>Call</p>
+          <div className="col-lg-5 col-xs-6 col-6 grid-center text-center text-black gap-1 call">
+            <Link href="tel:0181-4667555">
+              <Call /> <p className="text-black">Call</p>
+            </Link>
           </div>
         </div>
       </div>

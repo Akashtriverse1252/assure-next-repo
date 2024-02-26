@@ -168,19 +168,21 @@ ul {
 
 .menslide {
   position: fixed;
-  background: #f3f3f3;
+  background: #fffafa;
   width: 100%;
   left: 0;
-  top: 150px;
+  top: -100vh;
   line-height: 50px;
   transition: ease all 0.5s;
   visibility: hidden;
   opacity: 0;
   z-index: 9;
-  height: 350px;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all linear 0.5s;
+  z-index: 1;
 }
 
 .hemburgur span {
@@ -207,7 +209,7 @@ ul {
   transform: rotate(0deg);
   position: relative;
   float: right;
-  z-index: 1;
+  z-index: 2;
   right: 0;
   background: transparent;
   border: none;
@@ -260,11 +262,7 @@ ul {
 .menslide.active {
   opacity: 1;
   visibility: visible;
-  top: 120px;
-}
-
-.fixed .menslide.active {
-  top: 100px;
+  top: 0;
 }
 
 img {
@@ -1056,6 +1054,8 @@ header {
 .logo {
   width: 135%;
   transition: 0.3s ease all;
+  z-index: 2;
+  position: relative;
 }
 
 .fixed .logo {
@@ -1072,6 +1072,19 @@ header {
 
 .minheight-120 {
   min-height: 120px;
+}
+.header_columns {
+  flex-wrap: wrap;
+  width: 30%;
+  columns: 2;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.header_columns .footercolumn {
+  width: 40%;
 }
 
 .organcolumn .textbtn {
@@ -1855,7 +1868,7 @@ section.googlereview-sec {
   color: rgb(0 0 0 / 70%);
   padding: 40px 30px;
   margin: 10px;
-  border-radius: 0 30% ;
+  border-radius: 0 30%;
   aspect-ratio: 1/1;
   display: flex;
   justify-content: flex-start;
@@ -4349,3 +4362,24 @@ table th {
 ._cart_cross svg {
   width: 25px;
 }
+.haeader_folow-us {
+  line-height: 1;
+  margin-top: 20px;
+}
+.menustn .contact_detail {
+  line-height: 1.8;
+}
+/* .menslide:after {
+  background-image: url(/public/bg\ layer.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 0.5;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 48%;
+} */

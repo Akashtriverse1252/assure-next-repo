@@ -201,10 +201,6 @@
     width: 120px;
   }
 
-  .menslide.active {
-    top: 100px;
-  }
-
   .highlights p {
     font-size: 14px;
   }
@@ -467,7 +463,6 @@
     padding: 10px 0;
   }
 
-
   .packageprice {
     margin: 10px 0;
     gap: 10px;
@@ -549,10 +544,6 @@
     font-size: 10px;
     width: 15px;
     height: 15px;
-  }
-
-  .menslide {
-    height: 300px;
   }
 
   ._acc_header article {
@@ -882,6 +873,12 @@
 
   .packagename img {
     width: 50px;
+  }
+  .header_columns {
+    width: 50%;
+  }
+  .header_columns .footercolumn {
+    width: 45%;
   }
 }
 
@@ -1318,7 +1315,7 @@
   }
   .procont .doctor_name_img img {
     width: auto;
-}
+  }
 }
 
 @media (max-width: 580px) {
@@ -1964,7 +1961,6 @@
   .bg-gradient-image.about_page {
     bottom: -420%;
   }
-
 }
 
 @media (max-width: 360px) {

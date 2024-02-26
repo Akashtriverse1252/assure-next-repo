@@ -351,7 +351,7 @@ export const Header = () => {
                               </div>
                             </div>
                             <div
-                              className=" col-xxl-2 col-xl-3 col-md-4 col-sm-12 contact_detail"
+                              className="  col-xl-3 col-md-4 col-sm-12 contact_detail d-none d-md-flex"
                               data-aos="fade-in"
                               data-aos-duration={600}
                               data-aos-once="true"

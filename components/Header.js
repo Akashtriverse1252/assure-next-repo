@@ -351,7 +351,7 @@ export const Header = () => {
                               </div>
                             </div>
                             <div
-                              className="  col-xl-3 col-md-4 col-sm-12 contact_detail d-none d-md-flex"
+                              className=" _header_nav_ contact_detail d-none d-md-flex"
                               data-aos="fade-in"
                               data-aos-duration={600}
                               data-aos-once="true"
@@ -396,12 +396,12 @@ export const Header = () => {
                               </strong>
                               <div className="socail_icon ">
                                 <div className="">
-                                  <Link href="#">
+                                  <Link href="https://www.facebook.com/assurepathlabsjalandhar/">
                                     <Facebook />
                                   </Link>
                                 </div>
                                 <div className="">
-                                  <Link href="#">
+                                  <Link href="https://www.instagram.com/assurepathlabs/">
                                     <Instagram />
                                   </Link>
                                 </div>
@@ -411,11 +411,11 @@ export const Header = () => {
                                     <LinkedIn />
                                   </Link>
                                 </div>
-                                <div className="">
+                                {/* <div className="">
                                   <Link href="#">
                                     <Youtube />
                                   </Link>
-                                </div>
+                                </div> */}
                                 <div className="">
                                   <Link href="#">
                                     <Twitter />

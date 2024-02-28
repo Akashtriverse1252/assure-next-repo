@@ -1078,7 +1078,7 @@ header {
   width: 30%;
   columns: 2;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-start;
   gap: 30px;
 }
@@ -4383,3 +4383,6 @@ table th {
   top: 0;
   width: 48%;
 } */
+._header_nav_.contact_detail {
+  width: max-content !important;
+}

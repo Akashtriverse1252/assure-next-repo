@@ -19,6 +19,14 @@ export const Testimonials = (props) => {
     autoplay: true,
     responsive: [
       {
+        breakpoint: 1610,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+        autoplaySpeed: 6000,
+      },
+      {
         breakpoint: 1500,
         settings: {
           slidesToShow: 2.5,

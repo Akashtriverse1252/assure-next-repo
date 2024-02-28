@@ -20,15 +20,21 @@
   .page_equireheading__sSxvP article {
     margin: 10px 0 !important;
   }
+
+  .page_equireheading__sSxvP article:before {
+    content: none !important;
+    width: 0;
+  }
+  .__menus {
+    margin-left: 0 !important;
+    gap: 10px !important;
+  }
 }
 
 @media (max-width: 1600px) {
   .whatsapp p,
   .call p {
     margin: 0;
-  }
-  .__menus {
-    margin-left: 0;
   }
   .homecollection span {
     font-size: 21px;
@@ -56,11 +62,15 @@
   }
 
   .conditionshape h3 {
-    top: 90%;
+    top: 90% !important;
   }
 
   .discountprice {
     line-height: 42px;
+  }
+  .about_us_cnt p,
+  ._seasonalpack {
+    width: 100% !important;
   }
 }
 
@@ -113,9 +123,6 @@
   }
   .headersearchbox {
     width: 35%;
-  }
-  .page_equireheading__sSxvP article:before {
-    content: none !important;
   }
   .__menus {
     gap: 15px;

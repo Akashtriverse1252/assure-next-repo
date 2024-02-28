@@ -182,6 +182,7 @@ export const Header = () => {
                       <span></span>
                     </div>
                     <div className={menuClasses}>
+                      <div className="_layer"></div>
                       <div className="container">
                         <div className="row">
                           <div className="web-container justify-content-between d-flex">
@@ -266,7 +267,7 @@ export const Header = () => {
                                   <ul className="p-0 m-0">
                                     <li>
                                       {" "}
-                                      <Link href="https://patient-in.creliohealth.com/patient/login">
+                                      <Link href="https://patient-in.creliohealth.com/patient/login" target="_blank">
                                         FOR INDIVIDUALS
                                       </Link>
                                     </li>

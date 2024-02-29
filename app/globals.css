@@ -4386,3 +4386,80 @@ table th {
 ._header_nav_.contact_detail {
   width: max-content !important;
 }
+/* YourComponentStyles.css */
+
+/* Video Thumbnails */
+.video_review_scene {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.video_thumbnail {
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.video_thumbnail i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 30px;
+}
+
+/* Custom Modal */
+.your-custom-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.your-custom-modal.open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.modal_closer {
+  display: flex;
+  background-color: #ffffff36;
+  transition: ease-in all 0.3s;
+  position: relative;
+  justify-content: flex-end;
+  width: fit-content;
+  margin-left: auto;
+}
+.modal_closer svg {
+  width: 35px;
+  transition: ease-in all 0.3s;
+}
+.modal_closer svg:hover {
+scale: 1.1;
+}
+
+.modal-body {
+  position: relative;
+}
+
+.vedio_review_loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Add more styles as needed */

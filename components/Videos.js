@@ -1,54 +1,71 @@
-"use client";
-
 import { useState } from "react";
 import Image from "next/image";
-import React from "react";
-import Slider from "react-slick";
 import { BsYoutube } from "react-icons/bs";
+import { IoCloseOutline } from "react-icons/io5";
 
-export const Videos = (props) => {
+const YourCustomModal = ({
+  open,
+  onClose,
+  videoUrl,
+  handleVideoloaded,
+  videoLoading,
+}) => {
+  return (
+    <div className={`your-custom-modal ${open ? "open" : "close"}`}>
+      <div className="modal_content">
+        <div className="modal_closer">
+          <div onClick={onClose}>
+            <IoCloseOutline />
+          </div>
+        </div>
+        <div className="modal-body">
+          <div
+            className={`search_loader vedio_review_loader ${
+              videoLoading ? "open" : "close"
+            }`}
+          >
+            {/* <div className="loader"></div> */}
+          </div>
+          {videoUrl && (
+            <iframe
+              width="400"
+              height="250"
+              src={videoUrl}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              onLoad={handleVideoloaded}
+            ></iframe>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const Videos = () => {
   const [selectedVideoIndex, setSelectedVideoIndex] = useState(null);
   const [videoLoading, setVideoLoading] = useState(false);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  const handleVideoClick = (index) => {
+  const openModal = (index) => {
     setSelectedVideoIndex(index);
     setVideoLoading(true);
+    setModalIsOpen(true);
   };
-  const handleVideoloaded = () => {
+
+  const closeModal = () => {
+    setSelectedVideoIndex(null);
     setVideoLoading(false);
     setIsVideoPlaying(false);
+    setModalIsOpen(false);
   };
-  // console.log(isVideoPlaying);
-  const settings = {
-    // className: "center",
-    // centerMode: true,
-    dots: false,
-    infinite: true,
-    autoplay: isVideoPlaying,
-    autoplaySpeed: 6000,
-    speed: 900,
-    pauseOnHover: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    arrows: true,
-    pauseOnHover: true, // Enable pause on hover
-    responsive: [
-      {
-        breakpoint: 1400, // Small devices
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 800, // Extra small devices
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+
+  const handleVideoloaded = () => {
+    setVideoLoading(false);
+    setIsVideoPlaying(true);
   };
 
   const data = [
@@ -64,88 +81,41 @@ export const Videos = (props) => {
         "https://www.youtube.com/embed/1w815ClswG4?si=vTlsyfxCm9_lAIg7&amp;start=100&autoplay=1&controls=0&rel=1",
       description: "Another dynamic description | Another Source",
     },
-    {
-      thumbnail: "/video_tumbnail_03.jpg",
-      videoUrl:
-        "https://www.youtube.com/embed/1w815ClswG4?si=vTlsyfxCm9_lAIg7&amp;start=100&autoplay=1&controls=0&rel=1",
-      description: "Dynamic description for video 3 | Some Source",
-    },
-    {
-      thumbnail: "/video_tumbnail_04.jpg",
-      videoUrl:
-        "https://www.youtube.com/embed/1w815ClswG4?si=vTlsyfxCm9_lAIg7&amp;start=100&autoplay=1&controls=0&rel=1",
-      description: "Description for video 4 | Another Source",
-    },
+    // Add more video data as needed
   ];
-  const getAosDuration = (index) => {
-    // Adjust the duration values as per your requirement
-    if (index === 0) {
-      return 350; // First slide duration
-    } else if (index === 1) {
-      return 300; // Second slide duration
-    } else if (index === 2) {
-      return 350; // Second slide duration
-    } else {
-      return 400; // Third and subsequent slides duration
-    }
-  };
 
   return (
     <>
-      <div className="vedio_review_scn pt-0 pt-sm-3">
-        <Slider {...settings} {...props} adaptiveHeight={true}>
-          {data.map((video, index) => (
-            <div
-              key={index}
-              data-aos="fade-up"
-              data-aos-delay={getAosDuration(index)}
-              data-aos-duration={getAosDuration(index)}
-              data-aos-once="true"
-              data-aos-easing="ease-in"
-            >
-              <div className="vedio_cont">
-                {selectedVideoIndex === index ? (
-                  <div className=" iframe_scn">
-                    <div
-                      className={`search_loader vedio_revieew_loader ${
-                        videoLoading ? "open" : "close"
-                      }`}
-                    >
-                      <div className="loader"></div>
-                    </div>
-                    <iframe
-                      width="400"
-                      height="250"
-                      src={video.videoUrl}
-                      title="YouTube video player"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      onLoad={handleVideoloaded}
-                    ></iframe>
-                  </div>
-                ) : (
-                  <div
-                    className="vedio_thumbnail"
-                    onClick={() => handleVideoClick(index)}
-                  >
-                    <Image
-                      src={video.thumbnail}
-                      alt="gradient file"
-                      width={400}
-                      height={250}
-                    />
-                    <i>
-                      <BsYoutube />
-                    </i>
-                  </div>
-                )}
-                <p>{video.description}</p>
-              </div>
-            </div>
-          ))}
-        </Slider>
+      <div className="video_review_scene pt-0 pt-sm-3">
+        {data.map((video, index) => (
+          <div
+            key={index}
+            className="video_thumbnail"
+            onClick={() => openModal(index)}
+          >
+            <Image
+              src={video.thumbnail}
+              alt="Video Thumbnail"
+              width={400}
+              height={250}
+            />
+            <i>
+              <BsYoutube />
+            </i>
+            <p>{video.description}</p>
+          </div>
+        ))}
       </div>
+
+      <YourCustomModal
+        open={modalIsOpen}
+        onClose={closeModal}
+        videoUrl={
+          selectedVideoIndex !== null ? data[selectedVideoIndex].videoUrl : ""
+        }
+        handleVideoloaded={handleVideoloaded}
+        videoLoading={videoLoading}
+      />
     </>
   );
 };

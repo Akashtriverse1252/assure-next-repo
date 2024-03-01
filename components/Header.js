@@ -79,7 +79,7 @@ export const Header = () => {
                 </Link>
               </div>
             </div>
-            <div className="col-lg-11  col-9">
+            <div className="col-lg-11 col-md-10 col-sm-10  col-9">
               <div className="d-flex align-items-center  __menus">
                 <div
                   className={
@@ -267,7 +267,10 @@ export const Header = () => {
                                   <ul className="p-0 m-0">
                                     <li>
                                       {" "}
-                                      <Link href="https://patient-in.creliohealth.com/patient/login" target="_blank">
+                                      <Link
+                                        href="https://patient-in.creliohealth.com/patient/login"
+                                        target="_blank"
+                                      >
                                         FOR INDIVIDUALS
                                       </Link>
                                     </li>

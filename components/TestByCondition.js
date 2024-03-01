@@ -69,7 +69,7 @@ export const TestByCondition = () => {
               <h2>TEST BY CONDITION</h2>
             </div>
             <div
-              className="row justify-content-md-center"
+              className="row pt-4 justify-content-md-center"
               data-aos="fade-up"
               data-aos-delay={100}
               data-aos-duration={300}

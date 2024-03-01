@@ -511,23 +511,34 @@ section,
   -webkit-text-fill-color: var(--white-color);
   background-image: inherit;
 }
+.condition a {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  aspect-ratio: 280/160;
+}
 
 .condtionicon {
-  width: 80px;
-  height: 80px;
+  width: 25%;
+  height: auto;
   position: absolute;
-  top: 50px;
+  top: 0;
   z-index: 1;
+  left: 0;
+  aspect-ratio: 1/1;
 }
 
 .conditionshape {
-  height: 150px;
+  /* height: 150px; */
   overflow: hidden;
 }
 
 .conditionshape span {
-  position: absolute;
-  width: 100%;
+  /* position: absolute; */
+  /* width: 100%; */
   bottom: 0;
   height: 100%;
 }
@@ -538,7 +549,7 @@ section,
   text-align: center;
   width: 100%;
   right: 0;
-  top: 100%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 20px;
@@ -700,7 +711,7 @@ section,
 }
 
 .condition {
-  margin-bottom: 35px;
+  margin-bottom: 25px;
 }
 
 .organcolumn svg path,
@@ -1081,6 +1092,7 @@ header {
   justify-content: space-between;
   align-items: flex-start;
   gap: 30px;
+  z-index: 101;
 }
 
 .header_columns .footercolumn {
@@ -2224,6 +2236,7 @@ html::-webkit-scrollbar-thumb:hover,
   cursor: pointer;
   border-radius: 20px;
   overflow: hidden;
+  border: 1px solid #f5f5f5;
 }
 
 .vedio_thumbnail::before {
@@ -2238,20 +2251,14 @@ html::-webkit-scrollbar-thumb:hover,
   transition: opacity 0.3s ease;
 }
 
-.vedio_thumbnail:hover::before {
-  opacity: 1;
-}
-
 .vedio_cont i {
   display: none;
 }
 
 .vedio_cont:hover i {
-  /* content: "\f1a0"; */
   font-family: "Material Icons";
   font-size: 40px;
-  color: #fff;
-  /* color: #ff0000; */
+  color: hsl(0deg 0% 0% / 31%);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -2435,6 +2442,8 @@ li.MuiBreadcrumbs-li svg {
   box-shadow: 0 4px 4px rgba(161, 160, 160, 0.25);
   top: 35px;
   text-align: left;
+  z-index: 10;
+
   /* width: 90%; */
 }
 
@@ -4276,14 +4285,14 @@ table th {
   margin: 0 auto;
 }
 
-.vedio_review_scn .slick-slide.slick-active:nth-child(1),
+/* .vedio_review_scn .slick-slide.slick-active:nth-child(1),
 .vedio_review_scn .slick-slide.slick-active:nth-child(3),
 .vedio_review_scn .slick-slide {
   transform: scale(0.9) translateX(3%);
   opacity: 0.9;
   z-index: 1;
   transition: all 0.3s ease-in;
-}
+} */
 
 .vedio_review_scn .slick-slide.slick-active {
   transition: all 0.3s ease-in;
@@ -4436,19 +4445,22 @@ table th {
 
 .modal_closer {
   display: flex;
-  background-color: #ffffff36;
+  background-color: #ffffffbb;
   transition: ease-in all 0.3s;
-  position: relative;
+  position: absolute;
   justify-content: flex-end;
   width: fit-content;
   margin-left: auto;
+  top: 0;
+  right: 0;
 }
 .modal_closer svg {
   width: 35px;
   transition: ease-in all 0.3s;
+  color: #000;
 }
 .modal_closer svg:hover {
-scale: 1.1;
+  scale: 1.1;
 }
 
 .modal-body {
@@ -4463,3 +4475,25 @@ scale: 1.1;
 }
 
 /* Add more styles as needed */
+.modal_content {
+  width: 100%;
+  height: 100%;
+}
+.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.menslide:before {
+  content: "";
+  background-image: url("../public/bg\ layer.png");
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 100;
+  background-position: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+._header_nav_.contact_detail{
+  z-index: 101;
+}

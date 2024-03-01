@@ -61,10 +61,6 @@
     max-width: 320px;
   }
 
-  .conditionshape h3 {
-    top: 90% !important;
-  }
-
   .discountprice {
     line-height: 42px;
   }
@@ -155,7 +151,7 @@
     margin-bottom: 38px;
   }
   .vedio_cont img {
-    object-fit: cover;
+    object-fit: contain;
   }
 
   main {
@@ -310,20 +306,10 @@
     font-size: 12px;
     letter-spacing: 1.2px;
   }
-
-  .condtionicon {
-    width: 70px;
-    height: 70px;
+  .condition {
+    margin-bottom: 20px;
   }
 
-  .conditionshape span {
-    left: 0;
-  }
-
-  .conditionshape {
-    height: 140px;
-    overflow: hidden;
-  }
   .package_card .packagedetail {
     height: 100px;
   }
@@ -604,15 +590,6 @@
     font-size: 20px;
   }
 
-  .conditionshape {
-    height: 120px;
-    overflow: hidden;
-  }
-
-  .condtionicon {
-    width: 60px;
-  }
-
   .discountprice {
     line-height: 36px;
   }
@@ -860,16 +837,6 @@
     padding: 20 15px 10px;
   }
 
-  .condtionicon {
-    width: 55px;
-    top: 30px;
-  }
-
-  .conditionshape {
-    height: 110px;
-    overflow: hidden;
-  }
-
   footer {
     margin-top: 35px;
   }
@@ -891,7 +858,7 @@
 
 @media (max-width: 1000px) {
   .headersearchbox {
-    width: 55%;
+    width: 54%;
   }
 
   .upload_btn_sc {
@@ -931,10 +898,6 @@
     margin: 0 auto;
   }
 
-  .conditionshape span {
-    top: -40px;
-  }
-
   .p-80 {
     padding: 50px 0;
   }
@@ -942,10 +905,6 @@
   .enquireform .css-wb57ya-MuiFormControl-root-MuiTextField-root {
     margin: 0 1.5%;
     width: 30% !important;
-  }
-
-  .conditionshape h3 {
-    top: 100%;
   }
 
   .plans .plan {
@@ -1014,6 +973,16 @@
   .why_assure_cnt {
     justify-content: center;
   }
+  .logo {
+    width: 115%;
+}
+.fixed .logo{
+  width: 100%;
+
+}
+.footer_btn {
+  font-size: 11px;
+}
 }
 
 @media (max-width: 780px) {
@@ -1126,9 +1095,7 @@
   header {
     min-height: auto;
   }
-  .conditionshape h3 {
-    top: 70%;
-  }
+
   .footer_site {
     width: 90% !important;
   }
@@ -1233,9 +1200,7 @@
     height: 200px;
     overflow: hidden;
   }
-  .conditionshape h3 {
-    top: 100%;
-  }
+
   .highlights.whoIs p,
   .highlights.turn_around p,
   .highlights.pre_test p,
@@ -1586,11 +1551,6 @@
     padding-top: 60px !important;
   }
 
-  .conditionshape span {
-    top: -60px;
-    left: 0;
-  }
-
   .sliderbox {
     width: 95%;
     padding: 20px 15px;
@@ -1613,7 +1573,6 @@
   }
 
   .googlereviewslider {
-    max-width: 90%;
     margin: 0 auto;
   }
 
@@ -1746,28 +1705,16 @@
     font-weight: 600;
   }
 
-  .conditionshape {
-    height: 90px;
-    overflow: hidden;
-  }
-
-  .condtionicon {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 0px;
-    z-index: 1;
-  }
-
   .enquireform:first-child,
   .home_banner .slick-dots {
     display: none !important;
   }
 
   .conditionshape h3 {
-    top: 70%;
-    font-size: 18px;
-    letter-spacing: 1px;
+    font-size: 17px;
+  }
+  .condition {
+    margin-bottom: 15px;
   }
 
   .accordion__button {
@@ -1908,13 +1855,13 @@
     bottom: 35px;
     right: 35px;
   }
+  .package_card .packagename h3 {
+    height: 65px;
+    overflow-y: hidden;
+  }
 }
 
 @media (max-width: 480px) {
-  .conditionshape span {
-    top: -40px;
-    left: 0;
-  }
   .why_assure_item {
     flex-direction: column;
   }
@@ -1967,6 +1914,15 @@
   }
   .bg-gradient-image.about_page {
     bottom: -420%;
+  }
+  .modal_body video {
+    width: 90%;
+    height: auto;
+    aspect-ratio: 4/7;
+    margin: 0 auto;
+  }
+  .modal_body {
+    text-align: center;
   }
 }
 

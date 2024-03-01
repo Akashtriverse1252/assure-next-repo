@@ -18,7 +18,8 @@ const MobileSearchBar = () => {
   return (
     <>
       <span className="search_icon">
-        <SlMagnifier className="search_icon"
+        <SlMagnifier
+          className="search_icon"
           onClick={() => {
             setSearchOpen(!isSearchOpen);
           }}
@@ -43,7 +44,7 @@ const MobileSearchBar = () => {
         />
         <div className="mobile_searchbar">
           <SearchBar />
-          <DropDown_search />
+          {/* <DropDown_search /> */}
         </div>
       </div>
       {/* {isSearchOpen && (

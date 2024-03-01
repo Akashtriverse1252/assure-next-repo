@@ -34,8 +34,9 @@ const TestCategory = ({ Slug }) => {
 
   // Check if project is not null before filtering
   const filtered_slug_data =
-    project && project.filter((p) => p.Test_Category === Slug);
-  console.log("this is the page slug", filtered_slug_data);
+    project &&
+    project.filter((p) => p.Test_Category.toLowerCase() === Slug.toLowerCase());
+  // console.log("this is the page slug", filtered_slug_data);
 
   return (
     <>
@@ -72,7 +73,9 @@ const TestCategory = ({ Slug }) => {
                     ))}
                   </>
                 ) : (
-                  "No test found"
+                  <div className="No_Data d-flex justify-content-center col-12">
+                    <NoData />
+                  </div>
                 )}
               </div>
             </div>

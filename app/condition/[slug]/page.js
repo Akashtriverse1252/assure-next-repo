@@ -5,6 +5,7 @@ import { Line } from "@/components/svg-components/Line";
 import faqData from "@/Data/Faqs_subcat.json";
 export const page = ({ params: { slug } }) => {
   const categoryData = faqData[slug] || [];
+  // console.log("this si the slug from parrent page", slug)
   return (
     <>
       <section className="position-relative">

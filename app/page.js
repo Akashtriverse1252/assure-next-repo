@@ -126,7 +126,7 @@ export default function Home() {
           </div>
           <Line className="svgwidthline position-absolute opacity-10 bottom-0 start-0" />
         </section>
-        <section className="position-relative py-lg-5 py-md-0  mt-5 ">
+        <section className="position-relative py-lg-3 py-md-0  mt-2 ">
           <div className="container">
             <div className="web-container">
               <div

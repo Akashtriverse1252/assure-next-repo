@@ -1,46 +1,60 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
-import { BsYoutube } from "react-icons/bs";
+import { FaPlay } from "react-icons/fa";
 import { IoCloseOutline } from "react-icons/io5";
+import Slider from "react-slick";
+import { Box, Button, Fade, Modal } from "@mui/material";
 
-const YourCustomModal = ({
+const CustomModal = ({
   open,
   onClose,
   videoUrl,
-  handleVideoloaded,
+  handleVideoLoaded,
   videoLoading,
 }) => {
+  const videoRef = useRef(null);
+
   return (
-    <div className={`your-custom-modal ${open ? "open" : "close"}`}>
-      <div className="modal_content">
-        <div className="modal_closer">
-          <div onClick={onClose}>
-            <IoCloseOutline />
-          </div>
-        </div>
-        <div className="modal-body">
-          <div
-            className={`search_loader vedio_review_loader ${
-              videoLoading ? "open" : "close"
-            }`}
-          >
-            {/* <div className="loader"></div> */}
-          </div>
-          {videoUrl && (
-            <iframe
-              width="400"
-              height="250"
-              src={videoUrl}
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              onLoad={handleVideoloaded}
-            ></iframe>
-          )}
-        </div>
-      </div>
-    </div>
+    <Modal
+      open={open}
+      onClose={onClose}
+      closeAfterTransition
+      // slots={{ backdrop: Backdrop }}
+      slotProps={{
+        backdrop: {
+          timeout: 500,
+        },
+      }}
+    >
+      <Fade in={open}>
+        <Box className="modal_content flex-center">
+          <Box className="modal_closer">
+            <Button onClick={onClose}>
+              <IoCloseOutline />
+            </Button>
+          </Box>
+          <Box className="modal_body">
+            <Box
+              className={`search_loader vedio_review_loader ${
+                videoLoading ? "open" : "close"
+              }`}
+            ></Box>
+            {videoUrl && (
+              <video
+                autoPlay
+                controls
+                width="400"
+                height="720"
+                ref={videoRef}
+                onLoadedData={handleVideoLoaded}
+              >
+                <source src={videoUrl} type="video/mp4" />
+              </video>
+            )}
+          </Box>
+        </Box>
+      </Fade>
+    </Modal>
   );
 };
 
@@ -56,6 +70,10 @@ export const Videos = () => {
     setModalIsOpen(true);
   };
 
+  const handleVideoClick = (index) => {
+    openModal(index);
+  };
+
   const closeModal = () => {
     setSelectedVideoIndex(null);
     setVideoLoading(false);
@@ -67,47 +85,104 @@ export const Videos = () => {
     setVideoLoading(false);
     setIsVideoPlaying(true);
   };
+  const settings = {
+    dots: false,
+    infinite: true,
+    autoplay: isVideoPlaying,
+    autoplaySpeed: 6000,
+    speed: 900,
+    pauseOnHover: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: true,
+    pauseOnHover: true, // Enable pause on hover
+    responsive: [
+      {
+        breakpoint: 1400, // Small devices
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 800, // Extra small devices
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
 
   const data = [
     {
-      thumbnail: "/video_tumbnail_01.jpg",
-      videoUrl:
-        "https://www.youtube.com/embed/1w815ClswG4?si=vTlsyfxCm9_lAIg7&amp;start=100&autoplay=1&controls=0&rel=1",
-      description: "We are Indians, not Chinese! | Assurepath Labs",
+      thumbnail: "/video_tumbnail_01.png",
+      videoUrl: "/vedio02.mp4",
+      description:
+        "Let's Talk on Cancer by Dr. Sanjay Wadhwa | Assure Pathlabs",
     },
     {
-      thumbnail: "/video_tumbnail_02.jpg",
-      videoUrl:
-        "https://www.youtube.com/embed/1w815ClswG4?si=vTlsyfxCm9_lAIg7&amp;start=100&autoplay=1&controls=0&rel=1",
-      description: "Another dynamic description | Another Source",
+      thumbnail: "/video_tumbnail_02.png",
+      videoUrl: "/vedio03.mp4",
+      description:
+        "Let's Talk on Thyroid by Dr. Sanjay Wadhwa | Assure Pathlabs",
     },
-    // Add more video data as needed
+    {
+      thumbnail: "/video_tumbnail_03.png",
+      videoUrl: "/vedio01.mp4",
+      description:
+        "Let's Talk on Diabetes by Dr. Sanjay Wadhwa | Assure Pathlabs",
+    },
   ];
+  const getAosDuration = (index) => {
+    if (index === 0) {
+      return 350; // First slide duration
+    } else if (index === 1) {
+      return 300; // Second slide duration
+    } else if (index === 2) {
+      return 350; // Second slide duration
+    } else {
+      return 400; // Third and subsequent slides duration
+    }
+  };
 
   return (
     <>
-      <div className="video_review_scene pt-0 pt-sm-3">
-        {data.map((video, index) => (
-          <div
-            key={index}
-            className="video_thumbnail"
-            onClick={() => openModal(index)}
-          >
-            <Image
-              src={video.thumbnail}
-              alt="Video Thumbnail"
-              width={400}
-              height={250}
-            />
-            <i>
-              <BsYoutube />
-            </i>
-            <p>{video.description}</p>
-          </div>
-        ))}
-      </div>
+      <div className="vedio_review_scn pt-0 pt-sm-3">
+        <Slider {...settings} adaptiveHeight={true}>
+          {data.map((video, index) => (
+            <div
+              key={index}
+              data-aos="fade-up"
+              data-aos-delay={getAosDuration(index)}
+              data-aos-duration={getAosDuration(index)}
+              data-aos-once="true"
+              data-aos-offset={getAosDuration(index)}
+              data-aos-easing="ease-in"
+            >
+              <div className="vedio_cont">
+                <div
+                  className="vedio_thumbnail"
+                  onClick={() => handleVideoClick(index)}
+                >
+                  <Image
+                    src={video.thumbnail}
+                    alt="gradient file"
+                    width={400}
+                    height={250}
+                  />
+                  <i>
+                    <FaPlay />
+                  </i>
+                </div>
 
-      <YourCustomModal
+                <p>{video.description}</p>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+      <CustomModal
         open={modalIsOpen}
         onClose={closeModal}
         videoUrl={

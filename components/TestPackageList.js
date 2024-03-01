@@ -2,17 +2,15 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { TestCard } from "@/components/TestCard";
-import { usePathname } from "next/navigation";
 import { useAlert } from "@/context/AlerterContext";
 import NoData from "@/components/svg-components/NoData";
 const TestPackageList = ({ Type }) => {
   const [tests, setTests] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true); // Set initial loading state to true
   const [page, setPage] = useState(0);
   const [allDataLoaded, setAllDataLoaded] = useState(false);
-  //   console.log("this si the cat inside the new component", Type)
+  const [initialDataLoaded, setInitialDataLoaded] = useState(false); // Add a new state variable to track initial data fetch
 
-  const pathname = usePathname();
   const lastCardRef = useRef(null);
   const { showAlert } = useAlert();
 
@@ -40,6 +38,7 @@ const TestPackageList = ({ Type }) => {
       showAlert("Error", "Network Error", "error");
     } finally {
       setLoading(false);
+      setInitialDataLoaded(true); // Set initial data loaded state to true after fetching initial data
     }
   };
   console.log("is data finished", allDataLoaded);
@@ -74,18 +73,14 @@ const TestPackageList = ({ Type }) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [loading, page]);
-  // console.log("is loading", loading);
 
   return (
     <>
-      {loading ? (
+      {!initialDataLoaded ? (
         <div className="_loader_cnt col-12 d-flex justify-content-center">
           <div className="_loader"></div>
         </div>
-      ) : // <>
-      //   <DNALoader />
-      // </>
-      tests ? (
+      ) : tests ? (
         <>
           {tests.map((test, index) => (
             <TestCard
@@ -102,7 +97,6 @@ const TestPackageList = ({ Type }) => {
               Turn_around_time={test.Turn_around_time}
               BaseDirectory={"packages"}
               index={index}
-              
             />
           ))}
           {!allDataLoaded && <div ref={lastCardRef}></div>}

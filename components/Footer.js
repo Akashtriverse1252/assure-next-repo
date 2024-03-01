@@ -43,6 +43,9 @@ export const Footer = () => {
       return [];
     }
   };
+  const toggleCart = () => {
+    cartDispatch({ type: "TOGGLE_CART" });
+  };
 
   useEffect(() => {
     const fetchTestTabData = async () => {
@@ -109,10 +112,7 @@ export const Footer = () => {
       links: [
         {
           label: "MY CART",
-          onClick: () => {
-            console.log("Clicking on MY CART");
-            cartDispatch({ type: "TOGGLE_CART" });
-          },
+          onClick: toggleCart,
         },
         { label: "BLOG" },
         {
@@ -120,9 +120,6 @@ export const Footer = () => {
           label: "LOGIN",
           external: true,
         },
-        // { href: "/terms-conditions", label: "TERMS & CONDITIONS" },
-        // { href: "/privacy-policy", label: "PRIVACY POLICY" },
-        // { href: "/refund-cancellation", label: "REFUND & CANCELLATION" },
       ],
     },
   ];
@@ -250,7 +247,7 @@ export const Footer = () => {
                               ) : link.href ? (
                                 <Link href={link.href}>{link.label}</Link>
                               ) : (
-                                <span>{link.label}</span> // Add this line to handle undefined href
+                                <span onClick={link.onClick}>{link.label}</span> // Add this line to handle undefined href
                               )}
                             </li>
                           ))}

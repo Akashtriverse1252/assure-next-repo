@@ -189,6 +189,7 @@ export const Homecollection = () => {
             label="Email"
             autoComplete="email"
             variant="outlined"
+            required
             className={`styles.inputmodified input-field `}
             fullWidth
             value={formData.email}

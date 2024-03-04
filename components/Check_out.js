@@ -348,6 +348,9 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                             }, []);
                           },
                         }}
+                        InputLabelProps={{
+                          shrink: true,
+                        }}
                       />
                     </div>
                     <div className="radio-buttons">

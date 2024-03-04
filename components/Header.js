@@ -251,7 +251,7 @@ export const Header = () => {
                                     </li>
                                     <li>
                                       <Link href="/packages">
-                                        BOOK A PACKAGES
+                                        BOOK A PACKAGE
                                       </Link>
                                     </li>
                                   </ul>

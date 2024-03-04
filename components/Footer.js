@@ -103,7 +103,7 @@ export const Footer = () => {
       title: "Booking",
       aosDelay: 500,
       links: [
-        { href: "/packages", label: "BOOK A PACKAGES" },
+        { href: "/packages", label: "BOOK A PACKAGE" },
         { href: "/individual-test", label: "BOOK A TEST" },
       ],
     },

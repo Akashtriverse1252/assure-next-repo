@@ -14,17 +14,13 @@ const CookiesConset = () => {
 
   useEffect(() => {
     const timerId = setTimeout(() => {
-      // const savedCookiesAllowed = Cookies.get("isCookiesAllowed");
-      // Check local storage for user's cookie consent preference
       const isCookiesAllowedFromLocal = Cookies.get("isCookiesAllowed");
 
-      // Set open based on user's cookie consent preference or default to true
       setOpen(
         isCookiesAllowedFromLocal ? isCookiesAllowedFromLocal === "false" : true
       );
     }, 4000);
 
-    // Clear the timer to avoid memory leaks
     return () => clearTimeout(timerId);
   }, [cartState.isCookiesAllowed]);
 
@@ -46,13 +42,11 @@ const CookiesConset = () => {
 
   return (
     <>
-      {/* <Modal open={open} className="cookies_consent_backdrop"> */}
       <div
         className={`cookies_consent position-fixed d-flex flex-wrap justify-content-start align-items-start ${
           open ? " IsCookies" : ""
         }`}
       >
-        {/* <div className="cookies_consent  position-fixed  d-flex flex-wrap justify-content-start align-items-start "> */}
         <div className="container">
           <div className="title">
             <Cookiesicon />
@@ -67,7 +61,7 @@ const CookiesConset = () => {
           </div>
           <div className="d-flex gap-4 items-center">
             <div onClick={handleAllowCookies} className="textbtn">
-              Allow 
+              Allow
             </div>
             <div onClick={handleDecline} className="textbtn decline">
               Decline
@@ -75,7 +69,6 @@ const CookiesConset = () => {
           </div>
         </div>
       </div>
-      {/* </Modal> */}
     </>
   );
 };

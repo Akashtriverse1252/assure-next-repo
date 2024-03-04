@@ -28,17 +28,18 @@ const CustomModal = ({
     >
       <Fade in={open}>
         <Box className="modal_content flex-center">
-          <Box className="modal_closer">
-            <Button onClick={onClose}>
-              <IoCloseOutline />
-            </Button>
-          </Box>
-          <Box className="modal_body">
+          {/* <Button onClick={onClose} className="modal_closer">
+            <IoCloseOutline />
+          </Button> */}
+          <Box className="modal_body d-flex flex-column">
             <Box
               className={`search_loader vedio_review_loader ${
                 videoLoading ? "open" : "close"
               }`}
             ></Box>
+            <Button onClick={onClose} className="_cart_back_icon close_btn">
+              <IoCloseOutline />
+            </Button>
             {videoUrl && (
               <video
                 autoPlay

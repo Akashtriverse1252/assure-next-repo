@@ -4456,8 +4456,7 @@ table th {
 }
 .modal_closer svg {
   width: 35px;
-  transition: ease-in all 0.3s;
-  color: #000;
+
 }
 .modal_closer svg:hover {
   scale: 1.1;
@@ -4494,6 +4493,18 @@ table th {
   background-size: contain;
   background-repeat: no-repeat;
 }
-._header_nav_.contact_detail{
+._header_nav_.contact_detail {
   z-index: 101;
+}
+.close_btn {
+  background-color: #fafafa;
+  margin-left: auto;
+}
+.close_btn:hover {
+  background-color: #fbfbfb;
+  transition: ease-in all 0.3s;
+  color: #000;
+}
+.close_btn:hover svg {
+  scale: 1.1;
 }

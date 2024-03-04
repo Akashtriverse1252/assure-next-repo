@@ -400,18 +400,27 @@ export const Header = () => {
                               </strong>
                               <div className="socail_icon ">
                                 <div className="">
-                                  <Link href="https://www.facebook.com/assurepathlabsjalandhar/">
+                                  <Link
+                                    href="https://www.facebook.com/assurepathlabsjalandhar/"
+                                    target="_blank"
+                                  >
                                     <Facebook />
                                   </Link>
                                 </div>
                                 <div className="">
-                                  <Link href="https://www.instagram.com/assurepathlabs/">
+                                  <Link
+                                    href="https://www.instagram.com/assurepathlabs/"
+                                    target="_blank"
+                                  >
                                     <Instagram />
                                   </Link>
                                 </div>
 
                                 <div className="">
-                                  <Link href="#">
+                                  <Link
+                                    href="https://www.linkedin.com/company/assurepathlabs/"
+                                    target="_blank"
+                                  >
                                     <LinkedIn />
                                   </Link>
                                 </div>

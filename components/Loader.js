@@ -1,10 +1,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import LogoDNA from "@/components/svg-components/LogoDNA";
-import { useLoader } from "@/context/UseLoader";
 
 const Loader = () => {
-  const { loaderVisibility, setLoaderVisibility } = useLoader();
   const mainLoaderRef = useRef(null);
 
   const hideLoaderSec = () => {
@@ -29,13 +27,11 @@ const Loader = () => {
 
   return (
     <>
-      {loaderVisibility && (
         <div className={`main_loader`} ref={mainLoaderRef}>
           <div className="main_loader_sec">
             <LogoDNA />
           </div>
         </div>
-      )}
     </>
   );
 };

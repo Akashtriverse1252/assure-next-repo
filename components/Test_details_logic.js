@@ -103,8 +103,37 @@ export const Test_details_logic = ({ Slug, Category }) => {
     setIsInCart(!isInCart);
   };
   const handleBookHomeCollectionClick = () => {
-    handleToggleCart();
-    // Redirect to the desired page
+    if (cartIds.includes(project.id)) {
+      // Remove product from cart logic here
+      cartDispatch({ type: "REMOVE", productId: project.id });
+    } else {
+      // Add product to cart logic here
+      const product = {
+        id: project.id,
+        name: project.Test_Name,
+        price: project.Test_Amount,
+        dis_price: project.Discount_Amount,
+        quantity: 1,
+        discount: _discount,
+      };
+      const existingProduct = cartState.products.find(
+        (p) => p.id === product.id
+      );
+
+      if (existingProduct) {
+        // If the product exists, update its quantity
+        // cartDispatch({
+        //   type: "INCREMENT",
+        //   productId: product.id,
+        // });
+      } else {
+        // If the product doesn't exist, add it to the cart
+        cartDispatch({
+          type: "ADD_TO_CART",
+          product,
+        });
+      }
+    }
     router.push("/check-out");
   };
 
@@ -369,10 +398,7 @@ export const Test_details_logic = ({ Slug, Category }) => {
                     </p>
                   </div>
                   <div className="detaildescrp col-lg-9 col-md-8 col-12">
-                    <div
-                      className="col-12 flex-center mt-5 mb-2 mb-sm-5 justify-content-center justify-content-sm-start flex-wrap gap-3 m-auto"
-                      
-                    >
+                    <div className="col-12 flex-center mt-5 mb-2 mb-sm-5 justify-content-center justify-content-sm-start flex-wrap gap-3 m-auto">
                       <button
                         className={`button button--aylen button--round-l button--text-thick gradient col-xxl-3 col-lg-4 col-md-5 col-11  ${
                           isInCart ? "button--remove" : ""

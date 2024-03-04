@@ -33,10 +33,17 @@ const TestCategory = ({ Slug }) => {
   }, [Slug]);
 
   // Check if project is not null before filtering
+  // const filtered_slug_data =
+  //   project &&
+  //   project.filter((p) => p.Test_Category.toLowerCase() === Slug.toLowerCase());
+
   const filtered_slug_data =
     project &&
-    project.filter((p) => p.Test_Category.toLowerCase() === Slug.toLowerCase());
-  // console.log("this is the page slug", filtered_slug_data);
+    project.filter((p) =>
+      p.Test_Category.split(",").some(
+        (category) => category.trim().toLowerCase() === Slug.toLowerCase()
+      )
+    );
 
   return (
     <>

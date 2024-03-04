@@ -420,11 +420,11 @@ export const Header = () => {
                                     <Youtube />
                                   </Link>
                                 </div> */}
-                                <div className="">
+                                {/* <div className="">
                                   <Link href="#">
                                     <Twitter />
                                   </Link>
-                                </div>
+                                </div> */}
                               </div>
                             </div>
                           </div>

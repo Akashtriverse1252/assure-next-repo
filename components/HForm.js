@@ -61,7 +61,7 @@ export const HForm = () => {
           </div>
 
           <div className="col-12 _upload_hform d-sm-none d-lg-block position-relative">
-            <Link href="https://patient-in.creliohealth.com/patient/login">
+            <Link href="https://patient-in.creliohealth.com/patient/login" target="_blank">
               <Button
                 variant="outlined"
                 className="MuiInputBase-root formbtn d-flex justify-content-between"

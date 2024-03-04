@@ -1,22 +1,46 @@
 [
   {
-    "question": "What types of tests Assure Pathlabs offer?",
-    "answer": "Assure Pathlabs offers a wide range of tests, including blood tests, pathology tests, radiology tests, and more. We provide comprehensive diagnostic services to meet your healthcare needs."
+    "question": "What types of tests does Assure Pathlabs offer?",
+    "answer": "<p>Assure Pathlabs offers a wide range of tests, including blood tests, pathology tests, radiology tests, and more. At Assure Pathlabs, you will find comprehensive diagnostic services to meet your healthcare needs.</p><p>This includes a number of comprehensive health packages that combine multiple tests in a discounted bundle for your convenience and ease. From general health check-up packages as well as specific panels such as fever or allergy packages, you can get the test of your preference in Assure Pathlabs’ <a href='https://assurepathlab.vercel.app/individual-test'>Test catalogue</a>.</p>"
   },
   {
-    "question": "How do I schedule a test appointment?",
-    "answer": "You can schedule a test appointment by visiting our website and using our online appointment booking system. Alternatively, you can contact our customer support to assist you with the appointment scheduling process."
+    "question": "I want to book a test at Assure Pathlabs. How do I schedule an appointment?",
+    "answer": "<p>You can schedule a test appointment by visiting the Assure Pathlabs website and using the online appointment booking system to efficiently book a slot as per your convenience.</p><p>Alternatively, you can contact the Assure Pathlabs customer support to assist you with the appointment scheduling process. Call at <a href='tel:01814667555'>0181-4667555</a> or email at <a href='mailto:assurepathlabs@gmail.com'>assurepathlabs@gmail.com</a> for more information.</p>"
   },
   {
-    "question": "What is the turnaround time for test results?",
-    "answer": "The turnaround time for test results may vary depending on the type of test. We strive to provide timely and accurate results. You can inquire about the specific turnaround time for your test when scheduling the appointment or contact our staff for more information."
+    "question": "What is the turnaround time for test results at Assure Pathlabs?",
+    "answer": "The turnaround time for test results may vary depending on the type of test. We strive to provide timely and accurate results. You can inquire about the specific turnaround time for your test when scheduling the appointment or contact our staff for more information. Alternatively, you can browse the Assure Pathlabs website or use the search function to find the relevant test or panel, click on “know more +” and find all the relevant information, including the turnaround time for the test."
   },
   {
     "question": "Do you offer home collection services?",
-    "answer": "Yes, Assure Pathlabs provides home collection services for certain tests. Our trained professionals can collect samples from the comfort of your home, making the testing process convenient for you."
+    "answer": "<p>Yes, Assure Pathlabs provides home collection services for many of our tests, packages, and panels. Assure Pathlabs’ trained professionals can collect samples from the comfort of your home, making the testing process convenient for you. To book home collection, call <a href='tel:01814667555'>0181-4667555</a> or make an appointment from the Assure Pathlabs website.</p>"
   },
   {
     "question": "How can I access my test reports?",
-    "answer": "You can access your test reports through our online portal. Once your test results are ready, they will be uploaded to the portal, and you will receive an email notification with instructions on how to view and download your reports."
+    "answer": "You can access your test reports through the Assure Pathlabs online portal. Once your test results are ready, they will be uploaded to the portal, and you will receive an email notification with instructions on how to view and download your reports."
+  },
+  {
+    "question": "Can I book a specific test instead of the whole package?",
+    "answer": "<p>Assure Pathlabs offers a number of comprehensive packages for different types of healthcare requirements, for your convenience. This is a cost-effective option for a holistic health check-up. However, if you wish to only get a specific test instead of the full package, you can book that too. Use the Assure Pathlabs website or contact Assure Pathlabs at <a href='tel:01814667555'>0181-4667555</a> to book the <a href='https://assurepathlab.vercel.app/individual-test'>test</a>.</p>"
+  },
+  {
+    "question": "How do I contact Assure Pathlabs?",
+    "answer": "<p>You can contact Assure Pathlabs at <a href='tel:01814667555'>0181-4667555</a> or email us at <a href='mailto:assurepathlabs@gmail.com'>assurepathlabs@gmail.com</a>.</p><p>To find more contact details for Assure Pathlabs including the address and social media handles, scroll down to the bottom of the Assure Pathlabs website home page.</p>"
+  },
+  {
+    "question": "I wish to visit your lab. What are the timings of Assure Pathlabs?",
+    "answer": "Assure Pathlabs is open 24x7. For in-person visits, you can drive through between 7 am and 9 pm any day of the week."
+  },
+  {
+    "question": "Do I need to fast before my test? How do I know what preparation to do before my test?",
+    "answer": "<p>You may need to fast before certain tests. You can inquire about the specific pre-test requirements for your test when scheduling the appointment or contact our staff for more information. Alternatively, you can browse the Assure Pathlabs website or use the search function to find the relevant test or panel, click on “know more +” and find all the relevant information, including the pre-test requirements such as fasting.</p>"
+  },
+  {
+    "question": "Does Assure Pathlabs follow a safe and hygienic sample collection process?",
+    "answer": "Assure Pathlabs follows a standardized procedure of sample collection and testing, with a strict process of using sterilized equipment and careful handling to ensure the safety of our customers and sanctity of our processes. It is a safe and hygienic process designed to provide the utmost comfort and cleanliness for each customer."
+  },
+  {
+    "question": "How can I change my appointment time or date?",
+    "answer": "<p>To change your appointment time or date, contact Assure Pathlabs at <a href='tel:01814667555'>0181-4667555</a> or email us at <a href='mailto:assurepathlabs@gmail.com'>assurepathlabs@gmail.com</a>. You can cancel the appointment or change the time any time before the sample pickup at no extra cost, however, once the phlebotomist visits the patient, a charge of Rs. 100 will be levied for a change to the appointment. Once the sample is taken/collected, there will be no refund.</p><p>To know more about our refund/cancellation policy, visit <a href='https://www.assurepathlabs.com/refund-cancellation'>www.assurepathlabs.com/refund-cancellation</a></p>"
   }
 ]

@@ -294,12 +294,12 @@ export const Footer = () => {
                 </div>
                 <div className="socail_icon">
                   <div className="">
-                    <Link href="#">
+                    <Link href="https://www.facebook.com/assurepathlabsjalandhar/" target="_blank">
                       <Facebook />
                     </Link>
                   </div>
                   <div className="">
-                    <Link href="#">
+                    <Link href="https://www.instagram.com/assurepathlabs/" target="_blank">
                       <Instagram />
                     </Link>
                   </div>
@@ -309,7 +309,7 @@ export const Footer = () => {
                       <LinkedIn />
                     </Link>
                   </div>
-                  <div className="">
+                  {/* <div className="">
                     <Link href="#">
                       <Youtube />
                     </Link>
@@ -318,7 +318,7 @@ export const Footer = () => {
                     <Link href="#">
                       <Twitter />
                     </Link>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="col-12  mx-auto  flex-center ">
                   <a className="button button--aylen button--round-l footer_btn button--text-thick text-uppercase gradient justify-content-start">

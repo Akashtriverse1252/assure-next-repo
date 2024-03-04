@@ -19,7 +19,7 @@ export const TestByCondition = () => {
     },
     {
       name: "Viral",
-      slug: "viral",
+      slug: "viral-infections",
       icon: <Viral />,
     },
     {

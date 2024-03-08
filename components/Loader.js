@@ -35,7 +35,7 @@ const Loader = () => {
 
   useEffect(() => {
     const timeout = setTimeout(hideLoaderSec, 4000);
-    const timeoutId = setTimeout(hideLoader, 5000);
+    const timeoutId = setTimeout(hideLoader, 4800);
 
     return () => {
       clearTimeout(timeout);

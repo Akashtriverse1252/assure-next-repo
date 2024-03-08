@@ -3369,16 +3369,14 @@ button:disabled {
 }
 
 .main_loader_sec {
-  /* width: 33.33333333334%; */
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   height: 100%;
-  /* background-color: #49108b; */
   background-color: #575aa8;
   flex: 1;
-  transition: height 0.4s linear;
+  transition: height 0.5s linear;
 }
 
 .main_loader_sec.mainSecLoaderLoaded {
@@ -3403,31 +3401,6 @@ button:disabled {
   opacity: 0;
   transform: opacity 0.3s linear;
 }
-
-/* .main_loader_svg path.string_right  {
-  fill: #a09999;
-  animation: fill 0.3s ease infinite ;
-  animation-delay:5s ;
-} */
-
-/* @keyframes fillBottomToTop {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-.main_loader_svg path.string_left,
-.main_loader_svg path.string_right {
-  stroke-dasharray: 20000;
-  stroke-dashoffset: 20000;
-  animation: fillBottomToTop 3s linear ;
-  stroke: #fff;
-  stroke-width: 10px;
-  fill: none;
-}
-  .main_loader_svg path.string_left{
-    animation-delay: 3s;
-  } */
 
 /* not found css */
 
@@ -4456,7 +4429,6 @@ table th {
 }
 .modal_closer svg {
   width: 35px;
-
 }
 .modal_closer svg:hover {
   scale: 1.1;

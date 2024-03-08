@@ -74,6 +74,10 @@ const TestPackageList = ({ Type }) => {
     };
   }, [loading, page]);
 
+  const determineBaseDirectory = (type) => {
+    return type === "package" ? "packages" : "individual-test";
+  };
+
   return (
     <>
       {!initialDataLoaded ? (
@@ -95,7 +99,7 @@ const TestPackageList = ({ Type }) => {
               Who_is_it_for={test.Who_is_it_for}
               Pre_test_information={test.Pre_test_information}
               Turn_around_time={test.Turn_around_time}
-              BaseDirectory={Type===test? "individual-test":"packages"}
+              BaseDirectory={determineBaseDirectory(Type)}
               index={index}
             />
           ))}

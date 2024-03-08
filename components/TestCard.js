@@ -142,9 +142,9 @@ export const TestCard = ({
             </div>
             <div className="packageprice_btn">
               <div className="textbtn">
-                <span href={`/${BaseDirectory || "test-detail"}/${Slug}`}>
+                <Link href={`/${BaseDirectory || "test-detail"}/${Slug}`}>
                   KNOW MORE +
-                </span>
+                </Link>
               </div>
             </div>
           </div>

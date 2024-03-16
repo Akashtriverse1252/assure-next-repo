@@ -78,7 +78,7 @@ export const Testimonials = (props) => {
       {
         breakpoint: 800,
         settings: {
-          slidesToShow: 1.6,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },  

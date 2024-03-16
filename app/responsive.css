@@ -833,7 +833,7 @@
   .google_review_logo svg {
     width: 30px;
   }
-  .review_btn{
+  .review_btn {
     scale: 0.9;
   }
 }
@@ -1003,6 +1003,14 @@
   }
 }
 
+@media (max-width: 900px) {
+  .google_review_sction {
+    display: none;
+  }
+  .google_review {
+    width: 95%;
+  }
+}
 @media (max-width: 780px) {
   .h_form {
     width: 90%;
@@ -1880,6 +1888,10 @@
 }
 
 @media (max-width: 480px) {
+  .testimonial_container {
+    padding: 0;
+    margin: 0 auto;
+  }
   .why_assure_item {
     flex-direction: column;
   }

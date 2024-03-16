@@ -33,20 +33,22 @@ export const Footer = () => {
   const [packageTabData, setPackageTabData] = useState([]);
   const [overflowingItems, setOverflowingItems] = useState([]);
 
+  const listRef = useRef(null);
+
   useEffect(() => {
     const handleOverflow = () => {
-      const listItems = document.querySelectorAll(
-        ".popular_packages_cnt ul li"
-      );
+      if (listRef.current) {
+        const listItems = listRef.current.querySelectorAll("li");
 
-      const overflowing = Array.from(listItems).filter((item) => {
-        const listItemWidth = item.getBoundingClientRect().width;
-        const parentWidth = item.parentElement.getBoundingClientRect().width;
+        const overflowing = Array.from(listItems).filter((item) => {
+          const listItemWidth = item.getBoundingClientRect().width;
+          const parentWidth = item.parentElement.getBoundingClientRect().width;
 
-        return listItemWidth > parentWidth;
-      });
+          return listItemWidth > parentWidth;
+        });
 
-      setOverflowingItems(overflowing);
+        setOverflowingItems(overflowing);
+      }
     };
 
     handleOverflow();
@@ -196,7 +198,7 @@ export const Footer = () => {
                           //     {test.Test_Name}
                           //   </Link>
                           // </li>
-                          <li key={test.id}>
+                          <li key={test.id} ref={listRef}>
                             {overflowingItems.includes(index) ? (
                               <ToolTip title={test.Test_Name}>
                                 {test.Test_Name}

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { ChooseAssure } from "@/components/ChooseAssure";
 import { Test_details_logic } from "@/components/Test_details_logic";
@@ -28,9 +28,7 @@ export const page = ({ params }) => {
         </section>
         <ChooseAssure />
         <div className="BACKTOPACKAGE" onClick={handlePreviousStep}>
-          <ToolTip title={"thios is the akash dinghs"}>
           <span>BACK TO PACKAGE</span>
-          </ToolTip>
         </div>
       </main>
     </>

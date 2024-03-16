@@ -1146,6 +1146,11 @@
 }
 
 @media (max-width: 680px) {
+  td.cart-detail-page-bin {
+    width: auto;
+    text-align: right;
+    cursor: pointer;
+}
   ._cart {
     height: 100dvh;
     inset: 1;

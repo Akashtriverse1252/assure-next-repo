@@ -174,8 +174,8 @@ export default function Cart() {
                         onClick={isOpen}
                         href="/individual-test"
                       >
-                        Continue Search
-                        <span aria-hidden="true"> &rarr;</span>
+                        Add Test/Packages
+                        {/* <span aria-hidden="true"> &rarr;</span> */}
                       </Link>
                     </div>
                   </div>

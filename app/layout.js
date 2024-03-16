@@ -50,7 +50,7 @@ export default function RootLayout({ children, isLoading }) {
               <UploadForm />
             </div>
           </body>
-          <CookiesConset />
+          {/* <CookiesConset /> */}
         </GlobalDataProvider>
       </AlertProvider>
     </html>

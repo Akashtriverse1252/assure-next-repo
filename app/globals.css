@@ -380,6 +380,7 @@ section,
 
 .sliderbox:hover {
   background: #f7fafd;
+  transform: scale(1.01);
 }
 
 .packagename span,
@@ -1239,6 +1240,7 @@ header {
   border-radius: 50px;
   border: solid 1px #d8dee7;
   padding: 10px 30px;
+  transition: all ease 0.3s;
 }
 
 .detailrow {
@@ -1284,6 +1286,7 @@ header {
 .accordion__button:hover,
 .faqcont [aria-expanded="true"] {
   background-color: #9cd6ff;
+  transform: scale(1.01);
 }
 
 .accordion__panel ul li {
@@ -1742,8 +1745,9 @@ header {
 .cnt_shp_btn {
   border: none;
   background-color: transparent;
-  font-size: 12px;
-  margin-top: 30px;
+  font-size: 14px;
+  margin-top: 20px;
+  width: 250px;
 }
 
 ._cart_list {
@@ -1880,7 +1884,7 @@ section.googlereview-sec {
   color: rgb(0 0 0 / 70%);
   padding: 40px 30px;
   margin: 10px;
-  border-radius: 0 30%;
+  /* border-radius: 0 30%; */
   aspect-ratio: 1/1;
   display: flex;
   justify-content: flex-start;
@@ -2423,70 +2427,33 @@ li.MuiBreadcrumbs-li svg {
   box-shadow: 8px 14px 17px -13px rgb(1 1 1 / 25%);
 }
 
-._tooltip {
-  position: relative;
+
+li.__tootip {
   display: inline-block;
+  position: relative;
 }
 
-._tooltip ._tooltip-text {
-  visibility: hidden;
-  background-color: #ecf8ff;
-  color: #747373;
-  border-radius: 10px;
-  padding: 10px 5px;
-  position: absolute;
-  width: 250px;
-  transform: translateX(-50%);
-  z-index: 1;
-  font-size: 14px;
-  box-shadow: 0 4px 4px rgba(161, 160, 160, 0.25);
-  top: 35px;
-  text-align: left;
-  z-index: 10;
-
-  /* width: 90%; */
+li.__tootip svg {
+  width: 15px;
 }
 
-._tooltip ._tooltip-text article {
-  text-align: left;
-  width: 90%;
-  font-size: 15px;
-  color: #000;
-  line-height: 1.4;
-  font-weight: 500;
-  margin-bottom: 8px;
+.css-1mdftu-MuiTypography-root article {
+  text-align: left !important ;
+  font-size: 15px !important;
+  color: #000 !important;
+  line-height: 1.4 !important;
+  font-weight: 600 !important;
+  margin-bottom: 8px !important;
 }
 
-._tooltip ._tooltip-text p {
-  font-size: 13px;
-  line-height: 1.2;
-  letter-spacing: 0.5px;
-  text-align: left;
-  width: 90%;
-  text-wrap: wrap;
-  /* text-transform: lowercase; */
-  margin: 0 auto;
-}
-
-._tooltip ._tooltip-text::after {
-  content: "";
-  position: absolute;
-  bottom: 100%;
-  right: 50%;
-  border-width: 8.66px;
-  border-style: solid;
-  border-color: transparent transparent #ecf8ff;
-}
-
-._tooltip:hover ._tooltip-text,
-._tooltip:focus ._tooltip-text {
-  visibility: visible;
-}
-
-._tooltip svg,
-._tooltip ._info.svg {
-  color: #000;
-  margin-left: 5px;
+.css-1mdftu-MuiTypography-root p {
+  font-size: 13px !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0.5px !important;
+  text-align: left !important;
+  text-wrap: wrap !important;
+  text-transform: lowercase;
+  margin: 0 auto !important;
 }
 
 .packagedetail._test ul {
@@ -2731,6 +2698,7 @@ button:disabled {
   color: #505050 !important;
   font-size: 12px;
   width: 100%;
+  position: relative;
 }
 
 .chooseassure .circleicons:first-child svg path.s4 {
@@ -3309,7 +3277,7 @@ label.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
 }
 .whatsapp,
 .call,
-.fmenu ul li {
+.fmenu ul li a {
   cursor: pointer;
 }
 
@@ -3341,8 +3309,8 @@ label.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
 
 .disabled,
 button:disabled {
-  cursor: not-allowed;
-  filter: grayscale(0.3);
+  cursor: not-allowed !important;
+  filter: grayscale(0.8);
 }
 
 .unsetAll {
@@ -4473,10 +4441,263 @@ table th {
   margin-left: auto;
 }
 .close_btn:hover {
-  background-color: #fbfbfb;
-  transition: ease-in all 0.3s;
-  color: #000;
+  background-color: #fbfbfb !important;
+  transition: ease-in all 0.3s !important;
+  color: #000 !important;
 }
 .close_btn:hover svg {
   scale: 1.1;
+}
+.review-container {
+  display: flex;
+  align-items: flex-start;
+  background: #fff;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
+}
+
+.review-stars {
+  margin-right: 16px;
+  max-width: 300px;
+  /* padding: 0 40px; */
+  background: #fff;
+}
+
+.review-star-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0px 0px;
+}
+
+.review-star-row {
+  /* height: 8px; */
+  border-bottom: none;
+  width: 250px;
+  display: flex;
+  flex-direction: row;
+  /* gap: 5px; */
+  align-items: center;
+  /* margin-bottom: 5px; */
+  background-color: transparent;
+}
+
+.review-star-count {
+  width: 20px;
+  color: rgb(112, 117, 122);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 20px;
+  padding: 0;
+  text-align: center;
+  /* padding: 5px 0; */
+  margin-right: 5px;
+}
+
+.review-star-bar {
+  padding-left: 4px;
+  position: relative;
+  height: 8px;
+  background-color: rgb(241, 243, 244);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0;
+  flex: 1;
+  padding-left: 4px;
+  border-radius: 5px;
+}
+
+.review-star-fill {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background-color: rgb(251, 188, 4);
+  border-radius: 4px;
+  height: 8px;
+  transform: translateY(-50%);
+}
+
+.review-rating {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.review-rating-number {
+  font-size: 56px;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 64px;
+  color: rgb(0, 0, 0);
+}
+
+.review-rating-stars {
+  display: flex;
+  margin-right: 8px;
+}
+
+.review-star {
+  width: 14px;
+  height: 14px;
+  background-size: 14px 14px;
+  background-image: url("https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png");
+  background-repeat: no-repeat;
+  margin-right: 2px;
+}
+
+.review-rating-count {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 22px;
+  color: rgb(112, 117, 122);
+}
+.google_review {
+  width: 75%;
+}
+
+.testimonial_container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding-left: 7%;
+  gap: 2%;
+}
+.google_review_sction {
+  background: #fff;
+  margin: 25px 0 15px;
+  padding: 35px 15px;
+  max-width: 400px;
+}
+.google_review_logo svg {
+  width: 50px;
+}
+.google_review_logo {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+.google_review_logo p {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 600;
+  color: #5a5a5a;
+}
+.review_btn {
+  background: transparent;
+  color: #000;
+  border: 1.5px solid #969696;
+  font-size: 13px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+.review_btns {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+.currentslide-review {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.googlereviewslider .slick-prev:before,
+.googlereviewslider .slick-next:before {
+  display: none;
+  content: none;
+}
+.popular_packages_cnt li:hover a {
+  font-weight: 600;
+  color: #000;
+}
+.highlights._points p:hover {
+  border: solid 1px #e7e7e7;
+  padding: 10px 30px;
+  background: #fff;
+  color: #000;
+  box-shadow: 2px 2px 5px rgb(0 0 0 / 6%);
+}
+
+.fmenu ul li a::before {
+  content: "";
+  position: absolute;
+  right: 0px;
+  bottom: -2px;
+  left: 0px;
+  height: 1px;
+  background: currentcolor;
+  transform-origin: right center;
+  transform: scaleX(0);
+  transition: transform 0.83s cubic-bezier(0.33, 0, 0.13, 1) 0s;
+}
+
+.fmenu ul li a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+td.cart-detail-page-bin {
+  width: 100px;
+  text-align: center;
+  cursor: pointer;
+}
+.BACKTOPACKAGE {
+  position: fixed;
+  overflow: hidden;
+  height: 120px;
+  width: 120px;
+  background: rgb(103 61 185);
+  border-radius: 50%;
+  margin: 0 auto;
+  bottom: 5vh;
+  left: 5vh;
+  z-index: 2;
+  cursor: pointer;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.BACKTOPACKAGE span {
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1.8px;
+  text-align: center;
+  transition: opacity 0.3s ease-in-out;
+}
+.BACKTOPACKAGE:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(17, 152, 202, 1) 0%,
+    rgba(97, 28, 162, 1) 100%
+  );
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0) scale(0);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: -1;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0, 1);
+}
+
+.BACKTOPACKAGE:hover::after {
+  transform: translate3d(-50%, -50%, 0) scale(1.05);
+  opacity: 1;
 }

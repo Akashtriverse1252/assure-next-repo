@@ -6,13 +6,20 @@ import { useData } from "@/context/context";
 import { Rupees } from "./svg-components/Rupees";
 import { FiShoppingCart } from "react-icons/fi";
 import { FaArrowRightLong } from "react-icons/fa6";
+import Bin from "./svg-components/Bin";
+import { useAlert } from "@/context/AlerterContext";
+import { RiDeleteBinLine } from "react-icons/ri";
 
 const ProductDetail = ({ onNextStep, onFormData }) => {
   const [productData, setProductData] = useState([]);
   const { cartState, cartDispatch } = useData();
+  const { showAlert } = useAlert();
+  const [isProductAvailable, setIsProductAvailable] = useState(true); // State to track if products are available
 
   useEffect(() => {
     setProductData(cartState.products);
+    // Check if there are any products
+    setIsProductAvailable(cartState.products.length > 0);
   }, [cartState.products]);
 
   const calculateSubtotal = () => {
@@ -21,8 +28,16 @@ const ProductDetail = ({ onNextStep, onFormData }) => {
     }, 0);
   };
 
+  const handleRemove = (product) => {
+    cartDispatch({ type: "REMOVE", productId: product.id });
+  };
+
   const handleNext = () => {
-    onNextStep();
+    if (isProductAvailable) {
+      onNextStep();
+    } else {
+      showAlert("Error", "Please add a product to proceed", "error");
+    }
   };
 
   return (
@@ -42,6 +57,7 @@ const ProductDetail = ({ onNextStep, onFormData }) => {
                       <tr>
                         <th>S No.</th>
                         <th>Package/Test Name</th>
+                        <th>Remove</th>
                         <th>Unit Price</th>
                         <th>Discount</th>
                         <th>Quantity</th>
@@ -53,6 +69,13 @@ const ProductDetail = ({ onNextStep, onFormData }) => {
                         <tr key={index}>
                           <td data-label="S No.">{index + 1}</td>
                           <td data-label="Package/Test Name">{product.name}</td>
+                          <td
+                          className="cart-detail-page-bin"
+                            data-label="Remove"
+                            onClick={() => handleRemove(product)}
+                          >
+                            <RiDeleteBinLine />
+                          </td>
                           <td data-label="Unit Price">
                             <Rupees />
                             {product.quantity * product.price}
@@ -67,7 +90,7 @@ const ProductDetail = ({ onNextStep, onFormData }) => {
                       ))}
                       <tr>
                         <td
-                          colSpan={5}
+                          colSpan={6}
                           className="px-4 text-lg"
                           data-label="Subtotal"
                         >
@@ -93,8 +116,11 @@ const ProductDetail = ({ onNextStep, onFormData }) => {
                     </div>
                     <div className=" mt-3  row text-right">
                       <button
-                        className="edit_cart button button--wayra pull-right red tab3"
+                        className={`edit_cart button button--wayra pull-right red tab3 ${
+                          !isProductAvailable && "disabled" // Disable button if no products are available
+                        }`}
                         onClick={handleNext}
+                        // disabled={!isProductAvailable} // Disable button if no products are available
                       >
                         Proceed
                         <FaArrowRightLong className="m-2" />

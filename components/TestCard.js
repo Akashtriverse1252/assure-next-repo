@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Rupees } from "./svg-components/Rupees";
 import { BsInfoCircleFill } from "react-icons/bs";
 import { Tooltip } from "@mui/material";
-
+import ToolTip from "@/components/ToolTip";
 export const TestCard = ({
   Slug,
   Test_Name,
@@ -76,30 +76,26 @@ export const TestCard = ({
                 {/* {Test_Category && <li>{Test_Category} Related Test</li>} */}
                 {/* {Turn_around_time && <li>Report Time: {Turn_around_time}</li>} */}
                 {Pre_test_information && (
-                  <li>
-                    Pre Test Information
-                    <div
-                      className="_tooltip"
-                      tabIndex="0"
-                      onMouseEnter={handleTooltipToggle}
-                      onMouseLeave={handleTooltipToggle}
-                      onFocus={handleTooltipToggle}
-                      onBlur={handleTooltipToggle}
+                  <li className="__tootip">
+                    <ToolTip
+                      title={"Pre Test Information"}
+                      data={Pre_test_information}
                     >
-                      <BsInfoCircleFill className="_info" />
-                      <span className="_tooltip-text">
-                        <div className="pre_test_content flex-center flex-column px-2 py-1">
-                          <article>Pre Test Information</article>
-                          <p>{Pre_test_information}</p>
-                        </div>
-                      </span>
-                    </div>
+                      Pre Test Information
+                      <BsInfoCircleFill className="_info " />
+                    </ToolTip>
                   </li>
                 )}
                 {Turn_around_time && (
-                  <li>
-                    Report Available In
-                    <div
+                  <li className="__tootip">
+                    <ToolTip
+                      title={"Report Available In"}
+                      data={Turn_around_time}
+                    >
+                      Report Available In
+                      <BsInfoCircleFill className="_info " />
+                    </ToolTip>
+                    {/* <div
                       className="_tooltip"
                       tabIndex="0"
                       onMouseEnter={handleTooltipToggle}
@@ -114,7 +110,7 @@ export const TestCard = ({
                           <p>{Turn_around_time}</p>
                         </div>
                       </span>
-                    </div>
+                    </div> */}
                   </li>
                 )}
                 {/* {Test_Description && (

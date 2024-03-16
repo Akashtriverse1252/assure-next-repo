@@ -817,6 +817,25 @@
     font-size: 12px !important;
     letter-spacing: 1px;
   }
+  .googlereviewslider .revier_cnt {
+    font-size: 14px;
+  }
+  .google_testimonial {
+    padding: 20px;
+  }
+  .review-star-row {
+    width: 170px;
+  }
+  .review-rating-number {
+    font-size: 48px;
+    line-height: 1;
+  }
+  .google_review_logo svg {
+    width: 30px;
+  }
+  .review_btn{
+    scale: 0.9;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -975,14 +994,13 @@
   }
   .logo {
     width: 115%;
-}
-.fixed .logo{
-  width: 100%;
-
-}
-.footer_btn {
-  font-size: 11px;
-}
+  }
+  .fixed .logo {
+    width: 100%;
+  }
+  .footer_btn {
+    font-size: 11px;
+  }
 }
 
 @media (max-width: 780px) {

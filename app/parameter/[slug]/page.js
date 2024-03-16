@@ -1,8 +1,16 @@
+"use client"
 import React from "react";
 import { ChooseAssure } from "@/components/ChooseAssure";
 import { Test_details_logic } from "@/components/Test_details_logic";
+import { useRouter } from "next/navigation";
+import ToolTip from "@/components/ToolTip";
 
 export const page = ({ params }) => {
+  const router = useRouter();
+
+  const handlePreviousStep = () => {
+    router.back();
+  };
   const slug = params.slug;
   // const catData = params.cat;
   // console.log("this is the catdata", catData);
@@ -19,6 +27,11 @@ export const page = ({ params }) => {
           </div>
         </section>
         <ChooseAssure />
+        <div className="BACKTOPACKAGE" onClick={handlePreviousStep}>
+          <ToolTip title={"thios is the akash dinghs"}>
+          <span>BACK TO PACKAGE</span>
+          </ToolTip>
+        </div>
       </main>
     </>
   );

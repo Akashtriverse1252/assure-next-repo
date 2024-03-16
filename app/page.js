@@ -147,7 +147,7 @@ export default function Home() {
                   data-aos-easing="ease-in"
                 >
                   <div className="title  float-start text-center">
-                    <h2>ABOUT ASSURE PATHLAB</h2>
+                    <h2>ABOUT ASSURE PATHLABS</h2>
                   </div>
                   <div className="about_us_cnt text-center ">
                     <p>
@@ -277,8 +277,8 @@ export default function Home() {
           </div>
 
           <div className="testimonial">
-            <div className="container position-relative z-index-2">
-              <div className="web-container">
+            <div className=" position-relative z-index-2">
+              <div className="">
                 <div className="row">
                   <div
                     className="title col-12 float-start text-center"
@@ -289,7 +289,7 @@ export default function Home() {
                   >
                     <h2 className="text-white">TESTIMONIALS</h2>
                   </div>
-                  <div className="col-lg-11 col-12 m-auto float-start">
+                  <div className=" col-12 m-auto float-start">
                     <Testimonials className="minusbottom navigationwhite" />
                   </div>
                 </div>

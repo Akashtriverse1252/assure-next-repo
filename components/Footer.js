@@ -20,6 +20,7 @@ import {
 } from "react-icons/bi";
 import { RiWhatsappFill } from "react-icons/ri";
 import { BsInstagram } from "react-icons/bs";
+import ToolTip from "./ToolTip";
 
 export const Footer = () => {
   useEffect(() => {
@@ -30,6 +31,32 @@ export const Footer = () => {
   const [tabData, setTabData] = useState([]);
   const [testTabData, setTestTabData] = useState([]);
   const [packageTabData, setPackageTabData] = useState([]);
+  const [overflowingItems, setOverflowingItems] = useState([]);
+
+  useEffect(() => {
+    const handleOverflow = () => {
+      const listItems = document.querySelectorAll(
+        ".popular_packages_cnt ul li"
+      );
+
+      const overflowing = Array.from(listItems).filter((item) => {
+        const listItemWidth = item.getBoundingClientRect().width;
+        const parentWidth = item.parentElement.getBoundingClientRect().width;
+
+        return listItemWidth > parentWidth;
+      });
+
+      setOverflowingItems(overflowing);
+    };
+
+    handleOverflow();
+
+    // Add event listener to handle resize
+    window.addEventListener("resize", handleOverflow);
+
+    // Cleanup function to remove event listener
+    return () => window.removeEventListener("resize", handleOverflow);
+  }, []);
 
   const fetchTabData = async (category) => {
     try {
@@ -161,13 +188,24 @@ export const Footer = () => {
                         data-aos-delay={150}
                       >
                         {testTabData.slice(0, 32).map((test, index) => (
-                          <li>
-                            <Link
-                              key={test.id}
-                              href={`/test-detail/${test.Slug}`}
-                            >
-                              {test.Test_Name}
-                            </Link>
+                          // <li>
+                          //   <Link
+                          //     key={test.id}
+                          //     href={`/test-detail/${test.Slug}`}
+                          //   >
+                          //     {test.Test_Name}
+                          //   </Link>
+                          // </li>
+                          <li key={test.id}>
+                            {overflowingItems.includes(index) ? (
+                              <ToolTip title={test.Test_Name}>
+                                {test.Test_Name}
+                              </ToolTip>
+                            ) : (
+                              <Link href={`/test-detail/${test.Slug}`}>
+                                {test.Test_Name}
+                              </Link>
+                            )}
                           </li>
                         ))}
                       </ul>

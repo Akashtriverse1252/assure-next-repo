@@ -1,23 +1,64 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useState } from "react";
 import Slider from "react-slick";
 import { Star } from "../components/svg-components/Star";
 import Halfstar from "../components/svg-components/Halfstar";
+import review_image from "@/public/google review.jpg";
 import Google from "../components/svg-components/Google";
 import TestimonialData from "../Data/TestimonialData.json";
 import { Rating } from "@mui/material";
+import Image from "next/image";
+import OverAllReview from "./OverAllReview";
 
 export const Testimonials = (props) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const sliderRef = useRef(null);
+
+  const goToPrevSlide = () => {
+    if (sliderRef.current) {
+      const prevSlide = currentSlide - 1;
+      // Prevent going below 0
+      if (prevSlide >= 0) {
+        sliderRef.current.slickPrev();
+        setCurrentSlide(prevSlide);
+      }
+    }
+  };
+
+  const goToNextSlide = () => {
+    if (sliderRef.current) {
+      const nextSlide = currentSlide + 1;
+      // Prevent exceeding 20.4
+      if (nextSlide <= 20.4) {
+        sliderRef.current.slickNext();
+        setCurrentSlide(nextSlide);
+      }
+    }
+  };
+
   var settings = {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 3.5,
+    slidesToShow: 3.6,
     slidesToScroll: 1,
     autoplaySpeed: 6000,
     autoplay: true,
+    prevArrow: null, // or you can pass a custom React component here
+    nextArrow: null,
+    beforeChange: (current, next) => {
+      setCurrentSlide(next);
+    },
     responsive: [
+      {
+        breakpoint: 1690,
+        settings: {
+          slidesToShow: 3.1,
+          slidesToScroll: 1,
+        },
+        autoplaySpeed: 6000,
+      },
       {
         breakpoint: 1610,
         settings: {
@@ -37,10 +78,10 @@ export const Testimonials = (props) => {
       {
         breakpoint: 800,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1.6,
           slidesToScroll: 1,
         },
-      },
+      },  
       {
         breakpoint: 620,
         autoplaySpeed: 5000,
@@ -62,7 +103,16 @@ export const Testimonials = (props) => {
 
   return (
     <>
-      <div>
+      <div className="testimonial_container">
+        <div className="google_review_sction">
+          <OverAllReview
+            currentSlide={currentSlide}
+            goToPrevSlide={goToPrevSlide}
+            goToNextSlide={goToNextSlide}
+            totalSide={TestimonialData.reviews.length}
+          />
+          {/* <OverAllReview /> */}
+        </div>
         <div
           className="google_review"
           data-aos="fade-up"
@@ -71,7 +121,7 @@ export const Testimonials = (props) => {
           data-aos-easing="ease-in"
         >
           <div className="googlereviewslider">
-            <Slider {...settings} {...props}>
+            <Slider {...settings} {...props} ref={sliderRef}>
               {TestimonialData.reviews.map((review, index) => (
                 <div key={index}>
                   <div className="google_testimonial">
@@ -82,15 +132,6 @@ export const Testimonials = (props) => {
                 </div>
               ))}
             </Slider>
-          </div>
-          <div className="col-12 flex-center  __trestmonail">
-            <a
-              className="button button--aylen button--round-l button--text-thick text-uppercase bg-white col-lg-3 col-md-6 col-10 "
-              href="https://www.google.com/maps/place/Assure+Pathlabs+%7C+Best+Pathology+Labs+%26+Blood+Test+Lab+in+Jalandhar+Punjab/@31.3042172,75.5861548,15z/data=!4m8!3m7!1s0x391a5bb201b0f3d1:0x7856b16cd286d465!8m2!3d31.3042172!4d75.5861548!9m1!1b1!16s%2Fg%2F11f__bnrjm?entry=ttu"
-              target="_blank"
-            >
-              READ ALL GOOGLE REVIEWS
-            </a>
           </div>
         </div>
       </div>

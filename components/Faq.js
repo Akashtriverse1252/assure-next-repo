@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
   Accordion,
   AccordionItem,
@@ -12,6 +12,13 @@ import FaqData from "../Data/FaqData.json";
 
 export const Faq = ({ Data }) => {
   const faqItems = Data && Data.length > 0 ? Data : FaqData;
+  const [showAll, setShowAll] = useState(false);
+  const filteredData = showAll ? faqItems : faqItems.slice(0, 5);
+
+  const handleReadMore = () => {
+    setShowAll(!showAll);
+  };
+
   return (
     <>
       <div
@@ -23,7 +30,7 @@ export const Faq = ({ Data }) => {
         data-aos-easing="ease"
       >
         <Accordion allowZeroExpanded={true}>
-          {faqItems.map((item, index) => (
+          {filteredData.map((item, index) => (
             <AccordionItem key={index}>
               <h3>
                 <AccordionItemHeading>
@@ -39,6 +46,14 @@ export const Faq = ({ Data }) => {
             </AccordionItem>
           ))}
         </Accordion>
+        <div className="col-12 mx-auto text-center d-flex justify-content-center">
+          <button
+            className="button button--aylen button--round-l button--text-thick mx-auto gradient col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-11 "
+            onClick={handleReadMore}
+          >
+            {showAll ? "Read Less" : "Read More"}
+          </button>
+        </div>
       </div>
     </>
   );

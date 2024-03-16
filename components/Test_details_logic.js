@@ -416,7 +416,6 @@ export const Test_details_logic = ({ Slug, Category }) => {
                           </>
                         )}
                       </button>
-
                       <button
                         className="button button--aylen button--round-l button--text-thick  gradient col-xxl-3 col-lg-4 col-md-5 col-11 "
                         onClick={handleBookHomeCollectionClick}
@@ -429,7 +428,7 @@ export const Test_details_logic = ({ Slug, Category }) => {
               </div>
             </div>
           </div>
-          <div className="row pt-80">
+          {/* <div className="row pt-80">
             <div
               className="title col-12 float-start text-center"
               data-aos="fade-up"
@@ -448,7 +447,7 @@ export const Test_details_logic = ({ Slug, Category }) => {
             >
               <Faq className="minusbottom  " />
             </div>
-          </div>
+          </div> */}
         </>
       ) : (
         <div className="No_Data d-flex justify-content-center col-12">

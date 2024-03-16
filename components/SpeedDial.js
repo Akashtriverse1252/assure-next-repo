@@ -50,11 +50,11 @@ const FabFlinger = () => {
 
   return (
     <>
-      <div className={`speed-dail ${showFloatingButton ? "activated" :""}` }>
+      <div className={`speed-dail ${showFloatingButton ? "activated" : ""}`}>
         <div
           className={` mdl-button--fab_flinger-container ${
             isShowing ? "is-showing-options" : ""
-          } ${showFloatingButton ? "activated" :""}`}
+          } ${showFloatingButton ? "activated" : ""}`}
           id="fab_ctn"
         >
           <button
@@ -70,7 +70,7 @@ const FabFlinger = () => {
           </button>
           <div className="mdl-button--fab_flinger-options">
             <button
-              className="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"
+              className="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect user_speed_dial"
               data-upgraded=",MaterialButton,MaterialRipple"
               onClick={() => cartDispatch({ type: "TOGGLE_UPLOD_FORM" })}
             >
@@ -102,7 +102,7 @@ const FabFlinger = () => {
               </span>
             </button>
             <button
-              className="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"
+              className="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect "
               data-upgraded=",MaterialButton,MaterialRipple"
             >
               <Link

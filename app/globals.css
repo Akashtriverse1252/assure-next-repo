@@ -4700,3 +4700,6 @@ td.cart-detail-page-bin {
   transform: translate3d(-50%, -50%, 0) scale(1.05);
   opacity: 1;
 }
+.user_speed_dial svg{
+  fill: #fff;
+}

@@ -1150,7 +1150,7 @@
     width: auto;
     text-align: right;
     cursor: pointer;
-}
+  }
   ._cart {
     height: 100dvh;
     inset: 1;
@@ -1246,6 +1246,9 @@
   }
   .bg-gradient-image.about_page {
     bottom: -520%;
+  }
+  .cancer_accordion {
+    column-count: 1;
   }
 
   .our-founder-title h2 {

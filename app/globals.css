@@ -2442,7 +2442,7 @@ article
   color: #000 !important;
   line-height: 1.7 !important;
   font-weight: 600 !important;
-  margin-bottom: 8px !important;
+  margin-bottom: 12px !important;
 }
 
 p.tooltip_data_ {
@@ -4709,4 +4709,7 @@ td.cart-detail-page-bin {
 }
 .user_speed_dial svg{
   fill: #fff;
+}
+.cancer_accordion{
+  column-count: 2;
 }

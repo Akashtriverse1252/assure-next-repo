@@ -210,7 +210,7 @@ export const Footer = () => {
                           //   )}
                           // </li>
                         ))}
-                      </ul>
+                      </ul> 
                     </div>
                   </div>
                   <div className="popular_packages mt-5 pt-4 bt">

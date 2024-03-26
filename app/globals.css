@@ -2435,17 +2435,17 @@ li.__tootip {
 li.__tootip svg {
   width: 15px;
 }
-
-.css-1mdftu-MuiTypography-root article {
+article
+.tooltip_title_ {
   text-align: left !important ;
   font-size: 15px !important;
   color: #000 !important;
-  line-height: 1.4 !important;
+  line-height: 1.7 !important;
   font-weight: 600 !important;
   margin-bottom: 8px !important;
 }
 
-.css-1mdftu-MuiTypography-root p {
+p.tooltip_data_ {
   font-size: 13px !important;
   line-height: 1.4 !important;
   letter-spacing: 0.5px !important;

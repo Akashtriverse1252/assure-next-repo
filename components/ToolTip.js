@@ -25,8 +25,8 @@ const ToolTip = ({ title, children, data }) => {
       title={
         <React.Fragment>
           <Typography color="inherit">
-            <article>{title}</article>
-            <p>{data}</p>
+            <article className="tooltip_title_">{title}</article>
+            <p className="tooltip_data_">{data}</p>
           </Typography>
         </React.Fragment>
       }

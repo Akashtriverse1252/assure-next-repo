@@ -4714,3 +4714,6 @@ td.cart-detail-page-bin {
 .cancer_accordion{
   column-count: 2;
 }
+.faq a{
+  color: rgb(10 88 202);
+}

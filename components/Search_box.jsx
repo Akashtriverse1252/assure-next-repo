@@ -81,6 +81,7 @@ const SearchBar = () => {
       if (selected.length !== 0) {
         const slug = nameToSlug(selected[0]);
         router.push(`/search/${encodeURIComponent(slug)}`);
+        setSelected([]);
       }
     }
   };

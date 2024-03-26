@@ -233,7 +233,7 @@ export const Footer = () => {
                         data-aos-easing="ease-in"
                         data-aos-delay={150}
                       >
-                        {packageTabData.slice(0, 32).map((test, index) => (
+                        {packageTabData.slice(0, 28).map((test, index) => (
                           <li>
                             <Link key={test.id} href={`/packages/${test.Slug}`}>
                               {test.Test_Name}

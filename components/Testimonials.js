@@ -104,7 +104,10 @@ export const Testimonials = (props) => {
   return (
     <>
       <div className="testimonial_container">
-        <div className="google_review_sction">
+        <div className="google_review_sction" data-aos="fade-right"
+          data-aos-duration={400}
+          data-aos-once="true"
+          data-aos-easing="ease-in">
           <OverAllReview
             currentSlide={currentSlide}
             goToPrevSlide={goToPrevSlide}
@@ -115,7 +118,7 @@ export const Testimonials = (props) => {
         </div>
         <div
           className="google_review"
-          data-aos="fade-up"
+          data-aos="fade-left"
           data-aos-duration={400}
           data-aos-once="true"
           data-aos-easing="ease-in"

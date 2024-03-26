@@ -190,25 +190,25 @@ export const Footer = () => {
                         data-aos-delay={150}
                       >
                         {testTabData.slice(0, 32).map((test, index) => (
-                          // <li>
-                          //   <Link
-                          //     key={test.id}
-                          //     href={`/test-detail/${test.Slug}`}
-                          //   >
-                          //     {test.Test_Name}
-                          //   </Link>
-                          // </li>
-                          <li key={test.id} ref={listRef}>
-                            {overflowingItems.includes(index) ? (
-                              <ToolTip title={test.Test_Name}>
-                                {test.Test_Name}
-                              </ToolTip>
-                            ) : (
-                              <Link href={`/test-detail/${test.Slug}`}>
-                                {test.Test_Name}
-                              </Link>
-                            )}
+                          <li title={test.Test_Name}>
+                            <Link
+                              key={test.id}
+                              href={`/test-detail/${test.Slug}`}
+                            >
+                              {test.Test_Name}
+                            </Link>
                           </li>
+                          // <li key={test.id} ref={listRef}>
+                          //   {overflowingItems.includes(index) ? (
+                          //     <ToolTip title={test.Test_Name}>
+                          //       {test.Test_Name}
+                          //     </ToolTip>
+                          //   ) : (
+                          //     <Link href={`/test-detail/${test.Slug}`}>
+                          //       {test.Test_Name}
+                          //     </Link>
+                          //   )}
+                          // </li>
                         ))}
                       </ul>
                     </div>
@@ -234,7 +234,7 @@ export const Footer = () => {
                         data-aos-delay={150}
                       >
                         {packageTabData.slice(0, 28).map((test, index) => (
-                          <li>
+                          <li title={test.Test_Name}>
                             <Link key={test.id} href={`/packages/${test.Slug}`}>
                               {test.Test_Name}
                             </Link>

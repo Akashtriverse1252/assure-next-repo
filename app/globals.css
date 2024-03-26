@@ -4436,8 +4436,11 @@ table th {
   z-index: 101;
 }
 .close_btn {
-  background-color: #fafafa;
-  margin-left: auto;
+  background-color: #fafafa !important;
+  margin-left: auto !important;
+  min-width: 50px !important;
+  width: 50px;
+  height: 50px;
 }
 .close_btn:hover {
   background-color: #fbfbfb !important;
@@ -4622,12 +4625,16 @@ table th {
   font-weight: 600;
   color: #000;
 }
+.highlights._points p{
+  transition: ease all 0.3s;
+}
 .highlights._points p:hover {
   border: solid 1px #e7e7e7;
   padding: 10px 30px;
-  background: #fff;
-  color: #000;
+  background: linear-gradient(80deg, #611ca2, #1198ca);
+  color: #fff;
   box-shadow: 2px 2px 5px rgb(0 0 0 / 6%);
+  transform: scale(1.03);
 }
 
 .fmenu ul li a::before {

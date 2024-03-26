@@ -44,7 +44,7 @@ const SearchBar = () => {
         } else {
           setSuggestions([]);
         }
-      } catch (error) {
+      } catch (error) { 
         console.error("Error fetching data from the API", error);
         setSuggestions([]); // Set suggestions to an empty array in case of an error
       }

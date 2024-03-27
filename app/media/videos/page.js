@@ -1,10 +1,10 @@
+"use client";
 import { useRef, useState } from "react";
 import Image from "next/image";
 import { FaPlay } from "react-icons/fa";
 import { IoCloseOutline } from "react-icons/io5";
 import Slider from "react-slick";
 import { Box, Button, Fade, Modal } from "@mui/material";
-import Link from "next/link";
 
 const CustomModal = ({
   open,
@@ -60,7 +60,7 @@ const CustomModal = ({
   );
 };
 
-export const Videos = () => {
+export const page = () => {
   const [selectedVideoIndex, setSelectedVideoIndex] = useState(null);
   const [videoLoading, setVideoLoading] = useState(false);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
@@ -135,6 +135,12 @@ export const Videos = () => {
       description:
         "Let's Talk on Diabetes by Dr. Sanjay Wadhwa | Assure Pathlabs",
     },
+    {
+      thumbnail: "/video_tumbnail_03.png",
+      videoUrl: "/vedio01.mp4",
+      description:
+        "Let's Talk on Diabetes by Dr. Sanjay Wadhwa | Assure Pathlabs",
+    },
   ];
   const getAosDuration = (index) => {
     if (index === 0) {
@@ -150,50 +156,58 @@ export const Videos = () => {
 
   return (
     <>
-      <div className="vedio_review_scn pt-0 pt-sm-3">
-        <Slider {...settings} adaptiveHeight={true}>
-          {data.map((video, index) => (
-            <div
-              key={index}
-              data-aos="fade-up"
-              data-aos-delay={getAosDuration(index)}
-              data-aos-duration={getAosDuration(index)}
-              data-aos-once="true"
-              data-aos-offset={getAosDuration(index)}
-              data-aos-easing="ease-in"
-            >
-              <div className="vedio_cont">
-                <div
-                  className="vedio_thumbnail"
-                  onClick={() => handleVideoClick(index)}
-                >
-                  <Image
-                    src={video.thumbnail}
-                    alt="gradient file"
-                    width={400}
-                    height={250}
-                  />
-                  <i>
-                    <FaPlay />
-                  </i>
-                </div>
+      <section className="position-relative">
+        <div className="container">
+          <div className="web-container">
+            <div className="row">
+              <div
+                className="title col-12 float-start text-center"
+                data-aos="fade-up"
+                data-aos-duration={500}
+                data-aos-once="true"
+                data-aos-easing="ease-in"
+              >
+                <h2 className="">OUR VIDEOS</h2>
+              </div>
+              <div className="vedio_review_scn d-flex flex-wrap justify-content-evenly pt-0 pt-sm-3">
+                {data.map((video, index) => (
+                  <div
+                    className="_vedio_div"
+                    key={index}
+                    data-aos="fade-up"
+                    data-aos-delay={getAosDuration(index)}
+                    data-aos-duration={getAosDuration(index)}
+                    data-aos-once="true"
+                    data-aos-offset={getAosDuration(index)}
+                    data-aos-easing="ease-in"
+                  >
+                    <div className="vedio_cont">
+                      <div
+                        className="vedio_thumbnail"
+                        onClick={() => handleVideoClick(index)}
+                      >
+                        <Image
+                          src={video.thumbnail}
+                          alt="gradient file"
+                          width={400}
+                          height={250}
+                        />
+                        <i>
+                          <FaPlay />
+                        </i>
+                      </div>
 
-                <p>{video.description}</p>
+                      <p>{video.description}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
-        </Slider>
-      </div>
-      <div className="col-12 mx-auto text-center d-flex justify-content-center mt-3">
-        <Link
-          href={"/media/videos"}
-          className=" col-xl-2 col-lg-3 col-md-4 col-11 "
-        >
-          <button className="button button--aylen button--round-l button--text-thick mx-auto gradient col-12">
-            View More
-          </button>
-        </Link>
-      </div>
+          </div>
+        </div>
+        {/* <Dots className="hsection position-absolute svgwidth opacity-10 end-0 left-inherit" /> */}
+        {/* <Line className="svgwidthline position-absolute opacity-10 bottom-0 start-0" /> */}
+      </section>
       <CustomModal
         open={modalIsOpen}
         onClose={closeModal}
@@ -206,3 +220,5 @@ export const Videos = () => {
     </>
   );
 };
+
+export default page;

@@ -2435,8 +2435,7 @@ li.__tootip {
 li.__tootip svg {
   width: 15px;
 }
-article
-.tooltip_title_ {
+article .tooltip_title_ {
   text-align: left !important ;
   font-size: 15px !important;
   color: #000 !important;
@@ -4626,7 +4625,7 @@ table th {
   font-weight: 600;
   color: #000;
 }
-.highlights._points p{
+.highlights._points p {
   transition: ease all 0.3s;
 }
 .highlights._points p:hover {
@@ -4708,12 +4707,15 @@ td.cart-detail-page-bin {
   transform: translate3d(-50%, -50%, 0) scale(1.05);
   opacity: 1;
 }
-.user_speed_dial svg{
+.user_speed_dial svg {
   fill: #fff;
 }
-.cancer_accordion{
+.cancer_accordion {
   column-count: 2;
 }
-.faq a{
+.faq a {
   color: rgb(10 88 202);
+}
+._vedio_div {
+  width: 30%;
 }

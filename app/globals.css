@@ -3352,10 +3352,11 @@ button:disabled {
 .main_loader_svg {
   height: 115px;
   margin: auto;
+  
 }
 
 .main_loader_svg path {
-  fill: none;
+  fill: #575aa8;
 }
 
 .main_loader_svg {

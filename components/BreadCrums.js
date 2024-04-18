@@ -30,6 +30,7 @@ export const BreadCrums = () => {
     "parameter",
     "test-detail",
     "details",
+    "search",
   ]; // Keywords to disable links
 
   return (

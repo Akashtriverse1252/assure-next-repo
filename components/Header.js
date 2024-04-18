@@ -107,18 +107,18 @@ export const Header = () => {
                   )}
                 </div>
                 <div
-                  class="upload_btn_sc "
+                  className="upload_btn_sc "
                   data-aos="fade"
                   data-aos-once="true"
                   data-aos-duration="500"
                 >
                   <div
-                    class="upload_btn"
+                    className="upload_btn"
                     href="#"
                     onClick={() => cartDispatch({ type: "TOGGLE_UPLOD_FORM" })}
                   >
                     <div
-                      class="upload_btn_cnt"
+                      className="upload_btn_cnt"
                       style={{
                         background:
                           "linear-gradient(223.23deg, #FFFFFF -39.74%, #DBF5F9 94.44%)",
@@ -128,9 +128,9 @@ export const Header = () => {
                     </div>
                     <p>Upload Prescription</p>
                   </div>
-                  <Link class="upload_btn mr-adj" href="/packages">
+                  <Link className="upload_btn mr-adj" href="/packages">
                     <div
-                      class="upload_btn_cnt"
+                      className="upload_btn_cnt"
                       style={{
                         background: "#F9E0DB",
                       }}
@@ -140,12 +140,12 @@ export const Header = () => {
                     <p>Health Package</p>
                   </Link>
                   <Link
-                    class="upload_btn"
+                    className="upload_btn"
                     href="https://patient-in.creliohealth.com/patient/login"
                     target="_blank"
                   >
                     <div
-                      class="upload_btn_cnt user"
+                      className="upload_btn_cnt user"
                       style={{
                         background: "#f4e0e7",
                       }}

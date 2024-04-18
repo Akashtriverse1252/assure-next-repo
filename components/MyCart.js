@@ -25,12 +25,12 @@ export const MyCart = () => {
     <>
       <div className="position-relative">
         <div
-          class="upload_btn pl-2 ___cart"
+          className="upload_btn pl-2 ___cart"
           disabled={cartState.cartVisible}
           onClick={handleToggleCart}
         >
           <div
-            class="upload_btn_cnt user"
+            className="upload_btn_cnt user"
             style={{
               background: "#e5e4f4",
             }}

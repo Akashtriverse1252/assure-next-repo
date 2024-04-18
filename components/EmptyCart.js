@@ -8,7 +8,6 @@ const EmptyCart = () => {
   const { cartState, cartDispatch } = useData();
   const isOpen = () => {
     cartDispatch({ type: "TOGGLE_CART" });
-
   };
   return (
     <>
@@ -18,19 +17,18 @@ const EmptyCart = () => {
           <EmptyCartIcon />
         </span>
       </div>
-      <div className="add_item text-center">
+      <div className="add_item text-center gap-3">
         <span>Your cart is empty.</span>
-        <p>Add item to your cart</p>
+        <p>Add Test/ Packages to your cart</p>
         <div className=" ">
-                      <Link
-                        className="cnt_shp_btn button COL-12 button--aylen button--round-l button--text-thick text-uppercase gradient "
-                        onClick={isOpen}
-                        href="/individual-test"
-                      >
-                        Add Test/ Packages
-                        {/* <span aria-hidden="true"> &rarr;</span> */}
-                      </Link>
-                    </div>
+          <Link
+            className="cnt_shp_btn button col-12 button--aylen button--round-l button--text-thick text-uppercase gradient mt-3 "
+            onClick={isOpen}
+            href="/individual-test"
+          >
+            Add Test/ Packages
+          </Link>
+        </div>
       </div>
     </>
   );

@@ -30,11 +30,14 @@ const Page = () => (
                     <li>{doctor.position}</li>
                     <li>{doctor.organization}</li>
                   </ul>
-                  <button type="button" className="cnt_shp_btn textbtn">
-                    <Link href={`doctor-profile/details/${doctor.slug}`}>
+                  <div className="  col-12 d-flex justify-content-center">
+                    <Link
+                      href={`doctor-profile/details/${doctor.slug}`}
+                      className=" textbtn text-black mt-2"
+                    >
                       Read More
                     </Link>
-                  </button>
+                  </div>
                 </div>
               </div>
             ))}

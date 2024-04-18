@@ -94,10 +94,14 @@ const OverAllReview = ({
         </div>
         <div className="review_btns ">
           <button className="button button--aylen button--round-l button--text-thick  review_btn ">
-            Write a reviews
+            <a href="https://www.google.com/maps/place/Assure+Pathology+Lab+Pvt.+Ltd/@28.636403,77.125642,15z/data=!4m8!3m7!1s0x390d033ff5d07a15:0x690b59c29da5363b!8m2!3d28.636403!4d77.125642!9m1!1b1!16s%2Fg%2F11f343qtwn?entry=ttu">
+              Write a reviews
+            </a>
           </button>
           <button className="button button--aylen button--round-l button--text-thick  review_btn ">
-            Read all reviews
+            <a href="https://www.google.com/maps/place/Assure+Pathology+Lab+Pvt.+Ltd/@28.636403,77.125642,15z/data=!4m8!3m7!1s0x390d033ff5d07a15:0x690b59c29da5363b!8m2!3d28.636403!4d77.125642!9m1!1b1!16s%2Fg%2F11f343qtwn?entry=ttu">
+              Read all reviews
+            </a>
           </button>
         </div>
         <div className="currentslide-review flex-center">

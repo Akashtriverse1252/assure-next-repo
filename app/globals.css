@@ -372,7 +372,7 @@ section,
   text-align: center;
   gap: 15px;
   position: relative;
-  transition: ease all 0.5s;
+  transition: ease-in all 0.1s;
   margin: 20px auto;
   max-width: 350px;
   box-shadow: 4px 4px 20px rgb(217 229 236);
@@ -535,6 +535,7 @@ section,
 .conditionshape {
   /* height: 150px; */
   overflow: hidden;
+  transition: ease 0.15s ease;
 }
 
 .conditionshape span {
@@ -1742,14 +1743,6 @@ header {
   justify-content: flex-end;
 }
 
-.cnt_shp_btn {
-  border: none;
-  background-color: transparent;
-  font-size: 14px;
-  margin-top: 20px;
-  width: 250px;
-}
-
 ._cart_list {
   margin: 30px 0;
 }
@@ -2801,6 +2794,13 @@ button:disabled {
   border: 1.5px solid var(--btn-color);
   color: var(--btn-color);
   padding: 0 20px !important;
+  transition: ease 0.3s all;
+  letter-spacing: 0.5px;
+}
+
+.edit_cart:hover {
+  background-color: var(--btn-color);
+  color: #fff;
 }
 
 /* gender radio button css */
@@ -3342,17 +3342,11 @@ button:disabled {
   height: 100%;
   background-color: #575aa8;
   flex: 1;
-  transition: height 0.5s linear;
-}
-
-.main_loader_sec.mainSecLoaderLoaded {
-  height: 0;
 }
 
 .main_loader_svg {
   height: 115px;
   margin: auto;
-  
 }
 
 .main_loader_svg path {
@@ -3361,12 +3355,7 @@ button:disabled {
 
 .main_loader_svg {
   opacity: 1;
-  transform: opacity 0.3s linear;
-}
-
-.svg-opacity {
-  opacity: 0;
-  transform: opacity 0.3s linear;
+  transform: opacity 0.3s;
 }
 
 /* not found css */
@@ -4528,7 +4517,7 @@ table th {
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .review-rating-number {
@@ -4600,9 +4589,14 @@ table th {
   height: 40px;
   line-height: 40px;
   padding: 0 15px;
-  font-weight: bold;
   letter-spacing: 1px;
   text-transform: capitalize;
+}
+.review_btn a {
+  color: #000;
+}
+.review_btn:hover a {
+  color: #fff;
 }
 .review_btns {
   display: flex;
@@ -4719,4 +4713,18 @@ td.cart-detail-page-bin {
 }
 ._vedio_div {
   width: 30%;
+}
+.conditionshape:hover {
+  transform: scale(1.01);
+}
+.packagedetail._test ul li.__tootip span {
+  display: flex;
+  justify-self: flex-start;
+  align-items: center;
+  width: 15ch;
+  text-wrap: balance;
+}
+
+li.__tootip svg {
+  width: 22px;
 }

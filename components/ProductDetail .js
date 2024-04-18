@@ -57,11 +57,11 @@ const ProductDetail = ({ onNextStep, onFormData }) => {
                       <tr>
                         <th>S No.</th>
                         <th>Package/Test Name</th>
-                        <th>Remove</th>
                         <th>Unit Price</th>
                         <th>Discount</th>
                         <th>Quantity</th>
                         <th>Price</th>
+                        <th>Remove</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -69,13 +69,6 @@ const ProductDetail = ({ onNextStep, onFormData }) => {
                         <tr key={index}>
                           <td data-label="S No.">{index + 1}</td>
                           <td data-label="Package/Test Name">{product.name}</td>
-                          <td
-                          className="cart-detail-page-bin"
-                            data-label="Remove"
-                            onClick={() => handleRemove(product)}
-                          >
-                            <RiDeleteBinLine />
-                          </td>
                           <td data-label="Unit Price">
                             <Rupees />
                             {product.quantity * product.price}
@@ -86,17 +79,24 @@ const ProductDetail = ({ onNextStep, onFormData }) => {
                             <Rupees />
                             {product.quantity * product.dis_price}
                           </td>
+                          <td
+                            className="cart-detail-page-bin"
+                            data-label="Remove"
+                            onClick={() => handleRemove(product)}
+                          >
+                            <RiDeleteBinLine />
+                          </td>
                         </tr>
                       ))}
                       <tr>
                         <td
-                          colSpan={6}
+                          colSpan={5}
                           className="px-4 text-lg"
                           data-label="Subtotal"
                         >
-                          Subtotal
+                           SUBTOTAL
                         </td>
-                        <td className="bluecolor redcolor" data-label="Price">
+                        <td colSpan={2} className="bluecolor redcolor" data-label="Price">
                           <Rupees />
                           {calculateSubtotal()}
                         </td>

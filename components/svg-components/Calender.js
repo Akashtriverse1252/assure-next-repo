@@ -9,7 +9,6 @@ const Calender = () => {
         viewBox="0 0 128 128"
         width={256}
         height={256}
-        {...props}
       >
         <path
           fill="#ff8686"

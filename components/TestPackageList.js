@@ -99,10 +99,16 @@ const TestPackageList = ({ Type }) => {
               Who_is_it_for={test.Who_is_it_for}
               Pre_test_information={test.Pre_test_information}
               Turn_around_time={test.Turn_around_time}
-              BaseDirectory={determineBaseDirectory(Type)}  
+              BaseDirectory={determineBaseDirectory(Type)}
               index={index}
             />
           ))}
+          {!loading &&
+            !allDataLoaded && ( // Display loader while new data is loading
+              <div className=" h-min col-12 d-flex justify-content-center">
+                <div className="_loader"></div>
+              </div>
+            )}
           {!allDataLoaded && <div ref={lastCardRef}></div>}
         </>
       ) : (

@@ -61,7 +61,7 @@ const ProductDetail = ({ onNextStep, onFormData }) => {
                         <th>Discount</th>
                         <th>Quantity</th>
                         <th>Price</th>
-                        <th>Remove</th>
+                        <th></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -81,7 +81,7 @@ const ProductDetail = ({ onNextStep, onFormData }) => {
                           </td>
                           <td
                             className="cart-detail-page-bin"
-                            data-label="Remove"
+                            data-label=""
                             onClick={() => handleRemove(product)}
                           >
                             <RiDeleteBinLine />

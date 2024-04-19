@@ -1951,12 +1951,7 @@
   .footercolumn {
     width: 45%;
   }
-  .footercolumn:first-child {
-    order: 5;
-  }
-  .footercolumn:nth-child(3) {
-    order: 4;
-  }
+
   .logo {
     width: 100px;
   }

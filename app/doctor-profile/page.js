@@ -19,7 +19,7 @@ const Page = () => (
                   <Image
                     src={doctor.imageSrc}
                     alt="Dr. Sanjay Wadhwa"
-                    title="Dr. Sanjay Wadhwa"
+                    title={doctor.name}
                     width="350"
                     height="350"
                   />
@@ -30,7 +30,7 @@ const Page = () => (
                     <li>{doctor.position}</li>
                     <li>{doctor.organization}</li>
                   </ul>
-                  <div className="  col-12 d-flex justify-content-center">
+                  <div className="  col-12 d-flex justify-content-start">
                     <Link
                       href={`doctor-profile/details/${doctor.slug}`}
                       className=" textbtn text-black mt-2"

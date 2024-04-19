@@ -138,11 +138,11 @@ export const Videos = () => {
   ];
   const getAosDuration = (index) => {
     if (index === 0) {
-      return 350; // First slide duration
+      return 300; // First slide duration
     } else if (index === 1) {
       return 300; // Second slide duration
     } else if (index === 2) {
-      return 350; // Second slide duration
+      return 300; // Second slide duration
     } else {
       return 400; // Third and subsequent slides duration
     }

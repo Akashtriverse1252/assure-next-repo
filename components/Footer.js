@@ -60,6 +60,16 @@ export const Footer = () => {
     return () => window.removeEventListener("resize", handleOverflow);
   }, []);
 
+  const handleBookHomeCollection = () => {
+    // Check if the element exists before scrolling
+    const homeCollectionData = document.getElementById("Home-Collection-data");
+    if (homeCollectionData) {
+      homeCollectionData.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+
   const fetchTabData = async (category) => {
     try {
       const response = await fetch(
@@ -210,7 +220,7 @@ export const Footer = () => {
                           //   )}
                           // </li>
                         ))}
-                      </ul> 
+                      </ul>
                     </div>
                   </div>
                   <div className="popular_packages mt-5 pt-4 bt">
@@ -371,14 +381,26 @@ export const Footer = () => {
                   </div> */}
                 </div>
                 <div className="col-12  mx-auto  flex-center ">
-                  <a className="button button--aylen button--round-l footer_btn button--text-thick text-uppercase gradient justify-content-start">
+                  <Link
+                    href="/"
+                    className="button button--aylen button--round-l footer_btn button--text-thick text-uppercase gradient justify-content-start"
+                    onClick={handleBookHomeCollection}
+                  >
                     BOOK HOME COLLECTION
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
 
-            <div className="row p-sm-3 p-2">
+            <div className="row pt-sm-3 pt-2 pb-1">
+              <div className=" footer_site">
+                <p className="m-0">
+                  *Home collection is free for bill amounts exceeding 1k and
+                  within a 7km radius.
+                </p>
+              </div>
+            </div>
+            <div className="row pb-sm-3 pb-2 ">
               <div className=" footer_site">
                 <p className="m-0">
                   &copy; {currentYear} All Rights Reserved.{" "}

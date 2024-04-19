@@ -94,13 +94,19 @@ const OverAllReview = ({
         </div>
         <div className="review_btns ">
           <button className="button button--aylen button--round-l button--text-thick  review_btn ">
-            <a href="https://www.google.com/maps/place/Assure+Pathology+Lab+Pvt.+Ltd/@28.636403,77.125642,15z/data=!4m8!3m7!1s0x390d033ff5d07a15:0x690b59c29da5363b!8m2!3d28.636403!4d77.125642!9m1!1b1!16s%2Fg%2F11f343qtwn?entry=ttu">
-              Write a reviews
+            <a
+              target="_blank"
+              href="https://www.google.com/search?sca_esv=63c115a30e488880&sca_upv=1&q=Assure+Pathlabs+%7C+Best+Pathology+Labs+%26+Blood+Test+Lab+in+Jalandhar+Punjab&ludocid=8671313213495104613&lsig=AB86z5WIzLY4rHNuN2jdPCu432RD&kgs=44a056c18c8ca7ff&shndl=30&shem=lnole,lsde,lsp&source=sh/x/loc/act/m1/1#lrd=0x391a5bb201b0f3d1:0x7856b16cd286d465,1"
+            >
+              Write a review
             </a>
           </button>
           <button className="button button--aylen button--round-l button--text-thick  review_btn ">
-            <a href="https://www.google.com/maps/place/Assure+Pathology+Lab+Pvt.+Ltd/@28.636403,77.125642,15z/data=!4m8!3m7!1s0x390d033ff5d07a15:0x690b59c29da5363b!8m2!3d28.636403!4d77.125642!9m1!1b1!16s%2Fg%2F11f343qtwn?entry=ttu">
-              Read all reviews
+            <a
+              target="_blank"
+              href="https://www.google.com/maps/place/Assure+Pathlabs+%7C+Best+Pathology+Labs+%26+Blood+Test+Lab+in+Jalandhar+Punjab/@31.3042218,75.5835799,17z/data=!4m8!3m7!1s0x391a5bb201b0f3d1:0x7856b16cd286d465!8m2!3d31.3042172!4d75.5861548!9m1!1b1!16s%2Fg%2F11f__bnrjm?entry=ttu"
+            >
+              Read all review
             </a>
           </button>
         </div>
@@ -113,9 +119,9 @@ const OverAllReview = ({
             <PiCaretLeftThin />
             {/* <HiOutlineArrowLongLeft /> */}
           </button>
-          <span>
+          {/* <span>
             {Math.round(currentSlide) + 1} - {totalSide}
-          </span>
+          </span> */}
           <button
             className="slider_count  flex-center"
             onClick={goToNextSlide}

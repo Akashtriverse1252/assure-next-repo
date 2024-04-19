@@ -38,7 +38,7 @@ export default function Home() {
                 <div className="col-xl-9 col-lg-8 col-md-12 pull-md-right mr-md-auto col-sm-12 mb-0  col-12">
                   <AssureSlide className="no-buttons colornavigations col-12 float-start" />
                 </div>
-                <div className="col-xl-3 col-lg-4 col-sm-12 float-end  justify-content-end col-12 d-flex align-items-center">
+                <div className="col-xl-3 col-lg-4 col-sm-12 float-end  justify-content-end col-12 d-flex align-items-center" id="Home-Collection-data">
                   <HForm />
                 </div>
               </div>

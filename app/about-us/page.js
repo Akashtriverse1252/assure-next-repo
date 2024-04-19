@@ -9,11 +9,17 @@ import { AboutGradient } from "@/components/AboutGradient";
 import { ChooseAssure } from "@/components/ChooseAssure";
 import { HForm } from "@/components/HForm";
 import OurFounders from "@/components/OurFounders";
-import Aboutbanner from "@/public/About-us-banner.webp";
+import Aboutbanner from "@/public/About-us-banner-b.webp";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import { Link } from "@mui/material";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS CSS
 
 export const page = () => {
+  if (typeof window !== "undefined") {
+    // Check if window is defined (to prevent server-side rendering issues)
+    AOS.init();
+  }
   return (
     <>
       <main className="d-flex flex-wrap float-start col-12">
@@ -23,7 +29,7 @@ export const page = () => {
               <div
                 className=" col-12 abt_banner"
                 data-aos="fade-in"
-                data-aos-duration={500}
+                data-aos-duration={300}
                 data-aos-once="true"
                 data-aos-easing="ease-in"
               >
@@ -38,7 +44,7 @@ export const page = () => {
               <div role="presentation" className="bread_crums ">
                 <Breadcrumbs className="mb-3 " aria-label="breadcrumb">
                   <Link href="/">Home</Link>
-                  <Link href="#">About-us</Link>
+                  <Link href="#">About Us</Link>
                 </Breadcrumbs>
               </div>
             </div>
@@ -53,7 +59,7 @@ export const page = () => {
                 <div
                   className="title mt-3 col-12 float-start text-center"
                   data-aos="fade-up"
-                  data-aos-duration={500}
+                data-aos-duration={300}
                   data-aos-once="true"
                   data-aos-easing="ease-in"
                 >
@@ -65,7 +71,7 @@ export const page = () => {
                       className="about-assure-text "
                       data-aos="fade-up"
                       data-aos-delay={100}
-                      data-aos-duration={500}
+                      data-aos-duration={300}
                       data-aos-once="true"
                     >
                       Assure Pathlabs is the best blood test pathalogy
@@ -79,7 +85,7 @@ export const page = () => {
                       className="about-assure-text "
                       data-aos="fade-up"
                       data-aos-delay={100}
-                      data-aos-duration={500}
+                      data-aos-duration={300}
                       data-aos-once="true"
                     >
                       Our commitment guarantees not just efficient service but
@@ -210,7 +216,7 @@ export const page = () => {
                           <span className="flex-center mb-2 button button--aylen button--round-l button--text-thick">
                             <AdvancedTechnology />
                           </span>
-                          <h3>New age Technology</h3>
+                          <h3>New Age Technology</h3>
                         </div>
                       </div>
                       <div className="col-lg-3 col-sm-4 col-6 our_diff_item ">
@@ -226,7 +232,7 @@ export const page = () => {
                           <span className="flex-center mb-2 button button--aylen button--round-l button--text-thick">
                             <Doctor />
                           </span>
-                          <h3>Founded by doctors</h3>
+                          <h3>Founded by Doctors</h3>
                         </div>
                       </div>
                     </div>

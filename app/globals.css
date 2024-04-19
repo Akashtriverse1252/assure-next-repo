@@ -2453,7 +2453,7 @@ p.tooltip_data_ {
 }
 
 .packagedetail._test ul li {
-  width: 50%;
+  width: 45%;
   text-wrap: balance;
   font-size: 13px;
   line-height: 1.4;
@@ -3574,6 +3574,7 @@ table th {
   text-transform: uppercase;
   letter-spacing: 2px;
   line-height: 1;
+  color: #1f2323;
 }
 .our-founder-content {
   width: 65%;
@@ -3629,6 +3630,7 @@ table th {
 }
 .circleicons h3 {
   all: unset;
+  text-wrap: balance;
 }
 .privacy_pol_cnt h3,
 .contentbox h3 {
@@ -4721,7 +4723,7 @@ td.cart-detail-page-bin {
   display: flex;
   justify-self: flex-start;
   align-items: center;
-  width: 15ch;
+  width: 100%;
   text-wrap: balance;
 }
 

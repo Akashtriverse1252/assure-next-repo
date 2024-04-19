@@ -64,9 +64,14 @@
   .discountprice {
     line-height: 42px;
   }
-  .about_us_cnt p,
+  .about_us_cnt p {
+    width: 100%;
+  }
   ._seasonalpack {
     width: 100% !important;
+  }
+  .about_us_image {
+    width: 650px;
   }
 }
 
@@ -96,6 +101,7 @@
   .about_us_image img {
     height: 100%;
   }
+
   .abt_scn__ {
     width: 100%;
   }
@@ -230,6 +236,9 @@
     line-height: 20px;
   }
 
+  .about_us_cnt p {
+    width: 90%;
+  }
   .actualprice {
     font-size: 26px;
     line-height: 31px;
@@ -346,6 +355,12 @@
   }
   .faqcont h3 {
     font-size: inherit;
+  }
+  .arrows .slick-prev:before {
+    left: 15%;
+  }
+  .arrows .slick-next:before {
+    right: 15%;
   }
 }
 
@@ -1127,10 +1142,10 @@
   }
 
   .footer_site {
-    width: 90% !important;
+    width: 80% !important;
   }
   ._cerdit {
-    width: 10% !important;
+    width: 20% !important;
   }
   .footer_site p {
     padding: 0 6px;
@@ -1147,7 +1162,7 @@
   .popular_packages_cnt li {
     width: 30%;
   }
-  .vedio_thumbnail{
+  .vedio_thumbnail {
     margin: auto;
     width: 100%;
   }
@@ -1155,7 +1170,7 @@
     width: 100%;
     aspect-ratio: auto;
     height: auto;
-}
+  }
 }
 
 @media (max-width: 680px) {
@@ -1224,6 +1239,12 @@
     width: auto;
   }
 
+  .footer_site {
+    width: 90% !important;
+  }
+  .footergray p {
+    text-align: left;
+  }
   .file-block {
     display: none;
   }
@@ -1347,6 +1368,9 @@
   .h_form {
     width: 98%;
     margin-top: 20px;
+  }
+  .footergray p {
+    text-align: center;
   }
 
   ._cart_cross svg {

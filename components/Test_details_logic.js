@@ -104,8 +104,8 @@ export const Test_details_logic = ({ Slug, Category }) => {
   };
   const handleBookHomeCollectionClick = () => {
     if (cartIds.includes(project.id)) {
-      // Remove product from cart logic here
-      cartDispatch({ type: "REMOVE", productId: project.id });
+      // Redirect to checkout page
+      router.push("/check-out");
     } else {
       // Add product to cart logic here
       const product = {
@@ -116,25 +116,16 @@ export const Test_details_logic = ({ Slug, Category }) => {
         quantity: 1,
         discount: _discount,
       };
-      const existingProduct = cartState.products.find(
-        (p) => p.id === product.id
-      );
 
-      if (existingProduct) {
-        // If the product exists, update its quantity
-        // cartDispatch({
-        //   type: "INCREMENT",
-        //   productId: product.id,
-        // });
-      } else {
-        // If the product doesn't exist, add it to the cart
-        cartDispatch({
-          type: "ADD_TO_CART",
-          product,
-        });
-      }
+      cartDispatch({
+        type: "ADD_TO_CART",
+        product,
+      });
+      // }
+
+      // Redirect to checkout page
+      router.push("/check-out");
     }
-    router.push("/check-out");
   };
 
   return (

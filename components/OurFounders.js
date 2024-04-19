@@ -53,7 +53,7 @@ const OurFounders = () => {
                           commitment to excellence in the field of pathology. As
                           a Consultant Pathologist, Dr. Wadhwa brings a wealth
                           of expertise to the realm of diagnostic &amp; ensures
-                          quality of health services
+                          quality of health services.
                         </p>
                         <div class="founder-social-icons mt-3">
                           <a

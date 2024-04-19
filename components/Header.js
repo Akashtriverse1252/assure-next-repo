@@ -62,6 +62,15 @@ export const Header = () => {
   for (const product of cartState.products) {
     totalQuantity += product.quantity;
   }
+  const handleBookHomeCollection = () => {
+    // Check if the element exists before scrolling
+    const homeCollectionData = document.getElementById("Home-Collection-data");
+    if (homeCollectionData) {
+      homeCollectionData.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <header>
       <div className={header ? "header fixed" : "header"}>
@@ -137,7 +146,7 @@ export const Header = () => {
                     >
                       <AddPackages />
                     </div>
-                    <p>Health Package</p>
+                    <p>Health Packages</p>
                   </Link>
                   <Link
                     className="upload_btn"
@@ -390,9 +399,13 @@ export const Header = () => {
                                 </div>
                               </div>
                               <div className="col-12  mx-auto  flex-center ">
-                                <a className="button button--aylen button--round-l footer_btn button--text-thick text-uppercase gradient justify-content-start">
+                                <Link
+                                  href="/"
+                                  className="button button--aylen button--round-l footer_btn button--text-thick text-uppercase gradient justify-content-start"
+                                  onClick={handleBookHomeCollection}
+                                >
                                   BOOK HOME COLLECTION
-                                </a>
+                                </Link>
                               </div>
 
                               <strong className="haeader_folow-us">

@@ -135,12 +135,7 @@ export const page = () => {
       description:
         "Let's Talk on Diabetes by Dr. Sanjay Wadhwa | Assure Pathlabs",
     },
-    {
-      thumbnail: "/video_tumbnail_03.png",
-      videoUrl: "/vedio01.mp4",
-      description:
-        "Let's Talk on Diabetes by Dr. Sanjay Wadhwa | Assure Pathlabs",
-    },
+   
   ];
   const getAosDuration = (index) => {
     if (index === 0) {

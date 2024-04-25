@@ -66,6 +66,7 @@ export const Header = () => {
     // Check if the element exists before scrolling
     const homeCollectionData = document.getElementById("Home-Collection-data");
     if (homeCollectionData) {
+      setIsMenuOpen(false);
       homeCollectionData.scrollIntoView({
         behavior: "smooth",
       });

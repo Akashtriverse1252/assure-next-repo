@@ -80,6 +80,7 @@ export const Seasonalpack = (props) => {
           slidesToShow: 1,
           initialSlide: 1,
           autoplaySpeed: 6000,
+          infinite: true,
         },
       },
     ],

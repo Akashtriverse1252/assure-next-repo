@@ -644,6 +644,7 @@ section,
 .package_card .packagename h3 {
   height: 55px;
   overflow-y: hidden;
+  text-transform: uppercase;
 }
 
 .detailtitle {

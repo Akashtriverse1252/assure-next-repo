@@ -27,9 +27,9 @@ export const page = ({ params }) => {
           </div>
         </section>
         <ChooseAssure />
-        <div className="BACKTOPACKAGE" onClick={handlePreviousStep}>
+        {/* <div className="BACKTOPACKAGE" onClick={handlePreviousStep}>
           <span>BACK TO PACKAGE</span>
-        </div>
+        </div> */}
       </main>
     </>
   );

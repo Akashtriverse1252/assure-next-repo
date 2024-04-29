@@ -78,7 +78,8 @@ export const Seasonalpack = (props) => {
         autoplaySpeed: 5000,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
+          initialSlide: 1,
+          autoplaySpeed: 6000,
         },
       },
     ],

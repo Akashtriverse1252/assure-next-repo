@@ -75,8 +75,9 @@ export const ProductSlider = (props) => {
         breakpoint: 580,
         settings: {
           slidesToShow: 1,
-          initialSlide: 0, // Update this to 0
-          slidesToScroll: 1,
+          initialSlide: 1,
+          autoplaySpeed: 6000,
+          infinite: true,
         },
       },
     ],
@@ -84,7 +85,7 @@ export const ProductSlider = (props) => {
   useEffect(() => {
     Aos.init();
   }, []);
- 
+
   return (
     <>
       <Slider {...settings} {...props} ref={targetElementRef}>

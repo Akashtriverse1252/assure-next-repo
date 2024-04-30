@@ -810,6 +810,7 @@ section,
 .svgwidth {
   width: 150px;
   height: 150px;
+  aspect-ratio: 1/1;
 }
 
 .svgwidthline {
@@ -1078,6 +1079,7 @@ header {
 
 .nah_logo svg {
   width: 75px;
+  aspect-ratio: 1 / 1;
 }
 
 .logo {
@@ -1089,13 +1091,13 @@ header {
 }
 .header_columns {
   flex-wrap: wrap;
-  width: 30%;
+  width: 40%;
   columns: 2;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 30px;
-  z-index: 101;
+  z-index: 11;
 }
 
 .header_columns .footercolumn {

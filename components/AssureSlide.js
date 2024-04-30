@@ -64,7 +64,7 @@ export const AssureSlide = (props) => {
                   />
                   <Image
                     className="d-sm-none m_home_banner"
-                    src="/banner-02-m.jpg"
+                    src="/banner-03-m.jpg"
                     alt="Early Detection is the Key of Cure"
                     width={1270}
                     height={780}
@@ -84,7 +84,7 @@ export const AssureSlide = (props) => {
                   />
                   <Image
                     className="d-sm-none m_home_banner"
-                    src="/banner-03-m.jpg"
+                    src="/banner-01-m.jpg"
                     alt="Early Detection is the Key of Cure"
                     width={630}
                     height={780}
@@ -104,7 +104,7 @@ export const AssureSlide = (props) => {
                   />
                   <Image
                     className="d-sm-none m_home_banner"
-                    src="/banner-04-m.jpg"
+                    src="/banner-02-m.jpg"
                     alt="Early Detection is the Key of Cure"
                     width={630}
                     height={780}
@@ -127,7 +127,7 @@ export const AssureSlide = (props) => {
                   />
                   <Image
                     className="d-sm-none m_home_banner"
-                    src="/banner-01-m.jpg"
+                    src="/banner-04-m.jpg"
                     alt="Early Detection is the Key of Cure"
                     width={630}
                     height={780}

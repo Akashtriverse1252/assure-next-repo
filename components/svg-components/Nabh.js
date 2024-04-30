@@ -23,7 +23,7 @@ const Nabh = () => {
           .t8 { font-size: 114px; fill: #ffffff; font-weight: bold; font-family: "Arial" }
         `}
       </style>
-      <g xmlns="http://www.w3.org/2000/svg" id="Layer 1">
+      <g xmlns="http://www.w3.org/2000/svg" id="nabh-conatoiner">
         <g id="&lt;Group&gt;">
           <path
             id="&lt;Path&gt;"

@@ -165,7 +165,7 @@ export const Header = () => {
                   </Link>
                   <MyCart />
                 </div>
-                <div className="navbar p-0 align-items-end ">
+                <div className="navbar p-0 m-0 align-items-end ">
                   <div className="d-none d-sm-flex justify-content-center align-items-center  navbar_item">
                     <div
                       className=" d-flex align-items-center flex-row justify-content-center "

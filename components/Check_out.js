@@ -76,17 +76,36 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
     },
     validationSchema,
     onSubmit: async (values) => {
-      console.log("Submitting form...", values);
+      // console.log("Submitting form...", values);
+
       try {
         // Handle form submission
         const apiUrl =
           "https://crelio.solutions/LHRegisterBillAPI/8862c370-09ef-11eb-841c-02524da836c8/";
+
+        const cartItems = cartState.products;
+        console.log("this si the cart data", cartState.products);
+        const testList = cartItems.map((item) => ({
+          testID: item.id,
+          testCode: item.name,
+          integrationCode: "-",
+          dictionaryId: "-",
+        }));
+
+        const totalAmount = cartItems.reduce(
+          (sum, item) => sum + parseFloat(item.dis_price),
+          0
+        );
+
+        console.log("cartItems:", cartItems);
+        console.log("totalAmount:", totalAmount);
 
         const apiData = {
           fullName: values.name,
           age: values.age,
           mobile: values.phoneNumber,
           gender: values.gender,
+          dob: values.dob,
           isHomecollection:
             values.selectedPlan === "Home_collection" ? "1" : "0",
           address:
@@ -99,47 +118,54 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
             values.selectedPlan === "Home_collection"
               ? formatDateTime(values.date, values.time)
               : "",
-          totalAmount: 1205,
+          totalAmount: totalAmount,
+          location: "",
+          passportNo: "",
+          panNumber: "",
+          aadharNumber: "",
+          insuranceNo: "",
+          nationality: "Indian",
+          ethnicity: "",
+          nationalIdentityNumber: "",
+          workerCode: "",
+          doctorCode: "",
+          email: "",
+          designation: "",
+          area: "",
+          patientType: "",
+          labPatientId: "",
+          patientId: "",
           advance: 0,
           organizationIdLH: 324559,
-          testID: 3992066,
-          testCode: "COVID ANTIGEN (POC)",
           integrationCode: "-",
           dictionaryId: "-",
           billDetails: {
             emergencyFlag: "0",
-            totalAmount: "0",
+            totalAmount: totalAmount,
             advance: "0",
             billDate: "",
-            paymentType: "",
+            paymentType: "cash",
             referralName: "",
             otherReferral: "",
             sampleId: "",
             orderNumber: "",
             referralIdLH: "",
-            organisationName: "",
+            organisationName: "Assure Pathlabs",
             additionalAmount: "",
             organizationIdLH: "324559",
-            comments: "",
-            testList: [
-              {
-                testID: "3992066",
-                testCode: "COVID ANTIGEN (POC)",
-                integrationCode: "-",
-                dictionaryId: "-",
-              },
-            ],
+            comments: "Booking of the patient from assure website",
+            testList: testList,
             paymentList: [
               {
-                paymentType: "",
-                paymentAmount: "",
+                paymentType: "cash",
+                paymentAmount: totalAmount,
                 issueBank: "",
               },
             ],
           },
         };
 
-        console.log(apiData);
+        console.log("this is the api data", apiData);
         cartDispatch({
           type: "UPDATE_USER_DATA",
           userData: {

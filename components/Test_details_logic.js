@@ -11,7 +11,7 @@ import data from "../Data/test_data.json";
 import { Faq } from "./Faq";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-
+import { Helmet } from "react-helmet";
 import { AccordionComponent } from "@/components/Accordian";
 import { ChooseAssure } from "@/components/ChooseAssure";
 import { useAlert } from "@/context/AlerterContext";
@@ -128,8 +128,33 @@ export const Test_details_logic = ({ Slug, Category }) => {
     }
   };
 
+  const metaDescription = `Book the ${project?.Test_Name} package now and save up to ${_discount}% with our exclusive offer. Discover vital health insights today.`;
+  // const metaDescription = `Book the ${
+  //   project?.Test_Name
+  // } package now and save up to ${_discount}% with our exclusive offer. This package includes vital health parameters like ${project?.TestInfo?.map(
+  //   (param) => param.Parameter_Name
+  // ).join(", ")}.`;
+
   return (
     <>
+      <Helmet>
+        <title>{`Book a ${
+          project?.Test_Name.charAt(0).toUpperCase() +
+          project?.Test_Name.slice(1).toLowerCase()
+        }`}</title>
+        <meta name="description" content={metaDescription} />
+        <link
+          rel="canonical"
+          href={`https://www.assurepathlabs.com/packages/${Slug}`}
+        />
+        <meta
+          property="og:url"
+          content={`https://www.assurepathlabs.com/packages/${Slug}`}
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={`Book a ${project?.Test_Name}`} />
+        <meta name="og:description" content={metaDescription} />
+      </Helmet>
       {loading ? (
         <div className="_loader_cnt col-12 d-flex justify-content-center">
           <div className="_loader"></div>

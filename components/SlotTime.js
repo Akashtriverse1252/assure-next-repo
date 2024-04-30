@@ -11,7 +11,7 @@ const SlotTime = ({ timeSlots, onSlotSelect, isError }) => {
     setSelectedTime(newSelectedTime);
     onSlotSelect(newSelectedTime);
   };
-  console.log(isError);
+  // console.log(isError);
 
   const renderTimeSlot = (label, times) => (
     <div key={label}>

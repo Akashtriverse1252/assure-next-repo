@@ -3,13 +3,14 @@
 import { useData } from "@/context/context";
 import React, { Fragment, useState } from "react";
 import { IoIosArrowRoundBack } from "react-icons/io";
-import { RiCloseFill } from "react-icons/ri";
+import { RiCloseFill, RiDeleteBinLine } from "react-icons/ri";
 import { LuX } from "react-icons/lu";
 import EmptyCart from "./EmptyCart";
 import Link from "next/link";
 
 export default function Cart() {
   const { cartState, cartDispatch } = useData(); // Access cart state and dispatch from CartContext
+  // console.log("this si the cart data" , cartState.products)
 
   // Function to convert string numbers to actual numbers
   const convertToNumber = (value) => {
@@ -18,27 +19,29 @@ export default function Cart() {
   // console.log("cart is empty ", cartState.products.length == 0)
 
   // Calculate subtotal, totalDiscount, and discountedPrice
-  const calculateTotals = () => {
+  const calculateTotals = (products) => {
     let subtotal = 0;
     let totalDiscount = 0;
+    let totalFinalPrice = 0;
 
-    if (cartState.products && cartState.products.length > 0) {
-      cartState.products.forEach((product) => {
+    if (Array.isArray(products) && products.length > 0) {
+      products.forEach((product) => {
         const price = convertToNumber(product.price);
         const quantity = convertToNumber(product.quantity);
-        const discount = convertToNumber(product.discount);
+        const disPrice = convertToNumber(product.dis_price);
 
         subtotal += price * quantity;
-        totalDiscount += (price * quantity * discount) / 100;
+        totalFinalPrice += disPrice * quantity;
       });
     }
 
-    const discountedPrice = subtotal - totalDiscount;
+    totalDiscount = subtotal - totalFinalPrice;
 
-    return { subtotal, totalDiscount, discountedPrice };
+    return { subtotal, totalDiscount, totalFinalPrice };
   };
-
-  const { subtotal, totalDiscount, discountedPrice } = calculateTotals();
+  const { subtotal, totalDiscount, totalFinalPrice } = calculateTotals(
+    cartState.products
+  );
 
   const handleIncrement = (product) => {
     cartDispatch({ type: "INCREMENT", productId: product.id });
@@ -102,7 +105,7 @@ export default function Cart() {
                                     className="btn _cart_cross"
                                     onClick={() => handleRemove(product)}
                                   >
-                                    <LuX />
+                                    <RiDeleteBinLine />
                                   </button>
                                 </div>
                                 <p className="cart_itam_qnt">
@@ -156,9 +159,16 @@ export default function Cart() {
                       <p className="mb-0 rupee">{totalDiscount.toFixed(2)}</p>
                     </div>
                     <div className="sub_total d-flex justify-content-between text-base font-medium text-gray-900">
-                      <p className="mb-0">Discounted Price</p>
-                      <p className="mb-0 rupee">{discountedPrice.toFixed(2)}</p>
+                      <p className="mb-0">Subtotal After Discount</p>{" "}
+                      {/* Updated label */}
+                      <p className="mb-0 rupee">
+                        <p className="mb-0 rupee">
+                          {totalFinalPrice.toFixed(2)}
+                        </p>
+                      </p>{" "}
+                      {/* Updated variable name */}
                     </div>
+
                     <div className="mt-sm-6 mt-2  cart_btn">
                       <Link
                         href="/check-out"

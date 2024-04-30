@@ -18,6 +18,7 @@ import Alert from "@/components/Alert";
 import Loader from "@/components/Loader";
 import SpeedDial from "@/components/SpeedDial";
 import BottomNav from "@/components/BottomNav";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const AvertaStd = localFont({
   src: "./font/AvertaStd-Regular.woff2",
@@ -49,6 +50,7 @@ export default function RootLayout({ children, isLoading }) {
               {/* <BottomNav/> */}
               <UploadForm />
             </div>
+            <SpeedInsights />
           </body>
           {/* <CookiesConset /> */}
         </GlobalDataProvider>

@@ -54,26 +54,6 @@ export const AssureSlide = (props) => {
           <Slider {...settings} {...props} ref={sliderRef}>
             <div>
               <div className="banner_slide">
-                <Link href="/packages/assure-complete-wellness-package-for-man">
-                  <Image
-                    className="d-none d-sm-block"
-                    src="/banner-4.webp"
-                    alt="Early Detection is the Key of Cure"
-                    width={1270}
-                    height={780}
-                  />
-                  <Image
-                    className="d-sm-none m_home_banner"
-                    src="/banner-04-m.jpg"
-                    alt="Early Detection is the Key of Cure"
-                    width={630}
-                    height={780}
-                  />
-                </Link>
-              </div>
-            </div>
-            <div>
-              <div className="banner_slide">
                 <Link href="/organ/heart">
                   <Image
                     className="d-none d-sm-block"
@@ -105,6 +85,26 @@ export const AssureSlide = (props) => {
                   <Image
                     className="d-sm-none m_home_banner"
                     src="/banner-03-m.jpg"
+                    alt="Early Detection is the Key of Cure"
+                    width={630}
+                    height={780}
+                  />
+                </Link>
+              </div>
+            </div>
+            <div>
+              <div className="banner_slide">
+                <Link href="/packages/assure-complete-wellness-package-for-man">
+                  <Image
+                    className="d-none d-sm-block"
+                    src="/banner-4.webp"
+                    alt="Early Detection is the Key of Cure"
+                    width={1270}
+                    height={780}
+                  />
+                  <Image
+                    className="d-sm-none m_home_banner"
+                    src="/banner-04-m.jpg"
                     alt="Early Detection is the Key of Cure"
                     width={630}
                     height={780}

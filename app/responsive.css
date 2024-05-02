@@ -382,6 +382,9 @@
   .nah_logo svg {
     width: 65px;
   }
+  .dis_price p {
+    font-size: 20px;
+  }
 
   .leftmenu .button {
     min-width: auto;
@@ -869,6 +872,9 @@
   .footerrow {
     gap: 20px;
   }
+  .dis_price p {
+    font-size: 20px;
+  }
 
   .sliderbox {
     padding: 20 15px 10px;
@@ -1027,6 +1033,9 @@
   }
   .google_review {
     width: 95%;
+  }
+  .dis_price p {
+    font-size: 20px;
   }
 }
 @media (max-width: 780px) {

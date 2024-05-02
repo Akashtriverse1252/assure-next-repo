@@ -54,7 +54,7 @@ export const AssureSlide = (props) => {
           <Slider {...settings} {...props} ref={sliderRef}>
             <div>
               <div className="banner_slide">
-                <Link href="/organ/heart">
+                <Link href="/search/test-for-fever">
                   <Image
                     className="d-none d-sm-block"
                     src="/banner-2.webp"
@@ -74,7 +74,7 @@ export const AssureSlide = (props) => {
             </div>
             <div>
               <div className="banner_slide">
-                <Link href="/test-detail/dengue-antibodies-igg-igm-ns1ag">
+                <Link href="/packages/assure-complete-wellness-package-for-man">
                   <Image
                     className="d-none d-sm-block"
                     src="/banner-3.webp"
@@ -94,7 +94,7 @@ export const AssureSlide = (props) => {
             </div>
             <div>
               <div className="banner_slide">
-                <Link href="/packages/assure-complete-wellness-package-for-man">
+                <Link href="/organ/heart">
                   <Image
                     className="d-none d-sm-block"
                     src="/banner-4.webp"

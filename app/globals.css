@@ -4747,3 +4747,11 @@ td.cart-detail-page-bin {
 li.__tootip svg {
   width: 22px;
 }
+
+.cart_dis,
+.org_price,
+.cart_itam_qnt{
+  font-size: 14px;
+  font-weight: 600;
+  color: #424242;
+}

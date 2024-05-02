@@ -117,7 +117,7 @@ export default function Cart() {
                                   >
                                     -
                                   </button>
-                                  <span className="px-1 px-sm-0">
+                                  <span className="px-1 px-sm-0 ">
                                     {product.quantity}
                                   </span>
                                   <button
@@ -128,7 +128,7 @@ export default function Cart() {
                                     +
                                   </button>
                                 </p>
-                                <p className="my-sm-1 text-sm text-gray-500">
+                                <p className="my-sm-1 text-sm text-gray-500 cart_dis" >
                                   Discount: {product.discount}%
                                 </p>
                               </div>

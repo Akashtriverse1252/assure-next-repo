@@ -1356,6 +1356,9 @@
   .procont .doctor_name_img img {
     width: auto !important;
   }
+  .procont_name h2 {
+    margin-bottom: 8px;
+  }
 }
 
 @media (max-width: 580px) {

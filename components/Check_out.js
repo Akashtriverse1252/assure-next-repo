@@ -484,8 +484,9 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                           <div className="plan-details">
                             <span>Home Collection</span>
                             <p>
-                              For smaller business, with simple salaries and pay
-                              schedules.
+                              Enjoy the luxury of free home collection within
+                              7km for bills over 1k at AssurePath Lab,
+                              Jalandhar.
                             </p>
                           </div>
                         </div>
@@ -510,8 +511,9 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                           <div className="plan-details">
                             <span>Walk In</span>
                             <p>
-                              For growing business who wants to create a
-                              rewarding place to work.
+                              AssurePath Lab in Jalandhar warmly welcomes
+                              walk-ins, ensuring prompt and efficient pathology
+                              testing services.
                             </p>
                           </div>
                         </div>

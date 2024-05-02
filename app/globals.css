@@ -1800,6 +1800,7 @@ header {
   margin: 0 auto;
   text-wrap: balance;
   letter-spacing: 1.6px;
+  text-transform: uppercase;
 }
 ._cart_cross {
   width: 23px;

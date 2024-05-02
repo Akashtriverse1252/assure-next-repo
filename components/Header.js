@@ -230,17 +230,12 @@ export const Header = () => {
                                   <ul className="p-0 m-0">
                                     <li>
                                       <Link href="/doctor-profile/details/dr-sanjay-wadhwa">
-                                        DR SANJAY WADHWA
+                                        DR. SANJAY WADHWA
                                       </Link>
                                     </li>
                                     <li>
                                       <Link href="/doctor-profile/details/dr-lovely-razdan">
-                                        DR LOVELY RAZDAN
-                                      </Link>
-                                    </li>
-                                    <li>
-                                      <Link href="/doctor-profile/details/dr-gurpal-kaur">
-                                        DR GURPAL KAUR
+                                        DR. LOVELY RAZDAN
                                       </Link>
                                     </li>
                                   </ul>
@@ -285,6 +280,9 @@ export const Header = () => {
                                       </Link>
                                     </li>
                                     <li>FOR HOSPITALS</li>
+                                    <li>X-RAY</li>
+                                    <li>HOME SAMPLE COLLECTION</li>
+                                    <li>MEDICAL PHARMACY</li>
                                   </ul>
                                 </div>
                               </div>

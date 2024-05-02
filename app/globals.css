@@ -4750,8 +4750,20 @@ li.__tootip svg {
 
 .cart_dis,
 .org_price,
-.cart_itam_qnt{
+.cart_itam_qnt {
   font-size: 14px;
   font-weight: 600;
   color: #424242;
+}
+.no_indenet label.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+  text-indent: 0 !important;
+  left: -12px !important;
+}
+.no_indenet .css-1wc848c-MuiFormHelperText-root {
+  margin-left: 0 !important;
+  color: #d32f2f !important;
+}
+
+.no_indenet label+.css-n70jm4-MuiInputBase-root-MuiInput-root-MuiSelect-root {
+  margin-top: 9px;
 }

@@ -114,15 +114,11 @@ export const Footer = () => {
       links: [
         {
           href: "/doctor-profile/details/dr-sanjay-wadhwa",
-          label: "DR SANJAY WADHWA",
+          label: "DR. SANJAY WADHWA",
         },
         {
           href: "/doctor-profile/details/dr-lovely-razdan",
-          label: "DR LOVELY RAZDAN",
-        },
-        {
-          href: "/doctor-profile/details/dr-gurpal-kaur",
-          label: "DR GURPAL KAUR",
+          label: "DR. LOVELY RAZDAN",
         },
       ],
     },
@@ -136,6 +132,9 @@ export const Footer = () => {
           external: true,
         },
         { label: "FOR HOSPITALS" },
+        { label: "X-RAY" },
+        { label: "HOME SAMPLE COLLECTION" },
+        { label: "MEDICAL PHARMACY" },
       ],
     },
     {

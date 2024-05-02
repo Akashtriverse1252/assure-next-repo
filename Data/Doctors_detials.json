@@ -110,30 +110,5 @@
     "affiliations": [
       "Over the past ten years, she has been authorized signatory in NABH & NABL accredited laboratory."
     ]
-  },
-  {
-    "doctor_name": "Dr. Gurpal Kaur",
-    "slug": "dr-gurpal-kaur",
-    "doctor_education": "MD Medical Microbiology Medical Microbiologist",
-    "doctor_details": "MD Pathology from Government Medical College and Hospital, Amritsar",
-    "image": {
-      "src": "/dp-02.webp",
-      "alt": "Dr. Another Doctor",
-      "title": "Dr. Another Doctor",
-      "width": "250",
-      "height": "250"
-    },
-    "qualifications": [
-      "M.B.B.S from Adesh Institute of Medical Sciences and Research",
-      "Masters in Medical Microbiology (MD) from Pravara Institute of Medical Sciences, Pune University."
-    ],
-    "experience": {
-      "title": "After completing his DNB, he worked as Consultant Pathologist at:",
-      "details": [
-        "During her post graduation period, she got training in Immunopathology, Flow Cytometry and IHC",
-        "She has published one paper in a prominent national journal and has presented various posters and papers at prominent institutes.",
-        "She has been trained in Quality Management System and Internal Audit as per NABL ISO15189 : 2012."
-      ]
-    }
   }
 ]

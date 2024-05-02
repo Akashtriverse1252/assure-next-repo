@@ -369,22 +369,6 @@ export const Test_details_logic = ({ Slug, Category }) => {
                           }}
                         ></p>
                       )}
-
-                      {/* <p>
-                            <strong>FREE</strong> Report Counselling
-                          </p>
-                          <p>
-                            Test booked so far: <strong>200</strong>
-                          </p>
-                          <p>
-                            Report Time: <strong>Same Day</strong>
-                          </p>
-                          <p>
-                            Fasting: Overnight <strong>8 hours</strong>
-                          </p>
-                          <p>
-                            Test Recommended for <strong>Male</strong>
-                          </p> */}
                     </div>
                   </div>
                 </div>

@@ -9,6 +9,11 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  Select,
+  MenuItem,
+  InputLabel,
+  FormHelperText,
+  FormControl,
 } from "@mui/material";
 import { FaArrowLeftLong, FaArrowRightLong, FaCheck } from "react-icons/fa6";
 import axios from "axios";
@@ -658,7 +663,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                                   />
                                 </div>
                                 {/* Pincode, City, State fields */}
-                                <div className="col-lg-7 col-12 mt-2 mt-md-5 flex-column gap-2 flex-md-row d-flex ">
+                                <div className="col-lg-7 col-12 mt-2 mt-md-5  flex-column gap-2 flex-md-row d-flex ">
                                   {/* Pincode */}
                                   <TextField
                                     className="mx-3 col-10 col-md-3"
@@ -699,70 +704,78 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                                     }}
                                   />
                                   {/* City */}
-                                  <TextField
-                                    className="mx-3 col-10 col-md-3"
-                                    id="city"
-                                    label="city"
-                                    name="city"
-                                    type="text"
-                                    variant="standard"
-                                    value={formik.values.city}
-                                    onChange={formik.handleChange}
-                                    error={
-                                      formik.touched.city &&
-                                      Boolean(formik.errors.city)
-                                    }
-                                    helperText={
-                                      formik.touched.city && formik.errors.city
-                                    }
-                                    onBlur={() =>
-                                      formik.setFieldTouched("city", true)
-                                    }
-                                    inputProps={{
-                                      onFocus: () =>
-                                        formik.setFieldTouched("city", false),
-                                    }}
-                                    InputProps={{
-                                      onEmpty: (event) => {
-                                        useEffect(() => {
-                                          formik.setFieldTouched("city", true);
-                                        }, []);
-                                      },
-                                    }}
-                                  />
-                                  {/* State */}
-                                  <TextField
-                                    className="mx-3 col-10 col-md-3"
-                                    id="state"
-                                    label="State"
-                                    name="state"
-                                    type="text"
-                                    variant="standard"
-                                    value={formik.values.state}
-                                    onChange={formik.handleChange}
-                                    error={
-                                      formik.touched.state &&
-                                      Boolean(formik.errors.state)
-                                    }
-                                    helperText={
-                                      formik.touched.state &&
-                                      formik.errors.state
-                                    }
-                                    onBlur={() =>
-                                      formik.setFieldTouched("state", true)
-                                    }
-                                    inputProps={{
-                                      onFocus: () =>
-                                        formik.setFieldTouched("state", false),
-                                    }}
-                                    InputProps={{
-                                      onEmpty: (event) => {
-                                        useEffect(() => {
-                                          formik.setFieldTouched("state", true);
-                                        }, []);
-                                      },
-                                    }}
-                                  />
+                                  {/* <div className="mx-3 col-10 col-md-3"> */}
+                                  <FormControl className="mx-3 col-10 col-md-3 no_indenet ">
+                                    <InputLabel id="demo-select-small-label">
+                                      City
+                                    </InputLabel>
+                                    <Select
+                                      className="col-12"
+                                      id="city"
+                                      name="city"
+                                      labelId="demo-select-small-label"
+                                      variant="standard"
+                                      // labelId="city-label"
+                                      value={formik.values.city}
+                                      onChange={formik.handleChange}
+                                      onBlur={() =>
+                                        formik.setFieldTouched("city", true)
+                                      }
+                                      error={
+                                        formik.touched.city &&
+                                        Boolean(formik.errors.city)
+                                      }
+                                    >
+                                      <MenuItem value="" disabled>
+                                        Select City
+                                      </MenuItem>
+                                      <MenuItem value="ludhiana">
+                                        Ludhiana
+                                      </MenuItem>
+                                      <MenuItem value="jalandar">
+                                        Jalandar
+                                      </MenuItem>
+                                    </Select>
+                                    <FormHelperText>
+                                      {formik.touched.city &&
+                                        formik.errors.city}
+                                    </FormHelperText>
+                                  </FormControl>
+
+                                  <FormControl className="mx-3 col-10 col-md-3 no_indenet">
+                                    <InputLabel id="state-label">
+                                      State
+                                    </InputLabel>
+                                    <Select
+                                      className=" col-12"
+                                      id="state"
+                                      name="state"
+                                      variant="standard"
+                                      labelId="state-label"
+                                      value={formik.values.state}
+                                      onChange={formik.handleChange}
+                                      onBlur={() =>
+                                        formik.setFieldTouched("state", true)
+                                      }
+                                      error={
+                                        formik.touched.state &&
+                                        Boolean(formik.errors.state)
+                                      }
+                                      helperText={
+                                        formik.touched.state &&
+                                        formik.errors.state
+                                      }
+                                    >
+                                      <MenuItem value="" disabled>
+                                        Select State
+                                      </MenuItem>
+                                      <MenuItem value="punjab">Punjab</MenuItem>
+                                    </Select>
+                                    <FormHelperText>
+                                      {formik.touched.state &&
+                                        formik.errors.state}
+                                    </FormHelperText>
+                                  </FormControl>
                                 </div>
                                 {/* Submit button */}
                               </article>

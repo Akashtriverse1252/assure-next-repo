@@ -270,19 +270,9 @@ export const Header = () => {
                                 </div>
                                 <div className="fmenu">
                                   <ul className="p-0 m-0">
-                                    <li>
-                                      {" "}
-                                      <Link
-                                        href="https://patient-in.creliohealth.com/patient/login"
-                                        target="_blank"
-                                      >
-                                        FOR INDIVIDUALS
-                                      </Link>
-                                    </li>
-                                    <li>FOR HOSPITALS</li>
-                                    <li>X-RAY</li>
                                     <li>HOME SAMPLE COLLECTION</li>
                                     <li>MEDICAL PHARMACY</li>
+                                    <li>X-RAY</li>
                                   </ul>
                                 </div>
                               </div>

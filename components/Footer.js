@@ -126,15 +126,9 @@ export const Footer = () => {
       title: "Services",
       aosDelay: 400,
       links: [
-        {
-          label: "FOR INDIVIDUALS",
-          href: "https://patient-in.creliohealth.com/patient/login",
-          external: true,
-        },
-        { label: "FOR HOSPITALS" },
-        { label: "X-RAY" },
         { label: "HOME SAMPLE COLLECTION" },
         { label: "MEDICAL PHARMACY" },
+        { label: "X-RAY" },
       ],
     },
     {

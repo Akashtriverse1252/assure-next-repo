@@ -1942,6 +1942,10 @@
     height: 65px;
     overflow-y: hidden;
   }
+  .notfound {
+    text-align: center;
+    width: 85%;
+  }
 }
 
 @media (max-width: 480px) {

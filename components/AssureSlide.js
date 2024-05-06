@@ -115,7 +115,7 @@ export const AssureSlide = (props) => {
             <div>
               <div className="banner_slide">
                 <Link
-                  href="https://patient-in.creliohealth.com/patient/login"
+                  href="https://patients.assurepathlabs.com/patient/login"
                   target="_blank"
                 >
                   <Image

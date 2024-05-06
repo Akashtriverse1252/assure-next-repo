@@ -151,7 +151,7 @@ export const Header = () => {
                   </Link>
                   <Link
                     className="upload_btn"
-                    href="https://patient-in.creliohealth.com/patient/login"
+                    href="https://patients.assurepathlabs.com/patient/login"
                     target="_blank"
                   >
                     <div
@@ -295,7 +295,7 @@ export const Header = () => {
                                     <li>BLOG</li>
                                     <li>
                                       <Link
-                                        href="https://patient-in.creliohealth.com/patient/login"
+                                        href="https://patients.assurepathlabs.com/patient/login"
                                         target="_blank"
                                         rel="none"
                                         className="text-black"

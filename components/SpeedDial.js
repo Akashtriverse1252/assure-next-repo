@@ -107,7 +107,7 @@ const FabFlinger = () => {
             >
               <Link
                 class=""
-                href="https://patient-in.creliohealth.com/patient/login"
+                href="https://patients.assurepathlabs.com/patient/login"
                 target="_blank"
               >
                 <LuUser />

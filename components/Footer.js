@@ -149,7 +149,7 @@ export const Footer = () => {
         },
         { label: "BLOG" },
         {
-          href: "https://patient-in.creliohealth.com/patient/login",
+          href: "https://patients.assurepathlabs.com/patient/login",
           label: "LOGIN",
           external: true,
         },

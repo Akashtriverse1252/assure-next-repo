@@ -2006,6 +2006,9 @@
   .modal_body {
     text-align: center;
   }
+  .fmenu ul li {
+    text-wrap: balance;
+  }
 }
 
 @media (max-width: 360px) {

@@ -46,7 +46,7 @@ export const Faq = ({ Data }) => {
             </AccordionItem>
           ))}
         </Accordion>
-        <div className="col-12 mx-auto text-center d-flex justify-content-center">
+        <div className="col-12 pt-3 mx-auto text-center d-flex justify-content-center">
           <button
             className="button button--aylen button--round-l button--text-thick mx-auto gradient col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-11 "
             onClick={handleReadMore}

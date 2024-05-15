@@ -4315,6 +4315,7 @@ table th {
 .accordiancont {
   display: flex;
   flex-direction: column;
+  text-align: left;
 }
 ._cart_cross svg {
   width: 20px;
@@ -4764,6 +4765,92 @@ li.__tootip svg {
   color: #d32f2f !important;
 }
 
-.no_indenet label+.css-n70jm4-MuiInputBase-root-MuiInput-root-MuiSelect-root {
+.no_indenet label + .css-n70jm4-MuiInputBase-root-MuiInput-root-MuiSelect-root {
   margin-top: 9px;
+}
+.title-small {
+  font-weight: 600;
+  flex-basis: 100%;
+  color: rgb(0 0 0 / 45%);
+  text-transform: uppercase;
+  width: 100%;
+}
+.title-small h1 {
+  font-size: 16px;
+  letter-spacing: 3.5px;
+  font-weight: bolder;
+  color: rgb(0 0 0 / 45%);
+  margin: 8px auto 0;
+}
+
+.feature-card {
+  background-color: #f0f8ff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  width: 32%;
+}
+
+.feature-card:nth-child(2) {
+  background-color: #f5f5dc;
+}
+
+.feature-card:nth-child(3) {
+  background-color: #f0fff0;
+}
+
+.feature-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.feature-card-icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.feature-card-icon-fast {
+  color: #87ceeb;
+}
+
+.feature-card-icon-customizable {
+  color: #cdcd00;
+}
+
+.feature-card-icon-delightful {
+  color: #90ee90;
+}
+
+h3.feature-card-title {
+  margin-left: 0.75rem;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.feature-card-description {
+  color: #343436;
+  text-align: start;
+  padding: 7px 5px 10px;
+  letter-spacing: 1.2px;
+}
+
+.feature-cnt {
+  display: flex;
+  gap: 1.5%;
+  justify-content: space-between;
+}
+h3.feature-card-title {
+  margin-left: 0.75rem;
+  font-size: 17px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.4px;
+  color: #2d2c2c;
+  margin-bottom: 0;
+}
+._parmacy{
+ gap: 55px;
 }

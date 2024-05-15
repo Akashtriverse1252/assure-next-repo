@@ -57,7 +57,7 @@ export const page = () => {
             <div className="web-container">
               <div className="row">
                 <div
-                  className="title mt-3 col-12 float-start text-center"
+                  className="title  col-12 float-start text-center"
                   data-aos="fade-up"
                 data-aos-duration={300}
                   data-aos-once="true"

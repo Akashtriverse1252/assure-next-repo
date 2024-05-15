@@ -35,7 +35,7 @@ export const BreadCrums = () => {
 
   return (
     <>
-      {pathname !== "/" && pathname !== "/about-us" ? (
+      {pathname !== "/" && pathname !== "/about-us" && pathname !== "/pharmacy" ? (
         <section className="position-relative d-contents">
           <div className="container">
             <div role="presentation" className="bread_crums ">

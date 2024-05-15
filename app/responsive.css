@@ -918,6 +918,15 @@
     justify-content: flex-start;
     gap: 30px;
   }
+  .title h1,
+  .title h2,
+  .title h3 {
+    font-size: 20px;
+    line-height: 2;
+  }
+  .title-small h1 {
+    font-size: 14px;
+  }
 
   .homecollection article a {
     line-height: 0;
@@ -1036,6 +1045,13 @@
   }
   .dis_price p {
     font-size: 20px;
+  }
+  .feature-cnt {
+    flex-direction: column;
+  }
+  .feature-card {
+    width: 80%;
+    margin: 10px auto;
   }
 }
 @media (max-width: 780px) {
@@ -1192,6 +1208,7 @@
     height: 100dvh;
     inset: 1;
   }
+
   table {
     border: 0;
   }
@@ -1387,6 +1404,10 @@
 
   ._cart_cross svg {
     width: 20px;
+  }
+  .feature-card {
+    width: 90%;
+    margin: 10px auto;
   }
   .cart_container {
     padding: 0 10px;
@@ -1946,6 +1967,15 @@
     text-align: center;
     width: 85%;
   }
+  .title-small h1 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+  .title-small  {
+    margin-bottom: 10px;
+
+  }
 }
 
 @media (max-width: 480px) {
@@ -1966,6 +1996,10 @@
 
   .footercolumn {
     width: 45%;
+  }
+  .feature-card {
+    width: 95%;
+    margin: 10px auto;
   }
 
   .logo {

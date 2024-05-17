@@ -11,6 +11,7 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS CSS
 import { AccordionComponent } from "@/components/Accordian";
 import { Faq } from "@/components/Faq";
+
 const page = () => {
   // console.log("this si the data ", Faqdata);
 
@@ -44,6 +45,7 @@ const page = () => {
             </div>
           </div>
         </section>
+     
         <section className="position-relative">
           {/* <div className="gradient-layer"></div> */}
           <div className="container">
@@ -214,7 +216,7 @@ const page = () => {
                 >
                   <h2>All your medicine needs under one roof</h2>
                 </div>
-                <div className=" m-auto col-12 pt-4 col-md-10 d-flex justify-content-center flex-direction-row  text-center">
+                <div className=" m-auto col-12 pt-4 col-md-11 d-flex justify-content-center flex-direction-row  text-center">
                   <Faq Data={Faqdata} />
                 </div>
               </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const pharmacyIcon3 = () => {
+const PharmacyIcon3 = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -23,4 +23,4 @@ const pharmacyIcon3 = () => {
   );
 };
 
-export default pharmacyIcon3;
+export default PharmacyIcon3;

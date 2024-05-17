@@ -1,10 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import PharmacyIcon3 from "@/components/svg-components/PharmacyIcon3";
+import PharmacyIcon3 from "@/components/svg-components/pharmacyIcon3";
 import PharmacyIcon2 from "@/components/svg-components/PharmacyIcon2";
 import PharmacyIcon1 from "@/components/svg-components/PharmacyIcon1";
-import Booble from "@/components/svg-components/Booble";
 import Faqdata from "@/Data/PhrmacyFaqData.json";
 import Aboutbanner from "@/public/About-us-banner-b.webp";
 import Breadcrumbs from "@mui/material/Breadcrumbs";

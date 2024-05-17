@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Accordion,
   AccordionItem,
@@ -10,14 +10,21 @@ import {
 } from "react-accessible-accordion";
 import FaqData from "../Data/FaqData.json";
 
-export const Faq = ({ Data }) => {
+export const Faq = ({ Data, initialCount = 5 }) => {
   const faqItems = Data && Data.length > 0 ? Data : FaqData;
   const [showAll, setShowAll] = useState(false);
-  const filteredData = showAll ? faqItems : faqItems.slice(0, 5);
+  const [count, setCount] = useState(initialCount);
+  const [filteredData, setFilteredData] = useState([]);
+
+  useEffect(() => {
+    setFilteredData(showAll ? faqItems : faqItems.slice(0, count));
+  }, [showAll, count, faqItems]);
 
   const handleReadMore = () => {
     setShowAll(!showAll);
   };
+
+  const shouldShowButton = faqItems.length > count;
 
   return (
     <>
@@ -46,14 +53,16 @@ export const Faq = ({ Data }) => {
             </AccordionItem>
           ))}
         </Accordion>
-        <div className="col-12 pt-3 mx-auto text-center d-flex justify-content-center">
-          <button
-            className="button button--aylen button--round-l button--text-thick mx-auto gradient col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-11 "
-            onClick={handleReadMore}
-          >
-            {showAll ? "Read Less" : "Read More"}
-          </button>
-        </div>
+        {shouldShowButton && (
+          <div className="col-12 pt-3 mx-auto text-center d-flex justify-content-center">
+            <button
+              className="button button--aylen button--round-l button--text-thick mx-auto gradient col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-11 "
+              onClick={handleReadMore}
+            >
+              {showAll ? "Read Less" : "Read More"}
+            </button>
+          </div>
+        )}
       </div>
     </>
   );

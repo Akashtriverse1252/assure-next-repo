@@ -4790,6 +4790,10 @@ li.__tootip svg {
   display: flex;
   flex-direction: column;
   width: 32%;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
 }
 
 .feature-card:nth-child(2) {
@@ -4804,6 +4808,7 @@ li.__tootip svg {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
+  z-index: 3;
 }
 
 .feature-card-icon {
@@ -4835,6 +4840,7 @@ h3.feature-card-title {
   text-align: start;
   padding: 7px 5px 10px;
   letter-spacing: 1.2px;
+  z-index: 3;
 }
 
 .feature-cnt {
@@ -4851,6 +4857,40 @@ h3.feature-card-title {
   color: #2d2c2c;
   margin-bottom: 0;
 }
-._parmacy{
- gap: 55px;
+._parmacy {
+  gap: 55px;
+}
+
+img.barnd_partner_card {
+  cursor: pointer;
+  transition: 0.3s all ease;
+}
+
+img.barnd_partner_card:hover {
+  transform: scale(1.05);
+}
+.booble::after {
+  content: "";
+  height: 300px;
+  width: 300px;
+  z-index: 2;
+  color: #fff;
+  background: #98c5eb;
+  position: absolute;
+  right: -20%;
+  top: -120%;
+  transform: translate(50%, 50%) scale(0);
+  border-radius: 50%;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0, 1);
+  opacity: 80%;
+}
+
+.booble.isHovered::after {
+  transform: translate(0%, 80%) scale(1);
+}
+.booble.colour-1::after {
+  background-color: #f7e9a1;
+}
+.booble.colour-2::after {
+  background-color: #bef6be;
 }

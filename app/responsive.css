@@ -1797,7 +1797,7 @@
 
   .abt_banner img {
     height: auto;
-    width: auto;
+    width: 100%;
   }
 
   .highlights {

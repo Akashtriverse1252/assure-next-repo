@@ -5,7 +5,8 @@ import PharmacyIcon3 from "@/components/svg-components/pharmacyIcon3";
 import PharmacyIcon2 from "@/components/svg-components/PharmacyIcon2";
 import PharmacyIcon1 from "@/components/svg-components/PharmacyIcon1";
 import Faqdata from "@/Data/PhrmacyFaqData.json";
-import Aboutbanner from "@/public/About-us-banner-b.webp";
+import Aboutbanner from "@/public/pharmacy-banner.jpg";
+import AboutbannerM from "@/public/pharmacy-banner-M.jpg";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link"; // Import Link correctly
 import AOS from "aos";
@@ -23,7 +24,7 @@ const Page = () => {
     dots: false,
     infinite: false,
     arrows: true,
-    pauseOnHover: true, 
+    pauseOnHover: true,
     speed: 1000,
     slidesToShow: 7,
     slidesToScroll: 1,
@@ -60,7 +61,7 @@ const Page = () => {
 
   return (
     <main className="d-flex flex-wrap float-start col-12 _parmacy">
-      <section className="position-relative __about__ mt-4">
+      <section className="position-relative __about__ mt-md-4 mt-2">
         <div className="container">
           <div className="row">
             <div
@@ -72,9 +73,17 @@ const Page = () => {
             >
               <Image
                 src={Aboutbanner}
-                alt="Comprehensive Health Checkup"
+                alt="Jalandhar’s Trusted Medical Store"
                 width={1220}
                 height={730}
+                className="desktop-show d-none d-sm-block"
+              />
+              <Image
+                src={AboutbannerM}
+                className="mobile-show d-block d-sm-none"
+                alt="Jalandhar’s Trusted Medical Store"
+                width={640}
+                height={720}
               />
             </div>
 
@@ -100,10 +109,13 @@ const Page = () => {
               >
                 <h1>BRAND PARTNERS</h1>
               </div>
-              <div className="m-auto col-12 col-md-10 d-flex justify-content-center mt-md-5 pt-md-2 mt-2 py-1" data-aos="fade-up"
+              <div
+                className="m-auto col-12 col-md-10 d-flex justify-content-center mt-md-5 pt-md-2 mt-2 py-1"
+                data-aos="fade-up"
                 data-aos-duration={500}
                 data-aos-once="true"
-                data-aos-easing="ease-in">
+                data-aos-easing="ease-in"
+              >
                 <Slider {...settings}>
                   <div>
                     <Image

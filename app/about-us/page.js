@@ -10,6 +10,7 @@ import { ChooseAssure } from "@/components/ChooseAssure";
 import { HForm } from "@/components/HForm";
 import OurFounders from "@/components/OurFounders";
 import Aboutbanner from "@/public/About-us-banner-b.webp";
+import AboutbannerM from "@/public/about-banner-M.jpg";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import { Link } from "@mui/material";
 import AOS from "aos";
@@ -33,12 +34,20 @@ export const page = () => {
                 data-aos-once="true"
                 data-aos-easing="ease-in"
               >
-                <Image
-                  src={Aboutbanner}
-                  alt="Comprehensive Health Checkup"
-                  width={1220}
-                  height={730}
-                />
+                 <Image
+                src={Aboutbanner}
+                alt="Comprehensive Health Checkup"
+                width={1220}
+                height={730}
+                className="desktop-show d-none d-sm-block"
+              />
+              <Image
+                src={AboutbannerM}
+                className="mobile-show d-block d-sm-none"
+                alt="Comprehensive Health Checkup"
+                width={640}
+                height={720}
+              />
               </div>
 
               <div role="presentation" className="bread_crums ">

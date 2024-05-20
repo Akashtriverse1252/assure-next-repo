@@ -22,6 +22,8 @@ const Page = () => {
   const settings = {
     dots: false,
     infinite: false,
+    arrows: true,
+    pauseOnHover: true, 
     speed: 1000,
     slidesToShow: 7,
     slidesToScroll: 1,
@@ -31,7 +33,7 @@ const Page = () => {
       {
         breakpoint: 1100,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 5,
           slidesToScroll: 1,
           initialSlide: 0,
         },
@@ -39,7 +41,7 @@ const Page = () => {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 4,
           slidesToScroll: 1,
           initialSlide: 0,
         },
@@ -87,7 +89,7 @@ const Page = () => {
       </section>
       <section className="position-relative">
         <div className="container">
-          <div className="web-container my-4">
+          <div className="web-container my-md-4 my-2">
             <div className="row">
               <div
                 className="title-small text-center"
@@ -98,7 +100,10 @@ const Page = () => {
               >
                 <h1>BRAND PARTNERS</h1>
               </div>
-              <div className="m-auto col-12 col-md-10 d-flex justify-content-center mt-5 pt-2">
+              <div className="m-auto col-12 col-md-10 d-flex justify-content-center mt-md-5 pt-md-2 mt-2 py-1" data-aos="fade-up"
+                data-aos-duration={500}
+                data-aos-once="true"
+                data-aos-easing="ease-in">
                 <Slider {...settings}>
                   <div>
                     <Image

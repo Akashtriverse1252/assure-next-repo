@@ -1053,6 +1053,9 @@
     width: 80%;
     margin: 10px auto;
   }
+  ._parmacy {
+    gap: 45px;
+  }
 }
 @media (max-width: 780px) {
   .h_form {
@@ -1211,6 +1214,9 @@
 
   table {
     border: 0;
+  }
+  ._parmacy {
+    gap: 40px;
   }
 
   table caption {
@@ -1408,6 +1414,12 @@
   .feature-card {
     width: 90%;
     margin: 10px auto;
+  }
+  .barnd_partner_card {
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
   }
   .cart_container {
     padding: 0 10px;
@@ -1972,9 +1984,8 @@
     letter-spacing: 2px;
     margin-bottom: 10px;
   }
-  .title-small  {
+  .title-small {
     margin-bottom: 10px;
-
   }
 }
 
@@ -1993,7 +2004,9 @@
   .No_Data svg {
     width: 90%;
   }
-
+  ._parmacy {
+    gap: 30px;
+  }
   .footercolumn {
     width: 45%;
   }
@@ -2055,5 +2068,11 @@
   }
   .popular_packages_cnt li {
     width: 100%;
+  }
+  .barnd_partner_card {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
   }
 }

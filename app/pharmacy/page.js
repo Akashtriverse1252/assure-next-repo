@@ -49,7 +49,7 @@ const Page = () => {
       {
         breakpoint: 580,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           initialSlide: 0,
           autoplaySpeed: 6000,
           infinite: true,

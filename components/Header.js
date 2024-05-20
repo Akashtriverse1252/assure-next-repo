@@ -271,7 +271,7 @@ export const Header = () => {
                                 <div className="fmenu">
                                   <ul className="p-0 m-0">
                                     <li>HOME SAMPLE COLLECTION</li>
-                                    <li>MEDICAL PHARMACY</li>
+                                    <li>MEDICINES</li>
                                     <li>X-RAY</li>
                                   </ul>
                                 </div>

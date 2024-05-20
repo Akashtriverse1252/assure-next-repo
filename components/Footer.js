@@ -127,7 +127,7 @@ export const Footer = () => {
       aosDelay: 400,
       links: [
         { label: "HOME SAMPLE COLLECTION" },
-        { label: "MEDICAL PHARMACY" },
+        { label: "MEDICINES" },
         { label: "X-RAY" },
       ],
     },

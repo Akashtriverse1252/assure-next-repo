@@ -1,13 +1,6 @@
 "use client";
 import { HForm } from "@/components/HForm";
 import Image from "next/image";
-import { Alltime } from "@/components/svg-components/Alltime";
-import { Samedaydelivery } from "@/components/svg-components/Samedaydelivery";
-import { FoundedDoctor } from "@/components/FoundedDoctor";
-import { AdvancedTechnology } from "@/components/svg-components/AdvancedTechnology";
-import { HighOn } from "@/components/svg-components/HighOn";
-import { FiveHundredplus } from "@/components/svg-components/FiveHundredplus";
-import { ConsultingService } from "@/components/svg-components/ConsultingService";
 import { Dots } from "@/components/svg-components/Dots";
 import { Line } from "@/components/svg-components/Line";
 import { AssureSlide } from "@/components/AssureSlide";
@@ -20,7 +13,7 @@ import { Videos } from "@/components/Videos";
 import { Faq } from "@/components/Faq";
 import Link from "next/link";
 import { useEffect } from "react";
-import Nabh from "@/components/svg-components/Nabh";
+import WhyUs from "@/components/WhyUs";
 import Aos from "aos";
 
 export default function Home() {
@@ -38,7 +31,10 @@ export default function Home() {
                 <div className="col-xl-9 col-lg-8 col-md-12 pull-md-right mr-md-auto col-sm-12 mb-0  col-12">
                   <AssureSlide className="no-buttons colornavigations col-12 float-start" />
                 </div>
-                <div className="col-xl-3 col-lg-4 col-sm-12 float-end  justify-content-end col-12 d-flex align-items-center" id="Home-Collection-data">
+                <div
+                  className="col-xl-3 col-lg-4 col-sm-12 float-end  justify-content-end col-12 d-flex align-items-center"
+                  id="Home-Collection-data"
+                >
                   <HForm />
                 </div>
               </div>
@@ -193,88 +189,7 @@ export default function Home() {
           <Dots className="hsection position-absolute svgwidth opacity-10 end-0 left-inherit" />
         </section>
         <section className="position-relative  ">
-          <div className="why_assure  ">
-            <div className="container">
-              <div className="web-container">
-                <div className="row">
-                  <div
-                    className="title col-12 float-start text-center"
-                    data-aos="fade-up"
-                    data-aos-duration={500}
-                    data-aos-once="true"
-                    data-aos-easing="ease-in"
-                  >
-                    <h2>WHY ASSURE PATHLABS?</h2>
-                  </div>
-                  <div
-                    className="col-lg-10 m-auto col-12 float-start "
-                    data-aos="fade-up"
-                    data-aos-duration={500}
-                    data-aos-once="true"
-                    data-aos-easing="ease-in"
-                  >
-                    <div className="row justify-content-center pt-3">
-                      <div class="why_assure_cnt  ">
-                        <div class="why_assure_item">
-                          <span className=" flex-center ">
-                            <Nabh />
-                          </span>
-                          <div class="why_assure_text">NABH Certified Labs</div>
-                        </div>
-                        <div class="why_assure_item">
-                          <span className=" flex-center ">
-                            <Alltime />
-                          </span>
-                          <div class="why_assure_text">24x7</div>
-                        </div>
-                        <div class="why_assure_item">
-                          <span className=" flex-center ">
-                            <Samedaydelivery />
-                          </span>
-                          <div class="why_assure_text">Same Day Report</div>
-                        </div>
-                        <div class="why_assure_item">
-                          <span className=" flex-center ">
-                            <FoundedDoctor />
-                          </span>
-                          <div class="why_assure_text">Founded by Doctors</div>
-                        </div>
-
-                        <div class="why_assure_item">
-                          <span className=" flex-center ">
-                            <AdvancedTechnology />
-                          </span>
-                          <div class="why_assure_text">Advanced Technology</div>
-                        </div>
-                        <div class="why_assure_item">
-                          <span className=" flex-center ">
-                            <HighOn />
-                          </span>
-                          <div class="why_assure_text">
-                            High on Safety and Hygeine
-                          </div>
-                        </div>
-                        <div class="why_assure_item">
-                          <span className=" flex-center ">
-                            <FiveHundredplus />
-                          </span>
-                          <div class="why_assure_text">1000+ Test</div>
-                        </div>
-                        <div class="why_assure_item">
-                          <span className=" flex-center ">
-                            <ConsultingService />
-                          </span>
-                          <div class="why_assure_text">
-                            Consultation Services
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <WhyUs Title="WHY ASSURE PATHLABS?"/>
 
           <div className="testimonial">
             <div className=" position-relative z-index-2">

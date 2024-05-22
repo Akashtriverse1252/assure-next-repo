@@ -6,7 +6,7 @@ import { Doctor } from "@/components/svg-components/Doctor";
 import { InternationalStandard } from "@/components/svg-components/InternationalStandard";
 import Image from "next/image";
 import { AboutGradient } from "@/components/AboutGradient";
-import { ChooseAssure } from "@/components/ChooseAssure";
+import WhyUs from "@/components/WhyUs";
 import { HForm } from "@/components/HForm";
 import OurFounders from "@/components/OurFounders";
 import Aboutbanner from "@/public/About-us-banner-b.webp";
@@ -34,20 +34,20 @@ export const page = () => {
                 data-aos-once="true"
                 data-aos-easing="ease-in"
               >
-                 <Image
-                src={Aboutbanner}
-                alt="Comprehensive Health Checkup"
-                width={1220}
-                height={730}
-                className="desktop-show d-none d-sm-block"
-              />
-              <Image
-                src={AboutbannerM}
-                className="mobile-show d-block d-sm-none"
-                alt="Comprehensive Health Checkup"
-                width={640}
-                height={720}
-              />
+                <Image
+                  src={Aboutbanner}
+                  alt="Comprehensive Health Checkup"
+                  width={1220}
+                  height={730}
+                  className="desktop-show d-none d-sm-block"
+                />
+                <Image
+                  src={AboutbannerM}
+                  className="mobile-show d-block d-sm-none"
+                  alt="Comprehensive Health Checkup"
+                  width={640}
+                  height={720}
+                />
               </div>
 
               <div role="presentation" className="bread_crums ">
@@ -61,14 +61,13 @@ export const page = () => {
         </section>
 
         <section className="position-relative">
-          <div className="gradient-layer"></div>
           <div className="container">
             <div className="web-container">
               <div className="row">
                 <div
                   className="title  col-12 float-start text-center"
                   data-aos="fade-up"
-                data-aos-duration={300}
+                  data-aos-duration={300}
                   data-aos-once="true"
                   data-aos-easing="ease-in"
                 >
@@ -198,6 +197,9 @@ export const page = () => {
             </div>
           </div>
         </section>
+        <section className="position-relative about-whyus">
+          <WhyUs Title="WHY CHOOSE US?" />
+        </section>
         <section className="position-relative">
           <div className="container">
             <div className="web-container">
@@ -251,7 +253,6 @@ export const page = () => {
             </div>
           </div>
         </section>
-        <ChooseAssure />
       </main>
     </>
   );

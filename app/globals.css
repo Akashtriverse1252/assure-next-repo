@@ -644,7 +644,7 @@ section,
 }
 
 .bg-gradient-image.about_page {
-  bottom: -425%;
+  bottom: -470%;
   z-index: -1;
 }
 
@@ -3603,7 +3603,10 @@ table th {
   margin: 15px;
   padding: 30px;
   height: 715px;
+  transition: scale ease 0.4s;
+  cursor: pointer;
 }
+
 .founder-image {
   width: 240px;
   height: 240px;
@@ -4252,10 +4255,11 @@ table th {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   row-gap: 50px;
   width: auto;
-  padding-top: 20px;
+  padding-top: 10px;
+  column-gap: 1%;
 }
 .why_assure_item {
   text-align: center;
@@ -4794,6 +4798,7 @@ li.__tootip svg {
   overflow: hidden;
   z-index: 1;
   cursor: pointer;
+  transition: transform 0.32s cubic-bezier(0.4, 0, 0, 1);
 }
 
 .feature-card:nth-child(2) {
@@ -4893,4 +4898,75 @@ img.barnd_partner_card:hover {
 }
 .booble.colour-2::after {
   background-color: #bef6be;
+}
+.about-whyus .why_assure {
+  background: #eceded;
+  padding: 60px 0;
+}
+
+.our-services {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.service {
+  margin: 15px;
+  padding: 15px;
+  border-radius: 5px;
+  flex-basis: calc(24.444% - 20px);
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+}
+.service h3.sevieces_heading {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2.2px;
+  color: #262323;
+  text-wrap: balance;
+  width: 18ch;
+  line-height: 1.6;
+  margin: 0 auto;
+  font-weight: bold;
+}
+.service p {
+  letter-spacing: 0.8px;
+  display: none;
+}
+
+.our-services .icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px;
+  background-size: cover;
+  background-color: #c6e3fb;
+  border-radius: 50%;
+  padding: 20px;
+  transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
+}
+p.subtitle {
+  font-size: 21px;
+}
+
+.bg-gray {
+  background-color: #fafafa;
+}
+
+.service:hover .icon {
+  background-color: #0599d2;
+}
+.service .icon svg path {
+  transition: all 0.5s ease-in-out;
+}
+.service:hover .icon svg path {
+  fill: #fafafa;
+}
+.feature-card:hover {
+  transform: scale(1.05);
 }

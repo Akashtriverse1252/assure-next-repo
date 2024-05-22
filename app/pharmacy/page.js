@@ -13,6 +13,14 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS CSS
 import { Faq } from "@/components/Faq";
 import Slider from "react-slick";
+import AttractiveDeal from "../../components/svg-components/AttractiveDeal";
+import MedicalSupplies from "../../components/svg-components/MedicalSupplies";
+import Refrigreation from "../../components/svg-components/Refrigreation";
+import SuperiorQuality from "../../components/svg-components/SuperiorQuality";
+import Reward from "../../components/svg-components/Reward";
+import EasyReturn from "../../components/svg-components/EasyReturn";
+import PharmacyConsultancy from "../../components/svg-components/PharmacyConsultancy";
+import Open from "../../components/svg-components/Open";
 
 const Page = () => {
   useEffect(() => {
@@ -101,16 +109,16 @@ const Page = () => {
           <div className="web-container my-md-4 my-2">
             <div className="row">
               <div
-                className="title-small text-center"
+                className="title text-center"
                 data-aos="fade-up"
                 data-aos-duration={300}
                 data-aos-once="true"
                 data-aos-easing="ease-in"
               >
-                <h1>BRAND PARTNERS</h1>
+                <h2>BRAND PARTNERS</h2>
               </div>
               <div
-                className="m-auto col-12 col-md-10 d-flex justify-content-center mt-md-5 pt-md-2 mt-2 py-1"
+                className="m-auto col-12 col-md-10 d-flex justify-content-center mt-md-4 pt-md-2 mt-2 py-1"
                 data-aos="fade-up"
                 data-aos-duration={500}
                 data-aos-once="true"
@@ -186,30 +194,31 @@ const Page = () => {
           </div>
         </div>
       </section>
-      <section className="position-relative">
+      <section className="position-relative bg-gray">
         <div className="container">
           <div className="web-container my-2">
             <div className="row">
               <div
-                className="title-small text-center"
+                className="title text-center"
                 data-aos="fade-up"
                 data-aos-duration={300}
                 data-aos-once="true"
                 data-aos-easing="ease-in"
               >
-                <h1>ABOUT ASSURE MEDICOS</h1>
+                <h2>ABOUT ASSURE MEDICOS</h2>
               </div>
-              <div
-                className="title col-12 float-start text-center"
-                data-aos="fade-up"
-                data-aos-duration={300}
-                data-aos-once="true"
-                data-aos-easing="ease-in"
-              >
-                <h2>Welcome a healthier tomorrow with us!</h2>
-              </div>
-              <div className="m-auto col-12 col-md-10 d-flex justify-content-center flex-direction-row text-center">
-                <div className="d-flex justify-content-center text-left flex-column">
+
+              <div className="m-auto col-12 col-md-10 d-flex justify-content-center flex-direction-row text-center pt-3">
+                <div className="d-flex justify-content-center text-left flex-column col-12 col-md-10">
+                  <p
+                    className="subtitle"
+                    data-aos="fade-up"
+                    data-aos-delay={100}
+                    data-aos-duration={300}
+                    data-aos-once="true"
+                  >
+                    Welcome a healthier tomorrow with us!
+                  </p>
                   <p
                     className="about-assure-text"
                     data-aos="fade-up"
@@ -259,15 +268,15 @@ const Page = () => {
           <div className="web-container my-2">
             <div className="row">
               <div
-                className="title-small text-center"
+                className="title text-center"
                 data-aos="fade-up"
                 data-aos-duration={300}
                 data-aos-once="true"
                 data-aos-easing="ease-in"
               >
-                <h1>WHY CHOOSE ASSURE MEDICOS?</h1>
+                <h2>WHY CHOOSE ASSURE MEDICOS?</h2>
               </div>
-              <div
+              {/* <div
                 className="title mt-3 col-12 float-start text-center"
                 data-aos="fade-up"
                 data-aos-duration={300}
@@ -275,7 +284,7 @@ const Page = () => {
                 data-aos-easing="ease-in"
               >
                 <h2>Trust us for the best</h2>
-              </div>
+              </div> */}
               <div className="m-auto pt-4 col-12 col-md-10 d-flex justify-content-center flex-direction-row text-center">
                 <div
                   className="feature-cnt"
@@ -356,30 +365,119 @@ const Page = () => {
           </div>
         </div>
       </section>
-      <section className="position-relative">
-        <div className="container">
+      <section className="position-relative  bg-gray">
+        <div className="container ">
           <div className="web-container my-2">
             <div className="row">
               <div
-                className="title-small text-center"
+                className="title text-center"
                 data-aos="fade-up"
                 data-aos-duration={300}
                 data-aos-once="true"
                 data-aos-easing="ease-in"
               >
-                <h1>SERVICES</h1>
+                <h2>All Your Medicine Needs Under One Roof</h2>
               </div>
               <div
-                className="title mt-3 col-12 float-start text-center"
-                data-aos="fade-up"
-                data-aos-duration={300}
-                data-aos-once="true"
-                data-aos-easing="ease-in"
+                className="our-services col-12 col-md-10 mx-auto
+              "
               >
-                <h2>All your medicine needs under one roof</h2>
-              </div>
-              <div className="m-auto col-12 pt-4 col-md-11 d-flex justify-content-center flex-direction-row text-center">
-                <Faq Data={Faqdata} initialCount={10} />
+                {/* <p className="subtitle">
+                  All Your Medicine Needs Under One Roof
+                </p> */}
+                <div className="services-container">
+                  <div className="service">
+                    <div className="icon strategy">
+                      <AttractiveDeal />
+                    </div>
+                    <h3 className="sevieces_heading">Attractive Offers</h3>
+                    <p>
+                      Avail special discounts and offers on a wide range of
+                      medications to save on your healthcare expenses.
+                    </p>
+                  </div>
+                  <div className="service">
+                    <div className="icon branding">
+                      <MedicalSupplies />
+                    </div>
+                    <h3 className="sevieces_heading">Medical supplies</h3>
+                    <p>
+                      An extensive selection of healthcare products, including
+                      medications, supplements, wellness items, and more, all
+                      under one roof.
+                    </p>
+                  </div>
+                  <div className="service">
+                    <div className="icon development">
+                      <Refrigreation />
+                    </div>
+                    <h3 className="sevieces_heading">
+                      Pharmaceutical refrigeration
+                    </h3>
+                    <p>
+                      Our state-of-the-art cold storage facilities ensure the
+                      safe preservation of vaccines and temperature-sensitive
+                      medications, maintaining their efficacy.
+                    </p>
+                  </div>
+                  <div className="service">
+                    <div className="icon web-design">
+                      <SuperiorQuality />
+                    </div>
+                    <h3 className="sevieces_heading">Superior products</h3>
+                    <p>
+                      All our products are genuine, sourced from reputable
+                      manufacturers, and undergo strict quality checks to ensure
+                      efficacy and safety.
+                    </p>
+                  </div>
+                  <div className="service">
+                    <div className="icon social-media">
+                      <Reward />
+                    </div>
+                    <h3 className="sevieces_heading">Wellness rewards</h3>
+                    <p>
+                      Earn rewards and benefits in the form of Health Credits
+                      with every purchase, which can be redeemed for discounts
+                      or free products in the future.
+                    </p>
+                  </div>
+                  <div className="service">
+                    <div className="icon ecommerce">
+                      <EasyReturn />
+                    </div>
+                    <h3 className="sevieces_heading">Easy return policy</h3>
+                    <p>
+                      Enjoy a hassle-free shopping experience with our easy
+                      return policy, allowing you to return products easily if
+                      needed.
+                    </p>
+                  </div>
+                  <div className="service">
+                    <div className="icon ecommerce">
+                      <PharmacyConsultancy />
+                    </div>
+                    <h3 className="sevieces_heading">
+                      24/7 pharmacist consultation
+                    </h3>
+                    <p>
+                      Access expert guidance and advice from our qualified
+                      pharmacists round the clock, whenever you have questions
+                      or need medication-related assistance.
+                    </p>
+                  </div>
+                  <div className="service">
+                    <div className="icon ecommerce">
+                      <Open />
+                    </div>
+                    <h3 className="sevieces_heading">24X7 open</h3>
+                    <p>
+                      We're here for you 24 hours a day, 7 days a week, ensuring
+                      you have access to healthcare products and services
+                      whenever you need them, day or night.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

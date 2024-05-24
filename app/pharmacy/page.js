@@ -82,8 +82,8 @@ const Page = () => {
               <Image
                 src={Aboutbanner}
                 alt="Jalandhar’s Trusted Medical Store"
-                width={1700}
-                height={580}
+                width={1220}
+                height={730}
                 className="desktop-show d-none d-sm-block"
               />
               <Image

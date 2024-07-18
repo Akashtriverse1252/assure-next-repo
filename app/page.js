@@ -18,7 +18,9 @@ import Aos from "aos";
 
 export default function Home() {
   useEffect(() => {
-    Aos.init({ duration: 450, easing: "ease-in" });
+    Aos.init({
+      throttleDelay: 99,
+    });
   }, []);
   return (
     <>
@@ -189,7 +191,7 @@ export default function Home() {
           <Dots className="hsection position-absolute svgwidth opacity-10 end-0 left-inherit" />
         </section>
         <section className="position-relative  ">
-          <WhyUs Title="WHY ASSURE PATHLABS?"/>
+          <WhyUs Title="WHY ASSURE PATHLABS?" />
 
           <div className="testimonial">
             <div className=" position-relative z-index-2">

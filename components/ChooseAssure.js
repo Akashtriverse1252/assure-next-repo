@@ -1,7 +1,7 @@
 import React from "react";
 import { AssureSafety } from "@/components/svg-components/AssureSafety";
 import { FreeHomeCollection } from "@/components/svg-components/FreeHomeCollection";
-import { SameDayreport } from "@/components/svg-components/SameDayreport";
+import SameDayreport from "@/components/svg-components/SameDayreport";
 import AffordablePricing from "@/components/svg-components/AffordablePricing";
 import PlayStore from "@/components/svg-components/PlayStore";
 import Nabh from "@/components/svg-components/Nabh";
@@ -37,7 +37,7 @@ export const ChooseAssure = () => {
             >
               <h2>{title}</h2>
             </div>
-            <div className="col-lg-8 m-auto col-12 float-start chooseassure">
+            <div className="col-lg-8 m-auto col-12 float-start chooseassure pt-3">
               <div
                 className="row justify-content-center"
                 data-aos="fade-up"
@@ -55,7 +55,7 @@ export const ChooseAssure = () => {
                       <span className="flex-center mb-2 button button--aylen button--round-l button--text-thick">
                         {React.createElement(iconComponents[icon])}
                       </span>
-                      <h3>{text}</h3>
+                      <h3 dangerouslySetInnerHTML={{ __html: text }}></h3>
                     </div>
                   </div>
                 ))}

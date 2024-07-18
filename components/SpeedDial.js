@@ -83,7 +83,7 @@ const FabFlinger = () => {
               className="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"
               data-upgraded=",MaterialButton,MaterialRipple"
             >
-              <Link class=" " href="/packages">
+              <Link className=" " href="/packages">
                 <AddPackages />
               </Link>
               <span className="mdl-button__ripple-container">
@@ -94,7 +94,7 @@ const FabFlinger = () => {
               className="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"
               data-upgraded=",MaterialButton,MaterialRipple"
             >
-              <Link class=" mr-adj" href="/individual-test">
+              <Link className=" mr-adj" href="/individual-test">
                 <PiTestTubeDuotone />
               </Link>
               <span className="mdl-button__ripple-container">
@@ -106,7 +106,7 @@ const FabFlinger = () => {
               data-upgraded=",MaterialButton,MaterialRipple"
             >
               <Link
-                class=""
+                className=""
                 href="https://patients.assurepathlabs.com/patient/login"
                 target="_blank"
               >

@@ -21,7 +21,7 @@ const page = () => {
                     <h2>TERMS AND CONDITIONS</h2>
                   </div>
                   <div
-                    className="privacy_pol_cnt"
+                    className="privacy_pol_cnt col-lg-10 mx-auto pt-4 d-flex flex-column col-12"
                     data-aos="fade-up"
                     data-aos-duration={500}
                     data-aos-once="true"
@@ -29,10 +29,16 @@ const page = () => {
                     data-aos-delay={100}
                   >
                     <p>
-                      We at www.assurepathlabs.com allow our customers to book
-                      health check-up packages online. In order to avail this
-                      facility, the customers simply need to register themselves
-                      on www.assurepathlabs.com
+                      We at{" "} 
+                      <a href="www.assurepathlabs.com">
+                         www.assurepathlabs.com
+                      </a>{" "} 
+                      allow our customers to book health check-up packages
+                      online. In order to avail this facility, the customers
+                      simply need to register themselves on{" "}
+                      <a href="www.assurepathlabs.com">
+                        www.assurepathlabs.com
+                      </a>
                     </p>
                     <div class="contentbox">
                       <h3>General</h3>
@@ -130,16 +136,17 @@ const page = () => {
                         well as trademark law if any.
                       </p>
                     </div>
-                  </div>
-                  <div class="contentbox">
-                    <h3>Terms of Modifications on Site</h3>
-                    <p>
-                      Assure Pathlabs is free to revise or edit any of its terms
-                      of use or ‘terms and conditions’ as per its convenience
-                      without any prior notice on the website
-                      www.assurepathlabs.com. You agree to abide by the current
-                      version of Terms and Conditions given on the website.
-                    </p>
+                    <div class="contentbox">
+                      <h3>Terms of Modifications on Site</h3>
+                      <p>
+                        Assure Pathlabs is free to revise or edit any of its
+                        terms of use or ‘terms and conditions’ as per its
+                        convenience without any prior notice on the website
+                        www.assurepathlabs.com. You agree to abide by the
+                        current version of Terms and Conditions given on the
+                        website.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

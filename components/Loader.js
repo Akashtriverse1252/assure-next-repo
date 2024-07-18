@@ -56,7 +56,7 @@ const LogoTriverse = () => {
           height: 0,
           duration: 0.4,
           delay: -0.72,
-          ease: "cubic-bezier(.57,.21,.69,3.25)",
+          ease: "power2.in",
         });
         tl.to(mainLoaderElement, {
           display: "none",

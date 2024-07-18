@@ -104,7 +104,7 @@ const Page = () => {
           </div>
         </div>
       </section>
-      <section className="position-relative">
+      <section className="position-relative ">
         <div className="container">
           <div className="web-container my-md-4 my-2">
             <div className="row">
@@ -194,7 +194,7 @@ const Page = () => {
           </div>
         </div>
       </section>
-      <section className="position-relative bg-gray">
+      <section className="position-relative bg-gray py-5">
         <div className="container">
           <div className="web-container my-2">
             <div className="row">
@@ -263,7 +263,7 @@ const Page = () => {
           </div>
         </div>
       </section>
-      <section className="position-relative">
+      <section className="position-relative py-5">
         <div className="container">
           <div className="web-container my-2">
             <div className="row">
@@ -325,7 +325,7 @@ const Page = () => {
                       }`}
                     ></div>
                     <div className="feature-card-header">
-                      <div className="feature-card-icon feature-card-icon-fast icon">
+                      <div className="feature-card-icon feature-card-icon-svg icon">
                         <PharmacyIcon2 />
                       </div>
                       <h3 className="feature-card-title">AFFORDABLE</h3>
@@ -348,7 +348,7 @@ const Page = () => {
                       }`}
                     ></div>
                     <div className="feature-card-header">
-                      <div className="feature-card-icon feature-card-icon-fast icon">
+                      <div className="feature-card-icon feature-card-icon-delightful icon">
                         <PharmacyIcon3 />
                       </div>
                       <h3 className="feature-card-title">SECURE</h3>
@@ -365,7 +365,7 @@ const Page = () => {
           </div>
         </div>
       </section>
-      <section className="position-relative  bg-gray">
+      <section className="position-relative  bg-gray py-5">
         <div className="container ">
           <div className="web-container my-2">
             <div className="row">

@@ -195,247 +195,249 @@ export const Header = () => {
                       <div className="_layer"></div>
                       <div className="container">
                         <div className="row">
-                          <div className="web-container justify-content-between d-flex">
-                            <div className="header_columns">
-                              <div className="footercolumn">
-                                <div className="fheading">
-                                  <article
-                                    className="text-uppercase"
-                                    // onClick={toggleMenu}
-                                  >
-                                    <Link href="/">Home</Link>
-                                  </article>
-                                </div>
-                              </div>
-                              <div className="footercolumn">
-                                <div className="fheading">
-                                  <article
-                                    className="text-uppercase"
-                                    // onClick={toggleMenu}
-                                  >
-                                    <Link href="/about-us">ABOUT US</Link>
-                                  </article>
-                                </div>
-                              </div>
-
-                              <div className="footercolumn">
-                                <div className="fheading">
-                                  <article className="text-uppercase">
-                                    <Link href="/doctor-profile">
-                                      OUR DOCTORS
-                                    </Link>
-                                  </article>
-                                </div>
-                                <div className="fmenu">
-                                  <ul className="p-0 m-0">
-                                    <li>
-                                      <Link href="/doctor-profile/details/dr-sanjay-wadhwa">
-                                        DR. SANJAY WADHWA
-                                      </Link>
-                                    </li>
-                                    <li>
-                                      <Link href="/doctor-profile/details/dr-lovely-razdan">
-                                        DR. LOVELY RAZDAN
-                                      </Link>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                              <div className="footercolumn">
-                                <div className="fheading">
-                                  <article className="text-uppercase">
-                                    <Link href="#">Bookings</Link>
-                                  </article>
-                                </div>
-                                <div className="fmenu">
-                                  <ul className="p-0 m-0">
-                                    <li>
-                                      <Link href="/individual-test">
-                                        BOOK A TEST
-                                      </Link>
-                                    </li>
-                                    <li>
-                                      <Link href="/packages">
-                                        BOOK A PACKAGE
-                                      </Link>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                              <div className="footercolumn">
-                                <div className="fheading">
-                                  <article className="text-uppercase">
-                                    SERVICES
-                                  </article>
-                                </div>
-                                <div className="fmenu">
-                                  <ul className="p-0 m-0">
-                                    <li>HOME SAMPLE COLLECTION</li>
-                                    <li>MEDICINES</li>
-                                    <li>X-RAY</li>
-                                  </ul>
-                                </div>
-                              </div>
-
-                              <div className="footercolumn">
-                                <div className="fheading">
-                                  <article className="text-uppercase">
-                                    MY ACCOUNT
-                                  </article>
-                                </div>
-                                <div className="fmenu">
-                                  <ul className="p-0 m-0">
-                                    <li
-                                      onClick={() =>
-                                        cartDispatch({ type: "TOGGLE_CART" })
-                                      }
+                          <div className="web-container ">
+                            <div className="justify-content-between d-flex col-lg-10 col-12 mx-auto">
+                              <div className="header_columns">
+                                <div className="footercolumn">
+                                  <div className="fheading">
+                                    <article
+                                      className="text-uppercase"
+                                      // onClick={toggleMenu}
                                     >
-                                      MY CART
-                                    </li>
-                                    <li>BLOG</li>
-                                    <li>
-                                      <Link
-                                        href="https://patients.assurepathlabs.com/patient/login"
-                                        target="_blank"
-                                        rel="none"
-                                        className="text-black"
+                                      <Link href="/">Home</Link>
+                                    </article>
+                                  </div>
+                                </div>
+                                <div className="footercolumn">
+                                  <div className="fheading">
+                                    <article
+                                      className="text-uppercase"
+                                      // onClick={toggleMenu}
+                                    >
+                                      <Link href="/about-us">ABOUT US</Link>
+                                    </article>
+                                  </div>
+                                </div>
+
+                                <div className="footercolumn">
+                                  <div className="fheading">
+                                    <article className="text-uppercase">
+                                      <Link href="/doctor-profile">
+                                        OUR DOCTORS
+                                      </Link>
+                                    </article>
+                                  </div>
+                                  <div className="fmenu">
+                                    <ul className="p-0 m-0">
+                                      <li>
+                                        <Link href="/doctor-profile/details/dr-sanjay-wadhwa">
+                                          DR. SANJAY WADHWA
+                                        </Link>
+                                      </li>
+                                      <li>
+                                        <Link href="/doctor-profile/details/dr-lovely-razdan">
+                                          DR. LOVELY RAZDAN
+                                        </Link>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                                <div className="footercolumn">
+                                  <div className="fheading">
+                                    <article className="text-uppercase">
+                                      <Link href="#">Bookings</Link>
+                                    </article>
+                                  </div>
+                                  <div className="fmenu">
+                                    <ul className="p-0 m-0">
+                                      <li>
+                                        <Link href="/individual-test">
+                                          BOOK A TEST
+                                        </Link>
+                                      </li>
+                                      <li>
+                                        <Link href="/packages">
+                                          BOOK A PACKAGE
+                                        </Link>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                                <div className="footercolumn">
+                                  <div className="fheading">
+                                    <article className="text-uppercase">
+                                      SERVICES
+                                    </article>
+                                  </div>
+                                  <div className="fmenu">
+                                    <ul className="p-0 m-0">
+                                      <li>HOME SAMPLE COLLECTION</li>
+                                      <li>MEDICINES</li>
+                                      <li>X-RAY</li>
+                                    </ul>
+                                  </div>
+                                </div>
+
+                                <div className="footercolumn">
+                                  <div className="fheading">
+                                    <article className="text-uppercase">
+                                      MY ACCOUNT
+                                    </article>
+                                  </div>
+                                  <div className="fmenu">
+                                    <ul className="p-0 m-0">
+                                      <li
+                                        onClick={() =>
+                                          cartDispatch({ type: "TOGGLE_CART" })
+                                        }
                                       >
-                                        LOGIN
+                                        MY CART
+                                      </li>
+                                      <li>BLOG</li>
+                                      <li>
+                                        <Link
+                                          href="https://patients.assurepathlabs.com/patient/login"
+                                          target="_blank"
+                                          rel="none"
+                                          className="text-black"
+                                        >
+                                          LOGIN
+                                        </Link>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                                <div className="footercolumn">
+                                  <div className="fheading">
+                                    <article
+                                      className="text-uppercase"
+                                      // onClick={toggleMenu}
+                                    >
+                                      <Link
+                                        className="text-black"
+                                        href="/terms-conditions"
+                                      >
+                                        TERMS & CONDITIONS
                                       </Link>
-                                    </li>
-                                  </ul>
+                                    </article>
+                                  </div>
                                 </div>
-                              </div>
-                              <div className="footercolumn">
-                                <div className="fheading">
-                                  <article
-                                    className="text-uppercase"
-                                    // onClick={toggleMenu}
-                                  >
-                                    <Link
-                                      className="text-black"
-                                      href="/terms-conditions"
+                                <div className="footercolumn">
+                                  <div className="fheading">
+                                    <article
+                                      className="text-uppercase"
+                                      // onClick={toggleMenu}
                                     >
-                                      TERMS & CONDITIONS
-                                    </Link>
-                                  </article>
+                                      <Link
+                                        className="text-black"
+                                        href="/privacy-policy"
+                                      >
+                                        PRIVACY POLICY
+                                      </Link>
+                                    </article>
+                                  </div>
                                 </div>
-                              </div>
-                              <div className="footercolumn">
-                                <div className="fheading">
-                                  <article
-                                    className="text-uppercase"
-                                    // onClick={toggleMenu}
-                                  >
-                                    <Link
-                                      className="text-black"
-                                      href="/privacy-policy"
+                                <div className="footercolumn">
+                                  <div className="fheading">
+                                    <article
+                                      className="text-uppercase"
+                                      // onClick={toggleMenu}
                                     >
-                                      PRIVACY POLICY
-                                    </Link>
-                                  </article>
+                                      <Link
+                                        className="text-black"
+                                        href="/refund-cancellation"
+                                      >
+                                        REFUND & CANCELLATION
+                                      </Link>
+                                    </article>
+                                  </div>
                                 </div>
                               </div>
-                              <div className="footercolumn">
-                                <div className="fheading">
-                                  <article
-                                    className="text-uppercase"
-                                    // onClick={toggleMenu}
-                                  >
-                                    <Link
-                                      className="text-black"
-                                      href="/refund-cancellation"
-                                    >
-                                      REFUND & CANCELLATION
-                                    </Link>
-                                  </article>
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              className=" _header_nav_ contact_detail d-none d-md-flex"
-                              data-aos="fade-in"
-                              data-aos-duration={600}
-                              data-aos-once="true"
-                              data-aos-easing="ease-in"
-                            >
-                              <div className="contact">
-                                <a href="tel:0181-4667555">
-                                  <span className="flex-center align-items-start gap-2 sm-gap-4">
-                                    <strong>T</strong>
-                                    0181-4667555
-                                  </span>
-                                </a>
-                              </div>
-                              <div className="">
+                              <div
+                                className=" _header_nav_ contact_detail d-none d-md-flex"
+                                data-aos="fade-in"
+                                data-aos-duration={600}
+                                data-aos-once="true"
+                                data-aos-easing="ease-in"
+                              >
                                 <div className="contact">
-                                  <a href="mailto:assurepathlabs@gmail.com">
+                                  <a href="tel:0181-4667555">
                                     <span className="flex-center align-items-start gap-2 sm-gap-4">
-                                      <strong>E</strong>
-                                      assurepathlabs@gmail.com
+                                      <strong>T</strong>
+                                      0181-4667555
                                     </span>
                                   </a>
                                 </div>
-                              </div>
-                              <div className=" ">
-                                <div className="contact">
-                                  <span className="flex-center align-items-start gap-2 gap-sm-0">
-                                    <strong>A </strong>
-                                    &nbsp;3, Waryam Nagar, <br />
-                                    Vasant Vihar Road, <br />
-                                    Jalandhar
-                                  </span>
-                                </div>
-                              </div>
-                              <div className="col-12  mx-auto  flex-center ">
-                                <Link
-                                  href="/"
-                                  className="button button--aylen button--round-l footer_btn button--text-thick text-uppercase gradient justify-content-start"
-                                  onClick={handleBookHomeCollection}
-                                >
-                                  BOOK HOME COLLECTION
-                                </Link>
-                              </div>
-
-                              <strong className="haeader_folow-us">
-                                Follow us
-                              </strong>
-                              <div className="socail_icon ">
                                 <div className="">
-                                  <Link
-                                    href="https://www.facebook.com/assurepathlabsjalandhar/"
-                                    target="_blank"
-                                  >
-                                    <Facebook />
-                                  </Link>
+                                  <div className="contact">
+                                    <a href="mailto:assurepathlabs@gmail.com">
+                                      <span className="flex-center align-items-start gap-2 sm-gap-4">
+                                        <strong>E</strong>
+                                        assurepathlabs@gmail.com
+                                      </span>
+                                    </a>
+                                  </div>
                                 </div>
-                                <div className="">
+                                <div className=" ">
+                                  <div className="contact">
+                                    <span className="flex-center align-items-start gap-2 gap-sm-0">
+                                      <strong>A </strong>
+                                      &nbsp;3, Waryam Nagar, <br />
+                                      Vasant Vihar Road, <br />
+                                      Jalandhar
+                                    </span>
+                                  </div>
+                                </div>
+                                <div className="col-12  mx-auto  flex-center ">
                                   <Link
-                                    href="https://www.instagram.com/assurepathlabs/"
-                                    target="_blank"
+                                    href="/"
+                                    className="button button--aylen button--round-l footer_btn button--text-thick text-uppercase gradient justify-content-start"
+                                    onClick={handleBookHomeCollection}
                                   >
-                                    <Instagram />
+                                    BOOK HOME COLLECTION
                                   </Link>
                                 </div>
 
-                                <div className="">
-                                  <Link
-                                    href="https://www.linkedin.com/company/assurepathlabs/"
-                                    target="_blank"
-                                  >
-                                    <LinkedIn />
-                                  </Link>
-                                </div>
-                                {/* <div className="">
+                                <strong className="haeader_folow-us">
+                                  Follow us
+                                </strong>
+                                <div className="socail_icon ">
+                                  <div className="">
+                                    <Link
+                                      href="https://www.facebook.com/assurepathlabsjalandhar/"
+                                      target="_blank"
+                                    >
+                                      <Facebook />
+                                    </Link>
+                                  </div>
+                                  <div className="">
+                                    <Link
+                                      href="https://www.instagram.com/assurepathlabs/"
+                                      target="_blank"
+                                    >
+                                      <Instagram />
+                                    </Link>
+                                  </div>
+
+                                  <div className="">
+                                    <Link
+                                      href="https://www.linkedin.com/company/assurepathlabs/"
+                                      target="_blank"
+                                    >
+                                      <LinkedIn />
+                                    </Link>
+                                  </div>
+                                  {/* <div className="">
                                   <Link href="#">
                                     <Youtube />
                                   </Link>
                                 </div> */}
-                                {/* <div className="">
+                                  {/* <div className="">
                                   <Link href="#">
                                     <Twitter />
                                   </Link>
                                 </div> */}
+                                </div>
                               </div>
                             </div>
                           </div>

@@ -18,7 +18,7 @@ const EmptyCart = () => {
         </span>
       </div>
       <div className="add_item text-center gap-3">
-        <span>Your cart is empty.</span>
+        <span>Your cart is empty</span>
         <p>Add Test/ Packages to your cart</p>
         <div className=" ">
           <Link

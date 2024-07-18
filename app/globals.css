@@ -1264,6 +1264,9 @@ header {
   border-bottom: solid 1px #ececec;
   margin-bottom: 20px;
 }
+.detailtitle{
+  margin-bottom: auto;
+}
 
 .detailtitle p {
   padding: 0 25px;
@@ -1427,13 +1430,34 @@ header {
   background-color: var(--white-color);
 }
 
-.contentbox h3,
+.contentbox h3 {
+  border-left: 4px solid rgb(97 30 163);
+  line-height: 1;
+  margin: 20px 0 10px;
+  padding-left: 10px;
+}
+.contentbox p,
+.contentbox ul {
+  padding-left: 10px;
+  letter-spacing: 0.8px;
+  font-weight: 400;
+}
+.contentbox ul {
+  list-style: disc;
+}
 .contentbox ul li {
   padding-bottom: 5px;
+  list-style: inside;
+}
+.contentbox ol li {
+  list-style-type: decimal;
 }
 
 .contentbox {
   padding-bottom: 10px;
+}
+.privacy_pol_cnt a {
+  font-weight: 600;
 }
 
 /* Upload from css */
@@ -2141,7 +2165,7 @@ html::-webkit-scrollbar,
 #searchTypeahead::-webkit-scrollbar {
   width: 7px;
   background-color: #ebeaea;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 .packagedetail ul::-webkit-scrollbar,
@@ -2156,12 +2180,12 @@ html::-webkit-scrollbar-thumb,
 ._acc_cnt ul li::-webkit-scrollbar-thumb,
 #searchTypeahead::-webkit-scrollbar-thumb {
   background: #acaaaa7e;
-  border-radius: 3px;
+  border-radius: 1px;
   height: 30px;
 }
 
 html::-webkit-scrollbar-thumb {
-  background-color: #53aef8;
+  background-color: #969696;
 }
 
 /* Handle on hover */
@@ -2397,14 +2421,14 @@ html::-webkit-scrollbar-thumb:hover,
 
 .bread_crums .MuiBreadcrumbs-li {
   cursor: pointer;
-  font-size: 13px;
-  text-transform: capitalize;
+  font-size: 12px;
+  text-transform: uppercase;
   font-weight: 500;
 }
 
 .bread_crums .MuiBreadcrumbs-li a {
   color: inherit;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.5px;
 }
 
@@ -3653,6 +3677,9 @@ table th {
 .circleicons h3 {
   all: unset;
   text-wrap: balance;
+  font-weight: 600;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 .privacy_pol_cnt h3,
 .contentbox h3 {
@@ -4825,16 +4852,17 @@ li.__tootip svg {
   width: 1.5rem;
 }
 
-.feature-card-icon-fast {
-  color: #87ceeb;
+.feature-card-icon-fast svg {
+  /* color: #87ceeb; */
+  fill: #87ceeb;
 }
 
-.feature-card-icon-customizable {
-  color: #cdcd00;
+.feature-card-icon-svg svg {
+  fill: #ffdb23;
 }
 
-.feature-card-icon-delightful {
-  color: #90ee90;
+.feature-card-icon-delightful svg {
+  fill: #90ee90;
 }
 
 h3.feature-card-title {
@@ -4973,4 +5001,19 @@ p.subtitle {
 }
 .feature-card:hover {
   transform: scale(1.05);
+}
+.detaildescrp.Discount strong {
+  position: relative;
+  z-index: 0;
+  font-size: 21px;
+}
+.detaildescrp.Discount strong:before {
+  content: "";
+  width: 100%;
+  height: 40%;
+  background: #efff00;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
 }

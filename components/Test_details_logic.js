@@ -220,7 +220,7 @@ export const Test_details_logic = ({ Slug, Category }) => {
                       </div> */}
               <div className="detailrow">
                 <div className="row">
-                  <div className="detailtitle col-lg-3 col-md-4 col-12">
+                  <div className="detailtitle  col-lg-3 col-md-4 col-12">
                     <h2>
                       <strong>Exclusive Offer</strong>
                     </h2>
@@ -250,12 +250,12 @@ export const Test_details_logic = ({ Slug, Category }) => {
               {_discount !== "100" && (
                 <div className="detailrow">
                   <div className="row">
-                    <div className="detailtitle col-lg-3 col-md-4 col-12">
+                    <div className="detailtitle  col-lg-3 col-md-4 col-12">
                       <h2>
                         <strong>Discount</strong>
                       </h2>
                     </div>
-                    <div className="detaildescrp col-lg-9 col-md-8 col-12 ">
+                    <div className="detaildescrp Discount col-lg-9 col-md-8 col-12 ">
                       <p>
                         UPTO <strong>{Math.round(_discount)}%</strong>{" "}
                       </p>

@@ -1,26 +1,20 @@
-import React from "react";
-
-const PharmacyIcon3 = () => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      color="#90EE90"
-    >
-      <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
-      <path d="M5 3v4" />
-      <path d="M19 17v4" />
-      <path d="M3 5h4" />
-      <path d="M17 19h4" />
-    </svg>
-  );
-};
-
-export default PharmacyIcon3;
+import * as React from "react";
+const SVGComponent = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    x="0px"
+    y="0px"
+    viewBox="0 0 100 125"
+    style={{
+      enableBackground: "new 0 0 100 100",
+    }}
+    xmlSpace="preserve"
+    {...props}
+  >
+    <g>
+      <path d="M83.2,30.8c0-2.1-0.1-4.2-0.1-6.1c0-1.5-1.2-2.8-2.8-2.8c-11.8,0-20.9-3.4-28.4-10.7c-1.1-1-2.8-1-3.9,0   c-7.5,7.3-16.5,10.7-28.4,10.7c-1.5,0-2.8,1.2-2.8,2.8c0,1.9,0,4-0.1,6.1c-0.4,19.9-0.9,47.1,32.2,58.6c0.3,0.1,0.6,0.2,0.9,0.2   c0.3,0,0.6,0,0.9-0.2C84,77.9,83.5,50.7,83.2,30.8z M63.4,44.3L48.1,59.6c-0.5,0.5-1.2,0.8-2,0.8c-0.7,0-1.4-0.3-2-0.8L36.5,52   c-1.1-1.1-1.1-2.8,0-3.9c1.1-1.1,2.8-1.1,3.9,0l5.7,5.7l13.4-13.4c1.1-1.1,2.8-1.1,3.9,0C64.5,41.5,64.5,43.2,63.4,44.3z" />
+    </g>
+  </svg>
+);
+export default SVGComponent;

@@ -4,7 +4,7 @@
     {
       "id": 1,
       "icon": "Nabh",
-      "text": "NABH Certified Lab"
+      "text": "NABH <br/> Certified Lab"
     },
     {
       "id": 2,
@@ -24,17 +24,17 @@
     {
       "id": 5,
       "icon": "AffordablePricing",
-      "text": "Most Affordable Pricing"
+      "text": "Most Affordable <br/> Pricing"
     },
     {
       "id": 6,
       "icon": "FiveHundredplus",
-      "text": "1000+ Tests"
+      "text": "1000+ <br/> Tests"
     },
     {
       "id": 7,
       "icon": "PlayStore",
-      "text": "Assure Pathlabs App"
+      "text": "Assure Pathlabs <br/> Andriod App"
     }
   ]
 }

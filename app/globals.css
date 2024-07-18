@@ -4899,6 +4899,7 @@ h3.feature-card-title {
 img.barnd_partner_card {
   cursor: pointer;
   transition: 0.3s all ease;
+  margin: 10px auto;
 }
 
 img.barnd_partner_card:hover {

@@ -1,3 +1,5 @@
+@import "locomotive-scroll/dist/locomotive-scroll.css";
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -651,7 +653,6 @@ section,
 .package_card .packagename h3 {
   height: 55px;
   overflow-y: hidden;
-  text-transform: uppercase;
 }
 
 .detailtitle {

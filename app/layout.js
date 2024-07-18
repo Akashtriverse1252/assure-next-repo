@@ -8,8 +8,6 @@ import localFont from "next/font/local";
 import { Footer } from "@/components/Footer";
 import { GlobalDataProvider } from "@/context/context";
 import Cart from "../components/Cart.js";
-import SmoothScroll from "../components/SmoothScroll";
-
 import { BreadCrums } from "@/components/BreadCrums";
 import UploadForm from "@/components/UploadForm";
 import CookiesConset from "@/components/CookiesConset";
@@ -17,8 +15,6 @@ import { AlertProvider } from "@/context/AlerterContext";
 import Alert from "@/components/Alert";
 import Loader from "@/components/Loader";
 import SpeedDial from "@/components/SpeedDial";
-import BottomNav from "@/components/BottomNav";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const AvertaStd = localFont({
   src: "./font/AvertaStd-Regular.woff2",
@@ -50,7 +46,6 @@ export default function RootLayout({ children, isLoading }) {
               {/* <BottomNav/> */}
               <UploadForm />
             </div>
-            <SpeedInsights />
           </body>
           {/* <CookiesConset /> */}
         </GlobalDataProvider>

@@ -249,7 +249,7 @@ export default function Home() {
                 >
                   <h2 className="">OUR VIDEOS</h2>
                 </div>
-                <div className="col-lg-10 col-12 m-auto float-start">
+                <div className="col-lg-10 col-12 m-auto float-start d-flex flex-column">
                   <Videos />
                 </div>
               </div>

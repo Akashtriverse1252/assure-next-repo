@@ -1264,7 +1264,7 @@ header {
   border-bottom: solid 1px #ececec;
   margin-bottom: 20px;
 }
-.detailtitle{
+.detailtitle {
   margin-bottom: auto;
 }
 
@@ -1817,7 +1817,6 @@ header {
 .packagename_test h3 {
   font-weight: 700;
   font-size: 20px;
-  text-transform: capitalize;
   text-wrap: balance;
   text-align: center;
   line-height: 30px;
@@ -3785,7 +3784,6 @@ table th {
 .popular_packages_cnt li {
   width: 23%;
   padding-left: 5px;
-  text-transform: uppercase;
   border-left: solid 1px #b9b9b9;
   line-height: 1;
   white-space: nowrap;

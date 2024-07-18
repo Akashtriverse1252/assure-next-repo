@@ -1800,7 +1800,6 @@ header {
   margin: 0 auto;
   text-wrap: balance;
   letter-spacing: 1.6px;
-  text-transform: uppercase;
 }
 ._cart_cross {
   width: 23px;
@@ -2443,6 +2442,7 @@ li.__tootip {
 li.__tootip svg {
   width: 15px;
 }
+.tooltip_title_,
 article .tooltip_title_ {
   text-align: left !important ;
   font-size: 15px !important;
@@ -2450,6 +2450,7 @@ article .tooltip_title_ {
   line-height: 1.7 !important;
   font-weight: 600 !important;
   margin-bottom: 12px !important;
+  font-weight: 600;
 }
 
 p.tooltip_data_ {
@@ -4757,7 +4758,6 @@ li.__tootip svg {
 .org_price,
 .cart_itam_qnt {
   font-size: 14px;
-  font-weight: 600;
   color: #424242;
 }
 .no_indenet .css-p0rm37 {
@@ -4767,6 +4767,9 @@ li.__tootip svg {
 .no_indenet .css-1wc848c-MuiFormHelperText-root {
   margin-left: 0 !important;
   color: #d32f2f !important;
+}
+.sub_total p {
+  font-weight: 600;
 }
 
 .no_indenet label + .css-n70jm4-MuiInputBase-root-MuiInput-root-MuiSelect-root {

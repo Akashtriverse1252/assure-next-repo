@@ -75,7 +75,7 @@ const Page = () => {
             <div
               className="col-12 abt_banner"
               data-aos="fade-in"
-              data-aos-duration={300}
+              data-aos-duration={600}
               data-aos-once="true"
               data-aos-easing="ease-in"
             >
@@ -111,7 +111,7 @@ const Page = () => {
               <div
                 className="title text-center"
                 data-aos="fade-up"
-                data-aos-duration={300}
+                data-aos-duration={600}
                 data-aos-once="true"
                 data-aos-easing="ease-in"
               >
@@ -201,7 +201,7 @@ const Page = () => {
               <div
                 className="title text-center"
                 data-aos="fade-up"
-                data-aos-duration={300}
+                data-aos-duration={600}
                 data-aos-once="true"
                 data-aos-easing="ease-in"
               >
@@ -213,8 +213,7 @@ const Page = () => {
                   <p
                     className="subtitle"
                     data-aos="fade-up"
-                    data-aos-delay={100}
-                    data-aos-duration={300}
+                    data-aos-duration={600}
                     data-aos-once="true"
                   >
                     Welcome a healthier tomorrow with us!
@@ -222,8 +221,7 @@ const Page = () => {
                   <p
                     className="about-assure-text"
                     data-aos="fade-up"
-                    data-aos-delay={100}
-                    data-aos-duration={300}
+                    data-aos-duration={600}
                     data-aos-once="true"
                   >
                     Assure medicos is subsidiary of Assure Pathlabs, Jalandhar’s
@@ -235,8 +233,7 @@ const Page = () => {
                   <p
                     className="about-assure-text"
                     data-aos="fade-up"
-                    data-aos-delay={100}
-                    data-aos-duration={300}
+                    data-aos-duration={600}
                     data-aos-once="true"
                   >
                     Backed by a team of highly trained professionals, our
@@ -249,8 +246,7 @@ const Page = () => {
                   <p
                     className="about-assure-text"
                     data-aos="fade-up"
-                    data-aos-delay={100}
-                    data-aos-duration={300}
+                    data-aos-duration={600}
                     data-aos-once="true"
                   >
                     Our commitment to fast and efficient service sets us apart,
@@ -270,7 +266,7 @@ const Page = () => {
               <div
                 className="title text-center"
                 data-aos="fade-up"
-                data-aos-duration={300}
+                data-aos-duration={600}
                 data-aos-once="true"
                 data-aos-easing="ease-in"
               >
@@ -279,7 +275,7 @@ const Page = () => {
               {/* <div
                 className="title mt-3 col-12 float-start text-center"
                 data-aos="fade-up"
-                data-aos-duration={300}
+                data-aos-duration={600}
                 data-aos-once="true"
                 data-aos-easing="ease-in"
               >
@@ -372,11 +368,11 @@ const Page = () => {
               <div
                 className="title text-center"
                 data-aos="fade-up"
-                data-aos-duration={300}
+                data-aos-duration={600}
                 data-aos-once="true"
                 data-aos-easing="ease-in"
               >
-                <h2>All Your Medicine Needs Under One Roof</h2>
+                <h2>ALL YOUR MEDICINE NEEDS UNDER ONE ROOF  </h2>
               </div>
               <div
                 className="our-services col-12 col-md-10 mx-auto

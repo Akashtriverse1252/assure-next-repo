@@ -127,7 +127,10 @@ export const Footer = () => {
       aosDelay: 400,
       links: [
         { label: "HOME SAMPLE COLLECTION" },
-        { label: "MEDICINES" },
+        {
+          href: "/pharmacy",
+          label: "MEDICINES",
+        },
         { label: "X-RAY" },
       ],
     },
@@ -192,7 +195,7 @@ export const Footer = () => {
                         data-aos-easing="ease-in"
                         data-aos-delay={150}
                       >
-                        {testTabData.slice(0, 32).map((test, index) => (
+                        {testTabData.slice(0, 31).map((test, index) => (
                           <li title={test.Test_Name}>
                             <Link
                               key={test.id}
@@ -201,18 +204,10 @@ export const Footer = () => {
                               {test.Test_Name}
                             </Link>
                           </li>
-                          // <li key={test.id} ref={listRef}>
-                          //   {overflowingItems.includes(index) ? (
-                          //     <ToolTip title={test.Test_Name}>
-                          //       {test.Test_Name}
-                          //     </ToolTip>
-                          //   ) : (
-                          //     <Link href={`/test-detail/${test.Slug}`}>
-                          //       {test.Test_Name}
-                          //     </Link>
-                          //   )}
-                          // </li>
                         ))}
+                        <li title={"View More"} className="ViewMore_footer">
+                          <Link href={`/individual-test`}>View More...</Link>
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -223,7 +218,6 @@ export const Footer = () => {
                       data-aos-duration={600}
                       data-aos-once="true"
                       data-aos-easing="ease-in"
-                      data-aos-delay={150}
                     >
                       <strong>Popular Packages</strong>
                     </div>
@@ -231,18 +225,20 @@ export const Footer = () => {
                       <ul
                         className="flex-center "
                         data-aos="fade-up"
-                        data-aos-duration={700}
+                        data-aos-duration={600}
                         data-aos-once="true"
                         data-aos-easing="ease-in"
-                        data-aos-delay={150}
                       >
-                        {packageTabData.slice(0, 28).map((test, index) => (
+                        {packageTabData.slice(0, 27).map((test, index) => (
                           <li title={test.Test_Name}>
                             <Link key={test.id} href={`/packages/${test.Slug}`}>
                               {test.Test_Name}
                             </Link>
                           </li>
                         ))}
+                        <li title={"View More"} className="ViewMore_footer">
+                          <Link href={`/packages`}>View More...</Link>
+                        </li>
                       </ul>
                     </div>
                   </div>

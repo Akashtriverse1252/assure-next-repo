@@ -17,9 +17,15 @@ const SearchPage = ({ slug }) => {
       setError(null);
 
       try {
+        const response = await axios.get(
+          "https://www.assurepathlabs.com/json/mapping_keywords.json"
+        );
+        const mappingdata = response.data;
+
         const matchedItem = mappingdata.mappingdata.find(
           (item) => item.slug === slug
         );
+        console.log(matchedItem);
 
         if (matchedItem) {
           const ids = matchedItem.id;

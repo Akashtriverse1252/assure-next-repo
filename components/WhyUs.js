@@ -9,7 +9,7 @@ import Nabh from "@/components/svg-components/Nabh";
 import PlayStore from "@/components/svg-components/PlayStore";
 import { AssureSafety } from "@/components/svg-components/AssureSafety";
 
-const WhyUs = ({Title}) => {
+const WhyUs = ({ Title }) => {
   return (
     <>
       <div className="why_assure  ">
@@ -70,7 +70,7 @@ const WhyUs = ({Title}) => {
                         <HighOn />
                       </span>
                       <div class="why_assure_text">
-                        High on Safety and Hygeine
+                        High on Safety and Hygiene
                       </div>
                     </div>
                     <div class="why_assure_item">

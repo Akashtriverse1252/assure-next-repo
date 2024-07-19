@@ -55,29 +55,6 @@ const OurFounders = () => {
                           of expertise to the realm of diagnostic &amp; ensures
                           quality of health services.
                         </p>
-                        <div class="founder-social-icons mt-3">
-                          <a
-                            class="founder-social-icon"
-                            target="_blank"
-                            href="#"
-                          >
-                            <FaFacebook />
-                          </a>
-                          <a
-                            class="founder-social-icon"
-                            target="_blank"
-                            href="#"
-                          >
-                            <FaXTwitter />
-                          </a>
-                          <a
-                            class="founder-social-icon"
-                            target="_blank"
-                            href="#"
-                          >
-                            <FaInstagram />
-                          </a>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -115,29 +92,6 @@ const OurFounders = () => {
                           makes her a key player in the dynamic and critical
                           field of infectious diseases.
                         </p>
-                        <div class="founder-social-icons mt-3">
-                          <a
-                            class="founder-social-icon"
-                            target="_blank"
-                            href="#"
-                          >
-                            <FaFacebook />
-                          </a>
-                          <a
-                            class="founder-social-icon"
-                            target="_blank"
-                            href="#"
-                          >
-                            <FaXTwitter />
-                          </a>
-                          <a
-                            class="founder-social-icon"
-                            target="_blank"
-                            href="#"
-                          >
-                            <FaInstagram />
-                          </a>
-                        </div>
                       </div>
                     </div>
                   </div>

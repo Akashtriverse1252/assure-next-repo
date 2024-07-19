@@ -18,8 +18,10 @@ import "aos/dist/aos.css"; // Import AOS CSS
 
 export const page = () => {
   if (typeof window !== "undefined") {
-    // Check if window is defined (to prevent server-side rendering issues)
-    AOS.init();
+    Aos.init({
+      throttleDelay: 99,
+      delay: 0,
+    });
   }
   return (
     <>
@@ -30,7 +32,7 @@ export const page = () => {
               <div
                 className=" col-12 abt_banner"
                 data-aos="fade-in"
-                data-aos-duration={300}
+                data-aos-duration={600}
                 data-aos-once="true"
                 data-aos-easing="ease-in"
               >
@@ -67,7 +69,7 @@ export const page = () => {
                 <div
                   className="title  col-12 float-start text-center"
                   data-aos="fade-up"
-                  data-aos-duration={300}
+                  data-aos-duration={500}
                   data-aos-once="true"
                   data-aos-easing="ease-in"
                 >
@@ -78,8 +80,7 @@ export const page = () => {
                     <p
                       className="about-assure-text "
                       data-aos="fade-up"
-                      data-aos-delay={100}
-                      data-aos-duration={300}
+                      data-aos-duration={500}
                       data-aos-once="true"
                     >
                       Assure Pathlabs is the best blood test pathalogy
@@ -92,8 +93,7 @@ export const page = () => {
                     <p
                       className="about-assure-text "
                       data-aos="fade-up"
-                      data-aos-delay={100}
-                      data-aos-duration={300}
+                      data-aos-duration={600}
                       data-aos-once="true"
                     >
                       Our commitment guarantees not just efficient service but
@@ -135,8 +135,7 @@ export const page = () => {
                         <h3
                           className="effectheading newheading "
                           data-aos="flip-right"
-                          data-aos-delay={100}
-                          data-aos-duration={300}
+                          data-aos-duration={800}
                           data-aos-once="true"
                           data-aos-easing="ease-in"
                         >
@@ -147,8 +146,7 @@ export const page = () => {
                     <div
                       className="col-lg-7 col-12 "
                       data-aos="fade-up"
-                      data-aos-delay={100}
-                      data-aos-duration={300}
+                      data-aos-duration={600}
                       data-aos-once="true"
                       data-aos-easing="ease-in"
                     >
@@ -169,8 +167,7 @@ export const page = () => {
                         <h3
                           className="effectheading newheading "
                           data-aos="flip-left"
-                          data-aos-delay={100}
-                          data-aos-duration={300}
+                          data-aos-duration={800}
                           data-aos-once="true"
                           data-aos-easing="ease-in"
                         >
@@ -181,8 +178,7 @@ export const page = () => {
                     <div
                       className="col-lg-6 col-12 "
                       data-aos="fade-up"
-                      data-aos-delay={100}
-                      data-aos-duration={300}
+                      data-aos-duration={600}
                       data-aos-once="true"
                       data-aos-easing="ease-in"
                     >
@@ -227,7 +223,9 @@ export const page = () => {
                           <span className="flex-center mb-2 button button--aylen button--round-l button--text-thick">
                             <AdvancedTechnology />
                           </span>
-                          <h3>New Age Technology</h3>
+                          <h3>
+                            New Age <br /> Technology
+                          </h3>
                         </div>
                       </div>
                       <div className="col-lg-3 col-sm-4 col-6 our_diff_item ">
@@ -235,7 +233,9 @@ export const page = () => {
                           <span className="flex-center mb-2 button button--aylen button--round-l button--text-thick">
                             <InternationalStandard />
                           </span>
-                          <h3>International Standards </h3>
+                          <h3>
+                            International <br /> Standards{" "}
+                          </h3>
                         </div>
                       </div>
                       <div className="col-lg-3 col-sm-4 col-6 our_diff_item ">
@@ -243,7 +243,9 @@ export const page = () => {
                           <span className="flex-center mb-2 button button--aylen button--round-l button--text-thick">
                             <Doctor />
                           </span>
-                          <h3>Founded by Doctors</h3>
+                          <h3>
+                            Founded by <br /> Doctors
+                          </h3>
                         </div>
                       </div>
                     </div>

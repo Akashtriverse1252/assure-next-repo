@@ -149,7 +149,7 @@ export default function Home() {
                   </div>
                   <div className="about_us_cnt text-center ">
                     <p>
-                      Assure Pathlabs is the best blood test pathalogy
+                      Assure Pathlabs is the best blood test pathology
                       laboratory in Jalandhar, established in 2015 by Dr. Sanjay
                       Wadhwa and Dr. Lovely Razdan with a commitment to
                       excellence. Backed by NABH certification, Assure Pathlabs

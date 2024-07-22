@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import { Dots } from "@/components/svg-components/Dots";
 import { Line } from "@/components/svg-components/Line";
 import { AdvancedTechnology } from "@/components/svg-components/AdvancedTechnology";
@@ -13,16 +14,16 @@ import Aboutbanner from "@/public/About-us-banner-b.webp";
 import AboutbannerM from "@/public/about-banner-M.jpg";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import { Link } from "@mui/material";
-import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS CSS
+import Aos from "aos";
 
 export const page = () => {
-  if (typeof window !== "undefined") {
+  useEffect(() => {
     Aos.init({
-      throttleDelay: 99,
       delay: 0,
+      anchorPlacement: "top-bottom",
     });
-  }
+  }, []);
   return (
     <>
       <main className="d-flex flex-wrap float-start col-12">
@@ -34,6 +35,7 @@ export const page = () => {
                 data-aos="fade-in"
                 data-aos-duration={600}
                 data-aos-once="true"
+                data-aos-anchor-placement="top-bottom"
                 data-aos-easing="ease-in"
               >
                 <Image
@@ -71,9 +73,10 @@ export const page = () => {
                   data-aos="fade-up"
                   data-aos-duration={500}
                   data-aos-once="true"
+                  data-aos-anchor-placement="top-bottom"
                   data-aos-easing="ease-in"
                 >
-                  <h1>Assure Pathlabs</h1>
+                  <h1 className="text-uppercase">Assure Pathlabs</h1>
                 </div>
                 <div className=" m-auto col-12 col-md-10 d-flex justify-content-center flex-direction-row  text-center">
                   <div className=" d-flex justify-content-center text-left flex-column ">
@@ -82,6 +85,7 @@ export const page = () => {
                       data-aos="fade-up"
                       data-aos-duration={500}
                       data-aos-once="true"
+                      data-aos-anchor-placement="top-bottom"
                     >
                       Assure Pathlabs is the best blood test pathalogy
                       laboratory in Jalandhar, established in 2015 by Dr. Sanjay
@@ -95,6 +99,7 @@ export const page = () => {
                       data-aos="fade-up"
                       data-aos-duration={600}
                       data-aos-once="true"
+                      data-aos-anchor-placement="top-bottom"
                     >
                       Our commitment guarantees not just efficient service but
                       also valuable advice, timely reports, unwavering support,
@@ -123,6 +128,7 @@ export const page = () => {
                     data-aos="fade-up"
                     data-aos-duration={500}
                     data-aos-once="true"
+                    data-aos-anchor-placement="top-bottom"
                     data-aos-easing="ease-in"
                   >
                     <h2>OUR ETHOS</h2>
@@ -137,6 +143,7 @@ export const page = () => {
                           data-aos="flip-right"
                           data-aos-duration={800}
                           data-aos-once="true"
+                          data-aos-anchor-placement="top-bottom"
                           data-aos-easing="ease-in"
                         >
                           OUR VISION
@@ -148,6 +155,7 @@ export const page = () => {
                       data-aos="fade-up"
                       data-aos-duration={600}
                       data-aos-once="true"
+                      data-aos-anchor-placement="top-bottom"
                       data-aos-easing="ease-in"
                     >
                       <p>
@@ -169,6 +177,7 @@ export const page = () => {
                           data-aos="flip-left"
                           data-aos-duration={800}
                           data-aos-once="true"
+                          data-aos-anchor-placement="top-bottom"
                           data-aos-easing="ease-in"
                         >
                           OUR MISSION
@@ -180,6 +189,7 @@ export const page = () => {
                       data-aos="fade-up"
                       data-aos-duration={600}
                       data-aos-once="true"
+                      data-aos-anchor-placement="top-bottom"
                       data-aos-easing="ease-in"
                     >
                       <p>
@@ -205,6 +215,7 @@ export const page = () => {
                   data-aos="fade-up"
                   data-aos-duration={500}
                   data-aos-once="true"
+                  data-aos-anchor-placement="top-bottom"
                   data-aos-easing="ease-in"
                 >
                   <h2>OUR DIFFERENTIATORS</h2>
@@ -216,6 +227,7 @@ export const page = () => {
                       data-aos="fade-up"
                       data-aos-duration={400}
                       data-aos-once="true"
+                      data-aos-anchor-placement="top-bottom"
                       data-aos-easing="ease-in"
                     >
                       <div className="col-lg-3 col-sm-4 col-6 our_diff_item ">

@@ -31,6 +31,9 @@ import microscope from "@/components/svg-components/microscope.svg";
 import { useAlert } from "@/context/AlerterContext";
 import Address from "@/components/svg-components/Address";
 import Calender from "@/components/svg-components/Calender";
+import male from "@/public/male.png";
+import female from "@/public/Female.png";
+import Other from "@/public/other.png";
 import SlotTime from "@/components/SlotTime";
 
 const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
@@ -296,7 +299,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
         <div className="container">
           <div className="web-container">
             <div className="row gap-sm-3 gap-md-0  ">
-              <div className="col-11 col-md-10 mx-auto">
+              <div className="col-12 col-md-10 mx-auto">
                 <h3>
                   <strong>User Details</strong>
                 </h3>
@@ -305,7 +308,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                     <div className="col-12 d-flex justify-content-between flex-column flex-md-row checkout_input">
                       <TextField
                         type="text"
-                        className="col-md-3 col-10 mx-md-3"
+                        className="col-md-3 col-11 mx-auto mx-md-3"
                         variant="standard"
                         label="Name"
                         name="name"
@@ -329,7 +332,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                       />
                       <TextField
                         type="tel"
-                        className="col-md-3 col-10 mx-md-3"
+                        className="col-md-3 col-11 mx-auto mx-md-3"
                         variant="standard"
                         label="Contact Number"
                         name="phoneNumber"
@@ -360,7 +363,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                       />
                       <TextField
                         type="date"
-                        className="col-md-3 col-10 mx-md-3"
+                        className="col-md-3 col-11 mx-auto mx-md-3"
                         variant="standard"
                         label="Date of Birth"
                         name="dob"
@@ -406,7 +409,14 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                             <FaCheck />
                           </i>
                           <div className="hobbies-icon">
-                            <Male />
+                            {/* <Male /> */}
+                            <Image
+                              loading="lazy"
+                              src={male}
+                              alt=""
+                              width={80}
+                              height={80}
+                            />
                             <h3 className="">Male</h3>
                           </div>
                         </span>
@@ -432,7 +442,13 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                             <FaCheck />
                           </i>
                           <div className="hobbies-icon">
-                            <Female />
+                            <Image
+                              loading="lazy"
+                              src={female}
+                              alt=""
+                              width={80}
+                              height={80}
+                            />
                             <h3 className="">Female</h3>
                           </div>
                         </span>
@@ -458,7 +474,14 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                             <FaCheck />
                           </i>
                           <div className="hobbies-icon">
-                            <OtherGender />
+                            {/* <OtherGender /> */}
+                            <Image
+                              loading="lazy"
+                              src={Other}
+                              alt=""
+                              width={80}
+                              height={80}
+                            />
                             <h3 className="">Other</h3>
                           </div>
                         </span>
@@ -631,7 +654,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                                 <div className="col-12 d-flex justify-content-between">
                                   {/* Address line 1 */}
                                   <TextField
-                                    className="mx-3 col-lg-6 col-10"
+                                    className="mx-3 col-lg-6 col-11 mx-auto"
                                     id="address"
                                     label="Address"
                                     name="address"
@@ -666,7 +689,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                                 <div className="col-lg-7 col-12 mt-2 mt-md-5  flex-column gap-2 flex-md-row d-flex ">
                                   {/* Pincode */}
                                   <TextField
-                                    className="mx-3 col-10 col-md-3"
+                                    className="mx-3 col-11 mx-auto col-md-3"
                                     id="pincode"
                                     label="Pincode"
                                     name="pincode"
@@ -704,8 +727,8 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                                     }}
                                   />
                                   {/* City */}
-                                  {/* <div className="mx-3 col-10 col-md-3"> */}
-                                  <FormControl className="mx-3 col-10 col-md-3 no_indenet ">
+                                  {/* <div className="mx-3 col-11 mx-auto col-md-3"> */}
+                                  <FormControl className="mx-3 col-11 mx-auto col-md-3 no_indenet ">
                                     <InputLabel id="demo-select-small-label">
                                       City
                                     </InputLabel>
@@ -742,7 +765,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                                     </FormHelperText>
                                   </FormControl>
 
-                                  <FormControl className="mx-3 col-10 col-md-3 no_indenet">
+                                  <FormControl className="mx-3 col-11 mx-auto col-md-3 no_indenet">
                                     <InputLabel id="state-label">
                                       State
                                     </InputLabel>

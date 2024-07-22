@@ -12,7 +12,7 @@ import { AssureSafety } from "@/components/svg-components/AssureSafety";
 const WhyUs = ({ Title }) => {
   return (
     <>
-      <div className="why_assure  ">
+      <div className="why_assure   ">
         <div className="container">
           <div className="web-container">
             <div className="row">

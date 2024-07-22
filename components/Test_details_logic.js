@@ -29,20 +29,13 @@ export const Test_details_logic = ({ Slug, Category }) => {
         const response = await fetch(
           `https://www.assurepathlabs.com/api/algos/fetch_details.php?category=${Category}&slug=${Slug}&hits=1`
         );
-        // if (response.test_data && response.test_data.length > 0) {
-        //   setProject(response.test_data[0]);
-        // } else {
-        //   showAlert("Info", "No data found", "info");
-        // }
+     
         const data = await response.json();
         setProject(data.test_data[0]);
         if (data.test_data.length === 0) {
           showAlert("info", "no data is found", "info");
-          // console.log("no data is found");
         }
-        // console.log("this is the api data", data);
       } catch (error) {
-        // console.error("Error fetching data:", error);
         showAlert("Error", "network Error", "error");
       } finally {
         setLoading(false);
@@ -58,10 +51,8 @@ export const Test_details_logic = ({ Slug, Category }) => {
         100
       ).toFixed()
     : 0;
-  // Assuming cartState.products is your array of products
   const cartIds = cartState.products.map((cartproduct) => cartproduct.id);
 
-  // console.log("These are the cart ids:", cartIds.includes(project.id));
 
   const handleToggleCart = () => {
     if (cartIds.includes(project.id)) {
@@ -171,7 +162,7 @@ export const Test_details_logic = ({ Slug, Category }) => {
             data-aos-once="true"
           >
             <div className="title col-12 float-start text-center">
-              <h1>{project.Test_Name}</h1>
+              <h1 >{project.Test_Name}</h1>
               {/* {!project.Test_Category ? (
                   <>
                   </>

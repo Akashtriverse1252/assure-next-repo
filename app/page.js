@@ -19,7 +19,8 @@ import Aos from "aos";
 export default function Home() {
   useEffect(() => {
     Aos.init({
-      throttleDelay: 99,
+      delay: 0,
+      anchorPlacement: "top-bottom",
     });
   }, []);
   return (
@@ -160,7 +161,7 @@ export default function Home() {
                       our priority.
                     </p>
                     <div
-                      className=" mt-3 mb-2 btn_main"
+                      className=" mt-3 mb-2  col-md-4 col-11"
                       data-aos="flip"
                       data-aos-duration={500}
                       data-aos-once="true"
@@ -168,7 +169,7 @@ export default function Home() {
                     >
                       <Link
                         href="/about-us"
-                        className="button button--aylen button--round-l button--text-thick text-uppercase gradient col-lg-4 col-md-4 col-12 mt-3"
+                        className="button button--aylen button--round-l button--text-thick text-uppercase gradient  col-12 mt-3"
                       >
                         know more
                       </Link>

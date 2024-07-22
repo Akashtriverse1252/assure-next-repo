@@ -32,7 +32,7 @@ export const BreadCrums = () => {
       {pathname !== "/" &&
       pathname !== "/about-us" &&
       pathname !== "/pharmacy" ? (
-        <section className="position-relative d-contents">
+        <section className="position-relative d-contents _BreadCrums">
           <div className="container">
             <div role="presentation" className="bread_crums ">
               <Breadcrumbs

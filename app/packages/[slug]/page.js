@@ -1,6 +1,5 @@
 import React from "react";
-import { ChooseAssure } from "@/components/ChooseAssure";
-import data from "@/Data/Test_detail.json";
+import WhyUs from "@/components/WhyUs";
 import { Test_details_logic } from "@/components/Test_details_logic";
 
 export const page = ({ params: { slug } }) => {
@@ -11,16 +10,14 @@ export const page = ({ params: { slug } }) => {
           <div className="container">
             <div className="web-container">
               <div className="col-12">
-                <Test_details_logic
-                  Slug={slug}
-                  Category="package"
-                  data={data}
-                />
+                <Test_details_logic Slug={slug} Category="package" />
               </div>
             </div>
           </div>
         </section>
-        <ChooseAssure />
+        <section className="position-relative  col-12 ">
+          <WhyUs Title="WHY ASSURE PATHLABS?" />
+        </section>
       </main>
     </>
   );

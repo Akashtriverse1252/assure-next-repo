@@ -1437,6 +1437,12 @@
     bottom: -5px;
     background-color: rgb(179 179 179 / 50%);
   }
+  .slot-time-not {
+    margin: 0 !important;
+  }
+  .popular_packages_cnt li {
+    width: 100%;
+  }
 
   .cnt_shp_btn {
     margin-top: 10px;
@@ -1666,10 +1672,14 @@
   .menslide.active {
     padding-top: 60px !important;
   }
+  .header_columns {
+    gap: 18px;
+  }
 
   .sliderbox {
-    width: 95%;
-    padding: 20px 15px;
+    width: 100%;
+    max-width: 300px;
+    padding: 20px 10px;
   }
   .menustn {
     height: 40px;
@@ -2043,7 +2053,7 @@
     align-items: center;
   }
   .__menus {
-    gap: 12px;
+    gap: 20px !important;
   }
   .bg-gradient-image.about_page {
     bottom: -420%;

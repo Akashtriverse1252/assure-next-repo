@@ -75,7 +75,7 @@ const SlotTime = ({ timeSlots, onSlotSelect, isError }) => {
             ) : (
               <>
                 <p
-                  className={`col-12 col-md-10 col-lg-7 slot-time-not ${
+                  className={`col-12 col-md-10 col-lg-7  slot-time-not ${
                     isError ? "input_error" : ""
                   }`}
                   >

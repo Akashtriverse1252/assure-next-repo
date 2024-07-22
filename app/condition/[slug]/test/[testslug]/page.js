@@ -1,5 +1,5 @@
 import React from "react";
-import { ChooseAssure } from "@/components/ChooseAssure";
+import WhyUs from "@/components/WhyUs";
 import { Test_details_logic } from "@/components/Test_details_logic";
 
 export const page = ({ params: { testslug } }) => {
@@ -13,7 +13,9 @@ export const page = ({ params: { testslug } }) => {
             </div>
           </div>
         </section>
-        <ChooseAssure />
+        <section className="position-relative  col-12 ">
+          <WhyUs Title="WHY ASSURE PATHLABS?" />
+        </section>
       </main>
     </>
   );

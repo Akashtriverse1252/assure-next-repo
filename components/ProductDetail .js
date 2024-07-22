@@ -59,7 +59,7 @@ const ProductDetail = ({ onNextStep, onFormData }) => {
                         <th>Package/Test Name</th>
                         <th>Unit Price</th>
                         <th>Discount</th>
-                        <th>Quantity</th>
+                        {/* <th>Quantity</th> */}
                         <th>Price</th>
                         <th></th>
                       </tr>
@@ -68,13 +68,20 @@ const ProductDetail = ({ onNextStep, onFormData }) => {
                       {productData.map((product, index) => (
                         <tr key={index}>
                           <td data-label="S No.">{index + 1}</td>
-                          <td data-label="Package/Test Name">{product.name}</td>
+                          <td
+                            data-label="Package/Test Name"
+                            className="text-start"
+                          >
+                            {product.name}
+                          </td>
                           <td data-label="Unit Price">
                             <Rupees />
                             {product.quantity * product.price}
                           </td>
-                          <td data-label="Discount">{product.discount}%</td>
-                          <td data-label="Quantity">{product.quantity}</td>
+                          <td data-label="Discount">
+                            <strong>{product.discount}%</strong>
+                          </td>
+                          {/* <td data-label="Quantity">{product.quantity}</td> */}
                           <td data-label="Price">
                             <Rupees />
                             {product.quantity * product.dis_price}
@@ -90,13 +97,17 @@ const ProductDetail = ({ onNextStep, onFormData }) => {
                       ))}
                       <tr>
                         <td
-                          colSpan={5}
-                          className="px-4 text-lg"
+                          colSpan={4}
+                          className="px-4 text-lg text-start"
                           data-label="Subtotal"
                         >
-                           SUBTOTAL
+                          SUBTOTAL
                         </td>
-                        <td colSpan={2} className="bluecolor redcolor" data-label="Price">
+                        <td
+                          colSpan={2}
+                          className="bluecolor redcolor"
+                          data-label="Price"
+                        >
                           <Rupees />
                           {calculateSubtotal()}
                         </td>

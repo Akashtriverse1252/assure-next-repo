@@ -74,7 +74,7 @@ export const AssureSlide = (props) => {
             </div>
             <div>
               <div className="banner_slide">
-                <Link href="/packages/assure-complete-wellness-package-for-man">
+                <Link href="/packages/besure-fit-couple-advanced-for-men">
                   <Image
                     className="d-none d-sm-block"
                     src="/banner-3.webp"

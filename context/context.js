@@ -140,7 +140,7 @@ const cartReducer = (state, action) => {
       return {
         ...state,
         radioData: action.radioData,
-      };  
+      };
     case "UPDATE_USER_ADDRESS":
       return {
         ...state,
@@ -187,6 +187,7 @@ const GlobalDataProvider = ({ children }) => {
 
           return {
             id: product.id,
+            test_Id: product.Test_ID,
             name: product.Test_Name,
             price: product.Test_Amount,
             dis_price: product.Discount_Amount,
@@ -254,8 +255,6 @@ const GlobalDataProvider = ({ children }) => {
       });
     }
   }, [cartState.userData]);
-
-
 
   // this is for the data generation
 

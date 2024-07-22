@@ -91,7 +91,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
         const cartItems = cartState.products;
         console.log("this si the cart data", cartState.products);
         const testList = cartItems.map((item) => ({
-          testID: item.id,
+          testID: item.test_Id,
           testCode: item.name,
           integrationCode: "-",
           dictionaryId: "-",

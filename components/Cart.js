@@ -67,7 +67,7 @@ export default function Cart() {
           <div className="h-100 absolute-top inset-0 overflow-hidden _shadow">
             <div className="h-100 cart_container ">
               <div className="d-flex flex-column h-100 bg-white shadow-xl">
-                <div className="flex-grow-1 overflow-auto px-sm-4 py-6 px-6">
+                <div className="flex-grow-1 cart_lisiting_area overflow-auto px-sm-4 py-6 px-6">
                   <div className="_cart_header d-flex justify-content-between align-items-center flex-row-reverse ">
                     <div className="ml-3 d-flex h-7 align-items-center">
                       <button
@@ -108,7 +108,7 @@ export default function Cart() {
                                     <RiDeleteBinLine />
                                   </button>
                                 </div>
-                                <p className="cart_itam_qnt">
+                                {/* <p className="cart_itam_qnt">
                                   Quantity:{" "}
                                   <button
                                     type="button"
@@ -127,14 +127,17 @@ export default function Cart() {
                                   >
                                     +
                                   </button>
-                                </p>
-                                <p className="my-sm-1 text-sm text-gray-500 cart_dis" >
-                                  Discount: {product.discount}%
+                                </p> */}
+                                <p className="mt-sm-1 text-sm text-gray-500 cart_dis">
+                                  Discount: <strong>{product.discount}%</strong>
                                 </p>
                               </div>
                               <div className="org_price d-flex flex-grow-1 align-items-end justify-content-between text-sm">
                                 <p className="text-gray-500">
-                                  Original Price: <span>{product.price}</span>
+                                  Original Price:{" "}
+                                  <span className="font-weight-600">
+                                    {product.price}
+                                  </span>
                                 </p>
 
                                 <div className="d-flex dis_price">

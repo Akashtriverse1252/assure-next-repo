@@ -655,10 +655,10 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
                                 {/* Address form */}
                                 {/* <form onSubmit={formik.handleSubmit}> */}
                                 {/* Address fields */}
-                                <div className="col-12 d-flex justify-content-between">
+                                <div className="col-12 d-flex justify-content-start">
                                   {/* Address line 1 */}
                                   <TextField
-                                    className="mx-3 col-lg-6 col-11 mx-auto"
+                                    className="mx-3 col-lg-6 col-11 "
                                     id="address"
                                     label="Address"
                                     name="address"

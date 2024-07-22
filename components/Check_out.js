@@ -189,6 +189,12 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
         if (response.data && response.data.code === 200) {
           console.log("Booking submitted successfully!");
           showAlert("success", "Booking success", "success");
+          cartDispatch({
+            type: "UPDATE_USER_DATA",
+            userData: {
+              bookingId: response.data.booking_id,
+            },
+          });
           onNextStep();
         } else {
           console.error(

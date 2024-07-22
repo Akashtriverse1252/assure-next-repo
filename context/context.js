@@ -18,6 +18,7 @@ const initialState = {
     designation: "",
     name: "",
     phoneNumber: "",
+    bookingId: "",
     email: "",
     dob: "",
     age: 0,

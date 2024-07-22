@@ -21,7 +21,7 @@ const page = () => {
                     <h2>Refund and Cancellation Policy</h2>
                   </div>
                   <div
-                    className="privacy_pol_cnt col-lg-10 mx-auto pt-4 d-flex flex-column col-12"
+                    className="privacy_pol_cnt col-lg-10 mx-auto pt-2 d-flex flex-column col-12"
                     data-aos="fade-up"
                     data-aos-duration={500}
                     data-aos-once="true"

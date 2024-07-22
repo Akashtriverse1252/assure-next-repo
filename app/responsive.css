@@ -1040,6 +1040,9 @@
   .google_review_sction {
     display: none;
   }
+  .__menus {
+    gap: 25px !important;
+  }
   .google_review {
     width: 95%;
   }
@@ -1677,8 +1680,8 @@
   }
 
   .sliderbox {
-    width: 100%;
-    max-width: 300px;
+    width: 98%;
+    max-width: 280px;
     padding: 20px 10px;
   }
   .menustn {
@@ -2023,6 +2026,9 @@
   .feature-card {
     width: 95%;
     margin: 10px auto;
+  }
+  .doctor_name h3{
+    margin-bottom: 10px;
   }
 
   .logo {

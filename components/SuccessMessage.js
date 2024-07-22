@@ -22,8 +22,8 @@ const SuccessMessage = ({ data }) => {
                     <p>
                       Thank you for booking the "Full Body Checkup" with Assure
                       Pathlabs. Your booking has been received, and your booking
-                      ID is 100293. Our team will reach out to you shortly for
-                      further processing.
+                      ID is {cartState.userData.bookingId}. Our team will reach
+                      out to you shortly for further processing.
                     </p>
                     <p>
                       You can manage your bookings/reports by logging into our

@@ -292,6 +292,10 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
   };
   console.log(formik.touched.name && Boolean(formik.errors.name));
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <section className="position-relative">

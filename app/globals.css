@@ -5117,3 +5117,12 @@ li.ViewMore_footer a {
 .read-more-button:hover {
   text-decoration: underline;
 }
+.assure_about p,
+.about_us_cnt p {
+  font-size: 16px;
+  letter-spacing: 0.4px;
+  line-height: 28px;
+}
+.about_us_scn .title h2 {
+  line-height: 1.5;
+}

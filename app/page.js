@@ -136,19 +136,19 @@ export default function Home() {
                 data-aos-once="true"
                 data-aos-easing="ease-in"
               >
-                <h2>ABOUT ASSURE PATHLAB</h2>
+                <h2>Assure Pathlab - Best Pathology Labs In Jalandhar</h2>
               </div>
               <div className="abt_scn__">
                 <div
-                  className="about_us_scn  flex-center  flex-row col-12 align-items-start"
+                  className="about_us_scn  flex-center  flex-md-row flex-column-reverse col-12 align-items-start"
                   data-aos="fade-up"
                   data-aos-duration={500}
                   data-aos-once="true"
                   data-aos-easing="ease-in"
                 >
-                  <div className="col-6 flex-column d-flex align-items-start">
+                  <div className="col-md-6 col-12 mt-2 mt-md-0 flex-column d-flex align-items-start">
                     <div className="title  float-start ">
-                      <h2>ABOUT ASSURE PATHLABS</h2>
+                      <h2>Assure Pathlab - Best Pathology Labs In Jalandhar</h2>
                     </div>
                     <div className="about_us_cnt text-center ">
                       <p>
@@ -172,16 +172,6 @@ export default function Home() {
                         critical factor for treating the diseases and
                         eliminating the cause from the root.
                       </p>
-                      <p>
-                        Our highly qualified and experienced team and
-                        hard-working professionals under the guidance of dr
-                        sanjay wadhwa and Dr. Lovely Wadhwa path labs make
-                        accurate calculations to win the future with a renewed
-                        sight of enthusiasm to become extraordinary, showing
-                        results and to develop beyond the region into the global
-                        market. Founded by doctors Assure Pathlabs is fondly
-                        called Dr Path lab in Jalandhar.
-                      </p>
                     </div>
                   </div>
                   <div
@@ -197,7 +187,16 @@ export default function Home() {
                 </div>
               </div>
               <AboutData maxCharCount={0}>
-                <div className="contentbox">
+                <div className="contentbox assure_about">
+                  <p>
+                    Our highly qualified and experienced team and hard-working
+                    professionals under the guidance of dr sanjay wadhwa and Dr.
+                    Lovely Wadhwa path labs make accurate calculations to win
+                    the future with a renewed sight of enthusiasm to become
+                    extraordinary, showing results and to develop beyond the
+                    region into the global market. Founded by doctors Assure
+                    Pathlabs is fondly called Dr Path lab in Jalandhar.
+                  </p>
                   <p>
                     At Assure Pathlabs the best diagnostic lab in Jalandhar you
                     can trust on their team to ensure the best customer
@@ -209,9 +208,7 @@ export default function Home() {
                     When people in Jalandhar search- Pathology labs near me,
                     their preference is always for Assure Pathlabs.
                   </p>
-                  <h3 className="">
-                    ASSURE COMPLETE WELLNESS
-                  </h3>
+                  <h3 className="">ASSURE COMPLETE WELLNESS</h3>
                   <p className="">
                     Our main priority is your health and our core
                     responsibility. Assure complete wellness package is divided
@@ -229,9 +226,7 @@ export default function Home() {
                     <br />
                     Fasting for at least 8 hours is required.
                   </p>
-                  <h3 className="">
-                    ASSURE WELL IMMUNITY CHECK PANEL
-                  </h3>
+                  <h3 className="">ASSURE WELL IMMUNITY CHECK PANEL</h3>
                   <p className="">
                     Assure Pathlabs one of the best labs in Jalandhar offers
                     various types of full-body health checkup packages including

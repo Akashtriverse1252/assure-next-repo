@@ -78,6 +78,7 @@ export const ProductSlider = (props) => {
           initialSlide: 1,
           autoplaySpeed: 6000,
           infinite: true,
+          arrows: false, 
         },
       },
     ],

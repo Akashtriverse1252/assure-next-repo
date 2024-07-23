@@ -81,6 +81,7 @@ export const Seasonalpack = (props) => {
           initialSlide: 1,
           autoplaySpeed: 6000,
           infinite: true,
+          arrows: false, // Add this line to turn off arrows
         },
       },
     ],
@@ -128,7 +129,7 @@ export const Seasonalpack = (props) => {
                     test.category === "test"
                       ? "test-detail"
                       : test.category === "package"
-                      ? "package "
+                      ? "package"
                       : null
                   }
                   IsSeoH3={true}

@@ -1403,47 +1403,47 @@
     },
     {
       "id": [361],
-      "slug": "assure-fitman-essential"
+      "slug": "besure-fitman-essential"
     },
     {
       "id": [363],
-      "slug": "assure-fitman-premium"
+      "slug": "besure-fitman-advanced"
     },
     {
       "id": [364],
-      "slug": "assure-fitwoman-essential"
+      "slug": "besure-fitwoman-essential"
     },
     {
       "id": [366],
-      "slug": "assure-fitwoman-premium"
+      "slug": "besure-fitwoman-ultima"
     },
     {
       "id": [367],
-      "slug": "assure-fitwoman-complete-care"
+      "slug": "besure-fitwoman-advanced-care"
     },
     {
       "id": [368],
-      "slug": "assure-fit-couple-essential---man"
+      "slug": "besure-fit-couple-essential-for-men"
     },
     {
       "id": [369],
-      "slug": "assure-fit-couple-essential---woman"
+      "slug": "besure-fit-couple-essential-for-women"
     },
     {
       "id": [370],
-      "slug": "assure-fit-couple-premium--male-"
+      "slug": "besure-fit-couple-advanced-for-men"
     },
     {
       "id": [371],
-      "slug": "assure-fit-couple-premium--female-"
+      "slug": "besure-fit-couple-advanced-for-women"
     },
     {
       "id": [372],
-      "slug": "assure-livlong-premium---man"
+      "slug": "besure-sr-citizen-advanced-package-male"
     },
     {
       "id": [373],
-      "slug": "assure-livlong-premium---woman"
+      "slug": "assure-livlong-premium-woman"
     },
     {
       "id": [374],
@@ -1451,19 +1451,19 @@
     },
     {
       "id": [375],
-      "slug": "assure-livlong-couple-premium--woman"
+      "slug": "besure-sr-citizen-advanced-package-female"
     },
     {
       "id": [381],
-      "slug": "healthy-heart-panel"
+      "slug": "besure-healthy-heart-panel"
     },
     {
       "id": [382],
-      "slug": "liver-function-test-basic"
+      "slug": "besure-essential-liver-function-test"
     },
     {
       "id": [383],
-      "slug": "liver-function-test-extended"
+      "slug": "besure-advanced-liver-function-test"
     },
     {
       "id": [401],
@@ -1471,19 +1471,19 @@
     },
     {
       "id": [443],
-      "slug": "fever-panel"
+      "slug": "be-sure-essential-fever-panel"
     },
     {
       "id": [444],
-      "slug": "diabetes-profile"
+      "slug": "be-sure-advanced-diabetes-screening"
     },
     {
       "id": [445],
-      "slug": "diabetes-profile-extended"
+      "slug": "be-sure-ultima-diabetes-monitoring"
     },
     {
       "id": [446],
-      "slug": "diabetes-screen"
+      "slug": "be-sure-essential-diabetes-checkup"
     },
     {
       "id": [447],
@@ -1503,7 +1503,7 @@
     },
     {
       "id": [458],
-      "slug": "assure-well-immunity-check-panel"
+      "slug": "besure-well-immunity-check-panel"
     },
     {
       "id": [465],
@@ -1515,19 +1515,19 @@
     },
     {
       "id": [468],
-      "slug": "assure-complete-wellness-package-for-man"
+      "slug": "besure-complete-wellness-package-for-man"
     },
     {
       "id": [469],
-      "slug": "assure-complete-wellness-package-for-woman"
+      "slug": "besure-complete-wellness-package-for-woman"
     },
     {
       "id": [471],
-      "slug": "tropical-fever"
+      "slug": "be-sure-ultima-tropical-fever-panel"
     },
     {
       "id": [472],
-      "slug": "fever-cure"
+      "slug": "be-sure-advanced-fever-cure"
     },
     {
       "id": [473],
@@ -1552,6 +1552,46 @@
     {
       "id": [478],
       "slug": "nt-pro-bnp"
+    },
+    {
+      "id": [480],
+      "slug": "comprehensive-wellness-package-for-women"
+    },
+    {
+      "id": [481],
+      "slug": "wheat-allergy-test"
+    },
+    {
+      "id": [482],
+      "slug": "cow-milk-allergy-test"
+    },
+    {
+      "id": [483],
+      "slug": "immunoglobulin-iga"
+    },
+    {
+      "id": [484],
+      "slug": "immunoglobulin-igg"
+    },
+    {
+      "id": [485],
+      "slug": "immunoglobulin-igm"
+    },
+    {
+      "id": [486],
+      "slug": "immunoglobulin-profile"
+    },
+    {
+      "id": [487],
+      "slug": "allergy-food-screening-panel-for-indian-population"
+    },
+    {
+      "id": [488],
+      "slug": "allergy-panel-inhalation-screening-for-indian-population"
+    },
+    {
+      "id": [489],
+      "slug": "immunoglobulin-e-total"
     }
   ]
 }

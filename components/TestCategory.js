@@ -75,7 +75,7 @@ const TestCategory = ({ Slug }) => {
                         Who_is_it_for={test.Who_is_it_for}
                         Pre_test_information={test.Pre_test_information}
                         Turn_around_time={test.Turn_around_time}
-                        BaseDirectory={`organ/${Slug}/test`}
+                        BaseDirectory={`organs/${Slug}/test`}
                       />
                     ))}
                   </>

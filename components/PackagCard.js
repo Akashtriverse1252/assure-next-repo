@@ -43,7 +43,7 @@ export const PackagCard = ({
       data-aos-offset={120}
       data-aos-easing="ease-in"
     >
-      <Link href={`/packages/${Test_Slug}`}>
+      <Link href={`/package/${Test_Slug}`}>
         <div className="sliderbox package_card ">
           <div className="packagename">
             <span>
@@ -99,7 +99,7 @@ export const PackagCard = ({
             )}
 
             <div className="textbtn">
-              <span href={`/packages/${Test_Slug}`}>KNOW MORE +</span>
+              <span href={`/package/${Test_Slug}`}>KNOW MORE +</span>
             </div>
           </div>
         </div>

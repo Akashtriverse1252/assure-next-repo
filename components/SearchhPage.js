@@ -17,15 +17,9 @@ const SearchPage = ({ slug }) => {
       setError(null);
 
       try {
-        const response = await axios.get(
-          "https://www.assurepathlabs.com/json/mapping_keywords.json"
-        );
-        const mappingdata = response.data;
-
         const matchedItem = mappingdata.mappingdata.find(
           (item) => item.slug === slug
         );
-        console.log(matchedItem);
 
         if (matchedItem) {
           const ids = matchedItem.id;
@@ -109,7 +103,7 @@ const SearchPage = ({ slug }) => {
           Test_Description={test.Test_Description}
           Who_is_it_for={test.Who_is_it_for}
           Pre_test_information={test.Pre_test_information}
-          BaseDirectory={test.category === "package" ? `packages` : ""}
+          BaseDirectory={test.category === "package" ? `package` : ""}
         />
       ))}
     </div>

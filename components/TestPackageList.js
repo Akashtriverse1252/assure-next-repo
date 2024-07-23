@@ -75,7 +75,7 @@ const TestPackageList = ({ Type }) => {
   }, [loading, page]);
 
   const determineBaseDirectory = (type) => {
-    return type === "package" ? "package" : "individual-test";
+    return type === "package" ? "package" : "all-test";
   };
 
   return (

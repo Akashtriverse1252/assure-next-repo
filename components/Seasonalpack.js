@@ -128,7 +128,7 @@ export const Seasonalpack = (props) => {
                     test.category === "test"
                       ? "test-detail"
                       : test.category === "package"
-                      ? "packages"
+                      ? "package "
                       : null
                   }
                   IsSeoH3={true}

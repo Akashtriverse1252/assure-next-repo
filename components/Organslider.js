@@ -111,7 +111,7 @@ export const Organslider = (props) => {
             data-aos-duration={getAosDuration(index)}
             data-aos-once="true"
           >
-            <Link href={`/organ/${organ.slug}`}>
+            <Link href={`/organs/${organ.slug}`}>
               <div className="organcolumnrow flex-center navigationwhite hovershadow">
                 <div className="organcolumn">
                   <div className="sliderbox border-0 bg-transparent">

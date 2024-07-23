@@ -108,7 +108,7 @@ export const ProductSlider = (props) => {
                 Number_test={test.TestInfo ? test.TestInfo.length : 0}
                 Test_Slug={test.Slug}
                 widthFull={true}
-                BaseDirectory="packages"
+                BaseDirectory="package"
               />
             </div>
           ))}

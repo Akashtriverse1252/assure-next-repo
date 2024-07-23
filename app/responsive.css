@@ -1236,6 +1236,16 @@
     position: absolute;
     width: 1px;
   }
+  ._pacakage_contet {
+    width: 100%;
+  }
+  ._pacakage_contet h3{
+    margin: 10px 0;
+  }
+  .privacy_pol_cnt h3, .contentbox h2, .contentbox h3 {
+    font-size: 19px;
+    line-height: 1.3;
+}
 
   table tr {
     /* border-bottom: 3px solid #eeeeee; */

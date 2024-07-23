@@ -83,7 +83,7 @@ const FabFlinger = () => {
               className="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"
               data-upgraded=",MaterialButton,MaterialRipple"
             >
-              <Link className=" " href="/packages">
+              <Link className=" " href="/package">
                 <AddPackages />
               </Link>
               <span className="mdl-button__ripple-container">
@@ -94,7 +94,7 @@ const FabFlinger = () => {
               className="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect"
               data-upgraded=",MaterialButton,MaterialRipple"
             >
-              <Link className=" mr-adj" href="/individual-test">
+              <Link className=" mr-adj" href="/all-test">
                 <PiTestTubeDuotone />
               </Link>
               <span className="mdl-button__ripple-container">

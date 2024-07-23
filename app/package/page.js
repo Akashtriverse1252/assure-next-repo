@@ -125,7 +125,7 @@ export const Page = () => {
           <div className="container">
             <div className="web-container">
               <div className="row">
-                <div className="title col-12 float-start text-center">
+                <div className="title col-12 float-start text-center mb-2">
                   <h1 className="text-uppercase">Health Packages</h1>
                 </div>
 
@@ -163,9 +163,9 @@ export const Page = () => {
             <div className="web-container">
               <div className="row">
                 {categories.map((category, index) => (
-                  <div key={index} className="col-md-3 mb-4 contentbox">
+                  <div key={index} className="col-md-3 mb-md-4 mb-0 contentbox">
                     <div className="col-fit _pacakage_contet mx-auto">
-                      <h3 className="mb-3">{category.title}</h3>
+                      <h3 className="mb-md-3 mb-1">{category.title}</h3>
                       <ul className="list-unstyled">
                         {category.items.map((item, itemIndex) => (
                           <li key={itemIndex}>

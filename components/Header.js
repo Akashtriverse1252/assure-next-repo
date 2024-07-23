@@ -251,7 +251,7 @@ export const Header = () => {
                                   <div className="fmenu">
                                     <ul className="p-0 m-0">
                                       <li>
-                                        <Link href="/individual-test">
+                                        <Link href="/all-test">
                                           BOOK A TEST
                                         </Link>
                                       </li>

@@ -17,13 +17,13 @@ export const Page = () => {
   }, [pathname]);
 
   const tabs = [
-    { name: "All test", slug: "individual-test" },
+    { name: "All test", slug: "all-test" },
     { name: "Packages", slug: "package" },
   ];
 
   return (
     <>
-      <section className="position-relative">
+      <section className="position-relative mb-5">
         <div className="container">
           <div className="web-container">
             <div className="row">
@@ -59,11 +59,11 @@ export const Page = () => {
           </div>
         </div>
       </section>
-      <section className="position-relative mt-10">
+      <section className="position-relative mt-5">
         <div className="container">
           <div className="web-container">
             <div className="row">
-              <div className="title col-12 float-start text-center">
+              <div className="title col-12 float-start text-center _pacakage_contet">
                 <h1 className="text-uppercase">
                   Get All Kind of blood test price in jalandhar
                 </h1>

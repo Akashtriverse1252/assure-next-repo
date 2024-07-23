@@ -20,8 +20,8 @@ export const Homecollection = () => {
     email: false,
   });
   const { showAlert } = useAlert();
+  const [redirectTo, setRedirectTo] = useState(null);
   const [isErrorOpen, setIsErrorOpen] = useState(false);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -95,7 +95,7 @@ export const Homecollection = () => {
       setIsSubmitting(true);
 
       try {
-        const response = await fetch("/api/product", {
+        const response = await fetch("https://www.assurepathlabs.com/api/algos/booking_submit_api.php", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -107,8 +107,10 @@ export const Homecollection = () => {
         console.log("this is the data", data);
 
         setIsSubmitting(false);
-
         if (data.status === 201) {
+          if (typeof window !== "undefined") {
+            window.location.href = "/enquiry-submitted";
+          }
           showAlert("Success", "Our team will contact you soon", "success");
           setFormData({
             name: "",

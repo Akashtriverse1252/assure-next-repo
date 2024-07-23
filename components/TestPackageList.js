@@ -38,7 +38,7 @@ const TestPackageList = ({ Type }) => {
       showAlert("Error", "Network Error", "error");
     } finally {
       setLoading(false);
-      setInitialDataLoaded(true); // Set initial data loaded state to true after fetching initial data
+      setInitialDataLoaded(true);
     }
   };
   console.log("is data finished", allDataLoaded);
@@ -75,7 +75,7 @@ const TestPackageList = ({ Type }) => {
   }, [loading, page]);
 
   const determineBaseDirectory = (type) => {
-    return type === "package" ? "packages" : "individual-test";
+    return type === "package" ? "package" : "individual-test";
   };
 
   return (
@@ -103,12 +103,11 @@ const TestPackageList = ({ Type }) => {
               index={index}
             />
           ))}
-          {!loading &&
-            !allDataLoaded && ( // Display loader while new data is loading
-              <div className=" h-min col-12 d-flex justify-content-center">
-                <div className="_loader"></div>
-              </div>
-            )}
+          {!loading && !allDataLoaded && (
+            <div className=" h-min col-12 d-flex justify-content-center">
+              <div className="_loader"></div>
+            </div>
+          )}
           {!allDataLoaded && <div ref={lastCardRef}></div>}
         </>
       ) : (

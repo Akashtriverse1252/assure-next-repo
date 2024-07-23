@@ -8,6 +8,7 @@ import { ConsultingService } from "@/components/svg-components/ConsultingService
 import Nabh from "@/components/svg-components/Nabh";
 import PlayStore from "@/components/svg-components/PlayStore";
 import { AssureSafety } from "@/components/svg-components/AssureSafety";
+import Link from "next/link";
 
 const WhyUs = ({ Title }) => {
   return (
@@ -86,10 +87,16 @@ const WhyUs = ({ Title }) => {
                       <div class="why_assure_text">Consultation Services</div>
                     </div>
                     <div class="why_assure_item">
-                      <span className=" flex-center ">
-                        <PlayStore />
-                      </span>
-                      <div class="why_assure_text">Assure Pathlabs App</div>
+                      <Link
+                        className="d-flex justify-content-center align-items-center gap-3"
+                        target="_blank"
+                        href="https://play.google.com/store/apps/details?id=com.assure_pathlab"
+                      >
+                        <span className=" flex-center ">
+                          <PlayStore />
+                        </span>
+                        <div class="why_assure_text">Assure Pathlabs App</div>
+                      </Link>
                     </div>
                     <div class="why_assure_item">
                       <span className=" flex-center ">

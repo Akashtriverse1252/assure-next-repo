@@ -48,6 +48,9 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
 
       if (response.data && response.data.code === 200) {
         console.log("Booking submitted successfully!");
+        if (typeof window !== "undefined") {
+          window.location.href = "/enquiry-submitted";
+        }
       } else {
         console.error(
           "API request failed. Error message:",

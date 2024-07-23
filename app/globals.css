@@ -1434,6 +1434,7 @@ header {
   background-color: var(--white-color);
 }
 
+.contentbox h2,
 .contentbox h3 {
   border-left: 4px solid rgb(97 30 163);
   line-height: 1;
@@ -3689,6 +3690,7 @@ table th {
   -webkit-font-smoothing: antialiased;
 }
 .privacy_pol_cnt h3,
+.contentbox h2,
 .contentbox h3 {
   font-size: 22px;
 }
@@ -5037,4 +5039,62 @@ li.ViewMore_footer a {
 ._cart_test_detail button._cart_cross {
   width: auto;
   padding: 0;
+}
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.tab {
+  border-right: 3px solid #8f8787;
+  cursor: pointer;
+  font-size: 16px;
+  letter-spacing: 2px;
+  line-height: 20px;
+  list-style: none;
+  width: 200px;
+  position: relative;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #424242;
+  font-weight: 600;
+  text-align: center;
+}
+.tab:before {
+  background: #000;
+  bottom: -10px;
+  content: "";
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  transition: all 0.5s ease;
+  width: 0;
+}
+.tab.active:before,
+.tab:hover:before {
+  content: "";
+  width: 50%;
+}
+.tab:last-child {
+  border: none;
+}
+._pacakage_contet {
+  width: fit-content;
+}
+._pacakage_contet h3 {
+  line-height: 1.3;
+}
+._pacakage_contet  {
+  width: 25ch;
+}
+._pacakage_contet ul li {
+  list-style: disc;
+  margin-left: 15px;
+}
+._pacakage_contet a {
+  font-weight: 500;
+  font-size: 15px;
+  margin-bottom: 15px;
 }

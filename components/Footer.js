@@ -138,8 +138,8 @@ export const Footer = () => {
       title: "Booking",
       aosDelay: 500,
       links: [
-        { href: "/packages", label: "BOOK A PACKAGE" },
-        { href: "/individual-test", label: "BOOK A TEST" },
+        { href: "/package", label: "BOOK A PACKAGE" },
+        { href: "/all-test", label: "BOOK A TEST" },
       ],
     },
     {
@@ -197,16 +197,13 @@ export const Footer = () => {
                       >
                         {testTabData.slice(0, 31).map((test, index) => (
                           <li title={test.Test_Name}>
-                            <Link
-                              key={test.id}
-                              href={`/test-detail/${test.Slug}`}
-                            >
+                            <Link key={test.id} href={`/all-test/${test.Slug}`}>
                               {test.Test_Name}
                             </Link>
                           </li>
                         ))}
                         <li title={"View More"} className="ViewMore_footer">
-                          <Link href={`/individual-test`}>View More...</Link>
+                          <Link href={`/all-test`}>View More...</Link>
                         </li>
                       </ul>
                     </div>
@@ -231,13 +228,13 @@ export const Footer = () => {
                       >
                         {packageTabData.slice(0, 27).map((test, index) => (
                           <li title={test.Test_Name}>
-                            <Link key={test.id} href={`/packages/${test.Slug}`}>
+                            <Link key={test.id} href={`/package/${test.Slug}`}>
                               {test.Test_Name}
                             </Link>
                           </li>
                         ))}
                         <li title={"View More"} className="ViewMore_footer">
-                          <Link href={`/packages`}>View More...</Link>
+                          <Link href={`/package`}>View More...</Link>
                         </li>
                       </ul>
                     </div>
@@ -371,7 +368,7 @@ export const Footer = () => {
                 </div>
                 <div className="col-12  mx-auto  flex-center ">
                   <Link
-                    href="/"
+                    href="/check-out"
                     className="button button--aylen button--round-l footer_btn button--text-thick text-uppercase gradient justify-content-start"
                     onClick={handleBookHomeCollection}
                   >

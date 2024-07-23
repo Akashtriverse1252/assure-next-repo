@@ -14,6 +14,7 @@ import { Faq } from "@/components/Faq";
 import Link from "next/link";
 import { useEffect } from "react";
 import WhyUs from "@/components/WhyUs";
+import AboutData from "@/components/AboutData";
 import Aos from "aos";
 
 export default function Home() {
@@ -139,54 +140,152 @@ export default function Home() {
               </div>
               <div className="abt_scn__">
                 <div
-                  className="about_us_scn  flex-center  flex-column align-items-start"
+                  className="about_us_scn  flex-center  flex-row col-12 align-items-start"
                   data-aos="fade-up"
                   data-aos-duration={500}
                   data-aos-once="true"
                   data-aos-easing="ease-in"
                 >
-                  <div className="title  float-start text-center">
-                    <h2>ABOUT ASSURE PATHLABS</h2>
-                  </div>
-                  <div className="about_us_cnt text-center ">
-                    <p>
-                      Assure Pathlabs is the best blood test pathology
-                      laboratory in Jalandhar, established in 2015 by Dr. Sanjay
-                      Wadhwa and Dr. Lovely Razdan with a commitment to
-                      excellence. Backed by NABH certification, Assure Pathlabs
-                      upholds international standards having adequate lab tests
-                      cost. Our commitment guarantees not just efficient service
-                      but also valuable advice, timely reports, unwavering
-                      support, and compassionate care because your well-being is
-                      our priority.
-                    </p>
-                    <div
-                      className=" mt-3 mb-2  col-md-4 col-11"
-                      data-aos="flip"
-                      data-aos-duration={500}
-                      data-aos-once="true"
-                      data-aos-easing="ease-in"
-                    >
-                      <Link
-                        href="/about-us"
-                        className="button button--aylen button--round-l button--text-thick text-uppercase gradient  col-12 mt-3"
-                      >
-                        know more
-                      </Link>
+                  <div className="col-6 flex-column d-flex align-items-start">
+                    <div className="title  float-start ">
+                      <h2>ABOUT ASSURE PATHLABS</h2>
+                    </div>
+                    <div className="about_us_cnt text-center ">
+                      <p>
+                        Assure Pathlabs was established by Dr. Sanjay Wadhwa and
+                        Dr. Lovely Razdan in 2015. Our high ethical values
+                        necessitate every man, woman, and child to benefit from
+                        advancements in healthcare – despite living in their
+                        living location. It is this idea of serving humanity
+                        that grows our commitment to improve and deliver useful
+                        health innovations that respond to the general,
+                        specific, and real needs of vulnerable populations.
+                        Assure labs in Jalandhar ensures on-time and specific
+                        diagnosis plays a significant role to optimize health,
+                        treatment of diseases, eliminating disease burden, and
+                        further improving health.
+                      </p>
+                      <p>
+                        The best pathology lab in Jalandhar is best in taking
+                        all clinical decisions and treatment initiations as per
+                        accurate diagnosis, Assure pathlabs work in every
+                        critical factor for treating the diseases and
+                        eliminating the cause from the root.
+                      </p>
+                      <p>
+                        Our highly qualified and experienced team and
+                        hard-working professionals under the guidance of dr
+                        sanjay wadhwa and Dr. Lovely Wadhwa path labs make
+                        accurate calculations to win the future with a renewed
+                        sight of enthusiasm to become extraordinary, showing
+                        results and to develop beyond the region into the global
+                        market. Founded by doctors Assure Pathlabs is fondly
+                        called Dr Path lab in Jalandhar.
+                      </p>
                     </div>
                   </div>
-                </div>
-                <div
-                  className="about_us_image "
-                  data-aos="fade"
-                  data-aos-delay={100}
-                  data-aos-duration={600}
-                  data-aos-once="true"
-                  data-aos-easing="ease"
-                >
-                  <Image src="/about-us.jpg" width={850} height={700} />
+                  <div
+                    className="about_us_image "
+                    data-aos="fade"
+                    data-aos-delay={100}
+                    data-aos-duration={600}
+                    data-aos-once="true"
+                    data-aos-easing="ease"
+                  >
+                    <Image src="/about-us.jpg" width={850} height={700} />
+                  </div>
                 </div>
               </div>
+              <AboutData maxCharCount={0}>
+                <div className="contentbox">
+                  <p>
+                    At Assure Pathlabs the best diagnostic lab in Jalandhar you
+                    can trust on their team to ensure the best customer
+                    receiving efficient service, helpful guidance, honour, care,
+                    and support, as well as the highest standardized medical
+                    expertise.{" "}
+                  </p>
+                  <p className="">
+                    When people in Jalandhar search- Pathology labs near me,
+                    their preference is always for Assure Pathlabs.
+                  </p>
+                  <h3 className="">
+                    ASSURE COMPLETE WELLNESS
+                  </h3>
+                  <p className="">
+                    Our main priority is your health and our core
+                    responsibility. Assure complete wellness package is divided
+                    for Man &amp; Woman separately.
+                  </p>
+                  <ul className="">
+                    <li>Fastest accurate reports</li>
+                    <li>Safe and Hygiene sample collection</li>
+                    <li>Trained Phlebotomist</li>
+                    <li>Doctor screening report</li>
+                    <li>Accurate blood test in Jalandhar</li>
+                  </ul>
+                  <p className="">
+                    Pre-Test Information:
+                    <br />
+                    Fasting for at least 8 hours is required.
+                  </p>
+                  <h3 className="">
+                    ASSURE WELL IMMUNITY CHECK PANEL
+                  </h3>
+                  <p className="">
+                    Assure Pathlabs one of the best labs in Jalandhar offers
+                    various types of full-body health checkup packages including
+                    immunity checks upmost in that. These are divided as per
+                    gender, age, and lifestyle of the person. Immunity test
+                    parameters are CBC, Iron profile serum, 25 Hydroxy, Vitamin
+                    D, and Total lgE. We at Assure Pathlabs ensure all the
+                    safety guidance essential for good health.{" "}
+                  </p>
+                  <p className="">
+                    Pre-Test Information: <br />
+                    Overnight fast
+                  </p>
+                  <h3 className="">FEVER PANEL</h3>
+                  <p className="">
+                    For the Fever Panel test choose the finest path labs in
+                    Jalandhar. Assure Pathlabs Jalandhar provides fever test
+                    @450 and promises the best price guaranteed. Being the
+                    finest pathology labs in Jalandhar We offer:
+                  </p>
+                  <ul className="">
+                    <li>Accurate results</li>
+                    <li>Fully automated</li>
+                    <li>Latest technology and equipment</li>
+                    <li>International quality and compliance</li>
+                    <li>The most trusted blood test lab in Jalandhar</li>
+                    <li>Honest price</li>
+                    <li>100% calibration and results</li>
+                  </ul>
+                  <h3 className="">BETA HCG</h3>
+                  <p className="">
+                    Diagnose in order to Treat your problem before they start.
+                    Curing the disease is incredibly crucial but before that, it
+                    is indispensable to get your health assessed every year.
+                    This test is used to know HCG levels in early pregnancy. HCG
+                    is a hormone that is present in pregnancy. Get your BETA HCG
+                    done with Assure Pathlabs that comes with a more rewarding
+                    lifestyle Plan Ahead.{" "}
+                  </p>
+                  <p className="">
+                    Pre-Test Information: <br />
+                    Overnight fasting minimum for 8hrs.
+                  </p>
+                  <h3 className="">ANTI HBE ANTIBODIES</h3>
+                  <p className="">
+                    The high presence of positive HBeAg shows a high level of
+                    viral replication. If HBeAg is negative it means that the
+                    virus is inactive. It is vital to get your Anti HBe checkup
+                    done. Get your 100% accurate report to better identify the
+                    root cause of the problem and know which direction your
+                    health is taking.
+                  </p>
+                </div>
+              </AboutData>
             </div>
           </div>
           <Dots className="hsection position-absolute svgwidth opacity-10 end-0 left-inherit" />

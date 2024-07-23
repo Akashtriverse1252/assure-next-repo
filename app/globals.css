@@ -3940,15 +3940,11 @@ table th {
   transform: none;
 }
 .about_us_scn {
-  width: 50%;
   text-align: left;
-  padding: 30px;
-  left: 19%;
-  top: 15%;
   align-items: flex-start;
 }
 .abt_scn__ {
-  width: 90%;
+  width: 100%;
   display: flex;
   margin: 0 auto;
 }
@@ -3958,8 +3954,8 @@ table th {
 
 .about_us_cnt p {
   text-align: left;
-  width: 75%;
-  text-wrap: balance;
+  width: 95%;
+  /* text-wrap: balance; */
 }
 .about_us_image img {
   border-radius: 50px;
@@ -5086,7 +5082,7 @@ li.ViewMore_footer a {
 ._pacakage_contet h3 {
   line-height: 1.3;
 }
-._pacakage_contet  {
+._pacakage_contet {
   width: 25ch;
 }
 ._pacakage_contet ul li {
@@ -5097,4 +5093,27 @@ li.ViewMore_footer a {
   font-weight: 500;
   font-size: 15px;
   margin-bottom: 15px;
+}
+
+.read-more-container {
+  position: relative;
+}
+
+.read-more-content {
+  overflow: hidden;
+  transition: max-height 0.9s ease-out;
+}
+
+.read-more-button {
+  margin-top: 10px;
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+}
+
+.read-more-button:hover {
+  text-decoration: underline;
 }

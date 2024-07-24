@@ -8,14 +8,6 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  async rewrites() {
-    return [
-      {
-        source: "/api/:path*",
-        destination: "https://www.assurepathlabs.com/api/:path*",
-      },
-    ];
-  },
 };
 
 module.exports = nextConfig;

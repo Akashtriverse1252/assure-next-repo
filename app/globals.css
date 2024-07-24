@@ -5131,3 +5131,6 @@ li.ViewMore_footer a {
   letter-spacing: 0.5px;
   width: 36ch;
 }
+li.MuiBreadcrumbs-li:last-child {
+  color: #1493c8 !important;
+}

@@ -90,14 +90,14 @@ export default function Home() {
           <div className="container">
             <div className="web-container">
               <div className="row">
-                <div className="col-md-12 col-12">
-                  <div
-                    className="title col-12 float-start text-center"
-                    data-aos="fade-up"
-                    data-aos-duration={500}
-                    data-aos-once="true"
-                    data-aos-easing="ease-in"
-                  >
+                <div
+                  className="col-md-12 col-12"
+                  data-aos="fade-up"
+                  data-aos-duration={500}
+                  data-aos-once="true"
+                  data-aos-easing="ease-in"
+                >
+                  <div className="title col-12 float-start text-center">
                     <h2 className="grid-center ">Popular Seasonal Packages</h2>
                   </div>
                   <Seasonalpack className="arrows productslider minusbottom seasonalpack" />
@@ -134,14 +134,14 @@ export default function Home() {
           <div className="container">
             <div className="web-container">
               <div className="row">
-                <div className="col-md-12 col-12">
-                  <div
-                    className="title col-12 float-start text-center mb-3"
-                    data-aos="fade-up"
-                    data-aos-duration={500}
-                    data-aos-once="true"
-                    data-aos-easing="ease-in"
-                  >
+                <div
+                  className="col-md-12 col-12"
+                  data-aos="fade-up"
+                  data-aos-duration={500}
+                  data-aos-once="true"
+                  data-aos-easing="ease-in"
+                >
+                  <div className="title col-12 float-start text-center mb-3">
                     <h2 className="grid-center text-white">TEST BY ORGAN</h2>
                   </div>
                   <Organslider className="navigationwhite hovershadow" />
@@ -177,17 +177,19 @@ export default function Home() {
               >
                 <h2>Assure Pathlab - Best Pathology Labs In Jalandhar</h2>
               </div>
-              <div className="abt_scn__">
-                <div
-                  className="about_us_scn  flex-center  flex-md-row flex-column-reverse col-12 align-items-start"
-                  data-aos="fade-up"
-                  data-aos-duration={500}
-                  data-aos-once="true"
-                  data-aos-easing="ease-in"
-                >
+              <div
+                className="abt_scn__"
+                data-aos="fade-up"
+                data-aos-duration={500}
+                data-aos-once="true"
+                data-aos-easing="ease-in"
+              >
+                <div className="about_us_scn  flex-center  flex-md-row flex-column-reverse col-12 align-items-start">
                   <div className="col-md-6 col-12 mt-2 mt-md-0 flex-column d-flex align-items-start">
                     <div className="title  float-start ">
-                      <h1 className="text-uppercase">Assure Pathlab - Best Pathology Labs In Jalandhar</h1>
+                      <h1 className="text-uppercase">
+                        Assure Pathlab - Best Pathology Labs In Jalandhar
+                      </h1>
                     </div>
                     <div className="about_us_cnt text-center ">
                       <p>
@@ -353,13 +355,13 @@ export default function Home() {
         <section id="faq" className="faq">
           <div className="container position-relative z-index-2">
             <div className="web-container">
-              <div className="row">
-                <div
-                  className="title col-12 float-start text-center"
-                  data-aos="fade-up"
+              <div className="row" data-aos="fade-up"
                   data-aos-duration={500}
                   data-aos-once="true"
-                  data-aos-easing="ease-in"
+                  data-aos-easing="ease-in">
+                <div
+                  className="title col-12 float-start text-center"
+                  
                 >
                   <h2 className="">Frequently Asked Questions</h2>
                 </div>

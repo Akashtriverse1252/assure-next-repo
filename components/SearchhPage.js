@@ -49,7 +49,7 @@ const SearchPage = ({ slug }) => {
 
       try {
         const idsString = selectedIds.join("-");
-        const apiUrl = `https://www.assurepathlabs.com/api/algos/fetch_details.php?ids=${idsString}`;
+        const apiUrl = `https://triverseadvertising.com/assure_website/api/algos/fetch_details.php?ids=${idsString}`;
 
         const response = await axios.get(apiUrl);
 

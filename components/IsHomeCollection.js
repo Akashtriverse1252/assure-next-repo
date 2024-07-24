@@ -75,7 +75,7 @@ const IsHomeCollection = ({ HomeColData }) => {
       try {
         // Use the selectedDate state to pass the selected date to the API
         const response = await axios.get(
-          `https://www.assurepathlabs.com/api/algos/generate_time_slot.php?currentDate=${selectedDate}`
+          `https://triverseadvertising.com/assure_website/api/algos/generate_time_slot.php?currentDate=${selectedDate}`
         );
 
         // Assuming the response data has a structure like { test_data: { result: "success", available_time_slots: {...} } }

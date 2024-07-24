@@ -95,7 +95,7 @@ export const Homecollection = () => {
       setIsSubmitting(true);
 
       try {
-        const response = await fetch("https://www.assurepathlabs.com/api/algos/booking_submit_api.php", {
+        const response = await fetch("https://triverseadvertising.com/assure_website/api/algos/booking_submit_api.php", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

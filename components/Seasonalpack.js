@@ -9,7 +9,7 @@ import { useData } from "@/context/context";
 import "aos/dist/aos.css"; // Import AOS CSS
 import Aos from "aos";
 import useIntersectionObserver from "@/context/useIntersectionObserver";
-const URL = "https://www.assurepathlabs.com/api/algos/seasonal_api.php";
+const URL = "https://triverseadvertising.com/assure_website/api/algos/seasonal_api.php";
 
 export const Seasonalpack = (props) => {
   const { cartState, cartDispatch } = useData();

@@ -27,7 +27,7 @@ export const Test_details_logic = ({ Slug, Category }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://www.assurepathlabs.com/api/algos/fetch_details.php?category=${Category}&slug=${Slug}&hits=1`
+          `https://triverseadvertising.com/assure_website/api/algos/fetch_details.php?category=${Category}&slug=${Slug}&hits=1`
         );
 
         const data = await response.json();

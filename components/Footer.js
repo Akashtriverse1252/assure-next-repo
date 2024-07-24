@@ -73,7 +73,7 @@ export const Footer = () => {
   const fetchTabData = async (category) => {
     try {
       const response = await fetch(
-        `https://www.assurepathlabs.com/api/algos/fetch_details.php?category=${category}&limit=30`
+        `https://triverseadvertising.com/assure_website/api/algos/fetch_details.php?category=${category}&limit=30`
       );
       const data = await response.json();
       return data.test_data;

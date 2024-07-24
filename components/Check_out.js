@@ -270,7 +270,7 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
       console.log(formik.values.date);
       try {
         const response = await axios.get(
-          `https://www.assurepathlabs.com/api/algos/generate_time_slot.php?currentDate=${formik.values.date}`
+          `https://triverseadvertising.com/assure_website/api/algos/generate_time_slot.php?currentDate=${formik.values.date}`
         );
         const slotData = response.data.test_data;
         setInternalTimeSlots(slotData);

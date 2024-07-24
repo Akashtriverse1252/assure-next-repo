@@ -118,12 +118,6 @@ export const Videos = () => {
 
   const data = [
     {
-      thumbnail: "/video_tumbnail_01.png",
-      videoUrl: "/vedio02.mp4",
-      description:
-        "Let's Talk on Cancer by Dr. Sanjay Wadhwa | Assure Pathlabs",
-    },
-    {
       thumbnail: "/video_tumbnail_02.png",
       videoUrl: "/vedio03.mp4",
       description:
@@ -134,6 +128,12 @@ export const Videos = () => {
       videoUrl: "/vedio01.mp4",
       description:
         "Let's Talk on Diabetes by Dr. Sanjay Wadhwa | Assure Pathlabs",
+    },
+    {
+      thumbnail: "/video_tumbnail_04.webp",
+      videoUrl: "/vedio04.mp4",
+      description:
+        "Let's Talk on Cancer by Dr. Sanjay Wadhwa | Assure Pathlabs",
     },
   ];
   const getAosDuration = (index) => {

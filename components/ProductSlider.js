@@ -9,7 +9,7 @@ import { TestCard } from "@/components/TestCard";
 import { useData } from "@/context/context";
 import "aos/dist/aos.css"; // Import AOS CSS
 import Aos from "aos";
-const URL = `https://www.assurepathlabs.com/api/algos/fetch_details.php?category=package&start=packages&start=0&limit=8`;
+const URL = `https://triverseadvertising.com/assure_website/api/algos/fetch_details.php?category=package&start=packages&start=0&limit=8`;
 
 export const ProductSlider = (props) => {
   const { cartState, cartDispatch } = useData();

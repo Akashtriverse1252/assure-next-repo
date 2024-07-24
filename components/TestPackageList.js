@@ -23,7 +23,7 @@ const TestPackageList = ({ Type, h3true }) => {
       setLoading(true);
 
       const response = await fetch(
-        `https://www.assurepathlabs.com/api/algos/fetch_details.php?category=${Type}&start=${page}&limit=12`
+        `https://triverseadvertising.com/assure_website/api/algos/fetch_details.php?category=${Type}&start=${page}&limit=12`
       );
       const newData = await response.json();
 

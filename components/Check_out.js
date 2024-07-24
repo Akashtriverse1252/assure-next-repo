@@ -206,7 +206,6 @@ const UserDataForm = ({ onPrevStep, onNextStep, onFormData }) => {
         console.error("Error submitting booking data:", error.message);
         showAlert("Error", "Network error", "error");
 
-        onNextStep();
         if (error.response) {
           console.error("Response data:", error.response.data);
           console.error("Response status:", error.response.status);

@@ -95,8 +95,11 @@
     width: AUTO;
   }
   .about_us_scn {
-    width: 60%;
     padding: 0px;
+  }
+
+  .about_us_scn .title h1 {
+    width: 100%;
   }
   .about_us_image img {
     height: 100%;
@@ -1005,7 +1008,7 @@
   .about_us_scn {
     width: 100%;
     text-align: center;
-    padding: 30px;
+    padding: 10px 30px;
     left: 0;
     top: 0;
     align-items: flex-start;
@@ -1239,13 +1242,15 @@
   ._pacakage_contet {
     width: 100%;
   }
-  ._pacakage_contet h3{
+  ._pacakage_contet h3 {
     margin: 10px 0;
   }
-  .privacy_pol_cnt h3, .contentbox h2, .contentbox h3 {
+  .privacy_pol_cnt h3,
+  .contentbox h2,
+  .contentbox h3 {
     font-size: 19px;
     line-height: 1.3;
-}
+  }
 
   table tr {
     /* border-bottom: 3px solid #eeeeee; */
@@ -1477,13 +1482,14 @@
   }
 
   .title h1,
+  .title h3,
   .title h2 {
-    font-size: 19px;
-    width: 90%;
+    font-size: 17px;
+    width: 100%;
     margin: 0 auto;
     line-height: 1.3;
     padding-bottom: 8px;
-    text-wrap: balance;
+    text-wrap: stable;
   }
 
   .title h1 span,
@@ -2037,7 +2043,7 @@
     width: 95%;
     margin: 10px auto;
   }
-  .doctor_name h3{
+  .doctor_name h3 {
     margin-bottom: 10px;
   }
 
@@ -2051,7 +2057,7 @@
     min-height: auto;
   }
   .about_us_scn {
-    padding: 25px 0 0;
+    padding: 0;
   }
   .mdl-button--fab_flinger-container.activated {
     position: fixed;

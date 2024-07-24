@@ -30,7 +30,7 @@ const AboutData = ({ children, maxCharCount = 150 }) => {
       </div>
       {showButton && (
         <div
-          className=" mt-3 mb-2  col-md-2 col-11"
+          className=" mt-3 mb-2  col-md-4 col-lg-2 col-sm-6 col-11 mx-auto mx-lg-0"
           data-aos="flip"
           data-aos-duration={500}
           data-aos-once="true"

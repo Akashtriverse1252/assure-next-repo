@@ -11,7 +11,8 @@ import { useAlert } from "@/context/AlerterContext";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-const API_URL ="https://triverseadvertising.com/assure_website/api/upload_prescription.php";
+const API_URL =
+  "https://triverseadvertising.com/assure_website/api/upload_prescription.php";
 
 const allowedTypes = new Set([
   "image/jpeg",
@@ -74,6 +75,7 @@ const UploadForm = () => {
             "Content-Type": "multipart/form-data",
           },
         });
+        console.log(response);
 
         setSubmitting(false);
 
@@ -86,7 +88,8 @@ const UploadForm = () => {
 
         showAlert(
           alertType,
-          response.data || `Request Successful: ${response.data}`,
+          response.data.message ||
+            `Request Successful: ${response.data.message}`,
           alertType
         );
 
@@ -221,7 +224,7 @@ const UploadForm = () => {
                     </span>
                     {formik.values.uploadPrescription && (
                       <span>Change your file</span>
-                    )}  
+                    )}
                     {formik.touched.uploadPrescription &&
                       formik.errors.uploadPrescription && (
                         <div className="error_message">
@@ -232,14 +235,14 @@ const UploadForm = () => {
                 </label>
               </div>
               <button
-                  type="button "
-                  className="button button--aylen button--round-l button--text-thick mobile_upload_prs"
-                  onClick={formik.handleSubmit}
-                >
-                  <span className="check-icon">
-                    {formik.isSubmitting ? "Submitting..." : "SUBMIT"}
-                  </span>
-                </button>
+                type="button "
+                className="button button--aylen button--round-l button--text-thick mobile_upload_prs"
+                onClick={formik.handleSubmit}
+              >
+                <span className="check-icon">
+                  {formik.isSubmitting ? "Submitting..." : "SUBMIT"}
+                </span>
+              </button>
             </div>
 
             {formik.values.uploadPrescription && (

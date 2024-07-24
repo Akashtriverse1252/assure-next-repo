@@ -118,10 +118,10 @@ export const page = () => {
 
   const data = [
     {
-      thumbnail: "/video_tumbnail_04.webp",
-      videoUrl: "/vedio04.mp4",
+      thumbnail: "/video_tumbnail_4.webp",
+      videoUrl: "/Video04.mp4",
       description:
-        "Let's Talk on Cancer by Dr. Sanjay Wadhwa | Assure Pathlabs",
+        "Let's Talk on Allergies by Dr. Sanjay Wadhwa | Assure Pathlabs",
     },
     {
       thumbnail: "/video_tumbnail_01.png",

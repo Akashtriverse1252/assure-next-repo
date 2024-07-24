@@ -1014,6 +1014,9 @@
     align-items: flex-start;
     margin: 0 auto;
   }
+  .about_us_cnt {
+    padding-top: 20px;
+  }
   .about_us_image img {
     border-radius: 0;
     padding-top: 10px;
@@ -1330,6 +1333,9 @@
   }
   .bg-gradient-image.about_page {
     bottom: -520%;
+  }
+  .about_us_cnt {
+    padding-top: 12px;
   }
   .cancer_accordion {
     column-count: 1;

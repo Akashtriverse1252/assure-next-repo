@@ -29,7 +29,7 @@ export const metadata = {
 export default function RootLayout({ children, isLoading }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
@@ -39,7 +39,7 @@ export default function RootLayout({ children, isLoading }) {
           }}
         />
         {/* End Google Tag Manager */}
-      </Head>
+      </head>
       <AlertProvider>
         <GlobalDataProvider>
           <body className={AvertaStd.className}>

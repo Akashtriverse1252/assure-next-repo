@@ -29,7 +29,7 @@ export const Test_details_logic = ({ Slug, Category }) => {
         const response = await fetch(
           `https://www.assurepathlabs.com/api/algos/fetch_details.php?category=${Category}&slug=${Slug}&hits=1`
         );
-     
+
         const data = await response.json();
         setProject(data.test_data[0]);
         if (data.test_data.length === 0) {
@@ -52,7 +52,6 @@ export const Test_details_logic = ({ Slug, Category }) => {
       ).toFixed()
     : 0;
   const cartIds = cartState.products.map((cartproduct) => cartproduct.id);
-
 
   const handleToggleCart = () => {
     if (cartIds.includes(project.id)) {
@@ -132,16 +131,26 @@ export const Test_details_logic = ({ Slug, Category }) => {
         <title>{`Book a ${
           project?.Test_Name.charAt(0).toUpperCase() +
           project?.Test_Name.slice(1).toLowerCase()
-        }`}</title>
+        } | Assure Pathlabs`}</title>
         <meta name="description" content={metaDescription} />
         <link
           rel="canonical"
-          href={`https://www.assurepathlabs.com/packages/${Slug}`}
+          href={`https://www.assurepathlabs.com/${
+            Category == "test" ? "all-test" : "packages"
+          }/${Slug}`}
         />
         <meta
           property="og:url"
-          content={`https://www.assurepathlabs.com/packages/${Slug}`}
+          href={`https://www.assurepathlabs.com/${
+            Category == "test" ? "all-test" : "packages"
+          }/${Slug}`}
         />
+        <link
+          rel="canonical"
+          href={`https://www.assurepathlabs.com/${
+            Category == "test" ? "all-test" : "packages"
+          }/${Slug}`}
+        />{" "}
         <meta property="og:type" content="website" />
         <meta property="og:title" content={`Book a ${project?.Test_Name}`} />
         <meta name="og:description" content={metaDescription} />
@@ -162,7 +171,7 @@ export const Test_details_logic = ({ Slug, Category }) => {
             data-aos-once="true"
           >
             <div className="title col-12 float-start text-center">
-              <h1 >{project.Test_Name}</h1>
+              <h1>{project.Test_Name}</h1>
               {/* {!project.Test_Category ? (
                   <>
                   </>

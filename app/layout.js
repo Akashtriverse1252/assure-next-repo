@@ -23,9 +23,9 @@ const AvertaStd = localFont({
 
 export const metadata = {
   title:
-    "Best Pathology Lab in Jalandhar | Dr Pathlabs & Diagnostic Labs in Jalandhar | Assure Pathlabs",
+    "",
   description:
-    "Assure Pathlabs - Best Pathology Lab in Jalandhar | Get Best Health Chek -Up Packages in Jalandhar from Assure | Best diagnostic Labs in Jalandhar",
+    "",
 };
 
 export default function RootLayout({ children, isLoading }) {

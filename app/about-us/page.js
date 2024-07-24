@@ -11,11 +11,12 @@ import WhyUs from "@/components/WhyUs";
 import { HForm } from "@/components/HForm";
 import OurFounders from "@/components/OurFounders";
 import Aboutbanner from "@/public/About-us-banner-b.webp";
-import AboutbannerM from "@/public/about-banner-M.jpg";
+import AboutbannerM from "@/public/about-banner-M.webp";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import { Link } from "@mui/material";
 import "aos/dist/aos.css"; // Import AOS CSS
 import Aos from "aos";
+import { Helmet } from "react-helmet";
 
 export const page = () => {
   useEffect(() => {
@@ -26,6 +27,71 @@ export const page = () => {
   }, []);
   return (
     <>
+      <Helmet>
+        <title>Labs in Jalandhar | Blood Collection Centres in Jalandhar</title>
+        <meta
+          name="description"
+          content="Assure Pathlabs  - Best Path Lab, Pathology Labs, Best Diagnostic Centre, Best Blood Collection Centres in Jalandhar, Punjab. Book a Full Body Checkup."
+        />
+        <meta
+          name="abstract"
+          content="Assure Pathlabs  - Best Path Lab, Pathology Labs, Best Diagnostic Centre, Best Blood Collection Centres in Jalandhar, Punjab. Book a Full Body Checkup."
+        />
+        <meta
+          name="keywords"
+          content="Best Pathology Labs in Jalandhar, Best PathLabs in Jalandhar, Diagnostic Labs in Jalandhar, Thyroid Test in Jalandhar, Labs in Jalandhar, Blood Collection Centres in Jalandhar"
+        />
+        <link rel="canonical" href="https://www.assurepathlabs.com/about-us" />
+        <meta name="geo.placename" content="Jalandhar" />
+        <meta name="geo.region" content="IN-PB" />
+        <meta httpEquiv="content-language" content="en-US" />
+
+        {/* Open Graph tags */}
+        <meta
+          property="og:site_name"
+          content="Labs in Jalandhar | Blood Collection Centres in Jalandhar"
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://assurepathlabs.com/about-us"
+        />
+        <meta
+          property="og:title"
+          content="Labs in Jalandhar | Blood Collection Centres in Jalandhar"
+        />
+        <meta
+          property="og:description"
+          content="Assure Pathlabs  - Best Path Lab, Pathology Labs, Best Diagnostic Centre, Best Blood Collection Centres in Jalandhar, Punjab. Book a Full Body Checkup."
+        />
+        <meta
+          property="og:street_address"
+          content="3, Waryam Nagar, Vasant Vihar Road, Jalandhar"
+        />
+        <meta property="og:region" content="Punjab - India" />
+        <meta property="og:postal_code" content="144001" />
+        <meta property="og:country_name" content="India" />
+        <meta property="og:email" content="assurepathlabs@gmail.com" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:locale:alternate" content="en_IN" />
+
+        {/* Twitter tags */}
+        <meta
+          name="twitter:description"
+          content="Assure Pathlabs  - Best Path Lab, Pathology Labs, Best Diagnostic Centre, Best Blood Collection Centres in Jalandhar, Punjab. Book a Full Body Checkup."
+        />
+        <meta name="twitter:site" content="@assurepathlabs" />
+        <meta
+          name="twitter:title"
+          content="Labs in Jalandhar | Blood Collection Centres in Jalandhar"
+        />
+
+        {/* Other meta tags */}
+        <meta
+          name="google-site-verification"
+          content="z_OifP69PUS-P_cD7nYmo5XrTGp_wzuHLmezRv7Br5Q"
+        />
+      </Helmet>
       <main className="d-flex flex-wrap float-start col-12">
         <section className="position-relative __about__">
           <div className="container">

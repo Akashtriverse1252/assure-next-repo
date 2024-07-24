@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Dots } from "@/components/svg-components/Dots";
 import { Line } from "@/components/svg-components/Line";
 import TestPackageList from "@/components/TestPackageList";
+import { Helmet } from "react-helmet";
 
 export const Page = () => {
   const [activeTab, setActiveTab] = useState("all");
@@ -17,8 +18,8 @@ export const Page = () => {
   }, [pathname]);
 
   const tabs = [
-    { name: "All test", slug: "all-test" },
-    { name: "Packages", slug: "package" },
+    { name: "All tests", slug: "all-test" },
+    { name: "All Packages", slug: "packages" },
   ];
 
   const categories = [
@@ -27,47 +28,47 @@ export const Page = () => {
       items: [
         {
           name: "BeSure Complete Wellness Package for Woman",
-          link: "/package/besure-complete-wellness-package-for-woman",
+          link: "/packages/besure-complete-wellness-package-for-woman",
         },
         {
           name: "BeSure Complete Wellness Package for Man",
-          link: "/package/besure-complete-wellness-package-for-man",
+          link: "/packages/besure-complete-wellness-package-for-man",
         },
         {
           name: "BeSure Well Immunity Check Panel",
-          link: "/package/besure-well-immunity-check-panel",
+          link: "/packages/besure-well-immunity-check-panel",
         },
         {
           name: "BeSure Essential Diabetes Checkup",
-          link: "/package/be-sure-essential-diabetes-checkup",
+          link: "/packages/be-sure-essential-diabetes-checkup",
         },
         {
           name: "BeSure Ultima Diabetes Monitoring",
-          link: "/package/be-sure-ultima-diabetes-monitoring",
+          link: "/packages/be-sure-ultima-diabetes-monitoring",
         },
         // {
         //   name: "BeSure Advanced Diabetes Screening",
-        //   link: "/package/be-sure-advanced-diabetes-screening",
+        //   link: "/packages/be-sure-advanced-diabetes-screening",
         // },
         // {
         //   name: "BeSure Essential Fever Panel",
-        //   link: "/package/be-sure-essential-fever-panel",
+        //   link: "/packages/be-sure-essential-fever-panel",
         // },
         // {
         //   name: "BeSure Advanced Liver Function Test",
-        //   link: "/package/besure-advanced-liver-function-test",
+        //   link: "/packages/besure-advanced-liver-function-test",
         // },
-        // { "name": "BeSure Essential Liver Function Test", "link": "/package/besure-essential-liver-function-test" },
-        // { "name": "BeSure Healthy Heart Panel", "link": "/package/besure-healthy-heart-panel" },
-        // { "name": "BeSure Sr. Citizen Advanced Package - Female", "link": "/package/besure-sr-citizen-advanced-package-female" },
-        // { "name": "BeSure Sr. Citizen Advanced Package - Male", "link": "/package/besure-sr-citizen-advanced-package-male" },
-        // { "name": "BeSure Fit Couple Advanced for Women", "link": "/package/besure-fit-couple-advanced-for-women" },
-        // { "name": "BeSure Fit Couple Advanced for Men", "link": "/package/besure-fit-couple-advanced-for-men" },
-        // { "name": "BeSure Fit Couple Essential for Women", "link": "/package/besure-fit-couple-essential-for-women" },
-        // { "name": "BeSure Fit Couple Essential for Men", "link": "/package/besure-fit-couple-essential-for-men" },
-        // { "name": "BeSure Fitwoman Advanced Care", "link": "/package/besure-fitwoman-advanced-care" },
-        // { "name": "BeSure Fitwoman Ultima", "link": "/package/besure-fitwoman-ultima" },
-        // { "name": "BeSure Fitwoman Essential", "link": "/package/besure-fitwoman-essential" }
+        // { "name": "BeSure Essential Liver Function Test", "link": "/packages/besure-essential-liver-function-test" },
+        // { "name": "BeSure Healthy Heart Panel", "link": "/packages/besure-healthy-heart-panel" },
+        // { "name": "BeSure Sr. Citizen Advanced Package - Female", "link": "/packages/besure-sr-citizen-advanced-package-female" },
+        // { "name": "BeSure Sr. Citizen Advanced Package - Male", "link": "/packages/besure-sr-citizen-advanced-package-male" },
+        // { "name": "BeSure Fit Couple Advanced for Women", "link": "/packages/besure-fit-couple-advanced-for-women" },
+        // { "name": "BeSure Fit Couple Advanced for Men", "link": "/packages/besure-fit-couple-advanced-for-men" },
+        // { "name": "BeSure Fit Couple Essential for Women", "link": "/packages/besure-fit-couple-essential-for-women" },
+        // { "name": "BeSure Fit Couple Essential for Men", "link": "/packages/besure-fit-couple-essential-for-men" },
+        // { "name": "BeSure Fitwoman Advanced Care", "link": "/packages/besure-fitwoman-advanced-care" },
+        // { "name": "BeSure Fitwoman Ultima", "link": "/packages/besure-fitwoman-ultima" },
+        // { "name": "BeSure Fitwoman Essential", "link": "/packages/besure-fitwoman-essential" }
       ],
     },
     {
@@ -75,22 +76,25 @@ export const Page = () => {
       items: [
         {
           name: "Comprehensive Wellness Package for Women",
-          link: "/package/comprehensive-wellness-package-for-women",
+          link: "/packages/comprehensive-wellness-package-for-women",
         },
         {
           name: "Infertility Screening Panel for Men",
-          link: "/package/infertility-screening-panel-for-men",
+          link: "/packages/infertility-screening-panel-for-men",
         },
         {
           name: "Free Thyroid Profile FT3, FT4, TSH",
-          link: "/package/free-thyroid-profile-ft3-ft4-tsh",
+          link: "/packages/free-thyroid-profile-ft3-ft4-tsh",
         },
         {
           name: "Infertility Screening Panel for Women",
-          link: "/package/infertility-screening-panel-for-women",
+          link: "/packages/infertility-screening-panel-for-women",
         },
-        { name: "Hypertension profile", link: "/package/hypertension-profile" },
-        { name: "Respiratory Panel", link: "/package/respiratory-panel" },
+        {
+          name: "Hypertension profile",
+          link: "/packages/hypertension-profile",
+        },
+        { name: "Respiratory Panel", link: "/packages/respiratory-panel" },
       ],
     },
     {
@@ -109,17 +113,55 @@ export const Page = () => {
     {
       title: "Test by organ",
       items: [
-        { name: "Thyroid", link: "/organ/thyroid" },
-        { name: "Kidney", link: "/organ/kidney" },
-        { name: "Lungs", link: "/organ/lungs" },
-        { name: "Heart", link: "/organ/heart" },
-        { name: "Liver", link: "/organ/liver" },
+        { name: "Thyroid", link: "/organs/thyroid" },
+        { name: "Kidney", link: "/organs/kidney" },
+        { name: "Lungs", link: "/organs/lungs" },
+        { name: "Heart", link: "/organs/heart" },
+        { name: "Liver", link: "/organs/liver" },
       ],
     },
   ];
 
   return (
     <>
+      <Helmet>
+        <title>
+          Blood Test Lab in Jalandhar | CBC Test Cost in Jalandhar | Blood Test
+          Online Price in Jalandhar | Assure Pathlabs
+        </title>
+        <meta
+          name="description"
+          content="Searching for Best Blood Test Lab in Jalandhar, visit Assure Pathlabs having highly qualified doctors and providing all types of Blood Tests, CBC Tests at best price, if you are looking for blood test online in jalandhar, assure is the best, Get a free quote."
+        />
+        <meta name="keywords" content="Assure Pathlabs" />
+        <meta
+          property="og:title"
+          content="Best Pathology Lab in Jalandhar | Dr Pathlabs &amp; Diagnostic Labs in Jalandhar | Assure Pathlabs"
+        />
+        <meta
+          property="og:description"
+          content="Assure Pathlabs - Best Pathology Lab in Jalandhar | Get Best Health Chek -Up Packages in Jalandhar from Assure | Best diagnostic Labs in Jalandhar"
+        />
+        <meta
+          property="og:image"
+          content="https://www.assurepathlabs.com/images/assure-logo.png"
+        />
+        <meta property="og:url" content="https://www.assurepathlabs.com" />
+        <meta
+          name="twitter:title"
+          content="Best Pathology Lab in Jalandhar | Dr Pathlabs &amp; Diagnostic Labs in Jalandhar | Assure Pathlabs"
+        />
+        <meta
+          name="twitter:description"
+          content="Assure Pathlabs - Best Pathology Lab in Jalandhar | Get Best Health Chek -Up Packages in Jalandhar from Assure | Best diagnostic Labs in Jalandhar"
+        />
+        <meta
+          name="twitter:url"
+          content="https://www.assurepathlabs.com/images/assure-logo.png"
+        />
+        <link rel="canonical" href="https://www.assurepathlabs.com/packages" />
+        <meta name="twitter:card" content="summary" />
+      </Helmet>
       <main>
         <section className="position-relative mb-5 ">
           <div className="container">

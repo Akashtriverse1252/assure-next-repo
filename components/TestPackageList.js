@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { TestCard } from "@/components/TestCard";
 import { useAlert } from "@/context/AlerterContext";
 import NoData from "@/components/svg-components/NoData";
-const TestPackageList = ({ Type }) => {
+const TestPackageList = ({ Type, h3true }) => {
   const [tests, setTests] = useState([]);
   const [loading, setLoading] = useState(true); // Set initial loading state to true
   const [page, setPage] = useState(0);
@@ -75,7 +75,7 @@ const TestPackageList = ({ Type }) => {
   }, [loading, page]);
 
   const determineBaseDirectory = (type) => {
-    return type === "package" ? "package" : "all-test";
+    return type === "package" ? "packages" : "all-test";
   };
 
   return (
@@ -101,6 +101,7 @@ const TestPackageList = ({ Type }) => {
               Turn_around_time={test.Turn_around_time}
               BaseDirectory={determineBaseDirectory(Type)}
               index={index}
+              IsSeoH3={h3true}
             />
           ))}
           {!loading && !allDataLoaded && (

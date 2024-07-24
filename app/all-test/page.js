@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Dots } from "@/components/svg-components/Dots";
 import { Line } from "@/components/svg-components/Line";
 import TestPackageList from "@/components/TestPackageList";
+import { Helmet } from "react-helmet";
 
 export const Page = () => {
   const [activeTab, setActiveTab] = useState("all");
@@ -17,20 +18,58 @@ export const Page = () => {
   }, [pathname]);
 
   const tabs = [
-    { name: "All test", slug: "all-test" },
-    { name: "Packages", slug: "package" },
+    { name: "All tests", slug: "all-test" },
+    { name: "All Packages", slug: "packages" },
   ];
 
   return (
     <>
+      <Helmet>
+        <title>
+          Blood Test Lab in Jalandhar | CBC Test Cost in Jalandhar | Blood Test
+          Online Price in Jalandhar | Assure Pathlabs
+        </title>
+        <meta
+          name="description"
+          content="Searching for Best Blood Test Lab in Jalandhar, visit Assure Pathlabs having highly qualified doctors and providing all types of Blood Tests, CBC Tests at best price, if you are looking for blood test online in jalandhar, assure is the best, Get a free quote."
+        />
+        <meta name="keywords" content="Assure Pathlabs" />
+        <meta
+          property="og:title"
+          content="Best Pathology Lab in Jalandhar | Dr Pathlabs &amp; Diagnostic Labs in Jalandhar | Assure Pathlabs"
+        />
+        <meta
+          property="og:description"
+          content="Assure Pathlabs - Best Pathology Lab in Jalandhar | Get Best Health Chek -Up Packages in Jalandhar from Assure | Best diagnostic Labs in Jalandhar"
+        />
+        <meta
+          property="og:image"
+          content="https://www.assurepathlabs.com/images/assure-logo.png"
+        />
+        <meta property="og:url" content="https://www.assurepathlabs.com" />
+        <meta
+          name="twitter:title"
+          content="Best Pathology Lab in Jalandhar | Dr Pathlabs &amp; Diagnostic Labs in Jalandhar | Assure Pathlabs"
+        />
+        <meta
+          name="twitter:description"
+          content="Assure Pathlabs - Best Pathology Lab in Jalandhar | Get Best Health Chek -Up Packages in Jalandhar from Assure | Best diagnostic Labs in Jalandhar"
+        />
+        <meta
+          name="twitter:url"
+          content="https://www.assurepathlabs.com/images/assure-logo.png"
+        />
+        <link rel="canonical" href="https://www.assurepathlabs.com/package" />
+        <meta name="twitter:card" content="summary" />
+      </Helmet>
       <section className="position-relative mb-5">
         <div className="container">
           <div className="web-container">
             <div className="row">
               <div className="title col-12 float-start text-center">
-                <h1 className="text-uppercase">
+                <h2 className="text-uppercase">
                   INDIVIDUAL BLOOD & ALL PATHOLOGY TEST
-                </h1>
+                </h2>
               </div>
               <div className="col-12 float-start mb-4">
                 <div className="tabs col-lg-6 col-12 mx-auto d-flex justify-content-center">
@@ -49,7 +88,7 @@ export const Page = () => {
               </div>
               <div className="col-12 float-start all-test">
                 <div className="row justify-content-center">
-                  <TestPackageList Type="test" />
+                  <TestPackageList Type="test" h3true={true} />
                 </div>
               </div>
             </div>

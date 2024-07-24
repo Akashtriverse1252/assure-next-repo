@@ -103,7 +103,7 @@ const SearchPage = ({ slug }) => {
           Test_Description={test.Test_Description}
           Who_is_it_for={test.Who_is_it_for}
           Pre_test_information={test.Pre_test_information}
-          BaseDirectory={test.category === "package" ? `package` : ""}
+          BaseDirectory={test.category === "package" ? `packages` : ""}
         />
       ))}
     </div>

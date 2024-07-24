@@ -138,7 +138,7 @@ export const Header = () => {
                     </div>
                     <p>Upload Prescription</p>
                   </div>
-                  <Link className="upload_btn mr-adj" href="/package">
+                  <Link className="upload_btn mr-adj" href="/packages">
                     <div
                       className="upload_btn_cnt"
                       style={{
@@ -256,7 +256,7 @@ export const Header = () => {
                                         </Link>
                                       </li>
                                       <li>
-                                        <Link href="/package">
+                                        <Link href="/packages">
                                           BOOK A PACKAGE
                                         </Link>
                                       </li>

@@ -138,7 +138,7 @@ export const Footer = () => {
       title: "Booking",
       aosDelay: 500,
       links: [
-        { href: "/package", label: "BOOK A PACKAGE" },
+        { href: "/packages", label: "BOOK A PACKAGE" },
         { href: "/all-test", label: "BOOK A TEST" },
       ],
     },
@@ -228,7 +228,7 @@ export const Footer = () => {
                       >
                         {packageTabData.slice(0, 27).map((test, index) => (
                           <li title={test.Test_Name}>
-                            <Link key={test.id} href={`/package/${test.Slug}`}>
+                            <Link key={test.id} href={`/packages/${test.Slug}`}>
                               {test.Test_Name}
                             </Link>
                           </li>

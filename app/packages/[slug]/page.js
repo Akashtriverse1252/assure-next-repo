@@ -2,9 +2,11 @@ import React from "react";
 import WhyUs from "@/components/WhyUs";
 import { Test_details_logic } from "@/components/Test_details_logic";
 
+
 export const page = ({ params: { slug } }) => {
   return (
     <>
+     
       <main className="d-flex flex-wrap float-start col-12">
         <section>
           <div className="container">

@@ -4,6 +4,7 @@ import WhyUs from "@/components/WhyUs";
 import { Test_details_logic } from "@/components/Test_details_logic";
 import { useRouter } from "next/navigation";
 import ToolTip from "@/components/ToolTip";
+import { Helmet } from "react-helmet";
 
 export const page = ({ params }) => {
   const router = useRouter();

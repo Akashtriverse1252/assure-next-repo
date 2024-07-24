@@ -16,6 +16,7 @@ import { useEffect } from "react";
 import WhyUs from "@/components/WhyUs";
 import AboutData from "@/components/AboutData";
 import Aos from "aos";
+import { Helmet } from "react-helmet";
 
 export default function Home() {
   useEffect(() => {
@@ -26,6 +27,44 @@ export default function Home() {
   }, []);
   return (
     <>
+      <Helmet>
+        <title>
+          Best Pathology Lab in Jalandhar | Dr Pathlabs &amp; Diagnostic Labs in
+          Jalandhar | Assure Pathlabs
+        </title>
+        <meta
+          name="description"
+          content="Assure Pathlabs - Best Pathology Lab in Jalandhar | Get Best Health Check-Up Packages in Jalandhar from Assure | Best diagnostic Labs in Jalandhar"
+        />
+        <link rel="canonical" href="https://www.assurepathlabs.com" />
+        <meta name="keywords" content="Assure Pathlabs" />
+        <meta
+          property="og:title"
+          content="Best Pathology Lab in Jalandhar | Dr Pathlabs &amp; Diagnostic Labs in Jalandhar | Assure Pathlabs"
+        />
+        <meta
+          property="og:description"
+          content="Assure Pathlabs - Best Pathology Lab in Jalandhar | Get Best Health Check-Up Packages in Jalandhar from Assure | Best diagnostic Labs in Jalandhar"
+        />
+        <meta
+          property="og:image"
+          content="https://www.assurepathlabs.com/images/assure-logo.png"
+        />
+        <meta property="og:url" content="https://www.assurepathlabs.com" />
+        <meta
+          name="twitter:title"
+          content="Best Pathology Lab in Jalandhar | Dr Pathlabs &amp; Diagnostic Labs in Jalandhar | Assure Pathlabs"
+        />
+        <meta
+          name="twitter:description"
+          content="Assure Pathlabs - Best Pathology Lab in Jalandhar | Get Best Health Check-Up Packages in Jalandhar from Assure | Best diagnostic Labs in Jalandhar"
+        />
+        <meta
+          name="twitter:url"
+          content="https://www.assurepathlabs.com/images/assure-logo.png"
+        />
+        <meta name="twitter:card" content="summary" />
+      </Helmet>
       <main className="d-flex flex-wrap float-start col-12 mt-lg-4 mt-0">
         <section className="position-relative _home__banner">
           <div className="gradient-layer"></div>
@@ -148,7 +187,7 @@ export default function Home() {
                 >
                   <div className="col-md-6 col-12 mt-2 mt-md-0 flex-column d-flex align-items-start">
                     <div className="title  float-start ">
-                      <h2>Assure Pathlab - Best Pathology Labs In Jalandhar</h2>
+                      <h1 className="text-uppercase">Assure Pathlab - Best Pathology Labs In Jalandhar</h1>
                     </div>
                     <div className="about_us_cnt text-center ">
                       <p>

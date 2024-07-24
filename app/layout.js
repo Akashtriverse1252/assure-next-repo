@@ -48,7 +48,7 @@ export default function RootLayout({ children, isLoading }) {
                 src="https://www.googletagmanager.com/ns.html?id=GTM-KZLBSCR"
                 height="0"
                 width="0"
-                style="display:none;visibility:hidden"
+                style={{ display: "none", visibility: "hidden" }}
               ></iframe>
             </noscript>
             <noscript>You need to enable JavaScript to run this app.</noscript>

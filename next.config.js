@@ -58,7 +58,7 @@ const nextConfig = {
       },
       {
         source: "/add_to_cart.php",
-        destination: "/individual-test",
+        destination: "/all-test",
         permanent: true,
       },
       {
@@ -106,6 +106,17 @@ const nextConfig = {
       {
         source: "/individual-test/:slug.php",
         destination: "/all-test/:slug",
+        permanent: true,
+        has: [
+          {
+            type: "query",
+            key: "slug",
+          },
+        ],
+      },
+      {
+        source: "/individual-test/",
+        destination: "/all-test/",
         permanent: true,
         has: [
           {

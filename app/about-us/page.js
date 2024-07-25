@@ -187,7 +187,7 @@ export const page = () => {
         <section className="position-relative mt-5">
           <div className="container">
             <div className="row">
-              <div className="col-lg-7 m-auto col-12 float-start sm-padding-0">
+              <div className="col-lg-8 m-auto col-12 float-start sm-padding-0">
                 <div className="col-12 flaot-start flex-center mb-2 mb-md-4 mb-lg-5 text-center">
                   <div
                     className="title col-12 float-start text-center"

@@ -5,6 +5,9 @@
   ._icon {
     width: 70px;
   }
+  .about_us_scn .title h1 {
+    width: 100%;
+  }
   .headersearchbox .header_search .form-control {
     height: 50px !important;
   }
@@ -20,7 +23,9 @@
   .page_equireheading__sSxvP article {
     margin: 10px 0 !important;
   }
-
+  .about_us_scn .title h1 {
+    width: 100%;
+  }
   .page_equireheading__sSxvP article:before {
     content: none !important;
     width: 0;
@@ -85,6 +90,11 @@
   .cta {
     margin-top: 15px;
   }
+  .upload-files-container {
+    background-color: #fbfbfb;
+    width: 75%;
+    padding: 30px;
+  }
   .upload_btn_cnt,
   .call svg,
   .whatsapp svg {
@@ -98,9 +108,6 @@
     padding: 0px;
   }
 
-  .about_us_scn .title h1 {
-    width: 100%;
-  }
   .about_us_image img {
     height: 100%;
   }
@@ -331,7 +338,7 @@
   /* .package_card .packagename h3 {
   } */
   .our-founder-title h2 {
-    font-size: 70px;
+    font-size: 65px;
   }
   .bg-gradient-image.about_page {
     bottom: -140%;
@@ -377,6 +384,13 @@
     font-size: 30px;
   }
 
+  .h_form {
+    width: 98%;
+  }
+  ._home__banner .container {
+    width: 96% !important;
+    max-width: 100% !important;
+  }
   .homecollection span {
     font-size: 19px;
     line-height: 0;

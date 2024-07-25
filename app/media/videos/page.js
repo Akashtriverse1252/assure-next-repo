@@ -116,7 +116,7 @@ export const page = () => {
     ],
   };
 
-  const data = [
+  const data = [    
     {
       thumbnail: "/video_tumbnail_4.webp",
       videoUrl: "/Video04.mp4",

@@ -1,3 +1,14 @@
+:root {
+  --font-family: "AvertaStd", sans-serif;
+  --primary-color: #663487;
+  --secondary-color: #257bbf;
+  --white-color: #fff;
+  --bg-color: #deebf4;
+  --btn-color: #0599d2;
+  --error: #d32f2f;
+  --bg-error: rgb(211 47 47 / 5%);
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -27,17 +38,6 @@ body {
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 1px;
-}
-
-:root {
-  --font-family: "AvertaStd", sans-serif;
-  --primary-color: #663487;
-  --secondary-color: #257bbf;
-  --white-color: #fff;
-  --bg-color: #deebf4;
-  --btn-color: #0599d2;
-  --error: #d32f2f;
-  --bg-error: rgb(211 47 47 / 5%);
 }
 
 * {
@@ -2436,6 +2436,7 @@ html::-webkit-scrollbar-thumb:hover,
   color: inherit;
   font-weight: 600;
   letter-spacing: 0.5px;
+  font-family: "__AvertaStd_012e33", "__AvertaStd_Fallback_012e33";
 }
 
 li.MuiBreadcrumbs-li svg {
@@ -3201,7 +3202,8 @@ button:disabled {
   font-family: var(--font-family) !important;
   letter-spacing: 1px;
 }
-
+.enquireform .form-control,
+.enquireform .rbt-input-hint,
 .css-p0rm37,
 .css-1bp1ao6,
 label.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root,
@@ -3227,7 +3229,7 @@ label.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root,
 .checkout_input div,
 .address input,
 .checkout_input input {
-  font-family: var(--font-family) !important;
+  font-family: "__AvertaStd_012e33", "__AvertaStd_Fallback_012e33 " !important;
   letter-spacing: 0.5px !important;
 }
 
@@ -5019,7 +5021,7 @@ p.subtitle {
   font-size: 21px;
 }
 .detaildescrp.Discount strong:before {
-  content: "";
+  content: none;
   width: 100%;
   height: 40%;
   background: #efff00;
@@ -5133,4 +5135,9 @@ li.ViewMore_footer a {
 }
 li.MuiBreadcrumbs-li:last-child {
   color: #1493c8 !important;
+}
+.css-1ald77x,
+.css-2fdkz6.MuiStepLabel-alternativeLabel,
+.MuiBreadcrumbs-root.css-o3d33y {
+  font-family: "__AvertaStd_012e33", "__AvertaStd_Fallback_012e33 " !important;
 }

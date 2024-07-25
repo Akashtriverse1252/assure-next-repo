@@ -104,7 +104,7 @@ const nextConfig = {
         ],
       },
       {
-        source: "/individual-test/:slug.php",
+        source: "/individual-test/:slug(.*)\\.php",
         destination: "/all-test/:slug",
         permanent: true,
         has: [
@@ -113,6 +113,22 @@ const nextConfig = {
             key: "slug",
           },
         ],
+      },
+      {
+        source: "/individual-test/:slug(.*)\\",
+        destination: "/all-test/:slug",
+        permanent: true,
+        has: [
+          {
+            type: "query",
+            key: "slug",
+          },
+        ],
+      },
+      {
+        source: "/individual-test/:path*",
+        destination: "/all-test/:path*",
+        permanent: true,
       },
       {
         source: "/individual-test/",

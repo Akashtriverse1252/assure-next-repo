@@ -174,6 +174,11 @@ const nextConfig = {
           },
         ],
       },
+      {
+        source: "/cancer-awareness-campaign",
+        destination: "https://www.assurepathlabs.com/cancer-awareness-campaign",
+        permanent: true,
+      },
     ];
   },
 };

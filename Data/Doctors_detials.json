@@ -3,7 +3,7 @@
     "doctor_name": "Dr. Sanjay Wadhwa",
     "slug": "dr-sanjay-wadhwa",
     "doctor_education": "DCP (Pathology), DNB (Pathology)",
-    "doctor_details": "Dr. Wadhwa has worked in various cancer centers like Oswal Cancer Hospital, Ludhiana, Tata Memorial Hospital, Mumbai and Institute of Pathology (Now National Institute of Pathology), ICMR, New Delhi. He has advanced training on leukemia diagnosis using immuno-phenotyping by flow cytometry, hemoglobinopathies using high performance liquid chromatography (HPLC) and hemoglobin electrophoresis, coagulation studies like factor assays, mixing studies, platelet function tests, platelet aggregation studies, natural anticoagulant assay. He has also established cell block preparation from malignant effusions and positive fine needle aspirates to help the oncologist reach a definitive diagnosis in a shorter possible time. Dr Sanjay Wadhwa is a certified NABL Internal Auditor by National Institute of Training In Standards (NITS), Noida. Patel Hospital Laboratory will be the only laboratory in the whole region to be accredited by National accreditation board for testing and calibration laboratories (NABL).",
+    "doctor_details": "Dr. Wadhwa has worked in various cancer centers like Oswal Cancer Hospital, Ludhiana, Tata Memorial Hospital, Mumbai and Institute of Pathology (Now National Institute of Pathology), ICMR, New Delhi. He has advanced training on leukemia diagnosis using immuno-phenotyping by flow cytometry, hemoglobinopathies using high performance liquid chromatography (HPLC) and hemoglobin electrophoresis, coagulation studies like factor assays, mixing studies, platelet function tests, platelet aggregation studies, natural anticoagulant assay. He has also established cell block preparation from malignant effusions and positive fine needle aspirates to help the oncologist reach a definitive diagnosis in a shorter possible time. Dr Sanjay Wadhwa is a certified NABL Internal Auditor by National Institute of Training In Standards (NITS), Noida.",
     "image": {
       "src": "/dr-sanjay.png",
       "alt": "Dr. Sanjay Wadhwa",
@@ -22,7 +22,6 @@
         "Oswal Cancer Hospital, Ludhiana, Punjab",
         "Tata Memorial Hospital, Mumbai",
         "Institute of Pathology (Now National Institute of Pathology), ICMR, New Delhi.",
-        "Patel Cancer and Superspeciality Hospital, Jalandhar, Punjab",
         "Assure Pathlabs, Jalandhar",
         "Shrimann Superspeciality Hospital"
       ]
@@ -54,7 +53,6 @@
       "Dr Sanjay Wadhwa has attended many state, national and international conferences and presented papers in them."
     ],
     "affiliations": [
-      "Over the past four years, he is associated with NABL and helped Patel Cancer and Superspeciality hospital laboratory in being the first NABL accredited laboratory of the region.",
       "Dr Sanjay Wadhwa has recently been certified NABL internal auditor by National institute of training in standards (NITS), Noida."
     ]
   },
@@ -80,7 +78,6 @@
         "After completing her MD, she worked as:",
         "Assistant Professor, Pravara institute of Medical Sciences, Loni, Maharashtra.",
         "Consultant Medical microbiologist at Babtain Cardica centre, Dammam, Saudi Arabia",
-        "Patel Cancer and Superspeciality Hospital, Jalandhar, Punjab",
         "Currently consultant Medical Microbiologist at Assure Pathlabs, Jalandhar."
       ]
     },

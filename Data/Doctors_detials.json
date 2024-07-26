@@ -3,7 +3,7 @@
     "doctor_name": "Dr. Sanjay Wadhwa",
     "slug": "dr-sanjay-wadhwa",
     "doctor_education": "DCP (Pathology), DNB (Pathology)",
-    "doctor_details": "Dr. Wadhwa has worked in various cancer centers like Oswal Cancer Hospital, Ludhiana, Tata Memorial Hospital, Mumbai and Institute of Pathology (Now National Institute of Pathology), ICMR, New Delhi. He has advanced training on leukemia diagnosis using immuno-phenotyping by flow cytometry, hemoglobinopathies using high performance liquid chromatography (HPLC) and hemoglobin electrophoresis, coagulation studies like factor assays, mixing studies, platelet function tests, platelet aggregation studies, natural anticoagulant assay. He has also established cell block preparation from malignant effusions and positive fine needle aspirates to help the oncologist reach a definitive diagnosis in a shorter possible time. Dr Sanjay Wadhwa is a certified NABL Internal Auditor by National Institute of Training In Standards (NITS), Noida.",
+    "doctor_details": "Consultant Pathologist, Certified Internal Auditor NABL Jalandhar",
     "image": {
       "src": "/dr-sanjay.png",
       "alt": "Dr. Sanjay Wadhwa",
@@ -22,6 +22,7 @@
         "Oswal Cancer Hospital, Ludhiana, Punjab",
         "Tata Memorial Hospital, Mumbai",
         "Institute of Pathology (Now National Institute of Pathology), ICMR, New Delhi.",
+        "Patel Cancer and Superspeciality Hospital, Jalandhar, Punjab",
         "Assure Pathlabs, Jalandhar",
         "Shrimann Superspeciality Hospital"
       ]
@@ -37,7 +38,7 @@
         "Liquid Cytology",
         "Intra-operative imprint cytology consultation",
         "Bone marrow aspiration cytology and biopsy",
-        "Histopathology including routine diagnostic biopsies and major oncology resection specimens..."
+        "Histopathology including routine diagnostic biopsies and major oncology resection specimens like mastectomy, Whipple's specimen, abdomino-perineal resections (APR), anterior resection, low anterior resection, radical nephrectomy, total laryngectomy, oral cavity wide excisions, composite resection and mandibulectomy with special interest in Orthopedic oncopathology."
       ]
     },
     "advanced_training": [
@@ -53,18 +54,19 @@
       "Dr Sanjay Wadhwa has attended many state, national and international conferences and presented papers in them."
     ],
     "affiliations": [
+      "Over the past four years, he is associated with NABL and helped Patel Cancer and Superspeciality hospital laboratory in being the first NABL accredited laboratory of the region.",
       "Dr Sanjay Wadhwa has recently been certified NABL internal auditor by National institute of training in standards (NITS), Noida."
     ]
   },
   {
-    "doctor_name": "Dr.Lovely Razdan",
+    "doctor_name": "Dr. Lovely Razdan",
     "slug": "dr-lovely-razdan",
-    "doctor_education": "MD Medical Microbiology Medical Microbiologist",
-    "doctor_details": "Dr. Lovely Razdan has extensive experience in internal medicine and cardiology ,Certified Internal Auditor NABL Jalandhar",
+    "doctor_education": "MD Medical Microbiology",
+    "doctor_details": "Medical Microbiologist, Certified Internal Auditor NABL Jalandhar",
     "image": {
       "src": "/dr-lovely.png",
-      "alt": "Dr. Another Doctor",
-      "title": "Dr. Another Doctor",
+      "alt": "Dr. Lovely Razdan",
+      "title": "Dr. Lovely Razdan",
       "width": "250",
       "height": "250"
     },
@@ -73,18 +75,17 @@
       "Masters in Medical Microbiology (MD) from Pravara Institute of Medical Sciences, Pune University."
     ],
     "experience": {
-      "title": "After completing his DNB, he worked as Consultant Pathologist at:",
+      "title": "After completing her MD, she worked as:",
       "details": [
-        "After completing her MD, she worked as:",
         "Assistant Professor, Pravara institute of Medical Sciences, Loni, Maharashtra.",
         "Consultant Medical microbiologist at Babtain Cardica centre, Dammam, Saudi Arabia",
+        "Patel Cancer and Superspeciality Hospital, Jalandhar, Punjab",
         "Currently consultant Medical Microbiologist at Assure Pathlabs, Jalandhar."
       ]
     },
     "clinical_expertise": {
-      "title": "After completing his DNB, he worked as Consultant Pathologist in various fields:",
+      "title": "After completing her MD Medical Microbiology, she worked in various fields:",
       "details": [
-        "After completing her MD Medical Microbiology, she worked in various fields:",
         "Microbiology",
         "Bacteriology",
         "Mycology",

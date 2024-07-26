@@ -35,12 +35,12 @@ const WhyUs = ({ Title }) => {
               >
                 <div className="row justify-content-center pt-3">
                   <div className="why_assure_cnt  ">
-                    <div className="why_assure_item">
+                    {/* <div className="why_assure_item">
                       <span className=" flex-center ">
                         <Nabh />
                       </span>
                       <div className="why_assure_text">NABH Certified Labs</div>
-                    </div>
+                    </div> */}
                     <div className="why_assure_item">
                       <span className=" flex-center ">
                         <Alltime />
@@ -98,7 +98,7 @@ const WhyUs = ({ Title }) => {
                           <PlayStore />
                         </span>
                         <div className="why_assure_text">
-                          Assure Pathlabs <br/> App
+                          Assure Pathlabs <br /> App
                         </div>
                       </Link>
                     </div>

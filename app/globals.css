@@ -3937,7 +3937,7 @@ table th {
   height: auto;
 }
 
-.about_us_scn .title h1:after {
+.about_us_scn .title h2:after {
   left: 0;
   transform: none;
 }
@@ -5128,7 +5128,7 @@ li.ViewMore_footer a {
   letter-spacing: 0.4px;
   line-height: 28px;
 }
-.about_us_scn .title h1 {
+.about_us_scn .title h2 {
   line-height: 1.5;
   letter-spacing: 0.5px;
   width: 36ch;

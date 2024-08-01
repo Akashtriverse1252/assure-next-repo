@@ -54,6 +54,26 @@ export const AssureSlide = (props) => {
           <Slider {...settings} {...props} ref={sliderRef}>
             <div>
               <div className="banner_slide">
+                <Link href="/search/besure-full-body-checkup-packages">
+                  <Image
+                    className="d-none d-sm-block"
+                    src="/assureBannerIndependence.webp"
+                    alt="Early Detection is the Key of Cure"
+                    width={1270}
+                    height={780}
+                  />
+                  <Image
+                    className="d-sm-none m_home_banner"
+                    src="/assureBannerIndependenceMobile.webp"
+                    alt="Early Detection is the Key of Cure"
+                    width={1270}
+                    height={780}
+                  />
+                </Link>
+              </div>
+            </div>
+            <div>
+              <div className="banner_slide">
                 <Link href="/search/test-for-fever">
                   <Image
                     className="d-none d-sm-block"

@@ -175,7 +175,7 @@ export default function Home() {
                 data-aos-once="true"
                 data-aos-easing="ease-in"
               >
-                <h2>Assure Pathlabs - Best Pathology Labs In Jalandhar</h2>
+                <h1>Assure Pathlabs - Best Pathology Labs In Jalandhar</h1>
               </div>
               <div
                 className="abt_scn__"
@@ -187,9 +187,9 @@ export default function Home() {
                 <div className="about_us_scn  flex-center  flex-lg-row flex-column-reverse col-12 align-items-start">
                   <div className="col-lg-6 col-12 mt-2 mt-md-0 flex-column d-flex align-items-start">
                     <div className="title  float-start ">
-                      <h1 className="text-uppercase">
+                      <h2 className="text-uppercase">
                         Assure Pathlabs - Best Pathology Labs In Jalandhar
-                      </h1>
+                      </h2>
                     </div>
                     <div className="about_us_cnt text-center ">
                       <p>

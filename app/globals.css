@@ -1089,6 +1089,7 @@ header {
 .nah_logo svg {
   width: 75px;
   aspect-ratio: 1 / 1;
+  display: none;
 }
 .nah_logo svg #nabh-conatoiner {
   margin: auto;
